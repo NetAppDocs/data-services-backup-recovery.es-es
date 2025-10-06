@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: br-start-licensing.html 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual, netapp intelligent services 
+summary: Puede obtener una licencia de NetApp Backup and Recovery comprando una suscripción de pago por uso o anual en el mercado de su proveedor de nube, o comprando una licencia propia de NetApp.  Se requiere una licencia válida para activar NetApp Backup and Recovery en un sistema, para crear copias de seguridad de sus datos de producción y para restaurar datos de copia de seguridad en un sistema de producción. 
+---
+= Configurar licencias para NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede obtener una licencia de NetApp Backup and Recovery comprando una suscripción de pago por uso (PAYGO) o una suscripción anual en el mercado de * NetApp Intelligent Services* a su proveedor de nube, o comprando una licencia BYOL (traiga su propia licencia) a NetApp.  Se requiere una licencia válida para activar NetApp Backup and Recovery en un sistema, para crear copias de seguridad de sus datos de producción y para restaurar datos de copia de seguridad en un sistema de producción.
+
+Algunas notas antes de seguir leyendo:
+
+* Si ya se ha suscrito a la suscripción de pago por uso (PAYGO) en el mercado de su proveedor de nube para un sistema Cloud Volumes ONTAP , entonces también estará suscrito automáticamente a NetApp Backup and Recovery. No necesitarás suscribirte nuevamente.
+* La licencia BYOL (traiga su propia licencia) de NetApp Backup and Recovery es una licencia flotante que puede usar en todos los sistemas asociados con su organización o cuenta de NetApp Console.  Por lo tanto, si tiene suficiente capacidad de respaldo disponible en una licencia BYOL existente, no necesitará comprar otra licencia BYOL.
+* Si utiliza una licencia BYOL, se recomienda que también se suscriba a una suscripción PAYGO.  Si realiza una copia de seguridad de más datos de los permitidos por su licencia BYOL, o si vence el plazo de su licencia, la copia de seguridad continúa a través de su suscripción de pago por uso: no hay interrupción del servicio.
+* Al realizar una copia de seguridad de los datos locales de ONTAP en StorageGRID, necesita una licencia BYOL, pero no hay ningún costo por el espacio de almacenamiento del proveedor de la nube.
+
+
+link:concept-backup-to-cloud.html["Obtenga más información sobre los costos relacionados con el uso de NetApp Backup and Recovery."]
+
+
+
+== Prueba gratuita de 30 días
+
+Tiene disponible una prueba gratuita de 30 días de NetApp Backup and Recovery si se suscribe a una suscripción de pago por uso en el mercado de su proveedor de nube para * NetApp Intelligent Services*.  La prueba gratuita comienza en el momento en que usted se suscribe al listado del mercado.  Tenga en cuenta que si paga la suscripción al mercado al implementar un sistema Cloud Volumes ONTAP y luego comienza su prueba gratuita de NetApp Backup and Recovery 10 días después, le quedarán 20 días para usar la prueba gratuita.
+
+Cuando finalice la prueba gratuita, pasarás automáticamente a la suscripción PAYGO sin interrupciones.  Si decide no continuar utilizando NetApp Backup and Recovery, simplementelink:prev-ontap-backup-manage.html["cancelar el registro de NetApp Backup and Recovery del sistema"] antes de que finalice la prueba y no se le cobrará.
+
+
+
+=== Finalizar la prueba gratuita
+
+Si desea continuar usando NetApp Backup and Recovery después de que finalice la prueba gratuita, deberá configurar una suscripción paga.  Puede hacerlo desde la interfaz de la consola de NetApp navegando a la sección de facturación y seleccionando un plan de suscripción que se ajuste a sus necesidades.  Si no desea continuar usando NetApp Backup and Recovery, puede finalizar la prueba gratuita.
+
+Cuando finaliza la prueba gratuita sin suscribirse a un plan pago, sus datos se eliminan automáticamente 60 días después de que finalice la prueba gratuita. Opcionalmente, puede hacer que el sistema elimine sus datos inmediatamente.
+
+.Pasos
+. Desde la página de inicio de NetApp Backup and Recovery, seleccione *Ver prueba gratuita*.
+. Seleccione *Finalizar prueba gratuita*.
+. Seleccione *Eliminar datos inmediatamente después de finalizar mi prueba gratuita* para eliminar sus datos inmediatamente.
+. Escriba *finalizar prueba* en el cuadro.
+. Seleccione *Fin* para confirmar.
+
+
+
+
+== Utilice una suscripción PAYGO de NetApp Backup and Recovery
+
+En el plan de pago por uso, pagará a su proveedor de nube los costos de almacenamiento de objetos y los costos de licencia de respaldo de NetApp por hora en una sola suscripción.  Debes suscribirte a * NetApp Intelligent Services* en el Marketplace incluso si tienes una prueba gratuita o si traes tu propia licencia (BYOL):
+
+* Suscribirse garantiza que no habrá interrupciones del servicio una vez finalizada su prueba gratuita. Cuando finalice la prueba, se le cobrará por hora según la cantidad de datos que respalde.
+* Si realiza una copia de seguridad de más datos de los permitidos por su licencia BYOL, las operaciones de copia de seguridad y restauración de datos continuarán a través de su suscripción de pago por uso.  Por ejemplo, si tiene una licencia BYOL de 10 TiB, toda la capacidad que exceda los 10 TiB se cobra a través de la suscripción PAYGO.
+
+
+No se le cobrará nada de su suscripción de pago por uso durante su prueba gratuita o si no ha excedido su licencia BYOL.
+
+Hay algunos planes PAYGO para NetApp Backup and Recovery:
+
+* Un paquete de "Copia de seguridad en la nube" que le permite realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos de ONTAP locales.
+* Un paquete "CVO Professional" que le permite combinar Cloud Volumes ONTAP y NetApp Backup and Recovery.  Esto incluye copias de seguridad ilimitadas para el sistema Cloud Volumes ONTAP usando la licencia (la capacidad de copia de seguridad no se descuenta de la capacidad con licencia).  Esta opción no le permite realizar copias de seguridad de los datos de ONTAP locales.
++
+Tenga en cuenta que esta opción también requiere una suscripción PAYGO de respaldo y recuperación, pero no se incurrirá en cargos por los sistemas Cloud Volumes ONTAP elegibles.
+
+
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Obtenga más información sobre estos paquetes de licencias basados en capacidad"] .
+
+Utilice estos enlaces para suscribirse a NetApp Backup and Recovery desde el mercado de su proveedor de nube:
+
+ifdef::aws[]
+
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^] .endif::aws[]
+
+
+ifdef::azure[]
+
+* Azur: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^] .endif::azure[]
+
+
+ifdef::gcp[]
+
+* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^] .endif::gcp[]
+
+
+
+
+== Utilice un contrato anual
+
+Pague NetApp Backup and Recovery anualmente comprando un contrato anual.  Están disponibles en plazos de 1, 2 o 3 años.
+
+Si tiene un contrato anual de un mercado, todo el consumo de NetApp Backup and Recovery se cargará a ese contrato.  No es posible combinar un contrato de mercado anual con un BYOL.
+
+ifdef::aws[]
+
+Cuando utiliza AWS, hay dos contratos anuales disponibles desde https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Página de AWS Marketplace"^] Para Cloud Volumes ONTAP y sistemas ONTAP locales:
+
+* Un plan de "Copia de seguridad en la nube" que le permite realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos de ONTAP locales.
++
+Si desea utilizar esta opción, configure su suscripción desde la página de Marketplace y luego https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["asociar la suscripción con sus credenciales de AWS"^] . Tenga en cuenta que también deberá pagar por sus sistemas Cloud Volumes ONTAP mediante esta suscripción de contrato anual, ya que solo puede asignar una suscripción activa a sus credenciales de AWS en la consola.
+
+* Un plan "CVO Professional" que le permite combinar Cloud Volumes ONTAP y NetApp Backup and Recovery.  Esto incluye copias de seguridad ilimitadas para el sistema Cloud Volumes ONTAP usando la licencia (la capacidad de copia de seguridad no se descuenta de la capacidad con licencia).  Esta opción no le permite realizar copias de seguridad de los datos de ONTAP locales.
++
+Ver el https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Tema de licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
+
++
+Si desea utilizar esta opción, puede configurar el contrato anual cuando crea un sistema Cloud Volumes ONTAP y la consola le solicita que se suscriba a AWS Marketplace. endif::aws[]
+
+
+
+ifdef::azure[]
+
+Cuando utiliza Azure, hay dos contratos anuales disponibles desde https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Página de Azure Marketplace"^] Para Cloud Volumes ONTAP y sistemas ONTAP locales:
+
+* Un plan de "Copia de seguridad en la nube" que le permite realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos de ONTAP locales.
++
+Si desea utilizar esta opción, configure su suscripción desde la página de Marketplace y luego https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["asociar la suscripción con sus credenciales de Azure"^] . Tenga en cuenta que también deberá pagar por sus sistemas Cloud Volumes ONTAP mediante esta suscripción de contrato anual, ya que solo puede asignar una suscripción activa a sus credenciales de Azure en la consola.
+
+* Un plan "CVO Professional" que le permite combinar Cloud Volumes ONTAP y NetApp Backup and Recovery.  Esto incluye copias de seguridad ilimitadas para el sistema Cloud Volumes ONTAP usando la licencia (la capacidad de copia de seguridad no se descuenta de la capacidad con licencia).  Esta opción no le permite realizar copias de seguridad de los datos de ONTAP locales.
++
+Ver el https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Tema de licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
+
++
+Si desea utilizar esta opción, puede configurar el contrato anual cuando crea un sistema Cloud Volumes ONTAP y la consola le solicita que se suscriba a Azure Marketplace. endif::azure[]
+
+
+
+ifdef::gcp[]
+
+Cuando utilice GCP, comuníquese con su representante de ventas de NetApp para comprar un contrato anual.  El contrato está disponible como oferta privada en Google Cloud Marketplace.
+
+Después de que NetApp comparta la oferta privada con usted, puede seleccionar el plan anual cuando se suscriba desde Google Cloud Marketplace durante la activación de NetApp Backup and Recovery. endif::gcp[]
+
+
+
+== Utilice una licencia BYOL de NetApp Backup and Recovery
+
+Las licencias Bring-your-own de NetApp ofrecen plazos de 1, 2 o 3 años. Usted paga solo por los datos que protege, calculados según la capacidad lógica utilizada (antes de cualquier eficiencia) de los volúmenes ONTAP de origen que se están respaldando.  Esta capacidad también se conoce como Front-End Terabytes (FETB).
+
+La licencia BYOL NetApp Backup and Recovery es una licencia flotante donde la capacidad total se comparte entre todos los sistemas asociados con su organización o cuenta de NetApp Console.  Para los sistemas ONTAP , puede obtener una estimación aproximada de la capacidad que necesitará ejecutando el comando CLI `volume show -fields logical-used-by-afs` para los volúmenes que planea respaldar.
+
+Si no tiene una licencia BYOL de NetApp Backup and Recovery, haga clic en el ícono de chat en la parte inferior derecha de la consola para comprar una.
+
+De manera opcional, si tiene una licencia basada en nodo no asignado para Cloud Volumes ONTAP que no utilizará, puede convertirla en una licencia de NetApp Backup and Recovery con la misma equivalencia en dólares y la misma fecha de vencimiento. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Haga clic aquí para más detalles"^] .
+
+Utilice la consola de NetApp para administrar las licencias BYOL.  Puede agregar nuevas licencias, actualizar licencias existentes y ver el estado de las licencias desde la Consola.
+
+https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Obtenga información sobre cómo agregar licencias"^] .

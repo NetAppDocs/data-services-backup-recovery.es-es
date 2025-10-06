@@ -1,0 +1,468 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-cvo-azure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Azure Blob Storage con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de los datos de volumen de sus sistemas Cloud Volumes ONTAP en el almacenamiento de blobs de Azure.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+
+
+== Verificar la compatibilidad con su configuración
+
+Lea los siguientes requisitos para asegurarse de tener una configuración compatible antes de comenzar a realizar copias de seguridad de volúmenes en Azure Blob Storage.
+
+La siguiente imagen muestra cada componente y las conexiones que debes preparar entre ellos.
+
+Opcionalmente, también puede conectarse a un sistema ONTAP secundario para volúmenes replicados utilizando la conexión pública o privada.
+
+image:diagram_cloud_backup_cvo_azure.png["Un diagrama que muestra cómo NetApp Backup and Recovery se comunica con los volúmenes en los sistemas de origen y el almacenamiento de destino donde se encuentran los archivos de respaldo."]
+
+Versiones de ONTAP compatibles:: Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
+Regiones de Azure compatibles:: NetApp Backup and Recovery es compatible con todas las regiones de Azure, incluidas las regiones de Azure Government.
++
+--
+De forma predeterminada, NetApp Backup and Recovery aprovisiona el contenedor Blob con redundancia local (LRS) para optimizar costos.  Puede cambiar esta configuración a Redundancia de zona (ZRS) después de que se haya activado NetApp Backup and Recovery si desea asegurarse de que sus datos se repliquen entre diferentes zonas.  Consulte las instrucciones de Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["Cambiar la forma en que se replica su cuenta de almacenamiento"^] .
+
+--
+Configuración necesaria para crear copias de seguridad en una suscripción de Azure diferente:: De forma predeterminada, las copias de seguridad se crean utilizando la misma suscripción que la utilizada para su sistema Cloud Volumes ONTAP .
+
+
+
+
+== Verificar los requisitos de la licencia
+
+Para obtener una licencia PAYGO de NetApp Backup and Recovery, se requiere una suscripción a través de Azure Marketplace antes de habilitar NetApp Backup and Recovery.  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Puede suscribirse desde la página Detalles y Credenciales del asistente del sistema"^] .
+
+Para obtener una licencia BYOL de NetApp Backup and Recovery, necesita el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .  Debe utilizar una licencia BYOL cuando el agente de consola y el sistema Cloud Volumes ONTAP se implementan en un sitio oscuro ("modo privado").
+
+Además, es necesario tener una suscripción a Microsoft Azure para el espacio de almacenamiento donde se ubicarán las copias de seguridad.
+
+
+
+== Prepare su agente de consola
+
+El agente de consola se puede instalar en una región de Azure con acceso a Internet completo o limitado (modo "estándar" o "restringido"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte los modos de implementación de la consola de NetApp para obtener más detalles"^] .
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Implementar un agente de consola en Azure en modo estándar (acceso completo a Internet)"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-restricted-mode.html["Instalar el agente de consola en modo restringido (acceso saliente limitado)"^]
+
+
+
+
+=== Verificar o agregar permisos al agente de la consola
+
+Para utilizar la funcionalidad de búsqueda y restauración de NetApp Backup and Recovery, debe tener permisos específicos en el rol del agente de consola para que pueda acceder al área de trabajo de Azure Synapse y a la cuenta de almacenamiento de Data Lake.  Vea los permisos a continuación y siga los pasos si necesita modificar la política.
+
+.Antes de empezar
+* Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") con su suscripción. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Vea cómo registrar este proveedor de recursos para su suscripción"^] .  Debe ser el *Propietario* o *Colaborador* de la suscripción para registrar al proveedor de recursos.
+* El puerto 1433 debe estar abierto para la comunicación entre el agente de la consola y los servicios SQL de Azure Synapse.
+
+
+.Pasos
+. Identifique el rol asignado a la máquina virtual del agente de consola:
++
+.. En el portal de Azure, abra el servicio de máquinas virtuales.
+.. Seleccione la máquina virtual del agente de consola.
+.. En Configuración, seleccione *Identidad*.
+.. Seleccione *Asignaciones de roles de Azure*.
+.. Tome nota de la función personalizada asignada a la máquina virtual del agente de consola.
+
+
+. Actualizar el rol personalizado:
++
+.. En el portal de Azure, abra su suscripción de Azure.
+.. Seleccione *Control de acceso (IAM) > Roles*.
+.. Seleccione los puntos suspensivos (*...*) para el rol personalizado y luego seleccione *Editar*.
+.. Seleccione *JSON* y agregue los siguientes permisos:
++
+[%collapsible]
+====
+[source, json]
+----
+"Microsoft.Storage/storageAccounts/listkeys/action",
+"Microsoft.Storage/storageAccounts/read",
+"Microsoft.Storage/storageAccounts/write",
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write",
+"Microsoft.Network/networkInterfaces/read",
+"Microsoft.Resources/subscriptions/locations/read",
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/virtualNetworks/subnets/read",
+"Microsoft.Resources/subscriptions/resourceGroups/read",
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+"Microsoft.Resources/subscriptions/resourceGroups/write",
+"Microsoft.Authorization/locks/*",
+"Microsoft.Network/privateEndpoints/write",
+"Microsoft.Network/privateEndpoints/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+"Microsoft.Network/virtualNetworks/join/action",
+"Microsoft.Network/privateDnsZones/A/write",
+"Microsoft.Network/privateDnsZones/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+"Microsoft.Synapse/workspaces/write",
+"Microsoft.Synapse/workspaces/read",
+"Microsoft.Synapse/workspaces/delete",
+"Microsoft.Synapse/register/action",
+"Microsoft.Synapse/checkNameAvailability/action",
+"Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/read",
+"Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
+"Microsoft.Synapse/workspaces/operationResults/read",
+"Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
+----
+====
++
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Ver el formato JSON completo de la política"^]
+
+.. Seleccione *Revisar + actualizar* y luego seleccione *Actualizar*.
+
+
+
+
+
+
+=== Información necesaria para utilizar claves administradas por el cliente para el cifrado de datos
+
+Puede utilizar sus propias claves administradas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado administradas por Microsoft predeterminadas.  En este caso, necesitará tener la suscripción de Azure, el nombre de Key Vault y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo utilizar sus propias llaves"^] .
+
+NetApp Backup and Recovery admite las _políticas de acceso de Azure_, el modelo de permisos de _control de acceso basado en roles de Azure_ (Azure RBAC) y el _modelo de seguridad de hardware administrado_ (HSM) (consulte https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["¿Qué es Azure Key Vault Managed HSM?"] ).
+
+
+
+=== Cree su cuenta de almacenamiento de blobs de Azure
+
+De forma predeterminada, el servicio crea cuentas de almacenamiento para usted.  Si desea utilizar sus propias cuentas de almacenamiento, puede crearlas antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esas cuentas de almacenamiento en el asistente.
+
+link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propias cuentas de almacenamiento"] .
+
+
+
+== Verificar los requisitos de red de ONTAP para replicar volúmenes
+
+Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.
+
+
+
+==== Requisitos de red de ONTAP local
+
+* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube.  Normalmente se trata de una conexión VPN.
+* Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
++
+Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
+
+
+
+
+
+==== Requisitos de red de Cloud Volumes ONTAP
+
+* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105.  Estas reglas están incluidas en el grupo de seguridad predefinido.
+
+
+* Para replicar datos entre dos sistemas Cloud Volumes ONTAP en diferentes subredes, las subredes deben enrutarse juntas (esta es la configuración predeterminada).
+
+
+
+
+== Habilitar NetApp Backup and Recovery en Cloud Volumes ONTAP
+
+Habilitar NetApp Backup and Recovery es fácil.  Los pasos varían levemente dependiendo de si tiene un sistema Cloud Volumes ONTAP existente o uno nuevo.
+
+*Habilitar NetApp Backup and Recovery en un nuevo sistema*
+
+NetApp Backup and Recovery está habilitado de forma predeterminada en el asistente del sistema.  Asegúrese de mantener la opción habilitada.
+
+Ver https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Lanzamiento de Cloud Volumes ONTAP en Azure"^] para conocer los requisitos y detalles para crear su sistema Cloud Volumes ONTAP .
+
+
+NOTE: Si desea elegir el nombre del grupo de recursos, *deshabilite* NetApp Backup and Recovery al implementar Cloud Volumes ONTAP.
+
+.Pasos
+. Desde la página *Sistemas* de la consola, seleccione *Agregar sistema*, elija el proveedor de nube y seleccione *Agregar nuevo*.  Seleccione *Crear Cloud Volumes ONTAP*.
+. Seleccione *Microsoft Azure* como proveedor de nube y luego elija un solo nodo o un sistema HA.
+. En la página Definir credenciales de Azure, ingrese el nombre de las credenciales, el ID del cliente, el secreto del cliente y el ID del directorio, y seleccione *Continuar*.
+. Complete la página Detalles y credenciales y asegúrese de tener una suscripción a Azure Marketplace y seleccione *Continuar*.
+. En la página Servicios, deje el servicio habilitado y seleccione *Continuar*.
+. Complete las páginas del asistente para implementar el sistema.
+
+
+.Resultado
+NetApp Backup and Recovery está habilitado en el sistema.  Después de haber creado volúmenes en estos sistemas Cloud Volumes ONTAP , inicie NetApp Backup and Recovery ylink:prev-ontap-backup-manage.html["Activar la copia de seguridad en cada volumen que desee proteger"] .
+
+*Habilitar NetApp Backup and Recovery en un sistema existente*
+
+Habilite NetApp Backup and Recovery en cualquier momento directamente desde el sistema.
+
+.Pasos
+. Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar* junto a Copia de seguridad y recuperación en el panel derecho.
++
+Si el destino de Azure Blob para sus copias de seguridad existe como un sistema en la página *Sistemas* de la consola, puede arrastrar el clúster al sistema de Azure Blob para iniciar el asistente de configuración.
+
+. Complete las páginas del asistente para implementar NetApp Backup and Recovery.
+. Cuando desee iniciar copias de seguridad, continúe con<<Activar copias de seguridad en sus volúmenes ONTAP>> .
+
+
+
+
+== Activar copias de seguridad en sus volúmenes ONTAP
+
+Active las copias de seguridad en cualquier momento directamente desde su sistema local.
+
+Un asistente lo guiará a través de los siguientes pasos principales:
+
+* <<Seleccione los volúmenes que desea respaldar>>
+* <<Definir la estrategia de backup>>
+* <<Revise sus selecciones>>
+
+
+También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pueda copiar el código para automatizar la activación de la copia de seguridad para sistemas futuros.
+
+
+
+=== Iniciar el asistente
+
+.Pasos
+. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
++
+** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto a Copia de seguridad y recuperación en el panel derecho.
++
+Si el destino de Azure para sus copias de seguridad existe como un sistema en la página *Sistemas*, puede arrastrar el clúster ONTAP al almacenamiento de objetos Blob de Azure.
+
+** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación.  Desde la pestaña Volúmenes, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
+
+
++
+La página de Introducción del asistente muestra las opciones de protección, incluidas instantáneas locales, replicación y copias de seguridad.  Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de respaldo con un volumen seleccionado.
+
+. Continúe con las siguientes opciones:
++
+** Si ya tienes un agente de consola, ya estás listo.  Simplemente seleccione *Siguiente*.
+** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*. Consulte <<Prepare su agente de consola>> .
+
+
+
+
+
+
+=== Seleccione los volúmenes que desea respaldar
+
+Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes características: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
+
+Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar la copia de seguridad de un sistema.  Vea cómolink:prev-ontap-backup-manage.html["Activar la copia de seguridad para volúmenes adicionales en el sistema"] (FlexVol o FlexGroup) después de haber configurado la copia de seguridad para los volúmenes iniciales.
+
+[NOTE]
+====
+* Puede activar una copia de seguridad solo en un único volumen FlexGroup a la vez.
+* Los volúmenes que seleccione deben tener la misma configuración SnapLock .  Todos los volúmenes deben tener SnapLock Enterprise habilitado o tener SnapLock deshabilitado.
+
+
+====
+.Pasos
+Si los volúmenes que elige ya tienen políticas de instantáneas o replicación aplicadas, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.
+
+. En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.
++
+** Opcionalmente, filtre las filas para mostrar solo volúmenes con determinados tipos de volumen, estilos y más para facilitar la selección.
+** Después de seleccionar el primer volumen, podrá seleccionar todos los volúmenes FlexVol .  (Los volúmenes FlexGroup se pueden seleccionar uno a la vez solamente).  Para realizar una copia de seguridad de todos los volúmenes FlexVol existentes, marque primero un volumen y luego marque la casilla en la fila del título.
+** Para realizar una copia de seguridad de volúmenes individuales, marque la casilla de cada volumen.
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+=== Definir la estrategia de backup
+
+Definir la estrategia de backup implica configurar las siguientes opciones:
+
+* Ya sea que desee una o todas las opciones de respaldo: instantáneas locales, replicación y respaldo en almacenamiento de objetos
+* Arquitectura
+* Política de instantáneas locales
+* Objetivo y política de replicación
++
+
+NOTE: Si los volúmenes que elige tienen políticas de instantáneas y replicación diferentes a las políticas que selecciona en este paso, se sobrescribirán las políticas existentes.
+
+* Realizar copias de seguridad de la información de almacenamiento de objetos (proveedor, cifrado, redes, política de copia de seguridad y opciones de exportación).
+
+
+.Pasos
+. En la página Definir estrategia de respaldo, elija una o todas las siguientes opciones.  Los tres están seleccionados por defecto:
++
+** *Instantáneas locales*: si está realizando una replicación o una copia de seguridad en un almacenamiento de objetos, se deben crear instantáneas locales.
+** *Replicación*: crea volúmenes replicados en otro sistema de almacenamiento ONTAP .
+** *Copia de seguridad*: realiza copias de seguridad de los volúmenes en el almacenamiento de objetos.
+
+
+. *Arquitectura*: Si eligió replicación y copia de seguridad, elija uno de los siguientes flujos de información:
++
+** *En cascada*: la información fluye desde el sistema de almacenamiento primario al secundario, y desde el secundario al almacenamiento de objetos.
+** *Distribución en abanico*: la información fluye desde el sistema de almacenamiento primario al secundario _y_ desde el primario al almacenamiento de objetos.
++
+Para obtener detalles sobre estas arquitecturas, consultelink:prev-ontap-protect-journey.html["Planifique su viaje de protección"] .
+
+
+
+. *Instantánea local*: elija una política de instantáneas existente o cree una.
++
+
+TIP: Para crear una política personalizada antes de activar la instantánea, consultelink:br-use-policies-create.html["Crear una política"] .
+
++
+Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
+
++
+** Introduzca el nombre de la póliza.
+** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+** Seleccione *Crear*.
+
+
+. *Replicación*: Establezca las siguientes opciones:
++
+** *Objetivo de replicación*: seleccione el sistema de destino y SVM.  Opcionalmente, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregarán al nombre del volumen replicado.
+** *Política de replicación*: elija una política de replicación existente o cree una.
++
+
+TIP: Para crear una política personalizada antes de activar la replicación, consultelink:br-use-policies-create.html["Crear una política"] .
+
++
+Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
+
++
+*** Introduzca el nombre de la póliza.
+*** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+
+
+. *Copia de seguridad del objeto*: si seleccionó *Copia de seguridad*, configure las siguientes opciones:
++
+** *Proveedor*: Seleccione *Microsoft Azure*.
+** *Configuración del proveedor*: Ingrese los detalles del proveedor.
++
+Introduzca la región donde se almacenarán las copias de seguridad.  Esta puede ser una región diferente a donde reside el sistema Cloud Volumes ONTAP .
+
++
+Cree una nueva cuenta de almacenamiento o seleccione una existente.
+
++
+Ingrese la suscripción de Azure utilizada para almacenar las copias de seguridad.  Esta puede ser una suscripción diferente a la que se encuentra en el sistema Cloud Volumes ONTAP .
+
++
+Cree su propio grupo de recursos que administre el contenedor de Blobs o seleccione el tipo de grupo de recursos y el grupo.
+
++
+
+TIP: Si desea proteger sus archivos de respaldo para que no se modifiquen ni eliminen, asegúrese de que la cuenta de almacenamiento se haya creado con el almacenamiento inmutable habilitado utilizando un período de retención de 30 días.
+
++
+
+TIP: Si desea organizar en niveles los archivos de respaldo más antiguos en Azure Archive Storage para optimizar aún más los costos, asegúrese de que la cuenta de almacenamiento tenga la regla de ciclo de vida adecuada.
+
+** *Clave de cifrado*: si creó una nueva cuenta de almacenamiento de Azure, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado de Azure predeterminadas o elegirá sus propias claves administradas por el cliente desde su cuenta de Azure para administrar el cifrado de sus datos.
++
+Si elige utilizar sus propias claves administradas por el cliente, ingrese al almacén de claves y a la información de la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Aprende a usar tus propias llaves"^] .
+
+
+
++
+
+NOTE: Si eligió una cuenta de almacenamiento de Microsoft existente, la información de cifrado ya está disponible, por lo que no necesita ingresarla ahora.
+
++
+** *Redes*: elija el espacio IP y si utilizará un punto final privado.  El punto final privado está deshabilitado de forma predeterminada.
++
+... El espacio IP en el clúster ONTAP donde residen los volúmenes que desea respaldar.  Los LIF entre clústeres para este espacio IP deben tener acceso a Internet saliente.
+... De manera opcional, elija si utilizará un punto de conexión privado de Azure que haya configurado previamente. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Obtenga información sobre el uso de un punto de conexión privado de Azure"^] .
+
+
+** *Política de respaldo*: seleccione una política de almacenamiento de respaldo a objetos existente.
++
+
+TIP: Para crear una política personalizada antes de activar la copia de seguridad, consultelink:br-use-policies-create.html["Crear una política"] .
+
++
+Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
+
++
+*** Introduzca el nombre de la póliza.
+*** Para las políticas de copia de seguridad a objeto, configure las configuraciones DataLock y Ransomware Protection.  Para obtener más detalles sobre DataLock y Ransomware Protection, consultelink:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"] .
+*** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+** *Exportar copias de instantáneas existentes al almacenamiento de objetos como copias de respaldo*: si hay copias de instantáneas locales para volúmenes en este sistema que coinciden con la etiqueta de programación de respaldo que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se muestra este mensaje adicional.  Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+=== Revise sus selecciones
+
+Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
+
+.Pasos
+. En la página Revisar, revise sus selecciones.
+. Opcionalmente, marque la casilla para *Sincronizar automáticamente las etiquetas de la política de instantáneas con las etiquetas de la política de replicación y copia de seguridad*.  Esto crea instantáneas con una etiqueta que coincide con las etiquetas de las políticas de replicación y copia de seguridad.
+. Seleccione *Activar copia de seguridad*.
+
+
+.Resultado
+NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes.  La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos del sistema de almacenamiento principal.  Las transferencias posteriores contienen copias diferenciales de los datos de almacenamiento primario contenidos en las copias instantáneas.
+
+Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen principal.
+
+Se crea un contenedor de almacenamiento de blobs en el grupo de recursos ingresado y los archivos de respaldo se almacenan allí.
+
+De forma predeterminada, NetApp Backup and Recovery aprovisiona el contenedor Blob con redundancia local (LRS) para optimizar costos.  Puede cambiar esta configuración a Redundancia de zona (ZRS) si desea asegurarse de que sus datos se repliquen entre diferentes zonas.  Consulte las instrucciones de Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["Cambiar la forma en que se replica su cuenta de almacenamiento"^] .
+
+Se muestra el panel de control de copias de seguridad de volumen para que pueda supervisar el estado de las copias de seguridad.
+
+También puede supervisar el estado de los trabajos de copia de seguridad y restauración mediante ellink:br-use-monitor-tasks.html["Página de seguimiento de trabajos"] .
+
+
+
+=== Mostrar los comandos API
+
+Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+
+.Pasos
+. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
+
+
+
+
+== ¿Que sigue?
+
+* Puede link:prev-ontap-backup-manage.html["Administrar sus archivos de respaldo y políticas de respaldo"] Es Esto incluye iniciar y detener copias de seguridad, eliminar copias de seguridad, agregar y cambiar la programación de copias de seguridad, y más.
+* Puede link:prev-ontap-policy-object-advanced-settings.html["Administrar la configuración de copias de seguridad a nivel de clúster"] Es Esto incluye cambiar las claves de almacenamiento que ONTAP usa para acceder al almacenamiento en la nube, cambiar el ancho de banda de red disponible para cargar copias de seguridad al almacenamiento de objetos, cambiar la configuración de copia de seguridad automática para volúmenes futuros y más.
+* También puedeslink:prev-ontap-restore.html["restaurar volúmenes, carpetas o archivos individuales desde un archivo de respaldo"] a un sistema Cloud Volumes ONTAP en AWS o a un sistema ONTAP local.
+

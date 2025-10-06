@@ -1,0 +1,27 @@
+= Exploración de instantáneas de SMB
+:allow-uri-read: 
+
+
+
+
+=== Exploración de instantáneas de SMB
+
+Esta actualización de NetApp Backup and Recovery resolvió un problema que impedía a los clientes explorar instantáneas locales en un entorno SMB.
+
+
+
+=== Actualización del entorno de AWS GovCloud
+
+Esta actualización de NetApp Backup and Recovery solucionó un problema que impedía que la interfaz de usuario se conectara a un entorno de AWS GovCloud debido a errores de certificado TLS.  El problema se resolvió utilizando el nombre de host del agente de consola en lugar de la dirección IP.
+
+
+
+=== Límites de retención de la política de respaldo
+
+Anteriormente, la interfaz de usuario de respaldo y recuperación de NetApp limitaba las copias de seguridad a 999 copias, mientras que la CLI permitía más.  Ahora, puede adjuntar hasta 4000 volúmenes a una política de respaldo e incluir 1018 volúmenes no adjuntos a una política de respaldo.  Esta actualización incluye validaciones adicionales que evitan exceder estos límites.
+
+
+
+=== Resincronización en la nube de SnapMirror
+
+Esta actualización garantiza que la resincronización de SnapMirror Cloud no se pueda iniciar desde NetApp Backup and Recovery para versiones de ONTAP no compatibles después de que se haya eliminado una relación de SnapMirror .

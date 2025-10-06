@@ -1,0 +1,399 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-object-options.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Opciones de política de copia de seguridad a objeto en NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery le permite crear políticas de respaldo con una variedad de configuraciones para sus sistemas ONTAP locales y Cloud Volumes ONTAP .
+
+
+NOTE: Estas configuraciones de políticas son relevantes únicamente para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta sus políticas de instantáneas o replicación.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+
+
+== Opciones de programación de copias de seguridad
+
+NetApp Backup and Recovery le permite crear múltiples políticas de respaldo con programaciones únicas para cada sistema (clúster).  Puede asignar diferentes políticas de respaldo a volúmenes que tengan diferentes objetivos de punto de recuperación (RPO).
+
+Cada política de respaldo proporciona una sección para _Etiquetas y retención_ que puede aplicar a sus archivos de respaldo.  Tenga en cuenta que la política de instantáneas aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery o no se crearán archivos de respaldo.
+
+El programa consta de dos partes: la etiqueta y el valor de retención:
+
+* La *etiqueta* define con qué frecuencia se crea (o actualiza) un archivo de respaldo desde el volumen.  Puede seleccionar entre los siguientes tipos de etiquetas:
++
+** Puede elegir uno o una combinación de períodos de tiempo *por hora*, *diarios*, *semanales*, *mensuales* y *anuales*.
+** Puede seleccionar una de las políticas definidas por el sistema que brindan respaldo y retención durante 3 meses, 1 año o 7 años.
+** Si ha creado políticas de protección de respaldo personalizadas en el clúster mediante ONTAP System Manager o la CLI de ONTAP , puede seleccionar una de esas políticas.
+
+
+* El valor *retención* define cuántos archivos de respaldo se conservan para cada etiqueta (período de tiempo).  Una vez que se alcanza el número máximo de copias de seguridad en una categoría o intervalo, se eliminan las copias de seguridad más antiguas para que siempre tenga las copias de seguridad más actuales.  Esto también le ahorra costos de almacenamiento porque las copias de seguridad obsoletas no continúan ocupando espacio en la nube.
+
+
+Por ejemplo, supongamos que crea una política de respaldo que crea 7 copias de seguridad *semanales* y 12 *mensuales*:
+
+* Cada semana y cada mes se crea un archivo de respaldo para el volumen
+* En la octava semana, se elimina la primera copia de seguridad semanal y se agrega la nueva copia de seguridad semanal de la octava semana (manteniendo un máximo de 7 copias de seguridad semanales)
+* En el mes 13, se elimina la primera copia de seguridad mensual y se agrega la nueva copia de seguridad mensual del mes 13 (manteniendo un máximo de 12 copias de seguridad mensuales)
+
+
+Las copias de seguridad anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos.  Este comportamiento predeterminado se puede cambiar en la página de Configuración avanzada del sistema.
+
+
+
+== Opciones de protección contra DataLock y Ransomware
+
+NetApp Backup and Recovery brinda soporte para DataLock y protección contra ransomware para sus copias de seguridad de volumen.  Estas funciones le permiten bloquear sus archivos de respaldo y escanearlos para detectar posible ransomware en ellos.  Esta es una configuración opcional que puede definir en sus políticas de respaldo cuando desee protección adicional para sus copias de seguridad de volumen para un clúster.
+
+Ambas funciones protegen sus archivos de respaldo para que siempre tenga un archivo de respaldo válido para recuperar datos en caso de un intento de ataque de ransomware en sus copias de seguridad.  También es útil cumplir con ciertos requisitos reglamentarios donde las copias de seguridad deben bloquearse y conservarse durante un período de tiempo determinado.  Cuando la opción DataLock y Ransomware Protection está habilitada, el depósito en la nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo y el control de versiones de objetos.
+
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección contra DataLock y ransomware para obtener más detalles."^] .
+
+Esta función no proporciona protección para los volúmenes de origen; solo para las copias de seguridad de esos volúmenes de origen.  Utilice algunos de los https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones anti-ransomware proporcionadas por ONTAP"^] para proteger sus volúmenes de origen.
+
+[CAUTION]
+====
+* Si planea utilizar DataLock y protección contra ransomware, puede habilitarlo al crear su primera política de respaldo y activar NetApp Backup and Recovery para ese clúster.  Posteriormente puede habilitar o deshabilitar el escaneo de ransomware mediante la Configuración avanzada de NetApp Backup and Recovery.
+* Cuando la consola escanea un archivo de respaldo en busca de ransomware al restaurar datos de volumen, incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
+
+
+====
+
+
+=== ¿Qué es DataLock?
+
+Con esta función, puede bloquear las instantáneas en la nube replicadas a través de SnapMirror en la nube y también habilitar la función para detectar un ataque de ransomware y recuperar una copia consistente de la instantánea en el almacén de objetos.  Esta función es compatible con AWS, Azure y StorageGRID.
+
+DataLock protege sus archivos de respaldo para que no se modifiquen ni eliminen durante un período de tiempo determinado, también llamado _almacenamiento inmutable_.  Esta funcionalidad utiliza tecnología del proveedor de almacenamiento de objetos para el "bloqueo de objetos".
+
+Los proveedores de nube utilizan una fecha de retención hasta (RUD), que se calcula en función del período de retención de instantáneas.  El período de retención de instantáneas se calcula en función de la etiqueta y el recuento de retención definidos en la política de respaldo.
+
+El período mínimo de retención de instantáneas es de 30 días.  Veamos algunos ejemplos de cómo funciona esto:
+
+* Si elige la etiqueta *Diario* con un recuento de retención de 20, el período de retención de instantáneas será de 20 días, que por defecto es el mínimo de 30 días.
+* Si elige la etiqueta *Semanal* con recuento de retención 4, el período de retención de instantáneas es de 28 días, que es el mínimo predeterminado de 30 días.
+* Si elige la etiqueta *Mensual* con recuento de retención 3, el período de retención de instantáneas es de 90 días.
+* Si elige la etiqueta *Anual* con recuento de retención 1, el período de retención de instantáneas es de 365 días.
+
+
+
+
+=== ¿Qué es la Retención hasta la Fecha (RUD) y cómo se calcula?
+
+La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas.  La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.
+
+* Buffer es el Buffer para el Tiempo de Transferencia (3 días) + Buffer para Optimización de Costos (28 días), lo que suma un total de 31 días.
+* La fecha mínima de retención hasta es de 30 días + 31 días de margen = 61 días.
+
+
+A continuación se muestran algunos ejemplos:
+
+* Si crea un programa de copia de seguridad mensual con 12 retenciones, sus copias de seguridad se bloquean durante 12 meses (más 31 días) antes de eliminarse (reemplazarse por el próximo archivo de copia de seguridad).
+* Si crea una política de respaldo que crea 30 copias de seguridad diarias, 7 semanales y 12 mensuales, hay tres períodos de retención bloqueados:
++
+** Las copias de seguridad "30 diarias" se conservan durante 61 días (30 días más 31 días de búfer).
+** Las copias de seguridad "7 semanales" se conservan durante 11 semanas (7 semanas más 31 días) y
+** Las copias de seguridad "12 mensuales" se conservan durante 12 meses (más 31 días).
+
+
+* Si crea una programación de copias de seguridad por hora con 24 retenciones, podría pensar que las copias de seguridad están bloqueadas durante 24 horas.  Sin embargo, dado que esto es menos que el mínimo de 30 días, cada copia de seguridad se bloqueará y se conservará durante 61 días (30 días más 31 días de margen).
+
+
+
+CAUTION: Las copias de seguridad antiguas se eliminan una vez que expira el período de retención de DataLock, no después del período de retención de la política de copia de seguridad.
+
+La configuración de retención de DataLock anula la configuración de retención de políticas de su política de respaldo.  Esto podría afectar sus costos de almacenamiento ya que sus archivos de respaldo se guardarán en el almacén de objetos durante un período de tiempo más largo.
+
+
+
+=== Habilitar DataLock y la protección contra ransomware
+
+Puede habilitar la protección contra DataLock y Ransomware al crear una política.  No se puede habilitar, modificar ni deshabilitar esto una vez creada la política.
+
+. Cuando cree una política, expanda la sección *Protección contra DataLock y Ransomware*.
+. Elija una de las siguientes opciones:
++
+** *Ninguno*: La protección DataLock y la resiliencia frente a ransomware están deshabilitadas.
+** *Desbloqueado*: La protección DataLock y la resiliencia contra ransomware están habilitadas.  Los usuarios con permisos específicos pueden sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.
+** *Bloqueado*: la protección DataLock y la resiliencia contra ransomware están habilitadas.  Ningún usuario puede sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.  Esto satisface el pleno cumplimiento normativo.
+
+
+
+
+Consulte link:prev-ontap-policy-object-advanced-settings.html["Cómo actualizar las opciones de protección contra ransomware en la página de Configuración avanzada"] .
+
+
+
+=== ¿Qué es la protección contra ransomware?
+
+La protección contra ransomware escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware. La detección de ataques de ransomware se realiza mediante una comparación de suma de comprobación. Si se identifica un posible ransomware en un nuevo archivo de respaldo en comparación con el archivo de respaldo anterior, ese archivo de respaldo más nuevo se reemplaza por el archivo de respaldo más reciente que no muestra ningún signo de un ataque de ransomware. (El archivo que fue identificado como víctima de un ataque de ransomware se elimina 1 día después de haber sido reemplazado).
+
+Los escaneos ocurren en estas situaciones:
+
+* Los escaneos de objetos de respaldo en la nube se inician poco después de que se transfieren al almacenamiento de objetos en la nube.  El escaneo no se realiza en el archivo de respaldo cuando se escribe por primera vez en el almacenamiento en la nube, sino cuando se escribe el siguiente archivo de respaldo.
+* Los análisis de ransomware se pueden iniciar cuando se selecciona la copia de seguridad para el proceso de restauración.
+* Los escaneos se pueden realizar a pedido en cualquier momento.
+
+
+¿Cómo funciona el proceso de recuperación?
+
+Cuando se detecta un ataque de ransomware, el servicio utiliza la API REST del verificador de integridad del agente Active Data Console para iniciar el proceso de recuperación.  La versión más antigua de los objetos de datos es la fuente de la verdad y se convierte en la versión actual como parte del proceso de recuperación.
+
+Veamos cómo funciona esto:
+
+* En caso de un ataque de ransomware, el servicio intenta sobrescribir o eliminar el objeto en el depósito.
+* Debido a que el almacenamiento en la nube cuenta con control de versiones, crea automáticamente una nueva versión del objeto de respaldo.  Si se elimina un objeto con el control de versiones activado, se marca como eliminado pero aún se puede recuperar.  Si se sobrescribe un objeto, se almacenan y marcan las versiones anteriores.
+* Cuando se inicia un análisis de ransomware, se validan las sumas de comprobación para ambas versiones del objeto y se comparan.  Si las sumas de comprobación son inconsistentes, se ha detectado un posible ransomware.
+* El proceso de recuperación implica volver a la última copia buena conocida.
+
+
+
+
+=== Sistemas compatibles y proveedores de almacenamiento de objetos
+
+Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ONTAP de los siguientes sistemas al utilizar almacenamiento de objetos en los siguientes proveedores de nube pública y privada.  Se agregarán proveedores de nube adicionales en futuras versiones.
+
+[cols="55,45"]
+|===
+| Sistema fuente | Destino del archivo de respaldo ifdef::aws[] 
+
+
+| Cloud Volumes ONTAP en AWS | Amazon S3 endif::aws[] ifdef::azure[] 
+
+
+| Cloud Volumes ONTAP en Azure | Blob de Azure endif::azure[] ifdef::gcp[] endif::gcp[] 
+
+
+| Sistema ONTAP local | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob de Azure endif::azure[] ifdef::gcp[] endif::gcp[] NetApp StorageGRID 
+|===
+
+
+=== Requisitos
+
+ifdef::aws[]
+
+* Para AWS:
++
+** Sus clústeres deben ejecutar ONTAP 9.11.1 o superior
+** El agente de consola se puede implementar en la nube o en sus instalaciones.
+** Los siguientes permisos de S3 deben ser parte de la función de IAM que proporciona permisos al agente de la consola.  Se encuentran en la sección "backupS3Policy" del recurso "arn:aws:s3:::netapp-backup-*":
++
+.Permisos de AWS S3
+[%collapsible]
+====
+*** s3: Obtener etiquetado de versión de objeto
+*** s3:Configuración de bloqueo de objeto de depósito
+*** s3:ObtenerAcl de versión de objeto
+*** s3:Etiquetado de objetos de colocación
+*** s3:EliminarObjeto
+*** s3:EliminarEtiquetadoDeObjeto
+*** s3:ObtenerRetenciónDeObjeto
+*** s3: Eliminar etiquetado de versión de objeto
+*** s3:PonerObjeto
+*** s3:Obtener objeto
+*** s3:Configuración de bloqueo de objeto PutBucket
+*** s3:Obtener configuración del ciclo de vida
+*** s3: Obtener etiquetado de cubo
+*** s3:EliminarVersiónDeObjeto
+*** s3:ListBucketVersions
+*** s3:ListBucket
+*** s3:Etiquetado de cubo de colocación
+*** s3:Obtener etiquetado de objeto
+*** s3:Versión de PutBucket
+*** s3:Etiquetado de versión de objeto de colocación
+*** s3: Obtener versiones de Bucket
+*** s3:ObtenerAcl del depósito
+*** s3: Retención de gobernanza de bypass
+*** s3:PonerRetenciónDeObjeto
+*** s3: Obtener ubicación del depósito
+*** s3:ObtenerVersiónDeObjeto
+
+
+====
++
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo de la política donde puede copiar y pegar los permisos necesarios"^] .
+
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Para Azure:
++
+** Sus clústeres deben ejecutar ONTAP 9.12.1 o superior
+** El agente de consola se puede implementar en la nube o en sus instalaciones.
+
+
+
+
+endif::azure[]
+
+* Para StorageGRID:
++
+** Sus clústeres deben ejecutar ONTAP 9.11.1 o superior
+** Sus sistemas StorageGRID deben ejecutar 11.6.0.3 o superior
+** El agente de consola debe implementarse en sus instalaciones (se puede instalar en un sitio con o sin acceso a Internet)
+** Los siguientes permisos de S3 deben ser parte de la función de IAM que proporciona permisos al agente de la consola:
++
+.Permisos de StorageGRID S3
+[%collapsible]
+====
+*** s3: Obtener etiquetado de versión de objeto
+*** s3:Configuración de bloqueo de objeto de depósito
+*** s3:ObtenerAcl de versión de objeto
+*** s3:Etiquetado de objetos de colocación
+*** s3:EliminarObjeto
+*** s3:EliminarEtiquetadoDeObjeto
+*** s3:ObtenerRetenciónDeObjeto
+*** s3: Eliminar etiquetado de versión de objeto
+*** s3:PonerObjeto
+*** s3:Obtener objeto
+*** s3:Configuración de bloqueo de objeto PutBucket
+*** s3:Obtener configuración del ciclo de vida
+*** s3: Obtener etiquetado de cubo
+*** s3:EliminarVersiónDeObjeto
+*** s3:ListBucketVersions
+*** s3:ListBucket
+*** s3:Etiquetado de cubo de colocación
+*** s3:Obtener etiquetado de objeto
+*** s3:Versión de PutBucket
+*** s3:Etiquetado de versión de objeto de colocación
+*** s3: Obtener versiones de Bucket
+*** s3:ObtenerAcl del depósito
+*** s3:PonerRetenciónDeObjeto
+*** s3: Obtener ubicación del depósito
+*** s3:ObtenerVersiónDeObjeto
+
+
+====
+
+
+
+
+
+
+=== Restricciones
+
+* La función de protección DataLock y Ransomware no está disponible si ha configurado el almacenamiento de archivo en la política de respaldo.
+* La opción DataLock que seleccione al activar NetApp Backup and Recovery debe usarse para todas las políticas de respaldo de ese clúster.
+* No se pueden utilizar varios modos DataLock en un solo clúster.
+* Si habilita DataLock, se bloquearán todas las copias de seguridad de volumen.  No se pueden combinar copias de seguridad de volúmenes bloqueados y no bloqueados para un solo clúster.
+* La protección DataLock y contra ransomware se aplica a nuevas copias de seguridad de volumen que utilicen una política de copia de seguridad con la protección DataLock y contra ransomware habilitada. Posteriormente podrá habilitar o deshabilitar estas funciones mediante la opción Configuración avanzada.
+* Los volúmenes FlexGroup pueden usar protección DataLock y Ransomware solo cuando se usa ONTAP 9.13.1 o superior.
+
+
+
+
+=== Consejos sobre cómo mitigar los costos de DataLock
+
+Puede habilitar o deshabilitar la función Ransomware Scan mientras mantiene activa la función DataLock.  Para evitar cargos adicionales, puede desactivar los análisis de ransomware programados.  Esto le permite personalizar su configuración de seguridad y evitar incurrir en costos del proveedor de la nube.
+
+Incluso si los análisis de ransomware programados están deshabilitados, aún puede realizar análisis a pedido cuando sea necesario.
+
+Puedes elegir diferentes niveles de protección:
+
+* *DataLock _sin_ análisis de ransomware*: brinda protección para los datos de respaldo en el almacenamiento de destino que puede estar en modo de gobernanza o de cumplimiento.
++
+** *Modo de gobernanza*: ofrece flexibilidad a los administradores para sobrescribir o eliminar datos protegidos.
+** *Modo de cumplimiento*: proporciona indelebilidad completa hasta que expire el período de retención.  Esto ayuda a cumplir con los requisitos de seguridad de datos más estrictos de entornos altamente regulados.  Los datos no se pueden sobrescribir ni modificar durante su ciclo de vida, lo que proporciona el mayor nivel de protección para sus copias de seguridad.
++
+
+NOTE: Microsoft Azure utiliza un modo de bloqueo y desbloqueo.
+
+
+
+* *DataLock _con_ análisis de ransomware*: proporciona una capa adicional de seguridad para sus datos.  Esta función ayuda a detectar cualquier intento de cambiar las copias de seguridad.  Si se realiza algún intento, se crea discretamente una nueva versión de los datos.  La frecuencia de escaneo se puede cambiar a 1, 2, 3, 4, 5, 6 o 7 días.  Si los análisis se configuran cada 7 días, los costos disminuyen significativamente.
+
+
+Para obtener más consejos para mitigar los costos de DataLock, consultehttps://community.netapp.com/t5/Tech-ONTAP-Blogs/Understanding-NetApp-Backup-and-Recovery-DataLock-and-Ransomware-Feature-TCO/ba-p/453475[]
+
+Además, puede obtener estimaciones del costo asociado con DataLock visitando el sitio web https://bluexp.netapp.com/cloud-backup-service-tco-calculator["Calculadora del coste total de propiedad (TCO) de NetApp Backup and Recovery"] .
+
+
+
+== Opciones de almacenamiento de archivos
+
+Al usar el almacenamiento en la nube de AWS, Azure o Google, puede mover archivos de respaldo más antiguos a una clase de almacenamiento de archivo o nivel de acceso menos costoso después de una cierta cantidad de días.  También puede optar por enviar sus archivos de respaldo al almacenamiento de archivo inmediatamente sin escribirlos en el almacenamiento en la nube estándar.  Simplemente ingrese *0* como "Archivar después de días" para enviar su archivo de respaldo directamente al almacenamiento de archivo.  Esto puede ser especialmente útil para usuarios que rara vez necesitan acceder a datos de copias de seguridad en la nube o para usuarios que están reemplazando una solución de copia de seguridad en cinta.
+
+No se puede acceder a los datos en niveles de archivo inmediatamente cuando se los necesita y requerirán un mayor costo de recuperación, por lo que deberá considerar con qué frecuencia necesitará restaurar datos de los archivos de respaldo antes de decidir archivar sus archivos de respaldo.
+
+[NOTE]
+====
+* Incluso si selecciona "0" para enviar todos los bloques de datos al almacenamiento en la nube de archivo, los bloques de metadatos siempre se escriben en el almacenamiento en la nube estándar.
+* No se puede utilizar el almacenamiento de archivo si ha habilitado DataLock.
+* No puedes cambiar la política de archivo después de seleccionar *0* días (archivar inmediatamente).
+
+
+====
+Cada política de respaldo proporciona una sección para _Política de archivo_ que puede aplicar a sus archivos de respaldo.
+
+ifdef::aws[]
+
+* En AWS, las copias de seguridad comienzan en la clase de almacenamiento _Estándar_ y pasan a la clase de almacenamiento _Estándar-Acceso infrecuente_ después de 30 días.
++
+Si su clúster usa ONTAP 9.10.1 o superior, puede organizar las copias de seguridad más antiguas en almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"] .
+
++
+** Si no selecciona ningún nivel de archivo en su primera política de respaldo al activar NetApp Backup and Recovery, entonces _S3 Glacier_ será su única opción de archivo para políticas futuras.
+** Si selecciona _S3 Glacier_ en su primera política de respaldo, podrá cambiar al nivel _S3 Glacier Deep Archive_ para futuras políticas de respaldo para ese clúster.
+** Si selecciona _S3 Glacier Deep Archive_ en su primera política de respaldo, ese nivel será el único nivel de archivo disponible para futuras políticas de respaldo para ese clúster.
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* En Azure, las copias de seguridad están asociadas con el nivel de acceso _Cool_.
++
+Si su clúster usa ONTAP 9.10.1 o una versión superior, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"] .
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* En GCP, las copias de seguridad están asociadas con la clase de almacenamiento _Estándar_.
++
+Si su clúster local usa ONTAP 9.12.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"] .
+
+
+
+endif::gcp[]
+
+* En StorageGRID, las copias de seguridad están asociadas con la clase de almacenamiento _Standard_.
++
+Si su clúster local usa ONTAP 9.12.1 o superior, y su sistema StorageGRID usa 11.4 o superior, puede archivar archivos de respaldo más antiguos en un almacenamiento de archivo en la nube pública.
+
+
+
+ifdef::aws[]
+
++ ** Para AWS, puede organizar las copias de seguridad en niveles de almacenamiento AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"^] .
+
+endif::aws[]
+
+ifdef::azure[]
+
++ ** Para Azure, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"^] .
+
+endif::azure[]

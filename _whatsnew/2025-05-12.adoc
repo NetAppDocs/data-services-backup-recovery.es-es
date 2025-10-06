@@ -1,0 +1,42 @@
+= SnapMirror a Cloud Resync para migraciones de volumen
+:allow-uri-read: 
+
+
+
+
+=== SnapMirror a Cloud Resync para migraciones de volumen
+
+La función SnapMirror to Cloud Resync optimiza la protección y la continuidad de los datos durante las migraciones de volumen en entornos NetApp .  Cuando se migra un volumen mediante SnapMirror Logical Replication (LRSE), de una implementación local de NetApp a otra, o a una solución basada en la nube como Cloud Volumes ONTAP o Cloud Volumes Service, SnapMirror to Cloud Resync garantiza que las copias de seguridad en la nube existentes permanezcan intactas y operativas.
+
+Esta característica elimina la necesidad de una operación de re-base que consume mucho tiempo y recursos, lo que permite que las operaciones de respaldo continúen después de la migración.  Esta característica es valiosa en escenarios de migración de carga de trabajo, ya que admite tanto FlexVols como FlexGroups y está disponible a partir de la versión 9.16.1 de ONTAP .
+
+Al mantener la continuidad de la copia de seguridad en todos los entornos, SnapMirror to Cloud Resync mejora la eficiencia operativa y reduce la complejidad de la gestión de datos híbridos y de múltiples nubes.
+
+Para obtener detalles sobre cómo realizar la operación de resincronización, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["Migrar volúmenes mediante SnapMirror a Cloud Resync"] .
+
+
+
+=== Compatibilidad con almacén de objetos MinIO de terceros (versión preliminar)
+
+NetApp Backup and Recovery ahora extiende su soporte a almacenes de objetos de terceros con un enfoque principal en MinIO.  Esta nueva función de vista previa le permite aprovechar cualquier almacén de objetos compatible con S3 para sus necesidades de copia de seguridad y recuperación.
+
+Con esta versión preliminar, esperamos garantizar una integración sólida con almacenes de objetos de terceros antes de implementar la funcionalidad completa.  Se le anima a explorar esta nueva capacidad y proporcionar comentarios para ayudar a mejorar el servicio.
+
+
+IMPORTANT: Esta función no debe utilizarse en producción.
+
+*Limitaciones del modo de vista previa*
+
+Si bien esta función está en versión preliminar, existen ciertas limitaciones:
+
+* No se admite la opción "Trae tu propio cubo" (BYOB).
+* No se admite habilitar DataLock en la política.
+* No se admite la habilitación del modo de archivo en la política.
+* Solo se admiten entornos ONTAP locales.
+* MetroCluster no es compatible.
+* No se admiten opciones para habilitar el cifrado a nivel de depósito.
+
+
+*Empezando*
+
+Para comenzar a utilizar esta función de vista previa, debe habilitar una bandera en el agente de la consola.  Luego, puede ingresar los detalles de conexión de su almacén de objetos de terceros MinIO en el flujo de trabajo de protección eligiendo almacén de objetos *Compatible con terceros* en la sección de respaldo.

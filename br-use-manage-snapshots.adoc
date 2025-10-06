@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-snapshots.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Puede realizar copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, lo que garantiza que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.  Puede implementar una estrategia 3-2-1, donde tiene 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. 
+---
+= Administre instantáneas de Microsoft SQL Server con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de NetApp Backup and Recovery.
+
+
+
+== Eliminar una instantánea
+
+Solo puedes eliminar instantáneas locales.
+
+*Rol de consola de NetApp requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Seleccione la carga de trabajo y seleccione *Ver*.
+. Seleccione la pestaña *Bases de datos*.
+. Seleccione la base de datos de la que desea eliminar una instantánea.
+. En el menú Acciones, seleccione *Ver detalles de protección*.
+. Seleccione la instantánea local que desea eliminar.
++
+
+TIP: El ícono de instantánea local en la columna *Ubicación* de esa fila debe aparecer en azul.
+
+. Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Eliminar instantánea local*.
+. En el cuadro de diálogo de confirmación, seleccione *Eliminar*.
+

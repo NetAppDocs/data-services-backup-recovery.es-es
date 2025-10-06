@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: br-use-protect-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: NetApp Backup and Recovery le permite administrar la información del host de su carga de trabajo, la información de la base de datos y la información de las instancias.  Puede ver, editar y eliminar configuraciones de protección para su inventario. 
+---
+= Agregar y proteger aplicaciones de Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery le permite descubrir fácilmente sus clústeres de Kubernetes, sin generar ni cargar archivos kubeconfig.  Puede conectar clústeres de Kubernetes e instalar el software necesario mediante comandos simples copiados de la interfaz de usuario de la consola de NetApp .
+
+.Rol de consola de NetApp requerido
+Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+
+
+== Agregar y proteger una nueva aplicación de Kubernetes
+
+El primer paso para proteger las aplicaciones de Kubernetes es crear una aplicación dentro de NetApp Backup and Recovery.  Cuando creas una aplicación, haces que la consola sepa que la aplicación se está ejecutando en el clúster de Kubernetes.
+
+.Antes de empezar
+Antes de poder agregar y proteger una aplicación de Kubernetes, debe link:br-start-discover.html["Descubra las cargas de trabajo de Kubernetes"] .
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. Seleccione *Crear aplicación*.
+. Introduzca un nombre para la aplicación.
+. Opcionalmente, elija cualquiera de los siguientes campos para buscar los recursos que desea proteger:
++
+** Clúster asociado
+** Espacios de nombres asociados
+** Tipos de recursos
+** Selectores de etiquetas
+
+
+. Opcionalmente, seleccione *Recursos con alcance de clúster* para elegir cualquier recurso con alcance a nivel de clúster. Si los incluye, se añadirán a la aplicación al crearla.
+. Opcionalmente, seleccione *Buscar* para encontrar los recursos según sus criterios de búsqueda.
++
+
+NOTE: La consola no almacena los parámetros ni los resultados de la búsqueda; los parámetros se utilizan para buscar en el clúster de Kubernetes seleccionado recursos que se puedan incluir en la aplicación.
+
+. La consola muestra una lista de recursos que coinciden con sus criterios de búsqueda.
+. Si la lista contiene los recursos que desea proteger, seleccione *Siguiente*.
+. Opcionalmente, en el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva. Si no selecciona ninguna, la aplicación se creará sin política de protección. Puedelink:br-use-policies-create.html#create-a-policy["añadir una política de protección"] más tarde.
+. En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescript o postscript que desee ejecutar antes o después de las operaciones de respaldo.  Para habilitar prescriptos o posscriptos, debe haber creado previamente al menos unolink:br-use-manage-execution-hook-templates.html["plantilla de gancho de ejecución"] .
+. Seleccione *Crear*.
+
+
+.Resultado
+La aplicación se crea y aparece en la lista de aplicaciones en la pestaña *Aplicaciones* del inventario de Kubernetes.  La consola de NetApp permite proteger la aplicación según su configuración, y usted puede supervisar el progreso en el área *Supervisión* de respaldo y recuperación.
+
+
+
+== Proteger una aplicación Kubernetes existente
+
+Habilite una política de protección en una aplicación de Kubernetes que ya haya agregado.
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. En la lista de aplicaciones, elija la aplicación que desee proteger y seleccione el menú Acciones asociado.
+. Seleccione *Proteger*.
+. En el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva política. Referirse alink:br-use-policies-create.html#create-a-policy["Crear una política"] para obtener más información sobre la creación de políticas de protección.
+. En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescript o postscript que desee ejecutar antes o después de las operaciones de respaldo.  Puede configurar el tipo de gancho de ejecución, la plantilla que utiliza, los argumentos y los selectores de etiquetas.
+. Seleccione *Listo*.
+
+
+.Resultado
+La consola permite la protección de la aplicación en función de su configuración y puede supervisar el progreso en el área *Monitoreo* de copia de seguridad y recuperación.  Tan pronto como habilita la protección para una aplicación, la consola crea una copia de seguridad completa de la aplicación. Las copias de seguridad incrementales futuras se crean según la programación que defina en la política de protección asociada a la aplicación.
+
+
+
+== Realice una copia de seguridad de una aplicación de Kubernetes ahora
+
+Cree manualmente una copia de seguridad de una aplicación de Kubernetes para establecer una línea de base para futuras copias de seguridad e instantáneas, o para garantizar que los datos más recientes estén protegidos.
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. En la lista de aplicaciones, elija una aplicación que desee respaldar y seleccione el menú Acciones asociado.
+. Seleccione *Hacer copia de seguridad ahora*.
+. Asegúrese de que esté seleccionado el nombre de aplicación correcto.
+. Seleccione *Hacer copia de seguridad*.
+
+
+.Resultado
+La consola crea una copia de seguridad de la aplicación y muestra el progreso en el área *Monitoreo* de Copia de seguridad y recuperación. La copia de seguridad se crea según la política de protección asociada a la aplicación.

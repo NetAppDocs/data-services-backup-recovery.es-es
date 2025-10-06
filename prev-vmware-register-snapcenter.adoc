@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-register-snapcenter.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Registre el SnapCenter Plug-in for VMware vSphere para usarlo con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Debe registrar el SnapCenter Plug-in for VMware vSphere en NetApp Backup and Recovery para que se muestren los almacenes de datos y las máquinas virtuales.  Solo un usuario con acceso administrativo puede registrar el SnapCenter Plug-in for VMware vSphere .
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+.Pasos
+. En la interfaz de usuario de la consola de NetApp , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En el menú desplegable *Configuración*, seleccione * SnapCenter Plug-in for VMware vSphere*.
+. Seleccione *Registrar SnapCenter Plug-in for VMware vSphere*.
+. Especifique los siguientes detalles:
++
+.. En el campo SnapCenter Plug-in for VMware vSphere , especifique el FQDN o la dirección IP del host del SnapCenter Plug-in for VMware vSphere .
+.. En el campo Puerto, especifique el número de puerto en el que se ejecuta el host del SnapCenter Plug-in for VMware vSphere .
++
+Debe asegurarse de que la comunicación esté abierta entre el SnapCenter Plug-in for VMware vSphere que se ejecuta en el puerto 8144 predeterminado y la instancia del agente de consola que podría ejecutarse en cualquier proveedor de nube (Amazon Web Services, Microsoft Azure, Google Cloud Platform) o local.
+
+.. En el campo Nombre de usuario y Contraseña, especifique las credenciales del usuario de vCenter con el rol de administrador.
+
+
+. Seleccione *Registrarse*.
+
+
+*Después de terminar*
+
+Seleccione *Copia de seguridad y recuperación* > *Máquinas virtuales* para ver todos los almacenes de datos y máquinas virtuales que están protegidos mediante el SnapCenter Plug-in for VMware vSphere .

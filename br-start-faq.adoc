@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: br-start-faq.html 
+keywords: backup and recovery faq, NetApp Backup and Recovery frequently asked questions 
+summary: Estas preguntas frecuentes pueden ayudarte si simplemente buscas una respuesta rápida a una pregunta. 
+---
+= Preguntas frecuentes sobre NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Estas preguntas frecuentes pueden ayudarte si simplemente buscas una respuesta rápida a una pregunta.
+
+
+
+== Despliegue
+
+¿Necesita una licencia para utilizar la versión preliminar de NetApp Backup and Recovery?
+
+Puede utilizar los siguientes tipos de licencia:
+
+* Regístrese para una prueba gratuita de 30 días.
+
+
+¿Cómo habilitar NetApp Backup and Recovery?  NetApp Backup and Recovery no requiere ninguna habilitación.  La opción de copia de seguridad y recuperación se habilita automáticamente en la navegación izquierda de la consola.
+
+Para comenzar, debe registrarse o comunicarse con su representante de ventas de NetApp para probar este servicio.  Luego, cuando utilice el agente de consola, incluirá las capacidades adecuadas para el servicio.
+
+Para comenzar a utilizar NetApp Backup and Recovery, seleccione "Comenzar a descubrir cargas de trabajo" en su página de inicio.
+
+¿ NetApp Backup and Recovery está disponible en modos estándar, restringido y privado?  En este momento, NetApp Backup and Recovery solo está disponible en modo estándar.  Permanezca atento para más información.
+
+Para obtener una explicación sobre estos modos en todos los servicios de datos de NetApp , consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"^] .
+
+
+
+== Acceso
+
+¿Cuál es la URL de NetApp Backup and Recovery? Para la URL, en un navegador, ingrese: https://console.netapp.com/["https://console.netapp.com/backup-and-recovery"^] para acceder a la consola de NetApp .
+
+¿Cómo se gestionan los permisos de acceso?  Solo los administradores de la organización tienen la capacidad de iniciar el servicio y descubrir cargas de trabajo (porque esto implica comprometerse con el uso de un recurso).  Las interacciones posteriores pueden ser realizadas por cualquier rol.
+
+¿Qué resolución de dispositivo es la mejor?  La resolución de dispositivo recomendada para NetApp Backup and Recovery es 1920 x 1080 o superior.
+
+¿Qué navegador debo utilizar? Cualquier navegador moderno funcionará.
+
+
+
+== Interacción con otros servicios
+
+¿ NetApp Backup and Recovery tiene conocimiento de las configuraciones de protección realizadas en NetApp ONTAP?  Sí, NetApp Backup and Recovery descubre las programaciones de instantáneas configuradas en ONTAP.
+
+*Si establece una política utilizando NetApp Backup and Recovery, ¿tiene que realizar cambios futuros solo en este servicio?*  Le recomendamos que realice cambios en la política de NetApp Backup and Recovery.
+
+
+
+== Cargas de trabajo
+
+¿Qué constituye una carga de trabajo?  Una carga de trabajo es una aplicación para la versión Preview 2025.  Una carga de trabajo incluye todos los volúmenes que utiliza una única instancia de aplicación.  Por ejemplo, una instancia de base de datos de Microsoft SQL Server implementada en mssql3.host.com puede tener vol1 y vol2 para sus datos y registros, respectivamente.  Estos volúmenes juntos constituyen la carga de trabajo para esa instancia específica de la instancia de base de datos.
+
+¿Qué cargas de trabajo admite NetApp Backup and Recovery?
+
+Para la versión preliminar 2025, NetApp Backup and Recovery puede identificar las siguientes cargas de trabajo: aplicaciones de Microsoft SQL Server.
+
+¿Qué es una carga de trabajo “protegida”?  En NetApp Backup and Recovery, una carga de trabajo muestra un estado "protegido" cuando tiene una política de detección principal habilitada.
+
+¿Qué es una carga de trabajo “de riesgo”?  Si una carga de trabajo no tiene habilitada una política de detección principal, está "en riesgo" incluso si tiene habilitada una política de copia de seguridad e instantáneas.
+
+*Se agregó una nueva carga de trabajo, pero aún no aparece* Si agregó una nueva carga de trabajo a su entorno, inicie el descubrimiento nuevamente y aplique políticas de protección para proteger ese nuevo recurso.
+
+
+
+== Políticas de protección
+
+¿ NetApp Backup and Recovery tiene conocimiento de las configuraciones de protección realizadas en NetApp ONTAP?
+
+Sí, NetApp Backup and Recovery descubre las programaciones de instantáneas configuradas en ONTAP y si ARP y FPolicy están habilitados en una carga de trabajo detectada.  La información que ve inicialmente en el Panel de Control se agrega desde otras soluciones y productos de NetApp .
+
+¿ NetApp Backup and Recovery tiene conocimiento de las políticas ya creadas en SnapCenter?
+
+Sí, si tiene cargas de trabajo administradas en SnapCenter, las políticas administradas por esos productos se incorporan a NetApp Backup and Recovery.
+
+¿Se pueden modificar las políticas transferidas desde SnapCenter?
+
+Sí, puede modificar las políticas administradas por SnapCenter dentro de NetApp Backup and Recovery.
+
+*Si existen políticas de ONTAP (ya habilitadas en System Manager, como ARP, FPolicy y instantáneas), ¿se modifican en NetApp Backup and Recovery?*
+
+No. NetApp Backup and Recovery no modifica ninguna política de detección existente (configuración ARP, FPolicy) de ONTAP.
+
+¿Qué sucede si agrega nuevas políticas en SnapCenter después de registrarse en NetApp Backup and Recovery?
+
+NetApp Backup and Recovery reconoce cualquier política nueva creada en SnapCenter.
+
+¿Se pueden cambiar las políticas de ONTAP?
+
+Sí, puede cambiar las políticas de ONTAP en NetApp Backup and Recovery.  También puede crear nuevas políticas en NetApp Backup and Recovery y aplicarlas a las cargas de trabajo.  Esta acción reemplaza las políticas ONTAP existentes con las políticas creadas en NetApp Backup and Recovery.

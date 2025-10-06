@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: NetApp Backup and Recovery le permite desproteger y eliminar sus aplicaciones de Kubernetes y los recursos asociados. 
+---
+= Administrar aplicaciones de Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery le permite desproteger y eliminar sus aplicaciones de Kubernetes y los recursos asociados.
+
+.Rol de consola de NetApp requerido
+Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+
+
+== Desproteger una aplicación de Kubernetes
+
+Puede desproteger una aplicación si ya no desea protegerla. Cuando desprotege una aplicación, NetApp Backup and Recovery deja de protegerla pero conserva todas las copias de seguridad y las instantáneas asociadas.
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. En la lista de aplicaciones, elija una aplicación que desee desproteger y seleccione el menú Acciones asociado.
+. Seleccione *Desproteger*.
+. Lea el aviso y, cuando esté listo, seleccione *Desproteger*.
+
+
+
+
+== Eliminar una aplicación de Kubernetes
+
+Puedes eliminar una aplicación si ya no la necesitas. Cuando elimina una aplicación, NetApp Backup and Recovery deja de protegerla y elimina todas las copias de seguridad y las instantáneas asociadas.
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. En la lista de aplicaciones, elija la aplicación que desee eliminar y seleccione el menú Acciones asociado.
+. Seleccione *Eliminar*.
+. Habilite *Eliminar instantáneas y copias de seguridad* para eliminar todas las instantáneas y copias de seguridad de la aplicación.
++
+
+CAUTION: Ya no podrás restaurar la aplicación utilizando estas instantáneas y copias de seguridad.
+
+. Confirme la acción y seleccione *Eliminar*.
+

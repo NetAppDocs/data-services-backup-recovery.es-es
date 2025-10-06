@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los problemas con la protección de las cargas de trabajo y poder tomar medidas para resolverlos.  Vea el estado de sus copias de seguridad y restauraciones y responda a cualquier alerta que aparezca en el Panel de control de copias de seguridad y recuperación de NetApp .  Puede revisar el resumen de protección, el resumen de restauración, el resumen del sistema y más. 
+---
+= Ver el estado de la protección en el panel de control de NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los problemas con la protección de las cargas de trabajo y poder tomar medidas para resolverlos.  Vea el estado de sus copias de seguridad y restauraciones en el Panel de control de copia de seguridad y recuperación de NetApp .  Puede revisar el resumen del sistema, el resumen de protección, el resumen de trabajo, el resumen de restauración y más.
+
+*Rol de consola de NetApp requerido* Visor de almacenamiento, superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery, administrador de restauración de Backup and Recovery, administrador de clones de Backup and Recovery o rol de visor de Backup and Recovery. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery, seleccione *Panel de control*.
++
+** Número de hosts o máquinas virtuales descubiertos
+** Número de clústeres de Kubernetes descubiertos
+** Número de destinos de copia de seguridad en el almacenamiento de objetos
+** Número de vCenters
+** Número de clústeres de almacenamiento en ONTAP
+
+
+
+
+
+
+== Ver el resumen de protección
+
+Revise la siguiente información en el Resumen de protección:
+
+* El número total de bases de datos, máquinas virtuales y almacenes de datos protegidos y no protegidos.
++
+
+TIP: Una base de datos protegida es aquella que tiene una política de respaldo asignada.  Una base de datos desprotegida es aquella que no tiene una política de respaldo asignada.
+
+* La cantidad de copias de seguridad que se realizaron correctamente, tuvieron una advertencia o fallaron.
+* La capacidad total descubierta por el servicio de respaldo y la capacidad que está protegida versus la que no está protegida.  Pase el cursor sobre el ícono "*i*" para ver los detalles.
+
+
+
+
+== Ver el resumen del trabajo
+
+Revise el total de trabajos completados, en ejecución o fallidos en el Resumen de trabajos.
+
+.Pasos
+. Para cada distribución de trabajo, cambie un filtro para mostrar el resumen de trabajos fallidos, en ejecución y completos según la cantidad de días, por ejemplo, los últimos 30 días, los últimos 7 días, las últimas 24 horas o el último año.
+. Vea los detalles de los trabajos fallidos, en ejecución y completados seleccionando *Ver monitoreo de trabajos*.
+
+
+
+
+== Ver el resumen de restauración
+
+Revise la siguiente información en el resumen de restauración:
+
+* El número total de trabajos de restauración realizados
+* La cantidad total de capacidad que se ha restaurado
+* La cantidad de trabajos de restauración realizados en el almacenamiento local, secundario y de objetos.  Pase el cursor sobre el gráfico para ver los detalles.
+

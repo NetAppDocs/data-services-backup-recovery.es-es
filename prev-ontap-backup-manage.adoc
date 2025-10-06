@@ -1,0 +1,441 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Con NetApp Backup and Recovery, administre las copias de seguridad de sus Cloud Volumes ONTAP y de los sistemas ONTAP locales modificando el programa de copias de seguridad, habilitando copias de seguridad de volúmenes, pausando copias de seguridad, eliminando copias de seguridad y mucho más.  También puede cancelar el registro de NetApp Backup and Recovery. 
+---
+= Administre copias de seguridad de sus sistemas ONTAP con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con NetApp Backup and Recovery, administre las copias de seguridad de sus Cloud Volumes ONTAP y sistemas ONTAP locales cambiando la programación de copias de seguridad, habilitando o deshabilitando copias de seguridad de volúmenes, pausando copias de seguridad, eliminando copias de seguridad, forzando la eliminación de copias de seguridad y más. Esto incluye todos los tipos de copias de seguridad, incluidas copias instantáneas, volúmenes replicados y archivos de copia de seguridad en el almacenamiento de objetos.  También puede cancelar el registro de NetApp Backup and Recovery.
+
+
+CAUTION: No administre ni modifique los archivos de respaldo directamente en sus sistemas de almacenamiento o desde el entorno de su proveedor de nube.  Esto puede dañar los archivos y dará como resultado una configuración no compatible.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+
+
+== Ver el estado de la copia de seguridad de los volúmenes en sus sistemas
+
+Puede ver una lista de todos los volúmenes que se están respaldando actualmente en el Panel de respaldo de volúmenes. Esto incluye todos los tipos de copias de seguridad, incluidas copias instantáneas, volúmenes replicados y archivos de copia de seguridad en el almacenamiento de objetos.  También puedes ver los volúmenes en aquellos sistemas que actualmente no están siendo respaldados.
+
+.Pasos
+. Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
+. Seleccione el menú *Volúmenes* para ver la lista de volúmenes respaldados para sus sistemas Cloud Volumes ONTAP y ONTAP locales.
+. Si está buscando volúmenes específicos en determinados sistemas, puede refinar la lista por sistema y volumen.  También puede utilizar el filtro de búsqueda o puede ordenar las columnas según el estilo de volumen (FlexVol o FlexGroup), el tipo de volumen y más.
++
+Para mostrar columnas adicionales (agregados, estilo de seguridad (Windows o UNIX), política de instantáneas, política de replicación y política de copia de seguridad), seleccione el signo más.
+
+. Revise el estado de las opciones de protección en la columna "Protección existente".  Los 3 íconos representan "Copias de instantáneas locales", "Volúmenes replicados" y "Copias de seguridad en almacenamiento de objetos".
++
+Cada ícono es azul cuando ese tipo de copia de seguridad está activado y es gris cuando el tipo de copia de seguridad está inactivo.  Puede pasar el cursor sobre cada ícono para ver la política de respaldo que se está utilizando y otra información pertinente para cada tipo de respaldo.
+
+
+
+
+
+== Activar la copia de seguridad en volúmenes adicionales en un sistema
+
+Si activó la copia de seguridad solo en algunos de los volúmenes de un sistema cuando habilitó por primera vez NetApp Backup and Recovery, puede activar copias de seguridad en volúmenes adicionales más adelante.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, identifique el volumen en el que desea activar las copias de seguridad, seleccione el menú Accionesimage:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Activar copia de seguridad*.
+. En la página _Definir estrategia de respaldo_, seleccione la arquitectura de respaldo y luego defina las políticas y otros detalles para las copias de instantáneas locales, los volúmenes replicados y los archivos de respaldo.  Consulte los detalles de las opciones de respaldo de los volúmenes iniciales que activó en este sistema. Luego, seleccione *Siguiente*.
+. Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
+
+
+
+
+== Cambiar la configuración de copia de seguridad asignada a los volúmenes existentes
+
+Puede cambiar las políticas de respaldo asignadas a sus volúmenes existentes que tienen políticas asignadas.  Puede cambiar las políticas para sus copias de instantáneas locales, volúmenes replicados y archivos de respaldo.  Cualquier nueva instantánea, replicación o política de respaldo que desee aplicar a los volúmenes ya debe existir.
+
+
+
+=== Editar la configuración de copia de seguridad en un solo volumen
+
+.Pasos
+. Desde la pestaña *Volúmenes*, identifique el volumen en el que desea realizar cambios de política y seleccione el menú Accionesimage:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Editar estrategia de respaldo*.
+. En la página _Editar estrategia de respaldo_, realice cambios en las políticas de respaldo existentes para copias de instantáneas locales, volúmenes replicados y archivos de respaldo y seleccione *Siguiente*.
++
+Si habilitó _DataLock y Ransomware Protection_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
+
+. Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
+
+
+
+
+=== Editar la configuración de copia de seguridad en varios volúmenes
+
+Si desea utilizar la misma configuración de respaldo en varios volúmenes, puede activar o editar la configuración de respaldo en varios volúmenes al mismo tiempo.  Puede seleccionar volúmenes que no tengan configuraciones de respaldo, solo configuraciones de instantáneas, solo configuraciones de respaldo en la nube, etc., y realizar cambios masivos en todos estos volúmenes con diversas configuraciones de respaldo.
+
+Al trabajar con varios volúmenes, todos ellos deben tener estas características comunes:
+
+* mismo sistema
+* mismo estilo (volumen FlexVol o FlexGroup )
+* mismo tipo (volumen de lectura-escritura o protección de datos)
+
+
+Cuando se habilitan más de cinco volúmenes para la copia de seguridad, NetApp Backup and Recovery inicializa solo cinco volúmenes a la vez.  Una vez finalizados estos pasos, se crea el siguiente lote de cinco subtrabajos para iniciar el siguiente conjunto y continúa hasta que se inicializan todos los volúmenes.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, filtre por el sistema en el que residen los volúmenes.
+. Seleccione todos los volúmenes en los que desea administrar la configuración de copia de seguridad.
+. Dependiendo del tipo de acción de respaldo que desee configurar, haga clic en el botón en el menú Acciones masivas:
++
+[cols="50,30"]
+|===
+| Acción de respaldo... | Seleccione este botón... 
+
+
+| Administrar la configuración de copias de seguridad de instantáneas | *Administrar instantáneas locales* 
+
+
+| Administrar la configuración de la copia de seguridad de replicación | *Administrar replicación* 
+
+
+| Administrar la configuración de la copia de seguridad en la nube | *Administrar copia de seguridad* 
+
+
+| Administrar múltiples tipos de configuraciones de respaldo.  Esta opción también le permite cambiar la arquitectura de la copia de seguridad. | *Administrar copias de seguridad y recuperación* 
+|===
+. En la página de respaldo que aparece, realice cambios en las políticas de respaldo existentes para copias de instantáneas locales, volúmenes replicados o archivos de respaldo y seleccione *Guardar*.
++
+Si habilitó _DataLock y Ransomware Protection_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
+
+
+
+
+
+== Cree una copia de seguridad de volumen manual en cualquier momento
+
+Puede crear una copia de seguridad a pedido en cualquier momento para capturar el estado actual del volumen.  Esto puede ser útil si se han realizado cambios muy importantes en un volumen y no desea esperar hasta la próxima copia de seguridad programada para proteger esos datos.  También puede utilizar esta funcionalidad para crear una copia de seguridad de un volumen que actualmente no se está respaldando y desea capturar su estado actual.
+
+Puede crear una copia de seguridad o instantánea ad hoc de un objeto de un volumen.  No se puede crear un volumen replicado ad-hoc.
+
+El nombre de la copia de seguridad incluye la marca de tiempo para que pueda identificar su copia de seguridad a pedido de otras copias de seguridad programadas.
+
+Si habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery para este clúster, la copia de seguridad a pedido también se configurará con DataLock y el período de retención será de 30 días.  Los análisis de ransomware no son compatibles con copias de seguridad ad-hoc. link:prev-ontap-policy-object-options.html["Obtenga más información sobre DataLock y la protección contra ransomware"^] .
+
+Cuando se crea una copia de seguridad ad-hoc, se crea una instantánea en el volumen de origen.  Debido a que esta instantánea no es parte de una programación de instantáneas normal, no se desactivará.  Es posible que desees eliminar manualmente esta instantánea del volumen de origen una vez que se complete la copia de seguridad.  Esto permitirá que se liberen los bloques relacionados con esta instantánea.  El nombre de la instantánea comenzará con `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Vea cómo eliminar una instantánea usando la CLI de ONTAP"^] .
+
+
+NOTE: La copia de seguridad de volumen a pedido no se admite en volúmenes de protección de datos.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen y seleccione *Copia de seguridad* > *Crear copia de seguridad ad-hoc*.
+
+
+La columna Estado de la copia de seguridad de ese volumen muestra "En progreso" hasta que se crea la copia de seguridad.
+
+
+
+== Ver la lista de copias de seguridad de cada volumen
+
+Puede ver la lista de todos los archivos de respaldo que existen para cada volumen.  Esta página muestra detalles sobre el volumen de origen, la ubicación de destino y los detalles de la copia de seguridad, como la última copia de seguridad realizada, la política de copia de seguridad actual, el tamaño del archivo de copia de seguridad y más.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen de origen y seleccione *Ver detalles del volumen*.
++
+Se muestran los detalles del volumen y la lista de copias instantáneas.
+
+. Seleccione *Instantánea*, *Replicación* o *Copia de seguridad* para ver la lista de todos los archivos de copia de seguridad para cada tipo de copia de seguridad.
+
+
+
+
+== Ejecutar un análisis de ransomware en una copia de seguridad de volumen en el almacenamiento de objetos
+
+NetApp Backup and Recovery escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware cuando se crea un respaldo en un archivo de objeto y cuando se restauran los datos de un archivo de respaldo.  También puede ejecutar un análisis a pedido en cualquier momento para verificar la usabilidad de un archivo de respaldo específico en el almacenamiento de objetos.  Esto puede ser útil si ha tenido un problema de ransomware en un volumen particular y desea verificar que las copias de seguridad de ese volumen no se vean afectadas.
+
+Esta función solo está disponible si la copia de seguridad del volumen se creó desde un sistema con ONTAP 9.11.1 o superior, y si habilitó _DataLock y Ransomware Protection_ en la política de copia de seguridad a objeto.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen de origen y seleccione *Ver detalles del volumen*.
++
+Se muestran los detalles del volumen.
+
+. Seleccione *Copia de seguridad* para ver la lista de archivos de copia de seguridad en el almacenamiento de objetos.
+. Seleccionarimage:icon-actions-horizontal.gif["Icono de acciones"] para el archivo de respaldo de volumen que desea escanear en busca de ransomware y haga clic en *Escanear en busca de ransomware*.
++
+La columna Protección contra ransomware muestra que el análisis está en progreso.
+
+
+
+
+
+== Administrar la relación de replicación con el volumen de origen
+
+Después de configurar la replicación de datos entre dos sistemas, puede administrar la relación de replicación de datos.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen de origen y seleccione la opción *Replicación*.  Podrás ver todas las opciones disponibles.
+. Seleccione la acción de replicación que desea realizar.
++
+La siguiente tabla describe las acciones disponibles:
+
++
+[cols="15,85"]
+|===
+| Acción | Descripción 
+
+
+| Ver replicación | Muestra detalles sobre la relación de volumen: información de transferencia, información de la última transferencia, detalles sobre el volumen e información sobre la política de protección asignada a la relación. 
+
+
+| Actualizar replicación | Inicia una transferencia incremental para actualizar el volumen de destino que se sincronizará con el volumen de origen. 
+
+
+| Pausar replicación | Pausar la transferencia incremental de copias instantáneas para actualizar el volumen de destino.  Puede reanudar más tarde si desea reiniciar las actualizaciones incrementales. 
+
+
+| Romper la replicación | Rompe la relación entre los volúmenes de origen y destino, y activa el volumen de destino para el acceso a los datos (lo hace de lectura y escritura).  Esta opción se utiliza normalmente cuando el volumen de origen no puede servir datos debido a eventos como corrupción de datos, eliminación accidental o un estado fuera de línea.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Aprenda a configurar un volumen de destino para el acceso a datos y reactivar un volumen de origen en la documentación de ONTAP"^] 
+
+
+| Abortar replicación | Deshabilita las copias de seguridad de este volumen en el sistema de destino y también deshabilita la capacidad de restaurar un volumen.  No se eliminarán ninguna copia de seguridad existente.  Esto no elimina la relación de protección de datos entre los volúmenes de origen y destino. 
+
+
+| Resincronización inversa | Invierte los roles de los volúmenes de origen y destino.  El contenido del volumen de origen original se sobrescribe con el contenido del volumen de destino.  Esto es útil cuando desea reactivar un volumen de origen que se desconectó.  No se conservan los datos escritos en el volumen de origen original entre la última replicación de datos y el momento en que se deshabilitó el volumen de origen. 
+
+
+| Eliminar relación | Elimina la relación de protección de datos entre los volúmenes de origen y destino, lo que significa que ya no se produce la replicación de datos entre los volúmenes.  Esta acción no activa el volumen de destino para el acceso a los datos, lo que significa que no lo convierte en lectura y escritura.  Esta acción también elimina la relación de pares del clúster y la relación de pares de la máquina virtual de almacenamiento (SVM), si no hay otras relaciones de protección de datos entre los sistemas. 
+|===
+
+
+.Resultado
+Después de seleccionar una acción, la consola actualiza la relación.
+
+
+
+== Editar una política de copia de seguridad en la nube existente
+
+Puede cambiar los atributos de una política de respaldo que se aplica actualmente a los volúmenes de un sistema.  Cambiar la política de respaldo afecta a todos los volúmenes existentes que utilizan la política.
+
+[NOTE]
+====
+* Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar NetApp Backup and Recovery para este clúster, cualquier política que edite debe configurarse con la misma configuración de DataLock (Gobernanza o Cumplimiento).  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, no podrá habilitar DataLock ahora.
+* Al crear copias de seguridad en AWS, si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de copia de seguridad al activar NetApp Backup and Recovery, ese nivel será el único nivel de archivo disponible al editar políticas de copia de seguridad.  Y si no seleccionó ningún nivel de archivo en su primera política de respaldo, entonces _S3 Glacier_ será su única opción de archivo al editar una política.
+
+
+====
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema en el que desea cambiar la configuración de políticas y seleccione *Administrar políticas*.
+. Desde la página _Administrar políticas_, seleccione *Editar* para la política de respaldo que desea cambiar en ese sistema.
+. Desde la página _Editar política_, seleccione la flecha hacia abajo para expandir la sección _Etiquetas y retención_ para cambiar la programación o la retención de copias de seguridad y seleccione *Guardar*.
++
+Si su clúster ejecuta ONTAP 9.10.1 o superior, también tiene la opción de habilitar o deshabilitar la organización en niveles de las copias de seguridad en el almacenamiento de archivo después de una cierta cantidad de días.
+
++
+ifdef::aws[]
+
+
+
+link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"] .
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"] . (Requiere ONTAP 9.12.1.)
+
+endif::gcp[]
+
++ Tenga en cuenta que todos los archivos de respaldo que se hayan organizado en niveles de almacenamiento de archivo se dejarán en ese nivel si deja de organizar en niveles las copias de seguridad en el archivo; no se moverán automáticamente de nuevo al nivel estándar.  Sólo las nuevas copias de seguridad de volumen residirán en el nivel estándar.
+
+
+
+== Agregar una nueva política de copia de seguridad en la nube
+
+Cuando habilita NetApp Backup and Recovery para un sistema, todos los volúmenes que seleccione inicialmente se respaldan utilizando la política de respaldo predeterminada que usted definió.  Si desea asignar diferentes políticas de respaldo a determinados volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar esas políticas a otros volúmenes.
+
+Si desea aplicar una nueva política de respaldo a determinados volúmenes de un sistema, primero debe agregar la política de respaldo al sistema.  Entonces puedes<<Cambiar la configuración de copia de seguridad asignada a los volúmenes existentes,aplicar la política a los volúmenes de ese sistema>> .
+
+[NOTE]
+====
+* Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar NetApp Backup and Recovery para este clúster, cualquier política adicional que cree debe configurarse con la misma configuración de DataLock (Gobernanza o Cumplimiento).  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, no podrá crear nuevas políticas que usen DataLock.
+* Al crear copias de seguridad en AWS, si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de copia de seguridad al activar NetApp Backup and Recovery, ese nivel será el único nivel de archivo disponible para futuras políticas de copia de seguridad para ese clúster.  Y si no seleccionó ningún nivel de archivo en su primera política de respaldo, entonces _S3 Glacier_ será su única opción de archivo para políticas futuras.
+
+
+====
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema donde desea agregar la nueva política y seleccione *Administrar políticas*.
+. Desde la página _Administrar políticas_, seleccione *Agregar nueva política*.
+. Desde la página _Agregar nueva política_, seleccione la flecha hacia abajo para expandir la sección _Etiquetas y retención_ para definir la programación y la retención de copias de seguridad, y seleccione *Guardar*.
++
+Si su clúster ejecuta ONTAP 9.10.1 o superior, también tiene la opción de habilitar o deshabilitar la organización en niveles de las copias de seguridad en el almacenamiento de archivo después de una cierta cantidad de días.
+
++
+ifdef::aws[]
+
+
+
+link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"] .
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"] . (Requiere ONTAP 9.12.1.)
+
+endif::gcp[]
+
+
+
+== Eliminar copias de seguridad
+
+NetApp Backup and Recovery le permite eliminar un solo archivo de respaldo, eliminar todos los respaldos de un volumen o eliminar todos los respaldos de todos los volúmenes de un sistema.  Es posible que desee eliminar todas las copias de seguridad si ya no las necesita o si eliminó el volumen de origen y desea eliminar todas las copias de seguridad.
+
+No puedes eliminar archivos de respaldo que hayas bloqueado usando DataLock y protección contra ransomware.  La opción "Eliminar" no estará disponible en la interfaz de usuario si seleccionó uno o más archivos de respaldo bloqueados.
+
+
+CAUTION: Si planea eliminar un sistema o clúster que tiene copias de seguridad, debe eliminar las copias de seguridad *antes* de eliminar el sistema.  NetApp Backup and Recovery no elimina automáticamente las copias de seguridad cuando se elimina un sistema y no existe soporte actual en la interfaz de usuario para eliminar las copias de seguridad después de que se haya eliminado el sistema.  Se le seguirán cobrando los costos de almacenamiento de objetos por cualquier copia de seguridad restante.
+
+
+
+=== Eliminar todos los archivos de respaldo de un sistema
+
+Eliminar todas las copias de seguridad del almacenamiento de objetos de un sistema no deshabilita las futuras copias de seguridad de los volúmenes en este sistema.  Si desea dejar de crear copias de seguridad de todos los volúmenes de un sistema, puede desactivar las copias de seguridad<<Desactivar NetApp Backup and Recovery para un sistema,como se describe aquí>> .
+
+Tenga en cuenta que esta acción no afecta a las copias instantáneas ni a los volúmenes replicados: estos tipos de archivos de respaldo no se eliminan.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Seleccionarimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema donde desea eliminar todas las copias de seguridad y seleccione *Eliminar todas las copias de seguridad*.
+. En el cuadro de diálogo de confirmación, ingrese el nombre del sistema.
+. Seleccione *Configuración avanzada*.
+. *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
++
+En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las desea. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
+
++
+
+CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza extremas. NetApp Backup and Recovery ya no tendrá acceso a estas copias de seguridad incluso si no se eliminan del almacenamiento de objetos. Necesitará ir a su proveedor de nube y eliminar manualmente las copias de seguridad.
+
+. Seleccione *Eliminar*.
+
+
+
+
+=== Eliminar todos los archivos de respaldo de un volumen
+
+Eliminar todas las copias de seguridad de un volumen también deshabilita las copias de seguridad futuras para ese volumen.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el volumen de origen y seleccione *Detalles y lista de respaldo*.
++
+Se muestra la lista de todos los archivos de respaldo.
+
+. Seleccione *Acciones* > *Eliminar todas las copias de seguridad*.
+. Introduzca el nombre del volumen.
+. Seleccione *Configuración avanzada*.
+. *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
++
+En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las quiere. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
+
++
+
+CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza extremas. NetApp Backup and Recovery ya no tendrá acceso a estas copias de seguridad incluso si no se eliminan del almacenamiento de objetos. Necesitará ir a su proveedor de nube y eliminar manualmente las copias de seguridad.
+
+. Seleccione *Eliminar*.
+
+
+
+
+=== Eliminar un solo archivo de respaldo para un volumen
+
+Puede eliminar un solo archivo de respaldo si ya no lo necesita.  Esto incluye la eliminación de una única copia de seguridad de una copia de instantánea de volumen o de una copia de seguridad en el almacenamiento de objetos.
+
+No se pueden eliminar volúmenes replicados (volúmenes de protección de datos).
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono más"] para el volumen de origen y seleccione *Ver detalles del volumen*.
++
+Se muestran los detalles del volumen y puede seleccionar *Instantánea*, *Replicación* o *Copia de seguridad* para ver la lista de todos los archivos de copia de seguridad del volumen.  De forma predeterminada, se muestran las copias de instantáneas disponibles.
+
+. Seleccione *Instantánea* o *Copia de seguridad* para ver el tipo de archivos de copia de seguridad que desea eliminar.
+. Seleccionarimage:icon-actions-horizontal.gif["Icono de acciones"] para el archivo de respaldo de volumen que desea eliminar y seleccione *Eliminar*.
+. En el cuadro de diálogo de confirmación, seleccione *Eliminar*.
+
+
+
+
+== Eliminar relaciones de copia de seguridad de volumen
+
+Eliminar la relación de respaldo de un volumen le proporciona un mecanismo de archivado si desea detener la creación de nuevos archivos de respaldo y eliminar el volumen de origen, pero conservar todos los archivos de respaldo existentes.  Esto le brinda la posibilidad de restaurar el volumen desde el archivo de respaldo en el futuro, si es necesario, mientras libera espacio de su sistema de almacenamiento de origen.
+
+No es necesario necesariamente eliminar el volumen de origen.  Puede eliminar la relación de respaldo de un volumen y conservar el volumen de origen.  En este caso puedes "Activar" la copia de seguridad en el volumen en un momento posterior.  En este caso, se sigue utilizando la copia de seguridad de línea base original: no se crea una nueva copia de seguridad de línea base ni se exporta a la nube.  Tenga en cuenta que si reactiva una relación de respaldo, al volumen se le asigna la política de respaldo predeterminada.
+
+Esta función solo está disponible si su sistema ejecuta ONTAP 9.12.1 o superior.
+
+No se puede eliminar el volumen de origen desde la interfaz de usuario de NetApp Backup and Recovery.  Sin embargo, puede abrir la página Detalles del volumen en la página *Sistemas* de la consola y https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Borra el volumen de ahí"] .
+
+
+NOTE: No es posible eliminar archivos de respaldo de volúmenes individuales una vez que se haya eliminado la relación.  Sin embargo, puedes eliminar todas las copias de seguridad del volumen.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen de origen y seleccione *Copia de seguridad* > *Eliminar relación*.
+
+
+
+
+== Desactivar NetApp Backup and Recovery para un sistema
+
+Al desactivar NetApp Backup and Recovery para un sistema, se deshabilitan las copias de seguridad de cada volumen del sistema y también se deshabilita la capacidad de restaurar un volumen.  No se eliminarán ninguna copia de seguridad existente.  Esto no anula el registro del servicio de respaldo de este sistema; básicamente, le permite pausar toda la actividad de respaldo y restauración por un período de tiempo.
+
+Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de almacenamiento de objetos por la capacidad que utilizan sus copias de seguridad a menos que<<Eliminar copias de seguridad,eliminar las copias de seguridad>> .
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema en el que desea deshabilitar las copias de seguridad y seleccione *Desactivar copia de seguridad*.
+. En el cuadro de diálogo de confirmación, seleccione *Desactivar*.
+
+
+
+NOTE: Aparece un botón *Activar copia de seguridad* para ese sistema mientras la copia de seguridad está deshabilitada.  Puede seleccionar este botón cuando desee volver a habilitar la funcionalidad de copia de seguridad para ese sistema.
+
+
+
+== Anular el registro de NetApp Backup and Recovery para un sistema
+
+Puede cancelar el registro de NetApp Backup and Recovery para un sistema si ya no desea utilizar la funcionalidad de respaldo y desea dejar de pagar por los respaldos en ese sistema.  Normalmente, esta función se utiliza cuando planeas eliminar un sistema y deseas cancelar el servicio de respaldo.
+
+También puede utilizar esta función si desea cambiar el almacén de objetos de destino donde se almacenan las copias de seguridad de su clúster.  Después de cancelar el registro de NetApp Backup and Recovery para el sistema, puede habilitar NetApp Backup and Recovery para ese clúster usando la nueva información del proveedor de nube.
+
+Antes de poder cancelar el registro de NetApp Backup and Recovery, debe realizar los siguientes pasos, en este orden:
+
+* Desactivar NetApp Backup and Recovery para el sistema
+* Eliminar todas las copias de seguridad de ese sistema
+
+
+La opción de cancelar el registro no estará disponible hasta que se completen estas dos acciones.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema en el que desea anular el registro del servicio de respaldo y seleccione *Anular registro*.
+. En el cuadro de diálogo de confirmación, seleccione *Cancelar registro*.
+

@@ -1,0 +1,90 @@
+= NetApp Backup and Recovery ahora es NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+=== NetApp Backup and Recovery ahora es NetApp Backup and Recovery
+
+NetApp Backup and Recovery ha pasado a llamarse NetApp Backup and Recovery.
+
+
+
+=== BlueXP ahora es NetApp Console
+
+La consola NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento NetApp y de los servicios de datos NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada, que es altamente segura y compatible.
+
+Para obtener más detalles sobre lo que ha cambiado, consulte lalink:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de la versión de la consola de NetApp ."]
+
+
+
+=== Compatibilidad con cargas de trabajo de Hyper-V como vista previa privada
+
+Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de Hyper-V:
+
+* Realizar copias de seguridad y restaurar máquinas virtuales en instancias independientes, así como en instancias de clúster de conmutación por error (FCI)
+* Proteger las máquinas virtuales almacenadas en recursos compartidos SMB3
+* Protección masiva a nivel de máquina virtual
+* Copias de seguridad consistentes con máquinas virtuales y fallos
+* Restaurar máquinas virtuales desde el almacenamiento primario, secundario y de objetos
+* Buscar y restaurar copias de seguridad de máquinas virtuales
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+
+
+
+=== Compatibilidad con cargas de trabajo KVM como vista previa privada
+
+Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo KVM:
+
+* Realice copias de seguridad y restaure imágenes de máquinas virtuales qcow2 almacenadas en recursos compartidos NFS
+* Realizar copias de seguridad de los grupos de almacenamiento
+* Protección masiva de máquinas virtuales y grupos de almacenamiento mediante grupos de protección
+* Copias de seguridad de máquinas virtuales consistentes y consistentes ante fallos
+* Buscar y restaurar copias de seguridad de máquinas virtuales
+* Proceso guiado para realizar copias de seguridad y restaurar máquinas virtuales basadas en KVM y datos de máquinas virtuales
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+
+
+
+=== Mejoras en la vista previa de Kubernetes
+
+La versión preliminar de las cargas de trabajo de Kubernetes presenta las siguientes mejoras:
+
+* Compatibilidad con arquitectura de respaldo de distribución 3-2-1
+* Compatibilidad con ONTAP S3 como destino de respaldo
+* Nuevo panel de Kubernetes para una gestión más sencilla
+* La configuración mejorada del control de acceso basado en roles (RBAC) incluye soporte para los siguientes roles:
++
+** Superadministrador de copias de seguridad y recuperación
+** Administrador de copias de seguridad y recuperación
+** Administrador de restauración de copias de seguridad y recuperación
+** Visor de copias de seguridad y recuperación
+
+
+* Compatibilidad con la distribución SUSE Rancher Kubernetes
+* Compatibilidad con múltiples buckets: ahora puede proteger los volúmenes dentro de un sistema con múltiples buckets por sistema en diferentes proveedores de nube.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+
+
+
+=== Compatibilidad con cargas de trabajo de Oracle Database como vista previa privada
+
+Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de Oracle Database:
+
+* Descubra las bases de datos Oracle independientes
+* Crear políticas de protección solo para datos o copias de seguridad de datos y registros
+* Proteja las bases de datos de Oracle con un esquema de respaldo 3-2-1
+* Configurar la retención de copias de seguridad
+* Montar y desmontar copias de seguridad de ARCHIVELOG
+* Bases de datos virtualizadas
+* Buscar y restaurar copias de seguridad de bases de datos
+* Compatibilidad con el panel de control de Oracle
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de Protect Oracle Workloads"] .

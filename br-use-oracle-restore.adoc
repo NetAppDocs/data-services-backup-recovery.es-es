@@ -1,0 +1,159 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-restore.html 
+keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de Oracle con NetApp Backup and Recovery. 
+---
+= Restaure bases de datos de Oracle con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure bases de datos de Oracle a partir de copias instantáneas, desde una copia de seguridad replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos mediante NetApp Backup and Recovery.
+
+.Restaurar desde estas ubicaciones
+Puede restaurar bases de datos desde diferentes ubicaciones de inicio:
+
+* Restaurar desde una ubicación principal (instantánea local)
+* Restaurar desde un recurso replicado en un almacenamiento secundario
+* Restaurar desde una copia de seguridad de almacenamiento de objetos
+
+
+.Restaurar a estos puntos
+Puede restaurar datos a la ubicación original; la restauración a una ubicación alternativa no está disponible en esta versión preliminar privada.
+
+* Restaurar a la ubicación original
+
+
+
+
+== Cómo funciona la restauración de bases de datos Oracle
+
+Al restaurar bases de datos de Oracle, ocurre lo siguiente:
+
+* Cuando restaura una base de datos desde una instantánea local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos de la copia de seguridad.
+* Al restaurar desde un almacenamiento replicado, puede restaurarlo a la ubicación original.
+* Cuando restaura una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el almacenamiento de origen o en un sistema ONTAP local y recuperar la base de datos desde allí.
+
+
+Desde la página Restaurar (también conocida como Buscar y restaurar), puede restaurar una base de datos, incluso si no recuerda el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buen estado por última vez.  Puede buscar en la base de datos utilizando filtros.
+
+
+
+== Restaurar una base de datos Oracle
+
+Según sus necesidades, restaure una base de datos Oracle a un punto específico en el tiempo, a un número de cambio de sistema (SCN) específico o al último estado correcto.  También puede simplemente restaurar la base de datos desde instantáneas y omitir el proceso de recuperación automatizado.  Es posible que desee omitir el proceso de recuperación automática si desea realizar la recuperación manualmente.  Puede buscar la base de datos utilizando su nombre o con filtros específicos.
+
+*Rol de consola requerido* Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de copia de seguridad y recuperación, administrador de restauración de copia de seguridad y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.
+. En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Oracle*.
+. Ingrese el nombre de la base de datos que desea restaurar o filtre por el host de la base de datos donde se encuentra la base de datos que desea restaurar.
++
+Aparecerá una lista de instantáneas que coinciden con sus criterios de búsqueda.
+
+. Seleccione el botón *Restaurar* para la base de datos que desea restaurar.
+. Elija una opción de restauración:
++
+[role="tabbed-block"]
+====
+.Restaurar a un punto específico en el tiempo
+--
+.. Seleccione *Restaurar a un punto específico en el tiempo*.
+.. Seleccione *Siguiente*.
+.. Elija una fecha del menú desplegable y seleccione *Buscar*.
++
+Se muestra una lista de instantáneas coincidentes en la fecha especificada.
+
+
+
+--
+.Restaurar a un número de cambio de sistema específico (SCN)
+--
+.. Seleccione *Restaurar a un número de cambio de sistema específico (SCN)*.
+.. Seleccione *Siguiente*.
+.. Ingrese el SCN que se utilizará como punto de restauración y seleccione *Buscar*.
++
+Se muestra una lista de instantáneas coincidentes para el SCN especificado.
+
+
+
+--
+.Restaurar a la última copia de seguridad (último estado correcto)
+--
+.. Seleccione *Restaurar a la última copia de seguridad*.
+.. Seleccione *Siguiente*.
++
+Se muestran las últimas copias de seguridad completas y de registros.
+
+
+
+--
+.Restaurar desde instantáneas sin recuperación
+--
+.. Seleccione *Restaurar desde instantáneas sin recuperación*.
+.. Seleccione *Siguiente*.
++
+Se muestran las instantáneas coincidentes.
+
+
+
+--
+====
+. Seleccione una ubicación de origen de la instantánea.
+. Seleccione *Siguiente* para continuar a la página de configuración de destino de restauración.
++
+A continuación, puede elegir la configuración de destino y las opciones previas y posteriores a la restauración.
+
+
+
+[discrete]
+===== Selección de destino
+
+. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
+
+
+[role="tabbed-block"]
+====
+.Restaurar a la ubicación original
+--
+. *Configuración de destino*:
++
+** Elija restaurar la base de datos completa o solo los espacios de tabla de la base de datos.
+** *Archivos de control*: Opcionalmente, habilite esta opción para restaurar también los archivos de control de la base de datos.
+
+
+. *Opciones de pre-restauración*:
++
+** Opcionalmente, habilite esta opción e ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
+** Elija un valor de tiempo de espera para el script.  Si el script no se puede ejecutar dentro de este período de tiempo, la restauración continuará de todos modos.
+
+
+. *Opciones posteriores a la restauración*:
++
+** *Posdata*: Opcionalmente, habilite esta opción e ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
+** *Abrir la base de datos o la base de datos contenedora en modo LECTURA-ESCRITURA después de la recuperación*: una vez completada la operación de restauración, Backup and Recovery habilitará el modo LECTURA-ESCRITURA para la base de datos.
+
+
+. Sección de *Notificación*:
++
+** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración e indique qué tipo de notificaciones desea recibir.
+
+
+. Seleccione *Restaurar*.
+
+
+--
+.Restaurar a una ubicación alternativa
+--
+No disponible para la vista previa de cargas de trabajo de Oracle.
+
+--
+====

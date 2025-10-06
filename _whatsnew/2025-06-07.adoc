@@ -1,0 +1,40 @@
+= Panel de control de volumen ONTAP mejorado
+:allow-uri-read: 
+
+
+
+
+=== Panel de control de volumen ONTAP mejorado
+
+En abril de 2025, lanzamos una vista previa de un panel de volumen ONTAP mejorado que es mucho más rápido y eficiente.
+
+Este panel fue diseñado para ayudar a los clientes empresariales con una gran cantidad de cargas de trabajo.  Incluso para clientes con 20.000 volúmenes, el nuevo panel se carga en menos de 10 segundos.
+
+Después de una vista previa exitosa y excelentes comentarios de los clientes de la vista previa, ahora la estamos convirtiendo en la experiencia predeterminada para todos nuestros clientes.  Prepárese para un tablero increíblemente rápido.
+
+Para obtener más información, consulte link:br-use-dashboard.html["Ver el estado de la protección en el Panel de Control"] .
+
+
+
+=== Compatibilidad con cargas de trabajo de Microsoft SQL Server como versión preliminar de tecnología pública
+
+Esta versión de NetApp Backup and Recovery proporciona una interfaz de usuario actualizada que le permite administrar las cargas de trabajo de Microsoft SQL Server mediante una estrategia de protección 3-2-1, familiar en NetApp Backup and Recovery.  Con esta nueva versión, puede realizar copias de seguridad de estas cargas de trabajo en el almacenamiento principal, replicarlas en el almacenamiento secundario y realizar copias de seguridad de ellas en el almacenamiento de objetos en la nube.
+
+Puedes registrarte para la vista previa completando esto https://forms.office.com/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOojtBW63mDRDv3ZK50MaTlJUNjdENllaVTRTVFJGSDQ2MFJIREcxN0EwQi4u&route=shorturl["Vista previa del formulario de registro"^] .
+
+
+NOTE: Esta documentación sobre la protección de las cargas de trabajo de Microsoft SQL Server se ofrece como una versión preliminar de la tecnología. Con esta versión preliminar, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de su disponibilidad general.
+
+Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones:
+
+* *Capacidad de respaldo 3-2-1*: esta versión integra las capacidades de SnapCenter , lo que le permite administrar y proteger sus recursos de SnapCenter con una estrategia de protección de datos 3-2-1 desde la interfaz de usuario de NetApp Backup and Recovery.
+* *Importar desde SnapCenter*: puede importar datos y políticas de respaldo de SnapCenter a NetApp Backup and Recovery.
+* *Una interfaz de usuario rediseñada* proporciona una experiencia más intuitiva para administrar sus tareas de copia de seguridad y recuperación.
+* *Objetivos de respaldo*: puede agregar depósitos en entornos de Amazon Web Services (AWS), Microsoft Azure Blob Storage, StorageGRID y ONTAP S3 para usarlos como destinos de respaldo para sus cargas de trabajo de Microsoft SQL Server.
+* *Compatibilidad con carga de trabajo*: esta versión le permite realizar copias de seguridad, restaurar, verificar y clonar bases de datos y grupos de disponibilidad de Microsoft SQL Server.  (Se agregará soporte para otras cargas de trabajo en futuras versiones).
+* *Opciones de restauración flexibles*: Esta versión le permite restaurar bases de datos tanto en ubicaciones originales como alternativas en caso de corrupción o pérdida accidental de datos.
+* *Copias de producción instantáneas*: genere copias de producción que ahorren espacio para desarrollo, pruebas o análisis en minutos en lugar de horas o días.
+* Esta versión incluye la capacidad de crear informes detallados.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Microsoft SQL Server, consultelink:br-use-mssql-protect-overview.html["Descripción general de la protección de las cargas de trabajo de Microsoft SQL Server"] .

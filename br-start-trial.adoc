@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: br-start-trial.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Inicie o finalice una prueba gratuita de NetApp Backup and Recovery.  La prueba gratuita está disponible durante 30 días después de suscribirse a una suscripción de pago por uso en el mercado de su proveedor de nube para NetApp Intelligent Services. 
+---
+= Comience una prueba gratuita de NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Tiene disponible una prueba gratuita de 30 días de NetApp Backup and Recovery si se suscribe a una suscripción de pago por uso en el mercado de su proveedor de nube para * NetApp Intelligent Services*.  La prueba gratuita comienza en el momento en que usted se suscribe al listado del mercado.  Tenga en cuenta que si paga la suscripción al mercado al implementar un sistema Cloud Volumes ONTAP y luego comienza su prueba gratuita de NetApp Backup and Recovery 10 días después, le quedarán 20 días para usar la prueba gratuita.
+
+Cuando finalice la prueba gratuita, pasarás automáticamente a la suscripción PAYGO sin interrupciones.  Si decide no continuar usando NetApp Backup and Recovery, simplemente finalice la prueba gratuita.
+
+Puede comenzar la prueba gratuita en NetApp Backup and Recovery después de iniciar sesión en la consola.
+
+.Pasos
+. Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Si es la primera vez que inicia sesión en este servicio, ya tiene un sistema en la consola de NetApp , pero no ha comenzado la prueba gratuita, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Iniciar prueba gratuita*.
++
+image:screen-br-landing-unified-start-trial.png["Captura de pantalla de la página de destino de NetApp Backup and Recovery sin prueba gratuita"]
+
+
+
+
+
+== ¿Que sigue?
+
+Después de comenzar la prueba gratuita, podrá descubrir cargas de trabajo y crear políticas para realizar copias de seguridad de sus cargas de trabajo.
+
+Si es la primera vez que inicia sesión en este servicio, ya tiene un sistema en la consola de NetApp y comenzó la prueba gratuita, pero no descubrió ningún recurso, aparece la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" y se muestra una opción para *Descubrir recursos*.
+
+Para obtener detalles sobre cómo descubrir cargas de trabajo, consultelink:br-start-discover.html["Descubra las cargas de trabajo"] .
+
+image:screen-br-landing-unified.png["Captura de pantalla de la página de destino de NetApp Backup and Recovery"]
+
+
+
+== Finalizar la prueba gratuita
+
+Puedes finalizar la prueba gratuita en cualquier momento.  Si finaliza la prueba gratuita, no se le cobrará por el servicio.
+
+.Pasos
+. Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
++
+image:screen-br-landing-unified.png["Captura de pantalla de la página de destino de NetApp Backup and Recovery"]
+
+. Desde la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery", seleccione *Ver detalles - prueba gratuita* o, desde la esquina superior derecha de la página, seleccione *Prueba gratuita*.
++
+image:screen-br-landing-unified-end-trial.png["Captura de pantalla de la página de inicio de la prueba gratuita de NetApp Backup and Recovery"]
+
+. Seleccione *Finalizar prueba gratuita*.
+. En el cuadro de diálogo de confirmación Finalizar prueba gratuita, escriba *Finalizar prueba*.
+. Seleccione *Fin*.
+

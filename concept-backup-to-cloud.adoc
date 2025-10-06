@@ -1,0 +1,318 @@
+---
+sidebar: sidebar 
+permalink: concept-backup-to-cloud.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery es un servicio de datos que proporciona protección de datos eficiente, segura y rentable para todas sus cargas de trabajo de ONTAP , incluidos volúmenes, bases de datos, máquinas virtuales y cargas de trabajo de Kubernetes. 
+---
+= Obtenga más información sobre NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery es un servicio de datos que proporciona protección de datos eficiente, segura y rentable para todas sus cargas de trabajo de ONTAP , incluidos volúmenes, bases de datos, máquinas virtuales y cargas de trabajo de Kubernetes.
+
+La compatibilidad con copias de seguridad y recuperación ya está integrada en todos los sistemas ONTAP , por lo que no es necesario contar con hardware adicional, licencias de software ni puertas de enlace de medios.  Esto hace que las operaciones de backup sean sencillas y rentables.  La consola de NetApp simplifica la implementación de cualquier estrategia de respaldo, incluido el espectro completo de variantes de respaldo 3-2-1, sin necesidad de múltiples administradores de recursos o personal especializado.
+
+
+NOTE: Se proporciona documentación sobre la protección de cargas de trabajo de VMware, KVM, Hyper-V y Kubernetes como una vista previa de la tecnología. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de la disponibilidad general.
+
+
+
+== Qué puede hacer con NetApp Backup and Recovery
+
+Utilice NetApp Backup and Recovery para lograr los siguientes objetivos:
+
+* * Cargas de trabajo de volumen de ONTAP *:
++
+** Cree instantáneas locales, replique en almacenamiento secundario y realice copias de seguridad de volúmenes ONTAP desde sistemas ONTAP locales o Cloud Volumes ONTAP al almacenamiento de objetos en su cuenta de nube pública o privada.
+** Cree copias de seguridad incrementales a nivel de bloque y permanentes que se almacenan en otro clúster de ONTAP y en el almacenamiento de objetos en la nube.
+** Utilice NetApp Backup and Recovery junto con SnapCenter.
+** Consulte link:prev-ontap-protect-overview.html["Proteger volúmenes ONTAP"] .
+
+
+* *Cargas de trabajo de Microsoft SQL Server*:
++
+** Realice copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde ONTAP local, Cloud Volumes ONTAP o Amazon FSx for NetApp ONTAP.
+** Restaurar bases de datos de Microsoft SQL Server.
+** Clonar bases de datos de Microsoft SQL Server.
+** Utilice NetApp Backup and Recovery sin SnapCenter.
+** Consulte link:br-use-mssql-protect-overview.html["Proteger las cargas de trabajo de Microsoft SQL Server"] .
+
+
+* *Cargas de trabajo de VMware (versión preliminar con nueva interfaz de usuario sin SnapCenter Plug-in for VMware vSphere)*:
++
+** Proteja sus máquinas virtuales y almacenes de datos VMware con NetApp Backup and Recovery.
+** Realice copias de seguridad de las cargas de trabajo de VMware en Amazon Web Services S3 o StorageGRID (para vista previa).
+** Restaure datos de VMware desde la nube al vCenter local.
+** Utilice NetApp Backup and Recovery sin el SnapCenter Plug-in for VMware vSphere.
+** Consulte link:br-use-vmware-protect-overview.html["Proteger las cargas de trabajo de VMware"] .
+
+
+* *Cargas de trabajo de VMware (con SnapCenter Plug-in for VMware vSphere)*:
++
+** Realice copias de seguridad de máquinas virtuales y almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaure las máquinas virtuales en el SnapCenter Plug-in for VMware vSphere .
+** Restaure datos de máquinas virtuales desde la nube al vCenter local con NetApp Backup and Recovery. Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa.
+** Utilice NetApp Backup and Recovery junto con el SnapCenter Plug-in for VMware vSphere.
+** Consulte link:prev-vmware-protect-overview.html["Proteger las cargas de trabajo de VMware"] .
+
+
+* *Cargas de trabajo KVM (Vista previa)*:
++
+** Realizar copias de seguridad y restaurar máquinas virtuales
+** Realizar copias de seguridad de los grupos de almacenamiento de KVM
+** Utilice grupos de protección para administrar tareas de copia de seguridad
+** Consulte link:br-use-kvm-protect-overview.html["Proteja las cargas de trabajo de KVM"] .
+
+
+* *Cargas de trabajo de Hyper-V (versión preliminar)*:
++
+** Realizar copias de seguridad y restaurar máquinas virtuales
+** Utilice grupos de protección para administrar tareas de copia de seguridad
+** Consulte link:br-use-hyperv-protect-overview.html["Proteger las cargas de trabajo de Hyper-V"] .
+
+
+* *Cargas de trabajo de Oracle (vista previa)*:
++
+** Realizar copias de seguridad y restaurar bases de datos y registros
+** Utilice grupos de protección para administrar tareas de copia de seguridad
+** Crear políticas para administrar copias de seguridad de bases de datos y registros
+** Protección de una base de datos con una arquitectura de copia de seguridad 3-2-1
+** Configurar la retención de copias de seguridad
+** Montar y desmontar copias de seguridad de ARCHIVELOG
+** Consulte link:br-use-oracle-protect-overview.html["Proteja las cargas de trabajo de Oracle"] .
+
+
+* *Cargas de trabajo de Kubernetes (versión preliminar)*:
++
+** Administre y proteja sus aplicaciones y recursos de Kubernetes, todo en un solo lugar.
+** Utilice políticas de protección para estructurar sus copias de seguridad incrementales.
+** Restaurar aplicaciones y recursos en los mismos clústeres y espacios de nombres o en clústeres diferentes.
+** Utilice NetApp Backup and Recovery sin SnapCenter.
+** Consulte link:br-use-kubernetes-protect-overview.html["Proteger las cargas de trabajo de Kubernetes"] .
+
+
+
+
+
+
+== Beneficios de utilizar NetApp Backup and Recovery
+
+NetApp Backup and Recovery ofrece los siguientes beneficios:
+
+* **Eficiente**: NetApp Backup and Recovery realiza una replicación incremental permanente a nivel de bloque, lo que reduce significativamente la cantidad de datos que se replican y almacenan.  Esto ayuda a minimizar el tráfico de la red y los costos de almacenamiento.
+* **Seguro**: NetApp Backup and Recovery cifra los datos en tránsito y en reposo, y utiliza protocolos de comunicación seguros para proteger sus datos.
+* **Rentable**: NetApp Backup and Recovery utiliza los niveles de almacenamiento de menor costo disponibles en su cuenta de nube, lo que ayuda a reducir costos.
+* **Automatizado**: NetApp Backup and Recovery genera automáticamente copias de seguridad según un programa predefinido, lo que ayuda a garantizar que sus datos estén protegidos.
+* **Flexible**: NetApp Backup and Recovery le permite restaurar datos en el mismo sistema o en uno diferente, lo que proporciona flexibilidad en la recuperación de datos.
+
+
+
+
+== Costo
+
+NetApp no ​​le cobra por utilizar la versión de prueba.  Sin embargo, usted es responsable de los costos asociados con los recursos en la nube que utiliza, como los costos de almacenamiento y transferencia de datos.
+
+Hay dos tipos de costos asociados con el uso de la función de respaldo a objeto de NetApp Backup and Recovery con sistemas ONTAP :
+
+* Cargos por recursos
+* Cargos por servicio
+
+
+No hay ningún costo para crear copias instantáneas o volúmenes replicados, excepto el espacio en disco necesario para almacenar las copias instantáneas y los volúmenes replicados.
+
+*Cargos por recursos*
+
+Los cargos por recursos se pagan al proveedor de la nube por la capacidad de almacenamiento de objetos y por escribir y leer archivos de respaldo en la nube.
+
+* Para realizar copias de seguridad en almacenamiento de objetos, usted paga a su proveedor de nube los costos de almacenamiento de objetos.
++
+Debido a que NetApp Backup and Recovery preserva las eficiencias de almacenamiento del volumen de origen, usted paga al proveedor de la nube los costos de almacenamiento de objetos por los datos _después_ de las eficiencias de ONTAP (para la menor cantidad de datos después de que se hayan aplicado la deduplicación y la compresión).
+
+* Para restaurar datos mediante Búsqueda y restauración, su proveedor de nube proporciona ciertos recursos y existe un costo por TiB asociado con la cantidad de datos escaneados por sus solicitudes de búsqueda.  (Estos recursos no son necesarios para Explorar y restaurar).
++
+ifdef::aws[]
+
++
+** En AWS, https://aws.amazon.com/athena/faqs/["Amazona Atenea"^] y https://aws.amazon.com/glue/faqs/["Pegamento de AWS"^] Los recursos se implementan en un nuevo bucket S3.
++
+endif::aws[]
+
+
+
++
+ifdef::azure[]
+
++
+** En Azure, un https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Área de trabajo de Azure Synapse"^] y https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Almacenamiento de Azure Data Lake"^] Se aprovisionan en su cuenta de almacenamiento para almacenar y analizar sus datos.
++
+endif::azure[]
+
+
+
+
+
+ifdef::gcp[]
+
+* En Google, se implementa un nuevo depósito y el https://cloud.google.com/bigquery["Servicios de Google Cloud BigQuery"^] se aprovisionan a nivel de cuenta/proyecto. endif::gcp[]
++
+** Si planea restaurar datos de volumen desde un archivo de respaldo que se ha movido al almacenamiento de objetos de archivo, entonces hay una tarifa de recuperación adicional por GiB y una tarifa por solicitud del proveedor de la nube.
+** Si planea escanear un archivo de respaldo en busca de ransomware durante el proceso de restauración de datos de volumen (si habilitó DataLock y Ransomware Protection para sus copias de seguridad en la nube), también incurrirá en costos de salida adicionales de su proveedor de la nube.
+
+
+
+
+*Cargos por servicio*
+
+Los cargos por servicio se pagan a NetApp y cubren tanto el costo de _crear_ copias de seguridad en el almacenamiento de objetos como de _restaurar_ volúmenes o archivos a partir de esas copias de seguridad.  Usted paga solo por los datos que protege en el almacenamiento de objetos, calculados según la capacidad lógica utilizada de origen (antes de las eficiencias de ONTAP ) de los volúmenes de ONTAP respaldados en el almacenamiento de objetos.  Esta capacidad también se conoce como Front-End Terabytes (FETB).
+
+
+NOTE: Para Microsoft SQL Server, se aplican cargos cuando inicia la replicación de instantáneas a un destino ONTAP secundario o a un almacenamiento de objetos.
+
+Hay tres formas de pagar el servicio de Backup:
+
+* La primera opción es suscribirse a través de su proveedor de nube, lo que le permite pagar por mes.
+* La segunda opción es obtener un contrato anual.
+* La tercera opción es comprar licencias directamente de NetApp.  Lea el<<Licencias,Licencias>> Sección para más detalles.
+
+
+
+
+== Licencias
+
+NetApp Backup and Recovery está disponible como prueba gratuita.  Puede utilizar el servicio sin una clave de licencia por tiempo limitado.
+
+NetApp Backup and Recovery está disponible con los siguientes modelos de consumo:
+
+* *Traiga su propia licencia (BYOL)*: una licencia comprada a NetApp que se puede usar con cualquier proveedor de nube.
+* *Pago por uso (PAYGO)*: una suscripción por hora desde el mercado de su proveedor de nube.
+* *Anual*: Un contrato anual del mercado de su proveedor de nube.
+
+
+Se requiere una licencia de respaldo solo para realizar copias de seguridad y restaurar desde el almacenamiento de objetos.  La creación de copias instantáneas y volúmenes replicados no requiere una licencia.
+
+*Traiga su propia licencia*
+
+BYOL se basa en el plazo (1, 2 o 3 años) y en la capacidad en incrementos de 1 TiB.  Usted paga a NetApp para usar el servicio durante un período de tiempo, digamos 1 año, y por una capacidad máxima, digamos 10 TiB.
+
+Recibirá un número de serie que deberá ingresar en la consola de NetApp para habilitar el servicio.  Cuando se alcance cualquiera de los límites, deberá renovar la licencia.  La licencia de Backup BYOL se aplica a todos los sistemas de origen asociados con su organización o cuenta de NetApp Console.
+
+link:br-start-licensing.html["Aprenda a configurar licencias"] .
+
+*Suscripción de pago por uso*
+
+NetApp Backup and Recovery ofrece licencias basadas en el consumo en un modelo de pago por uso.  Después de suscribirse a través del mercado de su proveedor de nube, usted paga por GiB por los datos respaldados (no hay pago inicial). Su proveedor de nube le facturará a través de su factura mensual.
+
+Tenga en cuenta que hay una prueba gratuita de 30 días disponible cuando se registra inicialmente con una suscripción PAYGO.
+
+*Contrato anual*
+
+ifdef::aws[]
+
+Cuando utiliza AWS, hay dos contratos anuales disponibles por 1, 2 o 3 años:
+
+* Un plan de "Copia de seguridad en la nube" que le permite realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos de ONTAP locales.
+* Un plan "CVO Professional" que le permite combinar Cloud Volumes ONTAP y NetApp Backup and Recovery.  Esto incluye copias de seguridad ilimitadas para los volúmenes de Cloud Volumes ONTAP cargados contra esta licencia (la capacidad de copia de seguridad no se descuenta de la licencia). endif::aws[]
+
+
+ifdef::azure[]
+
+Cuando utiliza Azure, hay dos contratos anuales disponibles por 1, 2 o 3 años:
+
+* Un plan de "Copia de seguridad en la nube" que le permite realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos de ONTAP locales.
+* Un plan "CVO Professional" que le permite combinar Cloud Volumes ONTAP y NetApp Backup and Recovery.  Esto incluye copias de seguridad ilimitadas para los volúmenes de Cloud Volumes ONTAP cargados contra esta licencia (la capacidad de copia de seguridad no se descuenta de la licencia). endif::azure[]
+
+
+ifdef::gcp[]
+
+Cuando usa GCP, puede solicitar una oferta privada de NetApp y luego seleccionar el plan cuando se suscriba desde Google Cloud Marketplace durante la activación de NetApp Backup and Recovery. endif::gcp[]
+
+
+
+== Fuentes de datos, sistemas y destinos de respaldo compatibles
+
+.Fuentes de datos de carga de trabajo compatibles
+NetApp Backup and Recovery protege las siguientes cargas de trabajo:
+
+* Volúmenes de ONTAP
+* Instancias y bases de datos de Microsoft SQL Server para NFS físico, VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK)
+* Máquinas virtuales y almacenes de datos de VMware
+* Cargas de trabajo KVM (Vista previa)
+* Cargas de trabajo de Hyper-V (versión preliminar)
+* Cargas de trabajo de Kubernetes (versión preliminar)
+
+
+.Sistemas compatibles
+* SAN ONTAP local (protocolo iSCSI) y NAS (mediante protocolos NFS y CIFS) con ONTAP versión 9.8 y superior
+* Cloud Volumes ONTAP 9.8 o superior para AWS (usando SAN y NAS)
+
+
+* Cloud Volumes ONTAP 9.8 o superior para Microsoft Azure (usando SAN y NAS)
+* Amazon FSx for NetApp ONTAP
+
+
+.Objetivos de respaldo admitidos
+* Servicios web de Amazon (AWS) S3
+* Microsoft Azure Blob (no disponible para cargas de trabajo de VMware en versión preliminar)
+* StorageGRID
+* ONTAP S3 (no disponible para cargas de trabajo de VMware en versión preliminar)
+
+
+
+
+== Cómo funciona NetApp Backup and Recovery
+
+Cuando habilita NetApp Backup and Recovery, el servicio realiza una copia de seguridad completa de sus datos.  Después de la copia de seguridad inicial, todas las copias de seguridad adicionales son incrementales.  Esto mantiene el tráfico de red al mínimo.
+
+La siguiente imagen muestra la relación entre los componentes.
+
+image:diagram-br-321-aff-a.png["Un diagrama que muestra cómo NetApp Backup and Recovery utiliza una estrategia de protección 3-2-1"]
+
+
+NOTE: También se admite el paso del almacenamiento primario al almacenamiento de objetos, no solo del almacenamiento secundario al almacenamiento de objetos.
+
+
+
+=== Dónde residen las copias de seguridad en las ubicaciones del almacén de objetos
+
+Las copias de seguridad se almacenan en un almacén de objetos que la consola de NetApp crea en su cuenta en la nube.  Hay un almacén de objetos por clúster o sistema, y ​​la consola nombra el almacén de objetos de la siguiente manera: `netapp-backup-clusteruuid` .  Asegúrese de no eliminar este almacén de objetos.
+
+ifdef::aws[]
+
+* En AWS, la consola de NetApp permite https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Función de acceso público bloqueado de Amazon S3"^] en el depósito S3. endif::aws[]
+
+
+ifdef::azure[]
+
+* En Azure, la consola de NetApp usa un grupo de recursos nuevo o existente con una cuenta de almacenamiento para el contenedor de blobs. la consola https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["bloquea el acceso público a sus datos de blobs"] por defecto. endif::azure[]
+
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+* En StorageGRID, la consola utiliza una cuenta de almacenamiento existente para el depósito de almacenamiento de objetos.
+* En ONTAP S3, la consola utiliza una cuenta de usuario existente para el bucket S3.
+
+
+
+
+=== Las copias de seguridad están asociadas con su organización de consola NetApp
+
+Las copias de seguridad están asociadas con la organización de la consola de NetApp en la que reside el agente de la consola. https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Obtenga más información sobre la identidad y el acceso a la consola de NetApp"^] .
+
+Si tiene varios agentes de consola en la misma organización de consola de NetApp , cada agente de consola muestra la misma lista de copias de seguridad.
+
+
+
+== Términos que podrían ayudarle con NetApp Backup and Recovery
+
+Podría resultarle beneficioso comprender algunos términos relacionados con la protección.
+
+* *Protección*: La protección en NetApp Backup and Recovery significa garantizar que se realicen instantáneas y copias de seguridad inmutables de forma periódica en un dominio de seguridad diferente mediante políticas de protección.
+* *Carga de trabajo*: una carga de trabajo en NetApp Backup and Recovery puede incluir volúmenes ONTAP , instancias y bases de datos de Microsoft SQL Server; máquinas virtuales y almacenes de datos de VMware; o aplicaciones y clústeres de Kubernetes.
+

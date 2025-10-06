@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: br-start-login.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Utilice la consola de NetApp para iniciar sesión en el servicio de copia de seguridad y recuperación de NetApp . 
+---
+= Inicie sesión en NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilice la consola de NetApp para iniciar sesión en NetApp Backup and Recovery.
+
+NetApp Backup and Recovery utiliza la gestión de identidad y acceso para controlar el acceso que tiene cada usuario a acciones específicas.
+
+Para obtener detalles sobre las acciones que puede realizar cada rol, consultelink:reference-roles.html["Roles de usuario de NetApp Backup and Recovery"] .
+
+Para iniciar sesión en la consola de NetApp , puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la consola de NetApp usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
+
+*Rol de consola de NetApp requerido* Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de respaldo y recuperación, administrador de restauración de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+Para agregar un agente de consola, debe tener el rol de administrador de la organización o el rol de superadministrador de copia de seguridad y recuperación.
+
+.Pasos
+. Abra un navegador web y vaya a https://console.netapp.com/["Consola de NetApp"^] .
++
+Aparece la página de inicio de sesión de la consola de NetApp .
+
+. Inicie sesión en la consola.
+. Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
++
+** Si es la primera vez que inicia sesión en este servicio y aún no ha agregado un sistema a la página *Sistemas*, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y se muestra una opción para agregar un sistema.  Para obtener detalles sobre cómo agregar un sistema a la página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la consola de NetApp"^] .
+** Si es la primera vez que inicia sesión en este servicio y ya agregó un sistema a la página *Sistemas*, pero no descubrió ningún recurso, aparece la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
+
+
+. Si aún no lo ha hecho, seleccione la opción *Descubrir y administrar*.  <<<<<<< CABEZA
++
+** Para cargas de trabajo de Microsoft SQL Server, consultelink:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server"] .
+** Para cargas de trabajo de VMware, consultelink:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"] .
+** Para cargas de trabajo KVM, consultelink:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"] .
+** Para cargas de trabajo de Hyper-V, consultelink:br-start-discover-hyperv.html["Descubra las cargas de trabajo de Hyper-V"] .
+** Para cargas de trabajo de Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"] .
+
+
+
+
+[]
+====
++ * Para cargas de trabajo de Microsoft SQL Server, consultelink:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server"] .  * Para cargas de trabajo de VMware, consultelink:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"] .  * Para cargas de trabajo KVM, consultelink:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"] .  * Para cargas de trabajo de Oracle, consultelink:br-start-discover-oracle.html["Descubra las cargas de trabajo de Oracle"] .  * Para cargas de trabajo de Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"] .
+
+>>>>>>> 6b2aaa82d1d2ec0ac72303b380f289e4a01ba4c6
+
+====

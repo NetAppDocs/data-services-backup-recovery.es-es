@@ -1,0 +1,536 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-onprem-gcp.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Realice una copia de seguridad de los datos locales de ONTAP en Google Cloud Storage con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales primarios a un sistema de almacenamiento secundario y a Google Cloud Storage.
+
+
+NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+
+
+== Identificar el método de conexión
+
+Elija cuál de los dos métodos de conexión utilizará al configurar copias de seguridad de los sistemas ONTAP locales a Google Cloud Storage.
+
+* *Conexión pública*: conecte directamente el sistema ONTAP a Google Cloud Storage mediante un punto final público de Google.
+* *Conexión privada*: utilice una VPN o Google Cloud Interconnect y enrute el tráfico a través de una interfaz de acceso privado de Google que utiliza una dirección IP privada.
+
+
+Opcionalmente, también puede conectarse a un sistema ONTAP secundario para volúmenes replicados utilizando la conexión pública o privada.
+
+El siguiente diagrama muestra el método de *conexión pública* y las conexiones que debe preparar entre los componentes. El agente de consola debe implementarse en la VPC de Google Cloud Platform.
+
+image:diagram_cloud_backup_onprem_gcp_public.png["Un diagrama que muestra cómo NetApp Backup and Recovery se comunica a través de una conexión pública con los volúmenes del clúster y el almacenamiento de Google Cloud donde se encuentran los archivos de respaldo."]
+
+El siguiente diagrama muestra el método de *conexión privada* y las conexiones que debe preparar entre los componentes. El agente de consola debe implementarse en la VPC de Google Cloud Platform.
+
+image:diagram_cloud_backup_onprem_gcp_private.png["Un diagrama que muestra cómo NetApp Backup and Recovery se comunica a través de una conexión privada con los volúmenes del clúster y el almacenamiento de Google Cloud donde se encuentran los archivos de respaldo."]
+
+
+
+== Prepare su agente de consola
+
+El agente de consola es el software principal para la funcionalidad de la consola.  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
+
+
+
+=== Crear o cambiar agentes de consola
+
+Si ya tienes un agente de consola implementado en tu VPC de Google Cloud Platform, entonces estás listo.
+
+De lo contrario, deberá crear un agente de consola en esa ubicación para realizar una copia de seguridad de los datos de ONTAP en Google Cloud Storage.  No puedes usar un agente de consola que esté implementado en otro proveedor de nube o en instalaciones locales.
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Instalar un agente de consola en GCP"^]
+
+
+
+
+== Preparar la red para el agente de consola
+
+Asegúrese de que el agente de consola tenga las conexiones de red necesarias.
+
+.Pasos
+. Asegúrese de que la red donde está instalado el agente de consola permita las siguientes conexiones:
++
+** Una conexión HTTPS a través del puerto 443 a NetApp Backup and Recovery y a su almacenamiento de Google Cloud(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["ver la lista de puntos finales"^] )
+** Una conexión HTTPS a través del puerto 443 a su LIF de administración de clúster ONTAP
+
+
+. Habilite el acceso privado de Google (o la conexión de servicio privada) en la subred donde planea implementar el agente de la consola. https://cloud.google.com/vpc/docs/configure-private-google-access["Acceso privado a Google"^] o https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises["Conexión de servicio privado"^] son necesarios si tiene una conexión directa desde su clúster ONTAP a la VPC y desea que la comunicación entre el agente de la consola y Google Cloud Storage permanezca en su red privada virtual (una conexión *privada*).
++
+Siga las instrucciones de Google para configurar estas opciones de acceso privado.  Asegúrese de que sus servidores DNS se hayan configurado para apuntar `www.googleapis.com` y `storage.googleapis.com` a las direcciones IP internas (privadas) correctas.
+
+
+
+
+
+=== Verificar o agregar permisos al agente de la consola
+
+Para utilizar la funcionalidad "Buscar y restaurar" de NetApp Backup and Recovery, debe tener permisos específicos en el rol del agente de consola para que pueda acceder al servicio Google Cloud BigQuery.  Revise los permisos a continuación y siga los pasos si necesita modificar la política.
+
+.Pasos
+. En el https://console.cloud.google.com["Consola de Google Cloud"^] , vaya a la página *Roles*.
+. Utilizando la lista desplegable en la parte superior de la página, seleccione el proyecto u organización que contiene el rol que desea editar.
+. Seleccione un rol personalizado.
+. Seleccione *Editar rol* para actualizar los permisos del rol.
+. Seleccione *Agregar permisos* para agregar los siguientes permisos nuevos al rol.
++
+[source, json]
+----
+bigquery.jobs.get
+bigquery.jobs.list
+bigquery.jobs.listAll
+bigquery.datasets.create
+bigquery.datasets.get
+bigquery.jobs.create
+bigquery.tables.get
+bigquery.tables.getData
+bigquery.tables.list
+bigquery.tables.create
+----
+. Seleccione *Actualizar* para guardar el rol editado.
+
+
+
+
+== Verificar los requisitos de la licencia
+
+* Antes de poder activar NetApp Backup and Recovery para su clúster, deberá suscribirse a una oferta de Console Marketplace de pago por uso (PAYGO) de Google o comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp.  Estas licencias son para su cuenta y se pueden usar en múltiples sistemas.
++
+** Para obtener la licencia PAYGO de NetApp Backup and Recovery, necesitará una suscripción a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Oferta de consola de NetApp de Google Marketplace"^] .  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
+** Para obtener una licencia BYOL de NetApp Backup and Recovery, necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .
+
+
+* Necesita tener una suscripción a Google para el espacio de almacenamiento de objetos donde se ubicarán sus copias de seguridad.
+
+
+*Regiones compatibles*
+
+Puede crear copias de seguridad desde sistemas locales a Google Cloud Storage en todas las regiones.  Usted especifica la región donde se almacenarán las copias de seguridad cuando configura el servicio.
+
+
+
+== Prepare sus clústeres ONTAP
+
+Necesitará preparar su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
+
+La preparación de sus clústeres ONTAP implica los siguientes pasos:
+
+* Descubra sus sistemas ONTAP en NetApp Console
+* Verificar los requisitos del sistema ONTAP
+* Verificar los requisitos de red de ONTAP para realizar copias de seguridad de datos en el almacenamiento de objetos
+* Verificar los requisitos de red de ONTAP para replicar volúmenes
+
+
+
+
+=== Descubra sus sistemas ONTAP en NetApp Console
+
+Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la consola de NetApp .
+
+Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^] .
+
+
+
+=== Verificar los requisitos del sistema ONTAP
+
+Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
+
+* Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
+* Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
++
+*Nota:* El “Paquete de nube híbrida” no es necesario cuando se utiliza NetApp Backup and Recovery.
+
++
+Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Administrar sus licencias de clúster"^] .
+
+* La hora y la zona horaria están configuradas correctamente.  Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Configurar el tiempo de su clúster"^] .
+* Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^] .
+
+
+
+
+
+=== Verificar los requisitos de red de ONTAP para realizar copias de seguridad de datos en el almacenamiento de objetos
+
+Debe configurar los siguientes requisitos en el sistema que se conecta al almacenamiento de objetos.
+
+* Para una arquitectura de respaldo en abanico, configure los siguientes ajustes en el sistema _principal_.
+* Para una arquitectura de respaldo en cascada, configure los siguientes ajustes en el sistema _secundario_.
+
+
+Se necesitan los siguientes requisitos de red del clúster ONTAP :
+
+* El clúster ONTAP inicia una conexión HTTPS a través del puerto 443 desde el LIF entre clústeres a Google Cloud Storage para operaciones de respaldo y restauración.
++
+ONTAP lee y escribe datos hacia y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, simplemente responde.
+
+* ONTAP requiere una conexión entrante desde el agente de la consola al LIF de administración del clúster.  El agente de la consola puede residir en una VPC de Google Cloud Platform.
+* Se requiere un LIF entre clústeres en cada nodo de ONTAP que aloje los volúmenes que desea respaldar.  El LIF debe estar asociado con el _IPspace_ que ONTAP debe usar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información sobre IPspaces"^] .
++
+Cuando configura NetApp Backup and Recovery, se le solicita el espacio IP que desea utilizar. Debes elegir el espacio IP con el que está asociado cada LIF. Ese podría ser el espacio IP "predeterminado" o un espacio IP personalizado que usted creó.
+
+* Los LIF entre clústeres de los nodos pueden acceder al almacén de objetos.
+* Se han configurado servidores DNS para la máquina virtual de almacenamiento donde se encuentran los volúmenes.  Vea cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configurar servicios DNS para la SVM"^] .
++
+Si está utilizando Private Google Access o Private Service Connect, asegúrese de que sus servidores DNS estén configurados para apuntar `storage.googleapis.com` a la dirección IP interna (privada) correcta.
+
+* Tenga en cuenta que si utiliza un espacio IP diferente al predeterminado, es posible que deba crear una ruta estática para obtener acceso al almacenamiento de objetos.
+* Actualice las reglas de firewall, si es necesario, para permitir conexiones de NetApp Backup and Recovery desde ONTAP al almacenamiento de objetos a través del puerto 443, y tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS a través del puerto 53 (TCP/UDP).
+
+
+
+
+=== Verificar los requisitos de red de ONTAP para replicar volúmenes
+
+Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.
+
+
+
+==== Requisitos de red de ONTAP local
+
+* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube.  Normalmente se trata de una conexión VPN.
+* Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
++
+Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
+
+
+
+
+
+==== Requisitos de red de Cloud Volumes ONTAP
+
+* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105.  Estas reglas están incluidas en el grupo de seguridad predefinido.
+
+
+
+
+== Prepare Google Cloud Storage como su destino de respaldo
+
+Para preparar Google Cloud Storage como destino de respaldo, siga estos pasos:
+
+* Configurar permisos.
+* (Opcional) Crea tus propios buckets.  (El servicio creará depósitos para usted si lo desea).
+* (Opcional) Configure claves administradas por el cliente para el cifrado de datos
+
+
+
+
+=== Configurar permisos
+
+Debe proporcionar claves de acceso de almacenamiento para una cuenta de servicio que tenga permisos específicos mediante un rol personalizado.  Una cuenta de servicio permite que NetApp Backup and Recovery autentique y acceda a los depósitos de Cloud Storage que se utilizan para almacenar copias de seguridad. Las claves son necesarias para que Google Cloud Storage sepa quién realiza la solicitud.
+
+.Pasos
+. En el https://console.cloud.google.com["Consola de Google Cloud"^] , vaya a la página *Roles*.
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Crear un nuevo rol"^]con los siguientes permisos:
++
+[source, json]
+----
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
+----
+. En la consola de Google Cloud, https://console.cloud.google.com/iam-admin/serviceaccounts["Vaya a la página de Cuentas de servicio"^] .
+. Seleccione su proyecto en la nube.
+. Seleccione *Crear cuenta de servicio* y proporcione la información requerida:
++
+.. *Detalles de la cuenta de servicio*: Ingrese un nombre y una descripción.
+.. *Otorgar a esta cuenta de servicio acceso al proyecto*: seleccione el rol personalizado que acaba de crear.
+.. Seleccione *Listo*.
+
+
+. Ir a https://console.cloud.google.com/storage/settings["Configuración de almacenamiento de GCP"^] y crear claves de acceso para la cuenta de servicio:
++
+.. Seleccione un proyecto y seleccione *Interoperabilidad*. Si aún no lo ha hecho, seleccione *Habilitar acceso de interoperabilidad*.
+.. En *Claves de acceso para cuentas de servicio*, seleccione *Crear una clave para una cuenta de servicio*, seleccione la cuenta de servicio que acaba de crear y haga clic en *Crear clave*.
++
+Necesitará ingresar las claves en NetApp Backup and Recovery más adelante cuando configure el servicio de respaldo.
+
+
+
+
+
+
+
+=== Crea tus propios cubos
+
+De forma predeterminada, el servicio crea depósitos para usted.  O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esos depósitos en el asistente.
+
+link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propios buckets"^] .
+
+
+
+=== Configurar claves de cifrado administradas por el cliente (CMEK) para el cifrado de datos
+
+Puede utilizar sus propias claves administradas por el cliente para el cifrado de datos en lugar de utilizar las claves de cifrado predeterminadas administradas por Google.  Se admiten claves entre regiones y entre proyectos, por lo que puede elegir un proyecto para un bucket que sea diferente al proyecto de la clave CMEK.
+
+Si planea utilizar sus propias claves administradas por el cliente:
+
+* Necesitarás tener el llavero y el nombre de la clave para poder agregar esta información en el asistente de activación. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado administradas por el cliente"^] .
+* Deberá verificar que estos permisos requeridos estén incluidos en la función del agente de consola:
++
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* Deberá verificar que la API "Cloud Key Management Service (KMS)" de Google esté habilitada en su proyecto. Ver el https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentación de Google Cloud: Habilitación de API"^] Para más detalles.
+
+
+Consideraciones sobre CMEK:
+
+* Se admiten claves generadas por software y HSM (respaldadas por hardware).
+* Se admiten claves Cloud KMS recién creadas o importadas.
+* Solo se admiten claves regionales, no claves globales.
+* Actualmente, solo se admite el propósito de "Cifrado/descifrado simétrico".
+* NetApp Backup and Recovery asigna el rol de IAM "CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)" al agente de servicio asociado con la cuenta de almacenamiento.
+
+
+
+
+== Activar copias de seguridad en sus volúmenes ONTAP
+
+Active las copias de seguridad en cualquier momento directamente desde su sistema local.
+
+Un asistente lo guiará a través de los siguientes pasos principales:
+
+* <<Seleccione los volúmenes que desea respaldar>>
+* <<Definir la estrategia de backup>>
+* <<Revise sus selecciones>>
+
+
+También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pueda copiar el código para automatizar la activación de la copia de seguridad para sistemas futuros.
+
+
+
+=== Iniciar el asistente
+
+.Pasos
+. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
++
+** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto a Copia de seguridad y recuperación en el panel derecho.
++
+Si el destino de Google Cloud Storage para sus copias de seguridad existe como en la página *Sistemas* de la consola, puede arrastrar el clúster de ONTAP al almacenamiento de objetos de Google Cloud.
+
+** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación.  Desde la pestaña Volúmenes, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
+
+
++
+La página de Introducción del asistente muestra las opciones de protección, incluidas instantáneas locales, replicación y copias de seguridad.  Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de respaldo con un volumen seleccionado.
+
+. Continúe con las siguientes opciones:
++
+** Si ya tienes un agente de consola, ya estás listo.  Simplemente seleccione *Siguiente*.
+** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*. Consulte <<Prepare su agente de consola>> .
+
+
+
+
+
+
+=== Seleccione los volúmenes que desea respaldar
+
+Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
+
+Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar la copia de seguridad de un sistema.  Vea cómolink:prev-ontap-backup-manage.html["Activar la copia de seguridad para volúmenes adicionales en el sistema"] (FlexVol o FlexGroup) después de haber configurado la copia de seguridad para los volúmenes iniciales.
+
+[NOTE]
+====
+* Puede activar una copia de seguridad solo en un único volumen FlexGroup a la vez.
+* Los volúmenes que seleccione deben tener la misma configuración SnapLock .  Todos los volúmenes deben tener SnapLock Enterprise habilitado o tener SnapLock deshabilitado.
+
+
+====
+.Pasos
+Si los volúmenes que elige ya tienen políticas de instantáneas o replicación aplicadas, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.
+
+. En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.
++
+** Opcionalmente, filtre las filas para mostrar solo volúmenes con determinados tipos de volumen, estilos y más para facilitar la selección.
+** Después de seleccionar el primer volumen, puede seleccionar todos los volúmenes FlexVol (los volúmenes FlexGroup se pueden seleccionar uno a la vez solamente).  Para realizar una copia de seguridad de todos los volúmenes FlexVol existentes, marque primero un volumen y luego marque la casilla en la fila del título.
+** Para realizar una copia de seguridad de volúmenes individuales, marque la casilla de cada volumen.
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+=== Definir la estrategia de backup
+
+Definir la estrategia de backup implica configurar las siguientes opciones:
+
+* Ya sea que desee una o todas las opciones de respaldo: instantáneas locales, replicación y respaldo en almacenamiento de objetos
+* Arquitectura
+* Política de instantáneas locales
+* Objetivo y política de replicación
++
+
+NOTE: Si los volúmenes que elige tienen políticas de instantáneas y replicación diferentes a las políticas que selecciona en este paso, se sobrescribirán las políticas existentes.
+
+* Realizar copias de seguridad de la información de almacenamiento de objetos (proveedor, cifrado, redes, política de copia de seguridad y opciones de exportación).
+
+
+.Pasos
+. En la página Definir estrategia de respaldo, elija una o todas las siguientes opciones.  Los tres están seleccionados por defecto:
++
+** *Instantáneas locales*: si está realizando una replicación o una copia de seguridad en un almacenamiento de objetos, se deben crear instantáneas locales.
+** *Replicación*: crea volúmenes replicados en otro sistema de almacenamiento ONTAP .
+** *Copia de seguridad*: realiza copias de seguridad de los volúmenes en el almacenamiento de objetos.
+
+
+. *Arquitectura*: Si eligió replicación y copia de seguridad, elija uno de los siguientes flujos de información:
++
+** *En cascada*: la información fluye del almacenamiento primario al secundario y del secundario al de objetos.
+** *Distribución en abanico*: la información fluye desde el almacenamiento primario al secundario _y_ desde el primario al almacenamiento de objetos.
++
+Para obtener detalles sobre estas arquitecturas, consultelink:prev-ontap-protect-journey.html["Planifique su viaje de protección"] .
+
+
+
+. *Instantánea local*: elija una política de instantáneas existente o cree una nueva.
++
+
+TIP: Para crear una política personalizada, consultelink:br-use-policies-create.html["Crear una política"] .
+
++
+Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
+
++
+** Introduzca el nombre de la póliza.
+** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+** Seleccione *Crear*.
+
+
+. *Replicación*: Establezca las siguientes opciones:
++
+** *Objetivo de replicación*: seleccione el sistema de destino y SVM.  Opcionalmente, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregarán al nombre del volumen replicado.
+** *Política de replicación*: elija una política de replicación existente o cree una nueva.
++
+
+TIP: Para crear una política personalizada, consultelink:br-use-policies-create.html["Crear una política"] .
+
++
+Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
+
++
+*** Introduzca el nombre de la póliza.
+*** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+
+
+. *Copia de seguridad del objeto*: si seleccionó *Copia de seguridad*, configure las siguientes opciones:
++
+** *Proveedor*: Seleccione *Google Cloud*.
+** *Configuración del proveedor*: ingrese los detalles del proveedor y la región donde se almacenarán las copias de seguridad.
++
+Cree un nuevo depósito o seleccione uno que ya haya creado.
+
++
+
+TIP: Si desea almacenar archivos de respaldo más antiguos en el almacenamiento de Google Cloud Archive para optimizar aún más los costos, asegúrese de que el depósito tenga la regla de ciclo de vida adecuada.
+
++
+Introduzca la clave de acceso y la clave secreta de Google Cloud.
+
+** *Clave de cifrado*: si creó una nueva cuenta de almacenamiento de Google Cloud, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado predeterminadas de Google Cloud o elegirá sus propias claves administradas por el cliente desde su cuenta de Google Cloud para administrar el cifrado de sus datos.
++
+
+NOTE: Si eligió una cuenta de almacenamiento de Google Cloud existente, la información de cifrado ya está disponible, por lo que no necesita ingresarla ahora.
+
++
+Si elige utilizar sus propias claves administradas por el cliente, ingrese el llavero y el nombre de la clave. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado administradas por el cliente"^] .
+
+** *Redes*: Elija el espacio IP.
++
+El espacio IP en el clúster ONTAP donde residen los volúmenes que desea respaldar.  Los LIF entre clústeres para este espacio IP deben tener acceso a Internet saliente.
+
+** *Política de respaldo*: seleccione una política de copia de seguridad en almacenamiento de objetos existente o cree una nueva.
++
+
+TIP: Para crear una política personalizada, consultelink:br-use-policies-create.html["Crear una política"] .
+
++
+Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
+
++
+*** Introduzca el nombre de la póliza.
+*** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+** *Exportar copias de instantáneas existentes al almacenamiento de objetos como copias de respaldo*: si hay copias de instantáneas locales para volúmenes en este sistema que coinciden con la etiqueta de programación de respaldo que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se muestra este mensaje adicional.  Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+=== Revise sus selecciones
+
+Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
+
+.Pasos
+. En la página Revisar, revise sus selecciones.
+. Opcionalmente, marque la casilla para *Sincronizar automáticamente las etiquetas de la política de instantáneas con las etiquetas de la política de replicación y copia de seguridad*.  Esto crea instantáneas con una etiqueta que coincide con las etiquetas en las políticas de replicación y copia de seguridad.
+. Seleccione *Activar copia de seguridad*.
+
+
+.Resultado
+NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes.  La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos del sistema de almacenamiento principal.  Las transferencias posteriores contienen copias diferenciales de los datos del sistema de almacenamiento primario contenidos en las copias instantáneas.
+
+Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen de origen.
+
+Se crea automáticamente un depósito de Google Cloud Storage en la cuenta de servicio indicada por la clave de acceso de Google y la clave secreta ingresadas, y los archivos de respaldo se almacenan allí.  Se muestra el panel de control de copias de seguridad de volumen para que pueda supervisar el estado de las copias de seguridad.
+
+También puede supervisar el estado de los trabajos de copia de seguridad y restauración mediante ellink:br-use-monitor-tasks.html["Página de seguimiento de trabajos"^] .
+
+
+
+=== Mostrar los comandos API
+
+Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+
+.Pasos
+. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
+

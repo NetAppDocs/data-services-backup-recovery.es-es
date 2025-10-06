@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: br-use-kvm-restore.html 
+keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo KVM con NetApp Backup and Recovery. 
+---
+= Restaurar máquinas virtuales KVM con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure máquinas virtuales KVM desde copias instantáneas, desde una copia de seguridad del grupo de protección replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos mediante NetApp Backup and Recovery.
+
+.Restaurar desde estas ubicaciones
+Puede restaurar máquinas virtuales desde diferentes ubicaciones de inicio:
+
+* Restaurar desde una ubicación principal (instantánea local)
+* Restaurar desde un recurso replicado en un almacenamiento secundario
+* Restaurar desde una copia de seguridad de almacenamiento de objetos
+
+
+.Restaurar a estos puntos
+Puede restaurar datos a la ubicación original; la restauración a una ubicación alternativa no está disponible en esta versión preliminar.
+
+* Restaurar a la ubicación original
+
+
+.Consideraciones sobre la restauración desde el almacenamiento de objetos
+Si selecciona un archivo de respaldo en el almacenamiento de objetos y la protección contra ransomware está activa para ese respaldo (si habilitó DataLock y Protección contra ransomware en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que realice el escaneo.
+
+
+TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
+
+
+
+== Cómo funciona la restauración de máquinas virtuales
+
+Al restaurar máquinas virtuales, ocurre lo siguiente:
+
+* Cuando restaura una carga de trabajo desde un archivo de respaldo local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos del respaldo.
+* Al restaurar desde una máquina virtual replicada, puede restaurarla en el sistema original o en un sistema ONTAP local.
+* Al restaurar una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el sistema original o en un sistema ONTAP local.
+
+
+Desde la página Restaurar (también conocida como Buscar y restaurar), puede restaurar una máquina virtual, incluso si no recuerda el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buen estado por última vez. Puede buscar la instantánea utilizando filtros.
+
+
+
+== Restaurar máquinas virtuales desde la opción Restaurar (Buscar y restaurar)
+
+Restaure las máquinas virtuales KVM mediante la opción Restaurar. Puede buscar la instantánea por su nombre o utilizando filtros.
+
+*Rol de consola requerido* Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de copia de seguridad y recuperación, administrador de restauración de copia de seguridad y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.
+. En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *KVM*.
+. Ingrese el nombre de la máquina virtual que desea restaurar o filtre por host de máquina virtual o grupo de almacenamiento donde se encuentra el recurso que desea restaurar.
++
+Aparecerá una lista de instantáneas que coinciden con sus criterios de búsqueda.
+
+. Seleccione el botón *Restaurar* para la instantánea que desea restaurar.
++
+Aparece una lista de posibles puntos de restauración.
+
+. Seleccione el punto de restauración que desea utilizar.
+. Seleccione una ubicación de origen de la instantánea.
+
+
+. Seleccione *Listo* o *Siguiente* para continuar a la página de configuración de destino de restauración.
++
+A continuación, puede elegir la configuración de destino y las opciones previas y posteriores a la restauración.
+
+
+
+[discrete]
+===== Selección de destino
+
+. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
+
+
+[role="tabbed-block"]
+====
+.Restaurar a la ubicación original
+--
+. *Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Los volúmenes y datos restaurados estarán disponibles de inmediato. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
+. *Opciones previas a la restauración*: ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
+. *Opciones posteriores a la restauración*:
++
+** *Reiniciar VM*: seleccione esta opción para reiniciar la VM una vez completada la operación de restauración y después de que se aplique el script posterior a la restauración.
+** *Posdata*: Ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
+
+
+. Sección de *Notificación*:
++
+** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración e indique qué tipo de notificaciones desea recibir.
+
+
+. Seleccione *Restaurar*.
+
+
+--
+.Restaurar a una ubicación alternativa
+--
+No disponible para la vista previa de KVM.
+
+. Seleccione *Restaurar*.
+
+
+--
+====
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-kubernetes.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
+summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo para que usted pueda utilizar el servicio. 
+---
+= Descubra las cargas de trabajo de Kubernetes en NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery primero debe descubrir las cargas de trabajo de Kubernetes para que usted pueda utilizar el servicio.
+
+*Rol de consola de NetApp requerido* Superadministrador de backup y recuperación. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+
+
+== Descubra las cargas de trabajo de Kubernetes
+
+En el inventario de copias de seguridad y recuperación, puede detectar las cargas de trabajo de Kubernetes que se ejecutan en su entorno. Al descubrir una carga de trabajo, se agrega un clúster de Kubernetes a NetApp Backup and Recovery, lo que le permite luego agregar aplicaciones al clúster y proteger los recursos alojados por el clúster.
+
+.Pasos
+. Debe realizar una de las siguientes acciones:
++
+** Si está descubriendo cargas de trabajo de Kubernetes por primera vez, en NetApp Backup and Recovery, seleccione *Descubrir y administrar* en el tipo de carga de trabajo de Kubernetes.
+** Si ya ha descubierto cargas de trabajo de Kubernetes, en NetApp Backup and Recovery, seleccione *Inventario* > *Cargas de trabajo* y luego seleccione *Descubrir recursos*.
+
+
+. Seleccione el tipo de carga de trabajo *Kubernetes*.
+. Ingrese un nombre de clúster y elija un conector para usar con el clúster.
+. Siga las instrucciones de la línea de comandos que aparecen:
++
+** Crear un espacio de nombres de protección Trident
+** Crear un secreto de Kubernetes
+** Agregar un repositorio de Helm
+** Instalar Trident Protect y el conector Trident Protect
++
+Estos pasos garantizan que NetApp Backup and Recovery pueda interactuar con el clúster.
+
+
+
+. Después de completar los pasos, seleccione *Descubrir*.
++
+El clúster se agrega al inventario.
+
+. Seleccione *Ver* en la carga de trabajo de Kubernetes asociada para ver la lista de aplicaciones, clústeres y espacios de nombres para esa carga de trabajo.
+
+
+
+
+== Continuar al panel de control de respaldo y recuperación de NetApp
+
+Para mostrar el panel de control de copia de seguridad y recuperación de NetApp , siga estos pasos.
+
+. Desde el menú superior, seleccione *Panel de control*.
+. Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
++
+link:br-use-dashboard.html["Descubra lo que le muestra el Dashboard"] .
+
+

@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: br-start-configure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Complete unos pocos pasos para configurar NetApp Backup and Recovery. 
+---
+= Configurar los ajustes de NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Después de configurar NetApp Console, configure los ajustes de respaldo y recuperación, que incluyen agregar credenciales para los recursos del host, importar recursos de SnapCenter , configurar directorios de registro y configurar los ajustes de VMware vCenter.  Debes hacer esto antes de comenzar a realizar copias de seguridad y recuperar activamente tus datos.
+
+* <<Agregar credenciales para los recursos del host>>para los hosts de Windows y SQL Server que importó desde SnapCenter y agregue credenciales.  (Solo cargas de trabajo de Microsoft SQL Server)
+* <<Mantener la configuración de VMware vCenter>> .
+* <<Importar y administrar recursos del host de SnapCenter>> . (Solo cargas de trabajo de Microsoft SQL Server)
+* <<Configurar directorios de registro en instantáneas para hosts de Windows>> .
+
+
+*Rol de consola de NetApp requerido* Superadministrador de Backup and Recovery, Administrador de backup de Backup and Recovery, Administrador de restauración de Backup and Recovery. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+
+
+== Agregar credenciales para los recursos del host
+
+Agregue credenciales para los recursos de host que desea importar desde SnapCenter.  Las credenciales del host se utilizan para descubrir nuevas cargas de trabajo y aplicar políticas de respaldo.
+
+Si aún no tiene credenciales, puede crearlas.  Estas credenciales deben tener los permisos necesarios para acceder y administrar las cargas de trabajo del host.
+
+Debe configurar los siguientes tipos de credenciales:
+
+* Credenciales de Microsoft SQL Server
+* Credenciales del host de Windows de SnapCenter
+
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery, seleccione *Configuración*.
+. Seleccione la flecha hacia abajo para *Credenciales*.
+. Seleccione *Agregar nuevas credenciales*.
+. Ingrese información para las credenciales.  Aparecen diferentes campos según el modo de autenticación que seleccione.  Seleccione la Información *i* para obtener más información sobre los campos.
++
+** *Nombre de las credenciales*: Ingrese un nombre para las credenciales.
+** *Modo de autenticación*: seleccione *Windows* o *Microsoft SQL*.
++
+
+TIP: Debe ingresar credenciales tanto para Windows como para Microsoft SQL Server, por lo que deberá agregar dos conjuntos de credenciales.
+
+
+
+. Si seleccionó *Windows*:
++
+** *Agente de consola*: Ingrese la dirección IP del agente de consola.
+** *Dominio y nombre de usuario*: Ingrese el FQDN de NetBIOS o dominio y el nombre de usuario para las credenciales.
+** *Contraseña*: Ingrese la contraseña para las credenciales.
+
+
+. Si seleccionó *Microsoft SQL*:
++
+** *Host*: seleccione una dirección de host de SQL Server detectada.
+** *Instancia de SQL Server*: seleccione una instancia de SQL Server detectada.
+
+
+. Seleccione *Agregar*.
+
+
+
+
+=== Editar credenciales para recursos del host
+
+Posteriormente podrá editar la contraseña de los recursos de host que importó desde SnapCenter.
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery, seleccione *Configuración*.
+. Seleccione la flecha hacia abajo para expandir la sección *Credenciales*.
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Editar credenciales*.
++
+** *Contraseña*: Ingrese la contraseña para las credenciales.
+
+
+. Seleccione *Guardar*.
+
+
+
+
+== Mantener la configuración de VMware vCenter
+
+Proporcione las credenciales de VMware vCenter para descubrir las cargas de trabajo de VMware vCenter Server que desea respaldar.  Si no tiene credenciales existentes, puede crearlas con los permisos necesarios para acceder y administrar las cargas de trabajo de VMware vCenter Server.
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery, seleccione *Configuración*.
+. Seleccione la flecha hacia abajo para expandir la sección *VMware vCenter*.
+. Seleccione *Agregar vCenter*.
+. Ingrese la información de VMware vCenter Server.
++
+** *vCenter FQDN o dirección IP*: ingrese un nombre FQDN o la dirección IP para VMware vCenter Server.
+** *Nombre de usuario* y *Contraseña*: ingrese el nombre de usuario y la contraseña para VMware vCenter Server.
+** *Puerto*: Ingrese el número de puerto para VMware vCenter Server.
+** *Protocolo*: Seleccione *HTTP* o *HTTPS*.
+
+
+. Seleccione *Agregar*.
+
+
+
+
+== Importar y administrar recursos del host de SnapCenter
+
+Si anteriormente utilizó SnapCenter para realizar copias de seguridad de sus recursos, puede importar y administrar esos recursos en NetApp Backup and Recovery.  Con esta opción, puede importar información del servidor SnapCenter para registrar varios servidores SnapCenter y descubrir las cargas de trabajo de la base de datos.
+
+Este es un proceso de dos partes:
+
+* Importar recursos de host y aplicaciones de SnapCenter Server
+* Administrar recursos de host de SnapCenter seleccionados
+
+
+
+
+=== Importar recursos de host y aplicaciones de SnapCenter Server
+
+Este primer paso importa recursos del host desde SnapCenter y muestra esos recursos en la página Inventario de copia de seguridad y recuperación de NetApp .  En ese momento, los recursos aún no están administrados por NetApp Backup and Recovery.
+
+
+TIP: Después de importar los recursos del host de SnapCenter , NetApp Backup and Recovery no se hace cargo de la administración de la protección.  Para ello, debe seleccionar explícitamente administrar estos recursos en NetApp Backup and Recovery.
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery, seleccione *Configuración*.
+. Seleccione la flecha hacia abajo para expandir la sección *Importar desde SnapCenter*.
+. Seleccione *Importar desde SnapCenter* para importar los recursos de SnapCenter .
+. Ingrese * credenciales de la aplicación SnapCenter *:
++
+.. * FQDN o dirección IP de SnapCenter *: ingrese el FQDN o la dirección IP de la aplicación SnapCenter .
+.. *Puerto*: Ingrese el número de puerto para el servidor SnapCenter .
+.. *Nombre de usuario* y *Contraseña*: Ingrese el nombre de usuario y la contraseña para el servidor SnapCenter .
+.. *Agente de consola*: seleccione el agente de consola para SnapCenter.
+
+
+. Ingrese * credenciales del host del servidor SnapCenter *:
++
+.. *Credenciales existentes*: si selecciona esta opción, puede utilizar las credenciales existentes que ya haya agregado.  Introduzca el nombre de las credenciales.
+.. *Agregar nuevas credenciales*: si no tiene credenciales de host de SnapCenter existentes, puede agregar nuevas credenciales. Ingrese el nombre de las credenciales, el modo de autenticación, el nombre de usuario y la contraseña.
+
+
+. Seleccione *Importar* para validar sus entradas y registrar el servidor SnapCenter .
++
+
+NOTE: Si el servidor SnapCenter ya está registrado, puede actualizar los detalles de registro existentes.
+
+
+
+.Resultado
+La página Inventario muestra los recursos de SnapCenter importados.
+
+
+
+=== Administrar los recursos del host de SnapCenter
+
+Después de importar los recursos de SnapCenter , administre esos recursos de host en NetApp Backup and Recovery.  Después de seleccionar administrar esos recursos importados, NetApp Backup and Recovery puede realizar copias de seguridad y recuperar los recursos que está importando desde SnapCenter.  Ya no es necesario administrar esos recursos en SnapCenter Server.
+
+.Pasos
+. Después de importar los recursos de SnapCenter , en la página Inventario que aparece, seleccione los recursos de SnapCenter que importó y que desea que NetApp Backup and Recovery administre de ahora en adelante.
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Administrar* para administrar los recursos.
+. Seleccione *Administrar en la consola de NetApp *.
++
+La página Inventario muestra *Administrado* debajo del nombre del host para indicar que los recursos del host seleccionados ahora están administrados por NetApp Backup and Recovery.
+
+
+
+
+
+=== Editar recursos de SnapCenter importados
+
+Posteriormente puede volver a importar recursos de SnapCenter o editar los recursos de SnapCenter importados para actualizar los detalles de registro.
+
+Puede cambiar solo los detalles del puerto y la contraseña para el servidor SnapCenter .
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery, seleccione *Configuración*.
+. Seleccione la flecha hacia abajo para *Importar desde SnapCenter*.
++
+La página Importar desde SnapCenter muestra todas las importaciones anteriores.
+
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Editar* para actualizar los recursos.
+. Actualice la contraseña de SnapCenter y los detalles del puerto, según sea necesario.
+. Seleccione *Importar*.
+
+
+
+
+== Configurar directorios de registro en instantáneas para hosts de Windows
+
+Antes de crear políticas para los hosts de Windows, debe configurar los directorios de registro en las instantáneas para los hosts de Windows.  Los directorios de registro se utilizan para almacenar los registros que se generan durante el proceso de copia de seguridad.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. Desde la página Inventario, seleccione una carga de trabajo y luego seleccione el ícono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles* para mostrar los detalles de la carga de trabajo.
+. Desde la página de detalles de inventario que muestra Microsoft SQL Server, seleccione la pestaña Hosts.
+. Desde la página de detalles de inventario, seleccione un host y seleccione el ícono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Configurar directorio de registro*.
+. Busque o ingrese la ruta del directorio de registro.
+. Seleccione *Guardar*.
+

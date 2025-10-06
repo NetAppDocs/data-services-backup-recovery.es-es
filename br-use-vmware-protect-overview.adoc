@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Descripción general de Proteja las cargas de trabajo de VMware con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Proteja sus máquinas virtuales y almacenes de datos VMware con NetApp Backup and Recovery.  NetApp Backup and Recovery ofrece operaciones de backup y restauración rápidas, eficientes en términos de espacio, consistentes ante fallos y compatibles con máquinas virtuales. Puede realizar copias de seguridad de cargas de trabajo de VMware en Amazon Web Services S3 o StorageGRID y restaurarlas en un host VMware local.
+
+
+NOTE: Esta versión de NetApp Backup and Recovery solo es compatible con VMware vCenter y no detecta vVols ni máquinas virtuales en vVols.
+
+Utilice NetApp Backup and Recovery para implementar una estrategia 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:
+
+* Varias copias de datos brindan protección de múltiples capas contra amenazas de ciberseguridad internas (internas) y externas.
+* Los tipos de medios múltiples garantizan la viabilidad de la conmutación por error en el caso de una falla física o lógica de un tipo de medio.
+* La copia local facilita restauraciones rápidas, y las copias externas están disponibles en caso de que la copia local se vea comprometida.
+
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
+
+====
+Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de VMware:
+
+* link:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"]
+* link:br-use-vmware-protection-groups.html["Crear y administrar grupos de protección para cargas de trabajo de VMware"]
+* link:br-use-vmware-backup.html["Realizar copias de seguridad de las cargas de trabajo de VMware"]
+* link:br-use-vmware-restore.html["Restaurar cargas de trabajo de VMware"]
+

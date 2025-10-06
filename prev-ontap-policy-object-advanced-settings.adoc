@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-object-advanced-settings.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Administrar las opciones de almacenamiento de copia de seguridad en objetos en la configuración avanzada de NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede cambiar la configuración de almacenamiento de respaldo a objeto a nivel de clúster que configure al activar NetApp Backup and Recovery para cada sistema ONTAP mediante la página Configuración avanzada.  También puede modificar algunas configuraciones que se aplican como configuraciones de copia de seguridad "predeterminadas".  Esto incluye cambiar la tasa de transferencia de las copias de seguridad al almacenamiento de objetos, si las copias de instantáneas históricas se exportan como archivos de copia de seguridad y habilitar o deshabilitar los análisis de ransomware para un sistema.
+
+
+NOTE: Estas configuraciones solo están disponibles para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta su configuración de instantánea o replicación.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+Puede cambiar las siguientes opciones en la página Configuración avanzada:
+
+* Cambiar el ancho de banda de red asignado para cargar copias de seguridad al almacenamiento de objetos mediante la opción Velocidad máxima de transferencia ifdef::aws[]
+
+
+endif::aws[]
+
+* Cambiar si las copias de instantáneas históricas se exportan como archivos de respaldo y se incluyen en los archivos de respaldo de línea base iniciales para volúmenes futuros
+* Cambiar si las instantáneas "anuales" se eliminan del sistema de origen
+* Habilitar o deshabilitar análisis de ransomware para un sistema, incluidos los análisis programados
+
+
+
+
+== Ver la configuración de copia de seguridad a nivel de clúster
+
+Puede ver la configuración de copia de seguridad a nivel de clúster para cada sistema.
+
+.Pasos
+. Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
++
+La página _Configuración avanzada_ muestra la configuración actual para ese sistema.
+
+. Amplíe la opción y realice el cambio.
+
+
+Todas las operaciones de copia de seguridad posteriores al cambio utilizarán los nuevos valores.
+
+Tenga en cuenta que algunas opciones no están disponibles según la versión de ONTAP en el clúster de origen y según el destino del proveedor de nube donde residen las copias de seguridad.
+
+
+
+== Cambiar el ancho de banda de red disponible para cargar copias de seguridad al almacenamiento de objetos
+
+Cuando activa NetApp Backup and Recovery para un sistema, de manera predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de respaldo desde los volúmenes del sistema al almacenamiento de objetos.  Si nota que el tráfico de respaldo está afectando las cargas de trabajo normales de los usuarios, puede limitar la cantidad de ancho de banda de red que se utiliza durante la transferencia utilizando la opción Velocidad de transferencia máxima en la página Configuración avanzada.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Tasa máxima de transferencia*.
+. Elija un valor entre 1 y 1.000 Mbps como velocidad de transferencia máxima.
+. Seleccione el botón de opción *Limitado* e ingrese el ancho de banda máximo que se puede usar, o seleccione *Ilimitado* para indicar que no hay límite.
+. Seleccione *Aplicar*.
+
+
+Esta configuración no afecta el ancho de banda asignado a cualquier otra relación de replicación que pueda configurarse para los volúmenes del sistema.
+
+ifdef::aws[]
+
+endif::aws[]
+
+
+
+== Cambiar si las copias de instantáneas históricas se exportan como archivos de respaldo
+
+Si hay copias de instantáneas locales para volúmenes que coinciden con la etiqueta de programación de respaldo que está utilizando en este sistema (por ejemplo, diaria, semanal, etc.), puede exportar esas instantáneas históricas al almacenamiento de objetos como archivos de respaldo.  Esto le permite inicializar sus copias de seguridad en la nube moviendo copias de instantáneas más antiguas a la copia de seguridad de referencia.
+
+Tenga en cuenta que esta opción solo se aplica a nuevos archivos de respaldo para nuevos volúmenes de lectura/escritura y no es compatible con volúmenes de protección de datos (DP).
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Exportar copias de instantáneas existentes*.
+. Seleccione si desea que se exporten las copias de instantáneas existentes.
+. Seleccione *Aplicar*.
+
+
+
+
+== Cambiar si las instantáneas "anuales" se eliminan del sistema de origen
+
+Cuando selecciona la etiqueta de copia de seguridad "anual" para una política de copia de seguridad para cualquiera de sus volúmenes, la copia instantánea que se crea es muy grande.  De forma predeterminada, estas instantáneas anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos.  Puede cambiar este comportamiento predeterminado desde la sección Eliminación de instantáneas anuales.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Eliminación de instantáneas anuales*.
++
+image:screenshot_backup_edit_yearly_snap_delete.png["Una captura de pantalla de la entrada Instantáneas anuales en la página Configuración avanzada."]
+
+. Seleccione *Deshabilitado* para conservar las instantáneas anuales en el sistema de origen.
+. Seleccione *Aplicar*.
+
+
+
+
+== Habilitar o deshabilitar los análisis de ransomware
+
+Los análisis de protección contra ransomware están habilitados de forma predeterminada.  La configuración predeterminada para la frecuencia de escaneo es de 7 días.  El escaneo ocurre solo en la última copia instantánea.  Puede habilitar o deshabilitar los análisis de ransomware en la última copia de instantánea utilizando la opción en la página de Configuración avanzada.  Si lo habilita, los análisis se realizan cada 7 días de forma predeterminada.
+
+Para obtener detalles sobre las opciones de DataLock y protección contra ransomware, consultelink:prev-ontap-policy-object-options.html["Opciones de protección contra DataLock y Ransomware"] .
+
+Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
+
+
+TIP: Habilitar análisis de ransomware generará cargos adicionales según el proveedor de la nube.
+
+Los análisis de ransomware programados se ejecutan solo en la última copia instantánea.
+
+Si los análisis de ransomware programados están deshabilitados, aún puede realizar análisis a pedido y el análisis durante una operación de restauración se seguirá realizando.
+
+Referirse alink:prev-ontap-policy-manage.html["Administrar políticas"] para obtener detalles sobre la gestión de políticas que implementan la detección de ransomware.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Análisis de ransomware*.
+. Habilitar o deshabilitar *Análisis de ransomware*.
+. Seleccione *Análisis de ransomware programado*.
+. Opcionalmente, cambie el escaneo predeterminado de cada semana a días o semanas.
+. Establezca la frecuencia en días o semanas con la que se debe ejecutar el análisis.
+. Seleccione *Aplicar*.
+

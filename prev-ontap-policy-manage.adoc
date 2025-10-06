@@ -1,0 +1,203 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Administre políticas de respaldo para volúmenes ONTAP con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con NetApp Backup and Recovery, utilice las políticas de respaldo predeterminadas proporcionadas por NetApp para crear sus copias de seguridad o cree políticas personalizadas.  Las políticas rigen la frecuencia de las copias de seguridad, el momento en que se realizan y la cantidad de archivos de copia de seguridad que se conservan.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+Cuando utiliza el asistente de activación para habilitar el servicio de respaldo y recuperación para sus volúmenes, puede seleccionar entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local).  Si desea utilizar una política diferente a las existentes, puede crear la política antes o mientras utiliza el asistente de activación.
+
+Para obtener más información sobre las políticas de respaldo predeterminadas proporcionadas, consultelink:prev-ontap-protect-journey.html["Planifique su viaje de protección"] .
+
+NetApp Backup and Recovery ofrece tres tipos de copias de seguridad de datos de ONTAP : instantáneas, replicaciones y copias de seguridad en almacenamiento de objetos.  Sus políticas residen en diferentes ubicaciones según la arquitectura que utilice y el tipo de copia de seguridad:
+
+[cols="25,25,25,25"]
+|===
+| Arquitectura | Ubicación de almacenamiento de la política de instantáneas | Ubicación de almacenamiento de la política de replicación | Copia de seguridad en la ubicación de almacenamiento de la política de objetos 
+
+
+| *Abanico* | Primario | Secundario | Primario 
+
+
+| *Cascada* | Primario | Secundario | Secundario 
+|===
+Cree políticas de respaldo utilizando las siguientes herramientas según su entorno, sus preferencias y el tipo de protección:
+
+* Interfaz de usuario de la consola de NetApp
+* Interfaz de usuario del administrador del sistema
+* Interfaz de línea de comandos de ONTAP
+
+
+
+TIP: Al utilizar el Administrador del sistema, seleccione *Asincrónico* como tipo de política para las políticas de replicación, y seleccione *Asincrónico* y *Hacer copia de seguridad en la nube* para las políticas de copia de seguridad en objetos.
+
+
+
+== Ver políticas para un sistema
+
+. En la interfaz de usuario de la consola, seleccione *Volúmenes* > *Configuración de copia de seguridad*.
+. Desde la página Configuración de copia de seguridad, seleccione el sistema, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Administración de políticas*.
++
+Aparece la página de administración de políticas.  Las políticas de instantáneas se muestran de forma predeterminada.
+
+. Para ver otras políticas que existen en el sistema, seleccione *Políticas de replicación* o *Políticas de copia de seguridad*.  Si las políticas existentes se pueden utilizar para sus planes de respaldo, ya está todo listo.  Si necesitas tener una póliza con características diferentes, puedes crear nuevas pólizas desde esta página.
+
+
+
+
+== Crear políticas
+
+Puede crear políticas que rijan sus copias de instantáneas, replicaciones y copias de seguridad en el almacenamiento de objetos:
+
+* <<Cree una política de instantáneas antes de iniciar la instantánea>>
+* <<Cree una política de replicación antes de iniciar la replicación>>
+* <<Cree una política de copia de seguridad en almacenamiento de objetos antes de iniciar la copia de seguridad>>
+
+
+
+
+=== Cree una política de instantáneas antes de iniciar la instantánea
+
+Parte de su estrategia 3-2-1 implica crear una copia instantánea del volumen en el sistema de almacenamiento *principal*.
+
+Parte del proceso de creación de políticas implica identificar etiquetas de instantáneas y SnapMirror que indican la programación y la retención.  Puedes utilizar etiquetas predefinidas o crear las tuyas propias.
+
+.Pasos
+. En la interfaz de usuario de la consola, seleccione *Volúmenes* > *Configuración de copia de seguridad*.
+. Desde la página Configuración de copia de seguridad, seleccione el sistema, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Administración de políticas*.
++
+Aparece la página de administración de políticas.
+
+. En la página Políticas, seleccione *Crear política* > *Crear política de instantánea*.
+. Especifique el nombre de la política.
+. Seleccione el o los horarios de las instantáneas.  Puedes tener un máximo de 5 etiquetas.  O bien, crea un horario.
+. Si decide crear un horario:
++
+.. Seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.
+.. Especifique las etiquetas de instantáneas que indican la programación y la retención.
+.. Introduzca cuándo y con qué frecuencia se tomará la instantánea.
+.. Retención: Ingrese la cantidad de instantáneas que desea conservar.
+
+
+. Seleccione *Crear*.
+
+
+*Ejemplo de política de instantáneas utilizando arquitectura en cascada*
+
+Este ejemplo crea una política de instantáneas con dos clústeres:
+
+. Grupo 1:
++
+.. Seleccione el Clúster 1 en la página de políticas.
+.. Ignore las secciones de políticas de replicación y copia de seguridad en objeto.
+.. Crear la política de instantáneas.
+
+
+. Grupo 2:
++
+.. Seleccione el Clúster 2 en la página Política.
+.. Ignore la sección de política de instantáneas.
+.. Configurar las políticas de replicación y copia de seguridad de objetos.
+
+
+
+
+
+
+=== Cree una política de replicación antes de iniciar la replicación
+
+Su estrategia 3-2-1 podría incluir replicar un volumen en un sistema de almacenamiento diferente.  La política de replicación reside en el sistema de almacenamiento *secundario*.
+
+.Pasos
+. En la página Políticas, seleccione *Crear política* > *Crear política de replicación*.
+. En la sección Detalles de la política, especifique el nombre de la política.
+. Especifique las etiquetas SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
+. Especifique el cronograma de transferencia.
+. Seleccione *Crear*.
+
+
+
+
+=== Cree una política de copia de seguridad en almacenamiento de objetos antes de iniciar la copia de seguridad
+
+Su estrategia 3-2-1 podría incluir realizar una copia de seguridad de un volumen en un almacenamiento de objetos.
+
+Esta política de almacenamiento reside en diferentes ubicaciones del sistema de almacenamiento según la arquitectura de respaldo:
+
+* Fan-out: Sistema de almacenamiento primario
+* Cascada: sistema de almacenamiento secundario
+
+
+.Pasos
+. En la página de administración de políticas, seleccione *Crear política* > *Crear política de respaldo*.
+. En la sección Detalles de la política, especifique el nombre de la política.
+. Especifique las etiquetas SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
+. Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.
+. (Opcional) Para mover archivos de respaldo más antiguos a una clase de almacenamiento o nivel de acceso menos costoso después de una cierta cantidad de días, seleccione la opción *Archivar* e indique la cantidad de días que deben transcurrir antes de que se archiven los datos.  Ingrese *0* como "Archivar después de días" para enviar su archivo de respaldo directamente al almacenamiento de archivo.
++
+link:prev-ontap-policy-object-options.html["Obtenga más información sobre la configuración de almacenamiento de archivos"] .
+
+. (Opcional) Para proteger sus copias de seguridad y evitar que se modifiquen o eliminen, seleccione la opción *Protección contra DataLock y Ransomware*.
++
+Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus copias de seguridad contra eliminación configurando _DataLock_ y _Ransomware protection_.
+
++
+link:prev-ontap-policy-object-options.html["Obtenga más información sobre las configuraciones de DataLock disponibles"] .
+
+. Seleccione *Crear*.
+
+
+
+
+== Editar una política
+
+Puede editar una instantánea personalizada, una política de replicación o de respaldo.
+
+Cambiar la política de respaldo afecta a todos los volúmenes que utilizan esa política.
+
+.Pasos
+. En la página de administración de políticas, seleccione la política, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Editar política*.
++
+
+NOTE: El proceso es el mismo para las políticas de replicación y copia de seguridad.
+
+. En la página Editar política, realice los cambios.
+. Seleccione *Guardar*.
+
+
+
+
+== Eliminar una política
+
+Puede eliminar políticas que no estén asociadas a ningún volumen.
+
+Si una política está asociada a un volumen y desea eliminarla, primero debe eliminarla del volumen.
+
+.Pasos
+. En la página de administración de políticas, seleccione la política, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Eliminar política de instantáneas*.
+. Seleccione *Eliminar*.
+
+
+
+
+== Encuentra más información
+
+Para obtener instrucciones sobre cómo crear políticas mediante el Administrador del sistema o la CLI de ONTAP , consulte lo siguiente:
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Crear una política de instantáneas mediante el Administrador del sistema"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Cree una política de instantáneas mediante la CLI de ONTAP"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Crear una política de replicación mediante el Administrador del sistema"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Cree una política de replicación mediante la CLI de ONTAP"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Crear una copia de seguridad de una política de almacenamiento de objetos mediante el Administrador del sistema"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Cree una copia de seguridad de una política de almacenamiento de objetos mediante la CLI de ONTAP"^]

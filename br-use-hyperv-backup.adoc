@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyperv-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de Hyper-V con el respaldo y la recuperación de NetApp . 
+---
+= Realice copias de seguridad de las cargas de trabajo de Hyper-V con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Realice copias de seguridad de las máquinas virtuales Hyper-V desde sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
+
+* Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Ver link:br-use-hyper-v-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de Hyper-V con NetApp Backup and Recovery"] Para más información.
+* Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
+
+
+
+
+== Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
+
+Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
+
+*Rol de consola requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, o Rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Desde el menú, seleccione *Inventario*.
+. Seleccione una carga de trabajo para ver los detalles de protección.
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
+. Seleccione la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
+. Seleccione el grupo de protección o las máquinas virtuales que desea respaldar.
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
++
+
+NOTE: La política que se aplica a la copia de seguridad es la misma política que se asigna al grupo de protección o a la máquina virtual.
+
+. Seleccione el nivel de programación.
+. Seleccione *Hacer copia de seguridad*.
+

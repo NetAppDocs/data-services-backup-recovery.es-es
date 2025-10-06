@@ -1,0 +1,496 @@
+---
+sidebar: sidebar 
+permalink: reference-roles.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, roles, permissions, access control, role-based access control, rbac 
+summary: NetApp Backup and Recovery emplea roles para gobernar el acceso que tiene cada usuario a funciones y acciones específicas. 
+---
+= Funciones de gestión de identidad y acceso (IAM) de NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery emplea la gestión de identidad y acceso (IAM) para controlar el acceso que tiene cada usuario a funciones y acciones específicas.
+
+El servicio utiliza los siguientes roles que son específicos de NetApp Backup and Recovery.
+
+* *Superadministrador de backup y recuperación*: realiza cualquier acción en NetApp Backup and Recovery.
+* *Administrador de copias de seguridad y recuperación*: realice copias de seguridad en instantáneas locales, replique en almacenamiento secundario y realice copias de seguridad en acciones de almacenamiento de objetos en NetApp Backup and Recovery.
+* *Administrador de restauración de copias de seguridad y recuperación*: restaure cargas de trabajo mediante NetApp Backup and Recovery.
+* *Administrador de clones de respaldo y recuperación*: clona aplicaciones y datos mediante NetApp Backup and Recovery.
+* *Visor de copias de seguridad y recuperación*: vea información en NetApp Backup and Recovery, pero no realice ninguna acción.
+
+
+Para obtener detalles sobre todos los roles de acceso a la consola de NetApp , consulte https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["La documentación de configuración y administración de la consola"^] .
+
+
+
+== Roles utilizados para acciones comunes
+
+La siguiente tabla indica las acciones que cada rol de NetApp Backup and Recovery puede realizar para todas las cargas de trabajo.
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| Característica y acción | Superadministrador de copias de seguridad y recuperación | Administrador de copias de seguridad y recuperación | Administrador de restauración de copias de seguridad y recuperación | Administrador de clones de Backup and Recovery | Visor de copias de seguridad y recuperación 
+
+
+| Agregar, editar o eliminar hosts | Sí | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Instalar complementos | Sí | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Agregar credenciales (host, instancia, vCenter) | Sí | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Ver el panel y todas las pestañas | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Comience una prueba gratuita | Sí | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Iniciar el descubrimiento de cargas de trabajo | No | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+| Ver información de la licencia | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Activar licencia | Sí | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Ver anfitriones | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+6+| *Horarios*: 
+
+
+| Activar horarios | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+| Suspender horarios | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+6+| *Políticas y protección*: 
+
+
+| Ver planes de protección | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear, modificar o eliminar protección | Sí | Sí  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Restaurar cargas de trabajo | Sí | No  a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+| Crear un clon, dividir un clon o eliminar un clon | Sí | No  a| 
+No
+ a| 
+Sí
+ a| 
+No
+
+
+
+| Crear, modificar o eliminar una política | Sí | Sí  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Informes*: 
+
+
+| Ver informes | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear informes | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+| Eliminar informes | Sí | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Importar desde SnapCenter y administrar el host*: 
+
+
+| Ver datos importados de SnapCenter | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Importar datos desde SnapCenter | Sí | Sí  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Administrar (migrar) host | Sí | Sí  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Configurar ajustes*: 
+
+
+| Configurar el directorio de registro | Sí | Sí  a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+| Asociar o eliminar credenciales de instancia | Sí | Sí  a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Cubos*: 
+
+
+| Ver depósitos | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear, editar o eliminar un depósito | Sí | Sí  a| 
+No
+ a| 
+No
+ a| 
+No
+
+|===
+
+
+== Roles utilizados para acciones específicas de la carga de trabajo
+
+La siguiente tabla indica las acciones que cada función de respaldo y recuperación de NetApp puede realizar para cargas de trabajo específicas.
+
+
+
+=== Cargas de trabajo de Kubernetes
+
+Esta tabla indica las acciones que cada rol de respaldo y recuperación de NetApp puede realizar para acciones específicas de las cargas de trabajo de Kubernetes.
+
+[cols="20,20,15,15a,15a"]
+|===
+| Característica y acción | Superadministrador de copias de seguridad y recuperación | Administrador de copias de seguridad y recuperación | Administrador de restauración de copias de seguridad y recuperación | Visor de copias de seguridad y recuperación 
+
+
+| Ver clústeres, espacios de nombres, clases de almacenamiento y recursos de API | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Agregar nuevos clústeres de Kubernetes | Sí | Sí  a| 
+No
+ a| 
+No
+
+
+
+| Actualizar las configuraciones del clúster | Sí | No  a| 
+No
+ a| 
+No
+
+
+
+| Eliminar clústeres de la administración | Sí | No  a| 
+No
+ a| 
+No
+
+
+
+| Ver aplicaciones | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear y definir nuevas aplicaciones | Sí | Sí  a| 
+No
+ a| 
+No
+
+
+
+| Actualizar las configuraciones de la aplicación | Sí | Sí  a| 
+No
+ a| 
+No
+
+
+
+| Eliminar aplicaciones de la administración | Sí | Sí  a| 
+No
+ a| 
+No
+
+
+
+| Ver los recursos protegidos y el estado de la copia de seguridad | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Cree copias de seguridad y proteja aplicaciones con políticas | Sí | Sí  a| 
+No
+ a| 
+No
+
+
+
+| Desproteger aplicaciones y eliminar copias de seguridad | Sí | Sí  a| 
+No
+ a| 
+No
+
+
+
+| Ver puntos de recuperación y resultados del visor de recursos | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Restaurar aplicaciones desde puntos de recuperación | Sí | No  a| 
+Sí
+ a| 
+No
+
+
+
+| Ver las políticas de respaldo de Kubernetes | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear políticas de respaldo de Kubernetes | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Actualizar las políticas de respaldo | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Eliminar políticas de copia de seguridad | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Ver ganchos de ejecución y fuentes de ganchos | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear ganchos de ejecución y fuentes de gancho | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Actualizar los ganchos de ejecución y las fuentes de los ganchos | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Eliminar ganchos de ejecución y fuentes de ganchos | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Ver plantillas de gancho de ejecución | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear plantillas de gancho de ejecución | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Actualizar plantillas de gancho de ejecución | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Eliminar plantillas de gancho de ejecución | Sí | Sí  a| 
+Sí
+ a| 
+No
+
+
+
+| Ver el resumen de la carga de trabajo y los paneles de análisis | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+
+
+| Ver depósitos y destinos de almacenamiento de StorageGRID | Sí | Sí  a| 
+Sí
+ a| 
+Sí
+
+|===

@@ -1,0 +1,293 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-protect-journey.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+---
+= Planifique su proceso de protección con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery le permite crear hasta tres copias de sus volúmenes de origen para proteger sus datos.  Hay muchas opciones que puede seleccionar al habilitar este servicio en sus volúmenes, por lo que debe revisar sus opciones para estar preparado.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
+====
+Repasaremos las siguientes opciones:
+
+* ¿Qué funciones de protección utilizará: copias instantáneas, volúmenes replicados y/o copias de seguridad en la nube?
+* ¿Qué arquitectura de respaldo utilizará: una copia de seguridad en cascada o en abanico de sus volúmenes?
+* ¿Utilizarás las políticas de respaldo predeterminadas o necesitarás crear políticas personalizadas?
+* ¿Quieres que el servicio cree los depósitos en la nube para ti o quieres crear tus propios contenedores de almacenamiento de objetos antes de comenzar?
+* ¿Qué modo de implementación del agente de consola estás utilizando (modo estándar, restringido o privado)?
+
+
+
+
+== ¿Qué funciones de protección utilizarás?
+
+Antes de seleccionar las funciones que utilizará, aquí le ofrecemos una breve explicación de lo que hace cada función y qué tipo de protección proporciona.
+
+[cols="20,70"]
+|===
+| Tipo de copia de seguridad | Descripción 
+
+
+| Snapshot | Crea una imagen de punto en el tiempo, de solo lectura, de un volumen dentro del volumen de origen como una copia instantánea.  Puede utilizar la copia instantánea para recuperar archivos individuales o para restaurar todo el contenido de un volumen. 
+
+
+| Replicación | Crea una copia secundaria de sus datos en otro sistema de almacenamiento ONTAP y actualiza continuamente los datos secundarios.  Sus datos se mantienen actualizados y permanecen disponibles siempre que los necesite. 
+
+
+| Copia de seguridad en la nube | Crea copias de seguridad de sus datos en la nube para su protección y con fines de archivo a largo plazo.  Si es necesario, puede restaurar un volumen, una carpeta o archivos individuales desde la copia de seguridad al mismo sistema o a uno diferente. 
+|===
+Las instantáneas son la base de todos los métodos de copia de seguridad y son necesarias para utilizar el servicio de copia de seguridad y recuperación.  Una copia instantánea es una imagen de un volumen en un punto en el tiempo y de solo lectura.  La imagen consume un espacio de almacenamiento mínimo y genera una sobrecarga de rendimiento insignificante porque solo registra los cambios en los archivos desde que se realizó la última copia de instantánea.  La copia instantánea que se crea en su volumen se utiliza para mantener el volumen replicado y el archivo de respaldo sincronizados con los cambios realizados en el volumen de origen, como se muestra en la figura.
+
+image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de respaldo en el sistema de origen como copias instantáneas, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de respaldo en el almacenamiento de objetos."]
+
+Puede optar por crear volúmenes replicados en otro sistema de almacenamiento ONTAP y realizar copias de seguridad de los archivos en la nube.  O puede elegir simplemente crear volúmenes replicados o archivos de respaldo: es su elección.
+
+Para resumir, estos son los flujos de protección válidos que puede crear para los volúmenes en su sistema ONTAP :
+
+* Volumen de origen -> Copia de instantánea -> Volumen replicado -> Archivo de respaldo
+* Volumen de origen -> Copia de instantánea -> Archivo de respaldo
+* Volumen de origen -> Copia de instantánea -> Volumen replicado
+
+
+
+NOTE: La creación inicial de un volumen replicado o un archivo de respaldo incluye una copia completa de los datos de origen; esto se denomina _transferencia de línea base_.  Las transferencias posteriores contienen únicamente copias diferenciales de los datos de origen (la instantánea).
+
+*Comparación de los diferentes métodos de backup*
+
+La siguiente tabla muestra una comparación generalizada de los tres métodos de copia de seguridad.  Si bien el espacio de almacenamiento de objetos suele ser menos costoso que su almacenamiento en disco local, si cree que puede restaurar datos de la nube con frecuencia, las tarifas de salida de los proveedores de la nube pueden reducir parte de sus ahorros.  Necesitará identificar con qué frecuencia necesita restaurar datos de los archivos de respaldo en la nube.
+
+Además de este criterio, el almacenamiento en la nube ofrece opciones de seguridad adicionales si utiliza la función DataLock y Ransomware Protection, y ahorros de costos adicionales al seleccionar clases de almacenamiento de archivo para archivos de respaldo más antiguos. link:prev-ontap-policy-object-options.html["Obtenga más información sobre la protección contra DataLock y Ransomware y la configuración de almacenamiento de archivos."] .
+
+[cols="18,18,22,18,22"]
+|===
+| Tipo de copia de seguridad | Velocidad de respaldo | Costo de respaldo | Restaurar velocidad | Costo de restauración 
+
+
+| *Instantánea* | Alto | Bajo (espacio en disco) | Alto | Bajo 
+
+
+| *Replicación* | Medio | Medio (espacio en disco) | Medio | Medio (red) 
+
+
+| *Copia de seguridad en la nube* | Bajo | Bajo (espacio de objeto) | Bajo | Altas (tarifas del proveedor) 
+|===
+
+
+== ¿Qué arquitectura de respaldo utilizarás?
+
+Al crear volúmenes replicados y archivos de respaldo, puede elegir una arquitectura en cascada o en abanico para realizar el respaldo de sus volúmenes.
+
+Una arquitectura de *fan-out* transfiere la copia de la instantánea de forma independiente tanto al sistema de almacenamiento de destino como al objeto de respaldo en la nube.
+
+image:diagram-321-fanout-detailed.png["Un diagrama que muestra cómo se utiliza una copia instantánea de un volumen para crear y actualizar un volumen replicado y un archivo de respaldo."]
+
+Una arquitectura en *cascada* transfiere primero la copia de la instantánea al sistema de almacenamiento de destino y luego ese sistema transfiere la copia al objeto de respaldo en la nube.
+
+image:diagram-321-cascade-detailed.png["Un diagrama que muestra cómo se utiliza una copia instantánea de un volumen para crear y actualizar un volumen replicado y un archivo de respaldo."]
+
+*Comparación de las diferentes opciones de arquitectura*
+
+Esta tabla proporciona una comparación de las arquitecturas en cascada y en abanico.
+
+[cols="50,50"]
+|===
+| Abanico | Cascada 
+
+
+| Pequeño impacto en el rendimiento del sistema de origen porque envía copias instantáneas a dos sistemas distintos | Menor efecto en el rendimiento del sistema de almacenamiento de origen porque envía la copia de la instantánea solo una vez 
+
+
+| Más fácil de configurar porque todas las políticas, redes y configuraciones de ONTAP se realizan en el sistema de origen | Requiere que también se realicen algunas configuraciones de red y ONTAP desde el sistema secundario. 
+|===
+
+
+== ¿Utilizará las políticas predeterminadas para instantáneas, replicaciones y copias de seguridad?
+
+Puede utilizar las políticas predeterminadas proporcionadas por NetApp para crear sus copias de seguridad o puede crear políticas personalizadas.  Cuando utiliza el asistente de activación para habilitar el servicio de respaldo y recuperación para sus volúmenes, puede seleccionar entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local).  Si desea utilizar una política diferente a las existentes, puede crear la política antes de comenzar o mientras usa el asistente de activación.
+
+* La política de instantáneas predeterminada crea copias de instantáneas cada hora, cada día y cada semana, y conserva 6 copias de instantáneas cada hora, 2 diarias y 2 semanales.
+* La política de replicación predeterminada replica copias de instantáneas diarias y semanales, conservando 7 copias de instantáneas diarias y 52 semanales.
+* La política de respaldo predeterminada replica copias de instantáneas diarias y semanales, conservando 7 copias de instantáneas diarias y 52 semanales.
+
+
+Si crea políticas personalizadas para replicación o copia de seguridad, las etiquetas de las políticas (por ejemplo, "diaria" o "semanal") deben coincidir con las etiquetas que existen en sus políticas de instantáneas o volúmenes replicados y no se crearán archivos de copia de seguridad.
+
+Puede crear políticas de instantáneas, replicación y copia de seguridad en almacenamiento de objetos en la interfaz de usuario de NetApp Backup and Recovery.  Vea la sección paralink:prev-ontap-backup-manage.html["agregar una nueva política de respaldo"] Para más detalles.
+
+Además de utilizar NetApp Backup and Recovery para crear políticas personalizadas, puede utilizar System Manager o la interfaz de línea de comandos (CLI) de ONTAP :
+
+* https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Cree una política de instantáneas mediante el Administrador del sistema o la CLI de ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Cree una política de replicación mediante el Administrador del sistema o la CLI de ONTAP"^]
+
+
+*Nota:* Al utilizar el Administrador del sistema, seleccione *Asincrónico* como el tipo de política para las políticas de replicación, y seleccione *Asincrónico* y *Copia de seguridad en la nube* para las políticas de copia de seguridad en objetos.
+
+A continuación se muestran algunos ejemplos de comandos CLI de ONTAP que pueden resultar útiles si está creando políticas personalizadas.  Tenga en cuenta que debe utilizar el vserver _admin_ (VM de almacenamiento) como `<vserver_name>` en estos comandos.
+
+[cols="30,70"]
+|===
+| Descripción de la política | Comando 
+
+
+| Política de instantáneas simples | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
+
+
+| Copia de seguridad sencilla en la nube | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+
+
+| Copia de seguridad en la nube con DataLock y protección contra ransomware | `snapmirror policy create -policy CloudBackupService-Enterprise -snapshot-lock-mode enterprise -vserver <vserver_name>`
+`snapmirror policy add-rule -policy CloudBackupService-Enterprise -retention-period 30days` 
+
+
+| Copia de seguridad en la nube con clase de almacenamiento de archivo | `snapmirror policy create -vserver <vserver_name> -policy <policy_name> -archive-after-days <days> -create-snapshot-on-source false -type vault`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+
+
+| Replicación simple a otro sistema de almacenamiento | `snapmirror policy create -policy <policy_name> -type async-mirror -vserver <vserver_name>`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+|===
+
+NOTE: Solo se pueden usar políticas de bóveda para realizar copias de seguridad en las relaciones en la nube.
+
+
+
+== ¿Dónde residen mis políticas?
+
+Las políticas de respaldo residen en diferentes ubicaciones según la arquitectura de respaldo que planee utilizar: en abanico o en cascada.  Las políticas de replicación y las políticas de respaldo no están diseñadas de la misma manera porque las replicaciones emparejan dos sistemas de almacenamiento ONTAP y la copia de seguridad en un objeto utiliza un proveedor de almacenamiento como destino.
+
+* Las políticas de instantáneas siempre residen en el sistema de almacenamiento principal.
+* Las políticas de replicación siempre residen en el sistema de almacenamiento secundario.
+* Las políticas de copia de seguridad a objeto se crean en el sistema donde reside el volumen de origen: este es el clúster principal para configuraciones de distribución y el clúster secundario para configuraciones en cascada.
+
+
+Estas diferencias se muestran en la tabla.
+
+[cols="25,25,25,25"]
+|===
+| Arquitectura | Política de instantáneas | Política de replicación | Política de respaldo 
+
+
+| *Abanico* | Primario | Secundario | Primario 
+
+
+| *Cascada* | Primario | Secundario | Secundario 
+|===
+Entonces, si planea crear políticas personalizadas al usar la arquitectura en cascada, necesitará crear las políticas de replicación y copia de seguridad de objetos en el sistema secundario donde se crearán los volúmenes replicados.  Si planea crear políticas personalizadas al usar la arquitectura de distribución, deberá crear las políticas de replicación en el sistema secundario donde se crearán los volúmenes replicados y las políticas de copia de seguridad de objetos en el sistema principal.
+
+Si está utilizando las políticas predeterminadas que existen en todos los sistemas ONTAP , entonces está todo listo.
+
+
+
+== ¿Quieres crear tu propio contenedor de almacenamiento de objetos?
+
+Cuando crea archivos de respaldo en el almacenamiento de objetos para un sistema, de manera predeterminada, el servicio de respaldo y recuperación crea el contenedor (depósito o cuenta de almacenamiento) para los archivos de respaldo en la cuenta de almacenamiento de objetos que haya configurado.  El depósito de AWS o GCP se denomina "netapp-backup-<uuid>" de forma predeterminada.  La cuenta de almacenamiento de Azure Blob se llama "netappbackup<uuid>".
+
+Puede crear el contenedor usted mismo en la cuenta del proveedor de objetos si desea utilizar un prefijo determinado o asignar propiedades especiales.  Si desea crear su propio contenedor, debe crearlo antes de iniciar el asistente de activación.  NetApp Backup and Recovery puede usar cualquier bucket y compartir buckets.  El asistente de activación de respaldo descubrirá automáticamente los contenedores aprovisionados para la cuenta y las credenciales seleccionadas para que pueda seleccionar la que desee usar.
+
+Puedes crear el depósito desde la consola o desde tu proveedor de nube.
+
+* https://docs.netapp.com/us-en/storage-management-s3-storage/task-add-s3-bucket.html["Crear buckets de Amazon S3 desde la consola"^]
+* https://docs.netapp.com/us-en/storage-management-blob-storage/task-add-blob-storage.html["Crear cuentas de almacenamiento de blobs de Azure desde la consola"^]
+* https://docs.netapp.com/us-en/storage-management-google-cloud-storage/task-add-gcp-bucket.html["Crear depósitos de Google Cloud Storage desde la consola"^]
+
+
+Si planea utilizar un prefijo de depósito diferente a "netapp-backup-xxxxxx", deberá modificar los permisos de S3 para el rol de IAM del agente de consola.
+
+*Configuración avanzada del depósito*
+
+Si planea mover archivos de respaldo antiguos al almacenamiento de archivo, o si planea habilitar DataLock y la protección contra ransomware para bloquear sus archivos de respaldo y escanearlos en busca de posible ransomware, deberá crear el contenedor con ciertas configuraciones:
+
+* En este momento, el almacenamiento de archivos en sus propios buckets es compatible con el almacenamiento AWS S3 cuando utiliza el software ONTAP 9.10.1 o posterior en sus clústeres.  De forma predeterminada, las copias de seguridad comienzan en la clase de almacenamiento _Standard_ de S3.  Asegúrese de crear el depósito con las reglas de ciclo de vida adecuadas:
++
+** Mueva los objetos en todo el alcance del bucket a S3 _Standard-IA_ después de 30 días.
+** Mueva los objetos con la etiqueta "smc_push_to_archive: true" a _Glacier Flexible Retrieval_ (anteriormente S3 Glacier)
+
+
+* La protección contra ransomware y DataLock es compatible con el almacenamiento de AWS cuando se usa el software ONTAP 9.11.1 o posterior en sus clústeres, y con el almacenamiento de Azure cuando se usa el software ONTAP 9.12.1 o posterior.
++
+** Para AWS, debe habilitar el bloqueo de objetos en el depósito utilizando un período de retención de 30 días.
+** Para Azure, debe crear la clase de almacenamiento con soporte de inmutabilidad a nivel de versión.
+
+
+
+
+
+
+== ¿Qué modo de implementación del agente de consola estás utilizando?
+
+Si ya está utilizando la consola para administrar su almacenamiento, entonces ya se ha instalado un agente de consola.  Si planea utilizar el mismo agente de consola con NetApp Backup and Recovery, entonces está todo listo.  Si necesita utilizar un agente de consola diferente, deberá instalarlo antes de comenzar la implementación de copia de seguridad y recuperación.
+
+La consola de NetApp ofrece múltiples modos de implementación que le permiten usar la consola de una manera que satisfaga sus requisitos comerciales y de seguridad.  El _modo estándar_ aprovecha la capa SaaS de la consola para proporcionar una funcionalidad completa, mientras que el _modo restringido_ y el _modo privado_ están disponibles para las organizaciones que tienen restricciones de conectividad.
+
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de la consola de NetApp"^] .
+
+
+
+=== Soporte para sitios con conectividad completa a Internet
+
+Cuando se utiliza NetApp Backup and Recovery en un sitio con conectividad completa a Internet (también conocido como _modo estándar_ o _modo SaaS_), puede crear volúmenes replicados en cualquier sistema ONTAP local o Cloud Volumes ONTAP administrado por la consola, y puede crear archivos de respaldo en el almacenamiento de objetos en cualquiera de los proveedores de nube compatibles. link:concept-backup-to-cloud.html["Consulte la lista completa de destinos de copia de seguridad compatibles"] .
+
+Para obtener una lista de ubicaciones válidas del agente de consola, consulte uno de los siguientes procedimientos de respaldo para el proveedor de nube donde planea crear archivos de respaldo.  Existen algunas restricciones donde el agente de consola debe instalarse manualmente en una máquina Linux o implementarse en un proveedor de nube específico.
+
+* link:prev-ontap-backup-cvo-aws.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3"]
+* link:prev-ontap-backup-cvo-azure.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Azure Blob"]
+* link:prev-ontap-backup-cvo-gcp.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Google Cloud"]
+* link:prev-ontap-backup-onprem-aws.html["Realice una copia de seguridad de los datos locales de ONTAP en Amazon S3"]
+* link:prev-ontap-backup-onprem-azure.html["Realice una copia de seguridad de los datos de ONTAP locales en Azure Blob"]
+* link:prev-ontap-backup-onprem-gcp.html["Realice una copia de seguridad de los datos locales de ONTAP en Google Cloud"]
+* link:prev-ontap-backup-onprem-storagegrid.html["Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID"]
+* link:prev-ontap-backup-onprem-ontaps3.html["Realizar copias de seguridad de ONTAP local en ONTAP S3"]
+
+
+
+
+=== Soporte para sitios con conectividad a Internet limitada
+
+NetApp Backup and Recovery se puede utilizar en un sitio con conectividad a Internet limitada (también conocido como _modo restringido_) para realizar copias de seguridad de datos de volumen.  En este caso, necesitará implementar el agente de consola en la región de nube de destino.
+
+ifdef::aws[]
+
+* Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. link:prev-ontap-backup-cvo-aws.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3"] .
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. link:prev-ontap-backup-cvo-azure.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Azure Blob"] .
+
+
+endif::azure[]
+
+
+
+=== Soporte para sitios sin conexión a Internet
+
+NetApp Backup and Recovery se puede utilizar en un sitio sin conectividad a Internet (también conocidos como sitios _modo privado_ o _oscuros_) para realizar copias de seguridad de datos de volumen.  En este caso, necesitarás implementar el agente de consola en un host Linux en el mismo sitio.
+
+
+NOTE: El modo privado de BlueXP (interfaz BlueXP heredada) generalmente se usa con entornos locales que no tienen conexión a Internet y con regiones de nube seguras, que incluyen AWS Secret Cloud, AWS Top Secret Cloud y Azure IL6. NetApp continúa brindando soporte a estos entornos con la interfaz BlueXP heredada. Para obtener documentación del modo privado en la interfaz heredada de BlueXP , consulte la https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentación en PDF para el modo privado de BlueXP"] .
+
+* Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas NetApp StorageGRID locales. link:prev-ontap-backup-onprem-storagegrid.html["Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID"] .
+* Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas ONTAP locales o sistemas Cloud Volumes ONTAP configurados para el almacenamiento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Realice una copia de seguridad de los datos locales de ONTAP en ONTAP S3"] .ifdef::aws[]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]

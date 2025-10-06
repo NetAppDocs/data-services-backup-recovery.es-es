@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Puede realizar copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, lo que garantiza que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.  Puede implementar una estrategia 3-2-1, donde tiene 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. 
+---
+= Descripción general de la gestión de recursos con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Administrar recursos en NetApp Backup and Recovery es esencial para garantizar que sus datos estén protegidos.  Puede administrar recursos como copias de seguridad, bases de datos, instancias, hosts de aplicaciones y entornos de trabajo.  Puede ver, editar y eliminar la configuración de protección de sus recursos.
+
+Puede realizar las siguientes tareas relacionadas con la gestión de sus recursos:
+
+* link:br-use-manage-inventory.html["Gestionar inventario"] .
+* link:br-use-manage-snapshots.html["Administrar instantáneas"] .
+* link:br-use-manage-kubernetes-clusters.html["Administrar clústeres de Kubernetes"] .
+* link:br-use-manage-kubernetes-applications.html["Administrar aplicaciones de Kubernetes"] .
+

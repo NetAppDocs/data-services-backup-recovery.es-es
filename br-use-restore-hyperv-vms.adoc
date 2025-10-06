@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-hyperv-vms.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. 
+---
+= Restaurar aplicaciones de Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. Para restaurar una aplicación, esta debe tener al menos un punto de restauración disponible. Un punto de restauración puede ser la instantánea local o la copia de seguridad en el almacén de objetos (o ambas). Puede restaurar una aplicación utilizando el archivo local, secundario o del almacén de objetos.
+
+.Rol de consola de NetApp requerido
+Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. En la lista de aplicaciones, elija la aplicación que desee restaurar y seleccione el menú Acciones asociado.
+. Seleccione *Ver y restaurar*.
++
+Aparece la lista de puntos de restauración.
+
+. Abra el menú Acciones del punto de restauración que desea utilizar y seleccione *Restaurar*.
+
+
+[discrete]
+===== Configuración general
+
+. Seleccione la fuente desde la cual restaurar (almacén local o de objetos).
+. Seleccione el clúster de destino de la lista *Clúster*.
+. Seleccione el espacio de nombres de destino de restauración.
++
+Puede restaurar el espacio de nombres original o restaurar uno nuevo.
+
+. Seleccione *Siguiente*.
+
+
+[discrete]
+===== Selección de recursos
+
+. Elija si desea restaurar todos los recursos asociados con la aplicación o utilizar un filtro para seleccionar recursos específicos para restaurar:
+
+
+[role="tabbed-block"]
+====
+.Restaurar todos los recursos
+--
+. Seleccione *Restaurar todos los recursos*.
+. Seleccione *Siguiente*.
+
+
+--
+.Restaurar recursos específicos
+--
+. Seleccione *Recursos selectivos*.
+. Elija el comportamiento del filtro de recursos.  Si elige *Incluir*, se restaurarán los recursos que seleccione.  Si elige *Excluir*, los recursos que seleccione no se restaurarán.
+. Seleccione *Agregar reglas* para agregar reglas que definan filtros para seleccionar recursos.  Necesita al menos una regla para filtrar recursos.
++
+Cada regla puede filtrar según criterios como el espacio de nombres del recurso, las etiquetas, el grupo, la versión y el tipo.
+
+. Seleccione *Guardar* para guardar cada regla.
+. Cuando haya agregado todas las reglas que necesita, seleccione *Buscar* para ver los recursos disponibles en el archivo de respaldo que coinciden con sus criterios de filtro.
++
+
+NOTE: Los recursos que se muestran son los recursos que existen actualmente en el clúster.
+
+. Cuando esté satisfecho con los resultados, seleccione *Siguiente*.
+
+
+--
+====
+[discrete]
+===== Configuración de destino
+
+. Elija restaurar a la clase de almacenamiento predeterminada o a una clase de almacenamiento diferente.
+. Opcionalmente, si elige restaurar a una clase de almacenamiento diferente, seleccione una clase de almacenamiento de destino que coincida con cada clase de almacenamiento de origen.
+. Seleccione *Restaurar*.
+

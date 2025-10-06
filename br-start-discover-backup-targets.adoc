@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-backup-targets.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, 
+summary: 'Complete unos pocos pasos para descubrir destinos de respaldo externos en NetApp Backup and Recovery.  Estos objetivos podrían incluir Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage y StorageGRID.' 
+---
+= Descubra los destinos de respaldo externos en NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Complete unos pocos pasos para descubrir o agregar manualmente destinos de respaldo externos en NetApp Backup and Recovery.
+
+
+
+== Descubra un destino de respaldo
+
+Antes de utilizar NetApp Backup and Recovery, debe configurar sus destinos de respaldo de Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID.
+
+Puede descubrir estos objetivos automáticamente o agregarlos manualmente.
+
+Proporcione las credenciales necesarias para acceder al sistema de la cuenta de almacenamiento.  Estas credenciales se utilizan para descubrir las cargas de trabajo que desea respaldar.
+
+.Antes de empezar
+Para agregar un destino de respaldo externo, se debe descubrir al menos una carga de trabajo.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. Seleccione la pestaña *Destinos de copia de seguridad externos*.
+. Seleccione *Descubrir destino de copia de seguridad*.
+. Seleccione uno de los tipos de destino de copia de seguridad: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
+. En la sección *Elegir ubicación de credenciales*, elija la ubicación donde residen las credenciales y luego elija cómo asociarlas.
+. Seleccione *Siguiente*.
+. Ingrese la información de las credenciales. Esta información varía según el tipo de destino de copia de seguridad seleccionado y la ubicación de las credenciales elegida.
++
+** Para AWS:
++
+*** *Nombre de la credencial*: ingrese el nombre de la credencial de AWS.
+*** *Tecla de acceso*: Ingrese el secreto de AWS.
+*** *Clave secreta*: Ingrese la clave secreta de AWS.
+
+
+** Para Azure:
++
+*** *Nombre de la credencial*: ingrese el nombre de la credencial de Azure Blob Storage.
+*** *Secreto del cliente*: ingrese el secreto del cliente de Azure Blob Storage.
+*** *ID de aplicación (cliente)*: seleccione el ID de la aplicación de Azure Blob Storage.
+*** *ID de inquilino del directorio*: ingrese el ID de inquilino de Azure Blob Storage.
+
+
+** Para StorageGRID:
++
+*** *Nombre de la credencial*: Ingrese el nombre de la credencial de StorageGRID .
+*** *FQDN del nodo de puerta de enlace*: ingrese un nombre FQDN para StorageGRID.
+*** *Puerto*: Ingrese el número de puerto para StorageGRID.
+*** *Tecla de acceso*: Ingrese la clave de acceso de StorageGRID S3.
+*** *Clave secreta*: Ingrese la clave secreta de StorageGRID S3.
+
+
+** Para ONTAP S3:
++
+*** *Nombre de la credencial*: ingrese el nombre de la credencial de ONTAP S3.
+*** *FQDN del nodo de puerta de enlace*: ingrese un nombre FQDN para ONTAP S3.
+*** *Puerto*: Ingrese el número de puerto para ONTAP S3.
+*** *Tecla de acceso*: Ingrese la clave de acceso de ONTAP S3.
+*** *Clave secreta*: Ingrese la clave secreta de ONTAP S3.
+
+
+
+
+. Seleccione *Descubrir*.
+
+
+
+
+== Agregar un depósito para un objetivo de respaldo
+
+En lugar de que NetApp Backup and Recovery descubra los depósitos automáticamente, puede agregar manualmente un depósito a un destino de respaldo externo.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. Seleccione *Destinos de copia de seguridad externos*.
+. Seleccione el objetivo y a la derecha, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Agregar depósito*.
+. Ingrese la información del depósito.  La información varía según el tipo de destino de copia de seguridad que haya seleccionado.
++
+** Para AWS:
++
+*** *Nombre del depósito*: Ingrese el nombre del depósito S3. El prefijo "netapp-backup" es un prefijo obligatorio y se agrega automáticamente al nombre que proporcione.
+*** *Cuenta de AWS*: Ingrese el nombre de la cuenta de AWS.
+*** *Región del depósito*: Ingrese la región de AWS para el depósito.
+*** *Habilitar bloqueo de objetos S3*: seleccione esta opción para habilitar el bloqueo de objetos S3 para el depósito.  S3 Object Lock evita que los objetos se eliminen o sobrescriban durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.
++
+**** *Modo de gobernanza*: seleccione esta opción para habilitar el modo de gobernanza para el depósito S3 Object Lock.  El modo de gobernanza le permite proteger los objetos para que no sean eliminados ni sobrescritos por la mayoría de los usuarios, pero permite que ciertos usuarios alteren la configuración de retención.
+**** *Modo de cumplimiento*: seleccione esta opción para habilitar el modo de cumplimiento para el depósito de bloqueo de objetos S3.  El modo de cumplimiento impide que cualquier usuario, incluido el usuario root, altere la configuración de retención o elimine objetos hasta que expire el período de retención.
+
+
+*** *Control de versiones*: seleccione esta opción para habilitar el control de versiones para el bucket S3.  El control de versiones le permite mantener múltiples versiones de objetos en el depósito, lo que puede resultar útil para fines de copia de seguridad y recuperación.
+*** *Etiquetas*: seleccione etiquetas para el depósito S3.  Las etiquetas son pares clave-valor que se pueden utilizar para organizar y administrar sus recursos S3.
+*** *Cifrado*: seleccione el tipo de cifrado para el depósito S3.  Las opciones son claves administradas por AWS S3 o claves de AWS Key Management Service.  Si selecciona claves de AWS Key Management Service, deberá proporcionar el ID de la clave.
+
+
+** Para Azure:
++
+*** *Suscripción*: seleccione el nombre del contenedor de Azure Blob Storage.
+*** *Grupo de recursos*: seleccione el nombre del grupo de recursos de Azure.
+*** *Detalles de la instancia*:
++
+**** *Nombre de la cuenta de almacenamiento*: ingrese el nombre del contenedor de Azure Blob Storage.
+**** *Región de Azure*: ingrese la región de Azure para el contenedor.
+**** *Tipo de rendimiento*: seleccione el tipo de rendimiento estándar o premium para el contenedor de Azure Blob Storage indicando el nivel de rendimiento requerido.
+**** *Cifrado*: seleccione el tipo de cifrado para el contenedor de Azure Blob Storage.  Las opciones son claves administradas por Microsoft o claves administradas por el cliente.  Si selecciona claves administradas por el cliente, debe proporcionar el nombre del almacén de claves y el nombre de la clave.
+
+
+
+
+** Para StorageGRID:
++
+*** *Nombre del destino de la copia de seguridad*: seleccione el nombre del depósito StorageGRID .
+*** *Nombre del depósito*: Ingrese el nombre del depósito StorageGRID .
+*** *Región*: Ingrese la región StorageGRID para el depósito.
+*** *Habilitar control de versiones*: seleccione esta opción para habilitar el control de versiones para el depósito StorageGRID .  El control de versiones le permite mantener múltiples versiones de objetos en el depósito, lo que puede resultar útil para fines de copia de seguridad y recuperación.
+*** *Bloqueo de objetos*: seleccione esta opción para habilitar el bloqueo de objetos para el depósito StorageGRID .  El bloqueo de objetos evita que se eliminen o sobrescriban objetos durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.
+*** *Capacidad*: Ingrese la capacidad para el depósito StorageGRID .  Esta es la cantidad máxima de datos que se pueden almacenar en el depósito.
+
+
+** Para ONTAP S3:
++
+*** *Nombre del destino de la copia de seguridad*: seleccione el nombre del depósito ONTAP S3.
+*** *Nombre del destino del depósito*: Ingrese el nombre del depósito ONTAP S3.
+*** *Capacidad*: Ingrese la capacidad para el depósito ONTAP S3.  Esta es la cantidad máxima de datos que se pueden almacenar en el depósito.
+*** *Habilitar control de versiones*: seleccione esta opción para habilitar el control de versiones para el bucket ONTAP S3.  El control de versiones le permite mantener múltiples versiones de objetos en el depósito, lo que puede resultar útil para fines de copia de seguridad y recuperación.
+*** *Bloqueo de objetos*: seleccione esta opción para habilitar el bloqueo de objetos para el depósito ONTAP S3.  El bloqueo de objetos evita que se eliminen o sobrescriban objetos durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.
+
+
+
+
+. Seleccione *Agregar*.
+
+
+
+
+== Cambiar las credenciales de un destino de respaldo
+
+Introduzca las credenciales necesarias para acceder al destino de la copia de seguridad.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. Seleccione *Destinos de copia de seguridad externos*.
+. Seleccione el objetivo y a la derecha, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Cambiar credenciales*.
+. Introduzca las nuevas credenciales para el destino de la copia de seguridad.  La información varía según el tipo de destino de copia de seguridad que haya seleccionado.
+. Seleccione *Listo*.
+

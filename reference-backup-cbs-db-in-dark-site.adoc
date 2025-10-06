@@ -1,0 +1,213 @@
+---
+sidebar: sidebar 
+permalink: reference-backup-cbs-db-in-dark-site.html 
+keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
+summary: 'Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como "modo privado", los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola en el futuro, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery.' 
+---
+= Restaurar datos de configuración de NetApp Backup and Recovery en un sitio oscuro
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery.
+
+
+NOTE: Este procedimiento se aplica únicamente a los datos de volumen de ONTAP .
+
+Cuando utiliza NetApp Backup and Recovery en un entorno SaaS donde el agente de consola se implementa en su proveedor de nube o en su propio sistema host que tiene acceso a Internet, todos los datos de configuración importantes de NetApp Backup and Recovery se respaldan y protegen en la nube.  Si tiene un problema con el agente de consola, simplemente cree un nuevo agente de consola y agregue sus sistemas y los detalles de la copia de seguridad se restaurarán automáticamente.
+
+Hay dos tipos de datos que se respaldan:
+
+* Base de datos de respaldo y recuperación de NetApp : contiene una lista de todos los volúmenes, archivos de respaldo, políticas de respaldo e información de configuración.
+* Archivos de catálogo indexados: contienen índices detallados que se utilizan para la funcionalidad de búsqueda y restauración que hace que sus búsquedas sean muy rápidas y eficientes cuando busca datos de volumen que desea restaurar.
+
+
+Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se ubicarán en el depósito del sistema que se activó primero.
+
+
+TIP: Nunca se incluyen datos de volumen en la base de datos de NetApp Backup and Recovery ni en los archivos del catálogo indexado.
+
+
+
+== Restaurar datos de NetApp Backup and Recovery a un nuevo agente de consola
+
+Si su agente de consola local sufre una falla catastrófica, deberá instalar un nuevo agente de consola y luego restaurar los datos de NetApp Backup and Recovery en el nuevo agente de consola.
+
+Necesitará realizar las siguientes tareas para que su sistema NetApp Backup and Recovery vuelva a funcionar:
+
+* Instalar un nuevo agente de consola
+* Restaurar la base de datos de NetApp Backup and Recovery
+* Restaurar los archivos del catálogo indexado
+* Redescubre todos tus sistemas ONTAP locales y sistemas StorageGRID en la interfaz de usuario de la consola de NetApp
+
+
+Una vez que verifique que su sistema vuelve a funcionar correctamente, le recomendamos que cree nuevos archivos de respaldo.
+
+.Lo que necesitarás
+Necesitará acceder a las copias de seguridad de bases de datos e índices más recientes desde el depósito StorageGRID o ONTAP S3 donde se almacenan sus archivos de copia de seguridad:
+
+* Archivo de base de datos MySQL de NetApp Backup and Recovery
++
+Este archivo se encuentra en la siguiente ubicación en el depósito `netapp-backup-<GUID>/mysql_backup/` , y se llama `CBS_DB_Backup_<day>_<month>_<year>.sql` .
+
+* Archivo zip de copia de seguridad del catálogo indexado
++
+Este archivo se encuentra en la siguiente ubicación en el depósito `netapp-backup-<GUID>/catalog_backup/` , y se llama `Indexed_Catalog_DB_Backup_<db_name>_<day>_<month>_<year>.zip` .
+
+
+
+
+
+=== Instalar un nuevo agente de consola en un nuevo host Linux local
+
+Al instalar un nuevo agente de consola, asegúrese de descargar la misma versión de software que instaló en el agente de consola original.  Los cambios periódicos en la estructura de la base de datos de NetApp Backup and Recovery pueden hacer que las versiones de software más nuevas sean incompatibles con las copias de seguridad de la base de datos originales. Puede https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo"^] .
+
+. https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instalar el agente de consola en un nuevo host Linux local"^]
+. Inicie sesión en la consola utilizando las credenciales de usuario administrador que acaba de crear.
+
+
+
+
+=== Restaurar la base de datos de NetApp Backup and Recovery
+
+. Copie la copia de seguridad de MySQL desde la ubicación de la copia de seguridad al nuevo host del agente de consola. Usaremos el nombre de archivo de ejemplo "CBS_DB_Backup_23_05_2023.sql" a continuación.
+. Copie la copia de seguridad en el contenedor Docker de MySQL utilizando uno de los siguientes comandos, dependiendo de si está utilizando un contenedor Docker o Podman:
++
+[source, cli]
+----
+docker cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
+----
++
+[source, cli]
+----
+podman cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
+----
+. Ingrese al shell del contenedor MySQL usando uno de los siguientes comandos, dependiendo de si está usando un contenedor Docker o Podman:
++
+[source, cli]
+----
+docker exec -it ds_mysql_1 sh
+----
++
+[source, cli]
+----
+podman exec -it ds_mysql_1 sh
+----
+. En el shell del contenedor, implemente "env".
+. Necesitará la contraseña de la base de datos MySQL, así que copie el valor de la clave "MYSQL_ROOT_PASSWORD".
+. Restaure la base de datos MySQL de NetApp Backup and Recovery utilizando el siguiente comando:
++
+[source, cli]
+----
+mysql -u root -p cloud_backup < CBS_DB_Backup_23_05_2023.sql
+----
+. Verifique que la base de datos MySQL de NetApp Backup and Recovery se haya restaurado correctamente utilizando los siguientes comandos SQL:
++
+[source, cli]
+----
+mysql -u root -p cloud_backup
+----
++
+Introduzca la contraseña.
+
++
+[source, cli]
+----
+mysql> show tables;
+mysql> select * from volume;
+----
++
+Compruebe si los volúmenes que se muestran son los mismos que existían en su entorno original.
+
+
+
+
+
+=== Restaurar los archivos del catálogo indexado
+
+. Copie el archivo zip de respaldo del Catálogo indexado (usaremos el nombre de archivo de ejemplo "Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip") desde la ubicación de respaldo al nuevo host del agente de consola en la carpeta "/opt/application/netapp/cbs".
+. Descomprima el archivo "Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip" usando el siguiente comando:
++
+[source, cli]
+----
+unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
+----
+. Ejecute el comando *ls* para asegurarse de que se haya creado la carpeta "catalogdb1" con las subcarpetas "cambios" y "instantáneas" debajo.
+
+
+
+
+=== Descubra sus clústeres ONTAP y sistemas StorageGRID
+
+. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Descubra todos los sistemas ONTAP locales"^]que estaban disponibles en su entorno anterior. Esto incluye el sistema ONTAP que ha utilizado como servidor S3.
+. https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["Descubra sus sistemas StorageGRID"^] .
+
+
+
+
+=== Configurar los detalles del entorno de StorageGRID
+
+Agregue los detalles del sistema StorageGRID asociado con sus sistemas ONTAP tal como se configuraron en la configuración del agente de consola original utilizando el https://docs.netapp.com/us-en/console-automation/index.html["API de la consola de NetApp"^] .
+
+La siguiente información se aplica a las instalaciones en modo privado a partir de NetApp Console 3.9.xx. Para versiones anteriores, utilice el siguiente procedimiento: https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["Copia de seguridad en la nube de DarkSite: copia de seguridad y restauración de MySQL y catálogo indexado"^] .
+
+Necesitará realizar estos pasos para cada sistema que esté realizando una copia de seguridad de datos en StorageGRID.
+
+. Extraiga el token de autorización utilizando la siguiente API oauth/token.
++
+[source, http]
+----
+curl 'http://10.193.192.202/oauth/token' -X POST -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":"admin@netapp.com","password":"Netapp@123","grant_type":"password"}
+> '
+----
++
+Si bien la dirección IP, el nombre de usuario y las contraseñas son valores personalizados, el nombre de la cuenta no lo es. El nombre de la cuenta siempre es "cuenta-DARKSITE1". Además, el nombre de usuario debe utilizar un nombre con formato de correo electrónico.
+
++
+Esta API devolverá una respuesta como la siguiente. Puede recuperar el token de autorización como se muestra a continuación.
+
++
+[source, text]
+----
+{"expires_in":21600,"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzM2MDIzLCJleHAiOjE2NzI3NTc2MjMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9CJtRpRDY23PokyLg1if67bmgnMcYxdCvBOY-ZUYWzhrWbbY_hqUH4T-114v_pNDsPyNDyWqHaKizThdjjHYHxm56vTz_Vdn4NqjaBDPwN9KAnC6Z88WA1cJ4WRQqj5ykODNDmrv5At_f9HHp0-xVMyHqywZ4nNFalMvAh4xESc5jfoKOZc-IOQdWm4F4LHpMzs4qFzCYthTuSKLYtqSTUrZB81-o-ipvrOqSo1iwIeHXZJJV-UsWun9daNgiYd_wX-4WWJViGEnDzzwOKfUoUoe1Fg3ch--7JFkFl-rrXDOjk1sUMumN3WHV9usp1PgBE5HAcJPrEBm0ValSZcUbiA"}
+----
+. Extraiga el ID del sistema y el X-Agent-Id mediante la API de tenencia/externa/recurso.
++
+[source, http]
+----
+curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARKSITE1 -H 'accept: application/json' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzIyNzEzLCJleHAiOjE2NzI3NDQzMTMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9X_cQF8xttD0-S7sU2uph2cdu_kN-fLWpdJJX98HODwPpVUitLcxV28_sQhuopjWobozPelNISf7KvMqcoXc5kLDyX-yE0fH9gr4XgkdswjWcNvw2rRkFzjHpWrETgfqAMkZcAukV4DHuxogHWh6-DggB1NgPZT8A_szHinud5W0HJ9c4AaT0zC-sp81GaqMahPf0KcFVyjbBL4krOewgKHGFo_7ma_4mF39B1LCj7Vc2XvUd0wCaJvDMjwp19-KbZqmmBX9vDnYp7SSxC1hHJRDStcFgJLdJHtowweNH2829KsjEGBTTcBdO8SvIDtctNH_GAxwSgMT3zUfwaOimPw'
+----
++
+Esta API devolverá una respuesta como la siguiente. El valor bajo "resourceIdentifier" denota _WorkingEnvironment Id_ y el valor bajo "agentId" denota _x-agent-id_.
+
+. Actualice la base de datos de NetApp Backup and Recovery con los detalles del sistema StorageGRID asociado con los sistemas. Asegúrese de ingresar el nombre de dominio completo de StorageGRID, así como la clave de acceso y la clave de almacenamiento como se muestra a continuación:
++
+[source, http]
+----
+curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudmanager_cbs/api/v1/sg/credentials/working-environment/OnPremWorkingEnvironment-pMtZND0M' \
+> --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzIyNzEzLCJleHAiOjE2NzI3NDQzMTMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9X_cQF8xttD0-S7sU2uph2cdu_kN-fLWpdJJX98HODwPpVUitLcxV28_sQhuopjWobozPelNISf7KvMqcoXc5kLDyX-yE0fH9gr4XgkdswjWcNvw2rRkFzjHpWrETgfqAMkZcAukV4DHuxogHWh6-DggB1NgPZT8A_szHinud5W0HJ9c4AaT0zC-sp81GaqMahPf0KcFVyjbBL4krOewgKHGFo_7ma_4mF39B1LCj7Vc2XvUd0wCaJvDMjwp19-KbZqmmBX9vDnYp7SSxC1hHJRDStcFgJLdJHtowweNH2829KsjEGBTTcBdO8SvIDtctNH_GAxwSgMT3zUfwaOimPw' \
+> --header 'x-agent-id: vB_1xShPpBtUosjD7wfBlLIhqDgIPA0wclients' \
+> -d '
+> { "storage-server" : "sr630ip15.rtp.eng.netapp.com:10443", "access-key": "2ZMYOAVAS5E70MCNH9", "secret-password": "uk/6ikd4LjlXQOFnzSzP/T0zR4ZQlG0w1xgWsB" }'
+----
+
+
+
+
+=== Verificar la configuración de NetApp Backup and Recovery
+
+. Seleccione cada sistema ONTAP y haga clic en *Ver copias de seguridad* junto al servicio de copia de seguridad y recuperación en el panel derecho.
++
+Debería poder ver todas las copias de seguridad que se han creado para sus volúmenes.
+
+. Desde el Panel de restauración, en la sección Buscar y restaurar, haga clic en *Configuración de indexación*.
++
+Asegúrese de que los sistemas que tenían habilitada la catalogación indexada anteriormente permanezcan habilitados.
+
+. Desde la página Buscar y restaurar, ejecute algunas búsquedas en el catálogo para confirmar que la restauración del catálogo indexado se ha completado correctamente.
+

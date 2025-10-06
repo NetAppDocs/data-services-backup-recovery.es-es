@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: br-use-settings-advanced.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Algunas configuraciones avanzadas pueden resultar útiles para mantener su entorno de respaldo y recuperación.  Puede configurar ajustes avanzados para administrar su inventario, eliminar copias de seguridad, anular el registro de recursos, eliminar relaciones, desproteger recursos para detener cargos por servicio, establecer la velocidad de transferencia máxima para la relación SnapMirror , exportar copias de instantáneas a un almacén de objetos, habilitar la eliminación automática anual de instantáneas, habilitar el modo de mantenimiento y actualizar el complemento de la aplicación. 
+---
+= Configurar ajustes avanzados en NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Algunas configuraciones avanzadas pueden resultar útiles para mantener su entorno de respaldo y recuperación.  Puede configurar ajustes avanzados para administrar su inventario, eliminar copias de seguridad, anular el registro de recursos, eliminar relaciones, desproteger recursos para detener cargos por servicio, establecer la velocidad de transferencia máxima para la relación SnapMirror , exportar copias de instantáneas a un almacén de objetos, habilitar la eliminación automática anual de instantáneas, habilitar el modo de mantenimiento y actualizar el complemento de la aplicación.
+
+Configure las opciones avanzadas de NetApp Backup and Recovery de las siguientes maneras:
+
+* Eliminar copias de seguridad.
+* Anular el registro de copias de seguridad, bases de datos, instancias o hosts de aplicaciones.
+* Eliminar las relaciones.
+* Desproteja bases de datos, instancias, hosts de aplicaciones y entornos de trabajo para detener los cargos por servicio.
+* Establezca la tasa de transferencia máxima para la relación SnapMirror : administre el uso del ancho de banda y asegúrese de que las operaciones de SnapMirror no interfieran con otras actividades de la red.
+* Exporte copias de instantáneas a un almacén de objetos para inicializar copias de seguridad en la nube moviendo copias de instantáneas más antiguas a la copia de seguridad de referencia.
+* Habilitar la eliminación automática de instantáneas anuales
+* Habilite el modo de mantenimiento para que se puedan realizar actualizaciones o tareas de mantenimiento.
+* Actualizar el complemento de la aplicación.
+
+
+
+
+== Eliminar copias de seguridad
+
+Puede eliminar copias de seguridad para liberar espacio en su almacenamiento.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Eliminar copias de seguridad**.
+. Seleccione la copia de seguridad que desea eliminar.
+. Seleccione **Eliminar**.
+
+
+
+
+== Anular el registro de copias de seguridad, bases de datos, instancias o hosts de aplicaciones
+
+Puede anular el registro de copias de seguridad, bases de datos, instancias o hosts de aplicaciones para eliminarlos del inventario.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Cancelar registro de recursos**.
+. Seleccione el recurso que desea cancelar el registro.
+. Seleccione **Cancelar registro**.
+
+
+
+
+== Eliminar relaciones
+
+Puedes eliminar relaciones para quitarlas del inventario.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Eliminar relaciones**.
+. Seleccione la relación que desea eliminar.
+. Seleccione **Eliminar**.
+
+
+
+
+== Desproteger bases de datos, instancias, hosts de aplicaciones y entornos de trabajo
+
+Puede desproteger bases de datos, instancias, hosts de aplicaciones y entornos de trabajo para detener los cargos por servicio.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Desproteger recursos**.
+
+
+
+
+== Establezca la velocidad de transferencia máxima para la relación SnapMirror
+
+Puede establecer la velocidad de transferencia máxima para la relación SnapMirror para administrar el uso del ancho de banda, garantizando que las operaciones de SnapMirror no interfieran con otras actividades de la red.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Establecer la velocidad de transferencia máxima para la relación SnapMirror **.
+. Introduzca la velocidad máxima de transferencia.
+. Seleccione **Guardar**.
+
+
+
+
+== Exportar copias de instantáneas a un almacén de objetos
+
+Puede exportar copias instantáneas a un almacén de objetos para inicializar copias de seguridad en la nube moviendo copias instantáneas más antiguas a la copia de seguridad de referencia.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Exportar copias de instantáneas a un almacén de objetos**.
+. Seleccione la copia de instantánea que desea exportar.
+. Seleccione **Exportar**.
+
+
+
+
+== Habilitar la eliminación automática de instantáneas anuales
+
+Puede habilitar la eliminación automática anual de instantáneas para eliminar instantáneas que tengan más de un año de antigüedad.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Habilitar eliminación automática de instantáneas anuales**.
+. Seleccione **Habilitar**.
+
+
+
+
+== Habilitar el modo de mantenimiento
+
+Puede habilitar el modo de mantenimiento para que se puedan realizar actualizaciones o tareas de mantenimiento.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Habilitar modo de mantenimiento**.
+. Seleccione **Habilitar**.
+
+
+
+
+== Actualizar el complemento de la aplicación
+
+Puede actualizar el complemento de la aplicación para asegurarse de que las últimas funciones estén disponibles.
+
+. En la consola de NetApp Backup and Recovery, seleccione **Configuración**.
+. Seleccione **Configuración avanzada**.
+. Seleccione **Actualizar el complemento de la aplicación**.
+. Seleccione **Actualizar**.
+
