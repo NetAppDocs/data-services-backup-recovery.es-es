@@ -1,18 +1,18 @@
-= NetApp Backup and Recovery ahora es NetApp Backup and Recovery
+= La BlueXP backup and recovery ahora es NetApp Backup and Recovery
 :allow-uri-read: 
 
 
 
 
-=== NetApp Backup and Recovery ahora es NetApp Backup and Recovery
+=== La BlueXP backup and recovery ahora es NetApp Backup and Recovery
 
-NetApp Backup and Recovery ha pasado a llamarse NetApp Backup and Recovery.
+La BlueXP backup and recovery ha pasado a llamarse Copia de seguridad y recuperación de NetApp .
 
 
 
 === BlueXP ahora es NetApp Console
 
-La consola NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento NetApp y de los servicios de datos NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada, que es altamente segura y compatible.
+La consola de NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento de NetApp y de los servicios de datos de NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada que es altamente segura y compatible.
 
 Para obtener más detalles sobre lo que ha cambiado, consulte lalink:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de la versión de la consola de NetApp ."]
 
