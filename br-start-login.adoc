@@ -22,7 +22,7 @@ Para obtener detalles sobre las acciones que puede realizar cada rol, consulteli
 
 Para iniciar sesión en la consola de NetApp , puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la consola de NetApp usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
 
-*Rol de consola de NetApp requerido* Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de respaldo y recuperación, administrador de restauración de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola de NetApp requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
 Para agregar un agente de consola, debe tener el rol de administrador de la organización o el rol de superadministrador de copia de seguridad y recuperación.
 

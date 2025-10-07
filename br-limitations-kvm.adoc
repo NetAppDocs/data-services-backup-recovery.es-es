@@ -14,7 +14,7 @@ summary: Esta versión de NetApp Backup and Recovery tiene las siguientes limita
 
 
 [role="lead"]
-Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del producto o que no interoperan correctamente con él. Revise estas limitaciones cuidadosamente.
+Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
 
 Las siguientes acciones y configuraciones no son compatibles con la versión preliminar privada de las cargas de trabajo KVM en NetApp Backup and Recovery:
 

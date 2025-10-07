@@ -62,7 +62,7 @@ Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y ad
 * Realizar copias de seguridad de los grupos de almacenamiento
 * Protección masiva de máquinas virtuales y grupos de almacenamiento mediante grupos de protección
 * Copias de seguridad de máquinas virtuales consistentes y consistentes ante fallos
-* Buscar y restaurar copias de seguridad de máquinas virtuales
+* Busque y restaure copias de seguridad de máquinas virtuales desde el almacenamiento primario, secundario y de objetos
 * Proceso guiado para realizar copias de seguridad y restaurar máquinas virtuales basadas en KVM y datos de máquinas virtuales
 
 

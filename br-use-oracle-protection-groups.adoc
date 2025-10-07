@@ -30,7 +30,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 Agrupe las máquinas virtuales y los grupos de almacenamiento que desea proteger juntos en un grupo de protección.
 
-*Rol de consola requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, o Rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
 .Pasos
 . En el menú de NetApp Backup and Recovery, seleccione *Inventario*.

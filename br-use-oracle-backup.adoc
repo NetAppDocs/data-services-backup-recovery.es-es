@@ -30,7 +30,7 @@ NOTE: Para realizar copias de seguridad de grupos de protección o bases de dato
 
 Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
 
-*Rol de consola requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, o Rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
 .Pasos
 . Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
@@ -55,7 +55,7 @@ NOTE: La política que se aplica a la copia de seguridad es la misma política q
 
 Puede ejecutar una copia de seguridad a pedido de una sola base de datos.
 
-*Rol de consola requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, o Rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
 .Pasos
 . Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.

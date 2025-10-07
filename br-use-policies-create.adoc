@@ -281,7 +281,7 @@ Si está editando una política que realiza copias de seguridad en el almacenami
 Si importó recursos de SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery. Ver link:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
 
 .Rol de consola de NetApp requerido
-Administrador de la organización o administrador de la carpeta o del proyecto. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+Superadministrador de copias de seguridad y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
 .Pasos
 . En la consola de NetApp , vaya a *Protección* > *Copia de seguridad y recuperación*.

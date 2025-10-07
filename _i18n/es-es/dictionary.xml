@@ -340,7 +340,6 @@
   <block id="e5f2b8ab19b544e0e970070da0ef345c" category="admonition">Si está utilizando una cuenta de servicio, debe utilizar el token de acceso al servicio en lugar de un token de usuario. El valor de "client_id" ("Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC") es un valor fijo y no se puede cambiar. En este caso, siga las instrucciones aquí:<block ref="ad1a67426fea429db40073e48bac82e2" category="inline-link-rx"></block> .</block>
   <block id="6d66ffd03910363fdf4db60df119c57d" category="summary">NetApp Backup and Recovery primero debe descubrir los datos para que usted pueda utilizar el servicio.  Durante el descubrimiento, NetApp Backup and Recovery analiza todos los volúmenes y archivos en los sistemas de su organización.</block>
   <block id="6b8b6ab08d4425ec0e0d9ea989426fec" category="doc">Limitaciones conocidas con NetApp Backup and Recovery para cargas de trabajo de Hyper-V</block>
-  <block id="1eba71d64e6c5e410e558530711e835b" category="paragraph">Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del producto o que no interoperan correctamente con él. Revise estas limitaciones cuidadosamente.</block>
   <block id="57a114780f98fd4bb0b06506b0ca9577" category="paragraph">Las siguientes acciones no son compatibles con la versión preliminar privada de las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:</block>
   <block id="020a36deb114af1bb518c70d5975e940" category="list-text">Crear grupos de recursos</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Expansión de discos (en múltiples recursos compartidos CIFS)</block>
@@ -431,7 +430,6 @@
   <block id="cb6fc7dd7b45612ba1f18392811f988b" category="paragraph">Al proteger cargas de trabajo KVM, NetApp Backup and Recovery no admite la detección de cargas de trabajo KVM cuando se utiliza software de gestión de virtualización como Apache CloudStack o Red Hat OpenShift Virtualization.</block>
   <block id="5d8aef9555e5438ddeff623786db2956" category="summary">Las limitaciones conocidas identifican funciones que no son compatibles con esta versión del producto o que no interactúan correctamente con ella. Revise estas limitaciones cuidadosamente.</block>
   <block id="23eb49de2f5ba6e24c6af10a73585797" category="doc">Limitaciones conocidas con NetApp Backup and Recovery para volúmenes ONTAP</block>
-  <block id="1f3fc62460abed605a22f22b000cf656" category="paragraph">Las limitaciones conocidas identifican funciones que no son compatibles con esta versión de NetApp Backup and Recovery o que no interactúan correctamente con ella. Revise estas limitaciones cuidadosamente.</block>
   <block id="32c27a5a3b9d3ca4a4a83c91adb6b781" category="list-text">NetApp Backup and Recovery puede realizar una copia de seguridad de Cloud Volumes ONTAP en un almacén de objetos en las regiones de AWS China (incluidas Beijing y Ningxia); sin embargo, es posible que primero deba modificar manualmente las políticas de identidad y acceso.</block>
   <block id="a6740791571196fed9cd8ca4499ec1fd" category="inline-link">Instalación de un agente de consola en AWS</block>
   <block id="4e69be20405025b3c646d8500efa2d1b" category="paragraph">Para obtener detalles sobre cómo crear un agente de consola en AWS, consulte<block ref="faab5e2f0edd338d700e3f66193d79cc" category="inline-link-rx"></block> .</block>
@@ -494,7 +492,6 @@
   <block id="82f72f137722b68957ddade43e2defd1" category="list-text">Los volúmenes SnapLock solo son compatibles si el sistema de origen desde el cual se creó la copia de seguridad en la nube ejecutaba ONTAP 9.11.0 o superior.</block>
   <block id="c2b262fa8521e3a1a0aa3fda5aef2e88" category="summary">Complete unos pocos pasos para configurar NetApp Backup and Recovery.</block>
   <block id="aa02d2a98a082cacd35a10457e954436" category="doc">Configurar los ajustes de NetApp Backup and Recovery</block>
-  <block id="1b426c9dfcae38a96783498cd1a85d01" category="paragraph">Después de configurar NetApp Console, configure los ajustes de respaldo y recuperación, que incluyen agregar credenciales para los recursos del host, importar recursos de SnapCenter , configurar directorios de registro y configurar los ajustes de VMware vCenter.  Debes hacer esto antes de comenzar a realizar copias de seguridad y recuperar activamente tus datos.</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-xref"></block>
   <block id="703c7afa8428dbb84a57f0e06749affb" category="list-text"><block ref="473bc5f1f9d293596a6cf3f7d880fe14" category="inline-xref-macro-rx"></block>para los hosts de Windows y SQL Server que importó desde SnapCenter y agregue credenciales.  (Solo cargas de trabajo de Microsoft SQL Server)</block>
   <block id="07ede38140c5a0a6207121bf4f4767ef" category="list-text"><block ref="018d9e0f2fecc03b7f691fcb7f4f3055" category="inline-xref-macro-rx"></block> .</block>
@@ -504,8 +501,6 @@
   <block id="a5999c1155de9850d34ba60075be7171" category="inline-link">Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios</block>
   <block id="7dea1900c0a761205245e3263e1f1ebf" category="paragraph">*Rol de consola de NetApp requerido* Superadministrador de Backup and Recovery, Administrador de backup de Backup and Recovery, Administrador de restauración de Backup and Recovery. Conozca más sobre<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="5c42b26269b60e99eac73f94a3585743" category="section-title">Agregar credenciales para los recursos del host</block>
-  <block id="ff11bed4c212bfa13fbabfb47877614e" category="paragraph">Agregue credenciales para los recursos de host que desea importar desde SnapCenter.  Las credenciales del host se utilizan para descubrir nuevas cargas de trabajo y aplicar políticas de respaldo.</block>
-  <block id="0e57c8aab8f417ed692f2ba916c480ad" category="paragraph">Si aún no tiene credenciales, puede crearlas.  Estas credenciales deben tener los permisos necesarios para acceder y administrar las cargas de trabajo del host.</block>
   <block id="aedf3a488773fb9c60ee19cf684d0005" category="paragraph">Debe configurar los siguientes tipos de credenciales:</block>
   <block id="33597ea687793f3f614f3518b3d90ac4" category="list-text">Credenciales de Microsoft SQL Server</block>
   <block id="6f5d563dad84a97a850ccf1693d98d4f" category="list-text">Credenciales del host de Windows de SnapCenter</block>
@@ -531,16 +526,13 @@
   <block id="7c60bb16141be5fd1d4d7893307168fa" category="list-text">Seleccione el icono Acciones<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Editar credenciales*.</block>
   <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">Seleccione *Guardar*.</block>
   <block id="6360c437baff2a09cee7e8dc0efcf0cf" category="section-title">Mantener la configuración de VMware vCenter</block>
-  <block id="d9c00ca3c60e2e450cd1bec138b6a004" category="paragraph">Proporcione las credenciales de VMware vCenter para descubrir las cargas de trabajo de VMware vCenter Server que desea respaldar.  Si no tiene credenciales existentes, puede crearlas con los permisos necesarios para acceder y administrar las cargas de trabajo de VMware vCenter Server.</block>
   <block id="0ec424d519f92489056d9a7196c34fde" category="list-text">Seleccione la flecha hacia abajo para expandir la sección *VMware vCenter*.</block>
   <block id="0fad596c25ef36a260c47293acf33a48" category="list-text">Seleccione *Agregar vCenter*.</block>
   <block id="16b00caa5b26d0343fb3c31fa5c5bf93" category="list-text">Ingrese la información de VMware vCenter Server.</block>
-  <block id="251641e0305b7f4edbe31ac95a17d905" category="list-text">*vCenter FQDN o dirección IP*: ingrese un nombre FQDN o la dirección IP para VMware vCenter Server.</block>
   <block id="1579d6685378236f1828bd8e364127a6" category="list-text">*Nombre de usuario* y *Contraseña*: ingrese el nombre de usuario y la contraseña para VMware vCenter Server.</block>
   <block id="7a7bd0e5e2c8bb51a37a242f6499ad01" category="list-text">*Puerto*: Ingrese el número de puerto para VMware vCenter Server.</block>
   <block id="d448876927f65c1f1ffa9fbacd95a1c7" category="list-text">*Protocolo*: Seleccione *HTTP* o *HTTPS*.</block>
   <block id="c7a0590a9821b8dee0782b0f2f78a6eb" category="section-title">Importar y administrar recursos del host de SnapCenter</block>
-  <block id="065737f38005964cd6bc543ec8a6de30" category="paragraph">Si anteriormente utilizó SnapCenter para realizar copias de seguridad de sus recursos, puede importar y administrar esos recursos en NetApp Backup and Recovery.  Con esta opción, puede importar información del servidor SnapCenter para registrar varios servidores SnapCenter y descubrir las cargas de trabajo de la base de datos.</block>
   <block id="8ee500e67ed174fc635bb51aa15a8144" category="paragraph">Este es un proceso de dos partes:</block>
   <block id="5b47a2e71047fd0fb279720aee2ba791" category="list-text">Importar recursos de host y aplicaciones de SnapCenter Server</block>
   <block id="be17fa66fcbe51ceaa12130a926f665f" category="list-text">Administrar recursos de host de SnapCenter seleccionados</block>
@@ -895,7 +887,6 @@
   <block id="84431c593b60f03c075ddbf38e5d0185" category="paragraph">Para obtener detalles sobre las acciones que puede realizar cada rol, consulte<block ref="d0d0dcb15768cc7e1b5fa2cdae059c59" category="inline-link-macro-rx"></block> .</block>
   <block id="8e917942a77709dfd28c155f42a97553" category="inline-link">Obtenga más información sobre cómo iniciar sesión</block>
   <block id="ae5c737a541e095839e199ea2ab82f0f" category="paragraph">Para iniciar sesión en la consola de NetApp , puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la consola de NetApp usando su correo electrónico y una contraseña.<block ref="3546779ff62edcb806e94b283f4a603a" category="inline-link-rx"></block> .</block>
-  <block id="e3ba12a02b95a6288844ff449c559248" category="paragraph">*Rol de consola de NetApp requerido* Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de respaldo y recuperación, administrador de restauración de respaldo y recuperación.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="b2a74e6e00558766d860afbadbfe8a35" category="paragraph">Para agregar un agente de consola, debe tener el rol de administrador de la organización o el rol de superadministrador de copia de seguridad y recuperación.</block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="inline-link">Consola de NetApp</block>
   <block id="6a65fb509b9c682f9df5eb122484e2f7" category="list-text">Abra un navegador web y vaya a<block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block> .</block>
@@ -1049,7 +1040,6 @@
   <block id="7560dd7799dfbab82d090d3826c438e5" category="list-text">Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).</block>
   <block id="7eb85b9ab846044a4d26b2851ea3e18c" category="section-title">Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido</block>
   <block id="a940ef4062bc3a7b375cd592da54d6fe" category="paragraph">Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.</block>
-  <block id="c9b48ac49eb267bc234cdd09141d7f6e" category="paragraph">*Rol de consola requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, o Rol de administrador de copias de seguridad de Backup and Recovery.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="13ed80e7f4035afba1bfc9687795be5e" category="list-text">Desde el menú, seleccione *Inventario*.</block>
   <block id="291d091c1411150a9bc3fc401cfdfba6" category="list-text">Seleccione una carga de trabajo para ver los detalles de protección.</block>
   <block id="7a770d938aba1440464532a20ae420f2" category="list-text">Seleccione el icono Acciones<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Ver detalles*.</block>
@@ -1120,7 +1110,6 @@
   <block id="0f4570eee3ca580a8c827d191240eb2b" category="paragraph">Desde la página Restaurar (también conocida como Buscar y restaurar)*, puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.</block>
   <block id="4967eb3bddc1aeeafa7fa83be9252bb4" category="section-title">Restaurar datos de carga de trabajo desde la opción Restaurar (Buscar y restaurar)</block>
   <block id="ef14b6cabf130697cc9bf71b74faf58b" category="paragraph">Restaure las cargas de trabajo de Hyper-V mediante la opción Restaurar. Puede buscar la instantánea por su nombre o utilizando filtros.</block>
-  <block id="d1cd0972eef06df417ba7e1460c5494e" category="paragraph">*Rol de consola requerido* Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de copia de seguridad y recuperación, administrador de restauración de copia de seguridad y recuperación.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="f0b7d058add557b4607545e73a9337e1" category="list-text">Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.</block>
   <block id="29020414ea8232d236539005c93e656b" category="list-text">En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Hyper-V*.</block>
   <block id="a989526c4a2f808a35b9f41593ab5a01" category="list-text">Ingrese el nombre del recurso que desea restaurar o filtre por el nombre de la máquina virtual, el host de la máquina virtual o el grupo de almacenamiento donde se encuentra el recurso que desea restaurar.</block>
@@ -1929,7 +1918,6 @@
   <block id="f985f1951686384a15ea5ddf855b3cab" category="paragraph">Puede agregar otro nivel de protección al editar una política, pero no puede eliminar un nivel de protección.  Por ejemplo, si la política solo protege instantáneas locales, puede agregar replicación al almacenamiento secundario o copias de seguridad al almacenamiento de objetos.  Si tiene instantáneas y replicación locales, puede agregar almacenamiento de objetos.  Sin embargo, si tiene instantáneas locales, replicación y almacenamiento de objetos, no puede eliminar uno de estos niveles.</block>
   <block id="f28c1acceb60dde3fa2b864db8f83957" category="paragraph">Si está editando una política que realiza copias de seguridad en el almacenamiento de objetos, puede habilitar el archivado.</block>
   <block id="eeef4d21ae9c8e573641508f4902329d" category="paragraph">Si importó recursos de SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery. Ver <block ref="323b251497d754074219cdf246ce74d7" category="inline-link-macro-rx"></block> .</block>
-  <block id="29d4493d27f0d217772993ca5eb8939d" category="paragraph">Administrador de la organización o administrador de la carpeta o del proyecto.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="39f6b3bed078be30324b69d90eca08da" category="list-text">En la consola de NetApp , vaya a *Protección* &gt; *Copia de seguridad y recuperación*.</block>
   <block id="c3be1ab29368bfca9929503e6810fe39" category="list-text">Seleccione la opción *Políticas*.</block>
   <block id="5d7cb595562fb7decc7d53373bf00ebe" category="list-text">Seleccione la política que desea editar.</block>
@@ -2471,7 +2459,6 @@
   <block id="6736478116770d132993185ee55b6baf" category="list-text">5 GB de espacio mínimo de instalación y registro para el complemento en el host Hyper-V</block>
   <block id="523f5e6af5276c06e274c9d76b2d4467" category="admonition">Asegúrese de asignar suficiente espacio en disco en el host Hyper-V para la carpeta de registros y monitoree periódicamente su uso.  El espacio requerido depende de la frecuencia con la que se realizan copias de seguridad y operaciones de protección de datos.  Si no hay suficiente espacio, no se generarán registros.</block>
   <block id="45eb2c9346b72d7957a67eed3bb74a3d" category="list-text">Requisitos de configuración de NetApp ONTAP :</block>
-  <block id="3ecc6bf387ed36ac8116ccc2512c0213" category="list-text">Un sistema ONTAP primario (ONTAP 9.15.1 o posterior)</block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">Documentación de ONTAP</block>
   <block id="0a2b6c395fc07f332dac7e7046c239c4" category="list-text">Para las implementaciones de Hyper-V que utilizan recursos compartidos CIFS para almacenar datos de máquinas virtuales, asegúrese de que la propiedad de recursos compartidos de disponibilidad continua esté habilitada en el sistema ONTAP .  Consulte la<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> para obtener instrucciones.</block>
   <block id="0811b88847f846fb265d219dc4238de2" category="section-title">En la consola de NetApp</block>
@@ -4699,83 +4686,8 @@
   <block id="f8d2cf753b5dfff0bf9e240741162b9c" category="cell">Instalación manual sin acceso a Internet</block>
   <block id="7bbc18e8c81866c16ae2fa4ae7b4faa7" category="cell"><block ref="04dcde0112f87c65139657970e95733e" prefix="" category="inline-code"></block></block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
-  <block id="03cc6e246c5f035602e69014fd72570d" category="summary">NetApp Backup and Recovery emplea roles para gobernar el acceso que tiene cada usuario a funciones y acciones específicas.</block>
   <block id="30aedeff64f56a66117a57772bf048e2" category="doc">Funciones de gestión de identidad y acceso (IAM) de NetApp Backup and Recovery</block>
   <block id="628ffac7ede42e0edae88edd9f769e8b" category="paragraph">NetApp Backup and Recovery emplea la gestión de identidad y acceso (IAM) para controlar el acceso que tiene cada usuario a funciones y acciones específicas.</block>
-  <block id="451228b79a76a54f6c3a4a5d5af0ec52" category="paragraph">El servicio utiliza los siguientes roles que son específicos de NetApp Backup and Recovery.</block>
-  <block id="0169af78615f6ddf8a3484e60a01896f" category="list-text">*Superadministrador de backup y recuperación*: realiza cualquier acción en NetApp Backup and Recovery.</block>
-  <block id="532354fdc6bd2980f132e1d07fa7aa5f" category="list-text">*Administrador de copias de seguridad y recuperación*: realice copias de seguridad en instantáneas locales, replique en almacenamiento secundario y realice copias de seguridad en acciones de almacenamiento de objetos en NetApp Backup and Recovery.</block>
-  <block id="c0a57abfd326897381a3ffd211e0034d" category="list-text">*Administrador de restauración de copias de seguridad y recuperación*: restaure cargas de trabajo mediante NetApp Backup and Recovery.</block>
-  <block id="24e1202dabefe42a93a17e758a826775" category="list-text">*Administrador de clones de respaldo y recuperación*: clona aplicaciones y datos mediante NetApp Backup and Recovery.</block>
-  <block id="af2800282a31e52b411c02e6d165154e" category="list-text">*Visor de copias de seguridad y recuperación*: vea información en NetApp Backup and Recovery, pero no realice ninguna acción.</block>
-  <block id="bf786b3a3016622928354c48b7225397" category="inline-link">La documentación de configuración y administración de la consola</block>
-  <block id="94190d0421ea1693bd95963ed8c1d2c4" category="paragraph">Para obtener detalles sobre todos los roles de acceso a la consola de NetApp , consulte<block ref="4b225699c724cb72a1654871509070eb" category="inline-link-rx"></block> .</block>
-  <block id="eb6687834d18ce256e1ea40605b27891" category="section-title">Roles utilizados para acciones comunes</block>
-  <block id="2586127e46d382f00f4e8b5c171b6bbe" category="paragraph">La siguiente tabla indica las acciones que cada rol de NetApp Backup and Recovery puede realizar para todas las cargas de trabajo.</block>
-  <block id="4420e7353184ac575b539cdce1b991db" category="cell">Característica y acción</block>
-  <block id="450fdc0a439b3bd7fea7fb59d6181bf1" category="cell">Superadministrador de copias de seguridad y recuperación</block>
-  <block id="b68dd17bacd097253684c47f7b783d57" category="cell">Administrador de clones de Backup and Recovery</block>
-  <block id="c4281079caf3fb466c3b52cff7303e52" category="cell">Agregar, editar o eliminar hosts</block>
-  <block id="9d06472988c53bfc768bc7b6a788b697" category="cell">Instalar complementos</block>
-  <block id="af964a69034eafc184793164ce7342fd" category="cell">Agregar credenciales (host, instancia, vCenter)</block>
-  <block id="b60c44c6bbbb3793d0c08c34cd6e2382" category="cell">Ver el panel y todas las pestañas</block>
-  <block id="78c7efbfa07116553a52f59800129dde" category="cell">Comience una prueba gratuita</block>
-  <block id="42174d568723a8694dc7e6dfd143cb12" category="cell">Iniciar el descubrimiento de cargas de trabajo</block>
-  <block id="666d2ef63ada639c9aafe5a0d4332126" category="cell">Ver información de la licencia</block>
-  <block id="9ea1b41f4c4dc25b684804b2da7fcf2d" category="cell">Activar licencia</block>
-  <block id="299b646d08299de5102913812cccecc6" category="cell">Ver anfitriones</block>
-  <block id="69a3ca879664da6277ba49bd9bbe9729" category="cell">*Horarios*:</block>
-  <block id="b506c3069be23743726ffb8cd92b46ee" category="cell">Activar horarios</block>
-  <block id="b01426d1d7c808e5938d717128d8dbc8" category="cell">*Políticas y protección*:</block>
-  <block id="8005276261cf598bb8798cc035670c47" category="cell">Ver planes de protección</block>
-  <block id="f57a3b9b96166046bfabc5a5d3662156" category="cell">Crear, modificar o eliminar protección</block>
-  <block id="5e53ac0469a268cf66c46c7a3c56a7d3" category="cell">Crear un clon, dividir un clon o eliminar un clon</block>
-  <block id="49eab4762197c9cc75d88afe3fec83a5" category="cell">Crear, modificar o eliminar una política</block>
-  <block id="5ab3d842069448df8d9ee6e65860e0c6" category="cell">*Informes*:</block>
-  <block id="94aa9dc7e2488fdf523fa464cb4c393f" category="cell">Ver informes</block>
-  <block id="ef7a7b1bec08bef324977926c1fc910c" category="cell">Crear informes</block>
-  <block id="cbb776f3d96dc88fa5b9bf1fc5bdb830" category="cell">Eliminar informes</block>
-  <block id="e3b2c7d7d96bc87893d08fe0e99fe8cc" category="cell">*Importar desde SnapCenter y administrar el host*:</block>
-  <block id="ae9ef82221423e04c8c412b4ccee5ab0" category="cell">Ver datos importados de SnapCenter</block>
-  <block id="297abe281eed8fe2ed5a4ae2c853582e" category="cell">Importar datos desde SnapCenter</block>
-  <block id="c2b833451ea07ba6cb2893ff82a0f395" category="cell">Administrar (migrar) host</block>
-  <block id="b2a48d97f6dd6a4c809fefa8abbda6f8" category="cell">*Configurar ajustes*:</block>
-  <block id="3b83af25a71030e8f59b11202c70c1a4" category="cell">Configurar el directorio de registro</block>
-  <block id="cb691e71dd5ce44d41cbabd83672681c" category="cell">Asociar o eliminar credenciales de instancia</block>
-  <block id="ae165b1dbb47749bb695e728656b4e2e" category="cell">*Cubos*:</block>
-  <block id="d83d0c54783ef948cc85a1a9d70fff8d" category="cell">Ver depósitos</block>
-  <block id="eba0ec490b5e802d37e2d60acf6b56f0" category="cell">Crear, editar o eliminar un depósito</block>
-  <block id="18979d93e93cf64a9fa47fc23204a541" category="section-title">Roles utilizados para acciones específicas de la carga de trabajo</block>
-  <block id="c8cacc43637f526e462bb7b2db5e8a7e" category="paragraph">La siguiente tabla indica las acciones que cada función de respaldo y recuperación de NetApp puede realizar para cargas de trabajo específicas.</block>
-  <block id="49396edcdc3d3d7e4bec42adc037a5ef" category="section-title">Cargas de trabajo de Kubernetes</block>
-  <block id="af6540c92b5c87a5b734e8040e55fb5a" category="paragraph">Esta tabla indica las acciones que cada rol de respaldo y recuperación de NetApp puede realizar para acciones específicas de las cargas de trabajo de Kubernetes.</block>
-  <block id="30ecfda5fd2ae815c55d44b805282893" category="cell">Ver clústeres, espacios de nombres, clases de almacenamiento y recursos de API</block>
-  <block id="43cea4fc6153b6f6be274aa7a58165f6" category="cell">Agregar nuevos clústeres de Kubernetes</block>
-  <block id="c7ff7e2dc0038a703b1d65cba9471e66" category="cell">Actualizar las configuraciones del clúster</block>
-  <block id="0c2bcbbb2f7543049b38e6c7cf0d3632" category="cell">Eliminar clústeres de la administración</block>
-  <block id="3abbb617c1b9641e06a22a49bf4d6afe" category="cell">Ver aplicaciones</block>
-  <block id="013a41b4b08c37dcea17e4fa48d255f5" category="cell">Crear y definir nuevas aplicaciones</block>
-  <block id="90bf343c3b8602cca1dd5d4e496770be" category="cell">Actualizar las configuraciones de la aplicación</block>
-  <block id="9d45b84288e31f73a0250b34d7436ab1" category="cell">Eliminar aplicaciones de la administración</block>
-  <block id="80fd001fca7a1e03b48f09198234b180" category="cell">Ver los recursos protegidos y el estado de la copia de seguridad</block>
-  <block id="3140b52cbc33f1fa198b21990d606b85" category="cell">Cree copias de seguridad y proteja aplicaciones con políticas</block>
-  <block id="2daccc0f5ea3aea52b03033934a88e4c" category="cell">Desproteger aplicaciones y eliminar copias de seguridad</block>
-  <block id="1e13e123ade8f8dd5aca982f66065814" category="cell">Ver puntos de recuperación y resultados del visor de recursos</block>
-  <block id="f4b1a090912137cc4b84e23244744002" category="cell">Restaurar aplicaciones desde puntos de recuperación</block>
-  <block id="015a5696342f2c49d35e3d76276d8453" category="cell">Ver las políticas de respaldo de Kubernetes</block>
-  <block id="cd8df251bf029cee276df2228924ec6b" category="cell">Crear políticas de respaldo de Kubernetes</block>
-  <block id="5f295d6efeffef266deb291f5b629b24" category="cell">Actualizar las políticas de respaldo</block>
-  <block id="9ce50604972e3de67c501b4616256878" category="cell">Eliminar políticas de copia de seguridad</block>
-  <block id="06c1eacf9e674add6b6b569a9430fe0f" category="cell">Ver ganchos de ejecución y fuentes de ganchos</block>
-  <block id="4f5e12a49954715db6c9052454048e23" category="cell">Crear ganchos de ejecución y fuentes de gancho</block>
-  <block id="e3539bf0fa952b4314159ea521fa2006" category="cell">Actualizar los ganchos de ejecución y las fuentes de los ganchos</block>
-  <block id="aed1daad2d2c2448ce77cb7b4c411815" category="cell">Eliminar ganchos de ejecución y fuentes de ganchos</block>
-  <block id="ba447c8899720e860548bc226805ea39" category="cell">Ver plantillas de gancho de ejecución</block>
-  <block id="b80b8d6b54aef557dce562267154abad" category="cell">Crear plantillas de gancho de ejecución</block>
-  <block id="63b66bb7113f652709a0d1553dbb839f" category="cell">Actualizar plantillas de gancho de ejecución</block>
-  <block id="1dcb606a3a707c345cb54b5c3113d621" category="cell">Eliminar plantillas de gancho de ejecución</block>
-  <block id="386bacb41d61c7b8e46cd3e9198743cd" category="cell">Ver el resumen de la carga de trabajo y los paneles de análisis</block>
-  <block id="8bbffbb59e50612d870c42d2db4880dc" category="cell">Ver depósitos y destinos de almacenamiento de StorageGRID</block>
   <block id="a99fab69b8aa9775fe1767ce605ae8bd" category="summary">NetApp proporciona soporte para la consola NetApp de distintas maneras. Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas, los 7 días de la semana, como artículos de la base de conocimientos (KB) y un foro comunitario. Su registro de soporte incluye soporte técnico remoto mediante tickets web.</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">Obtener ayuda</block>
   <block id="2feeca48692986e9cc471ec61f847fca" category="paragraph">NetApp proporciona soporte para NetApp Console y sus servicios en la nube de diversas maneras. Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas del día, los 7 días de la semana, como artículos de la base de conocimientos (KB) y un foro comunitario. Su registro de soporte incluye soporte técnico remoto mediante tickets web.</block>
@@ -5059,4 +4971,24 @@
   <block id="83b5525699223779088aa2e2c9ca5b1a" category="doc">La BlueXP backup and recovery ahora es NetApp Backup and Recovery</block>
   <block id="6a119fc880b70d0e27bca4b7243a7a55" category="paragraph">La BlueXP backup and recovery ha pasado a llamarse Copia de seguridad y recuperación de NetApp .</block>
   <block id="56ed5396ea479b4ed31e75f97a4377c7" category="paragraph">La consola de NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento de NetApp y de los servicios de datos de NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada que es altamente segura y compatible.</block>
+  <block id="33b87914ae72ad3c394fc1f941a94c8c" category="list-text">Busque y restaure copias de seguridad de máquinas virtuales desde el almacenamiento primario, secundario y de objetos</block>
+  <block id="a9ad02ebb13f3d9fa3cb4a1b59be6548" category="paragraph">Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.</block>
+  <block id="5095bcec3e4370bbbc8bf8d7b47623c5" category="paragraph">Después de configurar la consola de NetApp , configure los ajustes de copia de seguridad y recuperación.  Agregue credenciales para los recursos del host, importe recursos de SnapCenter , configure directorios de registro y establezca la configuración de VMware vCenter.  Complete estos pasos antes de realizar una copia de seguridad o recuperar datos.</block>
+  <block id="b65c7169cf8702ef1805f781de02bc69" category="paragraph">Agregue credenciales para que los recursos del host se importen desde SnapCenter.  NetApp Backup and Recovery utiliza estas credenciales para descubrir cargas de trabajo y aplicar políticas de respaldo.</block>
+  <block id="c353deca6689f7e632a94f8d6f03f7ca" category="paragraph">Si no tiene credenciales, créelas con permisos para acceder y administrar las cargas de trabajo del host.</block>
+  <block id="7c36e999276458571738ba8b383accad" category="paragraph">Proporcione las credenciales de VMware vCenter para descubrir cargas de trabajo para realizar copias de seguridad.  Si no tiene credenciales, créelas con permisos para acceder y administrar las cargas de trabajo de VMware vCenter Server.</block>
+  <block id="ae13f95a2724828ee074a902c02b56e4" category="list-text">*vCenter FQDN o dirección IP*: ingrese un nombre FQDN o la dirección IP para VMware vCenter Server.</block>
+  <block id="1e69c53525c65378aa99055dd2ebfdd1" category="paragraph">Si anteriormente utilizó SnapCenter para realizar copias de seguridad de sus recursos, puede importar y administrar esos recursos en NetApp Backup and Recovery. Esta opción le permite importar información del servidor SnapCenter para registrar varios servidores SnapCenter y descubrir cargas de trabajo de bases de datos.</block>
+  <block id="4c82cd55e9c216695cfce74c86a368dd" category="paragraph">*Rol de consola de NetApp requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
+  <block id="62bc49b7db8523d3243d25f81a8028ad" category="paragraph">*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
+  <block id="d1e52fcdb63677c060eb2093a79135fe" category="paragraph">*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
+  <block id="14230adaf41f6db735e7845098461fcb" category="paragraph">Superadministrador de copias de seguridad y recuperación.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
+  <block id="4c6ec01f6ae03e08c146fe6865423a4b" category="list-text">PowerShell 7.4.2 o posterior</block>
+  <block id="4c0e33820cc2625f20df7d75a7db2a90" category="list-text">Asegúrese de que el tráfico HTTPS bidireccional esté permitido para los siguientes puertos en la configuración del Firewall de Windows:</block>
+  <block id="2f09bec2ba16dad8a4210aafc07d4e36" category="list-text">8144 (complemento de NetApp para Hyper-V)</block>
+  <block id="eeb69275da8e2dd563a27a05a24a4ff1" category="list-text">8145 (complemento de NetApp para Windows)</block>
+  <block id="1498907a7069094c1a1b679e2a53087a" category="list-text">Un sistema ONTAP primario (ONTAP 9.14.1 o posterior)</block>
+  <block id="74443ec40597d5044894672e880e4cb8" category="summary">NetApp Backup and Recovery emplea roles de IAM para gobernar el acceso que tiene cada usuario a funciones y acciones específicas.</block>
+  <block id="d8242f460ba07545cc4fc280abc24dfd" category="inline-link">Funciones de copia de seguridad y recuperación de NetApp en la consola de NetApp</block>
+  <block id="b7ce2fa7e7dfbfcf006c177bd9507fe6" category="paragraph">Para obtener más información sobre los roles de IAM específicos de NetApp Backup and Recovery, consulte<block ref="00765778411880d6fabcf7f493ef0db6" category="inline-link-rx"></block> .</block>
 </blocks>

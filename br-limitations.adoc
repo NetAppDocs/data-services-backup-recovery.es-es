@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery primero debe descubrir los datos para que us
 
 
 [role="lead"]
-Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del producto o que no interoperan correctamente con él. Revise estas limitaciones cuidadosamente.
+Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
 
 
 
