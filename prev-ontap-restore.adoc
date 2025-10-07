@@ -230,7 +230,7 @@ La columna *Ubicación* muestra si el archivo de respaldo (instantánea) es *Loc
 
 . Seleccione *Siguiente*.
 +
-Tenga en cuenta que si selecciona un archivo de respaldo en el almacenamiento de objetos y Ransomware Resilience está activo para ese respaldo (si habilitó DataLock y Ransomware Protection en la política de respaldo), se le solicitará que ejecute un análisis de ransomware adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que escanee el archivo de respaldo en busca de ransomware.  (Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo).
+Tenga en cuenta que si selecciona un archivo de respaldo en el almacenamiento de objetos y Ransomware Resilience está activo para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute un análisis de ransomware adicional en el archivo de respaldo antes de restaurar los datos. Le recomendamos que escanee el archivo de respaldo en busca de ransomware. (Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo).
 
 . En la página _Seleccionar destino_, seleccione el *sistema* donde desea restaurar el volumen.
 . Al restaurar un archivo de respaldo desde un almacenamiento de objetos, si selecciona un sistema ONTAP local y aún no ha configurado la conexión del clúster al almacenamiento de objetos, se le solicitará información adicional:
@@ -376,7 +376,7 @@ Si está restaurando carpetas o archivos desde un archivo de respaldo que reside
 link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre la restauración desde el almacenamiento de archivo de AWS"] . link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre la restauración desde el almacenamiento de archivo de Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre cómo restaurar desde el almacenamiento de archivo de Google"] . Los archivos de respaldo en el nivel de almacenamiento de Google Archive se restauran casi de inmediato y no requieren prioridad de restauración.
 
 +
-Y si Ransomware Resilience está activo para el archivo de respaldo (si habilitó DataLock y Ransomware Protection en la política de respaldo), entonces se le solicitará que ejecute un análisis de ransomware adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que escanee el archivo de respaldo en busca de ransomware.  (Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo).
+Y si Ransomware Resilience está activo para el archivo de respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), entonces se le solicitará que ejecute un análisis de ransomware adicional en el archivo de respaldo antes de restaurar los datos. Le recomendamos que escanee el archivo de respaldo en busca de ransomware. (Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo).
 
 . En la página _Seleccionar elementos_, seleccione la carpeta o los archivos que desea restaurar y seleccione *Continuar*.  Para ayudarle a encontrar el artículo:
 +

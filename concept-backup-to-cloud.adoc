@@ -161,7 +161,7 @@ ifdef::gcp[]
 * En Google, se implementa un nuevo depósito y el https://cloud.google.com/bigquery["Servicios de Google Cloud BigQuery"^] se aprovisionan a nivel de cuenta/proyecto. endif::gcp[]
 +
 ** Si planea restaurar datos de volumen desde un archivo de respaldo que se ha movido al almacenamiento de objetos de archivo, entonces hay una tarifa de recuperación adicional por GiB y una tarifa por solicitud del proveedor de la nube.
-** Si planea escanear un archivo de respaldo en busca de ransomware durante el proceso de restauración de datos de volumen (si habilitó DataLock y Ransomware Protection para sus copias de seguridad en la nube), también incurrirá en costos de salida adicionales de su proveedor de la nube.
+** Si planea escanear un archivo de respaldo en busca de ransomware durante el proceso de restauración de datos de volumen (si habilitó DataLock y Ransomware Resilience para sus copias de seguridad en la nube), también incurrirá en costos de salida adicionales de su proveedor de la nube.
 
 
 

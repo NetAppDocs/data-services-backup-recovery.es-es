@@ -116,7 +116,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Una captura de pantalla de 
 
 Los análisis de protección contra ransomware están habilitados de forma predeterminada.  La configuración predeterminada para la frecuencia de escaneo es de 7 días.  El escaneo ocurre solo en la última copia instantánea.  Puede habilitar o deshabilitar los análisis de ransomware en la última copia de instantánea utilizando la opción en la página de Configuración avanzada.  Si lo habilita, los análisis se realizan cada 7 días de forma predeterminada.
 
-Para obtener detalles sobre las opciones de DataLock y protección contra ransomware, consultelink:prev-ontap-policy-object-options.html["Opciones de protección contra DataLock y Ransomware"] .
+Para obtener detalles sobre las opciones de DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opciones de DataLock y resiliencia ante ransomware"] .
 
 Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
 

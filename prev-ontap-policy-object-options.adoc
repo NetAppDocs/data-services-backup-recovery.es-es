@@ -59,7 +59,7 @@ Las copias de seguridad anuales se eliminan automáticamente del sistema de orig
 
 NetApp Backup and Recovery brinda soporte para DataLock y protección contra ransomware para sus copias de seguridad de volumen.  Estas funciones le permiten bloquear sus archivos de respaldo y escanearlos para detectar posible ransomware en ellos.  Esta es una configuración opcional que puede definir en sus políticas de respaldo cuando desee protección adicional para sus copias de seguridad de volumen para un clúster.
 
-Ambas funciones protegen sus archivos de respaldo para que siempre tenga un archivo de respaldo válido para recuperar datos en caso de un intento de ataque de ransomware en sus copias de seguridad.  También es útil cumplir con ciertos requisitos reglamentarios donde las copias de seguridad deben bloquearse y conservarse durante un período de tiempo determinado.  Cuando la opción DataLock y Ransomware Protection está habilitada, el depósito en la nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo y el control de versiones de objetos.
+Ambas funciones protegen sus archivos de respaldo para que siempre tenga un archivo de respaldo válido para recuperar datos en caso de un intento de ataque de ransomware en sus copias de seguridad. También es útil cumplir con ciertos requisitos reglamentarios donde las copias de seguridad deben bloquearse y conservarse durante un período de tiempo determinado. Cuando la opción DataLock y Ransomware Resilience está habilitada, el depósito de nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo y el control de versiones de objetos.
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección contra DataLock y ransomware para obtener más detalles."^] .
 
@@ -124,7 +124,7 @@ La configuración de retención de DataLock anula la configuración de retenció
 
 Puede habilitar la protección contra DataLock y Ransomware al crear una política.  No se puede habilitar, modificar ni deshabilitar esto una vez creada la política.
 
-. Cuando cree una política, expanda la sección *Protección contra DataLock y Ransomware*.
+. Cuando cree una política, expanda la sección *DataLock y resiliencia ante ransomware*.
 . Elija una de las siguientes opciones:
 +
 ** *Ninguno*: La protección DataLock y la resiliencia frente a ransomware están deshabilitadas.
@@ -165,7 +165,7 @@ Veamos cómo funciona esto:
 
 === Sistemas compatibles y proveedores de almacenamiento de objetos
 
-Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ONTAP de los siguientes sistemas al utilizar almacenamiento de objetos en los siguientes proveedores de nube pública y privada.  Se agregarán proveedores de nube adicionales en futuras versiones.
+Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ONTAP de los siguientes sistemas al utilizar almacenamiento de objetos en los siguientes proveedores de nube pública y privada.
 
 [cols="55,45"]
 |===
@@ -175,10 +175,13 @@ Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ON
 | Cloud Volumes ONTAP en AWS | Amazon S3 endif::aws[] ifdef::azure[] 
 
 
-| Cloud Volumes ONTAP en Azure | Blob de Azure endif::azure[] ifdef::gcp[] endif::gcp[] 
+| Cloud Volumes ONTAP en Azure | Blob de Azure endif::azure[] ifdef::gcp[] 
 
 
-| Sistema ONTAP local | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob de Azure endif::azure[] ifdef::gcp[] endif::gcp[] NetApp StorageGRID 
+| Cloud Volumes ONTAP en Google Cloud | Google Cloud endif::gcp[] 
+
+
+| Sistema ONTAP local | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob de Azure endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
 |===
 
 
@@ -244,6 +247,18 @@ ifdef::azure[]
 
 
 endif::azure[]
+
+ifdef::gcp[]
+
+* Para Google Cloud:
++
+** Sus clústeres deben ejecutar ONTAP 9.17.1 o superior
+** El agente de consola se puede implementar en la nube o en sus instalaciones.
+
+
+
+
+endif::gcp[]
 
 * Para StorageGRID:
 +

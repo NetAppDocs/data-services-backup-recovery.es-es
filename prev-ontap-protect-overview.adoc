@@ -218,7 +218,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Si planea restaurar datos de volumen desde un archivo de respaldo que se ha movido al almacenamiento de objetos de archivo, entonces hay una tarifa de recuperación adicional por GiB y una tarifa por solicitud del proveedor de la nube.
-* Si planea escanear un archivo de respaldo en busca de ransomware durante el proceso de restauración de datos de volumen (si ha habilitado DataLock y Ransomware Protection para sus copias de seguridad en la nube), también incurrirá en costos de salida adicionales de su proveedor de la nube.
+* Si planea escanear un archivo de respaldo en busca de ransomware durante el proceso de restauración de datos de volumen (si ha habilitado DataLock y Ransomware Resilience para sus copias de seguridad en la nube), también incurrirá en costos de salida adicionales de su proveedor de la nube.
 
 
 *Cargos por servicio*
@@ -362,7 +362,7 @@ TIP: El período de retención de las copias de seguridad de los volúmenes de p
 
 === Configuración de protección de archivos de respaldo
 
-Si su clúster usa ONTAP 9.11.1 o superior, puede proteger sus copias de seguridad en el almacenamiento de objetos contra ataques de eliminación y ransomware.  Cada política de respaldo proporciona una sección para _DataLock y protección contra ransomware_ que se puede aplicar a sus archivos de respaldo durante un período de tiempo específico: el _período de retención_.
+Si su clúster usa ONTAP 9.11.1 o superior, puede proteger sus copias de seguridad en el almacenamiento de objetos contra ataques de eliminación y ransomware. Cada política de respaldo proporciona una sección para _DataLock y Resiliencia ante ransomware_ que se puede aplicar a sus archivos de respaldo durante un período de tiempo específico: el _período de retención_.
 
 * _DataLock_ protege sus archivos de respaldo para que no sean modificados ni eliminados.
 * La _protección contra ransomware_ escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware cuando se crea un archivo de respaldo y cuando se restauran los datos de un archivo de respaldo.

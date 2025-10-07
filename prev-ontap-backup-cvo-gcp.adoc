@@ -416,6 +416,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 +
 ** Introduzca el nombre de la póliza.
 ** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+** Para las políticas de copia de seguridad a objeto, configure Datalock y Ransomware Resilience.  Para obtener más detalles sobre Datalock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"] .
 ** Seleccione *Crear*.
 
 

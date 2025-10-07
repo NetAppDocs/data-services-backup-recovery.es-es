@@ -187,12 +187,12 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 StorageGRID debe cumplir los siguientes requisitos. Ver el https://docs.netapp.com/us-en/storagegrid-117/["Documentación de StorageGRID"^] Para más información.
 
-Para obtener detalles sobre los requisitos de DataLock y protección contra ransomware para StorageGRID, consultelink:prev-ontap-policy-object-options.html["Opciones de política de copia de seguridad a objeto"] .
+Para obtener detalles sobre los requisitos de DataLock y Ransomware Resilience para StorageGRID, consultelink:prev-ontap-policy-object-options.html["Opciones de política de copia de seguridad a objeto"] .
 
 Versiones de StorageGRID compatibles:: Se admite StorageGRID 10.3 y versiones posteriores.
 +
 --
-Para utilizar DataLock & Ransomware Protection en sus copias de seguridad, sus sistemas StorageGRID deben ejecutar la versión 11.6.0.3 o superior.
+Para utilizar DataLock y Ransomware Resilience en sus copias de seguridad, sus sistemas StorageGRID deben ejecutar la versión 11.6.0.3 o superior.
 
 Para almacenar copias de seguridad antiguas en un sistema de archivo en la nube, sus sistemas StorageGRID deben ejecutar la versión 11.3 o superior.  Además, sus sistemas StorageGRID deben ser detectados en la página *Sistemas* de la consola.
 
@@ -432,9 +432,9 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 +
 *** Introduzca el nombre de la póliza.
 *** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
-*** Para las políticas de copia de seguridad a objeto, configure las configuraciones DataLock y Ransomware Protection.  Para obtener más detalles sobre DataLock y Ransomware Protection, consultelink:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"] .
+*** Para las políticas de copia de seguridad a objeto, configure las configuraciones DataLock y Ransomware Resilience.  Para obtener más detalles sobre DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"] .
 +
-Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus copias de seguridad contra eliminación y ataques de ransomware configurando _DataLock y protección contra ransomware_.  _DataLock_ protege sus archivos de respaldo para que no se modifiquen ni eliminen, y _Ransomware Protection_ escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware en sus archivos de respaldo.
+Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus copias de seguridad contra eliminación y ataques de ransomware configurando _DataLock y Ransomware Resilience_.  _DataLock_ protege sus archivos de respaldo para que no se modifiquen ni eliminen, y _Ransomware Resilience_ escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware en ellos.
 
 *** Seleccione *Crear*.
 

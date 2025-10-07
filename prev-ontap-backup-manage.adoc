@@ -69,7 +69,7 @@ Puede cambiar las políticas de respaldo asignadas a sus volúmenes existentes q
 . Desde la pestaña *Volúmenes*, identifique el volumen en el que desea realizar cambios de política y seleccione el menú Accionesimage:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Editar estrategia de respaldo*.
 . En la página _Editar estrategia de respaldo_, realice cambios en las políticas de respaldo existentes para copias de instantáneas locales, volúmenes replicados y archivos de respaldo y seleccione *Siguiente*.
 +
-Si habilitó _DataLock y Ransomware Protection_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
+Si habilitó _DataLock y Ransomware Resilience_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
 
 . Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
 
@@ -112,7 +112,7 @@ Cuando se habilitan más de cinco volúmenes para la copia de seguridad, NetApp 
 |===
 . En la página de respaldo que aparece, realice cambios en las políticas de respaldo existentes para copias de instantáneas locales, volúmenes replicados o archivos de respaldo y seleccione *Guardar*.
 +
-Si habilitó _DataLock y Ransomware Protection_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
+Si habilitó _DataLock y Ransomware Resilience_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
 
 
 
@@ -126,7 +126,7 @@ Puede crear una copia de seguridad o instantánea ad hoc de un objeto de un volu
 
 El nombre de la copia de seguridad incluye la marca de tiempo para que pueda identificar su copia de seguridad a pedido de otras copias de seguridad programadas.
 
-Si habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery para este clúster, la copia de seguridad a pedido también se configurará con DataLock y el período de retención será de 30 días.  Los análisis de ransomware no son compatibles con copias de seguridad ad-hoc. link:prev-ontap-policy-object-options.html["Obtenga más información sobre DataLock y la protección contra ransomware"^] .
+Si habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery para este clúster, la copia de seguridad a pedido también se configurará con DataLock y el período de retención será de 30 días. Los análisis de ransomware no son compatibles con copias de seguridad ad-hoc. link:prev-ontap-policy-object-options.html["Obtenga más información sobre DataLock y la protección contra ransomware"^] .
 
 Cuando se crea una copia de seguridad ad-hoc, se crea una instantánea en el volumen de origen.  Debido a que esta instantánea no es parte de una programación de instantáneas normal, no se desactivará.  Es posible que desees eliminar manualmente esta instantánea del volumen de origen una vez que se complete la copia de seguridad.  Esto permitirá que se liberen los bloques relacionados con esta instantánea.  El nombre de la instantánea comenzará con `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Vea cómo eliminar una instantánea usando la CLI de ONTAP"^] .
 
@@ -159,7 +159,7 @@ Se muestran los detalles del volumen y la lista de copias instantáneas.
 
 NetApp Backup and Recovery escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware cuando se crea un respaldo en un archivo de objeto y cuando se restauran los datos de un archivo de respaldo.  También puede ejecutar un análisis a pedido en cualquier momento para verificar la usabilidad de un archivo de respaldo específico en el almacenamiento de objetos.  Esto puede ser útil si ha tenido un problema de ransomware en un volumen particular y desea verificar que las copias de seguridad de ese volumen no se vean afectadas.
 
-Esta función solo está disponible si la copia de seguridad del volumen se creó desde un sistema con ONTAP 9.11.1 o superior, y si habilitó _DataLock y Ransomware Protection_ en la política de copia de seguridad a objeto.
+Esta función solo está disponible si la copia de seguridad del volumen se creó desde un sistema con ONTAP 9.11.1 o superior, y si habilitó _DataLock y Ransomware Resilience_ en la política de copia de seguridad a objeto.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen de origen y seleccione *Ver detalles del volumen*.
@@ -169,7 +169,7 @@ Se muestran los detalles del volumen.
 . Seleccione *Copia de seguridad* para ver la lista de archivos de copia de seguridad en el almacenamiento de objetos.
 . Seleccionarimage:icon-actions-horizontal.gif["Icono de acciones"] para el archivo de respaldo de volumen que desea escanear en busca de ransomware y haga clic en *Escanear en busca de ransomware*.
 +
-La columna Protección contra ransomware muestra que el análisis está en progreso.
+La columna Resiliencia ante ransomware muestra que el análisis está en progreso.
 
 
 
@@ -224,7 +224,7 @@ Puede cambiar los atributos de una política de respaldo que se aplica actualmen
 
 [NOTE]
 ====
-* Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar NetApp Backup and Recovery para este clúster, cualquier política que edite debe configurarse con la misma configuración de DataLock (Gobernanza o Cumplimiento).  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, no podrá habilitar DataLock ahora.
+* Si habilitó _DataLock y Ransomware Resilience_ en la política inicial al activar NetApp Backup and Recovery para este clúster, cualquier política que edite debe configurarse con la misma configuración de DataLock (Gobernanza o Cumplimiento).  Y si no habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery, no podrá habilitar DataLock ahora.
 * Al crear copias de seguridad en AWS, si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de copia de seguridad al activar NetApp Backup and Recovery, ese nivel será el único nivel de archivo disponible al editar políticas de copia de seguridad.  Y si no seleccionó ningún nivel de archivo en su primera política de respaldo, entonces _S3 Glacier_ será su única opción de archivo al editar una política.
 
 
@@ -270,7 +270,7 @@ Si desea aplicar una nueva política de respaldo a determinados volúmenes de un
 
 [NOTE]
 ====
-* Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar NetApp Backup and Recovery para este clúster, cualquier política adicional que cree debe configurarse con la misma configuración de DataLock (Gobernanza o Cumplimiento).  Y si no habilitó _DataLock y Ransomware Protection_ al activar NetApp Backup and Recovery, no podrá crear nuevas políticas que usen DataLock.
+* Si habilitó _DataLock y Ransomware Resilience_ en la política inicial al activar NetApp Backup and Recovery para este clúster, cualquier política adicional que cree debe configurarse con la misma configuración de DataLock (Gobernanza o Cumplimiento).  Y si no habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery, no podrá crear nuevas políticas que usen DataLock.
 * Al crear copias de seguridad en AWS, si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de copia de seguridad al activar NetApp Backup and Recovery, ese nivel será el único nivel de archivo disponible para futuras políticas de copia de seguridad para ese clúster.  Y si no seleccionó ningún nivel de archivo en su primera política de respaldo, entonces _S3 Glacier_ será su única opción de archivo para políticas futuras.
 
 
