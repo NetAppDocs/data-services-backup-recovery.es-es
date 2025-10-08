@@ -27,7 +27,7 @@ Puede utilizar los siguientes tipos de licencia:
 
 ¿Cómo habilitar NetApp Backup and Recovery?  NetApp Backup and Recovery no requiere ninguna habilitación.  La opción de copia de seguridad y recuperación se habilita automáticamente en la navegación izquierda de la consola.
 
-Para comenzar, debe registrarse o comunicarse con su representante de ventas de NetApp para probar este servicio.  Luego, cuando utilice el agente de consola, incluirá las capacidades adecuadas para el servicio.
+Para comenzar, debe registrarse o comunicarse con su representante de ventas de NetApp para probar Backup and Recovery. Luego, cuando utilice el agente de consola, incluirá las capacidades adecuadas para el servicio.
 
 Para comenzar a utilizar NetApp Backup and Recovery, seleccione "Comenzar a descubrir cargas de trabajo" en su página de inicio.
 
@@ -53,7 +53,7 @@ Para obtener una explicación sobre estos modos en todos los servicios de datos 
 
 ¿ NetApp Backup and Recovery tiene conocimiento de las configuraciones de protección realizadas en NetApp ONTAP?  Sí, NetApp Backup and Recovery descubre las programaciones de instantáneas configuradas en ONTAP.
 
-*Si establece una política utilizando NetApp Backup and Recovery, ¿tiene que realizar cambios futuros solo en este servicio?*  Le recomendamos que realice cambios en la política de NetApp Backup and Recovery.
+*Si establece una política utilizando NetApp Backup and Recovery, ¿tiene que realizar cambios futuros solo en Backup and Recovery?* Le recomendamos que realice cambios en la política de NetApp Backup and Recovery.
 
 
 

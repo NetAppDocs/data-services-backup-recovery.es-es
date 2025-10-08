@@ -253,7 +253,7 @@ Revisar https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checkl
 
 === Crear un agente de consola
 
-Deberías comunicarte con tu equipo de productos de NetApp para probar este servicio.  Luego, cuando utilice el agente de consola, incluirá las capacidades adecuadas para el servicio.
+Deberías comunicarte con tu equipo de productos de NetApp para probar Backup and Recovery. Luego, cuando utilice el agente de consola, incluirá las capacidades adecuadas para el servicio.
 
 Para crear un agente de consola en la consola de NetApp antes de usar el servicio, consulte la documentación de la consola que describe https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Cómo crear un agente de consola"^] .
 

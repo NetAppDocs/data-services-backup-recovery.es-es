@@ -14,7 +14,7 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery.
 
 
 [role="lead"]
-NetApp Backup and Recovery le permite crear hasta tres copias de sus volúmenes de origen para proteger sus datos.  Hay muchas opciones que puede seleccionar al habilitar este servicio en sus volúmenes, por lo que debe revisar sus opciones para estar preparado.
+NetApp Backup and Recovery le permite crear hasta tres copias de sus volúmenes de origen para proteger sus datos. Hay muchas opciones que puede seleccionar al habilitar la Copia de seguridad y recuperación en sus volúmenes, por lo que debe revisar sus opciones para estar preparado.
 
 []
 ====

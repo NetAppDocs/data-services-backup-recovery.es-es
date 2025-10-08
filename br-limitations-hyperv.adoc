@@ -16,6 +16,10 @@ summary: NetApp Backup and Recovery primero debe descubrir los datos para que us
 [role="lead"]
 Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
 
+
+
+== Acciones no admitidas
+
 Las siguientes acciones no son compatibles con la versión preliminar privada de las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
 
 * Crear grupos de recursos
@@ -23,4 +27,24 @@ Las siguientes acciones no son compatibles con la versión preliminar privada de
 * Proteger las máquinas virtuales a través de SAN
 * Restaurar desde el almacén de objetos
 * Proteja los hosts de Hyper-V que están agrupados mediante System Center Virtual Machine Manager (SCVMM)
+
+
+
+
+== Cuentas de NetApp Console heredadas no compatibles
+
+Las cuentas de NetApp Console heredadas no admiten las funciones necesarias para proteger las cargas de trabajo de Hyper-V.  Comprueba si estás usando una cuenta heredada en la interfaz de usuario web de la consola.  Si tiene una cuenta de consola heredada, cree una cuenta nueva antes de proteger las cargas de trabajo de Hyper-V.
+
+.Pasos
+. Desde el menú de la NetApp Console , seleccione *Administración > Identidad y acceso*.
+. En *Organización*, verifique si se muestra un *ID de cuenta* junto al ID de la organización.
++
+Si se muestra un *ID de cuenta*, estás utilizando una cuenta heredada.
+
+. Si está utilizando una cuenta heredada, haga lo siguiente:
++
+.. Cierre la sesión de la consola y luego navegue hasta la https://console.netapp.com/["Página de inicio de sesión de la consola"^] .
+.. Seleccione *Registrarse* para crear una nueva cuenta.
+
+
 

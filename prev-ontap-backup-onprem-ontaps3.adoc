@@ -322,7 +322,7 @@ TIP: Si desea crear una política personalizada antes de activar la instantánea
 
 +
 
-TIP: Para crear una política personalizada utilizando este servicio, consultelink:br-use-policies-create.html["Crear una política"] .
+TIP: Para crear una política personalizada mediante Copia de seguridad y recuperación, consultelink:br-use-policies-create.html["Crear una política"] .
 
 +
 Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
@@ -367,7 +367,7 @@ TIP: Puede crear una política con el Administrador del sistema o la CLI de ONTA
 
 +
 
-TIP: Para crear una política personalizada utilizando este servicio, consultelink:br-use-policies-create.html["Crear una política"] .
+TIP: Para crear una política personalizada mediante Copia de seguridad y recuperación, consultelink:br-use-policies-create.html["Crear una política"] .
 
 +
 Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:

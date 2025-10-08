@@ -20,14 +20,14 @@ Complete unos pocos pasos para descubrir o agregar manualmente destinos de respa
 
 == Descubra un destino de respaldo
 
-Antes de utilizar NetApp Backup and Recovery, debe configurar sus destinos de respaldo de Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID.
+Configure sus destinos de respaldo (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) antes de usar NetApp Backup and Recovery.
 
 Puede descubrir estos objetivos automáticamente o agregarlos manualmente.
 
-Proporcione las credenciales necesarias para acceder al sistema de la cuenta de almacenamiento.  Estas credenciales se utilizan para descubrir las cargas de trabajo que desea respaldar.
+Proporcione credenciales para acceder a la cuenta de almacenamiento.  NetApp Backup and Recovery utiliza estas credenciales para descubrir las cargas de trabajo que desea respaldar.
 
 .Antes de empezar
-Para agregar un destino de respaldo externo, se debe descubrir al menos una carga de trabajo.
+Debe descubrir al menos una carga de trabajo antes de poder agregar un destino de respaldo externo.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery, seleccione *Inventario*.

@@ -46,3 +46,23 @@ Las siguientes configuraciones no son compatibles:
 * Formato de disco RAW
 * Tipos de grupos de almacenamiento distintos de NetFS (solo se admite NetFS)
 
+
+
+
+== Cuentas de NetApp Console heredadas no compatibles
+
+Las cuentas de NetApp Console heredadas no admiten las funciones necesarias para proteger las cargas de trabajo de KVM.  Comprueba si estás usando una cuenta heredada en la interfaz de usuario web de la consola.  Si tiene una cuenta de consola heredada, cree una cuenta nueva antes de proteger las cargas de trabajo de KVM.
+
+.Pasos
+. Desde el menú de la NetApp Console , seleccione *Administración > Identidad y acceso*.
+. En *Organización*, verifique si se muestra un *ID de cuenta* junto al ID de la organización.
++
+Si se muestra un *ID de cuenta*, estás utilizando una cuenta heredada.
+
+. Si está utilizando una cuenta heredada, haga lo siguiente:
++
+.. Cierre la sesión de la consola y luego navegue hasta la https://console.netapp.com/["Página de inicio de sesión de la consola"^] .
+.. Seleccione *Registrarse* para crear una nueva cuenta.
+
+
+

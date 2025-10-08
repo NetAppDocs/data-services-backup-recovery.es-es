@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo
 
 
 [role="lead"]
-NetApp Backup and Recovery primero debe descubrir los hosts KVM y las máquinas virtuales para poder protegerlos.
+NetApp Backup and Recovery necesita descubrir hosts KVM y máquinas virtuales antes de protegerlos.
 
 *Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
@@ -28,7 +28,7 @@ Agregue información del host KVM y permita que NetApp Backup and Recovery descu
 . Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
 . En el mosaico KVM, seleccione *Descubrir y administrar*.
 +
-Si es la primera vez que inicia sesión en este servicio, ya tiene un sistema en la consola, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
+Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la consola, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
 
 . Seleccione *Descubrir recursos*.
 . Introduzca la siguiente información:
@@ -60,6 +60,7 @@ La carga de trabajo de KVM se muestra en la lista de cargas de trabajo en la pá
 
 == Continuar al panel de control de respaldo y recuperación de NetApp
 
+.Pasos
 . Para visualizar el Panel de control de respaldo y recuperación de NetApp , desde el menú superior, seleccione *Panel de control*.
 . Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
 

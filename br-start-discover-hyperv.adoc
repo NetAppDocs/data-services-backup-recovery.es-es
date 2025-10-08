@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
-summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo para poder protegerlas. 
+summary: NetApp Backup and Recovery debe descubrir las máquinas virtuales Hyper-V antes de poder protegerlas. 
 ---
 = Descubra las cargas de trabajo de Hyper-V en NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo
 
 
 [role="lead"]
-NetApp Backup and Recovery primero debe descubrir las máquinas virtuales Hyper-V para poder protegerlas.
+NetApp Backup and Recovery debe descubrir las máquinas virtuales Hyper-V antes de poder protegerlas.
 
 *Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
 
@@ -55,12 +55,13 @@ TIP: Este proceso puede tardar unos minutos.
 
 
 .Resultado
-Una vez que NetApp Backup and Recovery descubre recursos, la carga de trabajo de Hyper-V se muestra en la lista de cargas de trabajo en la página Inventario.
+Una vez que NetApp Backup and Recovery descubre recursos, la página Inventario muestra la carga de trabajo de Hyper-V en la lista de cargas de trabajo.
 
 
 
 == Continuar al panel de control de respaldo y recuperación de NetApp
 
+.Pasos
 . Para visualizar el Panel de control de copia de seguridad y recuperación de NetApp , desde el menú de la consola de NetApp , seleccione *Panel de control*.
 . Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
 
