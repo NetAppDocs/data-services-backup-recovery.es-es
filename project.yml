@@ -49,6 +49,8 @@ sidebar:
       url: "/concept-start-prereq.html"
     - title: Configurar licencias para NetApp Backup and Recovery
       url: "/br-start-licensing.html"
+    - title: Configurar certificados de seguridad para ONTAP y StorageGRID
+      url: "/task-setup-ca-certificates.html"
     - title: Configure destinos de respaldo antes de usar NetApp Backup and Recovery
       url: "/br-start-setup.html"
     - title: Inicie sesión en NetApp Backup and Recovery
