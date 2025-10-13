@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-login.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Utilice la consola de NetApp para iniciar sesión en el servicio de copia de seguridad y recuperación de NetApp . 
+summary: Utilice la NetApp Console para iniciar sesión en el servicio de NetApp Backup and Recovery . 
 ---
 = Inicie sesión en NetApp Backup and Recovery
 :hardbreaks:
@@ -14,27 +14,27 @@ summary: Utilice la consola de NetApp para iniciar sesión en el servicio de cop
 
 
 [role="lead"]
-Utilice la consola de NetApp para iniciar sesión en NetApp Backup and Recovery.
+Utilice la NetApp Console para iniciar sesión en NetApp Backup and Recovery.
 
 NetApp Backup and Recovery utiliza la gestión de identidad y acceso para controlar lo que puede hacer cada usuario.
 
 Para obtener detalles sobre las acciones que puede realizar cada rol, consultelink:reference-roles.html["Roles de usuario de NetApp Backup and Recovery"] .
 
-Para iniciar sesión en la consola de NetApp , puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la consola de NetApp usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
+Para iniciar sesión en la NetApp Console, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la NetApp Console usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
 
-*Rol de consola de NetApp requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 Para agregar un agente de consola, debe tener el rol de superadministrador de Copia de seguridad y recuperación.
 
 .Pasos
-. Abra un navegador web y vaya a https://console.netapp.com/["Consola de NetApp"^] .
+. Abra un navegador web y vaya a https://console.netapp.com/["NetApp Console"^] .
 +
-Aparece la página de inicio de sesión de la consola de NetApp .
+Aparece la página de inicio de sesión de la NetApp Console .
 
 . Inicie sesión en la consola.
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
 +
-** Si es la primera vez que inicia sesión en Backup and Recovery y aún no ha agregado un sistema a la página *Sistemas*, Backup and Recovery muestra la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" y brinda una opción para agregar un sistema. Para obtener detalles sobre cómo agregar un sistema a la página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la consola de NetApp"^] .
+** Si es la primera vez que inicia sesión en Backup and Recovery y aún no ha agregado un sistema a la página *Sistemas*, Backup and Recovery muestra la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" y brinda una opción para agregar un sistema.  Para obtener detalles sobre cómo agregar un sistema a la página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la NetApp Console"^] .
 ** Si es la primera vez que inicia sesión en Backup and Recovery y ya agregó un sistema a la página *Sistemas*, pero no descubrió ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
 
 

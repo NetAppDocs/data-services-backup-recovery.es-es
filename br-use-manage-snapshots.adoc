@@ -22,7 +22,7 @@ Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de Ne
 
 Solo puedes eliminar instantáneas locales.
 
-*Rol de consola de NetApp requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.

@@ -18,7 +18,7 @@ Si va a importar recursos del servicio de complemento SnapCenter para Microsoft 
 
 
 
-== Primero cree sistemas en la consola de NetApp
+== Primero cree sistemas en la NetApp Console
 
 Si va a importar recursos desde SnapCenter, primero debe agregar todo el almacenamiento del clúster local de SnapCenter a la página *Sistemas* de la consola antes de importar desde SnapCenter.  Esto garantiza que los recursos del host se puedan descubrir e importar correctamente.
 

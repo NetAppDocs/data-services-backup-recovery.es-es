@@ -20,7 +20,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 * Crear un grupo de protección.
 * Ver detalles de protección.
-* Realice una copia de seguridad de un grupo de protección ahora. Ver link:br-use-vmware-backup.html["Realice copias de seguridad de las cargas de trabajo de VMware ahora"] .
+* Realice una copia de seguridad de un grupo de protección ahora. Verlink:br-use-vmware-backup.html["Realice copias de seguridad de las cargas de trabajo de VMware ahora"] .
 * Suspender y reanudar la programación de copias de seguridad de un grupo de protección.
 * Eliminar un grupo de protección.
 
@@ -31,10 +31,10 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 Agrupe las cargas de trabajo que desea proteger juntas en un grupo de protección. Puede crear un grupo de protección para un conjunto de cargas de trabajo que desee respaldar y restaurar juntas.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupos de protección*.
@@ -44,7 +44,7 @@ Agrupe las cargas de trabajo que desea proteger juntas en un grupo de protecció
 . Seleccione *Siguiente*.
 . Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
 +
-Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política. Ver link:br-use-policies-create.html["Crear políticas"] Para más información.
+Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
 . Seleccione *Siguiente*.
 . Revise la configuración.
@@ -60,7 +60,7 @@ Suspender un grupo de protección pausa las copias de seguridad programadas para
 El estado de protección cambia a "En mantenimiento" cuando se suspende un grupo de protección. Puede reanudar la programación de copia de seguridad en cualquier momento.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupos de protección*.
@@ -77,7 +77,7 @@ Al reanudar un grupo de protección suspendido, se reinician las copias de segur
 El estado de protección cambia de "En mantenimiento" cuando se suspende un grupo de protección a "Protegido" cuando se reanuda. Puede reanudar la programación de copia de seguridad en cualquier momento.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupos de protección*.
@@ -95,7 +95,7 @@ El sistema valida los horarios y cambia el estado de protección a “Protegido�
 Al eliminar un grupo de protección, se elimina dicho grupo y todos los programas de copia de seguridad asociados. Es posible que desee eliminar un grupo de protección si ya no es necesario.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupos de protección*.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-overview.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Proteja sus datos de volumen ONTAP con NetApp Backup and Recovery
 :hardbreaks:
@@ -18,7 +18,7 @@ NetApp Backup and Recovery ofrece capacidades de respaldo y restauración para l
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 Después de la activación, la copia de seguridad y la recuperación crean copias de seguridad incrementales a nivel de bloque y permanentes que se almacenan en otro clúster de ONTAP y en el almacenamiento de objetos en la nube.  Además de tu volumen de origen, tendrás:
@@ -52,7 +52,7 @@ Cuando sea necesario, puede restaurar un _volumen_ completo, una _carpeta_ o uno
 * Cifrado en vuelo ONTAP nativo configurado a través de una clave precompartida (PSK) entre los dos sistemas.
 * Los datos copiados son inmutables hasta que los haga escribibles y estén listos para usar.
 * La replicación se autocura en caso de falla de transferencia.
-* En comparación con https://docs.netapp.com/us-en/data-services-replication/index.html["Replicación de NetApp"^] La replicación en NetApp Backup and Recovery incluye las siguientes características:
+* En comparación con https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"^] La replicación en NetApp Backup and Recovery incluye las siguientes características:
 +
 ** Replica varios volúmenes FlexVol a la vez en un sistema secundario.
 ** Restaure un volumen replicado en el sistema de origen o en un sistema diferente mediante la interfaz de usuario.
@@ -67,7 +67,7 @@ Verlink:br-reference-limitations.html["Limitaciones de replicación para volúme
 * Realice copias de seguridad independientes de sus volúmenes de datos en un almacenamiento de objetos de bajo costo.
 * Aplique una única política de respaldo a todos los volúmenes de un clúster o asigne diferentes políticas de respaldo a volúmenes que tengan objetivos de punto de recuperación únicos.
 * Cree una política de respaldo que se aplicará a todos los volúmenes futuros creados en el clúster.
-* Cree archivos de respaldo inmutables para que estén bloqueados y protegidos durante el período de retención.
+* Realice copias de seguridad inmutables de los archivos para que estén bloqueados y protegidos durante el período de retención.
 * Escanee los archivos de respaldo para detectar posibles ataques de ransomware y elimine o reemplace las copias de seguridad infectadas automáticamente.
 * Guarde los archivos de respaldo más antiguos en un almacenamiento de archivo para ahorrar costos.
 * Elimine la relación de respaldo para poder archivar volúmenes de origen innecesarios y conservar las copias de seguridad de volúmenes.
@@ -246,9 +246,9 @@ Se requiere una licencia de respaldo solo para realizar copias de seguridad y re
 
 BYOL se basa en el plazo (1, 2 o 3 años) y en la capacidad en incrementos de 1 TiB.  Usted paga a NetApp para usar el servicio durante un período de tiempo, digamos 1 año, y por una capacidad máxima, digamos 10 TiB.
 
-Recibirá un número de serie que deberá ingresar en la consola de NetApp para habilitar el servicio.  Cuando se alcance cualquiera de los límites, deberá renovar la licencia.  La licencia de Backup BYOL se aplica a todos los sistemas de origen asociados con su organización o cuenta de NetApp Console.
+Recibirá un número de serie que deberá ingresar en la NetApp Console para habilitar el servicio.  Cuando se alcance cualquiera de los límites, deberá renovar la licencia.  La licencia de Backup BYOL se aplica a todos los sistemas de origen asociados con su organización o cuenta de NetApp Console .
 
-link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .
+link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"].
 
 
 
@@ -256,7 +256,7 @@ link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .
 
 NetApp Backup and Recovery ofrece licencias basadas en el consumo en un modelo de pago por uso.  Después de suscribirse a través del mercado de su proveedor de nube, usted paga por GiB por los datos respaldados (no hay pago inicial). Su proveedor de nube le facturará a través de su factura mensual.
 
-link:br-start-licensing.html["Aprenda a configurar una suscripción de pago por uso"] .
+link:br-start-licensing.html["Aprenda a configurar una suscripción de pago por uso"].
 
 Tenga en cuenta que hay una prueba gratuita de 30 días disponible cuando se registra inicialmente con una suscripción PAYGO.
 
@@ -286,17 +286,17 @@ endif::azure[]
 
 ifdef::gcp[]
 
-Cuando usa GCP, puede solicitar una oferta privada de NetApp y luego seleccionar el plan cuando se suscriba desde Google Cloud Marketplace durante la activación de NetApp Backup and Recovery.
+Cuando usa GCP, puede solicitar una oferta privada de NetApp y luego seleccionar el plan cuando se suscriba desde Google Cloud Marketplace durante la activación de NetApp Backup and Recovery .
 
 endif::gcp[]
 
-link:br-start-licensing.html["Aprenda a establecer contratos anuales"] .
+link:br-start-licensing.html["Aprenda a establecer contratos anuales"].
 
 
 
 == Cómo funciona NetApp Backup and Recovery
 
-Cuando habilita NetApp Backup and Recovery en un sistema Cloud Volumes ONTAP o ONTAP local, el servicio realiza una copia de seguridad completa de sus datos.  Después de la copia de seguridad inicial, todas las copias de seguridad adicionales son incrementales, lo que significa que solo se respaldan los bloques modificados y los bloques nuevos.  Esto mantiene el tráfico de red al mínimo.  La copia de seguridad en el almacenamiento de objetos se basa en el https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Tecnología NetApp SnapMirror Cloud"^] .
+Cuando habilita NetApp Backup and Recovery en un sistema Cloud Volumes ONTAP o ONTAP local, el servicio realiza una copia de seguridad completa de sus datos.  Después de la copia de seguridad inicial, todas las copias de seguridad adicionales son incrementales, lo que significa que solo se respaldan los bloques modificados y los bloques nuevos.  Esto mantiene el tráfico de red al mínimo.  La copia de seguridad en el almacenamiento de objetos se basa en https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Tecnología NetApp SnapMirror Cloud"^] .
 
 
 CAUTION: Cualquier acción realizada directamente desde el entorno de su proveedor de nube para administrar o cambiar archivos de respaldo en la nube puede dañar los archivos y generar una configuración no compatible.
@@ -346,7 +346,7 @@ Si desea cambiar el almacén de objetos de destino para un clúster en el futuro
 
 === Programación de copias de seguridad personalizable y configuraciones de retención
 
-Cuando habilita NetApp Backup and Recovery para un sistema, se realiza un respaldo de todos los volúmenes que seleccione inicialmente utilizando las políticas que seleccione.  Puede seleccionar políticas independientes para copias instantáneas, volúmenes replicados y archivos de respaldo.  Si desea asignar diferentes políticas de respaldo a determinados volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar esas políticas a los otros volúmenes después de que se active NetApp Backup and Recovery.
+Cuando habilita NetApp Backup and Recovery para un sistema, se realiza un respaldo de todos los volúmenes que seleccione inicialmente utilizando las políticas que seleccione.  Puede seleccionar políticas independientes para copias instantáneas, volúmenes replicados y archivos de respaldo.  Si desea asignar diferentes políticas de respaldo a determinados volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar esas políticas a los otros volúmenes después de que se active NetApp Backup and Recovery .
 
 Puede elegir una combinación de copias de seguridad por hora, diarias, semanales, mensuales y anuales de todos los volúmenes.  Para realizar copias de seguridad de objetos, también puede seleccionar una de las políticas definidas por el sistema que proporcionan copias de seguridad y retención durante 3 meses, 1 año y 7 años.  Las políticas de protección de respaldo que haya creado en el clúster mediante ONTAP System Manager o la CLI de ONTAP también aparecerán como selecciones.  Esto incluye políticas creadas utilizando etiquetas SnapMirror personalizadas.
 
@@ -362,7 +362,7 @@ TIP: El período de retención de las copias de seguridad de los volúmenes de p
 
 === Configuración de protección de archivos de respaldo
 
-Si su clúster usa ONTAP 9.11.1 o superior, puede proteger sus copias de seguridad en el almacenamiento de objetos contra ataques de eliminación y ransomware. Cada política de respaldo proporciona una sección para _DataLock y Resiliencia ante ransomware_ que se puede aplicar a sus archivos de respaldo durante un período de tiempo específico: el _período de retención_.
+Si su clúster usa ONTAP 9.11.1 o superior, puede proteger sus copias de seguridad en el almacenamiento de objetos contra ataques de eliminación y ransomware.  Cada política de respaldo proporciona una sección para _DataLock y Resiliencia ante ransomware_ que se puede aplicar a sus archivos de respaldo durante un período de tiempo específico: el _período de retención_.
 
 * _DataLock_ protege sus archivos de respaldo para que no sean modificados ni eliminados.
 * La _protección contra ransomware_ escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware cuando se crea un archivo de respaldo y cuando se restauran los datos de un archivo de respaldo.
@@ -376,8 +376,8 @@ Actualmente, el soporte está disponible cuando el destino de su respaldo es Ama
 
 Para más detalles consulte esta información:
 
-* link:prev-ontap-policy-object-options.html["Cómo funcionan DataLock y la protección contra ransomware"] .
-* link:prev-ontap-policy-object-advanced-settings.html["Cómo actualizar las opciones de protección contra ransomware en la página de Configuración avanzada"] .
+* link:prev-ontap-policy-object-options.html["Cómo funcionan DataLock y la protección contra ransomware"].
+* link:prev-ontap-policy-object-advanced-settings.html["Cómo actualizar las opciones de protección contra ransomware en la página de Configuración avanzada"].
 
 
 
@@ -393,7 +393,7 @@ ifdef::aws[]
 
 * En AWS, las copias de seguridad comienzan en la clase de almacenamiento _Estándar_ y pasan a la clase de almacenamiento _Estándar-Acceso infrecuente_ después de 30 días.
 +
-Si su clúster usa ONTAP 9.10.1 o superior, puede optar por organizar las copias de seguridad más antiguas en almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"] .
+Si su clúster usa ONTAP 9.10.1 o superior, puede optar por organizar las copias de seguridad más antiguas en almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"].
 
 
 
@@ -403,7 +403,7 @@ ifdef::azure[]
 
 * En Azure, las copias de seguridad están asociadas con el nivel de acceso _Cool_.
 +
-Si su clúster usa ONTAP 9.10.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"] .
+Si su clúster usa ONTAP 9.10.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"].
 
 
 
@@ -413,7 +413,7 @@ ifdef::gcp[]
 
 * En GCP, las copias de seguridad están asociadas con la clase de almacenamiento _Estándar_.
 +
-Si su clúster usa ONTAP 9.12.1 o superior, puede elegir organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"] .
+Si su clúster usa ONTAP 9.12.1 o superior, puede elegir organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"].
 
 
 
@@ -421,7 +421,7 @@ endif::gcp[]
 
 * En StorageGRID, las copias de seguridad están asociadas con la clase de almacenamiento _Standard_.
 +
-Si su clúster local usa ONTAP 9.12.1 o superior, y su sistema StorageGRID usa 11.4 o superior, puede archivar archivos de respaldo más antiguos en el almacenamiento de archivo en la nube pública después de una cierta cantidad de días.  El soporte actual es para niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. link:prev-ontap-backup-onprem-storagegrid.html["Obtenga más información sobre cómo archivar archivos de respaldo desde StorageGRID"] .
+Si su clúster local usa ONTAP 9.12.1 o superior, y su sistema StorageGRID usa 11.4 o superior, puede archivar archivos de respaldo más antiguos en el almacenamiento de archivo en la nube pública después de una cierta cantidad de días.  El soporte actual es para niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. link:prev-ontap-backup-onprem-storagegrid.html["Obtenga más información sobre cómo archivar archivos de respaldo desde StorageGRID"].
 
 
 

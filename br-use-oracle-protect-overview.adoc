@@ -26,7 +26,7 @@ Utilice NetApp Backup and Recovery para implementar una estrategia de protecció
 
 
 
-NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
+NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
 
 Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de Oracle:
 

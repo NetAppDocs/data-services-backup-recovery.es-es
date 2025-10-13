@@ -29,7 +29,7 @@ Referirse a https://docs.netapp.com/us-en/storage-management-storagegrid/task-di
 +
 Referirse a https://docs.netapp.com/us-en/storagegrid/index.html["Documentación de StorageGRID"^] para obtener detalles sobre StorageGRID.
 
-* Servicios web de Amazon. Referirse a https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Documentación de Amazon S3"^] .
+* Servicios web de Amazon.  Referirse a https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Documentación de Amazon S3"^] .
 +
 Haga lo siguiente para preparar AWS como destino de respaldo:
 
@@ -64,7 +64,7 @@ Necesitará configurar dos conjuntos de permisos de AWS S3:
 
 
 .Pasos
-. Asegúrese de que el agente de la consola tenga los permisos necesarios. Para más detalles, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permisos de políticas de la consola de NetApp"] .
+. Asegúrese de que el agente de la consola tenga los permisos necesarios.  Para más detalles, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permisos de políticas de la NetApp Console"] .
 +
 
 NOTE: Al crear copias de seguridad en las regiones de AWS China, debe cambiar el nombre del recurso de AWS "arn" en todas las secciones _Resource_ en las políticas de IAM de "aws" a "aws-cn"; por ejemplo `arn:aws-cn:s3:::netapp-backup-*` .

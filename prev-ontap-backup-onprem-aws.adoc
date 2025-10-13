@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Realice copias de seguridad de los datos locales de ONTAP en Amazon S3 con NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 
@@ -48,7 +48,7 @@ image:diagram_cloud_backup_onprem_aws_private.png["Un diagrama que muestra cómo
 
 == Prepare su agente de consola
 
-El agente de consola es el software principal para la funcionalidad de la consola de NetApp .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
+El agente de consola es el software principal para la funcionalidad de la NetApp Console .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
 
 
 
@@ -80,19 +80,19 @@ Asegúrese de que se cumplan los siguientes requisitos de red:
 ** Se requieren reglas de grupo de seguridad entrantes y salientes adicionales para las implementaciones de AWS y AWS GovCloud. Ver https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Reglas para el agente de consola en AWS"^] Para más detalles.
 
 
-* Si tiene una conexión directa o VPN desde su clúster ONTAP a la VPC, y desea que la comunicación entre el agente de la consola y S3 permanezca en su red interna de AWS (una conexión *privada*), deberá habilitar una interfaz de punto final de VPC a S3. <<Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC>> .
+* Si tiene una conexión directa o VPN desde su clúster ONTAP a la VPC, y desea que la comunicación entre el agente de la consola y S3 permanezca en su red interna de AWS (una conexión *privada*), deberá habilitar una interfaz de punto final de VPC a S3. <<Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC>>.
 
 
 
 
 == Verificar los requisitos de la licencia
 
-Deberá verificar los requisitos de licencia tanto para AWS como para la consola de NetApp :
+Deberá verificar los requisitos de licencia tanto para AWS como para la NetApp Console:
 
 * Antes de poder activar NetApp Backup and Recovery para su clúster, deberá suscribirse a una oferta de NetApp Console Marketplace de pago por uso (PAYGO) de AWS o comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp.  Estas licencias son para su cuenta y se pueden usar en múltiples sistemas.
 +
-** Para obtener la licencia PAYGO de NetApp Backup and Recovery, necesitará una suscripción a https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Oferta de consola de NetApp desde AWS Marketplace"^] .  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
-** Para obtener una licencia BYOL de NetApp Backup and Recovery, necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia.
+** Para obtener la licencia PAYGO de NetApp Backup and Recovery , necesitará una suscripción a https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Oferta de NetApp Console desde AWS Marketplace"^] .  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
+** Para obtener una licencia BYOL de NetApp Backup and Recovery , necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia.
 
 
 * Necesita tener una suscripción a AWS para el espacio de almacenamiento de objetos donde se ubicarán sus copias de seguridad.
@@ -104,7 +104,7 @@ Puede crear copias de seguridad desde sistemas locales a Amazon S3 en todas las 
 
 
 
-== Prepare sus clústeres ONTAP
+== Prepare sus clústeres de ONTAP
 
 Necesitará preparar su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
 
@@ -120,9 +120,9 @@ La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
 === Descubra sus sistemas ONTAP en NetApp Console
 
-Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la consola de NetApp .
+Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .
 
-Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^] .
+Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^].
 
 
 
@@ -133,7 +133,7 @@ Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
 * Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 * Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
 +
-*Nota:* El “Paquete de nube híbrida” no es necesario cuando se utiliza NetApp Backup and Recovery.
+*Nota:* El "Paquete de nube híbrida" no es necesario cuando se utiliza NetApp Backup and Recovery.
 
 +
 Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Administrar sus licencias de clúster"^] .
@@ -141,7 +141,7 @@ Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-c
 * La hora y la zona horaria están configuradas correctamente.  Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Configurar el tiempo de su clúster"^] .
 * Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^].
 
 
 
@@ -174,7 +174,7 @@ Todos los LIF entre clústeres dentro del espacio IP deben tener acceso al almac
 
 * Los servidores DNS deben haber sido configurados para la máquina virtual de almacenamiento donde se encuentran los volúmenes.  Vea cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configurar servicios DNS para la SVM"^] .
 * Actualice las reglas de firewall, si es necesario, para permitir conexiones de NetApp Backup and Recovery desde ONTAP al almacenamiento de objetos a través del puerto 443 y tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS a través del puerto 53 (TCP/UDP).
-* Si está utilizando un punto final de interfaz de VPC privada en AWS para la conexión S3, entonces para poder utilizar HTTPS/443, deberá cargar el certificado del punto final S3 en el clúster de ONTAP . <<Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC>> .  *[Asegúrese de que su clúster ONTAP tenga permisos para acceder al depósito S3.
+* Si está utilizando un punto final de interfaz de VPC privada en AWS para la conexión S3, entonces para poder utilizar HTTPS/443, deberá cargar el certificado del punto final S3 en el clúster de ONTAP . <<Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC>>.  *[Asegúrese de que su clúster ONTAP tenga permisos para acceder al depósito S3.
 
 
 
@@ -187,7 +187,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 
 ==== Requisitos de red de ONTAP local
 
-* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube.  Normalmente se trata de una conexión VPN.
+* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
 Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
@@ -198,7 +198,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105.  Estas reglas están incluidas en el grupo de seguridad predefinido.
+* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas están incluidas en el grupo de seguridad predefinido.
 
 
 
@@ -224,7 +224,7 @@ Necesitarás configurar dos conjuntos de permisos:
 
 
 .Pasos
-. Asegúrese de que el agente de la consola tenga los permisos necesarios. Para más detalles, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permisos de políticas de la consola de NetApp"^] .
+. Asegúrese de que el agente de la consola tenga los permisos necesarios.  Para más detalles, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permisos de políticas de la NetApp Console"^] .
 +
 
 NOTE: Al crear copias de seguridad en las regiones de AWS China, debe cambiar el nombre del recurso de AWS "arn" en todas las secciones _Resource_ en las políticas de IAM de "aws" a "aws-cn"; por ejemplo `arn:aws-cn:s3:::netapp-backup-*` .
@@ -292,7 +292,7 @@ Consulte la https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for
 
 De forma predeterminada, el servicio crea depósitos para usted.  O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esos depósitos en el asistente.
 
-link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propios buckets"^] .
+link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propios buckets"^].
 
 Si crea sus propios depósitos, debe utilizar el nombre de depósito "netapp-backup".  Si necesita utilizar un nombre personalizado, edite el `ontapcloud-instance-policy-netapp-backup` IAMRole para los CVO existentes y agregue la siguiente lista a los permisos de S3.  Necesitas incluir `"Resource": "arn:aws:s3:::*"` y asignar todos los permisos necesarios que deben asociarse con el depósito.
 
@@ -307,11 +307,11 @@ Si crea sus propios depósitos, debe utilizar el nombre de depósito "netapp-bac
 
 Si desea utilizar las claves de cifrado predeterminadas de Amazon S3 para cifrar los datos que se transmiten entre su clúster local y el depósito S3, entonces está todo listo porque la instalación predeterminada usa ese tipo de cifrado.
 
-Si, en cambio, desea utilizar sus propias claves administradas por el cliente para el cifrado de datos en lugar de utilizar las claves predeterminadas, deberá tener las claves administradas de cifrado ya configuradas antes de iniciar el asistente de copia de seguridad y recuperación de NetApp .
+Si, en cambio, desea utilizar sus propias claves administradas por el cliente para el cifrado de datos en lugar de utilizar las claves predeterminadas, deberá tener las claves administradas de cifrado ya configuradas antes de iniciar el asistente de NetApp Backup and Recovery .
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Consulte cómo utilizar sus propias claves de cifrado de Amazon con Cloud Volumes ONTAP"^] .
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Consulte cómo utilizar sus propias claves de cifrado de Amazon con Cloud Volumes ONTAP"^].
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Consulte cómo utilizar sus propias claves de cifrado de Amazon con NetApp Backup and Recovery"^] .
+https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Consulte cómo utilizar sus propias claves de cifrado de Amazon con NetApp Backup and Recovery"^].
 
 
 
@@ -395,7 +395,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 . Continúe con las siguientes opciones:
 +
 ** Si ya tienes un agente de consola, ya estás listo.  Simplemente seleccione *Siguiente*.
-** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*. Consulte <<Prepare su agente de consola>> .
+** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*.  Referirse a<<Prepare su agente de consola>> .
 
 
 
@@ -504,7 +504,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 +
 La clave de acceso y la clave secreta son para el usuario de IAM que creó para otorgarle al clúster ONTAP acceso al depósito S3.
 
-** *Bucket*: elija un bucket S3 existente o cree uno nuevo. Referirse a https://docs.netapp.com/us-en/storage-management-s3-storage/task-add-s3-bucket.html["Agregar depósitos S3"^] .
+** *Bucket*: elija un bucket S3 existente o cree uno nuevo.  Referirse a https://docs.netapp.com/us-en/storage-management-s3-storage/task-add-s3-bucket.html["Agregar depósitos S3"^] .
 ** *Clave de cifrado*: si creó un nuevo depósito S3, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado predeterminadas de Amazon S3 o elegirá sus propias claves administradas por el cliente desde su cuenta de AWS para administrar el cifrado de sus datos.
 
 
@@ -515,7 +515,7 @@ NOTE: Si eligió un depósito existente, la información de cifrado ya está dis
 +
 ** *Redes*: elija el espacio IP y si utilizará un punto final privado.  El punto final privado está deshabilitado de forma predeterminada.
 +
-... El espacio IP en el clúster ONTAP donde residen los volúmenes que desea respaldar.  Los LIF entre clústeres para este espacio IP deben tener acceso a Internet saliente.
+... El espacio IP en el clúster ONTAP donde residen los volúmenes que desea respaldar. Los LIF entre clústeres para este espacio IP deben tener acceso a Internet saliente.
 ... Opcionalmente, elija si utilizará un AWS PrivateLink que haya configurado previamente. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulte los detalles sobre el uso de AWS PrivateLink para Amazon S3"^] .
 
 
@@ -556,7 +556,7 @@ NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales
 
 Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen de almacenamiento principal.
 
-El depósito S3 se crea en la cuenta de servicio indicada por la clave de acceso S3 y la clave secreta ingresada, y los archivos de respaldo se almacenan allí.  El panel de control de copias de seguridad de volumen se muestra para que pueda supervisar el estado de las copias de seguridad.
+El depósito S3 se crea en la cuenta de servicio indicada por la clave de acceso S3 y la clave secreta ingresada, y los archivos de respaldo se almacenan allí.  Se muestra el panel de control de copias de seguridad de volumen para que pueda supervisar el estado de las copias de seguridad.
 
 También puede supervisar el estado de los trabajos de copia de seguridad y restauración mediante ellink:br-use-monitor-tasks.html["Página de seguimiento de trabajos"^] .
 

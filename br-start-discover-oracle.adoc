@@ -16,16 +16,16 @@ summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo
 [role="lead"]
 NetApp Backup and Recovery primero debe descubrir sus bases de datos Oracle para poder protegerlas.
 
-*Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 
 
 == Agregue un host de Oracle y descubra recursos
 
-Agregue información del host de Oracle y permita que NetApp Backup and Recovery descubra cargas de trabajo.  Dentro de cada agente de consola, seleccione los sistemas en los que desea descubrir cargas de trabajo.
+Agregue información del host de Oracle y permita que NetApp Backup and Recovery descubra cargas de trabajo. Dentro de cada agente de consola, seleccione los sistemas en los que desea descubrir cargas de trabajo.
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En el mosaico de Oracle, seleccione *Descubrir y administrar*.
 +
 Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la consola, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
@@ -57,8 +57,8 @@ La carga de trabajo de Oracle se muestra en la lista de cargas de trabajo en la 
 
 
 
-== Continuar al panel de control de respaldo y recuperación de NetApp
+== Continuar al panel de control de NetApp Backup and Recovery
 
-. Para visualizar el Panel de control de respaldo y recuperación de NetApp , desde el menú superior, seleccione *Panel de control*.
+. Para visualizar el Panel de control de NetApp Backup and Recovery , desde el menú superior, seleccione *Panel de control*.
 . Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
 

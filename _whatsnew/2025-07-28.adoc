@@ -17,4 +17,4 @@ Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y ad
 * Cree copias de seguridad consistentes con la aplicación mediante plantillas y ganchos de ejecución.
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .

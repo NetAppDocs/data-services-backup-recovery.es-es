@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-vmware-backup-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web, services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, bluexp 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Realice copias de seguridad de almacenes de datos en Amazon Web Services en NetApp Backup and Recovery
 :hardbreaks:
@@ -20,7 +20,7 @@ Si el almacén de datos está asociado con una política de archivo, tiene la op
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 .Antes de empezar

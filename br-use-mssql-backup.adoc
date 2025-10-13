@@ -16,7 +16,7 @@ summary: Realice copias de seguridad de los datos de las aplicaciones de Microso
 [role="lead"]
 Realice copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure y StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
 
-* Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+* Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 * Configure el directorio de registro para los hosts descubiertos antes de iniciar una copia de seguridad.
 * Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
 
@@ -27,10 +27,10 @@ Realice copias de seguridad de los datos de las aplicaciones de Microsoft SQL Se
 
 Antes de iniciar una copia de seguridad, vea el estado de protección de sus cargas de trabajo.
 
-*Rol de consola de NetApp requerido* Visor de almacenamiento, superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery, administrador de restauración de Backup and Recovery, administrador de clones de Backup and Recovery o rol de visor de Backup and Recovery. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery, administrador de restauración de Backup and Recovery, administrador de clones de Backup and Recovery o rol de visor de Backup and Recovery.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Revise los detalles en las pestañas Hosts, Grupos de protección, Grupos de disponibilidad, Instancias y Bases de datos.
@@ -42,10 +42,10 @@ Antes de iniciar una copia de seguridad, vea el estado de protección de sus car
 
 Antes de realizar una copia de seguridad de sus cargas de trabajo, configure la ruta para los registros de actividad de los hosts detectados.  Esto le ayuda a realizar un seguimiento del estado de las operaciones.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery o administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery, administrador de copias de seguridad de Backup and Recovery o administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione un host.
@@ -65,10 +65,10 @@ NOTE: Los campos que aparecen varían según el modelo de implementación selecc
 
 Puede crear un grupo de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de cargas de trabajo.  Un grupo de protección es una agrupación lógica de cargas de trabajo que desea proteger juntas.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupos de protección*.
@@ -78,7 +78,7 @@ Puede crear un grupo de protección para administrar las operaciones de copia de
 . Seleccione *Siguiente*.
 . Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
 +
-Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política. Ver link:br-use-policies-create.html["Crear políticas"] Para más información.
+Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
 . Seleccione *Siguiente*.
 . Revise la configuración.
@@ -91,7 +91,7 @@ Si desea crear una política, seleccione *Crear nueva política* y siga las inst
 
 Cree una copia de seguridad a pedido de inmediato.  Es posible que desees ejecutar una copia de seguridad a pedido si estás a punto de realizar cambios en tu sistema y quieres asegurarte de tener una copia de seguridad antes de comenzar.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
 . Desde el menú, seleccione *Inventario*.
@@ -111,10 +111,10 @@ Cree una copia de seguridad a pedido de inmediato.  Es posible que desees ejecut
 
 Suspender la programación impide que la copia de seguridad se ejecute a la hora programada temporalmente.  Es posible que desees hacer esto si estás realizando mantenimiento en el sistema o si tienes problemas con la copia de seguridad.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupo de protección*, *Instancias* o *Bases de datos*.
@@ -128,10 +128,10 @@ Suspender la programación impide que la copia de seguridad se ejecute a la hora
 
 Puede crear un grupo de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de cargas de trabajo.  Un grupo de protección es una agrupación lógica de cargas de trabajo que desea proteger juntas.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupos de protección*.
@@ -144,10 +144,10 @@ Puede crear un grupo de protección para administrar las operaciones de copia de
 
 Puede eliminar la protección de una carga de trabajo si ya no desea realizar copias de seguridad de ella o si desea dejar de administrarla en NetApp Backup and Recovery.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione la pestaña *Grupo de protección*, *Instancias* o *Bases de datos*.

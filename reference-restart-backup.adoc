@@ -16,7 +16,7 @@ summary: Puede haber situaciones en las que sea necesario reiniciar NetApp Backu
 [role="lead"]
 Puede haber situaciones en las que sea necesario reiniciar NetApp Backup and Recovery.
 
-La funcionalidad de copia de seguridad y recuperación de NetApp está integrada en el agente de consola.
+La funcionalidad de NetApp Backup and Recovery está integrada en el agente de consola.
 
 .Pasos
 . Conéctese al sistema Linux en el que se ejecuta el agente de consola.

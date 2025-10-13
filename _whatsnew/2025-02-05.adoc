@@ -6,7 +6,7 @@
 
 === Versión preliminar de NetApp Backup and Recovery
 
-Esta versión preliminar de NetApp Backup and Recovery proporciona una interfaz de usuario actualizada que le permite administrar las cargas de trabajo de Microsoft SQL Server mediante una estrategia de protección 3-2-1, familiar en NetApp Backup and Recovery.  Con esta nueva versión, puede realizar copias de seguridad de estas cargas de trabajo en el almacenamiento principal, replicarlas en el almacenamiento secundario y realizar copias de seguridad de ellas en el almacenamiento de objetos en la nube.
+Esta versión preliminar de NetApp Backup and Recovery proporciona una interfaz de usuario actualizada que le permite administrar las cargas de trabajo de Microsoft SQL Server mediante una estrategia de protección 3-2-1, familiar en NetApp Backup and Recovery. Con esta nueva versión, puede realizar copias de seguridad de estas cargas de trabajo en el almacenamiento principal, replicarlas en el almacenamiento secundario y realizar copias de seguridad de ellas en el almacenamiento de objetos en la nube.
 
 
 NOTE: Esta documentación se proporciona como una vista previa de la tecnología. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de la disponibilidad general.
@@ -14,7 +14,7 @@ NOTE: Esta documentación se proporciona como una vista previa de la tecnología
 Esta versión de NetApp Backup and Recovery Preview 2025 incluye las siguientes actualizaciones.
 
 * Una interfaz de usuario rediseñada que proporciona una experiencia más intuitiva para administrar sus tareas de copia de seguridad y recuperación.
-* La versión preliminar le permite realizar copias de seguridad y restaurar bases de datos de Microsoft SQL Server.  (Se agregará soporte para otras cargas de trabajo en futuras versiones).
-* Esta versión integra las capacidades de SnapCenter , lo que le permite administrar y proteger sus recursos de SnapCenter con una estrategia de protección de datos 3-2-1 desde la interfaz de usuario de NetApp Backup and Recovery.
+* La versión preliminar le permite realizar copias de seguridad y restaurar bases de datos de Microsoft SQL Server. (Se agregará soporte para otras cargas de trabajo en futuras versiones).
+* Esta versión integra las capacidades de SnapCenter , lo que le permite administrar y proteger sus recursos de SnapCenter con una estrategia de protección de datos 3-2-1 desde la interfaz de usuario de NetApp Backup and Recovery .
 * Esta versión le permite importar cargas de trabajo de SnapCenter a NetApp Backup and Recovery.
 

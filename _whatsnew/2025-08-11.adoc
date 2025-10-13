@@ -38,7 +38,7 @@ Referirse a https://docs.netapp.com/us-en/data-services-backup-recovery/br-start
 * *Datos de respaldo del registro*: La página de detalles de protección de la base de datos ahora muestra copias de seguridad del registro. Puede ver la columna Tipo de copia de seguridad que muestra si la copia de seguridad es una copia de seguridad completa o una copia de seguridad de registro.
 * *Panel de control mejorado*: el panel de control ahora muestra los ahorros de almacenamiento y clonación.
 +
-image:../media/screen-br-dashboard3.png["Panel de control de respaldo y recuperación de NetApp"]
+image:../media/screen-br-dashboard3.png["Panel de control de NetApp Backup and Recovery"]
 
 
 
@@ -47,7 +47,7 @@ image:../media/screen-br-dashboard3.png["Panel de control de respaldo y recupera
 === Mejoras en la carga de trabajo de volumen de ONTAP
 
 * *Restauración de múltiples carpetas para volúmenes ONTAP *: hasta ahora, podías restaurar una carpeta o varios archivos a la vez desde la función Explorar y restaurar. NetApp Backup and Recovery ahora ofrece la posibilidad de seleccionar varias carpetas a la vez mediante la función Explorar y restaurar.
-* *Ver y administrar copias de seguridad de volúmenes eliminados*: el panel de respaldo y recuperación de NetApp ahora ofrece una opción para mostrar y administrar los volúmenes que se eliminan de ONTAP. Con esto, puede ver y eliminar copias de seguridad de volúmenes que ya no existen en ONTAP.
+* *Ver y administrar copias de seguridad de volúmenes eliminados*: el panel de NetApp Backup and Recovery ahora ofrece una opción para mostrar y administrar los volúmenes que se eliminan de ONTAP. Con esto, puede ver y eliminar copias de seguridad de volúmenes que ya no existen en ONTAP.
 * *Eliminar por la fuerza las copias de seguridad*: en algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las desea. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
 
 

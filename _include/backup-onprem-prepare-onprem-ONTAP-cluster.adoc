@@ -16,9 +16,9 @@ La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
 === Descubra sus sistemas ONTAP en NetApp Console
 
-Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la consola de NetApp .
+Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .
 
-Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^] .
+Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^].
 
 
 
@@ -29,7 +29,7 @@ Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
 * Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 * Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
 +
-*Nota:* El “Paquete de nube híbrida” no es necesario cuando se utiliza NetApp Backup and Recovery.
+*Nota:* El "Paquete de nube híbrida" no es necesario cuando se utiliza NetApp Backup and Recovery.
 
 +
 Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Administrar sus licencias de clúster"^] .
@@ -37,6 +37,6 @@ Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-c
 * La hora y la zona horaria están configuradas correctamente.  Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Configurar el tiempo de su clúster"^] .
 * Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^].
 
 

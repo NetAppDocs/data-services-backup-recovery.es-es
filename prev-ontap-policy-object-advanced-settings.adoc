@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-advanced-settings.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Administrar las opciones de almacenamiento de copia de seguridad en objetos en la configuración avanzada de NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ NOTE: Estas configuraciones solo están disponibles para el almacenamiento de co
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 Puede cambiar las siguientes opciones en la página Configuración avanzada:
@@ -123,7 +123,7 @@ Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
 
 TIP: Habilitar análisis de ransomware generará cargos adicionales según el proveedor de la nube.
 
-Los análisis de ransomware programados se ejecutan solo en la última copia instantánea.
+Los análisis de ransomware programados se ejecutan solo en la última copia de instantánea.
 
 Si los análisis de ransomware programados están deshabilitados, aún puede realizar análisis a pedido y el análisis durante una operación de restauración se seguirá realizando.
 

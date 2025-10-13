@@ -16,11 +16,11 @@ summary: NetApp Backup and Recovery le permite descubrir y administrar sus clús
 [role="lead"]
 NetApp Backup and Recovery le permite descubrir y administrar sus clústeres de Kubernetes para que pueda proteger los recursos alojados en los clústeres.
 
-.Rol de consola de NetApp requerido
-Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+.Rol de NetApp Console requerido
+Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 
-NOTE: Para descubrir clústeres de Kubernetes, consulte link:br-start-discover.html["Descubra las cargas de trabajo de Kubernetes"] .
+NOTE: Para descubrir clústeres de Kubernetes, consultelink:br-start-discover.html["Descubra las cargas de trabajo de Kubernetes"] .
 
 
 
@@ -40,7 +40,7 @@ Puede editar un clúster si necesita cambiar su nombre.
 
 == Eliminar un clúster de Kubernetes
 
-Si ya no necesita proteger los recursos alojados en un clúster de Kubernetes, puede eliminarlo de NetApp Backup and Recovery.  Eliminar un clúster no elimina el clúster ni sus recursos; solo elimina el clúster del inventario de la consola de NetApp .  Antes de poder eliminar un clúster, debe deshabilitar la protección y eliminar las aplicaciones asociadas de NetApp Backup and Recovery.
+Si ya no necesita proteger los recursos alojados en un clúster de Kubernetes, puede eliminarlo de NetApp Backup and Recovery.  Eliminar un clúster no elimina el clúster ni sus recursos; solo elimina el clúster del inventario de la NetApp Console .  Antes de poder eliminar un clúster, debe deshabilitar la protección y eliminar las aplicaciones asociadas de NetApp Backup and Recovery.
 
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario* > *Clústeres*.

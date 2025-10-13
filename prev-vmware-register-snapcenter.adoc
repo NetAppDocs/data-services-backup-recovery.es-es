@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-vmware-register-snapcenter.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Registre el SnapCenter Plug-in for VMware vSphere para usarlo con NetApp Backup and Recovery
 :hardbreaks:
@@ -18,11 +18,11 @@ Debe registrar el SnapCenter Plug-in for VMware vSphere en NetApp Backup and Rec
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 .Pasos
-. En la interfaz de usuario de la consola de NetApp , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En la interfaz de usuario de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
 . En el menú desplegable *Configuración*, seleccione * SnapCenter Plug-in for VMware vSphere*.
 . Seleccione *Registrar SnapCenter Plug-in for VMware vSphere*.
 . Especifique los siguientes detalles:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-options.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Opciones de política de copia de seguridad a objeto en NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ NOTE: Estas configuraciones de políticas son relevantes únicamente para el alm
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 
@@ -59,15 +59,15 @@ Las copias de seguridad anuales se eliminan automáticamente del sistema de orig
 
 NetApp Backup and Recovery brinda soporte para DataLock y protección contra ransomware para sus copias de seguridad de volumen.  Estas funciones le permiten bloquear sus archivos de respaldo y escanearlos para detectar posible ransomware en ellos.  Esta es una configuración opcional que puede definir en sus políticas de respaldo cuando desee protección adicional para sus copias de seguridad de volumen para un clúster.
 
-Ambas funciones protegen sus archivos de respaldo para que siempre tenga un archivo de respaldo válido para recuperar datos en caso de un intento de ataque de ransomware en sus copias de seguridad. También es útil cumplir con ciertos requisitos reglamentarios donde las copias de seguridad deben bloquearse y conservarse durante un período de tiempo determinado. Cuando la opción DataLock y Ransomware Resilience está habilitada, el depósito de nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo y el control de versiones de objetos.
+Ambas funciones protegen sus archivos de respaldo para que siempre tenga un archivo de respaldo válido para recuperar datos en caso de un intento de ataque de ransomware en sus copias de seguridad.  También es útil cumplir con ciertos requisitos reglamentarios donde las copias de seguridad deben bloquearse y conservarse durante un período de tiempo determinado.  Cuando la opción DataLock y Ransomware Resilience está habilitada, el depósito de nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo y el control de versiones de objetos.
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección contra DataLock y ransomware para obtener más detalles."^] .
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección contra DataLock y ransomware para obtener más detalles."^].
 
 Esta función no proporciona protección para los volúmenes de origen; solo para las copias de seguridad de esos volúmenes de origen.  Utilice algunos de los https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones anti-ransomware proporcionadas por ONTAP"^] para proteger sus volúmenes de origen.
 
 [CAUTION]
 ====
-* Si planea utilizar DataLock y protección contra ransomware, puede habilitarlo al crear su primera política de respaldo y activar NetApp Backup and Recovery para ese clúster.  Posteriormente puede habilitar o deshabilitar el escaneo de ransomware mediante la Configuración avanzada de NetApp Backup and Recovery.
+* Si planea utilizar DataLock y protección contra ransomware, puede habilitarlo al crear su primera política de respaldo y activar NetApp Backup and Recovery para ese clúster.  Posteriormente puede habilitar o deshabilitar el escaneo de ransomware mediante la Configuración avanzada de NetApp Backup and Recovery .
 * Cuando la consola escanea un archivo de respaldo en busca de ransomware al restaurar datos de volumen, incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
 
 
@@ -129,12 +129,12 @@ Puede habilitar la protección contra DataLock y Ransomware al crear una políti
 +
 ** *Ninguno*: La protección DataLock y la resiliencia frente a ransomware están deshabilitadas.
 ** *Desbloqueado*: La protección DataLock y la resiliencia contra ransomware están habilitadas.  Los usuarios con permisos específicos pueden sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.
-** *Bloqueado*: la protección DataLock y la resiliencia contra ransomware están habilitadas.  Ningún usuario puede sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.  Esto satisface el pleno cumplimiento normativo.
+** *Bloqueado*: la protección DataLock y la resiliencia frente a ransomware están habilitadas.  Ningún usuario puede sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.  Esto satisface el pleno cumplimiento normativo.
 
 
 
 
-Consulte link:prev-ontap-policy-object-advanced-settings.html["Cómo actualizar las opciones de protección contra ransomware en la página de Configuración avanzada"] .
+Referirse alink:prev-ontap-policy-object-advanced-settings.html["Cómo actualizar las opciones de protección contra ransomware en la página de Configuración avanzada"] .
 
 
 
@@ -228,7 +228,7 @@ ifdef::aws[]
 
 ====
 +
-https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo de la política donde puede copiar y pegar los permisos necesarios"^] .
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo de la política donde puede copiar y pegar los permisos necesarios"^].
 
 
 
@@ -363,7 +363,7 @@ ifdef::aws[]
 
 * En AWS, las copias de seguridad comienzan en la clase de almacenamiento _Estándar_ y pasan a la clase de almacenamiento _Estándar-Acceso infrecuente_ después de 30 días.
 +
-Si su clúster usa ONTAP 9.10.1 o superior, puede organizar las copias de seguridad más antiguas en almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"] .
+Si su clúster usa ONTAP 9.10.1 o superior, puede organizar las copias de seguridad más antiguas en almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"].
 
 +
 ** Si no selecciona ningún nivel de archivo en su primera política de respaldo al activar NetApp Backup and Recovery, entonces _S3 Glacier_ será su única opción de archivo para políticas futuras.
@@ -379,7 +379,7 @@ ifdef::azure[]
 
 * En Azure, las copias de seguridad están asociadas con el nivel de acceso _Cool_.
 +
-Si su clúster usa ONTAP 9.10.1 o una versión superior, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"] .
+Si su clúster usa ONTAP 9.10.1 o una versión superior, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"].
 
 
 
@@ -389,7 +389,7 @@ ifdef::gcp[]
 
 * En GCP, las copias de seguridad están asociadas con la clase de almacenamiento _Estándar_.
 +
-Si su clúster local usa ONTAP 9.12.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"] .
+Si su clúster local usa ONTAP 9.12.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"].
 
 
 
@@ -403,12 +403,12 @@ Si su clúster local usa ONTAP 9.12.1 o superior, y su sistema StorageGRID usa 1
 
 ifdef::aws[]
 
-+ ** Para AWS, puede organizar las copias de seguridad en niveles de almacenamiento AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"^] .
++ ** Para AWS, puede organizar las copias de seguridad en niveles de almacenamiento AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"^].
 
 endif::aws[]
 
 ifdef::azure[]
 
-+ ** Para Azure, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"^] .
++ ** Para Azure, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"^].
 
 endif::azure[]

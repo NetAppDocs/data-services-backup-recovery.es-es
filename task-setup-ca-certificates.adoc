@@ -30,13 +30,13 @@ El certificado generado debe tener CN y nombre alternativo del sujeto como el no
 https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-load-balancer-endpoints.html#attach-certificate["Información de StorageGRID sobre la configuración de certificados"]
 
 . Actualice StorageGRID con el certificado si aún no lo ha hecho.
-. Inicie sesión en el agente de la consola como usuario raíz.  Correr:
+. Inicie sesión en el agente de la consola como usuario raíz. Correr:
 +
 [source, console]
 ----
 sudo su
 ----
-. Obtenga el volumen Docker de NetApp Backup and Recovery (Cloud Backup Service).  Correr:
+. Obtenga el volumen Docker de NetApp Backup and Recovery (Cloud Backup Service). Correr:
 +
 [source, console]
 ----
@@ -52,9 +52,9 @@ local service-manager-2_cloudmanager_cbs_volume"
 ----
 +
 
-NOTE: El nombre del volumen difiere entre los modos de implementación Estándar, Privado y Restringido.  Este ejemplo utiliza el modo estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+NOTE: El nombre del volumen difiere entre los modos de implementación Estándar, Privado y Restringido. Este ejemplo utiliza el modo estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
-. Encuentre el punto de montaje del volumen de NetApp Backup and Recovery .  Correr:
+. Encuentre el punto de montaje del volumen de NetApp Backup and Recovery . Correr:
 +
 [source, console]
 ----
@@ -70,15 +70,15 @@ Ejemplo de salida:
 ----
 +
 
-NOTE: El punto de montaje difiere entre los modos de implementación Estándar, Privado y Restringido.  Este ejemplo muestra una implementación de nube estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+NOTE: El punto de montaje difiere entre los modos de implementación Estándar, Privado y Restringido. Este ejemplo muestra una implementación de nube estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
-. Cambie al directorio MountPoint.  Correr:
+. Cambie al directorio MountPoint. Correr:
 +
 [source, console]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
-. Si el certificado de StorageGRID está firmado por la CA raíz y una CA intermedia, entonces agregue el `pem` archivos de ambos en un solo archivo llamado `sgws.crt` en la ubicación actual.  No agregue el certificado de hoja a este archivo.
+. Si el certificado de StorageGRID está firmado por la CA raíz y una CA intermedia, entonces agregue el `pem` archivos de ambos en un solo archivo llamado `sgws.crt` en la ubicación actual. No agregue el certificado de hoja a este archivo.
 
 
 
@@ -104,7 +104,7 @@ cd cbs_config
 ** `production-customer.json`Se utiliza para implementaciones en modo estándar y modo restringido.
 ** `darksite-customer.json`Se utiliza para implementaciones en modo privado.
 +
-Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
 +
 *Archivo de configuración*
@@ -125,13 +125,13 @@ Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html
 ----
 
 
-. Salir del contenedor.  Correr:
+. Salir del contenedor. Correr:
 +
 [source, console]
 ----
 exit
 ----
-. Reanudar `cloudmanager_cbs` .  Correr:
+. Reanudar `cloudmanager_cbs` . Correr:
 +
 [source, console]
 ----
@@ -162,7 +162,7 @@ cd cbs_catalog_config
 ** `production-customer.json`Se utiliza para implementaciones en modo estándar y modo restringido.
 ** `darksite-customer.json`Se utiliza para implementaciones en modo privado.
 +
-Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
 +
 *Archivo de configuración del catálogo*
@@ -183,7 +183,7 @@ Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html
 ----
 
 
-. Reiniciar el catálogo.  Correr:
+. Reiniciar el catálogo. Correr:
 +
 [source, console]
 ----
@@ -256,7 +256,7 @@ openssl crl2pkcs7 -nocrl -certfile /etc/pki/tls/certs/ca-bundle.crt | openssl pk
 
 Si la comunicación entre los contenedores de NetApp Backup and Recovery y ONTAP debe validar el certificado de ONTAP , complete los siguientes pasos.
 
-NetApp Backup and Recovery utiliza la IP de administración de clúster para conectarse a ONTAP.  Introduzca la dirección IP del clúster en los nombres alternativos del sujeto del certificado.  Especifique este paso cuando genere la CSR mediante la interfaz de usuario del Administrador del sistema.
+NetApp Backup and Recovery utiliza la IP de administración de clúster para conectarse a ONTAP. Introduzca la dirección IP del clúster en los nombres alternativos del sujeto del certificado. Especifique este paso cuando genere la CSR mediante la interfaz de usuario del Administrador del sistema.
 
 Utilice la documentación del Administrador del sistema para crear un nuevo certificado CA para ONTAP.
 
@@ -265,13 +265,13 @@ Utilice la documentación del Administrador del sistema para crear un nuevo cert
 
 
 .Pasos
-. Inicie sesión en el agente de la consola como root.  Correr:
+. Inicie sesión en el agente de la consola como root. Correr:
 +
 [source, console]
 ----
 sudo su
 ----
-. Obtenga el volumen Docker de NetApp Backup and Recovery .  Correr:
+. Obtenga el volumen Docker de NetApp Backup and Recovery . Correr:
 +
 [source, console]
 ----
@@ -287,9 +287,9 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 +
 
-NOTE: El nombre del volumen difiere entre los modos de implementación Estándar, Privado y Restringido.  Este ejemplo muestra una implementación de nube estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+NOTE: El nombre del volumen difiere entre los modos de implementación Estándar, Privado y Restringido. Este ejemplo muestra una implementación de nube estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
-. Obtenga el soporte para el volumen.  Correr:
+. Obtenga el soporte para el volumen. Correr:
 +
 [source, console]
 ----
@@ -305,9 +305,9 @@ Ejemplo de salida:
 ----
 +
 
-NOTE: El punto de montaje difiere entre los modos de implementación Estándar, Privado y Restringido.  Este ejemplo muestra una implementación de nube estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+NOTE: El punto de montaje difiere entre los modos de implementación Estándar, Privado y Restringido. Este ejemplo muestra una implementación de nube estándar. Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
-. Cambiar al directorio del punto de montaje.  Correr:
+. Cambiar al directorio del punto de montaje. Correr:
 +
 [source, console]
 ----
@@ -316,7 +316,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 . Complete uno de los siguientes pasos:
 +
 ** Si el certificado ONTAP está firmado por la CA raíz y una CA intermedia, entonces agregue el `pem` archivos de ambos en un solo archivo llamado `ontap.crt` en la ubicación actual.
-** Si el certificado ONTAP está firmado por una sola CA, cambie el nombre del certificado. `pem` archivar como `ontap.crt` y copiarlo en la ubicación actual.  No agregue el certificado de hoja a este archivo.
+** Si el certificado ONTAP está firmado por una sola CA, cambie el nombre del certificado. `pem` archivar como `ontap.crt` y copiarlo en la ubicación actual. No agregue el certificado de hoja a este archivo.
 
 
 
@@ -333,7 +333,7 @@ A continuación, habilite la verificación del certificado del servidor ONTAP en
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
-. Cambie al directorio de configuración.  Correr:
+. Cambie al directorio de configuración. Correr:
 +
 [source, console]
 ----
@@ -344,7 +344,7 @@ cd cbs_config
 ** `production-customer.json`Se utiliza para implementaciones en modo estándar y modo restringido.
 ** `darksite-customer.json`Se utiliza para implementaciones en modo privado.
 +
-Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
 +
 *Archivo de configuración*
@@ -363,13 +363,13 @@ Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html
 ----
 
 
-. Salir del contenedor.  Correr:
+. Salir del contenedor. Correr:
 +
 [source, console]
 ----
 exit
 ----
-. Reinicie NetApp Backup and Recovery.  Correr:
+. Reinicie NetApp Backup and Recovery. Correr:
 +
 [source, console]
 ----
@@ -383,7 +383,7 @@ docker restart cloudmanager_cbs
 
 Habilite la verificación del certificado del servidor ONTAP para el servicio de catalogación.
 
-. Cambiar directorios al volumen Docker.  Correr:
+. Cambiar directorios al volumen Docker. Correr:
 +
 [source, console]
 ----
@@ -400,7 +400,7 @@ cd cbs_catalog_config
 ** `production-customer.json`Se utiliza para implementaciones en modo estándar y modo restringido.
 ** `darksite-customer.json`Se utiliza para implementaciones en modo privado.
 +
-Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la consola de NetApp"] .
+Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implementación de la NetApp Console"] .
 
 +
 *Archivo de configuración*
@@ -419,7 +419,7 @@ Referirse a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html
 ----
 
 
-. Reinicie NetApp Backup and Recovery.  Correr:
+. Reinicie NetApp Backup and Recovery. Correr:
 +
 [source, console]
 ----

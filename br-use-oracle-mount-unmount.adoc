@@ -23,7 +23,7 @@ Es posible que desee montar un punto de recuperación de Oracle Database si nece
 Si configura la política de protección para una base de datos para conservar registros de archivo, puede montar los puntos de recuperación de la base de datos para ver el historial de todos los cambios realizados en la base de datos.
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . Seleccione el mosaico Oracle.
 . En el menú Copia de seguridad y recuperación, seleccione *Inventario*.
 . Para la carga de trabajo de Oracle Database en la lista, seleccione *Ver*.
@@ -55,7 +55,7 @@ El punto de recuperación está montado en el host de Oracle.
 Desmonte el punto de recuperación cuando ya no necesite ver los cambios realizados en esa base de datos.
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . Seleccione el mosaico Oracle.
 . En el menú Copia de seguridad y recuperación, seleccione *Inventario*.
 . Para la carga de trabajo de Oracle en la lista, seleccione *Ver*.

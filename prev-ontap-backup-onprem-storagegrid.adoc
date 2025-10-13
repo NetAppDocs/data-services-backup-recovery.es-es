@@ -21,7 +21,7 @@ NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 
@@ -69,7 +69,7 @@ Asegúrese de que la red donde está instalado el agente de consola permita las 
 
 ==== Consideraciones sobre el modo privado (sitio oscuro)
 
-* La funcionalidad de copia de seguridad y recuperación de NetApp está integrada en el agente de consola.  Cuando se instala en modo privado, necesitará actualizar periódicamente el software del agente de la consola para obtener acceso a nuevas funciones.  Comprueba ellink:whats-new.html["Novedades de NetApp Backup and Recovery"] para ver las nuevas funciones en cada versión de NetApp Backup and Recovery.  Cuando desee utilizar las nuevas funciones, siga los pasos para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["actualizar el software del agente de la consola"^] .
+* La funcionalidad de NetApp Backup and Recovery está integrada en el agente de consola.  Cuando se instala en modo privado, necesitará actualizar periódicamente el software del agente de la consola para obtener acceso a nuevas funciones.  Comprueba ellink:whats-new.html["Novedades de NetApp Backup and Recovery"] para ver las nuevas funciones en cada versión de NetApp Backup and Recovery .  Cuando desee utilizar las nuevas funciones, siga los pasos para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["actualizar el software del agente de la consola"^] .
 +
 La nueva versión de NetApp Backup and Recovery que incluye la capacidad de programar y crear copias Snapshot y volúmenes replicados, además de crear copias de seguridad en el almacenamiento de objetos, requiere que utilice la versión 3.9.31 o superior del agente de consola.  Por lo tanto, se recomienda que obtenga esta última versión para administrar todas sus copias de seguridad.
 
@@ -82,14 +82,14 @@ La nueva versión de NetApp Backup and Recovery que incluye la capacidad de prog
 
 Antes de poder activar NetApp Backup and Recovery para su clúster, deberá comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp.  Esta licencia es para la cuenta y se puede utilizar en múltiples sistemas.
 
-Necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .
+Necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"].
 
 
 TIP: La licencia PAYGO no es compatible al realizar copias de seguridad de archivos en StorageGRID.
 
 
 
-== Prepare sus clústeres ONTAP
+== Prepare sus clústeres de ONTAP
 
 Necesitará preparar su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
 
@@ -105,9 +105,9 @@ La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
 === Descubra sus sistemas ONTAP en NetApp Console
 
-Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la consola de NetApp .
+Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .
 
-Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^] .
+Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^].
 
 
 
@@ -118,7 +118,7 @@ Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
 * Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 * Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
 +
-*Nota:* El “Paquete de nube híbrida” no es necesario cuando se utiliza NetApp Backup and Recovery.
+*Nota:* El "Paquete de nube híbrida" no es necesario cuando se utiliza NetApp Backup and Recovery.
 
 +
 Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Administrar sus licencias de clúster"^] .
@@ -126,7 +126,7 @@ Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-c
 * La hora y la zona horaria están configuradas correctamente.  Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Configurar el tiempo de su clúster"^] .
 * Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^].
 
 
 
@@ -167,7 +167,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 
 ==== Requisitos de red de ONTAP local
 
-* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube.  Normalmente se trata de una conexión VPN.
+* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
 Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
@@ -178,7 +178,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105.  Estas reglas están incluidas en el grupo de seguridad predefinido.
+* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas están incluidas en el grupo de seguridad predefinido.
 
 
 
@@ -243,7 +243,7 @@ El soporte actual le permite archivar copias de seguridad en el almacenamiento d
 *Requisitos de Amazon S3*
 
 * Necesitará registrarse en una cuenta de Amazon S3 para el espacio de almacenamiento donde se ubicarán sus copias de seguridad archivadas.
-* Puede optar por organizar las copias de seguridad en niveles de almacenamiento AWS S3 Glacier o S3 Glacier Deep Archive. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre los niveles de archivo de AWS"] .
+* Puede optar por organizar las copias de seguridad en niveles de almacenamiento AWS S3 Glacier o S3 Glacier Deep Archive. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre los niveles de archivo de AWS"].
 * StorageGRID debe tener acceso de control total al depósito(`s3:*` ); sin embargo, si esto no es posible, la política del bucket debe otorgar los siguientes permisos S3 a StorageGRID:
 +
 ** `s3:AbortMultipartUpload`
@@ -309,7 +309,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 . Continúe con las siguientes opciones:
 +
 ** Si ya tienes un agente de consola, ya estás listo.  Simplemente seleccione *Siguiente*.
-** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*. Consulte <<Prepare su agente de consola>> .
+** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*.  Referirse a<<Prepare su agente de consola>> .
 
 
 
@@ -442,7 +442,7 @@ Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus cop
 
 
 +
-Si su clúster usa ONTAP 9.12.1 o superior y su sistema StorageGRID usa la versión 11.4 o superior, puede elegir agrupar las copias de seguridad más antiguas en niveles de archivo de nube pública después de una cierta cantidad de días.  El soporte actual es para niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Prepárese para archivar archivos de respaldo antiguos en un almacenamiento en la nube pública,Vea cómo configurar sus sistemas para esta funcionalidad>> .
+Si su clúster usa ONTAP 9.12.1 o superior y su sistema StorageGRID usa la versión 11.4 o superior, puede elegir agrupar las copias de seguridad más antiguas en niveles de archivo de nube pública después de una cierta cantidad de días.  El soporte actual es para niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Prepárese para archivar archivos de respaldo antiguos en un almacenamiento en la nube pública,Vea cómo configurar sus sistemas para esta funcionalidad>>.
 
 +
 ** *Copia de seguridad por niveles en la nube pública*: seleccione el proveedor de la nube al que desea realizar las copias de seguridad por niveles e ingrese los detalles del proveedor.

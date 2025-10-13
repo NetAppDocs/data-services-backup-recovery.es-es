@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: NetApp Backup and Recovery primero debe descubrir los datos para que usted pueda utilizar el servicio.  Durante el descubrimiento, NetApp Backup and Recovery analiza todos los volúmenes y archivos en los sistemas de su organización. 
+summary: NetApp Backup and Recovery primero debe descubrir los datos para que usted pueda utilizar el servicio.  Durante el descubrimiento, NetApp Backup and Recovery analiza todos los volúmenes y archivos de los sistemas de su organización. 
 ---
 = Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo de Microsoft SQL Server
 :hardbreaks:
@@ -30,7 +30,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 == Solo modo de implementación estándar
 
-Esta versión de NetApp Backup and Recovery solo funciona en el modo de implementación estándar, no en los modos restringidos o privados.
+Esta versión de NetApp Backup and Recovery solo funciona en el modo de implementación estándar, no en modos restringidos o privados.
 
 
 
@@ -44,7 +44,7 @@ El nombre del clúster de Windows no puede contener un carácter de guión bajo 
 
 La migración de recursos de SnapCenter a NetApp Backup and Recovery tiene las siguientes limitaciones.
 
-Para obtener detalles sobre cómo las políticas de SnapCenter migran a las políticas de NetApp Backup and Recovery, consultelink:reference-policy-differences-snapcenter.html["Políticas en SnapCenter comparadas con las de NetApp Backup and Recovery"] .
+Para obtener detalles sobre cómo las políticas de SnapCenter migran a las políticas de NetApp Backup and Recovery , consultelink:reference-policy-differences-snapcenter.html["Políticas en SnapCenter comparadas con las de NetApp Backup and Recovery"] .
 
 
 
@@ -76,7 +76,7 @@ Si tiene una política de SnapCenter que se repite cada hora pero no utiliza int
 
 Si una política de SnapCenter se repite en intervalos de día y de mes, NetApp Backup and Recovery no importará la política.
 
-Por ejemplo, no puede adjuntar una política diaria (con menos o igual a 7 días o más de 7 días) a un recurso y también adjuntar una política mensual al mismo recurso.
+Por ejemplo, no puede adjuntar una política diaria (con una duración menor o igual a 7 días o mayor a 7 días) a un recurso y también adjuntar una política mensual al mismo recurso.
 
 *Solución alternativa*: utilice una política que utilice un intervalo diario o mensual, pero no ambos.
 
@@ -98,7 +98,7 @@ NetApp Backup and Recovery no importa políticas de respaldo de solo registro de
 
 === Mapeo de host
 
-SnapCenter no tiene clústeres de almacenamiento de mapas ni SVM para los recursos de los hosts, pero NetApp Backup and Recovery sí.  El clúster ONTAP local o SVM no se asignará a un host en las versiones preliminares de NetApp Backup and Recovery.  Además, NetApp Console no admite SVM.
+SnapCenter no tiene clústeres de almacenamiento de mapas ni SVM para los recursos de los hosts, pero NetApp Backup and Recovery sí.  El clúster ONTAP local o SVM no se asignará a un host en las versiones preliminares de NetApp Backup and Recovery .  Además, NetApp Console no admite SVM.
 
 *Solución alternativa*: antes de importar recursos desde SnapCenter, cree un sistema en NetApp Backup and Recovery para todos los sistemas de almacenamiento ONTAP locales que estén registrados en SnapCenter local.  Luego, importe los recursos para ese clúster desde SnapCenter a NetApp Backup and Recovery.
 

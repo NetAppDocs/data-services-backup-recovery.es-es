@@ -44,14 +44,14 @@ image:screen-br-landing-unified.png["Captura de pantalla de la página de destin
 
 == Finalizar la prueba gratuita
 
-Puedes finalizar la prueba gratuita en cualquier momento.  Si finaliza la prueba gratuita, no se le cobrará por el servicio.
+Puede finalizar la prueba gratuita en cualquier momento.  Si finaliza la prueba gratuita, no se le cobrará por el servicio.
 
 .Pasos
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
 +
 image:screen-br-landing-unified.png["Captura de pantalla de la página de destino de NetApp Backup and Recovery"]
 
-. Desde la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery", seleccione *Ver detalles - prueba gratuita* o, desde la esquina superior derecha de la página, seleccione *Prueba gratuita*.
+. Desde la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery", seleccione *Ver detalles - prueba gratuita* o, desde la esquina superior derecha de la página, seleccione *Prueba gratuita*.
 +
 image:screen-br-landing-unified-end-trial.png["Captura de pantalla de la página de inicio de la prueba gratuita de NetApp Backup and Recovery"]
 

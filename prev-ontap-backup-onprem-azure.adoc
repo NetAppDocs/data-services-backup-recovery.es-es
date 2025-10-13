@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-azure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Realice una copia de seguridad de los datos locales de ONTAP en Azure Blob Storage con NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 
@@ -48,7 +48,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["Un diagrama que muestra có
 
 == Prepare su agente de consola
 
-El agente de consola es el software principal para la funcionalidad de la consola de NetApp .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
+El agente de consola es el software principal para la funcionalidad de la NetApp Console .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
 
 
 
@@ -89,7 +89,7 @@ Asegúrese de que el agente de consola tenga las conexiones de red necesarias.
 
 === Verificar o agregar permisos al agente de la consola
 
-Para utilizar la funcionalidad de búsqueda y restauración de NetApp Backup and Recovery, debe tener permisos específicos en el rol del agente de consola para que pueda acceder al área de trabajo de Azure Synapse y a la cuenta de almacenamiento de Data Lake.  Vea los permisos a continuación y siga los pasos si necesita modificar la política.
+Para utilizar la funcionalidad de búsqueda y restauración de NetApp Backup and Recovery , debe tener permisos específicos en el rol del agente de consola para que pueda acceder al área de trabajo de Azure Synapse y a la cuenta de almacenamiento de Data Lake.  Vea los permisos a continuación y siga los pasos si necesita modificar la política.
 
 .Antes de empezar
 Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") con su suscripción. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Vea cómo registrar este proveedor de recursos para su suscripción"^] .  Debe ser el *Propietario* o *Colaborador* de la suscripción para registrar al proveedor de recursos.
@@ -169,8 +169,8 @@ Necesitará verificar los requisitos de licencia tanto para Azure como para la c
 
 * Antes de poder activar NetApp Backup and Recovery para su clúster, deberá suscribirse a una oferta de Console Marketplace de pago por uso (PAYGO) de Azure o comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp.  Estas licencias son para su cuenta y se pueden usar en múltiples sistemas.
 +
-** Para obtener la licencia PAYGO de NetApp Backup and Recovery, necesitará una suscripción a https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Oferta de consola de NetApp de Azure Marketplace"^] .  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
-** Para obtener una licencia BYOL de NetApp Backup and Recovery, necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .
+** Para obtener la licencia PAYGO de NetApp Backup and Recovery , necesitará una suscripción a https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Oferta de NetApp Console de Azure Marketplace"^] .  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
+** Para obtener una licencia BYOL de NetApp Backup and Recovery , necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"].
 
 
 * Necesita tener una suscripción de Azure para el espacio de almacenamiento de objetos donde se ubicarán sus copias de seguridad.
@@ -182,7 +182,7 @@ Puede crear copias de seguridad desde sistemas locales a Azure Blob en todas las
 
 
 
-== Prepare sus clústeres ONTAP
+== Prepare sus clústeres de ONTAP
 
 Necesitará preparar su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
 
@@ -198,9 +198,9 @@ La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
 === Descubra sus sistemas ONTAP en NetApp Console
 
-Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la consola de NetApp .
+Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .
 
-Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^] .
+Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda a descubrir un clúster"^].
 
 
 
@@ -211,7 +211,7 @@ Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
 * Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 * Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
 +
-*Nota:* El “Paquete de nube híbrida” no es necesario cuando se utiliza NetApp Backup and Recovery.
+*Nota:* El "Paquete de nube híbrida" no es necesario cuando se utiliza NetApp Backup and Recovery.
 
 +
 Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Administrar sus licencias de clúster"^] .
@@ -219,7 +219,7 @@ Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-c
 * La hora y la zona horaria están configuradas correctamente.  Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Configurar el tiempo de su clúster"^] .
 * Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^].
 
 
 
@@ -260,7 +260,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 
 ==== Requisitos de red de ONTAP local
 
-* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube.  Normalmente se trata de una conexión VPN.
+* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
 Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
@@ -271,7 +271,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105.  Estas reglas están incluidas en el grupo de seguridad predefinido.
+* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas están incluidas en el grupo de seguridad predefinido.
 
 
 
@@ -291,7 +291,7 @@ Tenga en cuenta que la copia de seguridad y la recuperación admiten _políticas
 
 De forma predeterminada, el servicio crea cuentas de almacenamiento para usted.  Si desea utilizar sus propias cuentas de almacenamiento, puede crearlas antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esas cuentas de almacenamiento en el asistente.
 
-link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propias cuentas de almacenamiento"] .
+link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propias cuentas de almacenamiento"].
 
 
 
@@ -328,7 +328,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 . Continúe con las siguientes opciones:
 +
 ** Si ya tienes un agente de consola, ya estás listo.  Simplemente seleccione *Siguiente*.
-** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*. Consulte <<Prepare su agente de consola>> .
+** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*.  Referirse a<<Prepare su agente de consola>> .
 
 
 
@@ -459,7 +459,7 @@ NOTE: Si eligió una cuenta de almacenamiento de Microsoft existente, la informa
 +
 ** *Redes*: elija el espacio IP y si utilizará un punto final privado.  El punto final privado está deshabilitado de forma predeterminada.
 +
-... El espacio IP en el clúster ONTAP donde residen los volúmenes que desea respaldar.  Los LIF entre clústeres para este espacio IP deben tener acceso a Internet saliente.
+... El espacio IP en el clúster ONTAP donde residen los volúmenes que desea respaldar. Los LIF entre clústeres para este espacio IP deben tener acceso a Internet saliente.
 ... De manera opcional, elija si utilizará un punto de conexión privado de Azure que haya configurado previamente. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Obtenga información sobre el uso de un punto de conexión privado de Azure"^] .
 
 
@@ -501,7 +501,7 @@ NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales
 
 Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen principal.
 
-Se crea una cuenta de almacenamiento de Blobs en el grupo de recursos ingresado y los archivos de respaldo se almacenan allí.  Se muestra el panel de control de copias de seguridad de volumen para que pueda supervisar el estado de las copias de seguridad.
+Se crea una cuenta de almacenamiento de Blobs en el grupo de recursos ingresado y los archivos de respaldo se almacenan allí.  El panel de control de copias de seguridad de volumen se muestra para que pueda supervisar el estado de las copias de seguridad.
 
 También puede supervisar el estado de los trabajos de copia de seguridad y restauración mediante ellink:br-use-monitor-tasks.html["Página de seguimiento de trabajos"^] .
 

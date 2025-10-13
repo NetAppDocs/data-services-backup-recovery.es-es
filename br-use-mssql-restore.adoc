@@ -62,7 +62,7 @@ Puede restaurar cargas de trabajo utilizando uno de los siguientes métodos.  Po
 * *Desde la página de Inventario*: use esto cuando necesite restaurar un recurso específico de la última semana o mes (y conozca el nombre y la ubicación del recurso y la fecha en que estuvo en buenas condiciones por última vez).  Navega por una lista de recursos hasta encontrar el que deseas restaurar.
 
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 
 
@@ -71,7 +71,7 @@ Puede restaurar cargas de trabajo utilizando uno de los siguientes métodos.  Po
 Restaure las cargas de trabajo de la base de datos mediante la opción Restaurar.
 
 .Pasos
-. Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
 . Seleccione la base de datos que desea restaurar.  Utilice los filtros para buscar.
 . Seleccione la opción de restauración:
 +
@@ -202,7 +202,7 @@ NetApp Backup and Recovery le muestra las instantáneas que están disponibles p
 Restaurar cargas de trabajo de bases de datos desde la página Inventario.  Al utilizar la opción Inventario, puede restaurar solo bases de datos, no instancias.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione el host donde se encuentra el recurso que desea restaurar.
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Ver detalles*.
 . En la página de Microsoft SQL Server, seleccione la pestaña *Bases de datos*.

@@ -35,7 +35,7 @@ Para comenzar a utilizar el almacenamiento de terceros como almacén de objetos,
 
 .Pasos
 . Acceda por SSH a su conector.
-. Vaya al contenedor del servidor cbs de NetApp Backup and Recovery:
+. Vaya al contenedor del servidor cbs de NetApp Backup and Recovery :
 +
 [listing]
 ----
@@ -50,11 +50,11 @@ vi default.json
 . Modificar `allow-s3-compatible` :falso a `allow-s3-compatible` : verdadero.
 . Guarde los cambios.
 . Salida del contenedor.
-. Reinicie el contenedor del servidor cbs de NetApp Backup and Recovery.
+. Reinicie el contenedor del servidor cbs de NetApp Backup and Recovery .
 
 
 .Resultado
-Una vez que el contenedor esté encendido nuevamente, abra la interfaz de usuario de NetApp Backup and Recovery.  Cuando inicie una copia de seguridad o edite una estrategia de copia de seguridad, verá el nuevo proveedor "S3 Compatible" en la lista junto con otros proveedores de copia de seguridad de AWS, Microsoft Azure, Google Cloud, StorageGRID y ONTAP S3.
+Una vez que el contenedor esté encendido nuevamente, abra la interfaz de usuario de NetApp Backup and Recovery .  Cuando inicie una copia de seguridad o edite una estrategia de copia de seguridad, verá el nuevo proveedor "S3 Compatible" en la lista junto con otros proveedores de copia de seguridad de AWS, Microsoft Azure, Google Cloud, StorageGRID y ONTAP S3.
 
 
 

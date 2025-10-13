@@ -6,15 +6,15 @@
 
 === La BlueXP backup and recovery ahora es NetApp Backup and Recovery
 
-La BlueXP backup and recovery ha pasado a llamarse Copia de seguridad y recuperación de NetApp .
+La BlueXP backup and recovery ha pasado a llamarse Copia de NetApp Backup and Recovery.
 
 
 
 === BlueXP ahora es NetApp Console
 
-La consola de NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento de NetApp y de los servicios de datos de NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada que es altamente segura y compatible.
+La NetApp Console, construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento de NetApp y de los NetApp Data Services en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada que es altamente segura y compatible.
 
-Para obtener más detalles sobre lo que ha cambiado, consulte lalink:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de la versión de la consola de NetApp ."]
+Para obtener más detalles sobre lo que ha cambiado, consulte lalink:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de la versión de la NetApp Console ."]
 
 
 
@@ -69,7 +69,7 @@ La versión preliminar de las cargas de trabajo de Kubernetes presenta las sigui
 * Compatibilidad con múltiples buckets: ahora puede proteger los volúmenes dentro de un sistema con múltiples buckets por sistema en diferentes proveedores de nube.
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
 
 
 
@@ -95,7 +95,7 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, cons
 
 Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de Oracle Database:
 
-* Descubra las bases de datos Oracle independientes
+* Descubra las bases de datos independientes de Oracle
 * Crear políticas de protección solo para datos o copias de seguridad de datos y registros
 * Proteja las bases de datos de Oracle con un esquema de respaldo 3-2-1
 * Configurar la retención de copias de seguridad

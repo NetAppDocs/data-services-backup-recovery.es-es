@@ -28,7 +28,7 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 Puede restaurar datos a la ubicación original; la restauración a una ubicación alternativa no está disponible en esta versión preliminar privada.
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
-Si selecciona un archivo de respaldo en el almacenamiento de objetos y la protección contra ransomware está activa para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos. Le recomendamos que realice el escaneo.
+Si selecciona un archivo de respaldo en el almacenamiento de objetos y la protección contra ransomware está activa para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que realice el escaneo.
 
 
 TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
@@ -51,10 +51,10 @@ Desde la página Restaurar (también conocida como Buscar y restaurar)*, puedes 
 
 Restaure las cargas de trabajo de Hyper-V mediante la opción Restaurar. Puede buscar la instantánea por su nombre o utilizando filtros.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
 . En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Hyper-V*.
 . Ingrese el nombre del recurso que desea restaurar o filtre por el nombre de la máquina virtual, el host de la máquina virtual o el grupo de almacenamiento donde se encuentra el recurso que desea restaurar.
 +

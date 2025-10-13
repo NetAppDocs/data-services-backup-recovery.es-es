@@ -17,7 +17,7 @@ En NetApp Backup and Recovery, cree sus propias políticas que rijan la frecuenc
 
 NOTE: Algunas de estas opciones y secciones de configuración no están disponibles para todas las cargas de trabajo.
 
-Si importa recursos desde SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery. Ver link:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
+Si importa recursos desde SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
 
 Puedes lograr los siguientes objetivos relacionados con las políticas:
 
@@ -33,7 +33,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 
 == Ver políticas
 
-. En el menú NetApp Backup and Recovery, seleccione *Políticas*.
+. En el menú NetApp Backup and Recovery , seleccione *Políticas*.
 . Revise estos detalles de la política.
 +
 ** *Carga de trabajo*: Los ejemplos incluyen Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V o Kubernetes.
@@ -51,7 +51,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 
 Puede crear políticas que rijan sus instantáneas locales, replicaciones en almacenamiento secundario y copias de seguridad en almacenamiento de objetos.  Parte de su estrategia 3-2-1 implica crear una copia instantánea de las instancias, bases de datos, aplicaciones o máquinas virtuales en el sistema de almacenamiento *principal*.
 
-*Rol de consola de NetApp requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, administrador de respaldo de respaldo y recuperación. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, administrador de respaldo de respaldo y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Antes de empezar
 Si planea replicar en un almacenamiento secundario y desea usar el bloqueo de instantáneas en instantáneas locales o en un almacenamiento secundario ONTAP remoto, primero debe inicializar el reloj de cumplimiento de ONTAP en el nivel del clúster.  Este es un requisito para habilitar el bloqueo de instantáneas en la política.
@@ -61,7 +61,7 @@ Para obtener instrucciones sobre cómo hacer esto, consulte https://docs.netapp.
 Para obtener información sobre el bloqueo de instantáneas en general, consulte https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["Bloqueo de instantáneas en ONTAP"^] .
 
 .Pasos
-. En el menú NetApp Backup and Recovery, seleccione *Políticas*.
+. En el menú NetApp Backup and Recovery , seleccione *Políticas*.
 . Desde la página Políticas, seleccione *Crear nueva política*.
 . En la página Políticas, proporcione la siguiente información.
 +
@@ -129,7 +129,7 @@ Proporcionar información para la instantánea local.
 * Seleccione la opción *Agregar programación* para seleccionar la programación o las programaciones de instantáneas.  Puedes tener un máximo de 5 horarios.
 * *Frecuencia de instantáneas*: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.  La frecuencia anual no está disponible para las cargas de trabajo de Kubernetes.
 * *Retención de instantáneas*: ingrese la cantidad de instantáneas que desea conservar.
-* *Habilitar copia de seguridad de registros*: (Se aplica únicamente a cargas de trabajo de Microsoft SQL Server y Oracle Database).  Habilite esta opción para realizar copias de seguridad de los registros y establecer la frecuencia y retención de las copias de seguridad de los registros. Para ello es necesario tener ya configurado una copia de seguridad del registro. Ver link:br-start-configure.html["Configurar directorios de registro"] .
+* *Habilitar copia de seguridad de registros*: (Se aplica únicamente a cargas de trabajo de Microsoft SQL Server y Oracle Database).  Habilite esta opción para realizar copias de seguridad de los registros y establecer la frecuencia y retención de las copias de seguridad de los registros. Para ello es necesario tener ya configurado una copia de seguridad del registro.  Verlink:br-start-configure.html["Configurar directorios de registro"] .
 +
 ** *Podar registros de archivo después de la copia de seguridad*: (solo cargas de trabajo de Oracle Database) Si las copias de seguridad de registros están habilitadas, puede habilitar opcionalmente esta función para limitar el tiempo durante el cual Backup and Recovery conserva los registros de archivo de Oracle.  Puede elegir el período de retención, así como también dónde Backup and Recovery debe eliminar los registros de archivo.
 
@@ -225,7 +225,7 @@ Introduzca información en estos campos:
 Opcionalmente, puede configurar opciones avanzadas en la política.  Estas configuraciones están disponibles para todas las arquitecturas de respaldo, incluidas las instantáneas locales, la replicación en almacenamiento secundario y las copias de seguridad en almacenamiento de objetos. Estas configuraciones no están disponibles para las cargas de trabajo de Kubernetes.  Las configuraciones avanzadas disponibles variarán según la carga de trabajo que haya seleccionado en la parte superior de la página, por lo que las configuraciones avanzadas descritas aquí podrían no aplicarse a todas las cargas de trabajo.  Las configuraciones avanzadas no están disponibles al configurar una política para cargas de trabajo de Kubernetes.
 
 .Pasos
-. En el menú NetApp Backup and Recovery, seleccione *Políticas*.
+. En el menú NetApp Backup and Recovery , seleccione *Políticas*.
 . Desde la página Políticas, seleccione *Crear nueva política*.
 . En la sección de configuración *Política > Avanzada*, seleccione el menú *Seleccionar acción avanzada* para elegir de una lista de configuraciones avanzadas.
 . Habilite cualquiera de las configuraciones que desee ver o cambiar y luego seleccione *Aceptar*.
@@ -255,7 +255,7 @@ Además, configure las siguientes opciones:
 ** *Redes*: seleccione la interfaz de red que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varias interfaces de red y desea controlar cuál se utiliza para las copias de seguridad.
 +
 *** *IPspace*: seleccione el espacio IP que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varios espacios IP y desea controlar cuál se utiliza para las copias de seguridad.
-*** *Configuración de punto final privado*: si está utilizando un punto final privado para su almacenamiento de objetos, seleccione la configuración de punto final privado que se utilizará para las operaciones de respaldo.  Esto es útil si desea asegurarse de que las copias de seguridad se transfieran de forma segura a través de una conexión de red privada.
+*** *Configuración de punto final privado*: si utiliza un punto final privado para su almacenamiento de objetos, seleccione la configuración de punto final privado que se utilizará para las operaciones de respaldo.  Esto es útil si desea asegurarse de que las copias de seguridad se transfieran de forma segura a través de una conexión de red privada.
 
 
 ** *Notificación*: seleccione si desea habilitar notificaciones por correo electrónico para operaciones de copia de seguridad.  Esto es útil si desea recibir una notificación cuando una operación de copia de seguridad comienza, se completa o falla.
@@ -278,13 +278,13 @@ Puede agregar otro nivel de protección al editar una política, pero no puede e
 
 Si está editando una política que realiza copias de seguridad en el almacenamiento de objetos, puede habilitar el archivado.
 
-Si importó recursos de SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery. Ver link:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
+Si importó recursos de SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
 
-.Rol de consola de NetApp requerido
-Superadministrador de copias de seguridad y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+.Rol de NetApp Console requerido
+Superadministrador de copias de seguridad y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. En la consola de NetApp , vaya a *Protección* > *Copia de seguridad y recuperación*.
+. En la NetApp Console, vaya a *Protección* > *Copia de seguridad y recuperación*.
 . Seleccione la opción *Políticas*.
 . Seleccione la política que desea editar.
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Editar*.

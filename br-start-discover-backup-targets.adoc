@@ -30,7 +30,7 @@ Proporcione credenciales para acceder a la cuenta de almacenamiento.  NetApp Bac
 Debe descubrir al menos una carga de trabajo antes de poder agregar un destino de respaldo externo.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione la pestaña *Destinos de copia de seguridad externos*.
 . Seleccione *Descubrir destino de copia de seguridad*.
 . Seleccione uno de los tipos de destino de copia de seguridad: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
@@ -83,7 +83,7 @@ Debe descubrir al menos una carga de trabajo antes de poder agregar un destino d
 En lugar de que NetApp Backup and Recovery descubra los depósitos automáticamente, puede agregar manualmente un depósito a un destino de respaldo externo.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione *Destinos de copia de seguridad externos*.
 . Seleccione el objetivo y a la derecha, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Agregar depósito*.
 . Ingrese la información del depósito.  La información varía según el tipo de destino de copia de seguridad que haya seleccionado.
@@ -149,7 +149,7 @@ En lugar de que NetApp Backup and Recovery descubra los depósitos automáticame
 Introduzca las credenciales necesarias para acceder al destino de la copia de seguridad.
 
 .Pasos
-. En el menú de NetApp Backup and Recovery, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione *Destinos de copia de seguridad externos*.
 . Seleccione el objetivo y a la derecha, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Cambiar credenciales*.
 . Introduzca las nuevas credenciales para el destino de la copia de seguridad.  La información varía según el tipo de destino de copia de seguridad que haya seleccionado.

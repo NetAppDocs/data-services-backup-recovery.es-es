@@ -39,7 +39,7 @@ Puedes lograr los siguientes objetivos de protección:
 * link:br-use-manage-snapshots.html["Administrar instantáneas"]
 
 
-Para realizar copias de seguridad de cargas de trabajo, normalmente se crean políticas que rigen las operaciones de copia de seguridad y restauración. Ver link:br-use-policies-create.html["Crear políticas"] Para más información.
+Para realizar copias de seguridad de cargas de trabajo, normalmente se crean políticas que rigen las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
 .Destinos de copia de seguridad admitidos
 NetApp Backup and Recovery le permite realizar copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube públicos y privados.  Las copias instantáneas residen en el sistema de origen.

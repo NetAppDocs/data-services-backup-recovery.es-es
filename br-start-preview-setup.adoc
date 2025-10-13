@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-preview-setup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Al participar en la vista previa de NetApp Backup and Recovery, usted desempeña un papel crucial en el perfeccionamiento y la mejora de NetApp Backup and Recovery.  Para la versión preliminar de NetApp Backup and Recovery, le ayudaremos con la configuración.  Aquí está el proceso. 
+summary: Al participar en NetApp Backup and Recovery Preview, usted desempeña un papel crucial en el perfeccionamiento y la mejora de NetApp Backup and Recovery.  Para la versión preliminar de NetApp Backup and Recovery, le ayudaremos con la configuración.  Aquí está el proceso. 
 ---
 = Configurar la versión preliminar de NetApp Backup and Recovery
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Al participar en la vista previa de NetApp Backup and Recovery, usted d
 
 
 [role="lead"]
-Al participar en una de las versiones preliminares de NetApp Backup and Recovery, usted desempeña un papel crucial en el perfeccionamiento y la mejora de NetApp Backup and Recovery.  Para la versión preliminar de NetApp Backup and Recovery, lo ayudaremos con la configuración.  Aquí está el proceso.
+Al participar en una de las versiones preliminares de NetApp Backup and Recovery , usted desempeña un papel crucial en el perfeccionamiento y la mejora de NetApp Backup and Recovery.  Para la versión preliminar de NetApp Backup and Recovery, lo ayudaremos con la configuración.  Aquí está el proceso.
 
-. *Registro*: Si aún no tiene una cuenta de consola de NetApp , regístrese para obtener una.  Aquí te explicamos cómo:
+. *Registro*: Si aún no tiene una cuenta de NetApp Console , regístrese para obtener una. Aquí te explicamos cómo:
 +
-.. Visita el https://bluexp.netapp.com/["Portal de la consola de NetApp"] .
+.. Visita el https://bluexp.netapp.com/["Portal de la NetApp Console"] .
 .. Seleccione *Comenzar*.
 +
 image:screen-preview-login.png["Inicie sesión en la pantalla del portal"]
@@ -38,7 +38,7 @@ Recibirá un correo electrónico con un enlace para verificar su dirección de c
 *** *ID de la organización*: después de registrarse, recibirá un nombre y una identificación de la organización.  Introduce esto aquí.
 *** *Compartir ID*: comparte el nombre y el ID de la organización con el equipo de productos de NetApp .
 +
-*Plazo de acceso*: En un plazo de 48 a 72 horas, tendrás acceso a NetApp Backup and Recovery.
+*Plazo de acceso*: En un plazo de 48 a 72 horas tendrás acceso a NetApp Backup and Recovery.
 
 
 
@@ -48,7 +48,7 @@ Recibirá un correo electrónico con un enlace para verificar su dirección de c
 . *Mantener contactos regulares*.  Durante la sesión de vista previa, participe en reuniones periódicas con el equipo de productos de NetApp .  Estas sesiones le ayudarán a comprender el servicio y brindarle retroalimentación:
 +
 ** *Entérate de las actualizaciones*: Escucharás acerca de los últimos desarrollos relacionados con la Vista Previa.
-** *Haga preguntas* y obtenga respuestas inmediatas del equipo de la consola de NetApp .
+** *Haga preguntas* y obtenga respuestas inmediatas del equipo de la NetApp Console .
 ** *Proporcionar comentarios* al equipo de productos de NetApp para mejorar el servicio.
 ** *Compartir las mejores prácticas* y consejos para utilizar el servicio de manera eficaz.
 ** *Fomentar la colaboración*: colabora con otros usuarios para compartir experiencias y aprender unos de otros.

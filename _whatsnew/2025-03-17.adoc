@@ -18,7 +18,7 @@ Esta actualización de NetApp Backup and Recovery solucionó un problema que imp
 
 === Límites de retención de la política de respaldo
 
-Anteriormente, la interfaz de usuario de respaldo y recuperación de NetApp limitaba las copias de seguridad a 999 copias, mientras que la CLI permitía más.  Ahora, puede adjuntar hasta 4000 volúmenes a una política de respaldo e incluir 1018 volúmenes no adjuntos a una política de respaldo.  Esta actualización incluye validaciones adicionales que evitan exceder estos límites.
+Anteriormente, la interfaz de usuario de NetApp Backup and Recovery limitaba las copias de seguridad a 999 copias, mientras que la CLI permitía más.  Ahora, puede adjuntar hasta 4000 volúmenes a una política de respaldo e incluir 1018 volúmenes no adjuntos a una política de respaldo.  Esta actualización incluye validaciones adicionales que evitan exceder estos límites.
 
 
 

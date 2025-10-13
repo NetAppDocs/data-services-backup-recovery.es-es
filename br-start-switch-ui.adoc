@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-switch-ui.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Puede cambiar entre las diferentes cargas de trabajo de NetApp Backup and Recovery.  Algunas cargas de trabajo utilizan una interfaz de usuario diferente. 
+summary: Puede cambiar entre las diferentes cargas de trabajo de NetApp Backup and Recovery .  Algunas cargas de trabajo utilizan una interfaz de usuario diferente. 
 ---
 = Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: Puede cambiar entre las diferentes cargas de trabajo de NetApp Backup a
 
 
 [role="lead"]
-Puede cambiar entre las diferentes cargas de trabajo de NetApp Backup and Recovery.
+Puede cambiar entre las diferentes cargas de trabajo de NetApp Backup and Recovery .
 
 
 
 == Cambiar a una carga de trabajo diferente
 
-Puede cambiar a una carga de trabajo diferente en la interfaz de usuario de NetApp Backup and Recovery.
+Puede cambiar a una carga de trabajo diferente en la interfaz de usuario de NetApp Backup and Recovery .
 
 .Pasos
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.

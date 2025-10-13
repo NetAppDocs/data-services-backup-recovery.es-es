@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-vmware-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Restaure datos de máquinas virtuales con NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ NOTE: No es posible restaurar máquinas virtuales que se extiendan a varios alma
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 .Antes de empezar
@@ -29,7 +29,7 @@ NOTE: No es posible restaurar máquinas virtuales que se extiendan a varios alma
 * Si está restaurando a una ubicación alternativa:
 +
 ** Asegúrese de que los vCenters de origen y destino estén en modo vinculado.
-** Asegúrese de que los detalles del clúster de origen y destino se agreguen en la página *Sistemas* de la consola NetApp y en los vCenters en modo vinculado en ambos hosts del SnapCenter Plug-in for VMware vSphere .
+** Asegúrese de que los detalles del clúster de origen y destino se agreguen en la página *Sistemas* de la NetApp Console y en los vCenters en modo vinculado en ambos hosts del SnapCenter Plug-in for VMware vSphere .
 ** Asegúrese de que el sistema se agregue correspondiente a la ubicación alternativa en la página *Sistemas* de la Consola.
 
 
@@ -58,7 +58,7 @@ a la ubicación original desde el almacén de datos
 . Asegúrese de que *Original* esté seleccionado y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivo admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivo admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
 
 . Revise los detalles y seleccione *Restaurar*.
 
@@ -76,7 +76,7 @@ a una ubicación alternativa desde el almacén de datos
 . Proporcione un nombre para la máquina virtual después de la restauración y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivo admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivo admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
 
 . Revise los detalles y seleccione *Restaurar*.
 
@@ -91,7 +91,7 @@ a la ubicación original desde las máquinas virtuales
 . Asegúrese de que *Original* esté seleccionado y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivo admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivo admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
 
 . Revise los detalles y seleccione *Restaurar*.
 
@@ -108,11 +108,11 @@ a una ubicación alternativa desde las máquinas virtuales
 . Proporcione un nombre para la máquina virtual después de la restauración y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivo admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivo admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
 
 . Revise los detalles y seleccione *Restaurar*.
 
 
 |===
 
-NOTE: Si la operación de restauración no se completa, no intente el proceso de restauración nuevamente hasta que el Monitor de trabajo muestre que la operación de restauración ha fallado.  Si intenta nuevamente el proceso de restauración antes de que el Monitor de trabajo muestre que la operación de restauración ha fallado, la operación de restauración fallará nuevamente.  Cuando vea el estado del Monitor de trabajo como "Error", puede intentar el proceso de restauración nuevamente.
+NOTE: Si la operación de restauración no se completa, no intente realizar el proceso de restauración nuevamente hasta que el Monitor de trabajo muestre que la operación de restauración ha fallado.  Si intenta nuevamente el proceso de restauración antes de que el Monitor de trabajo muestre que la operación de restauración ha fallado, la operación de restauración fallará nuevamente.  Cuando vea el estado del Monitor de trabajo como "Error", puede intentar el proceso de restauración nuevamente.

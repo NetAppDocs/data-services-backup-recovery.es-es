@@ -18,9 +18,9 @@ En NetApp Backup and Recovery, cree informes para las cargas de trabajo de Micro
 
 == Crear un informe
 
-*Rol de consola de NetApp requerido* Visor de almacenamiento, Superadministrador de Backup and Recovery, Administrador de backup de Backup and Recovery, Administrador de restauración de Backup and Recovery, Administrador de clones de Backup and Recovery. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Visor de almacenamiento, Superadministrador de Backup and Recovery, Administrador de backup de Backup and Recovery, Administrador de restauración de Backup and Recovery, Administrador de clones de Backup and Recovery.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
-. En el menú NetApp Backup and Recovery, seleccione la opción *Informes*.
+. En el menú NetApp Backup and Recovery , seleccione la opción *Informes*.
 . Seleccione *Crear informe*.
 . Introduzca los detalles del alcance del informe:
 +

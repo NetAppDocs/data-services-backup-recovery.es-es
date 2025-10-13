@@ -14,12 +14,12 @@ summary: Proteja sus cargas de trabajo KVM con el respaldo y la recuperación de
 
 
 [role="lead"]
-Realice copias de seguridad de los grupos de protección KVM desde los sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos.  Cuando se realiza una copia de seguridad de un grupo de protección, la consola de NetApp realiza una copia de seguridad de las máquinas virtuales y los grupos de almacenamiento contenidos en el grupo de protección. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
+Realice copias de seguridad de los grupos de protección KVM desde los sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos.  Cuando se realiza una copia de seguridad de un grupo de protección, la NetApp Console realiza una copia de seguridad de las máquinas virtuales y los grupos de almacenamiento contenidos en el grupo de protección. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
 
 
-NOTE: Para realizar copias de seguridad de los grupos de protección según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+NOTE: Para realizar copias de seguridad de los grupos de protección según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 
-* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Ver link:br-use-kvm-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo KVM con NetApp Backup and Recovery"] Para más información.
+* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-kvm-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo KVM con NetApp Backup and Recovery"] Para más información.
 
 
 
@@ -28,10 +28,10 @@ NOTE: Para realizar copias de seguridad de los grupos de protección según una 
 
 Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En el mosaico KVM, seleccione *Descubrir y administrar*.
 . Seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.

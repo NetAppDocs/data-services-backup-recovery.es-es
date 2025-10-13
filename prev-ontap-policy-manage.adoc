@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Administre políticas de respaldo para volúmenes ONTAP con NetApp Backup and Recovery
 :hardbreaks:
@@ -18,7 +18,7 @@ Con NetApp Backup and Recovery, utilice las políticas de respaldo predeterminad
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 Cuando utiliza el asistente de activación para habilitar el servicio de respaldo y recuperación para sus volúmenes, puede seleccionar entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local).  Si desea utilizar una política diferente a las existentes, puede crear la política antes o mientras utiliza el asistente de activación.
@@ -39,7 +39,7 @@ NetApp Backup and Recovery ofrece tres tipos de copias de seguridad de datos de 
 |===
 Cree políticas de respaldo utilizando las siguientes herramientas según su entorno, sus preferencias y el tipo de protección:
 
-* Interfaz de usuario de la consola de NetApp
+* UI de NetApp Console
 * Interfaz de usuario del administrador del sistema
 * Interfaz de línea de comandos de ONTAP
 
@@ -151,14 +151,14 @@ Esta política de almacenamiento reside en diferentes ubicaciones del sistema de
 . Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.
 . (Opcional) Para mover archivos de respaldo más antiguos a una clase de almacenamiento o nivel de acceso menos costoso después de una cierta cantidad de días, seleccione la opción *Archivar* e indique la cantidad de días que deben transcurrir antes de que se archiven los datos.  Ingrese *0* como "Archivar después de días" para enviar su archivo de respaldo directamente al almacenamiento de archivo.
 +
-link:prev-ontap-policy-object-options.html["Obtenga más información sobre la configuración de almacenamiento de archivos"] .
+link:prev-ontap-policy-object-options.html["Obtenga más información sobre la configuración de almacenamiento de archivos"].
 
 . (Opcional) Para proteger sus copias de seguridad y evitar que se modifiquen o eliminen, seleccione la opción *Protección contra DataLock y Ransomware*.
 +
 Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus copias de seguridad contra eliminación configurando _DataLock_ y _Ransomware protection_.
 
 +
-link:prev-ontap-policy-object-options.html["Obtenga más información sobre las configuraciones de DataLock disponibles"] .
+link:prev-ontap-policy-object-options.html["Obtenga más información sobre las configuraciones de DataLock disponibles"].
 
 . Seleccione *Crear*.
 

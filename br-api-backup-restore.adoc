@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: Las capacidades de respaldo y recuperación de NetApp que están disponibles a través de la interfaz de usuario web también están disponibles a través de las API RESTful. 
+summary: Las capacidades de NetApp Backup and Recovery que están disponibles a través de la interfaz de usuario web también están disponibles a través de las API RESTful. 
 ---
 = Automatice con las API REST de NetApp Backup and Recovery
 :hardbreaks:
@@ -34,21 +34,21 @@ Hay diez categorías de puntos finales definidos dentro de NetApp Backup and Rec
 
 == Referencia de API
 
-La documentación para cada API de NetApp Backup and Recovery está disponible en https://docs.netapp.com/us-en/console-automation/cbs/overview.html["Automatización de la consola de NetApp para NetApp Backup and Recovery"^] .
+La documentación para cada API de NetApp Backup and Recovery está disponible en https://docs.netapp.com/us-en/console-automation/cbs/overview.html["Automatización de la NetApp Console para NetApp Backup and Recovery"^] .
 
 
 
 == Empezando
 
-Para comenzar a utilizar las API de respaldo y recuperación de NetApp , deberá obtener un token de usuario, su ID de cuenta de consola de NetApp y el ID del agente de consola.
+Para comenzar a utilizar las API de NetApp Backup and Recovery , deberá obtener un token de usuario, su ID de cuenta de NetApp Console y el ID del agente de consola.
 
-Al realizar llamadas API, agregará el token de usuario en el encabezado de Autorización y el ID del agente de la consola en el encabezado x-agent-id.  Debe utilizar el ID de cuenta de la consola de NetApp en las API.
+Al realizar llamadas API, agregará el token de usuario en el encabezado de Autorización y el ID del agente de la consola en el encabezado x-agent-id.  Debe utilizar el ID de cuenta de la NetApp Console en las API.
 
 
 NOTE: Si está utilizando una cuenta de servicio, debe utilizar el token de acceso al servicio en lugar de un token de usuario. El valor de "client_id" ("Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC") es un valor fijo y no se puede cambiar. En este caso, siga las instrucciones aquí: https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["Crear un token de acceso al servicio"^] .
 
 .Pasos
-. Obtenga un token de usuario desde el sitio web de la consola NetApp de NetApp .
+. Obtenga un token de usuario desde el sitio web de la NetApp Console de NetApp .
 +
 Asegúrese de generar el token de actualización desde el siguiente enlace: https://services.cloud.netapp.com/refresh-token/.  El token de actualización es una cadena alfanumérica que utilizará para generar un token de usuario.
 
@@ -65,9 +65,9 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
 ----
 +
 
-NOTE: El token de usuario del sitio web de la consola de NetApp tiene una fecha de vencimiento.  La respuesta de la API incluye un campo "expires_in" que indica cuándo vence el token.  Para actualizar el token, deberá llamar a esta API nuevamente.
+NOTE: El token de usuario del sitio web de la NetApp Console tiene una fecha de vencimiento. La respuesta de la API incluye un campo "expires_in" que indica cuándo vence el token.  Para actualizar el token, deberá llamar a esta API nuevamente.
 
-. Obtenga su ID de cuenta de consola de NetApp .
+. Obtenga su ID de cuenta de NetApp Console .
 +
 [source, console]
 ----
@@ -117,7 +117,7 @@ Puede recuperar el ID del agente de la respuesta analizando la salida de *occm.[
 El siguiente ejemplo muestra una llamada API para activar NetApp Backup and Recovery en un sistema con una nueva política que tiene etiquetas diarias, horarias y semanales configuradas, y un archivo después de días configurado en 180 días, en la región East-US-2 en la nube de Azure.  Tenga en cuenta que esto solo habilita la copia de seguridad en el sistema, pero no se realiza ninguna copia de seguridad de los volúmenes.
 
 .Solicitud de API
-Verá que usamos el ID de cuenta de la consola de NetApp `account-DpTFcxN3` , ID del agente de la consola `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` , y token de usuario `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` en este comando.
+Verá que usamos el ID de cuenta de la NetApp Console `account-DpTFcxN3` , ID del agente de la consola `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` , y token de usuario `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` en este comando.
 
 [source, console]
 ----

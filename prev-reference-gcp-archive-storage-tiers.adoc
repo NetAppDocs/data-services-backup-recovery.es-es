@@ -18,7 +18,7 @@ NetApp Backup and Recovery admite una clase de almacenamiento de archivo de Goog
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
 
 ====
 
@@ -31,7 +31,7 @@ Si su clúster local usa ONTAP 9.12.1 o superior, puede optar por organizar en n
 
 Tenga en cuenta que cuando configura NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el depósito en su cuenta de Google.
 
-https://cloud.google.com/storage/docs/storage-classes["Obtenga más información sobre las clases de almacenamiento de Google"^] .
+https://cloud.google.com/storage/docs/storage-classes["Obtenga más información sobre las clases de almacenamiento de Google"^].
 
 
 

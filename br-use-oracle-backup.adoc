@@ -14,12 +14,12 @@ summary: Proteja sus cargas de trabajo de Oracle con la copia de seguridad y rec
 
 
 [role="lead"]
-Realice copias de seguridad de grupos de protección de bases de datos o bases de datos de Oracle desde sistemas ONTAP locales a Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage u ONTAP S3 para garantizar que sus datos estén protegidos.  Cuando se realiza una copia de seguridad de un grupo de protección, la consola de NetApp realiza una copia de seguridad de las bases de datos y los datos de registro contenidos en el grupo de protección.
+Realice copias de seguridad de grupos de protección de bases de datos o bases de datos de Oracle desde sistemas ONTAP locales a Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage u ONTAP S3 para garantizar que sus datos estén protegidos.  Cuando se realiza una copia de seguridad de un grupo de protección, la NetApp Console realiza una copia de seguridad de las bases de datos y los datos de registro contenidos en el grupo de protección.
 
 
-NOTE: Para realizar copias de seguridad de grupos de protección o bases de datos individuales según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+NOTE: Para realizar copias de seguridad de grupos de protección o bases de datos individuales según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 
-* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Ver link:br-use-kvm-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de Oracle con NetApp Backup and Recovery"] Para más información.
+* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-kvm-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de Oracle con NetApp Backup and Recovery"] Para más información.
 * Realice una copia de seguridad de un grupo de protección ahora (cree una copia de seguridad a pedido ahora).
 * Haga una copia de seguridad de una base de datos ahora.
 
@@ -30,10 +30,10 @@ NOTE: Para realizar copias de seguridad de grupos de protección o bases de dato
 
 Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En el mosaico de Oracle, seleccione *Descubrir y administrar*.
 . Seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
@@ -55,10 +55,10 @@ NOTE: La política que se aplica a la copia de seguridad es la misma política q
 
 Puede ejecutar una copia de seguridad a pedido de una sola base de datos.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En el mosaico de Oracle, seleccione *Descubrir y administrar*.
 . Seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.

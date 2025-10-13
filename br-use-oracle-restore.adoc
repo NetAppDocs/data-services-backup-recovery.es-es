@@ -49,11 +49,11 @@ Desde la página Restaurar (también conocida como Buscar y restaurar), puede re
 
 Según sus necesidades, restaure una base de datos Oracle a un punto específico en el tiempo, a un número de cambio de sistema (SCN) específico o al último estado correcto.  También puede simplemente restaurar la base de datos desde instantáneas y omitir el proceso de recuperación automatizado.  Es posible que desee omitir el proceso de recuperación automática si desea realizar la recuperación manualmente.  Puede buscar la base de datos utilizando su nombre o con filtros específicos.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú de la consola de NetApp , seleccione *Protección > Copia de seguridad y recuperación*.
-. Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
 . En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Oracle*.
 . Ingrese el nombre de la base de datos que desea restaurar o filtre por el host de la base de datos donde se encuentra la base de datos que desea restaurar.
 +

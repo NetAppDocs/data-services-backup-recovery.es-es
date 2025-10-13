@@ -18,7 +18,7 @@ NetApp Backup and Recovery admite un nivel de acceso de archivo de Azure y la ma
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
 
 ====
 
@@ -31,7 +31,7 @@ Si sus clústeres de origen ejecutan ONTAP 9.10.1 o una versión posterior, pued
 
 Tenga en cuenta que cuando configura NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el contenedor en su cuenta de Azure.
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Obtenga información sobre los niveles de acceso de Azure Blob"^] .
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Obtenga información sobre los niveles de acceso de Azure Blob"^].
 
 
 

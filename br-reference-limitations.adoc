@@ -21,7 +21,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 Para obtener detalles sobre cómo crear un agente de consola en AWS, consulte https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html["Instalación de un agente de consola en AWS"^] .
 
 +
-Para obtener más detalles, consulte la publicación del blog. https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog de funciones de NetApp Backup and Recovery, mayo de 2023"^] .
+Para obtener más detalles, consulte la publicación del blog. https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog de funciones de NetApp Backup and Recovery , mayo de 2023"^] .
 
 * NetApp Backup and Recovery no es compatible con las regiones de Microsoft Azure China.
 +
@@ -38,7 +38,7 @@ Para obtener detalles sobre cómo crear un agente de consola en Azure, consulte 
 +
 No hay ninguna limitación para los volúmenes FlexVol : puede seleccionar todos los volúmenes FlexVol en su sistema y asignar las mismas políticas de respaldo.
 
-* La siguiente funcionalidad es compatible con https://docs.netapp.com/us-en/data-services-replication/index.html["Replicación de NetApp"] , pero no cuando se utiliza la función de replicación de NetApp Backup and Recovery:
+* La siguiente funcionalidad es compatible con https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , pero no cuando se utiliza la función de replicación de NetApp Backup and Recovery:
 +
 ** No se admite una configuración en cascada donde la replicación se produce del volumen A al volumen B y del volumen B al volumen C. La compatibilidad incluye la replicación del volumen A al volumen B.
 ** No hay soporte para replicar datos hacia y desde FSx para sistemas ONTAP .
@@ -94,7 +94,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 * La copia de seguridad de volumen ad-hoc con el botón *Hacer copia de seguridad ahora* no es compatible con volúmenes de protección de datos.
 * No se admiten configuraciones SM-BC.
 * ONTAP no admite la distribución de relaciones de SnapMirror desde un único volumen a múltiples almacenes de objetos; por lo tanto, NetApp Backup and Recovery no admite esta configuración.
-* Actualmente, el modo WORM/Compliance en un almacén de objetos es compatible con Amazon S3, Azure y StorageGRID .  Esto se conoce como la función DataLock y debe administrarse mediante la configuración de NetApp Backup and Recovery, no mediante la interfaz del proveedor de nube.
+* Actualmente, el modo WORM/Compliance en un almacén de objetos es compatible con Amazon S3, Azure y StorageGRID .  Esto se conoce como la función DataLock y debe administrarse mediante la configuración de NetApp Backup and Recovery , no mediante la interfaz del proveedor de nube.
 
 
 

@@ -18,7 +18,7 @@ NetApp Backup and Recovery admite dos clases de almacenamiento de archivo S3 y l
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
 
 ====
 
@@ -38,7 +38,7 @@ No se puede acceder a los datos en estos niveles inmediatamente cuando se los ne
 
 Tenga en cuenta que cuando configura NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el depósito en su cuenta de AWS.
 
-https://aws.amazon.com/s3/storage-classes/["Obtenga más información sobre las clases de almacenamiento S3"^] .
+https://aws.amazon.com/s3/storage-classes/["Obtenga más información sobre las clases de almacenamiento S3"^].
 
 
 

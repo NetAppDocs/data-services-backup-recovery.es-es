@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3 con NetApp Backup and Recovery
 :hardbreaks:
@@ -18,7 +18,7 @@ Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar co
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 
@@ -43,13 +43,13 @@ Información necesaria para utilizar claves administradas por el cliente para el
 
 == Verificar los requisitos de la licencia
 
-Para las licencias PAYGO de NetApp Backup and Recovery, hay una suscripción de consola disponible en AWS Marketplace que permite implementaciones de Cloud Volumes ONTAP y NetApp Backup and Recovery.  Necesitas https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Suscríbete a esta suscripción de NetApp Console"^] antes de habilitar NetApp Backup and Recovery.  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
+Para las licencias PAYGO de NetApp Backup and Recovery , hay una suscripción de consola disponible en AWS Marketplace que permite implementaciones de Cloud Volumes ONTAP y NetApp Backup and Recovery.  Necesitas https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Suscríbete a esta suscripción de NetApp Console"^] antes de habilitar NetApp Backup and Recovery.  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción.
 
 Para obtener un contrato anual que le permita realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos locales de ONTAP , debe suscribirse desde https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Página de AWS Marketplace"^] y luego https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["asociar la suscripción con sus credenciales de AWS"^] .
 
 Para obtener un contrato anual que le permita combinar Cloud Volumes ONTAP y NetApp Backup and Recovery, debe configurar el contrato anual cuando cree un sistema Cloud Volumes ONTAP .  Esta opción no le permite realizar copias de seguridad de datos locales.
 
-Para obtener una licencia BYOL de NetApp Backup and Recovery, necesita el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"] .  Debe utilizar una licencia BYOL cuando el agente de consola y el sistema Cloud Volumes ONTAP se implementan en un sitio oscuro.
+Para obtener una licencia BYOL de NetApp Backup and Recovery , necesita el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"].  Debe utilizar una licencia BYOL cuando el agente de consola y el sistema Cloud Volumes ONTAP se implementan en un sitio oscuro.
 
 Y necesitas tener una cuenta de AWS para el espacio de almacenamiento donde se ubicarán tus copias de seguridad.
 
@@ -57,7 +57,7 @@ Y necesitas tener una cuenta de AWS para el espacio de almacenamiento donde se u
 
 == Prepare su agente de consola
 
-El agente de consola debe instalarse en una región de AWS con acceso a Internet completo o limitado (modo "estándar" o "restringido"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte los modos de implementación de la consola de NetApp para obtener más detalles"^] .
+El agente de consola debe instalarse en una región de AWS con acceso a Internet completo o limitado (modo "estándar" o "restringido"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte los modos de implementación de la NetApp Console para obtener más detalles"^] .
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["Implementar un agente de consola en AWS en modo estándar (acceso completo a Internet)"^]
@@ -168,7 +168,7 @@ Configuración necesaria para crear copias de seguridad en una cuenta de AWS dif
 Crea tus propios cubos:: De forma predeterminada, el servicio crea depósitos para usted.  Si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esos depósitos en el asistente.
 +
 --
-link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propios buckets"^] .
+link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crear sus propios buckets"^].
 
 --
 
@@ -183,7 +183,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 
 ==== Requisitos de red de ONTAP local
 
-* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube.  Normalmente se trata de una conexión VPN.
+* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
 Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
@@ -194,7 +194,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105.  Estas reglas están incluidas en el grupo de seguridad predefinido.
+* El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida requeridas: específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas están incluidas en el grupo de seguridad predefinido.
 
 
 * Para replicar datos entre dos sistemas Cloud Volumes ONTAP en diferentes subredes, las subredes deben enrutarse juntas (esta es la configuración predeterminada).
@@ -269,7 +269,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 . Continúe con las siguientes opciones:
 +
 ** Si ya tienes un agente de consola, ya estás listo.  Simplemente seleccione *Siguiente*.
-** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*. Consulte <<Prepare su agente de consola>> .
+** Si aún no tiene un agente de consola, aparecerá la opción *Agregar un agente de consola*.  Referirse a<<Prepare su agente de consola>> .
 
 
 

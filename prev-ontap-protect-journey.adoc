@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-journey.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Planifique su proceso de protección con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery.
 
 
 [role="lead"]
-NetApp Backup and Recovery le permite crear hasta tres copias de sus volúmenes de origen para proteger sus datos. Hay muchas opciones que puede seleccionar al habilitar la Copia de seguridad y recuperación en sus volúmenes, por lo que debe revisar sus opciones para estar preparado.
+NetApp Backup and Recovery le permite crear hasta tres copias de sus volúmenes de origen para proteger sus datos.  Hay muchas opciones que puede seleccionar al habilitar la Copia de seguridad y recuperación en sus volúmenes, por lo que debe revisar sus opciones para estar preparado.
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 Repasaremos las siguientes opciones:
@@ -69,7 +69,7 @@ NOTE: La creación inicial de un volumen replicado o un archivo de respaldo incl
 
 La siguiente tabla muestra una comparación generalizada de los tres métodos de copia de seguridad.  Si bien el espacio de almacenamiento de objetos suele ser menos costoso que su almacenamiento en disco local, si cree que puede restaurar datos de la nube con frecuencia, las tarifas de salida de los proveedores de la nube pueden reducir parte de sus ahorros.  Necesitará identificar con qué frecuencia necesita restaurar datos de los archivos de respaldo en la nube.
 
-Además de este criterio, el almacenamiento en la nube ofrece opciones de seguridad adicionales si utiliza la función DataLock y Ransomware Resilience, y ahorros de costos adicionales al seleccionar clases de almacenamiento de archivo para archivos de respaldo más antiguos. link:prev-ontap-policy-object-options.html["Obtenga más información sobre la protección contra DataLock y Ransomware y la configuración de almacenamiento de archivos."] .
+Además de este criterio, el almacenamiento en la nube ofrece opciones de seguridad adicionales si utiliza la función DataLock y Ransomware Resilience, y ahorros de costos adicionales al seleccionar clases de almacenamiento de archivo para archivos de respaldo más antiguos. link:prev-ontap-policy-object-options.html["Obtenga más información sobre la protección contra DataLock y Ransomware y la configuración de almacenamiento de archivos."].
 
 [cols="18,18,22,18,22"]
 |===
@@ -125,7 +125,7 @@ Puede utilizar las políticas predeterminadas proporcionadas por NetApp para cre
 
 Si crea políticas personalizadas para replicación o copia de seguridad, las etiquetas de las políticas (por ejemplo, "diaria" o "semanal") deben coincidir con las etiquetas que existen en sus políticas de instantáneas o volúmenes replicados y no se crearán archivos de copia de seguridad.
 
-Puede crear políticas de instantáneas, replicación y copia de seguridad en almacenamiento de objetos en la interfaz de usuario de NetApp Backup and Recovery.  Vea la sección paralink:prev-ontap-backup-manage.html["agregar una nueva política de respaldo"] Para más detalles.
+Puede crear políticas de instantáneas, replicación y copia de seguridad en almacenamiento de objetos en la interfaz de usuario de NetApp Backup and Recovery .  Vea la sección paralink:prev-ontap-backup-manage.html["agregar una nueva política de respaldo"] Para más detalles.
 
 Además de utilizar NetApp Backup and Recovery para crear políticas personalizadas, puede utilizar System Manager o la interfaz de línea de comandos (CLI) de ONTAP :
 
@@ -231,15 +231,15 @@ Si planea mover archivos de respaldo antiguos al almacenamiento de archivo, o si
 
 Si ya está utilizando la consola para administrar su almacenamiento, entonces ya se ha instalado un agente de consola.  Si planea utilizar el mismo agente de consola con NetApp Backup and Recovery, entonces está todo listo.  Si necesita utilizar un agente de consola diferente, deberá instalarlo antes de comenzar la implementación de copia de seguridad y recuperación.
 
-La consola de NetApp ofrece múltiples modos de implementación que le permiten usar la consola de una manera que satisfaga sus requisitos comerciales y de seguridad.  El _modo estándar_ aprovecha la capa SaaS de la consola para proporcionar una funcionalidad completa, mientras que el _modo restringido_ y el _modo privado_ están disponibles para las organizaciones que tienen restricciones de conectividad.
+La NetApp Console ofrece múltiples modos de implementación que le permiten usar la consola de una manera que satisfaga sus requisitos comerciales y de seguridad.  El _modo estándar_ aprovecha la capa SaaS de la consola para proporcionar una funcionalidad completa, mientras que el _modo restringido_ y el _modo privado_ están disponibles para organizaciones que tienen restricciones de conectividad.
 
-https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de la consola de NetApp"^] .
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de la NetApp Console"^].
 
 
 
 === Soporte para sitios con conectividad completa a Internet
 
-Cuando se utiliza NetApp Backup and Recovery en un sitio con conectividad completa a Internet (también conocido como _modo estándar_ o _modo SaaS_), puede crear volúmenes replicados en cualquier sistema ONTAP local o Cloud Volumes ONTAP administrado por la consola, y puede crear archivos de respaldo en el almacenamiento de objetos en cualquiera de los proveedores de nube compatibles. link:concept-backup-to-cloud.html["Consulte la lista completa de destinos de copia de seguridad compatibles"] .
+Cuando se utiliza NetApp Backup and Recovery en un sitio con conectividad completa a Internet (también conocido como _modo estándar_ o _modo SaaS_), puede crear volúmenes replicados en cualquier sistema ONTAP local o Cloud Volumes ONTAP administrado por la consola, y puede crear archivos de respaldo en el almacenamiento de objetos en cualquiera de los proveedores de nube compatibles. link:concept-backup-to-cloud.html["Consulte la lista completa de destinos de copia de seguridad compatibles"].
 
 Para obtener una lista de ubicaciones válidas del agente de consola, consulte uno de los siguientes procedimientos de respaldo para el proveedor de nube donde planea crear archivos de respaldo.  Existen algunas restricciones donde el agente de consola debe instalarse manualmente en una máquina Linux o implementarse en un proveedor de nube específico.
 
@@ -261,14 +261,14 @@ NetApp Backup and Recovery se puede utilizar en un sitio con conectividad a Inte
 
 ifdef::aws[]
 
-* Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. link:prev-ontap-backup-cvo-aws.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3"] .
+* Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. link:prev-ontap-backup-cvo-aws.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3"].
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. link:prev-ontap-backup-cvo-azure.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Azure Blob"] .
+* Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. link:prev-ontap-backup-cvo-azure.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 endif::azure[]
@@ -282,7 +282,7 @@ NetApp Backup and Recovery se puede utilizar en un sitio sin conectividad a Inte
 
 NOTE: El modo privado de BlueXP (interfaz BlueXP heredada) generalmente se usa con entornos locales que no tienen conexión a Internet y con regiones de nube seguras, que incluyen AWS Secret Cloud, AWS Top Secret Cloud y Azure IL6. NetApp continúa brindando soporte a estos entornos con la interfaz BlueXP heredada. Para obtener documentación del modo privado en la interfaz heredada de BlueXP , consulte la https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentación en PDF para el modo privado de BlueXP"] .
 
-* Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas NetApp StorageGRID locales. link:prev-ontap-backup-onprem-storagegrid.html["Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID"] .
+* Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas NetApp StorageGRID locales. link:prev-ontap-backup-onprem-storagegrid.html["Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID"].
 * Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas ONTAP locales o sistemas Cloud Volumes ONTAP configurados para el almacenamiento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Realice una copia de seguridad de los datos locales de ONTAP en ONTAP S3"] .ifdef::aws[]
 
 

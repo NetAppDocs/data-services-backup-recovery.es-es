@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Con NetApp Backup and Recovery, administre las copias de seguridad de sus Cloud Volumes ONTAP y de los sistemas ONTAP locales modificando el programa de copias de seguridad, habilitando copias de seguridad de volúmenes, pausando copias de seguridad, eliminando copias de seguridad y mucho más.  También puede cancelar el registro de NetApp Backup and Recovery. 
+summary: Con NetApp Backup and Recovery, administre las copias de seguridad de sus Cloud Volumes ONTAP y de sus sistemas ONTAP locales cambiando la programación de copias de seguridad, habilitando copias de seguridad de volúmenes, pausando copias de seguridad, eliminando copias de seguridad y más.  También puede cancelar el registro de NetApp Backup and Recovery. 
 ---
 = Administre copias de seguridad de sus sistemas ONTAP con NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ CAUTION: No administre ni modifique los archivos de respaldo directamente en sus
 
 []
 ====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 ====
 
@@ -87,7 +87,7 @@ Al trabajar con varios volúmenes, todos ellos deben tener estas característica
 * mismo tipo (volumen de lectura-escritura o protección de datos)
 
 
-Cuando se habilitan más de cinco volúmenes para la copia de seguridad, NetApp Backup and Recovery inicializa solo cinco volúmenes a la vez.  Una vez finalizados estos pasos, se crea el siguiente lote de cinco subtrabajos para iniciar el siguiente conjunto y continúa hasta que se inicializan todos los volúmenes.
+Cuando se habilitan más de cinco volúmenes para la copia de seguridad, NetApp Backup and Recovery inicializa solo cinco volúmenes a la vez.  Una vez finalizados estos, se crea el siguiente lote de cinco subtrabajos para iniciar el siguiente conjunto y continúa hasta que se inicializan todos los volúmenes.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, filtre por el sistema en el que residen los volúmenes.
@@ -126,7 +126,7 @@ Puede crear una copia de seguridad o instantánea ad hoc de un objeto de un volu
 
 El nombre de la copia de seguridad incluye la marca de tiempo para que pueda identificar su copia de seguridad a pedido de otras copias de seguridad programadas.
 
-Si habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery para este clúster, la copia de seguridad a pedido también se configurará con DataLock y el período de retención será de 30 días. Los análisis de ransomware no son compatibles con copias de seguridad ad-hoc. link:prev-ontap-policy-object-options.html["Obtenga más información sobre DataLock y la protección contra ransomware"^] .
+Si habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery para este clúster, la copia de seguridad a pedido también se configurará con DataLock y el período de retención será de 30 días.  Los análisis de ransomware no son compatibles con copias de seguridad ad-hoc. link:prev-ontap-policy-object-options.html["Obtenga más información sobre DataLock y la protección contra ransomware"^].
 
 Cuando se crea una copia de seguridad ad-hoc, se crea una instantánea en el volumen de origen.  Debido a que esta instantánea no es parte de una programación de instantáneas normal, no se desactivará.  Es posible que desees eliminar manualmente esta instantánea del volumen de origen una vez que se complete la copia de seguridad.  Esto permitirá que se liberen los bloques relacionados con esta instantánea.  El nombre de la instantánea comenzará con `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Vea cómo eliminar una instantánea usando la CLI de ONTAP"^] .
 
@@ -206,10 +206,10 @@ La siguiente tabla describe las acciones disponibles:
 | Abortar replicación | Deshabilita las copias de seguridad de este volumen en el sistema de destino y también deshabilita la capacidad de restaurar un volumen.  No se eliminarán ninguna copia de seguridad existente.  Esto no elimina la relación de protección de datos entre los volúmenes de origen y destino. 
 
 
-| Resincronización inversa | Invierte los roles de los volúmenes de origen y destino.  El contenido del volumen de origen original se sobrescribe con el contenido del volumen de destino.  Esto es útil cuando desea reactivar un volumen de origen que se desconectó.  No se conservan los datos escritos en el volumen de origen original entre la última replicación de datos y el momento en que se deshabilitó el volumen de origen. 
+| Resincronización inversa | Invierte los roles de los volúmenes de origen y destino. El contenido del volumen de origen original se sobrescribe con el contenido del volumen de destino. Esto es útil cuando desea reactivar un volumen de origen que se desconectó. No se conservan los datos escritos en el volumen de origen original entre la última replicación de datos y el momento en que se deshabilitó el volumen de origen. 
 
 
-| Eliminar relación | Elimina la relación de protección de datos entre los volúmenes de origen y destino, lo que significa que ya no se produce la replicación de datos entre los volúmenes.  Esta acción no activa el volumen de destino para el acceso a los datos, lo que significa que no lo convierte en lectura y escritura.  Esta acción también elimina la relación de pares del clúster y la relación de pares de la máquina virtual de almacenamiento (SVM), si no hay otras relaciones de protección de datos entre los sistemas. 
+| Eliminar relación | Elimina la relación de protección de datos entre los volúmenes de origen y destino, lo que significa que ya no se produce la replicación de datos entre los volúmenes. Esta acción no activa el volumen de destino para el acceso a los datos, lo que significa que no lo convierte en lectura y escritura.  Esta acción también elimina la relación de pares del clúster y la relación de pares de la máquina virtual de almacenamiento (SVM), si no hay otras relaciones de protección de datos entre los sistemas. 
 |===
 
 
@@ -242,19 +242,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"] . (Requiere ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"]. (Requiere ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -288,19 +288,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"] . (Requiere ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"]. (Requiere ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -392,7 +392,7 @@ No es necesario necesariamente eliminar el volumen de origen.  Puede eliminar la
 
 Esta función solo está disponible si su sistema ejecuta ONTAP 9.12.1 o superior.
 
-No se puede eliminar el volumen de origen desde la interfaz de usuario de NetApp Backup and Recovery.  Sin embargo, puede abrir la página Detalles del volumen en la página *Sistemas* de la consola y https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Borra el volumen de ahí"] .
+No se puede eliminar el volumen de origen desde la interfaz de usuario de NetApp Backup and Recovery .  Sin embargo, puede abrir la página Detalles del volumen en la página *Sistemas* de la consola y https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Borra el volumen de ahí"] .
 
 
 NOTE: No es posible eliminar archivos de respaldo de volúmenes individuales una vez que se haya eliminado la relación.  Sin embargo, puedes eliminar todas las copias de seguridad del volumen.

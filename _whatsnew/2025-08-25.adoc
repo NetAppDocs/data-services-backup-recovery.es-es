@@ -11,7 +11,7 @@ Esta versión agrega soporte de vista previa para proteger las cargas de trabajo
 
 NOTE: Se proporciona documentación sobre la protección de las cargas de trabajo de VMware como una vista previa de la tecnología. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de la disponibilidad general.
 
-link:br-use-vmware-protect-overview.html["Obtenga más información sobre cómo proteger las cargas de trabajo de VMware con NetApp Backup and Recovery"] .
+link:br-use-vmware-protect-overview.html["Obtenga más información sobre cómo proteger las cargas de trabajo de VMware con NetApp Backup and Recovery"].
 
 
 

@@ -38,7 +38,7 @@ En este punto, desea continuar realizando una copia de seguridad de Vol1b en el 
 
 Así es como funciona la resincronización:
 
-* El sistema busca una instantánea común entre Vol1a y el almacén de objetos.  En este caso, ambos tienen S2.
+* El sistema busca una instantánea común entre Vol1a y el almacén de objetos.  En este caso ambos tienen S2.
 * Debido a esta instantánea compartida, el sistema necesita transferir solo los cambios incrementales entre S2 y S3.
 
 
@@ -46,7 +46,7 @@ Esto significa que solo se envían al almacén de objetos los datos nuevos agreg
 
 Este proceso evita volver a enviar datos que ya están respaldados, ahorra ancho de banda y garantiza que su cadena de respaldo continúe sin problemas después de la migración.
 
-image:diagram-snapmirror-cloud-resync-migration.png["Copia de seguridad y recuperación de NetApp SnapMirror a la resincronización en la nube"]
+image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery SnapMirror a la resincronización en la nube"]
 
 
 
@@ -93,7 +93,7 @@ Antes de comenzar la migración, un equipo de actualización técnica de NetApp 
 
 Después de la migración, un equipo de actualización técnica de NetApp se asegura de que se completen los siguientes pasos para establecer la protección y prepararse para la resincronización.
 
-. Registre los nuevos UUID de instancias de volumen de todos los volúmenes migrados en el clúster ONTAP de destino.
+. Registre los nuevos UUID de instancia de volumen de todos los volúmenes migrados en el clúster ONTAP de destino.
 . Confirme que todas las políticas de SnapMirror requeridas que estaban disponibles en el antiguo clúster de ONTAP estén configuradas correctamente en el nuevo clúster de ONTAP .
 . Agregue el nuevo clúster ONTAP como un sistema en la página *Sistemas* de la Consola.
 
@@ -105,12 +105,12 @@ Después de la migración, un equipo de actualización técnica de NetApp se ase
 Después de la migración, un equipo de actualización técnica de NetApp realiza una operación de resincronización de SnapMirror a la nube para reanudar las copias de seguridad en la nube de los volúmenes recién migrados.
 
 . Agregue el nuevo clúster ONTAP como un sistema en la página *Sistemas* de la Consola.
-. Consulte la página de volúmenes de copia de seguridad y recuperación de NetApp para asegurarse de que los detalles del sistema de origen antiguo estén disponibles.
-. Desde la página Volúmenes de copia de seguridad y recuperación de NetApp , seleccione *Configuración de copia de seguridad*.
+. Consulte la página de volúmenes de NetApp Backup and Recovery para asegurarse de que los detalles del sistema de origen antiguo estén disponibles.
+. Desde la página Volúmenes de NetApp Backup and Recovery , seleccione *Configuración de copia de seguridad*.
 . Desde el menú, seleccione *Resincronizar copia de seguridad*.
 . En la página del sistema Resync, haga lo siguiente:
 +
-.. *Nuevo sistema de origen*: Ingrese al nuevo clúster ONTAP donde se han migrado los volúmenes.
+.. *Nuevo sistema de origen*: ingrese el nuevo clúster ONTAP donde se han migrado los volúmenes.
 .. *Almacén de objetos de destino existente*: seleccione el almacén de objetos de destino que contiene las copias de seguridad del sistema de origen antiguo.
 
 
@@ -121,7 +121,7 @@ Después de la migración, un equipo de actualización técnica de NetApp realiz
 ** La política de SnapMirror que se aplicará a la nueva relación.
 
 
-. Seleccione *Cargar* en *Cargar detalles de mapeo de volumen* para cargar la hoja CSV completa en la interfaz de usuario de NetApp Backup and Recovery.
+. Seleccione *Cargar* en *Cargar detalles de mapeo de volumen* para cargar la hoja CSV completa en la interfaz de usuario de NetApp Backup and Recovery .
 . Ingrese la información de configuración de red y proveedor requerida para la operación de resincronización.
 . Seleccione *Enviar* para iniciar el proceso de validación.
 +

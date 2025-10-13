@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore.html 
 keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Restaure cargas de trabajo de VMware con NetApp Backup and Recovery
 :hardbreaks:
@@ -31,7 +31,7 @@ Puede restaurar datos en estos puntos:
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
-Si selecciona un archivo de respaldo en el almacenamiento de objetos y la protección contra ransomware está activa para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos. Le recomendamos que realice el escaneo.
+Si selecciona un archivo de respaldo en el almacenamiento de objetos y la protección contra ransomware está activa para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que realice el escaneo.
 
 
 TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
@@ -58,10 +58,10 @@ Desde la página Restaurar (también conocida como Buscar y restaurar), puedes r
 
 Restaure cargas de trabajo de VMware mediante la opción Restaurar. Puede buscar la instantánea por su nombre o utilizando filtros.
 
-*Rol de consola de NetApp requerido* Rol de visor de almacenamiento, superadministrador de respaldo y recuperación, administrador de restauración de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de respaldo y recuperación, administrador de restauración de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú de Copia de seguridad y recuperación de NetApp , seleccione *Restaurar*.
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
 . En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Máquinas virtuales*.
 . Ingrese el nombre del recurso que desea restaurar o filtre por el vCenter, centro de datos o almacén de datos donde se encuentra el recurso que desea restaurar.
 +

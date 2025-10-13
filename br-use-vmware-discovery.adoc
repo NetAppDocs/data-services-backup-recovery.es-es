@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-discovery.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Descubra las cargas de trabajo de VMware con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery.
 
 
 [role="lead"]
-El servicio de copia de seguridad y recuperación de NetApp primero debe descubrir los almacenes de datos y las máquinas virtuales de VMware que se ejecutan en sistemas ONTAP para que usted pueda utilizar el servicio. Opcionalmente, puede importar datos y políticas de respaldo desde el SnapCenter Plug-in for VMware vSphere si ya lo tiene instalado.
+El servicio de NetApp Backup and Recovery primero debe descubrir los almacenes de datos y las máquinas virtuales de VMware que se ejecutan en sistemas ONTAP para que usted pueda utilizar el servicio. Opcionalmente, puede importar datos y políticas de respaldo desde el SnapCenter Plug-in for VMware vSphere si ya lo tiene instalado.
 
-*Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación. Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+*Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 
 
@@ -24,7 +24,7 @@ El servicio de copia de seguridad y recuperación de NetApp primero debe descubr
 
 Durante el descubrimiento, NetApp Backup and Recovery analiza las cargas de trabajo de VMware dentro de su organización y evalúa e importa políticas de protección existentes, copias instantáneas y opciones de respaldo y restauración.
 
-Puede importar almacenes de datos y máquinas virtuales VMware NFS y VMFS desde su SnapCenter Plug-in for VMware vSphere al inventario de NetApp Backup and Recovery.
+Puede importar almacenes de datos y máquinas virtuales VMware NFS y VMFS desde su SnapCenter Plug-in for VMware vSphere al inventario de NetApp Backup and Recovery .
 
 
 NOTE: Esta versión de NetApp Backup and Recovery solo es compatible con VMware vCenter y no detecta vVols ni máquinas virtuales en vVols.
@@ -33,19 +33,19 @@ Durante el proceso de importación, NetApp Backup and Recovery realiza las sigui
 
 * Permite el acceso SSH seguro al servidor vCenter.
 * Activa el modo de mantenimiento en todos los grupos de recursos del servidor vCenter.
-* Prepara los metadatos del vCenter y lo marca como no administrado en la consola de NetApp .
+* Prepara los metadatos del vCenter y lo marca como no administrado en la NetApp Console.
 * Configura el acceso a la base de datos.
 * Descubre VMware vCenter, almacenes de datos y máquinas virtuales.
 * Importa políticas de protección existentes, copias instantáneas y opciones de copia de seguridad y restauración del SnapCenter Plug-in for VMware vSphere.
-* Muestra los recursos descubiertos en la página Inventario de copia de seguridad y recuperación de NetApp .
+* Muestra los recursos descubiertos en la página Inventario de NetApp Backup and Recovery .
 
 
 El descubrimiento se produce de las siguientes maneras:
 
-* Si ya tiene el SnapCenter Plug-in for VMware vSphere, importe los recursos de SnapCenter en NetApp Backup and Recovery mediante la interfaz de usuario de NetApp Backup and Recovery.
+* Si ya tiene el SnapCenter Plug-in for VMware vSphere, importe los recursos de SnapCenter en NetApp Backup and Recovery mediante la interfaz de usuario de NetApp Backup and Recovery .
 +
 
-NOTE: Si ya tiene el complemento SnapCenter , asegúrese de cumplir con los requisitos previos antes de importar desde SnapCenter. Por ejemplo, debe crear sistemas en NetApp Console para todo el almacenamiento del clúster de SnapCenter local antes de importar desde SnapCenter. Ver link:concept-start-prereq-snapcenter-import.html["Requisitos previos para importar recursos desde SnapCenter"] .
+NOTE: Si ya tiene el complemento SnapCenter , asegúrese de cumplir con los requisitos previos antes de importar desde SnapCenter. Por ejemplo, debe crear sistemas en NetApp Console para todo el almacenamiento del clúster de SnapCenter local antes de importar desde SnapCenter.  Verlink:concept-start-prereq-snapcenter-import.html["Requisitos previos para importar recursos desde SnapCenter"] .
 
 * Si aún no tiene el complemento SnapCenter , aún puede descubrir cargas de trabajo dentro de sus sistemas agregando un vCenter manualmente y realizando el descubrimiento.
 
@@ -54,10 +54,10 @@ NOTE: Si ya tiene el complemento SnapCenter , asegúrese de cumplir con los requ
 
 === Si el complemento SnapCenter aún no está instalado, agregue un vCenter y descubra recursos
 
-Si aún no tiene instalado el complemento SnapCenter para VMware, agregue la información de vCenter y haga que NetApp Backup and Recovery descubra las cargas de trabajo.  Dentro de cada agente de consola, seleccione los sistemas en los que desea descubrir cargas de trabajo.
+Si aún no tiene instalado el complemento SnapCenter para VMware, agregue la información de vCenter y haga que NetApp Backup and Recovery descubra las cargas de trabajo. Dentro de cada agente de consola, seleccione los sistemas en los que desea descubrir cargas de trabajo.
 
 .Pasos
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
 +
 Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la consola, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
 
@@ -91,7 +91,7 @@ Puedes hacerlo de las siguientes maneras:
 
 * Durante el descubrimiento, seleccione una opción para importar recursos desde el complemento SnapCenter .
 * Después del descubrimiento, desde la página Inventario, seleccione una opción para importar recursos del complemento de SnapCenter .
-* Después del descubrimiento, en el menú Configuración, seleccione una opción para importar recursos del complemento de SnapCenter . Para obtener más información, consulte link:br-start-configure.html["Configurar NetApp Backup and Recovery"] . Esto no es compatible con VMware.
+* Después del descubrimiento, en el menú Configuración, seleccione una opción para importar recursos del complemento de SnapCenter . Para más detalles, consultelink:br-start-configure.html["Configurar NetApp Backup and Recovery"] . Esto no es compatible con VMware.
 
 
 Este es un proceso de dos partes que se describe en esta sección:
@@ -112,7 +112,7 @@ TIP: Después de importar metadatos de vCenter desde el complemento SnapCenter ,
 .Pasos
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
 . Seleccione *Inventario*.
-. Desde la página de recursos de carga de trabajo Discover de NetApp Backup and Recovery, seleccione *Importar desde SnapCenter*.
+. Desde la página de recursos de carga de trabajo Discover de NetApp Backup and Recovery , seleccione *Importar desde SnapCenter*.
 . En el campo Importar desde, seleccione * SnapCenter Plug-in para VMware*.
 . Ingrese *credenciales de VMware vCenter*:
 +
@@ -144,7 +144,7 @@ La página Inventario muestra vCenter como no administrado en NetApp Backup and 
 
 Después de importar los metadatos de vCenter desde el complemento SnapCenter para VMware, administre los recursos en NetApp Backup and Recovery.  Después de seleccionar administrar esos recursos, NetApp Backup and Recovery puede realizar copias de seguridad y recuperar los recursos que importó.  Después de iniciar la administración en NetApp Backup and Recovery, ya no podrá administrar esos recursos en el complemento SnapCenter .
 
-Después de seleccionar administrar los recursos, los recursos, las máquinas virtuales y las políticas se importan desde el complemento de SnapCenter para VMware. Los grupos de recursos, las políticas y las instantáneas se migran desde el complemento y pasan a administrarse en NetApp Backup and Recovery.
+Después de seleccionar administrar los recursos, los recursos, las máquinas virtuales y las políticas se importan desde el complemento de SnapCenter para VMware. Los grupos de recursos, las políticas y las instantáneas se migran desde el complemento y se administran en NetApp Backup and Recovery.
 
 .Pasos
 . Después de importar los recursos de VMware desde el complemento SnapCenter , en el menú Copia de seguridad y recuperación, seleccione *Inventario*.

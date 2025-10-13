@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-vmware-prereqs.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery. 
+summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
 ---
 = Requisitos previos para las cargas de trabajo de máquinas virtuales en NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp and Recovery.
 
 
 [role="lead"]
-Antes de comenzar a proteger las cargas de trabajo de sus máquinas virtuales con NetApp Backup and Recovery, asegúrese de cumplir los siguientes requisitos previos:
+Antes de comenzar a proteger las cargas de trabajo de sus máquinas virtuales con NetApp Backup and Recovery, asegúrese de cumplir con los siguientes requisitos previos:
 
 * SnapCenter Plug-in for VMware vSphere 4.6P1 o posterior
 +
@@ -22,7 +22,7 @@ Antes de comenzar a proteger las cargas de trabajo de sus máquinas virtuales co
 
 
 * ONTAP 9.8 o posterior
-* Consola de NetApp
+* NetApp Console
 * Se admiten almacenes de datos NFS y VMFS. No se admiten vVols .
 * Para compatibilidad con VMFS, el SnapCenter Plug-in for VMware vSphere debe ejecutarse en la versión 4.9 o posterior.  Asegúrese de realizar una copia de seguridad del almacén de datos VMFS si el SnapCenter Plug-in for VMware vSphere se actualizó desde una versión anterior a la versión 4.9.
 * Se debería haber realizado al menos una copia de seguridad en el SnapCenter Plug-in for VMware vSphere 4.6P1.

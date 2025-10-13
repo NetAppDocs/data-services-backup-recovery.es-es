@@ -32,9 +32,9 @@ NOTE: Esta documentación se proporciona como una vista previa de la tecnología
 
 Puede realizar las siguientes tareas relacionadas con la gestión de cargas de trabajo de Kubernetes:
 
-* link:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"] .
-* link:br-use-manage-kubernetes-clusters.html["Administrar clústeres de Kubernetes"] .
-* link:br-use-protect-kubernetes-applications.html["Agregar y proteger aplicaciones de Kubernetes"] .
-* link:br-use-manage-kubernetes-applications.html["Administrar aplicaciones de Kubernetes"] .
-* link:br-use-restore-kubernetes-applications.html["Restaurar aplicaciones de Kubernetes"] .
+* link:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"].
+* link:br-use-manage-kubernetes-clusters.html["Administrar clústeres de Kubernetes"].
+* link:br-use-protect-kubernetes-applications.html["Agregar y proteger aplicaciones de Kubernetes"].
+* link:br-use-manage-kubernetes-applications.html["Administrar aplicaciones de Kubernetes"].
+* link:br-use-restore-kubernetes-applications.html["Restaurar aplicaciones de Kubernetes"].
 
