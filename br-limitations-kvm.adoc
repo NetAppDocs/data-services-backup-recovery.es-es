@@ -28,7 +28,6 @@ Las siguientes acciones no son compatibles con la versión preliminar privada:
 * Restaurar máquinas virtuales a una ubicación alternativa
 * Proteger las máquinas virtuales almacenadas en SAN
 * Proteger aplicaciones
-* Realizar copias de seguridad o restaurar desde almacenes de objetos
 * Editar grupos de protección
 * Crear grupos de protección utilizando máquinas virtuales de varios hosts KVM
 * Crear copias de seguridad definidas por el usuario (solo se admiten las copias de seguridad iniciadas desde la consola de NetApp )

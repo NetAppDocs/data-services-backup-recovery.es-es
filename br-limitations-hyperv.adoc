@@ -25,7 +25,7 @@ Las siguientes acciones no son compatibles con la versión preliminar privada de
 * Crear grupos de recursos
 * Expansión de discos (en múltiples recursos compartidos CIFS)
 * Proteger las máquinas virtuales a través de SAN
-* Restaurar desde el almacén de objetos
+* Editar grupos de protección
 * Proteja los hosts de Hyper-V que están agrupados mediante System Center Virtual Machine Manager (SCVMM)
 
 

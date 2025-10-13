@@ -52,7 +52,7 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consult
 
 === Mejoras en la vista previa de Kubernetes
 
-La versión preliminar de las cargas de trabajo de Kubernetes presenta las siguientes mejoras:
+La versión preliminar de las cargas de trabajo de Kubernetes presenta las siguientes capacidades mejoradas:
 
 * Compatibilidad con arquitectura de respaldo de distribución 3-2-1
 * Compatibilidad con ONTAP S3 como destino de respaldo
@@ -70,6 +70,24 @@ La versión preliminar de las cargas de trabajo de Kubernetes presenta las sigui
 
 
 Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+
+
+
+=== Mejoras en la vista previa de VMware
+
+La versión preliminar de las cargas de trabajo de VMware presenta las siguientes capacidades mejoradas:
+
+* Soporte para restaurar desde el almacenamiento de objetos
+* El panel de control de la NetApp Console ahora muestra información sobre el estado de la carga de trabajo de VMware
+* Compatibilidad con el modo de demostración: explore las características de las cargas de trabajo de VMware sin agregar un entorno de VMware vCenter Server
+* Compatibilidad con control de acceso basado en roles (RBAC)
+* Soporte de alertas y notificaciones por correo electrónico para eventos laborales
+* Soporte para realizar copias de seguridad y restaurar en almacenamiento basado en NVMe
+* Editar grupos de protección
+* Editar políticas de protección
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .
 
 
 
