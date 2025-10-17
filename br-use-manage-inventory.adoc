@@ -63,7 +63,7 @@ Puede administrar la información del host para garantizar que se protejan los h
 Puede administrar los hosts que se descubren en su sistema.  Puedes gestionarlos por separado o como grupo.
 
 
-TIP: Solo puedes administrar aquellos hosts que muestren un estado "No administrado" en la columna Hosts.  Si el estado es "Administrado", significa que el host ya está siendo administrado por NetApp Backup and Recovery.
+TIP: Puede administrar hosts con un estado "No administrado" en la columna Hosts.  NetApp Backup and Recovery ya administra hosts con un estado "Administrado".
 
 Después de administrar los hosts en NetApp Backup and Recovery, SnapCenter ya no administra los recursos en esos hosts.
 
@@ -90,7 +90,7 @@ Después de administrar los hosts en NetApp Backup and Recovery, SnapCenter ya n
 
 === Suspender horarios
 
-Puede suspender programaciones para detener las operaciones de copia de seguridad y restauración de un host.  Es posible que desees hacer esto si necesitas realizar actividades de mantenimiento en el host.
+Suspender programaciones para detener operaciones de respaldo y restauración durante el mantenimiento del host.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
@@ -130,7 +130,7 @@ Puede eliminar la información del host para detener los cargos por servicio.
 
 == Administrar información de instancias
 
-Puede administrar la información de instancias para garantizar que los recursos tengan las credenciales adecuadas para su protección y puede realizar copias de seguridad de los recursos de las siguientes maneras:
+Puede administrar la información de instancias para asignar las credenciales adecuadas para la protección de recursos y realizar copias de seguridad de los recursos de las siguientes maneras:
 
 * Proteger instancias
 * Credenciales de asociado
@@ -210,7 +210,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 === Realizar una copia de seguridad ahora
 
-Puede hacer una copia de seguridad de sus datos ahora para garantizar que estén protegidos de inmediato.
+Haga una copia de seguridad de sus datos ahora para protegerlos de inmediato.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
@@ -260,7 +260,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 === Restaurar bases de datos
 
-Puede restaurar una base de datos para garantizar que sus datos estén protegidos.
+Restaurar una base de datos para proteger sus datos.
 
 *Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -295,7 +295,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 === Realizar una copia de seguridad ahora
 
-Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para garantizar que sus datos estén protegidos de inmediato.
+Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para proteger sus datos de inmediato.
 
 *Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 

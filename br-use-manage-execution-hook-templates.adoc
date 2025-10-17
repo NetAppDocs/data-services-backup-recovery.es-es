@@ -14,11 +14,11 @@ summary: NetApp Backup and Recovery le permite administrar ganchos de ejecución
 
 
 [role="lead"]
-Un gancho de ejecución es una acción personalizada que puede configurar para ejecutarse junto con una operación de protección de datos de una aplicación de Kubernetes administrada.  Por ejemplo, si tiene una aplicación de base de datos, puede usar un gancho de ejecución para pausar todas las transacciones de la base de datos antes de una instantánea y reanudarlas una vez que se complete la instantánea.  Esto garantiza instantáneas consistentes con la aplicación.  Cuando crea una plantilla de gancho de ejecución, puede especificar el tipo de gancho, el script a ejecutar y cualquier filtro que determine a qué contenedores se aplica el gancho.  Luego puede utilizar la plantilla para asociar ganchos de ejecución con sus aplicaciones.
+Un gancho de ejecución es una acción personalizada que se ejecuta con una operación de protección de datos en una aplicación Kubernetes administrada.  Por ejemplo, cree instantáneas consistentes con la aplicación utilizando un gancho de ejecución para pausar las transacciones de la base de datos antes de una instantánea y reanudarlas después.  Al crear una plantilla de gancho de ejecución, especifique el tipo de gancho, el script a ejecutar y los filtros para los contenedores de destino.  Utilice la plantilla para vincular ganchos de ejecución a sus aplicaciones.
 
 [NOTE]
 ====
-De forma predeterminada, NetApp Backup and Recovery congela y descongela automáticamente los sistemas de archivos de ciertas aplicaciones, como KubeVirt, durante las operaciones de protección de datos. Opcionalmente, puede desactivar este comportamiento de forma global o para aplicaciones específicas siguiendo las instrucciones de la documentación de protección de Trident :
+NetApp Backup and Recovery congela y descongela sistemas de archivos para aplicaciones como KubeVirt durante la protección de datos.  Puede deshabilitar este comportamiento de forma global o para aplicaciones específicas utilizando la documentación de protección de Trident :
 
 * Para deshabilitar este comportamiento para todas las aplicaciones, consulte https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Protección de datos con máquinas virtuales KubeVirt"] .
 * Para deshabilitar este comportamiento para una aplicación específica, consulte https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["Definir una aplicación"] .
@@ -47,14 +47,14 @@ NetApp Backup and Recovery admite los siguientes tipos de ganchos de ejecución,
 
 Cuando se ejecuta una operación de protección de datos, los eventos de enlace de ejecución tienen lugar en el siguiente orden:
 
-. Todos los ganchos de ejecución de preoperación personalizados aplicables se ejecutan en los contenedores apropiados.  Puede crear y ejecutar tantos ganchos previos a la operación personalizados como necesite, pero el orden de ejecución de estos ganchos antes de la operación no está garantizado ni es configurable.
+. Todos los ganchos de ejecución de preoperación personalizados aplicables se ejecutan en los contenedores apropiados. Puede crear varios ganchos de preoperación personalizados, pero su orden de ejecución no está garantizado ni es configurable.
 . Si corresponde, se producen bloqueos del sistema de archivos.
 . Se realiza la operación de protección de datos.
 . Los sistemas de archivos congelados se descongelan, si corresponde.
-. Cualquier gancho de ejecución posterior a la operación personalizado aplicable se ejecuta en los contenedores apropiados.  Puede crear y ejecutar tantos ganchos posteriores a la operación personalizados como necesite, pero el orden de ejecución de estos ganchos después de la operación no está garantizado ni es configurable.
+. NetApp Backup and Recovery ejecuta cualquier gancho de ejecución previo a la operación personalizado aplicable en los contenedores apropiados.  Puede crear varios ganchos posteriores a la operación personalizados, pero su orden de ejecución no está garantizado ni es configurable.
 
 
-Si crea varios ganchos de ejecución del mismo tipo (por ejemplo, pre-instantánea), no se garantiza el orden de ejecución de esos ganchos.  Sin embargo, el orden de ejecución de los ganchos de diferentes tipos está garantizado.  Por ejemplo, el siguiente es el orden de ejecución de una configuración que tiene todos los diferentes tipos de ganchos:
+Si crea varios ganchos del mismo tipo, no se garantiza su orden de ejecución.  Los ganchos de diferentes tipos siempre se ejecutan en el orden especificado. Por ejemplo, el siguiente es el orden de ejecución de una configuración que tiene todos los diferentes tipos de ganchos:
 
 . Ganchos previos a la instantánea ejecutados
 . Ganchos posteriores a la instantánea ejecutados
@@ -63,7 +63,7 @@ Si crea varios ganchos de ejecución del mismo tipo (por ejemplo, pre-instantán
 
 
 
-NOTE: Siempre debe probar sus scripts de gancho de ejecución antes de habilitarlos en un entorno de producción.  Puede utilizar el comando 'kubectl exec' para probar los scripts cómodamente.  Después de habilitar los ganchos de ejecución en un entorno de producción, pruebe las instantáneas y las copias de seguridad resultantes para asegurarse de que sean consistentes.  Puede hacerlo clonando la aplicación en un espacio de nombres temporal, restaurando la instantánea o la copia de seguridad y luego probando la aplicación.
+NOTE: Pruebe los scripts de ejecución de gancho antes de habilitarlos en producción.  Utilice 'kubectl exec' para probar scripts, luego verifique las instantáneas y las copias de seguridad clonando la aplicación en un espacio de nombres temporal y restaurándola.
 
 
 NOTE: Si un gancho de ejecución previo a la instantánea agrega, cambia o elimina recursos de Kubernetes, esos cambios se incluyen en la instantánea o la copia de seguridad y en cualquier operación de restauración posterior.
@@ -81,7 +81,7 @@ Tenga en cuenta lo siguiente al planificar ganchos de ejecución para sus aplica
 
 
 
-NOTE: Debido a que los ganchos de ejecución a menudo reducen o deshabilitan por completo la funcionalidad de la aplicación en la que se ejecutan, siempre debe intentar minimizar el tiempo que tardan en ejecutarse sus ganchos de ejecución personalizados.  Si inicia una operación de copia de seguridad o instantánea con ganchos de ejecución asociados pero luego la cancela, los ganchos aún podrán ejecutarse si la operación de copia de seguridad o instantánea ya ha comenzado.  Esto significa que la lógica utilizada en un gancho de ejecución posterior a una copia de seguridad no puede asumir que la copia de seguridad se completó.
+NOTE: Los ganchos de ejecución pueden reducir o deshabilitar la funcionalidad de la aplicación.  Haga que sus ganchos personalizados se ejecuten lo más rápido posible. Si inicia una operación de copia de seguridad o instantánea con ganchos de ejecución asociados pero luego la cancela, los ganchos aún podrán ejecutarse si la operación de copia de seguridad o instantánea ya ha comenzado. Esto significa que la lógica utilizada en un gancho de ejecución posterior a una copia de seguridad no puede asumir que la copia de seguridad se completó.
 
 
 
@@ -116,6 +116,6 @@ Puede crear una plantilla de gancho de ejecución personalizada que pueda utiliz
 . En el cuadro de texto *Script*, ingrese el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución.  Opcionalmente, puede seleccionar *Cargar script* para cargar un archivo de script en su lugar.
 . Seleccione *Crear*.
 +
-La plantilla se crea y aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.
+Después de crear la plantilla, ésta aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.
 
 

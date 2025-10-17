@@ -93,7 +93,7 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, cons
 
 === Compatibilidad con cargas de trabajo de Oracle Database como vista previa privada
 
-Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de Oracle Database:
+Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de bases de datos de Oracle:
 
 * Descubra las bases de datos independientes de Oracle
 * Crear políticas de protección solo para datos o copias de seguridad de datos y registros

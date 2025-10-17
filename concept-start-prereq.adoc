@@ -190,11 +190,12 @@ Para conocer los requisitos de la NetApp Console , consulte<<En la NetApp Consol
 
 Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos para descubrir y proteger máquinas virtuales.
 
-* Requisitos de software para el host Hyper-V:
+* Requisitos de software para el host de Windows Server Hyper-V:
 +
 ** Ediciones de Microsoft Hyper-V 2019, 2022 y 2025
 ** Paquete de alojamiento de ASP.NET Core Runtime 8.0.12 (y todos los parches 8.0.x posteriores)
 ** PowerShell 7.4.2 o posterior
+** Asegúrese de que la función de servicio Host Guardian esté instalada (consulte la https://learn.microsoft.com/en-us/windows-server/administration/server-manager/add-remove-roles-features?tabs=gui#add-roles-and-features-to-windows-server["Documentación de Microsoft Windows Server"^] (para instrucciones)
 ** Asegúrese de que el tráfico HTTPS bidireccional esté permitido para los siguientes puertos en la configuración del Firewall de Windows:
 +
 *** 8144 (complemento de NetApp para Hyper-V)

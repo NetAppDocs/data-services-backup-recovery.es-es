@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
   <block id="98c5259ac207f8df01dc5381304dbe70" category="doc">Descubra sus sistemas ONTAP en NetApp Console</block>
-  <block id="95bc7edd3ae3a36dfff6877129e7a78f" category="paragraph">Necesitará preparar su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .</block>
   <block id="a1e789284d8b0f8747dff3a88926e796" category="paragraph">La preparación de sus clústeres ONTAP implica los siguientes pasos:</block>
   <block id="39f5ad38d5cd94a80509176827fd079c" category="list-text">Verificar los requisitos del sistema ONTAP</block>
   <block id="57e8975a7eaa4709d161b3eb03e22178" category="list-text">Verificar los requisitos de red de ONTAP para realizar copias de seguridad de datos en el almacenamiento de objetos</block>
@@ -9,7 +8,6 @@
   <block id="c7a52dbc36fc702281b9045431e9d77c" category="paragraph">Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .</block>
   <block id="b020365bc471630c977d9fcc2c5ea1d1" category="inline-link">Aprenda a descubrir un clúster</block>
   <block id="65c75361fc7a8b558047f800f80facef" category="paragraph">Necesitará saber la dirección IP de administración del clúster y la contraseña de la cuenta de usuario administrador para agregar el clúster. <block ref="05808bfa0505e1bf6ea9b1bffc01f78e" category="inline-link-rx"></block>.</block>
-  <block id="7d0648c1daae70297d4efd0289700985" category="paragraph">Asegúrese de que se cumplan los siguientes requisitos de ONTAP :</block>
   <block id="787afd9bf2f77b6cb254f842dc7bd357" category="list-text">Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.</block>
   <block id="be2a4307ac15130326b39aa20133d5ed" category="list-text">Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).</block>
   <block id="eacc5b49b582597e31dc61206923ddec" category="paragraph">*Nota:* El "Paquete de nube híbrida" no es necesario cuando se utiliza NetApp Backup and Recovery.</block>
@@ -17,12 +15,9 @@
   <block id="5fa813291c3d8485eb4eb5256c7b7d2e" category="paragraph">Aprenda cómo<block ref="0375b5449ee87be3e15b8392834ec255" category="inline-link-rx"></block> .</block>
   <block id="de2909ab4fc1a949075aa38ec0c0de83" category="inline-link">Configurar el tiempo de su clúster</block>
   <block id="3cf888fcb0635e16e2f108c3a527e9a6" category="list-text">La hora y la zona horaria están configuradas correctamente.  Aprenda cómo<block ref="9f61e0b7caa7b15265f460d001a365b9" category="inline-link-rx"></block> .</block>
-  <block id="7c64a8974603fc8da30f9c21db8be0c0" category="list-text">Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.</block>
   <block id="49a1e754247eba0034ec2a2b3dea46b0" category="inline-link">Ver versiones de ONTAP compatibles con las relaciones de SnapMirror</block>
   <block id="8cc8f909068bf43fda15e12e79a0c805" category="paragraph"><block ref="b8c6e83fa255fcfab352a5b54339fdb8" category="inline-link-rx"></block>.</block>
   <block id="0736192094f1dc9a582442df0a017527" category="doc">Requisitos de red de ONTAP local</block>
-  <block id="898017b78f41d024b76598353e2bf49e" category="paragraph">Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.</block>
-  <block id="49245543ad6be948bdde6584e5642a93" category="list-text">Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.</block>
   <block id="1fbce003d68708feb24931b9e6366f50" category="list-text">Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.</block>
   <block id="d7bb556723e915c43fe4fd9b0f90d545" category="inline-link">Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP</block>
   <block id="e9926e61defd3a286477d3a785a7fd6a" category="paragraph">Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales.<block ref="f62b93c20d5bac3c11ab8a3b52ce12c9" category="inline-link-rx"></block> .</block>
@@ -287,7 +282,6 @@
   <block id="69fc5d74b4cae1d8411c6e1ef7fef337" category="list-text">Administrador de copias de seguridad y recuperación</block>
   <block id="e7ccdca9cb72dcc628612957211d3e80" category="list-text">Administrador de restauración de copias de seguridad y recuperación</block>
   <block id="2865d4b5e918de90349087089aeb52d0" category="list-text">Visor de copias de seguridad y recuperación</block>
-  <block id="96b3cdda555459aef6cfc365956ed0b8" category="list-text">Compatibilidad con la distribución SUSE Rancher Kubernetes</block>
   <block id="ba6bb9bc1bfb2e864cfaaa2229f7e2d8" category="list-text">Compatibilidad con múltiples buckets: ahora puede proteger los volúmenes dentro de un sistema con múltiples buckets por sistema en diferentes proveedores de nube.</block>
   <block id="80aadfb002c0fe2115f71c7aeb012ab4" category="section-title">Mejoras en la vista previa de VMware</block>
   <block id="307d24114a1eea93601b6d95cac55bcb" category="paragraph">La versión preliminar de las cargas de trabajo de VMware presenta las siguientes capacidades mejoradas:</block>
@@ -302,7 +296,6 @@
   <block id="79d4e4bc94bda2b257f4190786069be1" category="inline-link">Descripción general de Protect VMware Workloads</block>
   <block id="c54d53d5c9b9527bb4d1e1020b2a04ec" category="paragraph">Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte<block ref="81bdea79654f29d88dbffb87457fe1f5" category="inline-link-rx"></block> .</block>
   <block id="5454583dc62ad7e77c5ba8c488ba6d58" category="section-title">Compatibilidad con cargas de trabajo de Oracle Database como vista previa privada</block>
-  <block id="e43c46b8feaf8eb93753d791ff5f0c4f" category="paragraph">Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de Oracle Database:</block>
   <block id="ef788408f77a6fc39041c0a817c65602" category="list-text">Descubra las bases de datos independientes de Oracle</block>
   <block id="30b7966bb7dc1aa9438906ea08ff7f3a" category="list-text">Crear políticas de protección solo para datos o copias de seguridad de datos y registros</block>
   <block id="7c04ebe00ea4e3919d3a0db1523941c4" category="list-text">Proteja las bases de datos de Oracle con un esquema de respaldo 3-2-1</block>
@@ -798,47 +791,7 @@
   <block id="628bc160a519e5ae69b6c8aa88610900" category="list-text">*Agregar todos los hosts en el clúster*: marque esta casilla para agregar todos los hosts en el clúster a NetApp Backup and Recovery durante la detección.</block>
   <block id="b7dfb6860d9af743a7d3f0fe2adfde3d" category="list-text">*Omitir comprobaciones de preinstalación opcionales*: marque esta casilla para omitir las comprobaciones de preinstalación opcionales.  Es posible que desees hacer esto, por ejemplo, si sabes que las consideraciones de memoria o espacio cambiarán en el futuro cercano y deseas instalar el complemento ahora.</block>
   <block id="413f1bdf68093f037d6630a5904e6a17" category="list-text">Para visualizar el Panel de control de NetApp Backup and Recovery , en el menú Respaldo y recuperación, seleccione *Panel de control*.</block>
-  <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">Estas preguntas frecuentes pueden ayudarte si simplemente buscas una respuesta rápida a una pregunta.</block>
-  <block id="fcbc9d0b7e989e0961b6bdcb55502b4d" category="doc">Preguntas frecuentes sobre NetApp Backup and Recovery</block>
-  <block id="ea355214fd4bc7c57f471bd92918879b" category="section-title">Despliegue</block>
-  <block id="b865f8bea78dcad42e96ed798f510398" category="paragraph">¿Necesita una licencia para utilizar la versión preliminar de NetApp Backup and Recovery ?</block>
-  <block id="924cc6eaf82618251de609e2689ed733" category="paragraph">Puede utilizar los siguientes tipos de licencia:</block>
-  <block id="63f202b7fcd80e9277a9e585cd35c7ae" category="list-text">Regístrese para una prueba gratuita de 30 días.</block>
-  <block id="a4a4b80b06aca5ddf495d088f79e9824" category="paragraph">¿Cómo habilitar NetApp Backup and Recovery?  NetApp Backup and Recovery no requiere ninguna habilitación.  La opción de copia de seguridad y recuperación se habilita automáticamente en la navegación izquierda de la consola.</block>
-  <block id="2d46761bc551e15a780126270187f754" category="paragraph">Para comenzar, debe registrarse o comunicarse con su representante de ventas de NetApp para probar Backup and Recovery.  Luego, cuando utilice el agente de consola, incluirá las capacidades adecuadas para el servicio.</block>
-  <block id="21309928cc72944c6c8c863389d043d7" category="paragraph">Para comenzar a utilizar NetApp Backup and Recovery, seleccione "Comenzar a descubrir cargas de trabajo" en su página de inicio.</block>
-  <block id="3f3402ceee4504bb73638f6111dffad2" category="paragraph">¿ NetApp Backup and Recovery está disponible en modos estándar, restringido y privado?  En este momento, NetApp Backup and Recovery solo está disponible en modo estándar. Permanezca atento para más información.</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">Modos de implementación de la NetApp Console</block>
-  <block id="4cebc30733ea9d8edb38766c837308c0" category="paragraph">Para obtener una explicación sobre estos modos en todos los servicios de datos de NetApp , consulte<block ref="9b1c9f23ced4bc12396bbe50ae116f54" category="inline-link-rx"></block> .</block>
-  <block id="bf733d8a933c1601697f364223fc7ecb" category="section-title">Acceso</block>
-  <block id="ac5dd76e69a861df1cfc020509f94dac" category="inline-link"><block ref="ac5dd76e69a861df1cfc020509f94dac" category="inline-link-rx"></block></block>
-  <block id="55518afec8ad26f2d8dbe53160460810" category="paragraph">¿Cuál es la URL de NetApp Backup and Recovery ?  Para la URL, en un navegador, ingrese:<block ref="a408a005dd22e5752669018517454576" category="inline-link-rx"></block> para acceder a la NetApp Console.</block>
-  <block id="6b95918551f87e6ece870e17dd0bb85f" category="paragraph">¿Cómo se gestionan los permisos de acceso? Solo los administradores de la organización tienen la capacidad de iniciar el servicio y descubrir cargas de trabajo (porque esto implica comprometerse con el uso de un recurso).  Las interacciones posteriores pueden ser realizadas por cualquier rol.</block>
-  <block id="8432b3fb33d1ec2e4a068fdeef6e82ab" category="paragraph">¿Qué resolución de dispositivo es la mejor? La resolución de dispositivo recomendada para NetApp Backup and Recovery es 1920 x 1080 o superior.</block>
-  <block id="3462920d936c74204339015d2f24872a" category="paragraph">¿Qué navegador debo utilizar? Cualquier navegador moderno funcionará.</block>
-  <block id="cf49c80b52a1cb095928d387f3ae47ed" category="section-title">Interacción con otros servicios</block>
-  <block id="26b7f9e5fc21bc244eda67dabcd65cfb" category="paragraph">¿ NetApp Backup and Recovery tiene conocimiento de las configuraciones de protección realizadas en NetApp ONTAP?  Sí, NetApp Backup and Recovery descubre las programaciones de instantáneas configuradas en ONTAP.</block>
-  <block id="9d74da34ef1c70391495f1797aa69926" category="paragraph">*Si establece una política utilizando NetApp Backup and Recovery, ¿tiene que realizar cambios futuros solo en Backup and Recovery?*  Le recomendamos que realice cambios en la política de NetApp Backup and Recovery.</block>
-  <block id="35084d885dea7b061e6894c1cf3036d9" category="section-title">Cargas de trabajo</block>
-  <block id="d402524aad46e7fd520fcc6819d646ba" category="paragraph">¿Qué constituye una carga de trabajo? Una carga de trabajo es una aplicación para la versión Preview 2025. Una carga de trabajo incluye todos los volúmenes que utiliza una única instancia de aplicación.  Por ejemplo, una instancia de base de datos de Microsoft SQL Server implementada en mssql3.host.com puede tener vol1 y vol2 para sus datos y registros, respectivamente.  Estos volúmenes juntos constituyen la carga de trabajo para esa instancia específica de la instancia de base de datos.</block>
-  <block id="dd53fd2a784c4561d8b6866079ecff5e" category="paragraph">¿Qué cargas de trabajo admite NetApp Backup and Recovery ?</block>
-  <block id="553249a50803c74bcc7e726301cb04d3" category="paragraph">Para la versión preliminar 2025, NetApp Backup and Recovery puede identificar las siguientes cargas de trabajo: aplicaciones de Microsoft SQL Server.</block>
-  <block id="dc1104749c87cc0e9af03a0e476d1a2d" category="paragraph">¿Qué es una carga de trabajo “protegida”? En NetApp Backup and Recovery, una carga de trabajo muestra un estado "protegido" cuando tiene una política de detección principal habilitada.</block>
-  <block id="29e0e28df2606fb09f029badd7eb5d51" category="paragraph">¿Qué es una carga de trabajo “de riesgo”? Si una carga de trabajo no tiene habilitada una política de detección principal, está "en riesgo" incluso si tiene habilitada una política de copia de seguridad e instantáneas.</block>
-  <block id="e4244b45de1484571df7257e76a4102e" category="paragraph">*Se agregó una nueva carga de trabajo, pero aún no aparece* Si agregó una nueva carga de trabajo a su entorno, inicie el descubrimiento nuevamente y aplique políticas de protección para proteger ese nuevo recurso.</block>
-  <block id="5d1184f76781faaf229c6b885314bcd3" category="section-title">Políticas de protección</block>
-  <block id="5fe63b5e0d4049168b245142d9cab07c" category="paragraph">¿ NetApp Backup and Recovery tiene conocimiento de las configuraciones de protección realizadas en NetApp ONTAP?</block>
-  <block id="84be861d63fae34f2b382931196f99e6" category="paragraph">Sí, NetApp Backup and Recovery descubre las programaciones de instantáneas configuradas en ONTAP y si ARP y FPolicy están habilitados en una carga de trabajo detectada. La información que ve inicialmente en el Panel de Control se agrega desde otras soluciones y productos de NetApp .</block>
-  <block id="fe087eb7da64d85ddce60fbceef3a892" category="paragraph">¿ NetApp Backup and Recovery tiene conocimiento de las políticas ya creadas en SnapCenter?</block>
-  <block id="7999ac069ad005ef607d3416ca477a2f" category="paragraph">Sí, si tiene cargas de trabajo administradas en SnapCenter, las políticas administradas por esos productos se incorporan a NetApp Backup and Recovery.</block>
-  <block id="65b1c67f533e18ce83c9880a7f09c9a7" category="paragraph">¿Se pueden modificar las políticas transferidas desde SnapCenter?</block>
-  <block id="0b3266536de2ef3da25662107259bbe8" category="paragraph">Sí, puede modificar las políticas administradas por SnapCenter dentro de NetApp Backup and Recovery.</block>
-  <block id="998e9c21cf771f050de1e6426def3807" category="paragraph">*Si existen políticas de ONTAP (ya habilitadas en System Manager, como ARP, FPolicy y instantáneas), ¿se modifican en NetApp Backup and Recovery?*</block>
-  <block id="e1ec6ca6ef62d27b30753c8e5e010729" category="paragraph">No. NetApp Backup and Recovery no modifica ninguna política de detección existente (configuración ARP, FPolicy) de ONTAP.</block>
-  <block id="1bbf7e6eae5f11625646b96258731637" category="paragraph">¿Qué sucede si agrega nuevas políticas en SnapCenter después de registrarse en NetApp Backup and Recovery?</block>
-  <block id="5d889c2e56170fc0190fe39d725b0ac1" category="paragraph">NetApp Backup and Recovery reconoce cualquier política nueva creada en SnapCenter.</block>
-  <block id="518f0b9f41f0f038466364ab7781803f" category="paragraph">¿Se pueden cambiar las políticas de ONTAP?</block>
-  <block id="57244fdd507268483a03554561749b76" category="paragraph">Sí, puede cambiar las políticas de ONTAP en NetApp Backup and Recovery.  También puede crear nuevas políticas en NetApp Backup and Recovery y aplicarlas a las cargas de trabajo.  Esta acción reemplaza las políticas ONTAP existentes con las políticas creadas en NetApp Backup and Recovery.</block>
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">Puede obtener una licencia de NetApp Backup and Recovery comprando una suscripción de pago por uso o anual en el mercado de su proveedor de nube, o comprando una licencia propia de NetApp.  Se requiere una licencia válida para activar NetApp Backup and Recovery en un sistema, para crear copias de seguridad de sus datos de producción y para restaurar datos de copia de seguridad en un sistema de producción.</block>
   <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">Puede obtener una licencia de NetApp Backup and Recovery comprando una suscripción de pago por uso (PAYGO) o una suscripción anual en el mercado de * NetApp Intelligent Services* a su proveedor de nube, o comprando una licencia BYOL (traiga su propia licencia) a NetApp.  Se requiere una licencia válida para activar NetApp Backup and Recovery en un sistema, para crear copias de seguridad de sus datos de producción y para restaurar datos de copia de seguridad en un sistema de producción.</block>
   <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">Algunas notas antes de seguir leyendo:</block>
@@ -1008,28 +961,7 @@
   <block id="6796afb2b33620293536ad9e235fd848" category="list-text">Desde la esquina superior derecha de la página, seleccione la lista desplegable *Cambiar carga de trabajo*.</block>
   <block id="3f5d7ae35edb009a3d087f86f41de009" category="list-text">Seleccione la carga de trabajo a la que desea cambiar.</block>
   <block id="ec1f12f5fcff6b31a922c258991d141c" category="paragraph">La página se actualiza y muestra la carga de trabajo seleccionada.</block>
-  <block id="077dddd38f710f37503017ef72b0aa0c" category="summary">Inicie o finalice una prueba gratuita de NetApp Backup and Recovery.  La prueba gratuita está disponible durante 30 días después de suscribirse a una suscripción de pago por uso en el mercado de su proveedor de nube para NetApp Intelligent Services.</block>
-  <block id="4cc2c1cdb3df5424de041a859ac208ab" category="doc">Comience una prueba gratuita de NetApp Backup and Recovery</block>
-  <block id="d23f00deab77a3c07a0aec8d285bb928" category="paragraph">Cuando finalice la prueba gratuita, pasarás automáticamente a la suscripción PAYGO sin interrupciones.  Si decide no continuar usando NetApp Backup and Recovery, simplemente finalice la prueba gratuita.</block>
-  <block id="742afb2e96739678f763dadcdb2f7a1f" category="paragraph">Puede comenzar la prueba gratuita en NetApp Backup and Recovery después de iniciar sesión en la consola.</block>
-  <block id="6576c82ece30ba8badaba07725a88bff" category="list-text">Desde la navegación izquierda de la Consola, seleccione *Protección* &gt; *Copia de seguridad y recuperación*.</block>
-  <block id="9f34250a4d87916db9ed33c5d2d34c38" category="list-text">Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la NetApp Console, pero no ha comenzado la prueba gratuita, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Iniciar prueba gratuita*.</block>
-  <block id="fd5d4fdb3a7823114db7b2aec630b26b" category="inline-image-macro">Captura de pantalla de la página de destino de NetApp Backup and Recovery sin prueba gratuita</block>
-  <block id="9c25a3d40f8fd83d6fcf47748f98c818" category="paragraph"><block ref="9c25a3d40f8fd83d6fcf47748f98c818" category="inline-image-macro-rx" type="image"></block></block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="section-title">¿Que sigue?</block>
-  <block id="39ce54293426a39177e483eb92bf1911" category="paragraph">Después de comenzar la prueba gratuita, podrá descubrir cargas de trabajo y crear políticas para realizar copias de seguridad de sus cargas de trabajo.</block>
-  <block id="bf3a1d15798f522d544f2ef360c8e903" category="paragraph">Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la NetApp Console y comenzó la prueba gratuita, pero no descubrió ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y se muestra una opción para *Descubrir recursos*.</block>
-  <block id="bd03ede87c82adb65c788a5ae08c50b6" category="inline-link-macro">Descubra las cargas de trabajo</block>
-  <block id="0971d67fb02bb147fd1791733a18b3c9" category="paragraph">Para obtener detalles sobre cómo descubrir cargas de trabajo, consulte<block ref="991a0b33787378c36abd8e87e3fe062d" category="inline-link-macro-rx"></block> .</block>
-  <block id="e0ab1bd403439a64346ca02a27b258a4" category="inline-image-macro">Captura de pantalla de la página de destino de NetApp Backup and Recovery</block>
-  <block id="478ec8f379aa8546c74dab31ee76ae17" category="paragraph"><block ref="478ec8f379aa8546c74dab31ee76ae17" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c88fa3ec91be80907f96a2cd8ea42e19" category="paragraph">Puede finalizar la prueba gratuita en cualquier momento.  Si finaliza la prueba gratuita, no se le cobrará por el servicio.</block>
-  <block id="68d1e9215d49a650b2fb8020bf5e3aed" category="list-text">Desde la navegación izquierda de la Consola, seleccione *Protección* &gt; *Copia de seguridad y recuperación*.</block>
-  <block id="e195d5ae967ab2c76ac6812094999e87" category="list-text">Desde la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery", seleccione *Ver detalles - prueba gratuita* o, desde la esquina superior derecha de la página, seleccione *Prueba gratuita*.</block>
-  <block id="4c1f410e28db7ede2889d0363cb1390b" category="inline-image-macro">Captura de pantalla de la página de inicio de la prueba gratuita de NetApp Backup and Recovery</block>
-  <block id="629bfd4e06063a857faa1455508c21d2" category="paragraph"><block ref="629bfd4e06063a857faa1455508c21d2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f35b37deace9686f36d0fc2865384afa" category="list-text">En el cuadro de diálogo de confirmación Finalizar prueba gratuita, escriba *Finalizar prueba*.</block>
-  <block id="44a320573c319d1f30b840c2d11a4e26" category="list-text">Seleccione *Fin*.</block>
   <block id="d65e3c349db2ba76702d9c5bd1ade27f" category="summary">Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los problemas con la protección de las cargas de trabajo y poder tomar medidas para resolverlos.  Vea el estado de sus copias de seguridad y restauraciones y responda a cualquier alerta que aparezca en el Panel de control de NetApp Backup and Recovery .  Puede revisar el resumen de protección, el resumen de restauración, el resumen del sistema y más.</block>
   <block id="a160325dcdf365b6a979dfed5c7d50f7" category="doc">Ver el estado de la protección en el panel de control de NetApp Backup and Recovery</block>
   <block id="2da92f995ab136dd344c314ba2b4eed1" category="paragraph">Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los problemas con la protección de las cargas de trabajo y poder tomar medidas para resolverlos.  Vea el estado de sus copias de seguridad y restauraciones en el Panel de control de NetApp Backup and Recovery .  Puede revisar el resumen del sistema, el resumen de protección, el resumen de trabajo, el resumen de restauración y más.</block>
@@ -1226,8 +1158,6 @@
   <block id="7f95c9104d9c5d062c442ee5aade255c" category="paragraph">No disponible para la vista previa de KVM.</block>
   <block id="67833cdc3e0f9b5bea226d3734262615" category="summary">NetApp Backup and Recovery le permite administrar ganchos de ejecución para tomar medidas antes o después de las operaciones de protección de aplicaciones.</block>
   <block id="3d932cbb71cd117a65669b165e078b5b" category="doc">Administrar plantillas de gancho de ejecución de NetApp Backup and Recovery para cargas de trabajo de Kubernetes</block>
-  <block id="cf1efa56f611411b6426b3cf4ae8b4ea" category="paragraph">Un gancho de ejecución es una acción personalizada que puede configurar para ejecutarse junto con una operación de protección de datos de una aplicación de Kubernetes administrada.  Por ejemplo, si tiene una aplicación de base de datos, puede usar un gancho de ejecución para pausar todas las transacciones de la base de datos antes de una instantánea y reanudarlas una vez que se complete la instantánea.  Esto garantiza instantáneas consistentes con la aplicación.  Cuando crea una plantilla de gancho de ejecución, puede especificar el tipo de gancho, el script a ejecutar y cualquier filtro que determine a qué contenedores se aplica el gancho.  Luego puede utilizar la plantilla para asociar ganchos de ejecución con sus aplicaciones.</block>
-  <block id="681575e078ff8d0f7388ab20fe174908" category="paragraph">De forma predeterminada, NetApp Backup and Recovery congela y descongela automáticamente los sistemas de archivos de ciertas aplicaciones, como KubeVirt, durante las operaciones de protección de datos. Opcionalmente, puede desactivar este comportamiento de forma global o para aplicaciones específicas siguiendo las instrucciones de la documentación de protección de Trident :</block>
   <block id="ac84b7596169ab3fb6c24e8a5c85c234" category="inline-link">Protección de datos con máquinas virtuales KubeVirt</block>
   <block id="e71db3dcefde23f3505bd780d11437a6" category="list-text">Para deshabilitar este comportamiento para todas las aplicaciones, consulte<block ref="cdee12d0fdecb470fee17a09aa7ec297" category="inline-link-rx"></block> .</block>
   <block id="2fd92693952062fc00d949899370185d" category="inline-link">Definir una aplicación</block>
@@ -1244,17 +1174,13 @@
   <block id="349b93d2884e6ca3d41d0d9dab41dcd8" category="list-text">Post-restauración</block>
   <block id="a9f57378169166a88acf61a71442e5fb" category="section-title">Orden de ejecución</block>
   <block id="e8132483e0cae3565c87c193b3fd8f57" category="paragraph">Cuando se ejecuta una operación de protección de datos, los eventos de enlace de ejecución tienen lugar en el siguiente orden:</block>
-  <block id="4a6ccf1757fd10978b3fb28d81187dcc" category="list-text">Todos los ganchos de ejecución de preoperación personalizados aplicables se ejecutan en los contenedores apropiados.  Puede crear y ejecutar tantos ganchos previos a la operación personalizados como necesite, pero el orden de ejecución de estos ganchos antes de la operación no está garantizado ni es configurable.</block>
   <block id="33ad6af3ec854239e33add8d3a454567" category="list-text">Si corresponde, se producen bloqueos del sistema de archivos.</block>
   <block id="cfbed2286711be0cf6dbc12aba602709" category="list-text">Se realiza la operación de protección de datos.</block>
   <block id="caf47630bbafdc416f6b6ecdb585e83e" category="list-text">Los sistemas de archivos congelados se descongelan, si corresponde.</block>
-  <block id="9465fae733e0b5fdcd6e532ef8a78b08" category="list-text">Cualquier gancho de ejecución posterior a la operación personalizado aplicable se ejecuta en los contenedores apropiados.  Puede crear y ejecutar tantos ganchos posteriores a la operación personalizados como necesite, pero el orden de ejecución de estos ganchos después de la operación no está garantizado ni es configurable.</block>
-  <block id="a4ce4f522b635b3063f4af5d138933cc" category="paragraph">Si crea varios ganchos de ejecución del mismo tipo (por ejemplo, pre-instantánea), no se garantiza el orden de ejecución de esos ganchos.  Sin embargo, el orden de ejecución de los ganchos de diferentes tipos está garantizado.  Por ejemplo, el siguiente es el orden de ejecución de una configuración que tiene todos los diferentes tipos de ganchos:</block>
   <block id="25fcbdcc7c9fb7d2e1db9e64ef06804c" category="list-text">Ganchos previos a la instantánea ejecutados</block>
   <block id="f098e888afa8ccb3f1ad3337c3b6eea1" category="list-text">Ganchos posteriores a la instantánea ejecutados</block>
   <block id="59b50be8e9e2ed1b0e1bccae54c76036" category="list-text">Ganchos de pre-copia de seguridad ejecutados</block>
   <block id="1f374d287bf615eef6eb9afd92b862f2" category="list-text">Ganchos posteriores a la copia de seguridad ejecutados</block>
-  <block id="b74efcc6eafe1d8dec6ade34cfa13365" category="admonition">Siempre debe probar sus scripts de gancho de ejecución antes de habilitarlos en un entorno de producción.  Puede utilizar el comando 'kubectl exec' para probar los scripts cómodamente.  Después de habilitar los ganchos de ejecución en un entorno de producción, pruebe las instantáneas y las copias de seguridad resultantes para asegurarse de que sean consistentes.  Puede hacerlo clonando la aplicación en un espacio de nombres temporal, restaurando la instantánea o la copia de seguridad y luego probando la aplicación.</block>
   <block id="3094ed24e92fa43f93a063b74aba1810" category="admonition">Si un gancho de ejecución previo a la instantánea agrega, cambia o elimina recursos de Kubernetes, esos cambios se incluyen en la instantánea o la copia de seguridad y en cualquier operación de restauración posterior.</block>
   <block id="f99748fb4b1cf592516b60937743c52d" category="section-title">Notas importantes sobre los ganchos de ejecución personalizados</block>
   <block id="6b8e88c5f4231fbc6994f3a29dd893af" category="paragraph">Tenga en cuenta lo siguiente al planificar ganchos de ejecución para sus aplicaciones.</block>
@@ -1262,7 +1188,6 @@
   <block id="d48136f4ba02445fcfbd5b5dec8ff441" category="list-text">Los ganchos de ejecución deben escribirse en el formato de scripts de shell ejecutables.</block>
   <block id="6a7d60379bb9015c0bfe02adcc54d0b5" category="list-text">El tamaño del script está limitado a 96 KB.</block>
   <block id="635fb14be15c7e9019a30c91aa4aaa97" category="list-text">Las configuraciones de gancho de ejecución y cualquier criterio coincidente se utilizan para determinar qué ganchos son aplicables a una operación de instantánea, copia de seguridad o restauración.</block>
-  <block id="6b988caf78b1aa60f0402c611a1c8e2a" category="admonition">Debido a que los ganchos de ejecución a menudo reducen o deshabilitan por completo la funcionalidad de la aplicación en la que se ejecutan, siempre debe intentar minimizar el tiempo que tardan en ejecutarse sus ganchos de ejecución personalizados.  Si inicia una operación de copia de seguridad o instantánea con ganchos de ejecución asociados pero luego la cancela, los ganchos aún podrán ejecutarse si la operación de copia de seguridad o instantánea ya ha comenzado.  Esto significa que la lógica utilizada en un gancho de ejecución posterior a una copia de seguridad no puede asumir que la copia de seguridad se completó.</block>
   <block id="99dc882fc0f61d1db87631ed9f156913" category="section-title">Filtros de gancho de ejecución</block>
   <block id="44db75fbdb91be494665aebf40107fcf" category="paragraph">Cuando agrega o edita un gancho de ejecución para una aplicación, puede agregar filtros al gancho de ejecución para administrar con qué contenedores coincidirá el gancho.  Los filtros son útiles para las aplicaciones que utilizan la misma imagen de contenedor en todos los contenedores, pero pueden usar cada imagen para un propósito diferente (como Elasticsearch).  Los filtros le permiten crear escenarios en los que los ganchos de ejecución se ejecutan en algunos, pero no necesariamente en todos los contenedores idénticos.  Si crea varios filtros para un único gancho de ejecución, se combinan con un operador AND lógico.  Puede tener hasta 10 filtros activos por gancho de ejecución.</block>
   <block id="7caae75448dbc59fcadd621099e170b3" category="inline-link">Compatibilidad con la sintaxis de expresiones regulares 2 (RE2)</block>
@@ -1281,7 +1206,6 @@
   <block id="157e2474b5e10c9143fb5843d68a82e1" category="list-text">Opcionalmente, elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecuta una vez finalizada la operación.</block>
   <block id="568e240ce60c5111628400e9a73d1b19" category="list-text">En el cuadro de texto *Script*, ingrese el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución.  Opcionalmente, puede seleccionar *Cargar script* para cargar un archivo de script en su lugar.</block>
   <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">Seleccione *Crear*.</block>
-  <block id="2d25ab95e435f153440ab9d3233adfc9" category="paragraph">La plantilla se crea y aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.</block>
   <block id="909eae293e55e9fb02681b3c1668c555" category="summary">NetApp Backup and Recovery le permite administrar la información del host de su carga de trabajo, la información de la base de datos y la información de las instancias.  Puede ver, editar y eliminar configuraciones de protección para su inventario.</block>
   <block id="1923fb9432a776bac3edea16865917a7" category="doc">Administre el inventario de Microsoft SQL Server con NetApp Backup and Recovery</block>
   <block id="2d9b7a32eaf0657975c7a926a06dfff1" category="paragraph">NetApp Backup and Recovery le permite administrar la información del host de carga de trabajo de Microsoft SQL Server, la información de la base de datos y la información de las instancias.  Puede ver, editar y eliminar la configuración de protección de su inventario.</block>
@@ -1304,7 +1228,6 @@
   <block id="30a4c00b1d59e760020a5a1e5d3e6210" category="list-text">Eliminar un host</block>
   <block id="51929aa5ac08be2aca8dda46b9a095b1" category="section-title">Administrar hosts</block>
   <block id="c1b699a50a4bda0565d1e967c632b8da" category="paragraph">Puede administrar los hosts que se descubren en su sistema.  Puedes gestionarlos por separado o como grupo.</block>
-  <block id="7d74372f5aaa444e827cb875729219e2" category="admonition">Solo puedes administrar aquellos hosts que muestren un estado "No administrado" en la columna Hosts.  Si el estado es "Administrado", significa que el host ya está siendo administrado por NetApp Backup and Recovery.</block>
   <block id="25766f02d9d8c870ca51e8b39ef38dcb" category="paragraph">Después de administrar los hosts en NetApp Backup and Recovery, SnapCenter ya no administra los recursos en esos hosts.</block>
   <block id="773cf16e18760a45e76c513e8459874c" category="paragraph">*Rol de NetApp Console requerido* Visor de almacenamiento o superadministrador de respaldo y recuperación.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="dd41653a412227c2091e7d71ec5fd28f" category="list-text">Seleccione la pestaña *Hosts*.</block>
@@ -1315,7 +1238,6 @@
   <block id="174524211c88ebf80713c05b286e2eb5" category="list-text">Si agrega un vCenter, también debe registrarlo seleccionando *Registrar vCenter*.</block>
   <block id="1c7a710864a7ca8b07853f7e2944e316" category="list-text">Seleccione *Validar configuración* para probar su configuración.</block>
   <block id="78c18bb0836191387029ae159fd8689c" category="list-text">Seleccione *Administrar* para administrar el host.</block>
-  <block id="40d9d294f5336fef9bd3edce7d6a5743" category="paragraph">Puede suspender programaciones para detener las operaciones de copia de seguridad y restauración de un host.  Es posible que desees hacer esto si necesitas realizar actividades de mantenimiento en el host.</block>
   <block id="4e3bd0acc5f6322ab80072f1473897b3" category="list-text">Seleccione el host en el que desea suspender las programaciones.</block>
   <block id="77a9d3d54ffd43084d88a31afcd0f181" category="list-text">Seleccione las *Acciones*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> icono y seleccione *Suspender horarios*.</block>
   <block id="87d6d7682f904398c53acb506e1b170f" category="list-text">En el cuadro de diálogo de confirmación, seleccione *Suspender*.</block>
@@ -1327,7 +1249,6 @@
   <block id="e79b09ccd71d6ad6a875ff845cdd5212" category="list-text">Seleccione el host que desea eliminar.</block>
   <block id="a6813e29accbdb806f57adf1488d7074" category="list-text">Seleccione las *Acciones*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> icono y seleccione *Eliminar host*.</block>
   <block id="60236960f2f05ecefb35232cfdffeedc" category="list-text">Revise la información de confirmación y seleccione *Eliminar*.</block>
-  <block id="a2cc0134786d50649590ff3da4eb7f0a" category="paragraph">Puede administrar la información de instancias para garantizar que los recursos tengan las credenciales adecuadas para su protección y puede realizar copias de seguridad de los recursos de las siguientes maneras:</block>
   <block id="ffd56ce7295b58fa8452730aa5bc6ae3" category="list-text">Proteger instancias</block>
   <block id="40596958221d9e7275ed2d84874e8433" category="list-text">Credenciales de asociado</block>
   <block id="8e991c6ccf41cea57080dd6b693e3d7c" category="list-text">Disociar credenciales</block>
@@ -1357,7 +1278,6 @@
   <block id="e6c1b24de65a09f16b9020e54199a29e" category="list-text">Utilice credenciales existentes o cree unas nuevas.</block>
   <block id="dab04bcdf3dbab8cad7d24f10005a380" category="paragraph">Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.</block>
   <block id="9d0ddc6d62863436148ee8279afbc731" category="list-text">Seleccione las *Acciones*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> icono y seleccione *Editar protección*.</block>
-  <block id="5274ca7228a09c382e8000fa1003dcad" category="paragraph">Puede hacer una copia de seguridad de sus datos ahora para garantizar que estén protegidos de inmediato.</block>
   <block id="79064230f1547dd6bc5159addaf911a9" category="list-text">Seleccione las *Acciones*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> icono y seleccione *Hacer copia de seguridad ahora*.</block>
   <block id="2964961fd5cbcaafbf51ed405dd16932" category="list-text">Seleccione el tipo de copia de seguridad y configure la programación.</block>
   <block id="596f14319a92590e9615b473355d4ed5" category="paragraph">Para obtener detalles sobre cómo crear una copia de seguridad ad hoc, consulte<block ref="7751e1b33ec16426dc5fef7b097a39f9" category="inline-link-macro-rx"></block> .</block>
@@ -1365,11 +1285,9 @@
   <block id="01017242cb102de16a629eedd0683b56" category="list-text">Ver detalles de protección</block>
   <block id="ad6ac298077f67c060156edbddf13a36" category="list-text">Seleccione la pestaña *Bases de datos*.</block>
   <block id="11e13a2f33d440e2a7175548ecae015f" category="list-text">Seleccione la base de datos.</block>
-  <block id="b187bbdd6d92681752ab0c888ceb0a61" category="paragraph">Puede restaurar una base de datos para garantizar que sus datos estén protegidos.</block>
   <block id="82d24ac31bb8fa36d0295a6dd13d463f" category="list-text">Seleccione las *Acciones*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> icono y seleccione *Restaurar*.</block>
   <block id="c409a3e47d938438e42a5584a8b20068" category="inline-link-macro">Restaurar cargas de trabajo</block>
   <block id="07810c2ff996b9e258f73ec1e93a4b1d" category="paragraph">Para obtener información sobre cómo restaurar cargas de trabajo, consulte<block ref="62e2cc937cfdf889c63d65a36a05b5ee" category="inline-link-macro-rx"></block> .</block>
-  <block id="c4c777723be13a16e4277a51201e6ecb" category="paragraph">Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para garantizar que sus datos estén protegidos de inmediato.</block>
   <block id="4853389deec9b1ee2dd392ded61fb375" category="list-text">Seleccione la pestaña *Instancias* o *Bases de datos*.</block>
   <block id="70c2224d92fad32ea2b3d68fcf62837b" category="list-text">Seleccione la instancia o base de datos.</block>
   <block id="92750a33eae9652caec1f377ec685432" category="summary">NetApp Backup and Recovery le permite desproteger y eliminar sus aplicaciones de Kubernetes y los recursos asociados.</block>
@@ -2035,57 +1953,7 @@
   <block id="8d7c9cf5b15032c441cad2d538d90368" category="floating-title">Configuración de destino</block>
   <block id="5d49eb458c546b4f70a99f4b37bbcc20" category="list-text">Elija restaurar a la clase de almacenamiento predeterminada o a una clase de almacenamiento diferente.</block>
   <block id="12c3c958b266fff57134abb1c9649419" category="list-text">Opcionalmente, si elige restaurar a una clase de almacenamiento diferente, seleccione una clase de almacenamiento de destino que coincida con cada clase de almacenamiento de origen.</block>
-  <block id="c98c13337e16cd6efd0d5944bba7c3be" category="summary">Algunas configuraciones avanzadas pueden resultar útiles para mantener su entorno de respaldo y recuperación.  Puede configurar ajustes avanzados para administrar su inventario, eliminar copias de seguridad, anular el registro de recursos, eliminar relaciones, desproteger recursos para detener cargos por servicio, establecer la velocidad de transferencia máxima para la relación SnapMirror , exportar copias de instantáneas a un almacén de objetos, habilitar la eliminación automática anual de instantáneas, habilitar el modo de mantenimiento y actualizar el complemento de la aplicación.</block>
-  <block id="1c6e423758be4522af8a4ae1bd57fb34" category="doc">Configurar ajustes avanzados en NetApp Backup and Recovery</block>
-  <block id="946c74987ea2269a9a551cbe4de44e2f" category="paragraph">Configure las opciones avanzadas de NetApp Backup and Recovery de las siguientes maneras:</block>
-  <block id="011dec5a8cc48afc8bfa80cee0dd51e1" category="list-text">Eliminar copias de seguridad.</block>
-  <block id="e16b902664d5194fba70107badab4b6a" category="list-text">Anular el registro de copias de seguridad, bases de datos, instancias o hosts de aplicaciones.</block>
-  <block id="3bbc7e972edbb415f436e17cfa09274d" category="list-text">Eliminar las relaciones.</block>
-  <block id="e2762a2a6b01e6f5ecd6f8dabbfb1368" category="list-text">Desproteja bases de datos, instancias, hosts de aplicaciones y entornos de trabajo para detener los cargos por servicio.</block>
-  <block id="e01742f78fa3bad95b0ffb927d4ade8c" category="list-text">Establezca la tasa de transferencia máxima para la relación SnapMirror : administre el uso del ancho de banda y asegúrese de que las operaciones de SnapMirror no interfieran con otras actividades de la red.</block>
-  <block id="8b68f29913b7946a655a98fc6c889f29" category="list-text">Exporte copias de instantáneas a un almacén de objetos para inicializar copias de seguridad en la nube moviendo copias de instantáneas más antiguas a la copia de seguridad de referencia.</block>
-  <block id="d00306e6e5f6d669b666d187666b788d" category="list-text">Habilitar la eliminación automática de instantáneas anuales</block>
-  <block id="29017ddd9543eb6b187e2e0a4e5921b8" category="list-text">Habilite el modo de mantenimiento para que se puedan realizar actualizaciones o tareas de mantenimiento.</block>
-  <block id="c58981a8a32e0da03fa6bb3d88bcef9e" category="list-text">Actualizar el complemento de la aplicación.</block>
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="section-title">Eliminar copias de seguridad</block>
-  <block id="11ac5246ea2c022c3f3e08c88f8be2bc" category="paragraph">Puede eliminar copias de seguridad para liberar espacio en su almacenamiento.</block>
-  <block id="4caadfec63c4a5cbe7e277db8d1cff78" category="list-text">En la consola de NetApp Backup and Recovery , seleccione **Configuración**.</block>
-  <block id="aae8df17daa044a782a65bb684b17b07" category="list-text">Seleccione **Configuración avanzada**.</block>
-  <block id="8625f3bf33d0348ec8f4dff9c148f010" category="list-text">Seleccione **Eliminar copias de seguridad**.</block>
-  <block id="a75c11de79cc7b12e80226090420f931" category="list-text">Seleccione la copia de seguridad que desea eliminar.</block>
-  <block id="2d477c9520cd76fd7b39824f522a4a9b" category="list-text">Seleccione **Eliminar**.</block>
-  <block id="74560c75d11dce967672a4e64ee1e3b2" category="section-title">Anular el registro de copias de seguridad, bases de datos, instancias o hosts de aplicaciones</block>
-  <block id="c322d264d22c4c47cf2ac2ef806600d5" category="paragraph">Puede anular el registro de copias de seguridad, bases de datos, instancias o hosts de aplicaciones para eliminarlos del inventario.</block>
-  <block id="53d5af7a2b23c32522c93a5e9c777e97" category="list-text">Seleccione **Cancelar registro de recursos**.</block>
-  <block id="09326b4db8bff875fca1fc019cf83152" category="list-text">Seleccione el recurso cuyo registro desea dar de baja.</block>
-  <block id="13784541a62e6b7bdcca03e20e2d24e8" category="list-text">Seleccione **Cancelar registro**.</block>
-  <block id="76db6b34fbbc30a6bf267e7b8d4ded4b" category="section-title">Eliminar relaciones</block>
-  <block id="6b1ca0187b7fe0abb4eb95fd6ce69348" category="paragraph">Puedes eliminar relaciones para quitarlas del inventario.</block>
-  <block id="c1360173aa2941b676e600081daa83c9" category="list-text">Seleccione **Eliminar relaciones**.</block>
-  <block id="92c1e517f955375faa0e268ac915fe6e" category="list-text">Seleccione la relación que desea eliminar.</block>
-  <block id="4ef084902b39835e060b2d5747116032" category="section-title">Desproteger bases de datos, instancias, hosts de aplicaciones y entornos de trabajo</block>
-  <block id="5eb831fbdb294cde62b58477e8025e7d" category="paragraph">Puede desproteger bases de datos, instancias, hosts de aplicaciones y entornos de trabajo para detener los cargos por servicio.</block>
-  <block id="7058a088374284c19a1f358fd4b24ce9" category="list-text">Seleccione **Desproteger recursos**.</block>
-  <block id="d2cd1ec3c52b3b1ac52c70ed417ef977" category="section-title">Establezca la velocidad de transferencia máxima para la relación SnapMirror</block>
-  <block id="de47087073d3ce8e2e300fe90521bce1" category="paragraph">Puede establecer la velocidad de transferencia máxima para la relación SnapMirror para administrar el uso del ancho de banda, garantizando que las operaciones de SnapMirror no interfieran con otras actividades de la red.</block>
-  <block id="97fe6bbc33e021205247d9cd99718d84" category="list-text">Seleccione **Establecer la velocidad de transferencia máxima para la relación SnapMirror **.</block>
-  <block id="ff886c4b184552729432d62553752850" category="list-text">Introduzca la velocidad máxima de transferencia.</block>
-  <block id="8d5311b8775f8a9ea8945d76095bb698" category="list-text">Seleccione **Guardar**.</block>
-  <block id="60e684bbdb7a3e8fb3115e2669ccad43" category="section-title">Exportar copias de instantáneas a un almacén de objetos</block>
-  <block id="89b4add7207919cbfa8db8badd3d971c" category="paragraph">Puede exportar copias instantáneas a un almacén de objetos para inicializar copias de seguridad en la nube moviendo copias instantáneas más antiguas a la copia de seguridad de referencia.</block>
-  <block id="30c2e2e5b22111e9a2f0fd85e6d82616" category="list-text">Seleccione **Exportar copias de instantáneas a un almacén de objetos**.</block>
-  <block id="8e065ae33fdeff3a430cee55db450db1" category="list-text">Seleccione la copia de instantánea que desea exportar.</block>
-  <block id="800b2085aca80e243196645dffb68cd6" category="list-text">Seleccione **Exportar**.</block>
-  <block id="929797f8900f34a99ff1c07de112051c" category="paragraph">Puede habilitar la eliminación automática anual de instantáneas para eliminar instantáneas que tengan más de un año de antigüedad.</block>
-  <block id="5ef2209c7310b14517f8cb719cb85709" category="list-text">Seleccione **Habilitar eliminación automática de instantáneas anuales**.</block>
-  <block id="426dbde8a434cb02e7baac0b033389e7" category="list-text">Seleccione **Habilitar**.</block>
-  <block id="fa9cad4db511fd46f4fab74e820f5223" category="section-title">Habilitar el modo de mantenimiento</block>
-  <block id="73c993bacad7f819ba819e84757e2c8e" category="paragraph">Puede habilitar el modo de mantenimiento para que se puedan realizar actualizaciones o tareas de mantenimiento.</block>
-  <block id="d50b3f2cc592f79b32ddb493bf0397ee" category="list-text">Seleccione **Habilitar modo de mantenimiento**.</block>
-  <block id="c7af503bd5b02463ac452f20128c18f4" category="section-title">Actualizar el complemento de la aplicación</block>
-  <block id="f6681b1089814725e0fc9d704fa17ae8" category="paragraph">Puede actualizar el complemento de la aplicación para asegurarse de que las últimas funciones estén disponibles.</block>
-  <block id="099a1bae3e76960bd80f39b4fdd3f780" category="list-text">Seleccione **Actualizar el complemento de la aplicación**.</block>
-  <block id="b7b284ffcc14ef04cba0609819bc5974" category="list-text">Seleccione **Actualizar**.</block>
   <block id="f34f3b4d83a98c1f03d57b6ce4176300" category="summary">Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery.</block>
   <block id="d1980609675dd3ea40abaebd4a0989d8" category="doc">Realice copias de seguridad de las cargas de trabajo de VMware con NetApp Backup and Recovery</block>
   <block id="30a409f022898dd26f006e04486b81e0" category="paragraph">Realice copias de seguridad de máquinas virtuales y almacenes de datos de VMware desde sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.</block>
@@ -2178,7 +2046,6 @@
   <block id="ae6771902a8163ff6ab3c15cf2e407b0" category="doc">Restaure cargas de trabajo de VMware con NetApp Backup and Recovery</block>
   <block id="4a3d619c8f5571cf4de02c83e47aed31" category="paragraph">Restaure cargas de trabajo de VMware desde copias instantáneas, desde una copia de seguridad de la carga de trabajo replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos mediante NetApp Backup and Recovery.</block>
   <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">Puede restaurar datos en estos puntos:</block>
-  <block id="7979de06740fd39ab039421367c0315f" category="paragraph">Desde la página Restaurar (también conocida como Buscar y restaurar), puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.</block>
   <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">Restaure cargas de trabajo de VMware mediante la opción Restaurar. Puede buscar la instantánea por su nombre o utilizando filtros.</block>
   <block id="1ca9578c25474d5cfeaa6c44bdbaa9b2" category="paragraph">*Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de respaldo y recuperación, administrador de restauración de respaldo y recuperación.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Máquinas virtuales*.</block>
@@ -2187,7 +2054,6 @@
   <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">Seleccione la ubicación de restauración donde desea restaurar la instantánea:</block>
   <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">Local: restaura la instantánea a la ubicación original.</block>
   <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">Almacenamiento secundario: restaura la instantánea a una ubicación de almacenamiento secundaria.</block>
-  <block id="dde4605b1517896bb91ab0500e44ec76" category="paragraph">Si elige almacenamiento secundario, ingrese la información de ubicación de origen y destino, y también la ubicación de origen y secundaria de los registros.</block>
   <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">Almacenamiento de objetos: restaura la instantánea a una ubicación de almacenamiento de objetos.</block>
   <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">Si elige el almacenamiento de objetos, marque si desea escanear la instantánea nuevamente antes de restaurarla.</block>
   <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">En la página de detalles de Destino de restauración, ingrese la siguiente información:</block>
@@ -2479,7 +2345,6 @@
   <block id="362363dccd2cc68b02c87c4b9e577f91" category="list-text">Asegúrese de que el puerto TCP 443 no esté filtrado en la dirección de salida entre el clúster de Kubernetes, el conector de protección Trident y el proxy de protección Trident .</block>
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">Requisitos para proteger las cargas de trabajo de Hyper-V</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos para descubrir y proteger máquinas virtuales.</block>
-  <block id="a7c47f6d32d474ae9cfa5f31f5a78398" category="list-text">Requisitos de software para el host Hyper-V:</block>
   <block id="99fcf7547e608c33c370f1d5fe54e0a9" category="list-text">Ediciones de Microsoft Hyper-V 2019, 2022 y 2025</block>
   <block id="4c6ec01f6ae03e08c146fe6865423a4b" category="list-text">PowerShell 7.4.2 o posterior</block>
   <block id="4c0e33820cc2625f20df7d75a7db2a90" category="list-text">Asegúrese de que el tráfico HTTPS bidireccional esté permitido para los siguientes puertos en la configuración del Firewall de Windows:</block>
@@ -4091,7 +3956,6 @@
   <block id="880c04d29288ca6dbdf8598c75af755f" category="list-text">Archivo de respaldo -&gt; volumen restaurado</block>
   <block id="385ec83416d2acacbf83c42099e5828e" category="list-text">Volumen replicado -&gt; volumen restaurado</block>
   <block id="294431832876ce9e39076e7ab6f99361" category="list-text">Copia de instantánea -&gt; volumen restaurado</block>
-  <block id="569af965dbd3ebb866de69518b576d23" category="admonition">Si la operación de restauración no se completa, no intente realizar el proceso de restauración nuevamente hasta que el Monitor de trabajo muestre que la operación de restauración ha fallado.  Si intenta nuevamente el proceso de restauración antes de que el Monitor de trabajo muestre que la operación de restauración ha fallado, la operación de restauración fallará nuevamente.  Cuando vea el estado del Monitor de trabajo como "Error", puede intentar el proceso de restauración nuevamente.</block>
   <block id="0039af36cdd68741c89e8c730e7b7442" category="admonition">Para conocer las limitaciones relacionadas con la restauración de datos de ONTAP , consulte<block ref="c27bda4e85978f510ddf0a64d91a61ea" category="inline-link-macro-rx"></block> .</block>
   <block id="65fba989fe7e3d4f06e7b1a4c8b66ff0" category="section-title">El panel de restauración</block>
   <block id="024205acf9405311336c02bbd2193b70" category="inline-image-macro">Botón Más</block>
@@ -4569,14 +4433,11 @@
   <block id="a2635d75789f249837881cc5136979e1" category="paragraph">*Después de terminar*</block>
   <block id="b6ee3dd78c315fa7dfd1bfa66181a1c2" category="paragraph">Seleccione *Copia de seguridad y recuperación* &gt; *Máquinas virtuales* para ver todos los almacenes de datos y máquinas virtuales que están protegidos mediante el SnapCenter Plug-in for VMware vSphere .</block>
   <block id="4f42130e8cfb9f713223107cb029a735" category="doc">Restaure datos de máquinas virtuales con NetApp Backup and Recovery</block>
-  <block id="64a4a5e15139f5ee47eb4c463e9d3bbe" category="paragraph">Puede restaurar datos de máquinas virtuales desde la nube al vCenter local con NetApp Backup and Recovery.  Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa.  Si se realizó una copia de seguridad de la máquina virtual mediante la política de archivo, puede establecer la prioridad de restauración de archivo.</block>
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">No es posible restaurar máquinas virtuales que se extiendan a varios almacenes de datos.</block>
   <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">Si está restaurando a una ubicación alternativa:</block>
   <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">Asegúrese de que los vCenters de origen y destino estén en modo vinculado.</block>
   <block id="ccea797bbf5eba8cc950fa05c806cd76" category="list-text">Asegúrese de que los detalles del clúster de origen y destino se agreguen en la página *Sistemas* de la NetApp Console y en los vCenters en modo vinculado en ambos hosts del SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="3135a48aa8b3c658362638fd866a5886" category="list-text">Asegúrese de que el sistema se agregue correspondiente a la ubicación alternativa en la página *Sistemas* de la Consola.</block>
   <block id="52bda1d8d40e82cef23f0197a5e0c990" category="list-text">En la interfaz de usuario de la consola, seleccione *Protección* &gt; *Copia de seguridad y recuperación* &gt; *Máquinas virtuales* &gt; * SnapCenter Plug-in for VMware vSphere* y seleccione el host del SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="803db951c139f08627d63e2f8c8e5cf0" category="admonition">Si la máquina virtual de origen se mueve a otra ubicación (vMotion) y el usuario activa una restauración de esa máquina virtual desde la consola, la máquina virtual se restaura a la ubicación de origen desde donde se realizó la copia de seguridad.</block>
   <block id="d180a4da8965c4cd5488cd05903774f0" category="list-text">Puede restaurar la máquina virtual a la ubicación original o a una ubicación alternativa desde el almacén de datos o desde las máquinas virtuales:</block>
   <block id="db5366d69994d30376d1a970dcebb9ce" category="cell">Si desea restaurar la máquina virtual...</block>
   <block id="5e2ad6fd9deb412d871137094ee43ef0" category="cell">Haz esto...</block>
@@ -4586,7 +4447,6 @@
   <block id="ce924f0dcf910e34ec23b7b7ca88af8d" category="list-text">Seleccione la máquina virtual que desea restaurar desde la copia de seguridad y seleccione *Siguiente*.</block>
   <block id="8cc375f4ce3601a663a600c7d8e620e5" category="list-text">Asegúrese de que *Original* esté seleccionado y seleccione *Continuar*.</block>
   <block id="793f88b02160a70ac96d346b799dd570" category="list-text">Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.</block>
-  <block id="4064eae8789a1dea97cfc09ac17d017a" category="paragraph">Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.</block>
   <block id="5f6a823289f7bbe90f46815d77f2f0f9" category="list-text">Revise los detalles y seleccione *Restaurar*.</block>
   <block id="c0df5d97adcf3825af806d990e658e67" category="paragraph">a una ubicación alternativa desde el almacén de datos</block>
   <block id="1be093b2878514e1a668a6557e0fa48f" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos que desea restaurar y seleccione *Ver detalles*.</block>
@@ -4601,20 +4461,16 @@
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">Restaurar datos de configuración de NetApp Backup and Recovery en un sitio oscuro</block>
   <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery .</block>
   <block id="701ba6e125e8ce791098165f107eb472" category="admonition">Este procedimiento se aplica únicamente a los datos de volumen de ONTAP .</block>
-  <block id="ed99d5c971ad6ede0ad54ed27d7e4cca" category="paragraph">Cuando utiliza NetApp Backup and Recovery en un entorno SaaS donde el agente de consola se implementa en su proveedor de nube o en su propio sistema host que tiene acceso a Internet, todos los datos de configuración importantes de NetApp Backup and Recovery se respaldan y protegen en la nube.  Si tiene un problema con el agente de consola, simplemente cree un nuevo agente de consola y agregue sus sistemas y los detalles de la copia de seguridad se restaurarán automáticamente.</block>
   <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">Hay dos tipos de datos que se respaldan:</block>
   <block id="8ad7c680cb0d9e95e7294cf3e192be1f" category="list-text">Base de datos de NetApp Backup and Recovery : contiene una lista de todos los volúmenes, archivos de respaldo, políticas de respaldo e información de configuración.</block>
   <block id="ae429398e7a8cba2d2c57d308c8ed88a" category="list-text">Archivos de catálogo indexados: contienen índices detallados que se utilizan para la funcionalidad de búsqueda y restauración que hace que sus búsquedas sean muy rápidas y eficientes cuando busca datos de volumen que desea restaurar.</block>
-  <block id="4d5c5b1c54bcfa96a32863a0f2b08637" category="paragraph">Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se ubicarán en el depósito del sistema que se activó primero.</block>
   <block id="8b5b24743ff6eed2a5b1b5e999a4084e" category="admonition">Nunca se incluyen datos de volumen en la base de datos de NetApp Backup and Recovery ni en los archivos del catálogo indexado.</block>
   <block id="53722b1764c96b40868db34aca9fb672" category="section-title">Restaurar datos de NetApp Backup and Recovery a un nuevo agente de consola</block>
-  <block id="7838c7159abe94eca22c3339678480bf" category="paragraph">Si su agente de consola local sufre una falla catastrófica, deberá instalar un nuevo agente de consola y luego restaurar los datos de NetApp Backup and Recovery en el nuevo agente de consola.</block>
   <block id="b6df6aa40ab9d5addc390fa2ef8f7541" category="paragraph">Necesitará realizar las siguientes tareas para que su sistema NetApp Backup and Recovery vuelva a funcionar:</block>
   <block id="667b30dbcfd5254c4d408afb34f0c0ea" category="list-text">Instalar un nuevo agente de consola</block>
   <block id="fda70bacadbe6c38a59ecf221015132d" category="list-text">Restaurar la base de datos de NetApp Backup and Recovery</block>
   <block id="bac8f03e2f29846dbab5b2b784213272" category="list-text">Restaurar los archivos del catálogo indexado</block>
   <block id="ba480a5b3ea4b399c6bb7a5179682ccd" category="list-text">Redescubre todos tus sistemas ONTAP locales y sistemas StorageGRID en la interfaz de usuario de la NetApp Console</block>
-  <block id="f19661624edbf73361ae75955e672733" category="paragraph">Una vez que verifique que su sistema vuelve a funcionar correctamente, le recomendamos que cree nuevos archivos de respaldo.</block>
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">Lo que necesitarás</block>
   <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">Necesitará acceder a las copias de seguridad de bases de datos e índices más recientes desde el depósito StorageGRID o ONTAP S3 donde se almacenan sus archivos de copia de seguridad:</block>
   <block id="27a3ea4dafb6c439053c78d40cdba58d" category="list-text">Archivo de base de datos MySQL de NetApp Backup and Recovery</block>
@@ -4623,7 +4479,6 @@
   <block id="a4981f0083fe431764b930206324bfe8" category="paragraph">Este archivo se encuentra en la siguiente ubicación en el depósito<block ref="9abc3fd112ebf9d8d228e5c5b3b930a4" prefix=" " category="inline-code"></block> , y se llama<block ref="5f3198716099b7e0c9df490b9dd7b132" prefix=" " category="inline-code"></block> .</block>
   <block id="d52a11dd89b88bb6c8ef2d496aaad340" category="section-title">Instalar un nuevo agente de consola en un nuevo host Linux local</block>
   <block id="48726a93e8d2335c78eb17aef16db85c" category="inline-link">Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo</block>
-  <block id="95cbdf41b4c33eaa7c3ff2baf533c3d3" category="paragraph">Al instalar un nuevo agente de consola, asegúrese de descargar la misma versión de software que instaló en el agente de consola original.  Los cambios periódicos en la estructura de la base de datos de NetApp Backup and Recovery pueden hacer que las versiones de software más nuevas sean incompatibles con las copias de seguridad de la base de datos originales.  Puede<block ref="cf9f37e0e8c15b290b50a2dd76357649" category="inline-link-rx"></block> .</block>
   <block id="ae2cecab86d7e6c1dfcbc5178afc5703" category="inline-link">Instalar el agente de consola en un nuevo host Linux local</block>
   <block id="0d35665d937ab3bef3f225a1630c6d81" category="list-text"><block ref="0d35665d937ab3bef3f225a1630c6d81" category="inline-link-rx"></block></block>
   <block id="5ab06edf86f1226766491752e7e1ba31" category="list-text">Inicie sesión en la consola utilizando las credenciales de usuario administrador que acaba de crear.</block>
@@ -4658,7 +4513,6 @@
   <block id="a4ddbfbfc264442f0caa0e287fd13674" category="list-text">Actualice la base de datos de NetApp Backup and Recovery con los detalles del sistema StorageGRID asociado con los sistemas. Asegúrese de ingresar el nombre de dominio completo de StorageGRID, así como la clave de acceso y la clave de almacenamiento como se muestra a continuación:</block>
   <block id="6268365698d37d49ef06a2ddcd6e5c63" category="section-title">Verificar la configuración de NetApp Backup and Recovery</block>
   <block id="b28018924587e2db04c50adc8a77a736" category="list-text">Seleccione cada sistema ONTAP y haga clic en *Ver copias de seguridad* junto al servicio de copia de seguridad y recuperación en el panel derecho.</block>
-  <block id="36c688567530141607520ff8f371abad" category="paragraph">Debería poder ver todas las copias de seguridad que se han creado para sus volúmenes.</block>
   <block id="ca58572920332b0113296b57e60a56de" category="list-text">Desde el Panel de restauración, en la sección Buscar y restaurar, haga clic en *Configuración de indexación*.</block>
   <block id="0af45eefd2b61e8f05a526f4cacf0adf" category="paragraph">Asegúrese de que los sistemas que tenían habilitada la catalogación indexada anteriormente permanezcan habilitados.</block>
   <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">Desde la página Buscar y restaurar, ejecute algunas búsquedas en el catálogo para confirmar que la restauración del catálogo indexado se ha completado correctamente.</block>
@@ -4667,9 +4521,7 @@
   <block id="aa029ba3399a1aa8daaa58567b0e0a96" category="section-title">Niveles de programación</block>
   <block id="23f9c52e4c2d311c3072f509e50b4d03" category="paragraph">SnapCenter utiliza los siguientes niveles de programación:</block>
   <block id="b8d71d1c739c4b9834c70d9c7beec28e" category="list-text">*Por hora*: Varias horas y minutos con cualquier hora (0-23) y cualquier minuto (0-60).</block>
-  <block id="88695f8ce2149aa505995ad3f760a282" category="list-text">*Diario*: Incluye una opción para repetir cada tantos días, por ejemplo, cada 3 días.</block>
   <block id="e60510d6c402846a7217a2dc3a448975" category="list-text">*Semanal*: de domingo a lunes, con la opción de realizar una instantánea el día 1 de la semana o en varios días de la semana.</block>
-  <block id="4a2d0b40173a2ecaa2f250efdd92bb46" category="list-text">*Mensual*: Meses de enero a diciembre, con opción de realizarse en días específicos del mes, por ejemplo, el 7 de cada mes e incluso en varios días del mes.</block>
   <block id="72b4e4a7ac7b3bcf3997bdeb09565fc0" category="paragraph">NetApp Backup and Recovery utiliza los siguientes niveles de programación, que son ligeramente diferentes:</block>
   <block id="a14d5db59dc4eea718fee72e71b308c1" category="list-text">*Cada hora*: realiza instantáneas solo en intervalos de 15 minutos, por ejemplo, 1 hora o intervalos de 15 minutos menores a 60.</block>
   <block id="f213928c21d8b99681a1612afd9f9684" category="list-text">*Diario*: Horas del día (0-23) con hora de inicio por ejemplo a las 10:00 AM con opción a realizarse cada cierta cantidad de horas.</block>
@@ -4681,10 +4533,8 @@
   <block id="cb5cede372013a460e250e3523d4d64e" category="paragraph">*Ejemplo*: Si utiliza tres políticas (para Datos, Registro y Registro de instantáneas) en SnapCenter, después de la migración desde SnapCenter, NetApp Backup and Recovery utiliza una sola política en lugar de las tres.</block>
   <block id="ff6cbd3287f545a89d1e5e58f0d17bd4" category="section-title">Programaciones diarias de SnapCenter importadas</block>
   <block id="61ed4c8e3ffbc53bcf1724532421e782" category="paragraph">NetApp Backup and Recovery ajusta las programaciones de SnapCenter de la siguiente manera:</block>
-  <block id="933eecf21b204f4600dbc4c8cb00faa4" category="list-text">Si la programación de SnapCenter está configurada en menos o igual a 7 días, NetApp Backup and Recovery configura la programación en semanal.  Se omitirán algunas instantáneas durante la semana.</block>
   <block id="c08c2154284f4af8503c116de1e73d16" category="paragraph">*Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 3 días a partir del lunes, NetApp Backup and Recovery establece la programación en semanal los lunes, jueves y domingos.  Se saltarán algunos días porque no es exactamente cada 3 días.</block>
   <block id="9f6a1fee7b57b18f64bf8bca4ad36e30" category="list-text">Si la programación de SnapCenter está configurada para más de 7 días, NetApp Backup and Recovery configura la programación para que sea mensual.  Se omitirán algunas instantáneas durante el mes.</block>
-  <block id="f1d919676b3d4e95ec582e14f78206a5" category="paragraph">*Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 10 días a partir del día 2 de cada mes, NetApp Backup and Recovery (post migración) establece la programación en mensual los días 2, 12 y 22 del mes.  Algunos días se saltarán el próximo mes.</block>
   <block id="9430705db67f982f601f840df3cc16d6" category="section-title">Horarios por hora de SnapCenter importados</block>
   <block id="3002d82ef196f81026a4e21905803959" category="paragraph">Las políticas por hora de SnapCenter con intervalos de repetición superiores a una hora se convierten en una política diaria en NetApp Backup and Recovery.</block>
   <block id="a3e76bcb5e859bfa4430da805976f2bd" category="paragraph">Cualquier política horaria con intervalos de repetición que no sean un factor de 24 (por ejemplo, 5, 7, etc.) omitirá algunas instantáneas en un día.</block>
@@ -4696,16 +4546,13 @@
   <block id="4a34495d73cf6e0ef7422e89ecd18fc2" category="list-text">Para "Copia de seguridad completa y registro" más "Copia de seguridad completa" en SnapCenter, NetApp Backup and Recovery utiliza el valor de retención "Copia de seguridad completa y registro".</block>
   <block id="d3bffe5c53144301e84c431c8850f79b" category="list-text">Si solo tiene una copia de seguridad completa en SnapCenter, NetApp Backup and Recovery no habilita la copia de seguridad del registro.</block>
   <block id="572e4e930a93aaf8ecb497410b31bcae" category="section-title">Retención de copias de seguridad de registros</block>
-  <block id="87fe501cd83921365f57302b81f17998" category="paragraph">Con SnapCenter, puede tener múltiples valores de retención en múltiples políticas asociadas a un recurso. Sin embargo, NetApp Backup and Recovery solo admite un único valor de retención para todas las políticas asociadas a un recurso.</block>
   <block id="0ed617a2b12fab18c454c76ed40f5974" category="section-title">Recuento de retención de las políticas de SnapCenter</block>
   <block id="e8b9d2fbb967bbf13e9d28b16907da1b" category="paragraph">Si tiene un recurso con protección secundaria habilitada en SnapCenter con múltiples volúmenes de origen, múltiples volúmenes de destino y múltiples relaciones de SnapMirror , NetApp Backup and Recovery usa solo el recuento de retención de la primera política.</block>
   <block id="8b8ac1e2cabdbaad24e0631f1c8acd68" category="paragraph">*Ejemplo*: Si tiene una política de SnapCenter con un recuento de retención de 5 y otra política con un recuento de retención de 10, NetApp Backup and Recovery usa el recuento de retención de 5.</block>
   <block id="de58b25fd8c93ec9c4c26f42b69938b1" category="section-title">Etiquetas de SnapMirror de las políticas de SnapCenter</block>
-  <block id="7ae9d255342ff5c9bd5ce17d65056f80" category="paragraph">Las etiquetas de SnapMirror para cada política en SnapCenter permanecen intactas después de la migración incluso si se cambia el nivel.</block>
   <block id="19120a69a66ec3fe2d0636d3e558cdb2" category="paragraph">*Ejemplo*: Una política por hora de SnapCenter podría cambiar a diaria en NetApp Backup and Recovery.  Sin embargo, las etiquetas de SnapMirror siguen siendo las mismas después de la migración.</block>
   <block id="6ec37458ffc22db1fefc5c00538aff17" category="summary">Puede haber situaciones en las que sea necesario reiniciar NetApp Backup and Recovery.</block>
   <block id="bda42789779ecfa8fe482a5fcf7defb7" category="doc">Reiniciar NetApp Backup and Recovery</block>
-  <block id="2e0d49ad4ffce66e75b5ec96f653f135" category="paragraph">La funcionalidad de NetApp Backup and Recovery está integrada en el agente de consola.</block>
   <block id="838f3f7ce97a00d0af23653815ea8b20" category="list-text">Conéctese al sistema Linux en el que se ejecuta el agente de consola.</block>
   <block id="c0633ad6dd2e88e85a85812ff38cf3e0" category="cell">Ubicación del agente de la consola</block>
   <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="cell">Procedimiento</block>
@@ -4728,107 +4575,6 @@
   <block id="628ffac7ede42e0edae88edd9f769e8b" category="paragraph">NetApp Backup and Recovery emplea la gestión de identidad y acceso (IAM) para controlar el acceso que tiene cada usuario a funciones y acciones específicas.</block>
   <block id="d8242f460ba07545cc4fc280abc24dfd" category="inline-link">Funciones de NetApp Backup and Recovery en la NetApp Console</block>
   <block id="b7ce2fa7e7dfbfcf006c177bd9507fe6" category="paragraph">Para obtener más información sobre los roles de IAM específicos de NetApp Backup and Recovery, consulte<block ref="00765778411880d6fabcf7f493ef0db6" category="inline-link-rx"></block> .</block>
-  <block id="a99fab69b8aa9775fe1767ce605ae8bd" category="summary">NetApp proporciona soporte para la NetApp Console de distintas maneras. Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas, los 7 días de la semana, como artículos de la base de conocimientos (KB) y un foro comunitario. Su registro de soporte incluye soporte técnico remoto mediante tickets web.</block>
-  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">Obtener ayuda</block>
-  <block id="2feeca48692986e9cc471ec61f847fca" category="paragraph">NetApp proporciona soporte para NetApp Console y sus servicios en la nube de diversas maneras. Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas del día, los 7 días de la semana, como artículos de la base de conocimientos (KB) y un foro comunitario. Su registro de soporte incluye soporte técnico remoto mediante tickets web.</block>
-  <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">Obtenga soporte para un servicio de archivos de un proveedor de nube</block>
-  <block id="317cbd2c4fdbfd06a6c66bcd3f57d7ad" category="paragraph">Para obtener soporte técnico relacionado con un servicio de archivos de un proveedor de nube, su infraestructura o cualquier solución que utilice el servicio, consulte la documentación de ese producto.</block>
-  <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">Amazon FSx para ONTAP</block>
-  <block id="359d8b16e442ffaa72e03c95fcd60448" category="list-text"><block ref="359d8b16e442ffaa72e03c95fcd60448" category="inline-link-macro-rx"></block></block>
-  <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files</block>
-  <block id="153836c062a78213f2aa165322254aa4" category="list-text"><block ref="153836c062a78213f2aa165322254aa4" category="inline-link-macro-rx"></block></block>
-  <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
-  <block id="0d592360c983f234b130127efee38805" category="list-text"><block ref="0d592360c983f234b130127efee38805" category="inline-link-macro-rx"></block></block>
-  <block id="68e6fe8cde496154d24fd032b4262070" category="paragraph">Para recibir soporte técnico específico para NetApp y sus soluciones de almacenamiento y servicios de datos, utilice las opciones de soporte que se describen a continuación.</block>
-  <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">Utilice opciones de autosuficiencia</block>
-  <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">Estas opciones están disponibles de forma gratuita, las 24 horas del día, los 7 días de la semana:</block>
-  <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">Documentación</block>
-  <block id="5bb94d173380c00577f5e04b6f26bb94" category="paragraph">La documentación de la NetApp Console que estás viendo actualmente.</block>
-  <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">Base de conocimientos</block>
-  <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
-  <block id="0e20091afcea2d83d0033a933ba85092" category="paragraph">Busque en la base de conocimientos de NetApp para encontrar artículos útiles para solucionar problemas.</block>
-  <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">Comunidades</block>
-  <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
-  <block id="777d75a90b107e4f18469f82c4f81fe2" category="paragraph">Únase a la comunidad de la NetApp Console para seguir las discusiones en curso o crear otras nuevas.</block>
-  <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">Cree un caso con el soporte de NetApp</block>
-  <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">Además de las opciones de autosoporte anteriores, puede trabajar con un especialista de soporte de NetApp para resolver cualquier problema después de activar el soporte.</block>
-  <block id="8fece025a1a8fef7018449bf104a2527" category="list-title">Antes de empezar</block>
-  <block id="c406bf0ac8ac87bc5bb7132a7351b2ae" category="inline-link">Aprenda a administrar las credenciales asociadas con su inicio de sesión en la consola</block>
-  <block id="377118f28487e70bd456993144b72fc7" category="list-text">Para utilizar la función *Crear un caso*, primero debe asociar sus credenciales del sitio de soporte de NetApp con su inicio de sesión de la consola.<block ref="68c4321a756e3ffe955b62cff6fea46d" category="inline-link-rx"></block> .</block>
-  <block id="e49aa971c20ec071f1b5bbc3c7266769" category="list-text">Si está abriendo un caso para un sistema ONTAP que tiene un número de serie, entonces su cuenta NSS debe estar asociada con el número de serie de ese sistema.</block>
-  <block id="0ab80a63088581d58dcf067051f4c894" category="list-text">En la NetApp Console, seleccione *Ayuda &gt; Soporte*.</block>
-  <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">En la página *Recursos*, elija una de las opciones disponibles en Soporte técnico:</block>
-  <block id="6a1b74969231967ed071d465206b15c7" category="list-text">Seleccione *Llámenos* si desea hablar con alguien por teléfono. Serás dirigido a una página en netapp.com que enumera los números de teléfono a los que puedes llamar.</block>
-  <block id="d65a2a6fc9caad1867728d4382eeb989" category="list-text">Seleccione *Crear un caso* para abrir un ticket con un especialista de soporte de NetApp :</block>
-  <block id="a1123cd59d7bd876c080c33906ae65ce" category="list-text">*Servicio*: Seleccione el servicio con el que está asociado el problema. Por ejemplo, * NetApp Console* cuando es específico de un problema de soporte técnico con flujos de trabajo o funcionalidad dentro de la consola.</block>
-  <block id="987df7518e2afb50a860647c832afd13" category="list-text">*Sistema*: si corresponde al almacenamiento, seleccione * Cloud Volumes ONTAP* o *On-Prem* y luego el entorno de trabajo asociado.</block>
-  <block id="8f8e8a86e5f52b6186a37bdf266c4320" category="paragraph">La lista de sistemas está dentro del alcance de la organización de la consola y del agente de consola que ha seleccionado en el banner superior.</block>
-  <block id="e6f29fb3c7636dc0040600dd0e84bb79" category="list-text">*Prioridad del caso*: elija la prioridad del caso, que puede ser Baja, Media, Alta o Crítica.</block>
-  <block id="835eb4008e97c2a7f69bbb2725285e34" category="paragraph">Para obtener más detalles sobre estas prioridades, pase el mouse sobre el ícono de información junto al nombre del campo.</block>
-  <block id="0f7d9319c95a8be1492e74601c4b3259" category="list-text">*Descripción del problema*: proporcione una descripción detallada de su problema, incluidos los mensajes de error aplicables o los pasos de solución de problemas que realizó.</block>
-  <block id="002c6f26fb01affb37b8cf3cef7a1fb0" category="list-text">*Direcciones de correo electrónico adicionales*: Ingrese direcciones de correo electrónico adicionales si desea informar a otra persona sobre este problema.</block>
-  <block id="c7f5c1a75acc58c6f004efc0ce1eba09" category="list-text">*Adjunto (opcional)*: cargue hasta cinco archivos adjuntos, uno a la vez.</block>
-  <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">Los archivos adjuntos están limitados a 25 MB por archivo. Se admiten las siguientes extensiones de archivo: txt, log, pdf, jpg/jpeg, rtf, doc/docx, xls/xlsx y csv.</block>
-  <block id="baaf0e61add7d12cf8d12e023d5aef18" category="inline-image-macro">Una captura de pantalla del formulario Crear un caso que le permite crear un caso con el soporte de NetApp .</block>
-  <block id="77c89527ec8a9f89b24c5579d19b3b4b" category="paragraph"><block ref="77c89527ec8a9f89b24c5579d19b3b4b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Después de terminar</block>
-  <block id="18f487556417bb6d9721a7005ae097c9" category="paragraph">Aparecerá una ventana emergente con su número de caso de soporte. Un especialista de soporte de NetApp revisará su caso y se comunicará con usted pronto.</block>
-  <block id="0ff9b4b8684b9e03c9c1e1320935eae3" category="paragraph">Para obtener un historial de sus casos de soporte, puede seleccionar *Configuración &gt; Cronología* y buscar acciones llamadas "crear caso de soporte". Un botón en el extremo derecho le permite ampliar la acción para ver detalles.</block>
-  <block id="5c56753585e89a84941bb3a78bc681af" category="paragraph">Es posible que encuentres el siguiente mensaje de error al intentar crear un caso:</block>
-  <block id="a30f69ab0ec85d427a3e8835713525bd" category="paragraph">"No está autorizado a crear un caso contra el servicio seleccionado"</block>
-  <block id="178fdaf97b1d1577437f11ee9d5e5229" category="paragraph">Este error podría significar que la cuenta NSS y la empresa registrada con la que está asociada no son la misma empresa registrada para el número de serie de la cuenta de la NetApp Console (es decir, 960xxxx) o el número de serie del entorno de trabajo. Puede buscar ayuda utilizando una de las siguientes opciones:</block>
-  <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">Envíe un caso no técnico a<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
-  <block id="e1100b46295d42ed50ba7a4630710164" category="section-title">Gestione sus casos de soporte</block>
-  <block id="316508a3483178100806a9d44b49aba2" category="paragraph">Puede ver y administrar casos de soporte activos y resueltos directamente desde la Consola. Podrás gestionar los casos asociados a tu cuenta NSS y a tu empresa.</block>
-  <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">Tenga en cuenta lo siguiente:</block>
-  <block id="5e4e7672ec2ba2b8a763da7f6714e212" category="list-text">El panel de gestión de casos en la parte superior de la página ofrece dos vistas:</block>
-  <block id="01c3ffea552d74a5ae390b10e71a1f26" category="list-text">La vista de la izquierda muestra el total de casos abiertos en los últimos 3 meses por la cuenta de usuario NSS que usted proporcionó.</block>
-  <block id="e3b6c09a5686233f72ce1ea60a1eb088" category="list-text">La vista de la derecha muestra el total de casos abiertos en los últimos 3 meses a nivel de su empresa en función de su cuenta de usuario NSS.</block>
-  <block id="b19b168cc8a2b8c984465e140256b3a2" category="paragraph">Los resultados en la tabla reflejan los casos relacionados con la vista que usted seleccionó.</block>
-  <block id="56dcadeee6b0e5c47a52673f9b5a0bb3" category="list-text">Puede agregar o eliminar columnas de interés y puede filtrar el contenido de columnas como Prioridad y Estado. Otras columnas sólo proporcionan capacidades de clasificación.</block>
-  <block id="6f936762e1223311f031685422fcd3a4" category="paragraph">Vea los pasos a continuación para obtener más detalles.</block>
-  <block id="b14929795a61440e9b4ec9f8a4885ae3" category="list-text">A nivel de caso, ofrecemos la posibilidad de actualizar notas de caso o cerrar un caso que aún no esté en estado Cerrado o Pendiente de cierre.</block>
-  <block id="9163e8bca6fd93c080d35ab49e3efdfa" category="list-text">En la NetApp Console, seleccione *Ayuda &gt; Soporte*.</block>
-  <block id="2019fd19051c3ef493dbbb9ca65bab87" category="list-text">Seleccione *Administración de casos* y, si se le solicita, agregue su cuenta NSS a la consola.</block>
-  <block id="75e54e3a6fdbf43ed890669e079d7594" category="paragraph">La página *Administración de casos* muestra los casos abiertos relacionados con la cuenta NSS que está asociada con su cuenta de usuario de la consola. Esta es la misma cuenta NSS que aparece en la parte superior de la página de *administración de NSS*.</block>
-  <block id="2ae5ae78bdb2d222f15fd8e89248709c" category="list-text">Modifique opcionalmente la información que se muestra en la tabla:</block>
-  <block id="1d39d3ab518e1e3f16cbafb2a56e1fd9" category="list-text">En *Casos de la organización*, seleccione *Ver* para ver todos los casos asociados a su empresa.</block>
-  <block id="059e856250b59be3069246887b74a23c" category="list-text">Modifique el rango de fechas eligiendo un rango de fechas exacto o eligiendo un período de tiempo diferente.</block>
-  <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">Filtrar el contenido de las columnas.</block>
-  <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">El icono más que aparece en la tabla</block>
-  <block id="8ac6be88c1aa79062825a147fb263b0e" category="list-text">Cambie las columnas que aparecen en la tabla seleccionando<block ref="500a336e7ba1c54bcffba4e27bda4eb6" category="inline-image-macro-rx" type="image"></block> y luego elegir las columnas que desea mostrar.</block>
-  <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">Un icono con tres puntos que aparece en la última columna de la tabla.</block>
-  <block id="049b7b9fab1242f5e715952973c9474d" category="list-text">Gestionar un caso existente seleccionando<block ref="7381d9baeaf62eb099ce84f1a21ed5ca" category="inline-image-macro-rx" type="image"></block> y seleccionando una de las opciones disponibles:</block>
-  <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*Ver caso*: Ver detalles completos sobre un caso específico.</block>
-  <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*Actualizar notas del caso*: proporcione detalles adicionales sobre su problema o seleccione *Cargar archivos* para adjuntar hasta un máximo de cinco archivos.</block>
-  <block id="bb6d5d351525342dd6b3cf4d15b6f298" category="list-text">*Cerrar caso*: proporcione detalles sobre el motivo por el cual está cerrando el caso y seleccione *Cerrar caso*.</block>
-  <block id="1ea06868db269f34b7f5ba14e699c11f" category="summary">Complete unos pocos pasos para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales a un sistema de almacenamiento secundario y a Google Cloud Storage.</block>
-  <block id="0d66295f8d62d6f8ee303e26ae1451a8" category="doc">Migre volúmenes usando SnapMirror a Cloud Resync con NetApp Backup and Recovery</block>
-  <block id="fac60f72c9d6f7e8667a6580772577de" category="section-title">Cómo funciona la resincronización de SnapMirror a la nube de NetApp Backup and Recovery</block>
-  <block id="f97138a90cb6e21eabb198d42ed0387e" category="list-text">Desde el menú, seleccione *Resincronizar copia de seguridad*.</block>
-  <block id="4801c867904fa8b9b667edbeec55d188" category="paragraph">NetApp Backup and Recovery valida que cada volumen seleccionado para resincronización tenga al menos una instantánea común. Esto garantiza que los volúmenes estén listos para la operación de resincronización de SnapMirror a la nube.</block>
-  <block id="125ba11f83659b86acb7de1fbe8050df" category="list-text">Verifique la elegibilidad del volumen. El sistema verifica si los volúmenes son elegibles para la resincronización. Si un volumen no es elegible, significa que no se encontró una instantánea común.</block>
-  <block id="a76b942eff6c38201458980a134c56db" category="list-text">Seleccione *Resincronizar* para iniciar la operación de resincronización. El sistema utiliza la instantánea común para transferir solo los cambios incrementales, lo que garantiza la continuidad de la copia de seguridad.</block>
-  <block id="6271b2e5ee34db655c152c41d48231ca" category="list-text">Supervise el proceso de resincronización en la página Monitor de trabajo.</block>
-  <block id="c65aae5e08770b7014a25eeed294c73a" category="summary">Puede supervisar el estado de las instantáneas locales, las replicaciones y las copias de seguridad en los trabajos de almacenamiento de objetos que inició o programó, y restaurar los trabajos que inició o programó.  Puede ver los trabajos que se han completado, están en progreso o fallaron para poder diagnosticar y solucionar problemas.  Usando el Centro de notificaciones, puede habilitar el envío de notificaciones por correo electrónico para que pueda estar informado sobre la actividad importante del sistema incluso cuando no haya iniciado sesión en el sistema.  Al utilizar la línea de tiempo, puede ver detalles de todas las acciones iniciadas a través de la interfaz de usuario o la API.</block>
-  <block id="7f53c2c0210bcf951b2011882c226242" category="doc">Habilitar funciones de vista previa en NetApp Backup and Recovery</block>
-  <block id="7ed566e59308a0e6a7d4d726800c1cc1" category="paragraph">NetApp Backup and Recovery ofrece funciones de vista previa que le permiten probar nuevas capacidades antes de que se lancen por completo.  Estas funciones están diseñadas para mejorar su experiencia de respaldo y recuperación, pero es posible que no sean totalmente compatibles o estables.</block>
-  <block id="8d74125454a4a39b93746a76a1b5e057" category="admonition">Estas funciones están en modo de vista previa y no deben utilizarse en entornos de producción.  Están destinados únicamente a fines de prueba y retroalimentación.</block>
-  <block id="5760817f42cfdcd9c310ec63890ecb27" category="section-title">Habilitar funciones de vista previa</block>
-  <block id="69cc5a2398bfb8188c41d7d10de2bead" category="paragraph">Para habilitar las funciones de vista previa en NetApp Backup and Recovery, debe establecer una marca en el agente de la consola.  Esta bandera le permite acceder y probar las funciones de vista previa disponibles en el servicio.</block>
-  <block id="979dd83da13c26493f17b45c593aed22" category="list-text">Inicie sesión en el agente de la consola.</block>
-  <block id="85769ba297548addfe4d17f9afba9cf8" category="list-text">Cambiar al modo Superusuario.  Ejecute el comando:</block>
-  <block id="e2f3c27d6024b2532f8b2a5d75141be2" category="paragraph"><block ref="e73620038e8b54deb176b2581c7558a7" prefix="" category="inline-code"></block></block>
-  <block id="1d75718e1e494b5b2501c494ae510c09" category="list-text">Enumere los volúmenes de Docker e identifique el volumen CBS.  Ejecute el comando:</block>
-  <block id="d15e02bf0c54e008af2e8212aa7c7d4f" category="paragraph">Resultado esperado:</block>
-  <block id="c24450f0e1e6fcc2fa6e6c07c79dd3a8" category="list-text">Inspeccione el volumen para obtener el punto de montaje.  Ejecute el comando:</block>
-  <block id="606ba6d5810c04f45a2192f720b50a14" category="list-text">Ejecute el comando:</block>
-  <block id="28ef99c245e63819b305d93c19d29f91" category="list-text">Navegue hasta el directorio de volúmenes de Docker.  Cambie el directorio al punto de montaje obtenido en el paso anterior:</block>
-  <block id="22cb8a711fd0104b48dede469158201f" category="list-text">Localizar y editar el<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> archivo.</block>
-  <block id="01a012e7a0034b3146903c769f34f576" category="list-text">Asegúrese de estar en el directorio correcto y<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> El archivo está presente.</block>
-  <block id="a8875bf0b902f4f3971e9caa99280a9f" category="list-text">Abrir el<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> archivo en su editor de texto preferido y agregue el siguiente fragmento JSON, asegurándose de que la estructura JSON se mantenga correctamente:</block>
-  <block id="5a0dfd405c0424a01f42cdb7e596d91c" category="list-text">Guarde los cambios en el archivo.</block>
-  <block id="4511f135f3de56841c11286adab39689" category="list-text">Reinicie el servicio CBS de NetApp Backup and Recovery Cloud Manager.  Ejecute el comando:</block>
   <block id="cbeefab9985d18cf649d85c32d79d188" category="summary">Cree un certificado de seguridad para habilitar la comunicación entre NetApp Backup and Recovery y StorageGRID u ONTAP.</block>
   <block id="63b31af683f5a728cbf36267c289589f" category="doc">Configurar certificados de seguridad para StorageGRID y ONTAP en NetApp Backup and Recovery</block>
   <block id="67fc617cb862496da73f0d13f68e5e84" category="section-title">Crear un certificado de seguridad para StorageGRID</block>
@@ -4900,77 +4646,6 @@
   <block id="d695edb19e936217c197c4df1f739de8" category="section-title">Cree un certificado para ONTAP y StorageGRID</block>
   <block id="017050da36669c0fe1d6ef36a222f1fb" category="paragraph">Si necesita habilitar el certificado tanto para ONTAP como para StorageGRID, el archivo de configuración se verá así:</block>
   <block id="956f7db1760826e0d78fce0504e6bc36" category="paragraph">*Archivo de configuración para ONTAP y StorageGRID*</block>
-  <block id="df3d826b639dd614f0fae940d9ebee78" category="summary">Antes de poder abrir un caso de soporte con el soporte técnico de NetApp , debe agregar una cuenta del sitio de soporte de NetApp a la NetApp Console y luego registrarse para recibir soporte.</block>
-  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">Regístrese para recibir asistencia</block>
-  <block id="776abbf4d80cbef17bd3c86ff37b2257" category="paragraph">Es necesario registrarse para recibir soporte técnico específico para la NetApp Console y sus soluciones de almacenamiento y servicios de datos. También es necesario registrarse para obtener soporte técnico para habilitar flujos de trabajo clave para los sistemas Cloud Volumes ONTAP .</block>
-  <block id="ba4e23e03f4354a0f1ef2781272c8477" category="paragraph">Registrarse para recibir soporte no habilita el soporte de NetApp para un servicio de archivos de un proveedor de nube. Para obtener asistencia técnica relacionada con un servicio de archivos de un proveedor de nube, su infraestructura o cualquier solución que utilice el servicio, consulte "Obtener ayuda" en la documentación de ese producto.</block>
-  <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">Descripción general del registro de soporte</block>
-  <block id="192054ad7601240a3e8be54cc5cc548e" category="paragraph">Existen dos formas de registro para activar el derecho a recibir ayuda:</block>
-  <block id="869a868c87f6fb61410cfd773b4f1bab" category="list-text">Registrar el número de serie de su cuenta de la NetApp Console (su número de serie 960xxxxxxxxx de 20 dígitos ubicado en la página Recursos de soporte en la consola).</block>
-  <block id="be0b51de4268d87101344aa0368b4403" category="paragraph">Esto sirve como su ID de suscripción de soporte único para cualquier servicio dentro de la Consola. Cada cuenta de consola debe estar registrada.</block>
-  <block id="55ff64467cd508971910145ab5d6b3b8" category="list-text">Registrar los números de serie de Cloud Volumes ONTAP asociados con una suscripción en el mercado de su proveedor de nube (son números de serie 909201xxxxxxxx de 20 dígitos).</block>
-  <block id="3cf9fb70d6921dd90583621f028a395f" category="paragraph">Estos números de serie se conocen comúnmente como _números de serie PAYGO_ y son generados por la NetApp Console en el momento de la implementación de Cloud Volumes ONTAP .</block>
-  <block id="bf516b6498e37e816d29ae43ae132f74" category="paragraph">El registro de ambos tipos de números de serie permite funciones como la apertura de tickets de soporte y la generación automática de casos. El registro se completa agregando cuentas del sitio de soporte de NetApp (NSS) a la consola como se describe a continuación.</block>
-  <block id="ba5983207e417797fefd5b9374ab4a97" category="section-title">Registrar la NetApp Console para obtener soporte de NetApp</block>
-  <block id="dcb7105ba6e3d9411b05e726848feb80" category="paragraph">Para registrarse para recibir soporte y activar el derecho a soporte, un usuario de su cuenta de NetApp Console debe asociar una cuenta del sitio de soporte de NetApp con su inicio de sesión de consola. La forma de registrarse para el soporte de NetApp depende de si ya tiene una cuenta del sitio de soporte de NetApp (NSS).</block>
-  <block id="bf4c731c0ee7f60c8018ad8f96828dda" category="section-title">Cliente existente con una cuenta NSS</block>
-  <block id="ed5bddb699a442b85bc1bb8e1516fe57" category="paragraph">Si es cliente de NetApp con una cuenta NSS, simplemente necesita registrarse para recibir soporte a través de la consola.</block>
-  <block id="76bc427c3d9c4b81dc353078b942f991" category="list-text">Seleccione *Administración* &gt; *Credenciales*.</block>
-  <block id="f19ab635e6d5f884a22ee4ce067fdbfd" category="list-text">Seleccione *Credenciales de usuario*.</block>
-  <block id="e9451600769b4bf4b20ca941ba9e6d19" category="list-text">Seleccione *Agregar credenciales NSS* y siga las instrucciones de autenticación del Sitio de soporte de NetApp (NSS).</block>
-  <block id="cfc5506589d5a4d055e721267d5f0732" category="list-text">Para confirmar que el proceso de registro fue exitoso, seleccione el ícono de Ayuda y seleccione *Soporte*.</block>
-  <block id="1d4ea9fd10f6cfcd6f6fe1f861d354a4" category="paragraph">La página *Recursos* debería mostrar que su cuenta de consola está registrada para recibir soporte.</block>
-  <block id="afe8240ca62f4b72006980ff64d371b8" category="paragraph">Tenga en cuenta que otros usuarios de la consola no verán este mismo estado de registro de soporte si no han asociado una cuenta del sitio de soporte de NetApp con su inicio de sesión. Sin embargo, eso no significa que su cuenta no esté registrada para recibir soporte. Siempre que un usuario de la organización haya seguido estos pasos, su cuenta quedará registrada.</block>
-  <block id="1ff5aefce774ec72a211f2b3bb10b950" category="section-title">Soy cliente actual pero no tengo cuenta NSS</block>
-  <block id="42eaca1e1c2d9e1f04e932eeaa6d129d" category="paragraph">Si es un cliente existente de NetApp con licencias y números de serie existentes pero _no_ una cuenta NSS, debe crear una cuenta NSS y asociarla con su inicio de sesión de la consola.</block>
-  <block id="5b2b7f628f804bcb786a097c7e45aa41" category="inline-link">Formulario de registro de usuario del sitio de soporte de NetApp</block>
-  <block id="0c4a8b62da9473fbd5401273c4f85ee0" category="list-text">Cree una cuenta en el sitio de soporte de NetApp completando el<block ref="041bcb6d9bdf91f7d6ac92ae3a196e12" category="inline-link-rx"></block></block>
-  <block id="d61c9f72493817776f392db42ac446a2" category="list-text">Asegúrese de seleccionar el nivel de usuario apropiado, que normalmente es *Cliente de NetApp /Usuario final*.</block>
-  <block id="bd33c4539c7d6985f6edafd4a4f2ba1d" category="list-text">Asegúrese de copiar el número de serie de la cuenta de la consola (960xxxx) utilizado anteriormente para el campo de número de serie. Esto acelerará el procesamiento de la cuenta.</block>
-  <block id="9b1f48f88cd439b7a50fe3e76eb8a853" category="list-text">Asocie su nueva cuenta NSS con su inicio de sesión de la consola completando los pasos a continuación<block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block> .</block>
-  <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">Completamente nuevo en NetApp</block>
-  <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">Si es nuevo en NetApp y no tiene una cuenta NSS, siga cada paso a continuación.</block>
-  <block id="e7e9f49f4584c68b9d97c578e73b7583" category="list-text">En la parte superior derecha de la Consola, seleccione el ícono Ayuda y seleccione *Soporte*.</block>
-  <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">Localice el número de serie de su ID de cuenta en la página de Registro de soporte.</block>
-  <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">Una captura de pantalla del menú Ayuda donde Soporte es la primera opción que aparece</block>
-  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">Sitio de registro de soporte de NetApp</block>
-  <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">Navegar a<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> y seleccione *No soy un cliente registrado de NetApp *.</block>
-  <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">Llene los campos obligatorios (aquellos con asteriscos rojos).</block>
-  <block id="1128fc8d5ec64880f4d49337ed798d31" category="list-text">En el campo *Línea de productos*, seleccione *Administrador de nube* y luego seleccione su proveedor de facturación correspondiente.</block>
-  <block id="50a1dc01b7312307c34a888071586955" category="list-text">Copie el número de serie de su cuenta del paso 2 anterior, complete la verificación de seguridad y luego confirme que leyó la Política de privacidad de datos global de NetApp.</block>
-  <block id="3a24c87c9971d2011b4df223718f84b4" category="paragraph">Se envía inmediatamente un correo electrónico al buzón proporcionado para finalizar esta transacción segura. Asegúrese de revisar sus carpetas de correo no deseado si el correo electrónico de validación no llega en unos minutos.</block>
-  <block id="03413baeca1ff7222737d8ce299bd4e8" category="list-text">Confirme la acción desde el correo electrónico.</block>
-  <block id="201080500e946070a2e4873042507c77" category="paragraph">Al confirmar, se envía su solicitud a NetApp y se recomienda que cree una cuenta en el sitio de soporte de NetApp .</block>
-  <block id="a2454703f88e5bf5b433ae850a87151b" category="list-text">Asegúrese de copiar el número de serie de la cuenta (960xxxx) utilizado anteriormente para el campo de número de serie. Esto acelerará el procesamiento.</block>
-  <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp debería comunicarse con usted durante este proceso. Este es un ejercicio de incorporación único para nuevos usuarios.</block>
-  <block id="629757336278be576456cf315303b178" category="paragraph">Una vez que tenga su cuenta del sitio de soporte de NetApp , asocie la cuenta con su inicio de sesión de consola completando los pasos a continuación.<block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block> .</block>
-  <block id="3e616bae81890a6c8fae17c9b45af152" category="section-title">Asociar credenciales NSS para la compatibilidad con Cloud Volumes ONTAP</block>
-  <block id="f22d1a855e255746a6b925a3b22f7838" category="paragraph">Es necesario asociar las credenciales del sitio de soporte de NetApp con su cuenta de consola para habilitar los siguientes flujos de trabajo clave para Cloud Volumes ONTAP:</block>
-  <block id="a0518a10626dc11fd00e2d20265ad240" category="list-text">Registro de sistemas Cloud Volumes ONTAP de pago por uso para obtener soporte</block>
-  <block id="321aadf78ef73521712291b7aba6411f" category="paragraph">Es necesario proporcionar su cuenta NSS para activar el soporte para su sistema y obtener acceso a los recursos de soporte técnico de NetApp .</block>
-  <block id="d51b2b497db445a16b1c9583c1abbb59" category="list-text">Implementación de Cloud Volumes ONTAP cuando trae su propia licencia (BYOL)</block>
-  <block id="f3cd224f9506684fa3b5e2b89b2a566c" category="paragraph">Es necesario proporcionar su cuenta NSS para que la consola pueda cargar su clave de licencia y habilitar la suscripción por el período que compró. Esto incluye actualizaciones automáticas para renovaciones de plazos.</block>
-  <block id="f5135b68b75a8404803a1eb438e40c5e" category="list-text">Actualización del software Cloud Volumes ONTAP a la última versión</block>
-  <block id="daf104544b5203a46e1580e1b8583f1f" category="paragraph">La asociación de credenciales NSS con su cuenta de NetApp Console es diferente a la asociación de una cuenta NSS con un inicio de sesión de usuario de consola.</block>
-  <block id="5bc1315a63455544e7a917a7cc968939" category="paragraph">Estas credenciales de NSS están asociadas con su ID de cuenta de consola específica. Los usuarios que pertenecen a la organización de la Consola pueden acceder a estas credenciales desde *Soporte &gt; Administración de NSS*.</block>
-  <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">Si tiene una cuenta de nivel de cliente, puede agregar una o más cuentas NSS.</block>
-  <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">Si tiene una cuenta de socio o revendedor, puede agregar una o más cuentas NSS, pero no se pueden agregar junto con cuentas de nivel de cliente.</block>
-  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c0e0b7ff0de9558404e9b77ece42948a" category="list-text">Seleccione *Administración de NSS &gt; Agregar cuenta NSS*.</block>
-  <block id="85b9386ed443776127e099931d73448a" category="list-text">Cuando se le solicite, seleccione *Continuar* para ser redirigido a una página de inicio de sesión de Microsoft.</block>
-  <block id="d59e0b46782e48a01966e5c7ccc38d17" category="paragraph">NetApp utiliza Microsoft Entra ID como proveedor de identidad para servicios de autenticación específicos de soporte y licencias.</block>
-  <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">En la página de inicio de sesión, proporcione su dirección de correo electrónico y contraseña registradas en el sitio de soporte de NetApp para realizar el proceso de autenticación.</block>
-  <block id="7687b0a57d5cb728d9fb892dfc814715" category="paragraph">Estas acciones permiten que la consola utilice su cuenta NSS para cosas como descargas de licencias, verificación de actualizaciones de software y futuros registros de soporte.</block>
-  <block id="ec084bb25ed5b934c09b361069c246b2" category="list-text">La cuenta NSS debe ser una cuenta de nivel de cliente (no una cuenta de invitado o temporal). Puede tener varias cuentas NSS a nivel de cliente.</block>
-  <block id="27387009488fe78dcc7cb7e3e432792f" category="list-text">Solo puede haber una cuenta NSS si esa cuenta es una cuenta de nivel de socio. Si intenta agregar cuentas NSS de nivel de cliente y existe una cuenta de nivel de socio, recibirá el siguiente mensaje de error:</block>
-  <block id="d926847e4634e19a1aa7358becc0fa27" category="paragraph">"El tipo de cliente NSS no está permitido para esta cuenta porque ya hay usuarios NSS de otro tipo".</block>
-  <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">Lo mismo ocurre si tiene cuentas NSS de nivel de cliente preexistentes e intenta agregar una cuenta de nivel de socio.</block>
-  <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">Tras iniciar sesión correctamente, NetApp almacenará el nombre de usuario NSS.</block>
-  <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">Un icono de tres puntos horizontales</block>
-  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">Esta es una identificación generada por el sistema que se asigna a su correo electrónico. En la página *Administración de NSS*, puede mostrar su correo electrónico desde el<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> menú.</block>
-  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">Si alguna vez necesita actualizar sus tokens de credenciales de inicio de sesión, también hay una opción *Actualizar credenciales* en el<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> menú.</block>
-  <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">Al utilizar esta opción se le solicitará que inicie sesión nuevamente. Tenga en cuenta que el token de estas cuentas caduca después de 90 días. Se publicará una notificación para avisarle de esto.</block>
   <block id="6787850a4ea9b3a4dba07fdb711fb596" category="summary">Descubra las novedades en NetApp Backup and Recovery.</block>
   <block id="441af08fd33d210b079342896edf5070" category="doc">Novedades en NetApp Backup and Recovery</block>
   <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">6 de octubre de 2025</block>
@@ -5079,4 +4754,54 @@
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
+  <block id="6fc478198b32debce80454c7af87f2a6" category="paragraph">Prepare su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .</block>
+  <block id="9d6517026ceae75d40ad31bbce85a01f" category="paragraph">Asegúrese de que su sistema ONTAP cumpla con los siguientes requisitos:</block>
+  <block id="412575a7231cf720dd454d12218d97e8" category="list-text">Si replica datos, verifique que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles.</block>
+  <block id="77dccdded3a358636b285f308dae34da" category="paragraph">Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.</block>
+  <block id="6e26086c4ba1c5fd323fbf59cfa2bd2d" category="list-text">Si el clúster está local, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.</block>
+  <block id="96804f828cf944ce68e80e74ae8d7cc0" category="list-text">Compatibilidad con la distribución SUSE Rancher Kubernetes</block>
+  <block id="7d6928dd953d625f33fbfd89243bf778" category="paragraph">Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y administrar cargas de trabajo de bases de datos de Oracle:</block>
+  <block id="d2ce5b8a55f10a315816f6647894815f" category="paragraph">Un gancho de ejecución es una acción personalizada que se ejecuta con una operación de protección de datos en una aplicación Kubernetes administrada.  Por ejemplo, cree instantáneas consistentes con la aplicación utilizando un gancho de ejecución para pausar las transacciones de la base de datos antes de una instantánea y reanudarlas después.  Al crear una plantilla de gancho de ejecución, especifique el tipo de gancho, el script a ejecutar y los filtros para los contenedores de destino.  Utilice la plantilla para vincular ganchos de ejecución a sus aplicaciones.</block>
+  <block id="404af526c79edf2284a92604e83b4a45" category="paragraph">NetApp Backup and Recovery congela y descongela sistemas de archivos para aplicaciones como KubeVirt durante la protección de datos.  Puede deshabilitar este comportamiento de forma global o para aplicaciones específicas utilizando la documentación de protección de Trident :</block>
+  <block id="d77282c03df8b10c2c7ca1ca7deb9f52" category="list-text">Todos los ganchos de ejecución de preoperación personalizados aplicables se ejecutan en los contenedores apropiados. Puede crear varios ganchos de preoperación personalizados, pero su orden de ejecución no está garantizado ni es configurable.</block>
+  <block id="8ae86463dd99c66d5a9ac9fadaa7dbd9" category="list-text">NetApp Backup and Recovery ejecuta cualquier gancho de ejecución previo a la operación personalizado aplicable en los contenedores apropiados.  Puede crear varios ganchos posteriores a la operación personalizados, pero su orden de ejecución no está garantizado ni es configurable.</block>
+  <block id="fa277bc4215bc063ac5d9134fd68a383" category="paragraph">Si crea varios ganchos del mismo tipo, no se garantiza su orden de ejecución.  Los ganchos de diferentes tipos siempre se ejecutan en el orden especificado. Por ejemplo, el siguiente es el orden de ejecución de una configuración que tiene todos los diferentes tipos de ganchos:</block>
+  <block id="12611acdf667fa46771b16ce2dac9b8a" category="admonition">Pruebe los scripts de ejecución de gancho antes de habilitarlos en producción.  Utilice 'kubectl exec' para probar scripts, luego verifique las instantáneas y las copias de seguridad clonando la aplicación en un espacio de nombres temporal y restaurándola.</block>
+  <block id="371c0a34edd4228ff47cf9a471606218" category="admonition">Los ganchos de ejecución pueden reducir o deshabilitar la funcionalidad de la aplicación.  Haga que sus ganchos personalizados se ejecuten lo más rápido posible. Si inicia una operación de copia de seguridad o instantánea con ganchos de ejecución asociados pero luego la cancela, los ganchos aún podrán ejecutarse si la operación de copia de seguridad o instantánea ya ha comenzado. Esto significa que la lógica utilizada en un gancho de ejecución posterior a una copia de seguridad no puede asumir que la copia de seguridad se completó.</block>
+  <block id="ea8e438a1ce17bd7804407d5eb1bbb8b" category="paragraph">Después de crear la plantilla, ésta aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.</block>
+  <block id="ede2ba61bdddf5238d25face4bf435fd" category="admonition">Puede administrar hosts con un estado "No administrado" en la columna Hosts.  NetApp Backup and Recovery ya administra hosts con un estado "Administrado".</block>
+  <block id="b805af62914270ecc325efd1f211fa3c" category="paragraph">Suspender programaciones para detener operaciones de respaldo y restauración durante el mantenimiento del host.</block>
+  <block id="f3b772771fc6d09845e11742c43e7fdb" category="paragraph">Puede administrar la información de instancias para asignar las credenciales adecuadas para la protección de recursos y realizar copias de seguridad de los recursos de las siguientes maneras:</block>
+  <block id="a08a1e6a1f964b7941dd14205238bfcb" category="paragraph">Haga una copia de seguridad de sus datos ahora para protegerlos de inmediato.</block>
+  <block id="b4ae20208d5c757b694d673276341786" category="paragraph">Restaurar una base de datos para proteger sus datos.</block>
+  <block id="3f6fab6bedfff19150a3d6ab054b0391" category="paragraph">Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para proteger sus datos de inmediato.</block>
+  <block id="fc7c1a6c328c3622bdd68b73c548bb4f" category="paragraph">Si Ransomware Resilience está habilitado para un archivo de respaldo en el almacenamiento de objetos, se le solicitará que ejecute una verificación adicional antes de restaurar.  Recomendamos realizar el escaneo.</block>
+  <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">Es posible que tenga que pagar tarifas adicionales a su proveedor de nube para acceder al archivo de respaldo.</block>
+  <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Desde la página Restaurar (Buscar y restaurar), puede restaurar un recurso buscando la instantánea con filtros, incluso si no recuerda su nombre exacto, ubicación o última fecha conocida.</block>
+  <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">Si elige almacenamiento secundario, ingrese las ubicaciones de origen y destino tanto para los datos como para los registros.</block>
+  <block id="9908b0e588dc1ce9587bfb1206e3118e" category="paragraph">A continuación, elija la configuración de destino y las opciones previas y posteriores a la restauración.</block>
+  <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Puede utilizar los volúmenes y datos restaurados inmediatamente. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.</block>
+  <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración y elija los tipos de notificación que desee.</block>
+  <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisitos de software para el host de Windows Server Hyper-V:</block>
+  <block id="1acabacd9fabb89313b2019250c36913" category="inline-link">Documentación de Microsoft Windows Server</block>
+  <block id="a05b36aea5976933f3daab44cd5602a1" category="list-text">Asegúrese de que la función de servicio Host Guardian esté instalada (consulte la<block ref="48d767cc816bb4d4b129a75bf7c81af1" category="inline-link-rx"></block> (para instrucciones)</block>
+  <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Si la operación de restauración no se completa, espere hasta que el Monitor de trabajo muestre "Error" antes de volver a intentar la operación de restauración.</block>
+  <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Puede restaurar datos de máquinas virtuales desde la nube al servidor vCenter local con NetApp Backup and Recovery. Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa. Si se realizó una copia de seguridad de la máquina virtual mediante la política de archivo, puede establecer la prioridad de restauración de archivo.</block>
+  <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consulte<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
+  <block id="2f3b7eef1cf7df43dea1233ed03f5f42" category="list-text">Asegúrese de que el sistema se agregue a la otra ubicación en la página *Sistemas* de la consola.</block>
+  <block id="870482577443f708a74b9dbe9b8fe928" category="admonition">Si mueve una máquina virtual mediante VMware vSphere vMotion y la restaura desde la consola, Backup and Recovery la restaura a la ubicación de respaldo original.</block>
+  <block id="6e6630b7443f8dd6eade1b55e3c59141" category="paragraph">Las prioridades de restauración de archivos admitidas son alta, estándar y baja para Amazon Web Services, y alta y estándar para Microsoft Azure.</block>
+  <block id="2f52181b09a7c053aed22699e227b9db" category="paragraph">Cuando utiliza NetApp Backup and Recovery en un entorno SaaS con el agente de consola implementado en su proveedor de nube o en su propio host conectado a Internet, el sistema realiza copias de seguridad y protege todos los datos de configuración importantes en la nube.  Si tiene un problema con el agente de consola, cree un nuevo agente de consola y agregue sus sistemas.  Los detalles de la copia de seguridad se restauran automáticamente.</block>
+  <block id="361cc78877d7de2ea952f510e7626ad4" category="paragraph">Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se almacenan en el depósito del sistema que se activó primero.</block>
+  <block id="2be5ff28599e1447ad26486d058560b3" category="paragraph">Si su agente de consola local deja de funcionar, deberá instalar un nuevo agente de consola y luego restaurar los datos de NetApp Backup and Recovery en el nuevo agente de consola.</block>
+  <block id="af0d8358ca0559646ed05a1f70fb056c" category="paragraph">Después de comprobar que su sistema funciona, cree nuevos archivos de respaldo.</block>
+  <block id="05eb9ffbcd3a4a40092374a3d60d7ac2" category="paragraph">Al instalar un nuevo agente de consola, descargue la misma versión de software que el agente original.  Los cambios en la base de datos de NetApp Backup and Recovery pueden provocar que las versiones de software más nuevas no funcionen con copias de seguridad de bases de datos antiguas. Puede<block ref="cf9f37e0e8c15b290b50a2dd76357649" category="inline-link-rx"></block> .</block>
+  <block id="5d1e43ba5c03c383925fef923fa745db" category="paragraph">Debería ver todas las copias de seguridad creadas para sus volúmenes.</block>
+  <block id="6e16e42b061f3ee3519b7b870fdcf125" category="list-text">*Diario*: Opción para repetir cada un número determinado de días, por ejemplo, cada 3 días.</block>
+  <block id="e8aab330f851827afe9d27b0aec63d26" category="list-text">*Mensual*: De enero a diciembre, con opción de actuar en días específicos o múltiples cada mes, por ejemplo, el 7.</block>
+  <block id="fca87a8e81eb200987f6ad66783b8b19" category="list-text">Si la programación de SnapCenter está configurada en menos o igual a 7 días, NetApp Backup and Recovery configura la programación en semanal. Se omiten algunas instantáneas durante la semana.</block>
+  <block id="6324e3f762b4a79759edccd834edcb2d" category="paragraph">*Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 10 días a partir del día 2 de cada mes, NetApp Backup and Recovery, después de la migración, establece la programación en mensual los días 2, 12 y 22 del mes.  NetApp Backup and Recovery omitirá algunos días el próximo mes.</block>
+  <block id="ba74bff4c4deec01ccafcf5a160089e4" category="paragraph">SnapCenter admite múltiples valores de retención para las políticas de un recurso.  NetApp Backup and Recovery solo admite un valor de retención por recurso.</block>
+  <block id="524363c64fff15aa09ef827516a023c0" category="paragraph">SnapCenter conserva las etiquetas SnapMirror para cada política después de la migración, incluso si cambia el nivel.</block>
+  <block id="16a81293ba902fc66da927551f9b54a7" category="paragraph">El agente de consola incluye la funcionalidad de NetApp Backup and Recovery .</block>
 </blocks>

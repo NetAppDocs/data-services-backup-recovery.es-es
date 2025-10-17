@@ -14,23 +14,21 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 
 
 [role="lead"]
-Puede restaurar datos de máquinas virtuales desde la nube al vCenter local con NetApp Backup and Recovery.  Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa.  Si se realizó una copia de seguridad de la máquina virtual mediante la política de archivo, puede establecer la prioridad de restauración de archivo.
+Puede restaurar datos de máquinas virtuales desde la nube al servidor vCenter local con NetApp Backup and Recovery. Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa. Si se realizó una copia de seguridad de la máquina virtual mediante la política de archivo, puede establecer la prioridad de restauración de archivo.
 
 
 NOTE: No es posible restaurar máquinas virtuales que se extiendan a varios almacenes de datos.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 .Antes de empezar
 * Asegúrese de haber cumplido con todos loslink:prev-vmware-prereqs.html["Requisitos de protección de máquinas virtuales"] antes de realizar copias de seguridad de los almacenes de datos en la nube.
 * Si está restaurando a una ubicación alternativa:
 +
 ** Asegúrese de que los vCenters de origen y destino estén en modo vinculado.
 ** Asegúrese de que los detalles del clúster de origen y destino se agreguen en la página *Sistemas* de la NetApp Console y en los vCenters en modo vinculado en ambos hosts del SnapCenter Plug-in for VMware vSphere .
-** Asegúrese de que el sistema se agregue correspondiente a la ubicación alternativa en la página *Sistemas* de la Consola.
+** Asegúrese de que el sistema se agregue a la otra ubicación en la página *Sistemas* de la consola.
 
 
 
@@ -40,7 +38,7 @@ NOTE: No es posible restaurar máquinas virtuales que se extiendan a varios alma
 
 
 
-NOTE: Si la máquina virtual de origen se mueve a otra ubicación (vMotion) y el usuario activa una restauración de esa máquina virtual desde la consola, la máquina virtual se restaura a la ubicación de origen desde donde se realizó la copia de seguridad.
+NOTE: Si mueve una máquina virtual mediante VMware vSphere vMotion y la restaura desde la consola, Backup and Recovery la restaura a la ubicación de respaldo original.
 
 . Puede restaurar la máquina virtual a la ubicación original o a una ubicación alternativa desde el almacén de datos o desde las máquinas virtuales:
 
@@ -58,7 +56,7 @@ a la ubicación original desde el almacén de datos
 . Asegúrese de que *Original* esté seleccionado y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas son alta, estándar y baja para Amazon Web Services, y alta y estándar para Microsoft Azure.
 
 . Revise los detalles y seleccione *Restaurar*.
 
@@ -76,7 +74,7 @@ a una ubicación alternativa desde el almacén de datos
 . Proporcione un nombre para la máquina virtual después de la restauración y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas son alta, estándar y baja para Amazon Web Services, y alta y estándar para Microsoft Azure.
 
 . Revise los detalles y seleccione *Restaurar*.
 
@@ -91,7 +89,7 @@ a la ubicación original desde las máquinas virtuales
 . Asegúrese de que *Original* esté seleccionado y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas son alta, estándar y baja para Amazon Web Services, y alta y estándar para Microsoft Azure.
 
 . Revise los detalles y seleccione *Restaurar*.
 
@@ -108,11 +106,11 @@ a una ubicación alternativa desde las máquinas virtuales
 . Proporcione un nombre para la máquina virtual después de la restauración y seleccione *Continuar*.
 . Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.
 +
-Las prioridades de restauración de archivos admitidas para Amazon Web Services son alta, estándar y baja, y las prioridades de restauración de archivos admitidas para Microsoft Azure son alta y estándar.
+Las prioridades de restauración de archivos admitidas son alta, estándar y baja para Amazon Web Services, y alta y estándar para Microsoft Azure.
 
 . Revise los detalles y seleccione *Restaurar*.
 
 
 |===
 
-NOTE: Si la operación de restauración no se completa, no intente realizar el proceso de restauración nuevamente hasta que el Monitor de trabajo muestre que la operación de restauración ha fallado.  Si intenta nuevamente el proceso de restauración antes de que el Monitor de trabajo muestre que la operación de restauración ha fallado, la operación de restauración fallará nuevamente.  Cuando vea el estado del Monitor de trabajo como "Error", puede intentar el proceso de restauración nuevamente.
+NOTE: Si la operación de restauración no se completa, espere hasta que el Monitor de trabajo muestre "Error" antes de volver a intentar la operación de restauración.

@@ -31,10 +31,10 @@ Puede restaurar datos en estos puntos:
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
-Si selecciona un archivo de respaldo en el almacenamiento de objetos y la protección contra ransomware está activa para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que realice el escaneo.
+Si Ransomware Resilience está habilitado para un archivo de respaldo en el almacenamiento de objetos, se le solicitará que ejecute una verificación adicional antes de restaurar.  Recomendamos realizar el escaneo.
 
 
-TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
+TIP: Es posible que tenga que pagar tarifas adicionales a su proveedor de nube para acceder al archivo de respaldo.
 
 
 
@@ -50,7 +50,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagrama que muestra el fluj
 * Al restaurar una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el sistema original o en un sistema ONTAP local.
 
 
-Desde la página Restaurar (también conocida como Buscar y restaurar), puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.
+Desde la página Restaurar (Buscar y restaurar), puede restaurar un recurso buscando la instantánea con filtros, incluso si no recuerda su nombre exacto, ubicación o última fecha conocida.
 
 
 
@@ -76,7 +76,7 @@ Aparece una lista de opciones de ubicación de restauración.
 ** Local: restaura la instantánea a la ubicación original.
 ** Almacenamiento secundario: restaura la instantánea a una ubicación de almacenamiento secundaria.
 +
-Si elige almacenamiento secundario, ingrese la información de ubicación de origen y destino, y también la ubicación de origen y secundaria de los registros.
+Si elige almacenamiento secundario, ingrese las ubicaciones de origen y destino tanto para los datos como para los registros.
 
 ** Almacenamiento de objetos: restaura la instantánea a una ubicación de almacenamiento de objetos.
 +
@@ -86,7 +86,7 @@ Si elige el almacenamiento de objetos, marque si desea escanear la instantánea 
 
 . Seleccione *Listo* o *Siguiente* para continuar a la página de configuración de destino de restauración.
 +
-A continuación, puede elegir la configuración de destino y las opciones previas y posteriores a la restauración.
+A continuación, elija la configuración de destino y las opciones previas y posteriores a la restauración.
 
 
 
@@ -102,7 +102,7 @@ A continuación, puede elegir la configuración de destino y las opciones previa
 --
 En la página de detalles de Destino de restauración, ingrese la siguiente información:
 
-. *Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Los volúmenes y datos restaurados estarán disponibles de inmediato. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
+. *Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Puede utilizar los volúmenes y datos restaurados inmediatamente. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
 . *Opciones previas a la restauración*: ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
 . *Opciones posteriores a la restauración*:
 +
@@ -112,7 +112,7 @@ En la página de detalles de Destino de restauración, ingrese la siguiente info
 
 . Sección de *Notificación*:
 +
-** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración e indique qué tipo de notificaciones desea recibir.
+** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración y elija los tipos de notificación que desee.
 
 
 . Seleccione *Restaurar*.
@@ -122,9 +122,6 @@ En la página de detalles de Destino de restauración, ingrese la siguiente info
 .Restaurar a una ubicación alternativa
 --
 No disponible para la vista previa de VMware.
-
-. Seleccione *Restaurar*.
-
 
 --
 ====

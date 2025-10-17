@@ -36,7 +36,7 @@ Para resumir, estos son los flujos válidos que puede utilizar para restaurar da
 
 
 
-NOTE: Si la operación de restauración no se completa, no intente realizar el proceso de restauración nuevamente hasta que el Monitor de trabajo muestre que la operación de restauración ha fallado.  Si intenta nuevamente el proceso de restauración antes de que el Monitor de trabajo muestre que la operación de restauración ha fallado, la operación de restauración fallará nuevamente.  Cuando vea el estado del Monitor de trabajo como "Error", puede intentar el proceso de restauración nuevamente.
+NOTE: Si la operación de restauración no se completa, espere hasta que el Monitor de trabajo muestre "Error" antes de volver a intentar la operación de restauración.
 
 
 NOTE: Para conocer las limitaciones relacionadas con la restauración de datos de ONTAP , consultelink:br-reference-limitations.html["Limitaciones de copia de seguridad y restauración para volúmenes ONTAP"] .

@@ -21,9 +21,9 @@ Existen algunas diferencias entre las políticas utilizadas en SnapCenter y las 
 SnapCenter utiliza los siguientes niveles de programación:
 
 * *Por hora*: Varias horas y minutos con cualquier hora (0-23) y cualquier minuto (0-60).
-* *Diario*: Incluye una opción para repetir cada tantos días, por ejemplo, cada 3 días.
+* *Diario*: Opción para repetir cada un número determinado de días, por ejemplo, cada 3 días.
 * *Semanal*: de domingo a lunes, con la opción de realizar una instantánea el día 1 de la semana o en varios días de la semana.
-* *Mensual*: Meses de enero a diciembre, con opción de realizarse en días específicos del mes, por ejemplo, el 7 de cada mes e incluso en varios días del mes.
+* *Mensual*: De enero a diciembre, con opción de actuar en días específicos o múltiples cada mes, por ejemplo, el 7.
 
 
 NetApp Backup and Recovery utiliza los siguientes niveles de programación, que son ligeramente diferentes:
@@ -49,13 +49,13 @@ Puede asignar varias políticas con el mismo nivel de programación a un recurso
 
 NetApp Backup and Recovery ajusta las programaciones de SnapCenter de la siguiente manera:
 
-* Si la programación de SnapCenter está configurada en menos o igual a 7 días, NetApp Backup and Recovery configura la programación en semanal.  Se omitirán algunas instantáneas durante la semana.
+* Si la programación de SnapCenter está configurada en menos o igual a 7 días, NetApp Backup and Recovery configura la programación en semanal. Se omiten algunas instantáneas durante la semana.
 +
 *Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 3 días a partir del lunes, NetApp Backup and Recovery establece la programación en semanal los lunes, jueves y domingos.  Se saltarán algunos días porque no es exactamente cada 3 días.
 
 * Si la programación de SnapCenter está configurada para más de 7 días, NetApp Backup and Recovery configura la programación para que sea mensual.  Se omitirán algunas instantáneas durante el mes.
 +
-*Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 10 días a partir del día 2 de cada mes, NetApp Backup and Recovery (post migración) establece la programación en mensual los días 2, 12 y 22 del mes.  Algunos días se saltarán el próximo mes.
+*Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 10 días a partir del día 2 de cada mes, NetApp Backup and Recovery, después de la migración, establece la programación en mensual los días 2, 12 y 22 del mes.  NetApp Backup and Recovery omitirá algunos días el próximo mes.
 
 
 
@@ -85,7 +85,7 @@ Si tiene un recurso en SnapCenter con múltiples políticas, NetApp Backup and R
 
 == Retención de copias de seguridad de registros
 
-Con SnapCenter, puede tener múltiples valores de retención en múltiples políticas asociadas a un recurso. Sin embargo, NetApp Backup and Recovery solo admite un único valor de retención para todas las políticas asociadas a un recurso.
+SnapCenter admite múltiples valores de retención para las políticas de un recurso.  NetApp Backup and Recovery solo admite un valor de retención por recurso.
 
 
 
@@ -99,6 +99,6 @@ Si tiene un recurso con protección secundaria habilitada en SnapCenter con múl
 
 == Etiquetas de SnapMirror de las políticas de SnapCenter
 
-Las etiquetas de SnapMirror para cada política en SnapCenter permanecen intactas después de la migración incluso si se cambia el nivel.
+SnapCenter conserva las etiquetas SnapMirror para cada política después de la migración, incluso si cambia el nivel.
 
 *Ejemplo*: Una política por hora de SnapCenter podría cambiar a diaria en NetApp Backup and Recovery.  Sin embargo, las etiquetas de SnapMirror siguen siendo las mismas después de la migración.

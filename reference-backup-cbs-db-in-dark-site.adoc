@@ -19,7 +19,7 @@ Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido c
 
 NOTE: Este procedimiento se aplica únicamente a los datos de volumen de ONTAP .
 
-Cuando utiliza NetApp Backup and Recovery en un entorno SaaS donde el agente de consola se implementa en su proveedor de nube o en su propio sistema host que tiene acceso a Internet, todos los datos de configuración importantes de NetApp Backup and Recovery se respaldan y protegen en la nube.  Si tiene un problema con el agente de consola, simplemente cree un nuevo agente de consola y agregue sus sistemas y los detalles de la copia de seguridad se restaurarán automáticamente.
+Cuando utiliza NetApp Backup and Recovery en un entorno SaaS con el agente de consola implementado en su proveedor de nube o en su propio host conectado a Internet, el sistema realiza copias de seguridad y protege todos los datos de configuración importantes en la nube.  Si tiene un problema con el agente de consola, cree un nuevo agente de consola y agregue sus sistemas.  Los detalles de la copia de seguridad se restauran automáticamente.
 
 Hay dos tipos de datos que se respaldan:
 
@@ -27,7 +27,7 @@ Hay dos tipos de datos que se respaldan:
 * Archivos de catálogo indexados: contienen índices detallados que se utilizan para la funcionalidad de búsqueda y restauración que hace que sus búsquedas sean muy rápidas y eficientes cuando busca datos de volumen que desea restaurar.
 
 
-Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se ubicarán en el depósito del sistema que se activó primero.
+Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se almacenan en el depósito del sistema que se activó primero.
 
 
 TIP: Nunca se incluyen datos de volumen en la base de datos de NetApp Backup and Recovery ni en los archivos del catálogo indexado.
@@ -36,7 +36,7 @@ TIP: Nunca se incluyen datos de volumen en la base de datos de NetApp Backup and
 
 == Restaurar datos de NetApp Backup and Recovery a un nuevo agente de consola
 
-Si su agente de consola local sufre una falla catastrófica, deberá instalar un nuevo agente de consola y luego restaurar los datos de NetApp Backup and Recovery en el nuevo agente de consola.
+Si su agente de consola local deja de funcionar, deberá instalar un nuevo agente de consola y luego restaurar los datos de NetApp Backup and Recovery en el nuevo agente de consola.
 
 Necesitará realizar las siguientes tareas para que su sistema NetApp Backup and Recovery vuelva a funcionar:
 
@@ -46,7 +46,7 @@ Necesitará realizar las siguientes tareas para que su sistema NetApp Backup and
 * Redescubre todos tus sistemas ONTAP locales y sistemas StorageGRID en la interfaz de usuario de la NetApp Console
 
 
-Una vez que verifique que su sistema vuelve a funcionar correctamente, le recomendamos que cree nuevos archivos de respaldo.
+Después de comprobar que su sistema funciona, cree nuevos archivos de respaldo.
 
 .Lo que necesitarás
 Necesitará acceder a las copias de seguridad de bases de datos e índices más recientes desde el depósito StorageGRID o ONTAP S3 donde se almacenan sus archivos de copia de seguridad:
@@ -65,7 +65,7 @@ Este archivo se encuentra en la siguiente ubicación en el depósito `netapp-bac
 
 === Instalar un nuevo agente de consola en un nuevo host Linux local
 
-Al instalar un nuevo agente de consola, asegúrese de descargar la misma versión de software que instaló en el agente de consola original.  Los cambios periódicos en la estructura de la base de datos de NetApp Backup and Recovery pueden hacer que las versiones de software más nuevas sean incompatibles con las copias de seguridad de la base de datos originales.  Puede https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo"^] .
+Al instalar un nuevo agente de consola, descargue la misma versión de software que el agente original.  Los cambios en la base de datos de NetApp Backup and Recovery pueden provocar que las versiones de software más nuevas no funcionen con copias de seguridad de bases de datos antiguas. Puede https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo"^] .
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instalar el agente de consola en un nuevo host Linux local"^]
 . Inicie sesión en la consola utilizando las credenciales de usuario administrador que acaba de crear.
@@ -203,7 +203,7 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 
 . Seleccione cada sistema ONTAP y haga clic en *Ver copias de seguridad* junto al servicio de copia de seguridad y recuperación en el panel derecho.
 +
-Debería poder ver todas las copias de seguridad que se han creado para sus volúmenes.
+Debería ver todas las copias de seguridad creadas para sus volúmenes.
 
 . Desde el Panel de restauración, en la sección Buscar y restaurar, haga clic en *Configuración de indexación*.
 +

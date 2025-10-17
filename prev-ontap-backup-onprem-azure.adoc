@@ -184,7 +184,7 @@ Puede crear copias de seguridad desde sistemas locales a Azure Blob en todas las
 
 == Prepare sus clústeres de ONTAP
 
-Necesitará preparar su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
+Prepare su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
 
 La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
@@ -206,7 +206,7 @@ Necesitará saber la dirección IP de administración del clúster y la contrase
 
 === Verificar los requisitos del sistema ONTAP
 
-Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
+Asegúrese de que su sistema ONTAP cumpla con los siguientes requisitos:
 
 * Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 * Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
@@ -217,7 +217,7 @@ Asegúrese de que se cumplan los siguientes requisitos de ONTAP :
 Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Administrar sus licencias de clúster"^] .
 
 * La hora y la zona horaria están configuradas correctamente.  Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Configurar el tiempo de su clúster"^] .
-* Si va a replicar datos, debe verificar que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles antes de replicar datos.
+* Si replica datos, verifique que los sistemas de origen y destino ejecuten versiones de ONTAP compatibles.
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versiones de ONTAP compatibles con las relaciones de SnapMirror"^].
 
@@ -260,7 +260,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 
 ==== Requisitos de red de ONTAP local
 
-* Si el clúster está en sus instalaciones, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
+* Si el clúster está local, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
 Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
