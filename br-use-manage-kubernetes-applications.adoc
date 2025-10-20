@@ -38,7 +38,7 @@ Puede desproteger una aplicación si ya no desea protegerla. Cuando desprotege u
 
 == Eliminar una aplicación de Kubernetes
 
-Puedes eliminar una aplicación si ya no la necesitas. Cuando elimina una aplicación, NetApp Backup and Recovery deja de protegerla y elimina todas las copias de seguridad y las instantáneas asociadas.
+Elimina una aplicación que ya no necesitas.  NetApp Backup and Recovery detiene la protección y elimina todas las copias de seguridad y las instantáneas de las aplicaciones eliminadas.
 
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.

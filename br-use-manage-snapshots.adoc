@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-snapshots.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Puede realizar copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, lo que garantiza que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.  Puede implementar una estrategia 3-2-1, donde tiene 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. 
+summary: Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de NetApp Backup and Recovery. 
 ---
 = Administre instantáneas de Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
@@ -33,7 +33,7 @@ Solo puedes eliminar instantáneas locales.
 . Seleccione la instantánea local que desea eliminar.
 +
 
-TIP: El ícono de instantánea local en la columna *Ubicación* de esa fila debe aparecer en azul.
+TIP: Verifique que el ícono de instantánea local en la columna *Ubicación* de esa fila aparezca en azul.
 
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Eliminar instantánea local*.
 . En el cuadro de diálogo de confirmación, seleccione *Eliminar*.

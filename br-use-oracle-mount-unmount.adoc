@@ -20,7 +20,7 @@ Es posible que desee montar un punto de recuperación de Oracle Database si nece
 
 == Montar un punto de restauración de Oracle Database
 
-Si configura la política de protección para una base de datos para conservar registros de archivo, puede montar los puntos de recuperación de la base de datos para ver el historial de todos los cambios realizados en la base de datos.
+Si configura la política de protección para una base de datos para conservar registros de archivo, puede montar puntos de recuperación para ver el historial de cambios de la base de datos.
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.

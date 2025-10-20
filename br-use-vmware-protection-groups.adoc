@@ -29,7 +29,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 == Crear un grupo de protección
 
-Agrupe las cargas de trabajo que desea proteger juntas en un grupo de protección. Puede crear un grupo de protección para un conjunto de cargas de trabajo que desee respaldar y restaurar juntas.
+Agrupe las cargas de trabajo que desea proteger en un grupo de protección para realizar copias de seguridad y restaurarlas juntas.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -55,7 +55,7 @@ Si desea crear una política, seleccione *Crear nueva política* y siga las inst
 
 == Suspender la programación de copias de seguridad de un grupo de protección
 
-Suspender un grupo de protección pausa las copias de seguridad programadas para ese grupo. Es posible que desee suspender un grupo de protección si desea detener temporalmente las copias de seguridad de las cargas de trabajo en ese grupo.
+Suspender un grupo de protección para pausar sus copias de seguridad programadas.
 
 El estado de protección cambia a "En mantenimiento" cuando se suspende un grupo de protección. Puede reanudar la programación de copia de seguridad en cualquier momento.
 
@@ -92,7 +92,7 @@ El sistema valida los horarios y cambia el estado de protección a “Protegido�
 
 == Eliminar un grupo de protección
 
-Al eliminar un grupo de protección, se elimina dicho grupo y todos los programas de copia de seguridad asociados. Es posible que desee eliminar un grupo de protección si ya no es necesario.
+Cuando elimina un grupo de protección, lo elimina junto con todas las programaciones de copia de seguridad del grupo.  Elimine un grupo de protección si ya no lo necesita.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.

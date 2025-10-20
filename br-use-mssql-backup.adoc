@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Realice copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.  Puede implementar una estrategia 3-2-1, donde tiene 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. 
+summary: Realice copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure y StorageGRID para garantizar que sus datos estén protegidos. 
 ---
 = Realice copias de seguridad de las cargas de trabajo de Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Realice copias de seguridad de los datos de las aplicaciones de Microso
 
 
 [role="lead"]
-Realice copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde los sistemas ONTAP locales a Amazon Web Services, Microsoft Azure y StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
+Realice copias de seguridad de los datos de aplicaciones de Microsoft SQL Server desde sistemas ONTAP locales a Amazon Web Services, Microsoft Azure o StorageGRID.  El sistema crea automáticamente copias de seguridad y las almacena en un almacén de objetos en su cuenta en la nube para proteger los datos.
 
-* Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+* Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que administren las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 * Configure el directorio de registro para los hosts descubiertos antes de iniciar una copia de seguridad.
 * Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
 
@@ -40,7 +40,7 @@ Antes de iniciar una copia de seguridad, vea el estado de protección de sus car
 
 == Configurar el directorio de registro para los hosts detectados
 
-Antes de realizar una copia de seguridad de sus cargas de trabajo, configure la ruta para los registros de actividad de los hosts detectados.  Esto le ayuda a realizar un seguimiento del estado de las operaciones.
+Establezca la ruta del registro de actividad para que los hosts descubiertos rastreen el estado de la operación antes de realizar copias de seguridad de las cargas de trabajo.
 
 *Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery, administrador de copias de seguridad de Backup and Recovery o administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -50,7 +50,7 @@ Antes de realizar una copia de seguridad de sus cargas de trabajo, configure la 
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Seleccione un host.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Configurar directorio de registro*.
-. Proporcione la ruta del host o explore una lista de hosts o nodos en el host para ubicar dónde desea que se almacene el registro del host.
+. Ingrese la ruta del host o explore una lista de hosts o nodos para encontrar dónde desea almacenar el registro del host.
 . Seleccione aquellos en los que desea almacenar los registros.
 +
 
@@ -63,7 +63,7 @@ NOTE: Los campos que aparecen varían según el modelo de implementación selecc
 
 == Crear un grupo de protección
 
-Puede crear un grupo de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de cargas de trabajo.  Un grupo de protección es una agrupación lógica de cargas de trabajo que desea proteger juntas.
+Cree un grupo de protección para administrar operaciones de copia de seguridad y restauración para múltiples cargas de trabajo.  Un grupo de protección es una agrupación lógica de cargas de trabajo.
 
 *Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -89,7 +89,7 @@ Si desea crear una política, seleccione *Crear nueva política* y siga las inst
 
 == Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
 
-Cree una copia de seguridad a pedido de inmediato.  Es posible que desees ejecutar una copia de seguridad a pedido si estás a punto de realizar cambios en tu sistema y quieres asegurarte de tener una copia de seguridad antes de comenzar.
+Ejecute una copia de seguridad a pedido antes de realizar cambios en su sistema para garantizar que sus datos estén protegidos.
 
 *Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -109,7 +109,7 @@ Cree una copia de seguridad a pedido de inmediato.  Es posible que desees ejecut
 
 == Suspender la programación de copias de seguridad
 
-Suspender la programación impide que la copia de seguridad se ejecute a la hora programada temporalmente.  Es posible que desees hacer esto si estás realizando mantenimiento en el sistema o si tienes problemas con la copia de seguridad.
+Suspender la programación para detener temporalmente las copias de seguridad durante el mantenimiento o la resolución de problemas.
 
 *Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -126,7 +126,7 @@ Suspender la programación impide que la copia de seguridad se ejecute a la hora
 
 == Eliminar un grupo de protección
 
-Puede crear un grupo de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de cargas de trabajo.  Un grupo de protección es una agrupación lógica de cargas de trabajo que desea proteger juntas.
+Al eliminar un grupo de protección, se elimina dicho grupo y todos los programas de copia de seguridad asociados. Es posible que desee eliminar un grupo de protección si ya no es necesario.
 
 *Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 

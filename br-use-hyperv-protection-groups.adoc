@@ -28,7 +28,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 == Crear un grupo de protección
 
-Agrupe las cargas de trabajo que desea proteger juntas en un grupo de protección. Puede crear un grupo de protección para un conjunto de cargas de trabajo que desee respaldar y restaurar juntas.
+Agrupe las cargas de trabajo que desea proteger juntas en un grupo de protección. Cree un grupo de protección para realizar copias de seguridad y restaurar cargas de trabajo en conjunto.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 

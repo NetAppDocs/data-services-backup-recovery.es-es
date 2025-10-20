@@ -14,10 +14,10 @@ summary: Proteja sus cargas de trabajo de Oracle con la copia de seguridad y rec
 
 
 [role="lead"]
-Realice copias de seguridad de grupos de protección de bases de datos o bases de datos de Oracle desde sistemas ONTAP locales a Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage u ONTAP S3 para garantizar que sus datos estén protegidos.  Cuando se realiza una copia de seguridad de un grupo de protección, la NetApp Console realiza una copia de seguridad de las bases de datos y los datos de registro contenidos en el grupo de protección.
+Utilice NetApp Backup and Recovery para realizar copias de seguridad de grupos de protección de bases de datos o bases de datos de Oracle desde sistemas ONTAP locales al almacenamiento en la nube, incluidos Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage u ONTAP S3.  NetApp Backup and Recovery realiza copias de seguridad de las bases de datos y los datos de registro en cada grupo de protección.
 
 
-NOTE: Para realizar copias de seguridad de grupos de protección o bases de datos individuales según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+NOTE: Para realizar copias de seguridad de grupos de protección o bases de datos individuales según una programación, cree políticas que administren las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 
 * Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-kvm-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de Oracle con NetApp Backup and Recovery"] Para más información.
 * Realice una copia de seguridad de un grupo de protección ahora (cree una copia de seguridad a pedido ahora).
@@ -28,7 +28,7 @@ NOTE: Para realizar copias de seguridad de grupos de protección o bases de dato
 
 == Realice copias de seguridad de los grupos de protección ahora con una copia de seguridad a pedido
 
-Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
+Ejecute una copia de seguridad a pedido antes de realizar cambios en el sistema para garantizar que sus datos estén protegidos.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -43,7 +43,7 @@ Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si e
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 +
 
-NOTE: La política que se aplica a la copia de seguridad es la misma política que se asigna al grupo de protección.
+NOTE: NetApp Backup and Recovery utiliza la misma política tanto para el grupo de respaldo como para el grupo de protección.
 
 . Seleccione el nivel de programación.
 . Seleccione *Hacer copia de seguridad*.

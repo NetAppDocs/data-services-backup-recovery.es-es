@@ -40,7 +40,7 @@ Puede editar un clúster si necesita cambiar su nombre.
 
 == Eliminar un clúster de Kubernetes
 
-Si ya no necesita proteger los recursos alojados en un clúster de Kubernetes, puede eliminarlo de NetApp Backup and Recovery.  Eliminar un clúster no elimina el clúster ni sus recursos; solo elimina el clúster del inventario de la NetApp Console .  Antes de poder eliminar un clúster, debe deshabilitar la protección y eliminar las aplicaciones asociadas de NetApp Backup and Recovery.
+Para dejar de proteger un clúster de Kubernetes, deshabilite la protección y elimine las aplicaciones asociadas; luego, elimine el clúster de NetApp Backup and Recovery.  NetApp Backup and Recovery no elimina el clúster ni sus recursos; solo elimina el clúster del inventario de la NetApp Console .
 
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario* > *Clústeres*.

@@ -25,7 +25,7 @@ Realice copias de seguridad de las máquinas virtuales Hyper-V desde sistemas ON
 
 == Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
 
-Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
+Utilice la copia de seguridad a pedido para que sus datos estén protegidos antes de realizar cambios en el sistema.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -38,7 +38,7 @@ Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si e
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 +
 
-NOTE: La política que se aplica a la copia de seguridad es la misma política que se asigna al grupo de protección o a la máquina virtual.
+NOTE: La copia de seguridad utiliza la misma política que asignó al grupo de protección o a la máquina virtual.
 
 . Seleccione el nivel de programación.
 . Seleccione *Hacer copia de seguridad*.

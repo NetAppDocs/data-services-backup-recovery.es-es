@@ -21,16 +21,14 @@ NOTE: Esta versión de NetApp Backup and Recovery solo es compatible con VMware 
 
 Utilice NetApp Backup and Recovery para implementar una estrategia 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:
 
-* Varias copias de datos brindan protección de múltiples capas contra amenazas de ciberseguridad internas (internas) y externas.
-* Los tipos de medios múltiples garantizan la viabilidad de la conmutación por error en el caso de una falla física o lógica de un tipo de medio.
-* La copia local facilita restauraciones rápidas, y las copias externas están disponibles en caso de que la copia local se vea comprometida.
+* Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
+* El uso de diferentes tipos de medios le ayudará a recuperarse si uno de ellos falla.
+* Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
+
 Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de VMware:
 
 * link:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"]

@@ -14,7 +14,7 @@ summary: Restaure cargas de trabajo de bases de datos desde una copia instantán
 
 
 [role="lead"]
-Restaure cargas de trabajo de Microsoft SQL Server desde copias instantáneas, desde una copia de seguridad de la carga de trabajo replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos mediante NetApp Backup and Recovery.  Puede restaurar una carga de trabajo en el sistema original, en un sistema diferente que use la misma cuenta en la nube o en un sistema ONTAP local.
+Restaure cargas de trabajo de Microsoft SQL Server mediante NetApp Backup and Recovery.  Utilice copias instantáneas, copias de seguridad replicadas en almacenamiento secundario o copias de seguridad en almacenamiento de objetos.  Restaure cargas de trabajo en el sistema original, un sistema diferente con la misma cuenta en la nube o un sistema ONTAP local.
 
 .Restaurar desde estas ubicaciones
 Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
@@ -28,7 +28,7 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 Puede restaurar datos a la última instantánea o a estos puntos:
 
 * Restaurar desde instantáneas
-* Restaurar a un punto específico en el tiempo.  Esto es útil si conoce el nombre y la ubicación del archivo, y la fecha en la que estuvo en buen estado por última vez.
+* Restaurar a un punto específico en el tiempo si conoce el nombre del archivo, la ubicación y la última fecha válida
 * Restaurar a la última copia de seguridad
 
 
@@ -36,7 +36,7 @@ Puede restaurar datos a la última instantánea o a estos puntos:
 Si selecciona un archivo de respaldo en el almacenamiento de objetos y Ransomware Resilience está activo para ese respaldo (si habilitó DataLock y Ransomware Resilience en la política de respaldo), se le solicitará que ejecute una verificación de integridad adicional en el archivo de respaldo antes de restaurar los datos.  Le recomendamos que realice el escaneo.
 
 
-TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
+TIP: Usted paga tarifas adicionales a su proveedor de nube para acceder al archivo de respaldo.
 
 
 
@@ -56,10 +56,10 @@ image:diagram_browse_restore_volume-unified.png["Un diagrama que muestra el fluj
 
 == Métodos de restauración
 
-Puede restaurar cargas de trabajo utilizando uno de los siguientes métodos.  Por lo general, elija uno de los siguientes métodos según sus necesidades de restauración:
+Restaure cargas de trabajo utilizando uno de estos métodos:
 
-* *Desde la página Restaurar*: usa esto cuando necesitas restaurar un recurso, pero no recuerdas el nombre exacto o la ubicación en la que se encuentra, o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.
-* *Desde la página de Inventario*: use esto cuando necesite restaurar un recurso específico de la última semana o mes (y conozca el nombre y la ubicación del recurso y la fecha en que estuvo en buenas condiciones por última vez).  Navega por una lista de recursos hasta encontrar el que deseas restaurar.
+* *Desde la página Restaurar*: utilice esta opción para restaurar un recurso cuando no conoce su nombre, ubicación o última fecha válida.  Busque la instantánea utilizando filtros.
+* *Desde la página de Inventario*: utiliza esta opción para restaurar un recurso específico cuando conozcas su nombre, ubicación y última fecha válida.  Explore la lista para encontrar el recurso.
 
 
 *Rol de NetApp Console requerido* Rol de visor de almacenamiento, superadministrador de Backup and Recovery o administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
@@ -76,7 +76,7 @@ Restaure las cargas de trabajo de la base de datos mediante la opción Restaurar
 . Seleccione la opción de restauración:
 +
 ** Restaurar desde instantáneas
-** Restaurar a un punto específico en el tiempo.  Esto es útil si conoce el nombre y la ubicación del archivo, y la fecha en la que estuvo en buen estado por última vez.
+** Restaurar a un punto específico en el tiempo si conoce el nombre del archivo, la ubicación y la última fecha válida
 ** Restaurar a la última copia de seguridad
 
 
@@ -206,7 +206,7 @@ Restaurar cargas de trabajo de bases de datos desde la página Inventario.  Al u
 . Seleccione el host donde se encuentra el recurso que desea restaurar.
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Ver detalles*.
 . En la página de Microsoft SQL Server, seleccione la pestaña *Bases de datos*.
-. En la pestaña Bases de datos, seleccione la base de datos que muestra un estado "Protegido" que indica que hay una copia de seguridad que puede restaurar.
+. En el menú Bases de datos, seleccione una base de datos con estado "Protegido".
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Restaurar*.
 +
 Aparecen las mismas tres opciones que cuando restaura desde la página Restaurar:

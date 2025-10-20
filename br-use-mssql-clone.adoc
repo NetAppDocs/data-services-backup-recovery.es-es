@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-mssql-clone.html 
 keywords: backing up, restoring, back up, backup, clone, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Clonar datos de aplicaciones de Microsoft SQL Server para fines de desarrollo, prueba o protección.  Puede crear clones a partir de instantáneas instantáneas o instantáneas existentes de sus cargas de trabajo de Microsoft SQL Server. 
+summary: Clonar datos de aplicaciones de Microsoft SQL Server para fines de desarrollo, prueba o protección. 
 ---
-= Clone cargas de trabajo de Microsoft SQL Server con NetApp Backup and Recovery
+= Clonar cargas de trabajo de Microsoft SQL Server mediante NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: Clonar datos de aplicaciones de Microsoft SQL Server para fines de desa
 
 
 [role="lead"]
-Clone datos de aplicaciones de Microsoft SQL Server en la misma máquina virtual o en una diferente para fines de desarrollo, prueba o protección utilizando NetApp Backup and Recovery.  Puede crear clones a partir de instantáneas instantáneas o instantáneas existentes de sus cargas de trabajo de Microsoft SQL Server.
+Clone datos de aplicaciones de Microsoft SQL Server en una máquina virtual para desarrollo, pruebas o protección con NetApp Backup and Recovery.  Cree clones a partir de instantáneas instantáneas o existentes de sus cargas de trabajo de SQL Server.
 
 Elija entre los siguientes tipos de clones:
 
-* *Instantánea y clonación*: puede crear un clon de sus cargas de trabajo de Microsoft SQL Server a partir de una instantánea.  Una instantánea es una copia en un punto en el tiempo de los datos de origen que se crea a partir de una copia de seguridad.  El clon se almacena en un almacén de objetos en su cuenta de nube pública o privada.  Puede utilizar el clon para restaurar sus cargas de trabajo en caso de pérdida o corrupción de datos.
+* *Instantánea y clonación*: puede crear un clon de sus cargas de trabajo de Microsoft SQL Server a partir de una instantánea, que es una copia en un punto en el tiempo de los datos de origen que se crea a partir de una copia de seguridad. El clon se almacena en un almacén de objetos en su cuenta de nube pública o privada. Puede utilizar el clon para restaurar sus cargas de trabajo en caso de pérdida o corrupción de datos.
 * *Clonar desde una instantánea existente*: puede elegir una instantánea existente de una lista de instantáneas que están disponibles para la carga de trabajo.  Esta opción es útil si desea crear un clon a partir de un punto específico en el tiempo.  Clonar al almacenamiento primario o secundario.
 
 
@@ -45,7 +45,7 @@ Puede crear un clon a partir de una instantánea existente o de una instantánea
 . Seleccione *Crear nuevo clon*.
 . Seleccione el tipo de clon:
 +
-** *Clonar y actualizar la base de datos desde una instantánea existente*: elija la instantánea para el clon y configure las opciones para el clon.  Esto es útil si desea elegir la instantánea para el clon y configurar las opciones.
+** *Clonar y actualizar la base de datos desde una instantánea existente*: elija una instantánea y configure las opciones de clonación.
 ** *Instantánea y clonación*: tome una instantánea ahora de los datos de origen y cree un clon a partir de esa instantánea.  Esta opción es útil si desea crear un clon a partir de los últimos datos en la carga de trabajo de origen.
 
 
@@ -59,14 +59,14 @@ Puede crear un clon a partir de una instantánea existente o de una instantánea
 +
 ** *Host de la base de datos de destino, instancia y nombre*: seleccione el host de la base de datos de destino, la instancia y el nombre para el clon.  La base de datos de destino es la ubicación donde se creará el clon.
 +
-Opcionalmente, seleccione *Sufijo* de la lista desplegable del nombre de destino y agregue un sufijo al nombre de la base de datos clonada.  Si no especifica un sufijo, el nombre de la base de datos clonada será el mismo que el nombre de la base de datos de origen.
+Opcionalmente, seleccione *Sufijo* de la lista desplegable del nombre de destino y agregue un sufijo al nombre de la base de datos clonada.  Si no agrega un sufijo, el nombre de la base de datos clonada será el mismo que el nombre de la base de datos de origen.
 
 ** *QoS (rendimiento máximo)*: seleccione el rendimiento máximo de calidad de servicio (QoS) en MBps para el clon.  La QoS define las características de rendimiento del clon, como el rendimiento máximo y las IOPS.
 
 
 . Completa la sección *Montaje*:
 +
-** *Asignar punto de montaje automáticamente*: seleccione esta opción para asignar automáticamente un punto de montaje para el clon.  El punto de montaje es la ubicación donde se montará el clon en el almacén de objetos.
+** *Asignar punto de montaje automáticamente*: asigna automáticamente un punto de montaje para el clon en el almacén de objetos.
 ** *Definir ruta del punto de montaje*: ingrese un punto de montaje para el clon.  El punto de montaje es la ubicación donde se montará el clon en el almacén de objetos.  Seleccione la letra de la unidad, ingrese la ruta del archivo de datos e ingrese la ruta del archivo de registro.
 
 
@@ -94,9 +94,9 @@ Opcionalmente, seleccione *Sufijo* de la lista desplegable del nombre de destino
 *** *Actualizar clon cada*: seleccione la frecuencia con la que se debe actualizar el clon.  Puede elegir actualizar el clon cada hora, día, semana, mes o trimestre.  Esta opción es útil si desea mantener el clon actualizado con la carga de trabajo de origen.
 
 
-** *Prescriptos y posscriptos*: de manera opcional, especifique scripts previos y posteriores al clon que se ejecutarán antes y después de crear el clon.  Estos scripts se pueden utilizar para realizar tareas adicionales, como configurar el clon o enviar notificaciones.
+** *Prescriptos y posscriptos*: Opcionalmente, agregue scripts para ejecutar antes y después de crear el clon.  Estos scripts pueden realizar tareas adicionales, como configurar el clon o enviar notificaciones.
 ** *Notificación*: Opcionalmente, especifique direcciones de correo electrónico para recibir notificaciones sobre el estado de creación del clon junto con el informe del trabajo.  También puede especificar una URL de webhook para recibir notificaciones sobre el estado de creación del clon.  Puede especificar si desea recibir notificaciones de éxito y fracaso o solo de una u otra.
-** *Etiquetas*: Seleccione una o más etiquetas que le ayudarán a buscar más adelante el grupo de recursos y seleccione *Aplicar*.  Por ejemplo, si agrega "RR.HH." como etiqueta a varios grupos de recursos, posteriormente podrá encontrar todos los grupos de recursos asociados con la etiqueta RR.HH.
+** *Etiquetas*: seleccione etiquetas para ayudarle a buscar grupos de recursos más tarde y seleccione *Aplicar*.  Por ejemplo, si agrega "RRHH" como etiqueta a varios grupos de recursos, más tarde podrá encontrar todos los grupos de recursos asociados con la etiqueta "RRHH".
 
 
 . Seleccione *Crear*.
@@ -125,7 +125,7 @@ Tiene la opción de cambiar el nombre de la base de datos, utilizar la última i
 
 
 ** *Configuración de iGroup*: seleccione el iGroup para el clon.  El igroup es una agrupación lógica de iniciadores que se utilizan para acceder al clon.  Puede seleccionar un igroup existente o crear uno nuevo.  Seleccione el igroup del sistema de almacenamiento ONTAP primario o secundario.
-** *Prescriptos y posscriptos*: de manera opcional, especifique scripts previos y posteriores al clon que se ejecutarán antes y después de crear el clon.  Estos scripts se pueden utilizar para realizar tareas adicionales, como configurar el clon o enviar notificaciones.
+** *Prescriptos y posscriptos*: Opcionalmente, agregue scripts para ejecutar antes y después de crear el clon.  Estos scripts pueden realizar tareas adicionales, como configurar el clon o enviar notificaciones.
 ** *Notificación*: Opcionalmente, especifique direcciones de correo electrónico para recibir notificaciones sobre el estado de creación del clon junto con el informe del trabajo.  También puede especificar una URL de webhook para recibir notificaciones sobre el estado de creación del clon.  Puede especificar si desea recibir notificaciones de éxito y fracaso o solo de una u otra.
 ** *Etiquetas*: Ingrese una o más etiquetas que le ayudarán a buscar posteriormente el grupo de recursos.  Por ejemplo, si agrega "RR.HH." como etiqueta a varios grupos de recursos, posteriormente podrá encontrar todos los grupos de recursos asociados con la etiqueta RR.HH.
 
@@ -137,7 +137,7 @@ Tiene la opción de cambiar el nombre de la base de datos, utilizar la última i
 
 == Omitir una actualización de clonación
 
-Es posible que desee omitir una actualización de clon si no desea actualizar el clon con los datos más recientes de la carga de trabajo de origen.  Omitir una actualización de clon le permite mantener el clon tal como está sin actualizarlo.
+Omite una actualización de clon para mantener el clon sin cambios.
 
 .Pasos
 . Desde el menú NetApp Backup and Recovery , seleccione *Clonar*.
@@ -175,7 +175,7 @@ El trabajo de clonación no se eliminará y se puede reutilizar para otros clone
 
 Puede eliminar un clon de sus cargas de trabajo de Microsoft SQL Server.  Al eliminar un clon, se elimina el clon del almacén de objetos y se libera espacio de almacenamiento.
 
-Si el clon está protegido por una política, el clon se elimina, incluido el trabajo.
+Si una política protege el clon, se eliminan tanto el clon como su trabajo.
 
 .Pasos
 . Desde el menú NetApp Backup and Recovery , seleccione *Clonar*.

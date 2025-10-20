@@ -330,7 +330,7 @@ Tenga en cuenta que esta acción no afecta a las copias instantáneas ni a los v
 . Seleccione *Configuración avanzada*.
 . *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
 +
-En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las desea. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
+En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las desea. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puedes usar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y sistema).
 
 +
 
@@ -355,7 +355,7 @@ Se muestra la lista de todos los archivos de respaldo.
 . Seleccione *Configuración avanzada*.
 . *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
 +
-En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las quiere. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
+En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las quiere. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puedes usar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y sistema).
 
 +
 
