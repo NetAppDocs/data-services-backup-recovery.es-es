@@ -271,9 +271,6 @@ Además, configure las siguientes opciones:
 
 Puede editar la arquitectura de respaldo, la frecuencia de respaldo, la política de retención y otras configuraciones para una política.
 
-
-NOTE: Esta función no está disponible para las cargas de trabajo de VMware Preview.
-
 Puede agregar otro nivel de protección al editar una política, pero no puede eliminar un nivel de protección.  Por ejemplo, si la política solo protege instantáneas locales, puede agregar replicación al almacenamiento secundario o copias de seguridad al almacenamiento de objetos.  Si tiene instantáneas y replicación locales, puede agregar almacenamiento de objetos.  Sin embargo, si tiene instantáneas locales, replicación y almacenamiento de objetos, no puede eliminar uno de estos niveles.
 
 Si está editando una política que realiza copias de seguridad en el almacenamiento de objetos, puede habilitar el archivado.
