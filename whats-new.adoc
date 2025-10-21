@@ -99,7 +99,6 @@ La versión preliminar de las cargas de trabajo de VMware presenta las siguiente
 
 * Soporte para restaurar desde el almacenamiento de objetos
 * El panel de control de la NetApp Console ahora muestra información sobre el estado de la carga de trabajo de VMware
-* Compatibilidad con el modo de demostración: explore las características de las cargas de trabajo de VMware sin agregar un entorno de VMware vCenter Server
 * Compatibilidad con control de acceso basado en roles (RBAC)
 * Soporte de alertas y notificaciones por correo electrónico para eventos laborales
 * Soporte para realizar copias de seguridad y restaurar en almacenamiento basado en NVMe

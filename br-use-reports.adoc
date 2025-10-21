@@ -31,7 +31,7 @@ En NetApp Backup and Recovery, cree informes para las cargas de trabajo de Micro
 
 
 . Ingresar rango de informe: elija si desea que el informe incluya datos del último día, los últimos 7 días, los últimos 30 días, el último trimestre o el año pasado.
-. Ingrese los detalles de entrega del informe: si desea que el informe se envíe por correo electrónico, marque *Enviar informe mediante correo electrónico*.  Introduzca las direcciones de correo electrónico donde desea que se envíe el informe.
+. Ingrese los detalles de entrega del informe: si desea que el informe se envíe por correo electrónico, marque *Enviar informe mediante correo electrónico*. Introduzca la dirección de correo electrónico donde desea que se envíe el informe.
 +
 Configure las notificaciones por correo electrónico en la página Configuración.  Para obtener detalles sobre cómo configurar las notificaciones por correo electrónico, consultelink:br-use-settings-advanced.html["Configurar ajustes"] .
 
