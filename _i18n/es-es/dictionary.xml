@@ -682,7 +682,6 @@
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">Este proceso puede tardar unos minutos.</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">Una vez que NetApp Backup and Recovery descubre recursos, la página Inventario muestra la carga de trabajo de Hyper-V en la lista de cargas de trabajo.</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">Continuar al panel de control de NetApp Backup and Recovery</block>
-  <block id="4a94cfaf243c22ac5a3b2acf1849db11" category="list-text">Para visualizar el Panel de control de NetApp Backup and Recovery , desde el menú de la NetApp Console , seleccione *Panel de control*.</block>
   <block id="8c0d3ed018f04fbf259db34d9167eae7" category="list-text">Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.</block>
   <block id="dd9e4491810d247bd97912faae187a39" category="summary">NetApp Backup and Recovery primero debe descubrir las cargas de trabajo para que usted pueda utilizar el servicio.</block>
   <block id="dfbbf83657db8e9ef8d6ee3a468873c2" category="doc">Descubra las cargas de trabajo de Kubernetes en NetApp Backup and Recovery</block>
@@ -705,7 +704,6 @@
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">El clúster se agrega al inventario.</block>
   <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">Seleccione *Ver* en la carga de trabajo de Kubernetes asociada para ver la lista de aplicaciones, clústeres y espacios de nombres para esa carga de trabajo.</block>
   <block id="b0719c20a836424f725e51c9b181748d" category="paragraph">Siga estos pasos para ver el panel de control de NetApp Backup and Recovery .</block>
-  <block id="0023e6c28000b2b0e540612bd4511db3" category="list-text">Desde el menú superior, seleccione *Panel de control*.</block>
   <block id="09799d4864834161536cca195023364b" category="inline-link-macro">Descubra lo que le muestra el Dashboard</block>
   <block id="d5292ed1370bb405095587cd10827f95" category="paragraph"><block ref="2a35d34f81dbac907e6068b45b5d538a" category="inline-link-macro-rx"></block>.</block>
   <block id="a8d8543f27c131c1d9b3ca0cf9f1f4ea" category="summary">NetApp Backup and Recovery primero debe descubrir las cargas de trabajo para poder protegerlas.</block>
@@ -721,7 +719,6 @@
   <block id="4eefc3e53a1cd35eca7d32b6b2c550f5" category="list-text">Elija si desea utilizar credenciales root o credenciales no root.</block>
   <block id="87f459dd6c99dc89040246d5ef818100" category="list-text">*Registro de host*: agregue un nuevo host KVM.  Ingrese el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto.</block>
   <block id="238fb750ebdea9faf36668536aaa8b42" category="paragraph">La carga de trabajo de KVM se muestra en la lista de cargas de trabajo en la página Inventario.</block>
-  <block id="bcfa92e95d27d2c808d23768de744fd9" category="list-text">Para visualizar el Panel de control de NetApp Backup and Recovery , desde el menú superior, seleccione *Panel de control*.</block>
   <block id="0a6dc8ac33152480a18098d8eb98ccb6" category="doc">Descubra las cargas de trabajo de Oracle en NetApp Backup and Recovery</block>
   <block id="945f74309f719db5d0fb0d1bb5a31781" category="paragraph">NetApp Backup and Recovery primero debe descubrir sus bases de datos Oracle para poder protegerlas.</block>
   <block id="bf36d800e1bbaf0ef44cd361867e4e09" category="section-title">Agregue un host de Oracle y descubra recursos</block>
@@ -788,7 +785,6 @@
   <block id="80be79a75ac4a79f740ad2838c734534" category="list-text">*Usar instalación manual*: Marque esta casilla para instalar el complemento manualmente.</block>
   <block id="628bc160a519e5ae69b6c8aa88610900" category="list-text">*Agregar todos los hosts en el clúster*: marque esta casilla para agregar todos los hosts en el clúster a NetApp Backup and Recovery durante la detección.</block>
   <block id="b7dfb6860d9af743a7d3f0fe2adfde3d" category="list-text">*Omitir comprobaciones de preinstalación opcionales*: marque esta casilla para omitir las comprobaciones de preinstalación opcionales.  Es posible que desees hacer esto, por ejemplo, si sabes que las consideraciones de memoria o espacio cambiarán en el futuro cercano y deseas instalar el complemento ahora.</block>
-  <block id="413f1bdf68093f037d6630a5904e6a17" category="list-text">Para visualizar el Panel de control de NetApp Backup and Recovery , en el menú Respaldo y recuperación, seleccione *Panel de control*.</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">Modos de implementación de la NetApp Console</block>
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">Puede obtener una licencia de NetApp Backup and Recovery comprando una suscripción de pago por uso o anual en el mercado de su proveedor de nube, o comprando una licencia propia de NetApp.  Se requiere una licencia válida para activar NetApp Backup and Recovery en un sistema, para crear copias de seguridad de sus datos de producción y para restaurar datos de copia de seguridad en un sistema de producción.</block>
   <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">Puede obtener una licencia de NetApp Backup and Recovery comprando una suscripción de pago por uso (PAYGO) o una suscripción anual en el mercado de * NetApp Intelligent Services* a su proveedor de nube, o comprando una licencia BYOL (traiga su propia licencia) a NetApp.  Se requiere una licencia válida para activar NetApp Backup and Recovery en un sistema, para crear copias de seguridad de sus datos de producción y para restaurar datos de copia de seguridad en un sistema de producción.</block>
@@ -936,7 +932,6 @@
   <block id="a160325dcdf365b6a979dfed5c7d50f7" category="doc">Ver el estado de la protección en el panel de control de NetApp Backup and Recovery</block>
   <block id="2da92f995ab136dd344c314ba2b4eed1" category="paragraph">Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los problemas con la protección de las cargas de trabajo y poder tomar medidas para resolverlos.  Vea el estado de sus copias de seguridad y restauraciones en el Panel de control de NetApp Backup and Recovery .  Puede revisar el resumen del sistema, el resumen de protección, el resumen de trabajo, el resumen de restauración y más.</block>
   <block id="f8dd3e1869946d83a9dde01dd1d1532b" category="paragraph">*Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery, administrador de restauración de Backup and Recovery, administrador de clones de Backup and Recovery o rol de visor de Backup and Recovery.  Conozca más sobre<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
-  <block id="cb8f96f7586f61e5cb6878a228c22371" category="list-text">Desde el menú NetApp Backup and Recovery , seleccione *Panel de control*.</block>
   <block id="786dc54a357443785ac613f07c08cc8f" category="list-text">Número de hosts o máquinas virtuales descubiertos</block>
   <block id="6393f4da4761be4d85c7778d5e5ebdea" category="list-text">Número de clústeres de Kubernetes descubiertos</block>
   <block id="54b82ae02ee9c233cf025fb2566edaf9" category="list-text">Número de destinos de respaldo en el almacenamiento de objetos</block>
@@ -4776,4 +4771,7 @@
   <block id="96de4b90f5864c84829fbe7735879827" category="list-text">*Configuración de iGroup*: seleccione el iGroup para el clon. El iGroup es una agrupación lógica de iniciadores que se utilizan para acceder al clon. Puede seleccionar un iGroup existente o crear uno nuevo. Seleccione el iGroup del sistema de almacenamiento ONTAP primario o secundario.</block>
   <block id="5261c1383d98ed2b1e8b4a1fd943a918" category="list-text">*Salir de la restauración si falla la copia de seguridad del registro de transacciones antes de la restauración*: detiene la operación de restauración si falla la copia de seguridad del registro de transacciones.</block>
   <block id="8f40cc47127edbc609e36af0ad86f259" category="list-text">Ingrese los detalles de entrega del informe: si desea que el informe se envíe por correo electrónico, marque *Enviar informe mediante correo electrónico*. Introduzca la dirección de correo electrónico donde desea que se envíe el informe.</block>
+  <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).</block>
+  <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.</block>
+  <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">Puede revisar los siguientes tipos de información:</block>
 </blocks>

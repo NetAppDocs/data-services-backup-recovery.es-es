@@ -19,7 +19,12 @@ Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los
 *Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery, administrador de restauración de Backup and Recovery, administrador de clones de Backup and Recovery o rol de visor de Backup and Recovery.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú NetApp Backup and Recovery , seleccione *Panel de control*.
+. Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).
+. Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.
++
+Puede revisar los siguientes tipos de información:
+
 +
 ** Número de hosts o máquinas virtuales descubiertos
 ** Número de clústeres de Kubernetes descubiertos

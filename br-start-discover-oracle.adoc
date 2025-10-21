@@ -59,6 +59,8 @@ La carga de trabajo de Oracle se muestra en la lista de cargas de trabajo en la 
 
 == Continuar al panel de control de NetApp Backup and Recovery
 
-. Para visualizar el Panel de control de NetApp Backup and Recovery , desde el menú superior, seleccione *Panel de control*.
+. Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).
+. Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.
 . Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
 

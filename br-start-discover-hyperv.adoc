@@ -62,6 +62,8 @@ Una vez que NetApp Backup and Recovery descubre recursos, la página Inventario 
 == Continuar al panel de control de NetApp Backup and Recovery
 
 .Pasos
-. Para visualizar el Panel de control de NetApp Backup and Recovery , desde el menú de la NetApp Console , seleccione *Panel de control*.
+. Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).
+. Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.
 . Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
 
