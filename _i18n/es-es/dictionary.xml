@@ -4774,4 +4774,6 @@
   <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).</block>
   <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.</block>
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">Puede revisar los siguientes tipos de información:</block>
+  <block id="70cc82710208295496c70c203368aaf9" category="paragraph">Esta versión de cargas de trabajo de volumen de ONTAP presenta la siguiente capacidad mejorada:</block>
+  <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">A partir de ONTAP 9.17.1 y versiones más recientes, DataLock ahora es compatible con Google Cloud Platform. Esto complementa el soporte existente de DataLock con Amazon AWS, Microsoft Azure y NetApp StorageGRID.</block>
 </blocks>

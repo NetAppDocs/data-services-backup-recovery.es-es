@@ -128,6 +128,14 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Datab
 
 
 
+=== Mejoras en la carga de trabajo de volumen de ONTAP
+
+Esta versión de cargas de trabajo de volumen de ONTAP presenta la siguiente capacidad mejorada:
+
+A partir de ONTAP 9.17.1 y versiones más recientes, DataLock ahora es compatible con Google Cloud Platform. Esto complementa el soporte existente de DataLock con Amazon AWS, Microsoft Azure y NetApp StorageGRID.
+
+
+
 == 25 de agosto de 2025
 
 Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
