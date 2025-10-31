@@ -4776,4 +4776,9 @@
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">Puede revisar los siguientes tipos de información:</block>
   <block id="70cc82710208295496c70c203368aaf9" category="paragraph">Esta versión de cargas de trabajo de volumen de ONTAP presenta la siguiente capacidad mejorada:</block>
   <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">A partir de ONTAP 9.17.1 y versiones más recientes, DataLock ahora es compatible con Google Cloud Platform. Esto complementa el soporte existente de DataLock con Amazon AWS, Microsoft Azure y NetApp StorageGRID.</block>
+  <block id="a0fe305acb95f37513221f1fa15cc736" category="paragraph">Para habilitar la protección de las máquinas virtuales KVM administradas por usuarios sin privilegios de administrador, siga los siguientes pasos:</block>
+  <block id="7038d2812762c5a3340bd687f860b041" category="list-text">Monta el volumen como tipo NFS3 para evitar el uso de<block ref="6e854442cd2a940c9e95941dce4ad598" prefix=" " category="inline-code"></block> usuario y grupo.</block>
+  <block id="36d8cadfad50f92ea039929a8bfc7450" category="list-text">Utilice el siguiente comando para agregar un usuario sin privilegios de administrador al<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> grupo preservando sus grupos existentes:</block>
+  <block id="aa1cd3801b770b27b2d088367602a652" category="list-text">Utilice el siguiente comando para otorgar la propiedad de la ruta de montaje al<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> Usuario y grupo, y cambiar permisos para la ruta de montaje:</block>
+  <block id="fba88ec9b188c84767bd0e321c7662a9" category="list-text">Elimine el directorio NetApp_SnapCenter_Backups existente, si lo hubiera.</block>
 </blocks>
