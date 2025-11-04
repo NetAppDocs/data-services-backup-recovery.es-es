@@ -18,11 +18,9 @@ Puede realizar copias de seguridad y archivar uno o más almacenes de datos con 
 
 Si el almacén de datos está asociado con una política de archivo, tiene la opción de seleccionar el nivel de archivo.  Los niveles de archivo admitidos son Glaciar y Glaciar Deep.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 .Antes de empezar
 Asegúrese de haber cumplido con todos loslink:prev-vmware-prereqs.html["Requisitos de protección de máquinas virtuales"] antes de realizar copias de seguridad de los almacenes de datos en la nube.
 

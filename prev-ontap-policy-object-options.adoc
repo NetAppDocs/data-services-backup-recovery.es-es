@@ -19,11 +19,9 @@ NetApp Backup and Recovery le permite crear políticas de respaldo con una varie
 
 NOTE: Estas configuraciones de políticas son relevantes únicamente para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta sus políticas de instantáneas o replicación.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Opciones de programación de copias de seguridad

@@ -16,11 +16,9 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 [role="lead"]
 Puede ver políticas, almacenes de datos y máquinas virtuales antes de realizar copias de seguridad y restaurar datos con NetApp Backup and Recovery.  Según el cambio en la base de datos, las políticas o los grupos de recursos, puede ver las actualizaciones desde la interfaz de usuario de la NetApp Console .
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Ver políticas

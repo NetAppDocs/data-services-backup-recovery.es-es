@@ -19,11 +19,9 @@ Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar co
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Identificar el método de conexión
@@ -94,7 +92,7 @@ Para utilizar la funcionalidad "Buscar y restaurar" de NetApp Backup and Recover
 . Seleccione *Editar rol* para actualizar los permisos del rol.
 . Seleccione *Agregar permisos* para agregar los siguientes permisos nuevos al rol.
 +
-[source, json]
+[source, console]
 ----
 bigquery.jobs.get
 bigquery.jobs.list
@@ -245,7 +243,7 @@ Debe proporcionar claves de acceso de almacenamiento para una cuenta de servicio
 . En el https://console.cloud.google.com["Consola de Google Cloud"^] , vaya a la página *Roles*.
 . https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Crear un nuevo rol"^]con los siguientes permisos:
 +
-[source, json]
+[source, console]
 ----
 storage.buckets.create
 storage.buckets.delete
@@ -299,7 +297,7 @@ Si planea utilizar sus propias claves administradas por el cliente:
 * Necesitarás tener el llavero y el nombre de la clave para poder agregar esta información en el asistente de activación. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado administradas por el cliente"^] .
 * Deberá verificar que estos permisos requeridos estén incluidos en la función del agente de consola:
 +
-[source, json]
+[source, console]
 ----
 cloudkms.cryptoKeys.get
 cloudkms.cryptoKeys.getIamPolicy

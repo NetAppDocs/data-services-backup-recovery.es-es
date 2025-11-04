@@ -19,11 +19,9 @@ Puede cambiar la configuración de almacenamiento de respaldo a objeto a nivel d
 
 NOTE: Estas configuraciones solo están disponibles para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta su configuración de instantánea o replicación.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 Puede cambiar las siguientes opciones en la página Configuración avanzada:
 
 * Cambiar el ancho de banda de red asignado para cargar copias de seguridad al almacenamiento de objetos mediante la opción Velocidad máxima de transferencia ifdef::aws[]

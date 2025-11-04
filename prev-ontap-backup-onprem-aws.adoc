@@ -19,11 +19,9 @@ Complete unos pocos pasos en NetApp Backup and Recovery para comenzar a realizar
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Identificar el método de conexión
@@ -174,7 +172,8 @@ Todos los LIF entre clústeres dentro del espacio IP deben tener acceso al almac
 
 * Los servidores DNS deben haber sido configurados para la máquina virtual de almacenamiento donde se encuentran los volúmenes.  Vea cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configurar servicios DNS para la SVM"^] .
 * Actualice las reglas de firewall, si es necesario, para permitir conexiones de NetApp Backup and Recovery desde ONTAP al almacenamiento de objetos a través del puerto 443 y tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS a través del puerto 53 (TCP/UDP).
-* Si está utilizando un punto final de interfaz de VPC privada en AWS para la conexión S3, entonces para poder utilizar HTTPS/443, deberá cargar el certificado del punto final S3 en el clúster de ONTAP . <<Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC>>.  *[Asegúrese de que su clúster ONTAP tenga permisos para acceder al depósito S3.
+* Si está utilizando un punto final de interfaz de VPC privada en AWS para la conexión S3, entonces para poder utilizar HTTPS/443, deberá cargar el certificado del punto final S3 en el clúster de ONTAP . <<Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC>>.
+* Asegúrese de que su clúster ONTAP tenga permisos para acceder al bucket S3.
 
 
 
@@ -239,48 +238,48 @@ Consulte la https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for
 [source, json]
 ----
 {
-    "Version": "2012-10-17",
-     "Statement": [
-        {
-           "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:DeleteObject",
-                "s3:ListBucket",
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketLocation",
-                "s3:PutEncryptionConfiguration"
-            ],
-            "Resource": "arn:aws:s3:::netapp-backup-*",
-            "Effect": "Allow",
-            "Sid": "backupPolicy"
-        },
-        {
-            "Action": [
-                "s3:ListBucket",
-                "s3:GetBucketLocation"
-            ],
-            "Resource": "arn:aws:s3:::netapp-backup*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:DeleteObject",
-                "s3:ListAllMyBuckets",
-                "s3:PutObjectTagging",
-                "s3:GetObjectTagging",
-                "s3:RestoreObject",
-                "s3:GetBucketObjectLockConfiguration",
-                "s3:GetObjectRetention",
-                "s3:PutBucketObjectLockConfiguration",
-                "s3:PutObjectRetention"
-            ],
-            "Resource": "arn:aws:s3:::netapp-backup*/*",
-            "Effect": "Allow"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "s3:PutEncryptionConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::netapp-backup-*",
+      "Effect": "Allow",
+      "Sid": "backupPolicy"
+    },
+    {
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::netapp-backup*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListAllMyBuckets",
+        "s3:PutObjectTagging",
+        "s3:GetObjectTagging",
+        "s3:RestoreObject",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetObjectRetention",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:PutObjectRetention"
+      ],
+      "Resource": "arn:aws:s3:::netapp-backup*/*",
+      "Effect": "Allow"
+    }
+  ]
 }
 ----
 ====

@@ -19,11 +19,9 @@ Con NetApp Backup and Recovery, administre las copias de seguridad de sus Cloud 
 
 CAUTION: No administre ni modifique los archivos de respaldo directamente en sus sistemas de almacenamiento o desde el entorno de su proveedor de nube.  Esto puede dañar los archivos y dará como resultado una configuración no compatible.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Ver el estado de la copia de seguridad de los volúmenes en sus sistemas

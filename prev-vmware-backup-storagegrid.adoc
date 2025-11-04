@@ -16,11 +16,9 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 [role="lead"]
 Puede realizar una copia de seguridad de uno o más almacenes de datos en StorageGRID integrando el SnapCenter Plug-in for VMware vSphere con NetApp Backup and Recovery.  Esto ayudará a los administradores de máquinas virtuales a realizar copias de seguridad y archivar datos de manera fácil y rápida para lograr una mayor eficiencia del almacenamiento y acelerar la transición a la nube.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 .Antes de empezar
 Asegúrese de haber cumplido con todos loslink:prev-vmware-prereqs.html["Requisitos de protección de máquinas virtuales"] antes de realizar copias de seguridad de los almacenes de datos en la nube.
 

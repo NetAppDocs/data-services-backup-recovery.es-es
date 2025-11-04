@@ -16,11 +16,9 @@ summary: Con NetApp Backup and Recovery, restaure un volumen ONTAP completo desd
 [role="lead"]
 Las copias de seguridad de los datos de volumen de ONTAP están disponibles en las ubicaciones donde creó las copias de seguridad: copias instantáneas, volúmenes replicados y copias de seguridad almacenadas en el almacenamiento de objetos.  Puede restaurar datos de un punto específico en el tiempo desde cualquiera de estas ubicaciones de respaldo.  Con NetApp Backup and Recovery, restaure un volumen ONTAP completo desde un archivo de respaldo o, si solo necesita restaurar algunos archivos, restaure una carpeta o archivos individuales.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 * Puede restaurar un *volumen* (como un nuevo volumen) en el sistema original, en un sistema diferente que use la misma cuenta en la nube o en un sistema ONTAP local.
 * Puede restaurar una *carpeta* a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local.
 * Puede restaurar *archivos* a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local.

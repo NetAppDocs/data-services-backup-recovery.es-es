@@ -19,11 +19,9 @@ Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar co
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Identificar el método de conexión
@@ -208,7 +206,7 @@ Cuando configura la copia de seguridad en StorageGRID, el asistente de copia de 
 
 Estas claves de acceso deben estar asociadas a un usuario que tenga los siguientes permisos:
 
-[source, json]
+[source, console]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

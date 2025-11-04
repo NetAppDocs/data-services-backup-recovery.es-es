@@ -16,11 +16,9 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 [role="lead"]
 Puede crear una política o utilizar una de las siguientes políticas predefinidas que están disponibles en NetApp Backup and Recovery.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 .Antes de empezar
 * Debe crear políticas si no desea editar las políticas predefinidas.
 * Para mover copias de seguridad del almacén de objetos al almacenamiento de archivo, debe ejecutar ONTAP 9.10.1 o posterior y Amazon Web Services o Microsoft Azure debe ser el proveedor de la nube.

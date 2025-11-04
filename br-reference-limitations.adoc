@@ -56,14 +56,10 @@ No hay ninguna limitación para los volúmenes FlexVol : puede seleccionar todos
 +
 Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Descripción general de la configuración de NetApp Volume Encryption"^] .
 
-
-
 * Si se habilitan las instantáneas de retención a largo plazo en un volumen de destino de SnapMirror mediante la programación en la política de SnapMirror , las instantáneas se crean directamente en el volumen de destino.  En este caso, no debe realizar una copia de seguridad de esos volúmenes con NetApp Backup and Recovery porque esas instantáneas no se moverán al almacenamiento de objetos.
 * Al realizar copias de seguridad de datos, NetApp Backup and Recovery no mantendrá NetApp Volume Encryption (NVE).  Esto significa que los datos cifrados en el volumen NVE se descifrarán mientras se transfieren al destino y no se mantendrá el cifrado.
 +
 Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Descripción general de la configuración de NetApp Volume Encryption"^] .
-
-
 
 * Si se habilitan las instantáneas de retención a largo plazo en un volumen de destino de SnapMirror mediante la programación en la política de SnapMirror , las instantáneas se crean directamente en el volumen de destino.  En este caso, no debe realizar una copia de seguridad de esos volúmenes con NetApp Backup and Recovery porque esas instantáneas no se moverán al almacenamiento de objetos.
 * Cuando crea o edita una política de respaldo cuando no hay volúmenes asignados a la política, la cantidad de copias de seguridad retenidas puede ser un máximo de 1018.  Después de asignar volúmenes a la política, puede editarla para crear hasta 4000 copias de seguridad.
@@ -80,8 +76,6 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 ** Las copias de seguridad solo se admiten desde el servidor secundario de ONTAP .
 ** La política de instantáneas aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery, incluidas las diarias, semanales, mensuales, etc. La política predeterminada "sm_created" (usada para *Duplicar todas las instantáneas*) no se reconoce y el volumen DP no se mostrará en la lista de volúmenes que se pueden respaldar.
 ** La copia de seguridad y recuperación de volumen y SVM-DR funcionan de forma totalmente independiente cuando la copia de seguridad se realiza desde el origen o el destino.  La única restricción es que SVM-DR no replica la relación de nube de SnapMirror .  En el escenario de recuperación ante desastres, cuando el SVM se conecta en la ubicación secundaria, debe actualizar manualmente la relación en la nube de SnapMirror .
-
-
 
 
 * Soporte de MetroCluster :

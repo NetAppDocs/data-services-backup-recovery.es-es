@@ -16,11 +16,9 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 [role="lead"]
 NetApp Backup and Recovery ofrece capacidades de respaldo y restauración para la protección y el archivo a largo plazo de sus datos de volumen ONTAP .  Puede implementar una estrategia 3-2-1 donde tenga 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 Después de la activación, la copia de seguridad y la recuperación crean copias de seguridad incrementales a nivel de bloque y permanentes que se almacenan en otro clúster de ONTAP y en el almacenamiento de objetos en la nube.  Además de tu volumen de origen, tendrás:
 
 * Copia instantánea del volumen en el sistema de origen

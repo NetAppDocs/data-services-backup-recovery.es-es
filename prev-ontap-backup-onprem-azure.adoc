@@ -19,11 +19,9 @@ Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar co
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Identificar el método de conexión
@@ -113,7 +111,7 @@ Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Mic
 +
 [%collapsible]
 ====
-[source, json]
+[source, console]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

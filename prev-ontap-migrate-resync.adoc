@@ -23,11 +23,9 @@ NOTE: Esta función está disponible a partir de la versión 4.0.3 de NetApp Bac
 
 SnapMirror to Cloud Resync mantiene la continuidad de las copias de seguridad en todos los entornos, lo que facilita la gestión de datos en configuraciones híbridas y multi-nube.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 .Antes de empezar
 Asegúrese de que se cumplan estos requisitos previos:
 

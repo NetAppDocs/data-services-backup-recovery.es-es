@@ -16,11 +16,9 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 [role="lead"]
 Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de los datos de volumen de sus sistemas Cloud Volumes ONTAP en el almacenamiento de blobs de Azure.
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Verificar la compatibilidad con su configuración
@@ -94,7 +92,7 @@ Para utilizar la funcionalidad de búsqueda y restauración de NetApp Backup and
 +
 [%collapsible]
 ====
-[source, json]
+[source, console]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

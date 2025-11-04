@@ -18,11 +18,9 @@ Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar co
 
 El sistema ONTAP local principal puede ser un sistema FAS, AFF o ONTAP Select .  El sistema ONTAP secundario puede ser un ONTAP local o un sistema Cloud Volumes ONTAP .  El almacenamiento de objetos puede estar en un sistema ONTAP local o en un sistema Cloud Volumes ONTAP en el que haya habilitado un servidor de almacenamiento de objetos Simple Storage Service (S3).
 
-[]
-====
-*NOTA* Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-====
+NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+
 
 
 == Identificar el método de conexión
@@ -208,7 +206,7 @@ Cuando configura la copia de seguridad en ONTAP S3, el asistente de copia de seg
 
 Estas claves de acceso deben estar asociadas a un usuario que tenga los siguientes permisos:
 
-[source, json]
+[source, console]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",
