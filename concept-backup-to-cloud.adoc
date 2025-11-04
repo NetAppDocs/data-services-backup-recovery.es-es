@@ -281,20 +281,8 @@ NOTE: También se admite el paso del almacenamiento primario al almacenamiento d
 
 Las copias de seguridad se almacenan en un almacén de objetos que la NetApp Console crea en su cuenta en la nube.  Hay un almacén de objetos por clúster o sistema, y ​​la consola nombra el almacén de objetos de la siguiente manera: `netapp-backup-clusteruuid` .  Asegúrese de no eliminar este almacén de objetos.
 
-ifdef::aws[]
-
-* En AWS, la NetApp Console permite https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Función de acceso público bloqueado de Amazon S3"^] en el depósito S3. endif::aws[]
-
-
-ifdef::azure[]
-
-* En Azure, la NetApp Console usa un grupo de recursos nuevo o existente con una cuenta de almacenamiento para el contenedor de blobs. la consola https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["bloquea el acceso público a sus datos de blobs"] por defecto. endif::azure[]
-
-
-ifdef::gcp[]
-
-endif::gcp[]
-
+* En AWS, la NetApp Console permite https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Función de acceso público bloqueado de Amazon S3"^] en el cubo S3.
+* En Azure, la NetApp Console utiliza un grupo de recursos nuevo o existente con una cuenta de almacenamiento para el contenedor de blobs. https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["bloquea el acceso público a sus datos de blobs"] por defecto.
 * En StorageGRID, la consola utiliza una cuenta de almacenamiento existente para el depósito de almacenamiento de objetos.
 * En ONTAP S3, la consola utiliza una cuenta de usuario existente para el bucket S3.
 

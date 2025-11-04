@@ -110,9 +110,10 @@ Consulte los requisitos y los pasos de restauración para el tipo de operación 
 
 == Restaurar datos de ONTAP mediante Explorar y restaurar
 
-Antes de comenzar a restaurar un volumen, una carpeta o un archivo, debe saber el nombre del volumen desde el cual desea restaurar, el nombre del sistema y SVM donde reside el volumen, y la fecha aproximada del archivo de respaldo desde el cual desea restaurar.  Puede restaurar datos de ONTAP desde una copia instantánea, un volumen replicado o desde copias de seguridad almacenadas en el almacenamiento de objetos.
+Antes de restaurar, anote el nombre del volumen de origen, el sistema de origen y el SVM, y la fecha del archivo de copia de seguridad. Puede restaurar datos de ONTAP desde una copia instantánea, un volumen replicado o desde copias de seguridad almacenadas en el almacenamiento de objetos.
 
-*Nota:* Si el archivo de respaldo que contiene los datos que desea restaurar reside en un almacenamiento en la nube de archivo (a partir de ONTAP 9.10.1), la operación de restauración tomará más tiempo y tendrá un costo.  Además, el clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volumen, 9.11.1 para la restauración de archivos, 9.12.1 para Google Archive y StorageGRID, y 9.13.1 para la restauración de carpetas.
+
+NOTE: Si el archivo de copia de seguridad que desea restaurar reside en un almacenamiento en la nube de archivo (a partir de ONTAP 9.10.1), la operación de restauración tarda más y genera un costo.  El clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volúmenes, 9.11.1 para la restauración de archivos, 9.12.1 para Google Archive y StorageGRID, y 9.13.1 para la restauración de carpetas.
 
 ifdef::aws[]
 
@@ -159,18 +160,6 @@ Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sis
 
 | Al sistema ONTAP local | ONTAP S3 | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
 |===
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
 Para explorar y restaurar, el agente de consola se puede instalar en las siguientes ubicaciones:
 
 ifdef::aws[]
@@ -315,7 +304,7 @@ Si necesita restaurar solo unos pocos archivos de una copia de seguridad de volu
 
 NOTE: En este momento, solo puede restaurar una carpeta o archivos individuales desde un archivo de respaldo en el almacenamiento de objetos.  Actualmente, no se admite la restauración de archivos y carpetas desde una copia de instantánea local o desde un archivo de respaldo que resida en un sistema secundario (un volumen replicado).
 
-Si selecciona varios archivos, todos ellos se restaurarán en el mismo volumen de destino que elija.  Entonces, si desea restaurar archivos en diferentes volúmenes, deberá ejecutar el proceso de restauración varias veces.
+Si selecciona varios archivos, se restaurarán en el mismo volumen de destino.  Para restaurar archivos en diferentes volúmenes, ejecute el proceso varias veces.
 
 Al utilizar ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos los archivos y subcarpetas que contiene.  Al utilizar una versión de ONTAP anterior a 9.13.0, solo se restauran los archivos de esa carpeta; no se restauran las subcarpetas ni los archivos dentro de las subcarpetas.
 
@@ -345,7 +334,7 @@ Puedes probarlo usando una bandera especial descrita en el https://community.net
 
 El proceso es así:
 
-. Cuando desee restaurar una carpeta, o uno o más archivos, desde una copia de seguridad de volumen, haga clic en la pestaña *Restaurar* y haga clic en *Restaurar archivos o carpeta* en _Explorar y restaurar_.
+. Para restaurar una carpeta o archivos desde una copia de seguridad de volumen, seleccione el menú *Restaurar* y, a continuación, seleccione *Restaurar archivos o carpeta* en _Examinar y restaurar_.
 . Seleccione el sistema de origen, el volumen y el archivo de respaldo en el que residen la carpeta o los archivos.
 . NetApp Backup and Recovery muestra las carpetas y los archivos que existen dentro del archivo de respaldo seleccionado.
 . Seleccione la carpeta o los archivos que desea restaurar desde esa copia de seguridad.
@@ -355,7 +344,7 @@ El proceso es así:
 
 image:diagram_browse_restore_file.png["Un diagrama que muestra el flujo para realizar una operación de restauración de archivos utilizando Explorar y restaurar."]
 
-Como puede ver, necesita saber el nombre del sistema, el nombre del volumen, la fecha del archivo de respaldo y el nombre de la carpeta/archivo para realizar una restauración de carpeta o archivo.
+Para restaurar un volumen, necesita el nombre del sistema de origen, la máquina virtual de almacenamiento, el nombre del volumen y la fecha del archivo de copia de seguridad.
 
 
 
@@ -433,7 +422,7 @@ Tiene algunas opciones para la ubicación al restaurar carpetas y archivos.
 
 * Si ha seleccionado el mismo sistema de destino y volumen donde se encontraba la carpeta/archivo de origen, puede seleccionar *Mantener ruta de la carpeta de origen* para restaurar la carpeta o los archivos a la misma carpeta donde existían en la estructura de origen.  Todas las mismas carpetas y subcarpetas deben existir previamente; no se crean carpetas.  Al restaurar archivos a su ubicación original, puede optar por sobrescribir los archivos de origen o crear archivos nuevos.
 +
-.. Seleccione *Restaurar* y regresará al Panel de restauración para que pueda revisar el progreso de la operación de restauración.  También puede hacer clic en la pestaña *Monitoreo de trabajos* para ver el progreso de la restauración.
+.. Seleccione *Restaurar* para volver al Panel de Restauración y revisar el progreso de la operación de restauración.
 
 
 
@@ -701,7 +690,7 @@ Dependiendo del tamaño de los volúmenes en el sistema y la cantidad de archivo
 
 === Restaurar volúmenes, carpetas y archivos mediante Buscar y restaurar
 
-Después de que tengas<<enable-the-indexed-catalog-for-each-working-environment,Habilitó la indexación para su sistema>> , puede restaurar volúmenes, carpetas y archivos mediante Buscar y restaurar.  Esto le permite utilizar una amplia gama de filtros para encontrar el archivo o volumen exacto que desea restaurar de todos los archivos de respaldo.
+Después de que tengas<<enable-the-indexed-catalog-for-each-system,Habilitó la indexación para su sistema>> , puede restaurar volúmenes, carpetas y archivos mediante Buscar y restaurar. Esto le permite utilizar una amplia gama de filtros para encontrar el archivo o volumen exacto que desea restaurar de todos los archivos de respaldo.
 
 .Pasos
 . Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.

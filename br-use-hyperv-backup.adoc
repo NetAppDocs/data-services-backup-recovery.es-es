@@ -17,7 +17,7 @@ summary: Proteja sus cargas de trabajo de Hyper-V con el respaldo y la recuperac
 Realice copias de seguridad de las máquinas virtuales Hyper-V desde sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
 
 * Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
-* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-hyper-v-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de Hyper-V con NetApp Backup and Recovery"] Para más información.
+* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-hyperv-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de Hyper-V con NetApp Backup and Recovery"] Para más información.
 * Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
 
 

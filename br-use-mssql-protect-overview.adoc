@@ -33,7 +33,7 @@ Puede hacer lo siguiente para proteger sus datos:
 * link:br-use-mssql-backup.html["Replicar cargas de trabajo al almacenamiento secundario de ONTAP"]
 * link:br-use-mssql-backup.html["Realizar copias de seguridad de las cargas de trabajo en una ubicación de almacenamiento de objetos"]
 * link:br-use-mssql-backup.html["Realice copias de seguridad de las cargas de trabajo ahora"]
-* link:br-use-mssql-restore-overview.html["Restaurar cargas de trabajo"]
+* link:br-use-mssql-restore.html["Restaurar cargas de trabajo"]
 * link:br-use-mssql-clone.html["Clonar cargas de trabajo"]
 * link:br-use-manage-inventory.html["Gestionar inventario de cargas de trabajo"]
 * link:br-use-manage-snapshots.html["Administrar instantáneas"]
