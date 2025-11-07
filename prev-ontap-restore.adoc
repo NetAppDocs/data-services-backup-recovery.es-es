@@ -670,6 +670,42 @@ Si habilitó el Catálogo indexado antes del lanzamiento de la versión v2, ocur
 Si la indexación ya está habilitada para su sistema, vaya a la siguiente sección para restaurar sus datos.
 
 .Pasos para habilitar la indexación de un sistema:
+Si la indexación ya está habilitada para su sistema, vaya a la siguiente sección para restaurar sus datos.
+
+Primero deberá montar un volumen separado para almacenar los archivos del catálogo. Esto evita la pérdida de datos si el tamaño de los archivos que contienen las instantáneas se vuelve demasiado grande. Esto no es necesario en todos los clústeres; puede montar cualquier volumen de cualquiera de los clústeres de su entorno. Si no lo haces, es posible que la indexación no funcione correctamente.
+
+Para el volumen montado, utilice la siguiente guía de dimensionamiento:
+
+* Utilice un volumen NetApp NVS.
+* Se recomienda almacenamiento AFF con un rendimiento de disco de 300 MB/s. La menor capacidad de procesamiento afectará a las búsquedas y otras operaciones.
+* Habilite las instantáneas de NetApp para proteger los metadatos del catálogo, además de los archivos zip de copia de seguridad del catálogo.
+* 50 GB por cada mil millones de archivos
+* 20 GB para los datos del catálogo, con espacio adicional para la creación de archivos zip y archivos temporales.
+
+
+.Pasos para montar el volumen y reindexar el catálogo
+. Monta el volumen en `/opt/application/netapp/cbs` introduciendo el siguiente comando, donde:
++
+** `volume name` es el volumen del clúster donde se almacenarán los archivos del catálogo
+** `/opt/application/netapp/cbs` es el camino por donde se está montando
++
+[source, console]
+----
+mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
+----
++
+Ejemplo:
+
++
+[source, console]
+----
+mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
+----
+
+
+
+
+.Pasos para habilitar el índice
 . Debe realizar una de las siguientes acciones:
 +
 ** Si no se han indexado sistemas, en el Panel de restauración, en _Buscar y restaurar_, seleccione *Habilitar indexación para sistemas*.
