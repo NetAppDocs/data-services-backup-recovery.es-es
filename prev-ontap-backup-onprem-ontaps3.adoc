@@ -81,7 +81,7 @@ Cuando utiliza NetApp Backup and Recovery en un entorno SaaS estándar, los dato
 
 == Verificar los requisitos de la licencia
 
-Antes de poder activar NetApp Backup and Recovery para su clúster, deberá comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp.  La licencia es para realizar copias de seguridad y restaurar el almacenamiento de objetos: no se necesita licencia para crear copias instantáneas o volúmenes replicados.  Esta licencia es para la cuenta y se puede utilizar en múltiples sistemas.
+Antes de poder activar NetApp Backup and Recovery para su clúster, deberá comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp. La licencia es para realizar copias de seguridad y restaurar en almacenamiento de objetos; no se necesita ninguna licencia para crear instantáneas o volúmenes replicados. Esta licencia es para la cuenta y se puede utilizar en múltiples sistemas.
 
 Necesitará el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"].
 
@@ -213,7 +213,8 @@ Estas claves de acceso deben estar asociadas a un usuario que tenga los siguient
 "s3:GetObject",
 "s3:PutObject",
 "s3:DeleteObject",
-"s3:CreateBucket"
+"s3:CreateBucket",
+"s3:GetBucketLocation"
 ----
 --
 
@@ -299,7 +300,7 @@ Definir la estrategia de backup implica configurar las siguientes opciones:
 .Pasos
 . En la página Definir estrategia de respaldo, elija una o todas las siguientes opciones.  Los tres están seleccionados por defecto:
 +
-** *Instantáneas locales*: crea copias de instantáneas locales.
+** *Instantáneas locales*: Crea instantáneas locales.
 ** *Replicación*: crea volúmenes replicados en otro sistema de almacenamiento ONTAP .
 ** *Copia de seguridad*: realiza una copia de seguridad de los volúmenes en un depósito en un sistema ONTAP configurado para S3.
 
@@ -380,7 +381,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 
 
 +
-** *Exportar copias de instantáneas existentes al almacenamiento de objetos como archivos de respaldo*: si hay copias de instantáneas locales para volúmenes en este sistema que coinciden con la etiqueta de programación de respaldo que acaba de seleccionar (por ejemplo, diaria, semanal, etc.), se muestra este mensaje adicional.  Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+** *Exportar instantáneas existentes al almacenamiento de objetos como archivos de copia de seguridad*: Si existen instantáneas locales para volúmenes en este sistema que coincidan con la etiqueta de programación de copias de seguridad que acaba de seleccionar (por ejemplo, diaria, semanal, etc.), se mostrará este mensaje adicional. Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
 
 
 . Seleccione *Siguiente*.
@@ -399,7 +400,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 
 .Resultado
-NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes.  La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos de origen.  Las transferencias posteriores contienen copias diferenciales de los datos de almacenamiento primario contenidos en copias instantáneas.
+NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes. La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos de origen. Las transferencias posteriores contienen copias diferenciales de los datos de almacenamiento primario contenidos en las instantáneas.
 
 Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen de almacenamiento principal.
 

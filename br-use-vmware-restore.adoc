@@ -14,7 +14,7 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 
 
 [role="lead"]
-Restaure cargas de trabajo de VMware desde copias instantáneas, desde una copia de seguridad de la carga de trabajo replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos mediante NetApp Backup and Recovery.
+Restaure cargas de trabajo de VMware a partir de instantáneas, de una copia de seguridad de la carga de trabajo replicada en almacenamiento secundario o de copias de seguridad almacenadas en almacenamiento de objetos mediante NetApp Backup and Recovery.
 
 .Restaurar desde estas ubicaciones
 Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:

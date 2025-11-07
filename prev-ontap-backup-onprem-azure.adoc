@@ -476,7 +476,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 *** Seleccione *Crear*.
 
 
-** *Exportar copias de instantáneas existentes al almacenamiento de objetos como copias de respaldo*: si hay copias de instantáneas locales para volúmenes en este sistema que coinciden con la etiqueta de programación de respaldo que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se muestra este mensaje adicional.  Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+** *Exportar instantáneas existentes al almacenamiento de objetos como copias de seguridad*: Si existen instantáneas locales para volúmenes en este sistema que coincidan con la etiqueta de programación de copias de seguridad que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se mostrará este mensaje adicional. Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
 
 
 . Seleccione *Siguiente*.
@@ -495,7 +495,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 
 .Resultado
-NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes.  La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos del sistema de almacenamiento principal.  Las transferencias posteriores contienen copias diferenciales de los datos del sistema de almacenamiento primario contenidos en las copias instantáneas.
+NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes. La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos del sistema de almacenamiento principal. Las transferencias posteriores contienen copias diferenciales de los datos del sistema de almacenamiento primario contenidos en las instantáneas.
 
 Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen principal.
 

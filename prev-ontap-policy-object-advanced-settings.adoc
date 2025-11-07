@@ -14,7 +14,7 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 
 
 [role="lead"]
-Puede cambiar la configuración de almacenamiento de respaldo a objeto a nivel de clúster que configure al activar NetApp Backup and Recovery para cada sistema ONTAP mediante la página Configuración avanzada.  También puede modificar algunas configuraciones que se aplican como configuraciones de copia de seguridad "predeterminadas".  Esto incluye cambiar la tasa de transferencia de las copias de seguridad al almacenamiento de objetos, si las copias de instantáneas históricas se exportan como archivos de copia de seguridad y habilitar o deshabilitar los análisis de ransomware para un sistema.
+Puede cambiar la configuración de almacenamiento de respaldo a objeto a nivel de clúster que configure al activar NetApp Backup and Recovery para cada sistema ONTAP mediante la página Configuración avanzada. También puede modificar algunas configuraciones que se aplican como configuraciones de copia de seguridad "predeterminadas". Esto incluye cambiar la velocidad de transferencia de las copias de seguridad al almacenamiento de objetos, si las instantáneas históricas se exportan como archivos de copia de seguridad y habilitar o deshabilitar los análisis de ransomware para un sistema.
 
 
 NOTE: Estas configuraciones solo están disponibles para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta su configuración de instantánea o replicación.
@@ -29,7 +29,7 @@ Puede cambiar las siguientes opciones en la página Configuración avanzada:
 
 endif::aws[]
 
-* Cambiar si las copias de instantáneas históricas se exportan como archivos de respaldo y se incluyen en los archivos de respaldo de línea base iniciales para volúmenes futuros
+* Cambiar si las instantáneas históricas se exportan como archivos de copia de seguridad y se incluyen en los archivos de copia de seguridad de referencia iniciales para volúmenes futuros.
 * Cambiar si las instantáneas "anuales" se eliminan del sistema de origen
 * Habilitar o deshabilitar análisis de ransomware para un sistema, incluidos los análisis programados
 
@@ -77,17 +77,17 @@ endif::aws[]
 
 
 
-== Cambiar si las copias de instantáneas históricas se exportan como archivos de respaldo
+== Cambiar si las instantáneas históricas se exportan como archivos de copia de seguridad
 
-Si hay copias de instantáneas locales para volúmenes que coinciden con la etiqueta de programación de respaldo que está utilizando en este sistema (por ejemplo, diaria, semanal, etc.), puede exportar esas instantáneas históricas al almacenamiento de objetos como archivos de respaldo.  Esto le permite inicializar sus copias de seguridad en la nube moviendo copias de instantáneas más antiguas a la copia de seguridad de referencia.
+Si existen instantáneas locales de volúmenes que coincidan con la etiqueta de programación de copias de seguridad que está utilizando en este sistema (por ejemplo, diaria, semanal, etc.), puede exportar esas instantáneas históricas al almacenamiento de objetos como archivos de copia de seguridad.  Esto te permite inicializar tus copias de seguridad en la nube moviendo instantáneas antiguas a la copia de seguridad de referencia.
 
 Tenga en cuenta que esta opción solo se aplica a nuevos archivos de respaldo para nuevos volúmenes de lectura/escritura y no es compatible con volúmenes de protección de datos (DP).
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
 . Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
-. En la página Configuración avanzada, expanda la sección *Exportar copias de instantáneas existentes*.
-. Seleccione si desea que se exporten las copias de instantáneas existentes.
+. En la página de Configuración avanzada, expanda la sección *Exportar instantáneas existentes*.
+. Seleccione si desea exportar las instantáneas existentes.
 . Seleccione *Aplicar*.
 
 
@@ -95,7 +95,7 @@ Tenga en cuenta que esta opción solo se aplica a nuevos archivos de respaldo pa
 
 == Cambiar si las instantáneas "anuales" se eliminan del sistema de origen
 
-Cuando selecciona la etiqueta de copia de seguridad "anual" para una política de copia de seguridad para cualquiera de sus volúmenes, la copia instantánea que se crea es muy grande.  De forma predeterminada, estas instantáneas anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos.  Puede cambiar este comportamiento predeterminado desde la sección Eliminación de instantáneas anuales.
+Cuando selecciona la etiqueta de copia de seguridad "anual" para una política de copia de seguridad para cualquiera de sus volúmenes, la instantánea que se crea es muy grande. De forma predeterminada, estas instantáneas anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos. Puede cambiar este comportamiento predeterminado desde la sección Eliminación de instantáneas anuales.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
@@ -112,7 +112,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Una captura de pantalla de 
 
 == Habilitar o deshabilitar los análisis de ransomware
 
-Los análisis de protección contra ransomware están habilitados de forma predeterminada.  La configuración predeterminada para la frecuencia de escaneo es de 7 días.  El escaneo ocurre solo en la última copia instantánea.  Puede habilitar o deshabilitar los análisis de ransomware en la última copia de instantánea utilizando la opción en la página de Configuración avanzada.  Si lo habilita, los análisis se realizan cada 7 días de forma predeterminada.
+Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de escaneo es de 7 días. El escaneo ocurre solo en la última instantánea. Puede activar o desactivar los análisis de ransomware en la última instantánea mediante la opción correspondiente en la página de Configuración avanzada. Si lo habilita, los análisis se realizan cada 7 días de forma predeterminada.
 
 Para obtener detalles sobre las opciones de DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opciones de DataLock y resiliencia ante ransomware"] .
 
@@ -121,7 +121,7 @@ Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
 
 TIP: Habilitar análisis de ransomware generará cargos adicionales según el proveedor de la nube.
 
-Los análisis de ransomware programados se ejecutan solo en la última copia de instantánea.
+Los análisis programados de ransomware se ejecutan únicamente en la instantánea más reciente.
 
 Si los análisis de ransomware programados están deshabilitados, aún puede realizar análisis a pedido y el análisis durante una operación de restauración se seguirá realizando.
 

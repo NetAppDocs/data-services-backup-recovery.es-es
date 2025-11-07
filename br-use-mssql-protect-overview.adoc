@@ -23,7 +23,7 @@ Los beneficios del enfoque 3-2-1 incluyen:
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
-NetApp Backup and Recovery utiliza NetApp SnapMirror para sincronizar copias de seguridad creando copias instantáneas y transfiriéndolas a las ubicaciones de copia de seguridad.
+NetApp Backup and Recovery utiliza NetApp SnapMirror para sincronizar las copias de seguridad creando instantáneas y transfiriéndolas a las ubicaciones de copia de seguridad.
 
 Puede hacer lo siguiente para proteger sus datos:
 
@@ -42,7 +42,7 @@ Puede hacer lo siguiente para proteger sus datos:
 Para realizar copias de seguridad de las cargas de trabajo, se crean políticas que administran las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
 .Destinos de copia de seguridad admitidos
-NetApp Backup and Recovery le permite realizar copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube públicos y privados.  Las copias instantáneas residen en el sistema de origen.
+NetApp Backup and Recovery le permite realizar copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube pública y privada. Las instantáneas residen en el sistema de origen.
 
 [cols="33,33,33"]
 |===
@@ -58,10 +58,10 @@ NetApp Backup and Recovery le permite realizar copias de seguridad de instancias
 | Sistema ONTAP local | Cloud Volumes ONTAP Sistema ONTAP local | Amazon S3 Azure Blob StorageGRID NetApp GRID ONTAP S3 
 
 
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | NA ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / A 
 |===
 .Destinos de restauración admitidos
-Puede restaurar instancias y bases de datos de Microsoft SQL Server desde una copia de seguridad que resida en un almacenamiento principal o en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes sistemas.  Las copias instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
+Puede restaurar instancias y bases de datos de Microsoft SQL Server desde una copia de seguridad que resida en un almacenamiento principal o en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
 
 [cols="33,33,33"]
 |===
@@ -74,7 +74,7 @@ Puede restaurar instancias y bases de datos de Microsoft SQL Server desde una co
 | Amazon S3 | Cloud Volumes ONTAP en el sistema ONTAP local de AWS | Volúmenes en la nube en el sistema local ONTAP de AWS ONTAP S3 
 
 
-| Blob de Azure | Cloud Volumes ONTAP en el sistema ONTAP local de Azure | Cloud Volumes ONTAP en Azure Sistema ONTAP local ONTAP S3 ifdef::gcp[] endif::gcp[] 
+| Blob de Azure | Cloud Volumes ONTAP en el sistema ONTAP local de Azure | Cloud Volumes ONTAP en Azure Sistema ONTAP local ONTAP S3 
 
 
 | StorageGRID | Cloud Volumes ONTAP Sistema ONTAP local | Sistema ONTAP local ONTAP S3 

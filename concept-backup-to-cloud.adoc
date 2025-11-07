@@ -123,7 +123,7 @@ Hay dos tipos de costos asociados con el uso de la función de respaldo a objeto
 * Cargos por servicio
 
 
-No hay ningún costo para crear copias instantáneas o volúmenes replicados, excepto el espacio en disco necesario para almacenar las copias instantáneas y los volúmenes replicados.
+No se cobra ninguna tarifa por crear instantáneas o volúmenes replicados, aparte del espacio en disco necesario para almacenar las instantáneas y los volúmenes replicados.
 
 *Cargos por recursos*
 
@@ -193,7 +193,7 @@ NetApp Backup and Recovery está disponible con los siguientes modelos de consum
 * *Anual*: Un contrato anual del mercado de su proveedor de nube.
 
 
-Se requiere una licencia de respaldo solo para realizar copias de seguridad y restaurar desde el almacenamiento de objetos.  La creación de copias instantáneas y volúmenes replicados no requiere una licencia.
+Se requiere una licencia de respaldo solo para realizar copias de seguridad y restaurar desde el almacenamiento de objetos. La creación de instantáneas y volúmenes replicados no requiere licencia.
 
 *Traiga su propia licencia*
 

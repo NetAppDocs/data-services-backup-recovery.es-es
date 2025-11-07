@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-restore.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Restaure cargas de trabajo de bases de datos desde una copia instantánea, una copia de seguridad de la carga de trabajo replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos. 
+summary: Restaure las cargas de trabajo de la base de datos a partir de una instantánea, una copia de seguridad de la carga de trabajo replicada en el almacenamiento secundario o a partir de copias de seguridad almacenadas en el almacenamiento de objetos. 
 ---
 = Restaure las cargas de trabajo de Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Restaure cargas de trabajo de bases de datos desde una copia instantán
 
 
 [role="lead"]
-Restaure cargas de trabajo de Microsoft SQL Server mediante NetApp Backup and Recovery.  Utilice copias instantáneas, copias de seguridad replicadas en almacenamiento secundario o copias de seguridad en almacenamiento de objetos.  Restaure cargas de trabajo en el sistema original, un sistema diferente con la misma cuenta en la nube o un sistema ONTAP local.
+Restaure cargas de trabajo de Microsoft SQL Server mediante NetApp Backup and Recovery. Utilice instantáneas, copias de seguridad replicadas en almacenamiento secundario o copias de seguridad en almacenamiento de objetos. Restaure cargas de trabajo en el sistema original, un sistema diferente con la misma cuenta en la nube o un sistema ONTAP local.
 
 .Restaurar desde estas ubicaciones
 Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:

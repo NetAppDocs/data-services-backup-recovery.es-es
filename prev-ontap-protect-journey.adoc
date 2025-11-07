@@ -21,7 +21,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 Repasaremos las siguientes opciones:
 
-* ¿Qué funciones de protección utilizará: copias instantáneas, volúmenes replicados y/o copias de seguridad en la nube?
+* ¿Qué funciones de protección utilizará: instantáneas, volúmenes replicados o copias de seguridad en la nube?
 * ¿Qué arquitectura de respaldo utilizará: una copia de seguridad en cascada o en abanico de sus volúmenes?
 * ¿Utilizarás las políticas de respaldo predeterminadas o necesitarás crear políticas personalizadas?
 * ¿Quieres que el servicio cree los depósitos en la nube para ti o quieres crear tus propios contenedores de almacenamiento de objetos antes de comenzar?
@@ -39,7 +39,7 @@ Antes de seleccionar las funciones que utilizará, aquí le ofrecemos una breve 
 | Tipo de copia de seguridad | Descripción 
 
 
-| Snapshot | Crea una imagen de punto en el tiempo, de solo lectura, de un volumen dentro del volumen de origen como una copia instantánea.  Puede utilizar la copia instantánea para recuperar archivos individuales o para restaurar todo el contenido de un volumen. 
+| Snapshot | Crea una imagen de solo lectura y puntual de un volumen dentro del volumen de origen como una instantánea.  Puede utilizar la instantánea para recuperar archivos individuales o para restaurar todo el contenido de un volumen. 
 
 
 | Replicación | Crea una copia secundaria de sus datos en otro sistema de almacenamiento ONTAP y actualiza continuamente los datos secundarios.  Sus datos se mantienen actualizados y permanecen disponibles siempre que los necesite. 
@@ -47,17 +47,17 @@ Antes de seleccionar las funciones que utilizará, aquí le ofrecemos una breve 
 
 | Copia de seguridad en la nube | Crea copias de seguridad de sus datos en la nube para su protección y con fines de archivo a largo plazo.  Si es necesario, puede restaurar un volumen, una carpeta o archivos individuales desde la copia de seguridad al mismo sistema o a uno diferente. 
 |===
-Las instantáneas son la base de todos los métodos de copia de seguridad y son necesarias para utilizar el servicio de copia de seguridad y recuperación.  Una copia instantánea es una imagen de un volumen en un punto en el tiempo y de solo lectura.  La imagen consume un espacio de almacenamiento mínimo y genera una sobrecarga de rendimiento insignificante porque solo registra los cambios en los archivos desde que se realizó la última copia de instantánea.  La copia instantánea que se crea en su volumen se utiliza para mantener el volumen replicado y el archivo de respaldo sincronizados con los cambios realizados en el volumen de origen, como se muestra en la figura.
+Las instantáneas son la base de todos los métodos de copia de seguridad y son necesarias para utilizar el servicio de copia de seguridad y recuperación. Una instantánea es una imagen de un volumen, de solo lectura y en un punto determinado del tiempo. La imagen consume un espacio de almacenamiento mínimo y genera una sobrecarga de rendimiento insignificante porque solo registra los cambios realizados en los archivos desde que se tomó la última instantánea.  La instantánea que se crea en su volumen se utiliza para mantener sincronizados el volumen replicado y el archivo de copia de seguridad con los cambios realizados en el volumen de origen, como se muestra en la figura.
 
-image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de respaldo en el sistema de origen como copias instantáneas, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de respaldo en el almacenamiento de objetos."]
+image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de copia de seguridad en el sistema de origen como instantáneas, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de copia de seguridad en el almacenamiento de objetos."]
 
 Puede optar por crear volúmenes replicados en otro sistema de almacenamiento ONTAP y realizar copias de seguridad de los archivos en la nube.  O puede elegir simplemente crear volúmenes replicados o archivos de respaldo: es su elección.
 
 Para resumir, estos son los flujos de protección válidos que puede crear para los volúmenes en su sistema ONTAP :
 
-* Volumen de origen -> Copia de instantánea -> Volumen replicado -> Archivo de respaldo
-* Volumen de origen -> Copia de instantánea -> Archivo de respaldo
-* Volumen de origen -> Copia de instantánea -> Volumen replicado
+* Volumen de origen -> Instantánea -> Volumen replicado -> Archivo de copia de seguridad
+* Volumen de origen -> Instantánea -> Archivo de copia de seguridad
+* Volumen de origen -> Instantánea -> Volumen replicado
 
 
 
@@ -88,13 +88,13 @@ Además de este criterio, el almacenamiento en la nube ofrece opciones de seguri
 
 Al crear volúmenes replicados y archivos de respaldo, puede elegir una arquitectura en cascada o en abanico para realizar el respaldo de sus volúmenes.
 
-Una arquitectura de *fan-out* transfiere la copia de la instantánea de forma independiente tanto al sistema de almacenamiento de destino como al objeto de respaldo en la nube.
+Una arquitectura *fan-out* transfiere la instantánea de forma independiente tanto al sistema de almacenamiento de destino como al objeto de copia de seguridad en la nube.
 
-image:diagram-321-fanout-detailed.png["Un diagrama que muestra cómo se utiliza una copia instantánea de un volumen para crear y actualizar un volumen replicado y un archivo de respaldo."]
+image:diagram-321-fanout-detailed.png["Diagrama que muestra cómo se utiliza una instantánea de un volumen para crear y actualizar un volumen replicado y un archivo de copia de seguridad."]
 
-Una arquitectura en *cascada* transfiere primero la copia de la instantánea al sistema de almacenamiento de destino y luego ese sistema transfiere la copia al objeto de respaldo en la nube.
+Una arquitectura *en cascada* transfiere primero la instantánea al sistema de almacenamiento de destino, y luego ese sistema transfiere la copia al objeto de copia de seguridad en la nube.
 
-image:diagram-321-cascade-detailed.png["Un diagrama que muestra cómo se utiliza una copia instantánea de un volumen para crear y actualizar un volumen replicado y un archivo de respaldo."]
+image:diagram-321-cascade-detailed.png["Diagrama que muestra cómo se utiliza una instantánea de un volumen para crear y actualizar un volumen replicado y un archivo de copia de seguridad."]
 
 *Comparación de las diferentes opciones de arquitectura*
 
@@ -105,7 +105,7 @@ Esta tabla proporciona una comparación de las arquitecturas en cascada y en aba
 | Abanico | Cascada 
 
 
-| Pequeño impacto en el rendimiento del sistema de origen porque envía copias instantáneas a dos sistemas distintos | Menor efecto en el rendimiento del sistema de almacenamiento de origen porque envía la copia de la instantánea solo una vez 
+| El impacto en el rendimiento del sistema fuente es mínimo debido al envío de instantáneas a dos sistemas distintos. | Menor impacto en el rendimiento del sistema de almacenamiento de origen, ya que la instantánea se envía solo una vez. 
 
 
 | Más fácil de configurar porque todas las políticas, redes y configuraciones de ONTAP se realizan en el sistema de origen | Requiere que también se realicen algunas configuraciones de red y ONTAP desde el sistema secundario. 
@@ -116,9 +116,9 @@ Esta tabla proporciona una comparación de las arquitecturas en cascada y en aba
 
 Puede utilizar las políticas predeterminadas proporcionadas por NetApp para crear sus copias de seguridad o puede crear políticas personalizadas.  Cuando utiliza el asistente de activación para habilitar el servicio de respaldo y recuperación para sus volúmenes, puede seleccionar entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local).  Si desea utilizar una política diferente a las existentes, puede crear la política antes de comenzar o mientras usa el asistente de activación.
 
-* La política de instantáneas predeterminada crea copias de instantáneas cada hora, cada día y cada semana, y conserva 6 copias de instantáneas cada hora, 2 diarias y 2 semanales.
-* La política de replicación predeterminada replica copias de instantáneas diarias y semanales, conservando 7 copias de instantáneas diarias y 52 semanales.
-* La política de respaldo predeterminada replica copias de instantáneas diarias y semanales, conservando 7 copias de instantáneas diarias y 52 semanales.
+* La política de instantáneas predeterminada crea instantáneas horarias, diarias y semanales, conservando 6 instantáneas horarias, 2 diarias y 2 semanales.
+* La política de replicación predeterminada replica instantáneas diarias y semanales, conservando 7 instantáneas diarias y 52 semanales.
+* La política de copia de seguridad predeterminada replica instantáneas diarias y semanales, conservando 7 instantáneas diarias y 52 semanales.
 
 
 Si crea políticas personalizadas para replicación o copia de seguridad, las etiquetas de las políticas (por ejemplo, "diaria" o "semanal") deben coincidir con las etiquetas que existen en sus políticas de instantáneas o volúmenes replicados y no se crearán archivos de copia de seguridad.

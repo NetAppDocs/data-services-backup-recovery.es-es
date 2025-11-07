@@ -118,7 +118,7 @@ Desde la información de Detalles de monitoreo de trabajos, puede descargar un a
 
 Supervise los flujos de retención (_ciclo de vida de la copia de seguridad_) para verificar las copias de seguridad, mantenerlas seguras y respaldar las auditorías.  Identifique cuándo caducan las copias de respaldo para realizar un seguimiento del ciclo de vida.
 
-Un trabajo de ciclo de vida de respaldo rastrea todas las copias de instantáneas que se eliminan o que están en la cola para ser eliminadas.  A partir de ONTAP 9.13, puede ver todos los tipos de trabajos llamados "Retención" en la página Monitoreo de trabajos.
+Una tarea de ciclo de vida de copia de seguridad realiza un seguimiento de todas las instantáneas que se eliminan o que están en la cola para ser eliminadas. A partir de ONTAP 9.13, puede ver todos los tipos de trabajos llamados "Retención" en la página Monitoreo de trabajos.
 
 El tipo de trabajo "Retención" captura todos los trabajos de eliminación de instantáneas iniciados en un volumen protegido por NetApp Backup and Recovery.
 

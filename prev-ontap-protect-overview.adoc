@@ -21,14 +21,14 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 Después de la activación, la copia de seguridad y la recuperación crean copias de seguridad incrementales a nivel de bloque y permanentes que se almacenan en otro clúster de ONTAP y en el almacenamiento de objetos en la nube.  Además de tu volumen de origen, tendrás:
 
-* Copia instantánea del volumen en el sistema de origen
+* Instantánea del volumen en el sistema de origen
 * Volumen replicado en un sistema de almacenamiento diferente
 * Copia de seguridad del volumen en el almacenamiento de objetos
 
 
-image:diagram-321-overview-unified.png["Un diagrama que muestra cómo existen los archivos de respaldo en el sistema de origen como copias instantáneas, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de respaldo en el almacenamiento de objetos."]
+image:diagram-321-overview-unified.png["Un diagrama que muestra cómo existen los archivos de copia de seguridad en el sistema de origen como instantáneas, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de copia de seguridad en el almacenamiento de objetos."]
 
-NetApp Backup and Recovery aprovecha la tecnología de replicación de datos SnapMirror de NetApp para garantizar que todas las copias de seguridad estén completamente sincronizadas mediante la creación de copias Snapshot y su transferencia a las ubicaciones de copia de seguridad.
+NetApp Backup and Recovery aprovecha la tecnología de replicación de datos SnapMirror de NetApp para garantizar que todas las copias de seguridad estén completamente sincronizadas mediante la creación de instantáneas y su transferencia a las ubicaciones de copia de seguridad.
 
 Los beneficios del enfoque 3-2-1 incluyen:
 
@@ -77,7 +77,7 @@ Verlink:br-reference-limitations.html["Limitaciones de replicación para volúme
 
 *Funciones de restauración:*
 
-* Restaure datos desde un punto específico en el tiempo desde copias de instantáneas locales, volúmenes replicados o volúmenes respaldados en el almacenamiento de objetos.
+* Restaura datos desde un punto específico en el tiempo a partir de instantáneas locales, volúmenes replicados o volúmenes de copia de seguridad en almacenamiento de objetos.
 * Restaurar un volumen, una carpeta o archivos individuales en el sistema de origen o en un sistema diferente.
 * Restaurar datos en un sistema que utilice una suscripción/cuenta diferente o que esté en una región diferente.
 * Realice una _restauración rápida_ de un volumen desde el almacenamiento en la nube a un sistema Cloud Volumes ONTAP o a un sistema local; perfecto para situaciones de recuperación ante desastres donde necesita proporcionar acceso a un volumen lo antes posible.
@@ -103,7 +103,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Obtenga más informació
 
 === Destinos de copia de seguridad admitidos
 
-NetApp Backup and Recovery le permite realizar copias de seguridad de los volúmenes ONTAP desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube públicos y privados.  Las copias instantáneas residen en el sistema de origen.
+NetApp Backup and Recovery le permite realizar copias de seguridad de volúmenes ONTAP desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube pública y privada. Las instantáneas residen en el sistema de origen.
 
 [cols="33,33,33"]
 |===
@@ -125,7 +125,7 @@ NetApp Backup and Recovery le permite realizar copias de seguridad de los volúm
 
 === Destinos de restauración admitidos
 
-Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas.  Las copias instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
+Puede restaurar datos de ONTAP desde un archivo de copia de seguridad que reside en un sistema secundario (un volumen replicado) o en almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
 
 [cols="33,33,33"]
 |===
@@ -175,7 +175,7 @@ Ver las secciones sobrelink:br-reference-limitations.html["Limitaciones de copia
 
 Hay dos tipos de costos asociados con el uso de NetApp Backup and Recovery con sistemas ONTAP : cargos por recursos y cargos por servicio.  Ambos cargos corresponden a la parte de respaldo del objeto del servicio.
 
-No hay ningún costo para crear copias instantáneas o volúmenes replicados, excepto el espacio en disco necesario para almacenar las copias instantáneas y los volúmenes replicados.
+No se cobra ninguna tarifa por crear instantáneas o volúmenes replicados, aparte del espacio en disco necesario para almacenar las instantáneas y los volúmenes replicados.
 
 *Cargos por recursos*
 
@@ -236,7 +236,7 @@ NetApp Backup and Recovery está disponible con los siguientes modelos de consum
 * *Anual*: Un contrato anual del mercado de su proveedor de nube.
 
 
-Se requiere una licencia de respaldo solo para realizar copias de seguridad y restaurar desde el almacenamiento de objetos.  La creación de copias instantáneas y volúmenes replicados no requiere una licencia.
+Se requiere una licencia de respaldo solo para realizar copias de seguridad y restaurar desde el almacenamiento de objetos. La creación de instantáneas y volúmenes replicados no requiere licencia.
 
 
 
@@ -311,7 +311,7 @@ Este diagrama muestra volúmenes que se replican en un sistema Cloud Volumes ONT
 
 Las copias de seguridad residen en diferentes ubicaciones según el tipo de copia de seguridad:
 
-* Las _copias instantáneas_ residen en el volumen de origen en el sistema de origen.
+* Las _instantáneas_ residen en el volumen de origen del sistema de origen.
 * Los _volúmenes replicados_ residen en el sistema de almacenamiento secundario: un Cloud Volumes ONTAP o un sistema ONTAP local.
 * Las _copias de seguridad_ se almacenan en un almacén de objetos que la consola crea en su cuenta en la nube.  Hay un almacén de objetos por clúster/sistema, y la consola nombra el almacén de objetos de la siguiente manera: "netapp-backup-clusteruuid".  Asegúrese de no eliminar este almacén de objetos.
 
@@ -344,12 +344,12 @@ Si desea cambiar el almacén de objetos de destino para un clúster en el futuro
 
 === Programación de copias de seguridad personalizable y configuraciones de retención
 
-Cuando habilita NetApp Backup and Recovery para un sistema, se realiza un respaldo de todos los volúmenes que seleccione inicialmente utilizando las políticas que seleccione.  Puede seleccionar políticas independientes para copias instantáneas, volúmenes replicados y archivos de respaldo.  Si desea asignar diferentes políticas de respaldo a determinados volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar esas políticas a los otros volúmenes después de que se active NetApp Backup and Recovery .
+Cuando habilita NetApp Backup and Recovery para un sistema, se realiza un respaldo de todos los volúmenes que seleccione inicialmente utilizando las políticas que seleccione. Puede seleccionar políticas independientes para instantáneas, volúmenes replicados y archivos de copia de seguridad. Si desea asignar diferentes políticas de respaldo a determinados volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar esas políticas a los otros volúmenes después de que se active NetApp Backup and Recovery .
 
 Puede elegir una combinación de copias de seguridad por hora, diarias, semanales, mensuales y anuales de todos los volúmenes.  Para realizar copias de seguridad de objetos, también puede seleccionar una de las políticas definidas por el sistema que proporcionan copias de seguridad y retención durante 3 meses, 1 año y 7 años.  Las políticas de protección de respaldo que haya creado en el clúster mediante ONTAP System Manager o la CLI de ONTAP también aparecerán como selecciones.  Esto incluye políticas creadas utilizando etiquetas SnapMirror personalizadas.
 
 
-NOTE: La política de instantáneas aplicada al volumen debe tener una de las etiquetas que está utilizando en su política de replicación y en su política de copia de seguridad de objetos.  Si no se encuentran etiquetas coincidentes, no se crearán archivos de respaldo.  Por ejemplo, si desea crear volúmenes replicados y archivos de respaldo "semanales", debe utilizar una política de instantáneas que cree copias de instantáneas "semanales".
+NOTE: La política de instantáneas aplicada al volumen debe tener una de las etiquetas que está utilizando en su política de replicación y en su política de copia de seguridad de objetos. Si no se encuentran etiquetas coincidentes, no se crearán archivos de respaldo. Por ejemplo, si desea crear volúmenes replicados y archivos de copia de seguridad "semanales", debe utilizar una política de instantáneas que cree instantáneas "semanales".
 
 Una vez que se alcanza el número máximo de copias de seguridad para una categoría o intervalo, se eliminan las copias de seguridad más antiguas para que siempre tenga las copias de seguridad más actuales (y así las copias de seguridad obsoletas no sigan ocupando espacio).
 
@@ -366,7 +366,7 @@ Si su clúster usa ONTAP 9.11.1 o superior, puede proteger sus copias de segurid
 * La _protección contra ransomware_ escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware cuando se crea un archivo de respaldo y cuando se restauran los datos de un archivo de respaldo.
 
 
-Los análisis programados de protección contra ransomware están habilitados de forma predeterminada.  La configuración predeterminada para la frecuencia de escaneo es de 7 días.  El escaneo se realiza únicamente en la última copia instantánea.  Los análisis programados se pueden desactivar para reducir sus costos.  Puede habilitar o deshabilitar los análisis de ransomware programados en la última copia de instantánea utilizando la opción en la página de Configuración avanzada.  Si lo habilita, los análisis se realizan semanalmente de forma predeterminada.  Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
+Los análisis programados de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de escaneo es de 7 días. El escaneo ocurre solo en la última instantánea. Los análisis programados se pueden desactivar para reducir sus costos. Puede activar o desactivar los análisis programados de ransomware en la última instantánea mediante la opción correspondiente en la página de Configuración avanzada. Si lo habilita, los análisis se realizan semanalmente de forma predeterminada. Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
 
 El período de retención de la copia de seguridad es el mismo que el período de retención del programa de copia de seguridad, más un margen máximo de 31 días.  Por ejemplo, las copias de seguridad _semanales_ con _5_ copias conservadas bloquearán cada archivo de copia de seguridad durante 5 semanas.  Las copias de seguridad _mensuales_ con _6_ copias conservadas bloquearán cada archivo de copia de seguridad durante 6 meses.
 

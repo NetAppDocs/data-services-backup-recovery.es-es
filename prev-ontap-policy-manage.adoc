@@ -61,7 +61,7 @@ Aparece la página de administración de políticas.  Las políticas de instant�
 
 == Crear políticas
 
-Puede crear políticas que rijan sus copias de instantáneas, replicaciones y copias de seguridad en el almacenamiento de objetos:
+Puede crear políticas que rijan sus instantáneas, replicaciones y copias de seguridad en el almacenamiento de objetos:
 
 * <<Cree una política de instantáneas antes de iniciar la instantánea>>
 * <<Cree una política de replicación antes de iniciar la replicación>>
@@ -72,7 +72,7 @@ Puede crear políticas que rijan sus copias de instantáneas, replicaciones y co
 
 === Cree una política de instantáneas antes de iniciar la instantánea
 
-Parte de su estrategia 3-2-1 implica crear una copia instantánea del volumen en el sistema de almacenamiento *principal*.
+Parte de su estrategia 3-2-1 implica crear una instantánea del volumen en el sistema de almacenamiento *primario*.
 
 Parte del proceso de creación de políticas implica identificar etiquetas de instantáneas y SnapMirror que indican la programación y la retención.  Puedes utilizar etiquetas predefinidas o crear las tuyas propias.
 

@@ -49,7 +49,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 
 == Crear una política
 
-Puede crear políticas que rijan sus instantáneas locales, replicaciones en almacenamiento secundario y copias de seguridad en almacenamiento de objetos.  Parte de su estrategia 3-2-1 implica crear una copia instantánea de las instancias, bases de datos, aplicaciones o máquinas virtuales en el sistema de almacenamiento *principal*.
+Puede crear políticas que rijan sus instantáneas locales, replicaciones en almacenamiento secundario y copias de seguridad en almacenamiento de objetos. Parte de su estrategia 3-2-1 implica crear una instantánea de las instancias, bases de datos, aplicaciones o máquinas virtuales en el sistema de almacenamiento *primario*.
 
 *Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, administrador de respaldo de respaldo y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 

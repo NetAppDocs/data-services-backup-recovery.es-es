@@ -69,7 +69,7 @@ Asegúrese de que la red donde está instalado el agente de consola permita las 
 
 * La funcionalidad de NetApp Backup and Recovery está integrada en el agente de consola.  Cuando se instala en modo privado, necesitará actualizar periódicamente el software del agente de la consola para obtener acceso a nuevas funciones.  Comprueba ellink:whats-new.html["Novedades de NetApp Backup and Recovery"] para ver las nuevas funciones en cada versión de NetApp Backup and Recovery .  Cuando desee utilizar las nuevas funciones, siga los pasos para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["actualizar el software del agente de la consola"^] .
 +
-La nueva versión de NetApp Backup and Recovery que incluye la capacidad de programar y crear copias Snapshot y volúmenes replicados, además de crear copias de seguridad en el almacenamiento de objetos, requiere que utilice la versión 3.9.31 o superior del agente de consola.  Por lo tanto, se recomienda que obtenga esta última versión para administrar todas sus copias de seguridad.
+La nueva versión de NetApp Backup and Recovery , que incluye la capacidad de programar y crear instantáneas y volúmenes replicados, además de crear copias de seguridad en almacenamiento de objetos, requiere que utilice la versión 3.9.31 o superior del agente de consola. Por lo tanto, se recomienda que obtenga esta última versión para administrar todas sus copias de seguridad.
 
 * Cuando utiliza NetApp Backup and Recovery en un entorno SaaS, los datos de configuración de NetApp Backup and Recovery se respaldan en la nube.  Cuando utiliza NetApp Backup and Recovery en un sitio sin acceso a Internet, los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID donde se almacenan sus copias de seguridad.
 
@@ -447,7 +447,7 @@ Si su clúster usa ONTAP 9.12.1 o superior y su sistema StorageGRID usa la versi
 +
 Seleccione o cree un nuevo clúster StorageGRID .  Para obtener detalles sobre cómo crear un clúster StorageGRID para que la consola pueda detectarlo, consulte https://docs.netapp.com/us-en/storagegrid-117/["Documentación de StorageGRID"^] .
 
-** *Exportar copias de instantáneas existentes al almacenamiento de objetos como copias de respaldo*: si hay copias de instantáneas locales para volúmenes en este sistema que coinciden con la etiqueta de programación de respaldo que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se muestra este mensaje adicional.  Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+** *Exportar instantáneas existentes al almacenamiento de objetos como copias de seguridad*: Si existen instantáneas locales para volúmenes en este sistema que coincidan con la etiqueta de programación de copias de seguridad que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se mostrará este mensaje adicional. Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
 
 
 . Seleccione *Siguiente*.
@@ -466,7 +466,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 
 .Resultado
-NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes.  La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos de origen.  Las transferencias posteriores contienen copias diferenciales de los datos de almacenamiento primario contenidos en las copias instantáneas.
+NetApp Backup and Recovery comienza a realizar las copias de seguridad iniciales de sus volúmenes. La transferencia de línea base del volumen replicado y el archivo de respaldo incluye una copia completa de los datos de origen. Las transferencias posteriores contienen copias diferenciales de los datos de almacenamiento primario contenidos en las instantáneas.
 
 Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen de almacenamiento principal.
 

@@ -22,7 +22,7 @@ El servicio de NetApp Backup and Recovery primero debe descubrir los almacenes d
 
 == Descubra las cargas de trabajo de VMware y, opcionalmente, importe recursos de SnapCenter
 
-Durante el descubrimiento, NetApp Backup and Recovery analiza las cargas de trabajo de VMware dentro de su organización y evalúa e importa políticas de protección existentes, copias instantáneas y opciones de respaldo y restauración.
+Durante el proceso de detección, NetApp Backup and Recovery analiza las cargas de trabajo de VMware dentro de su organización y evalúa e importa las políticas de protección, instantáneas y opciones de copia de seguridad y restauración existentes.
 
 Puede importar almacenes de datos y máquinas virtuales VMware NFS y VMFS desde su SnapCenter Plug-in for VMware vSphere al inventario de NetApp Backup and Recovery .
 
@@ -36,7 +36,7 @@ Durante el proceso de importación, NetApp Backup and Recovery realiza las sigui
 * Prepara los metadatos del vCenter y lo marca como no administrado en la NetApp Console.
 * Configura el acceso a la base de datos.
 * Descubre VMware vCenter, almacenes de datos y máquinas virtuales.
-* Importa políticas de protección existentes, copias instantáneas y opciones de copia de seguridad y restauración del SnapCenter Plug-in for VMware vSphere.
+* Importa las políticas de protección, instantáneas y opciones de copia de seguridad y restauración existentes del SnapCenter Plug-in for VMware vSphere.
 * Muestra los recursos descubiertos en la página Inventario de NetApp Backup and Recovery .
 
 
@@ -156,3 +156,14 @@ Después de seleccionar administrar los recursos, los recursos, las máquinas vi
 
 .Resultado
 La página Inventario muestra los recursos de vCenter recientemente administrados.
+
+
+
+==== Continuar al panel de control de NetApp Backup and Recovery
+
+. Para visualizar el Panel de control, desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.
+. Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
++
+link:br-use-dashboard.html["Descubra lo que le muestra el Dashboard"].
+
+

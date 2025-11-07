@@ -14,7 +14,7 @@ summary: Con NetApp Backup and Recovery, restaure un volumen ONTAP completo desd
 
 
 [role="lead"]
-Las copias de seguridad de los datos de volumen de ONTAP están disponibles en las ubicaciones donde creó las copias de seguridad: copias instantáneas, volúmenes replicados y copias de seguridad almacenadas en el almacenamiento de objetos.  Puede restaurar datos de un punto específico en el tiempo desde cualquiera de estas ubicaciones de respaldo.  Con NetApp Backup and Recovery, restaure un volumen ONTAP completo desde un archivo de respaldo o, si solo necesita restaurar algunos archivos, restaure una carpeta o archivos individuales.
+Las copias de seguridad de los datos de volumen de su ONTAP están disponibles en las ubicaciones donde creó las copias de seguridad: instantáneas, volúmenes replicados y copias de seguridad almacenadas en el almacenamiento de objetos. Puede restaurar datos de un punto específico en el tiempo desde cualquiera de estas ubicaciones de respaldo. Con NetApp Backup and Recovery, restaure un volumen ONTAP completo desde un archivo de respaldo o, si solo necesita restaurar algunos archivos, restaure una carpeta o archivos individuales.
 
 
 NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
@@ -30,7 +30,7 @@ Para resumir, estos son los flujos válidos que puede utilizar para restaurar da
 
 * Archivo de respaldo -> volumen restaurado
 * Volumen replicado -> volumen restaurado
-* Copia de instantánea -> volumen restaurado
+* Instantánea -> volumen restaurado
 
 
 
@@ -87,7 +87,7 @@ Esta tabla proporciona una lista de operaciones de restauración válidas según
 |  | *Restaurar volumen* | *Restaurar archivos* | *Restaurar carpeta* | *Restaurar volumen* | *Restaurar archivos* | *Restaurar carpeta* 
 
 
-| Copia de instantánea | Sí | No | No | Sí | Sí | Sí 
+| Snapshot | Sí | No | No | Sí | Sí | Sí 
 
 
 | Volumen replicado | Sí | No | No | Sí | Sí | Sí 
@@ -108,7 +108,7 @@ Consulte los requisitos y los pasos de restauración para el tipo de operación 
 
 == Restaurar datos de ONTAP mediante Explorar y restaurar
 
-Antes de restaurar, anote el nombre del volumen de origen, el sistema de origen y el SVM, y la fecha del archivo de copia de seguridad. Puede restaurar datos de ONTAP desde una copia instantánea, un volumen replicado o desde copias de seguridad almacenadas en el almacenamiento de objetos.
+Antes de restaurar, anote el nombre del volumen de origen, el sistema de origen y el SVM, y la fecha del archivo de copia de seguridad. Puede restaurar datos de ONTAP desde una instantánea, un volumen replicado o desde copias de seguridad almacenadas en almacenamiento de objetos.
 
 
 NOTE: Si el archivo de copia de seguridad que desea restaurar reside en un almacenamiento en la nube de archivo (a partir de ONTAP 9.10.1), la operación de restauración tarda más y genera un costo.  El clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volúmenes, 9.11.1 para la restauración de archivos, 9.12.1 para Google Archive y StorageGRID, y 9.13.1 para la restauración de carpetas.
@@ -138,7 +138,7 @@ NOTE: La prioridad alta no se admite al restaurar datos desde el almacenamiento 
 
 === Explorar y restaurar sistemas compatibles y proveedores de almacenamiento de objetos
 
-Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas.  Las copias instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
+Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
 
 *Nota:* Puede restaurar un volumen desde cualquier tipo de archivo de respaldo, pero en este momento solo puede restaurar una carpeta o archivos individuales desde un archivo de respaldo en el almacenamiento de objetos.
 
@@ -213,7 +213,7 @@ Como puede ver, necesitará saber el nombre del sistema de origen, la máquina v
 . Desde la sección _Explorar y restaurar_, seleccione *Restaurar volumen*.
 . En la página _Seleccionar origen_, navegue hasta el archivo de respaldo del volumen que desea restaurar.  Seleccione el *sistema*, el *volumen* y el archivo de *copia de seguridad* que tenga la marca de fecha y hora desde el que desea restaurar.
 +
-La columna *Ubicación* muestra si el archivo de respaldo (instantánea) es *Local* (una copia instantánea en el sistema de origen), *Secundario* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de respaldo en el almacenamiento de objetos).  Seleccione el archivo que desea restaurar.
+La columna *Ubicación* muestra si el archivo de copia de seguridad (instantánea) es *Local* (una instantánea en el sistema de origen), *Secundario* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de copia de seguridad en almacenamiento de objetos). Seleccione el archivo que desea restaurar.
 
 . Seleccione *Siguiente*.
 +
@@ -300,7 +300,7 @@ Tenga en cuenta que restaurar un volumen desde un archivo de respaldo que reside
 Si necesita restaurar solo unos pocos archivos de una copia de seguridad de volumen ONTAP , puede optar por restaurar una carpeta o archivos individuales en lugar de restaurar el volumen completo.  Puede restaurar carpetas y archivos en un volumen existente en el sistema original o en un sistema diferente que utilice la misma cuenta en la nube.  También puede restaurar carpetas y archivos a un volumen en un sistema ONTAP local.
 
 
-NOTE: En este momento, solo puede restaurar una carpeta o archivos individuales desde un archivo de respaldo en el almacenamiento de objetos.  Actualmente, no se admite la restauración de archivos y carpetas desde una copia de instantánea local o desde un archivo de respaldo que resida en un sistema secundario (un volumen replicado).
+NOTE: En este momento, solo puede restaurar una carpeta o archivos individuales desde un archivo de respaldo en el almacenamiento de objetos. Actualmente no se admite la restauración de archivos y carpetas desde una instantánea local o desde un archivo de copia de seguridad que reside en un sistema secundario (un volumen replicado).
 
 Si selecciona varios archivos, se restaurarán en el mismo volumen de destino.  Para restaurar archivos en diferentes volúmenes, ejecute el proceso varias veces.
 
@@ -431,7 +431,7 @@ Tiene algunas opciones para la ubicación al restaurar carpetas y archivos.
 
 Puede restaurar un volumen, una carpeta o archivos desde un archivo de respaldo de ONTAP usando Buscar y restaurar.  Buscar y restaurar le permite buscar un volumen, una carpeta o un archivo específico de todas las copias de seguridad y luego realizar una restauración.  No necesita saber el nombre exacto del sistema, el nombre del volumen o el nombre del archivo: la búsqueda examina todos los archivos de respaldo del volumen.
 
-La operación de búsqueda examina todas las copias de instantáneas locales que existen para sus volúmenes ONTAP , todos los volúmenes replicados en sistemas de almacenamiento secundario y todos los archivos de respaldo que existen en el almacenamiento de objetos.  Dado que restaurar datos desde una copia instantánea local o un volumen replicado puede ser más rápido y menos costoso que restaurar desde un archivo de respaldo en el almacenamiento de objetos, es posible que desee restaurar datos desde estas otras ubicaciones.
+La operación de búsqueda examina todas las instantáneas locales que existen para sus volúmenes ONTAP , todos los volúmenes replicados en sistemas de almacenamiento secundarios y todos los archivos de copia de seguridad que existen en el almacenamiento de objetos.  Dado que restaurar datos desde una instantánea local o un volumen replicado puede ser más rápido y menos costoso que restaurarlos desde un archivo de copia de seguridad en el almacenamiento de objetos, es posible que desee restaurar datos desde estas otras ubicaciones.
 
 Cuando restaura un _volumen completo_ desde un archivo de respaldo, NetApp Backup and Recovery crea un _nuevo_ volumen utilizando los datos del respaldo.  Puede restaurar los datos como un volumen en el sistema original, en un sistema diferente ubicado en la misma cuenta de nube que el sistema de origen o en un sistema ONTAP local.
 
@@ -474,7 +474,7 @@ Antes de comenzar, debe tener alguna idea del nombre o la ubicación del volumen
 
 === Buscar y restaurar sistemas compatibles y proveedores de almacenamiento de objetos
 
-Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas.  Las copias instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
+Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
 
 *Nota:* Puede restaurar volúmenes y archivos desde cualquier tipo de archivo de respaldo, pero en este momento solo puede restaurar una carpeta desde archivos de respaldo en el almacenamiento de objetos.
 
@@ -538,7 +538,7 @@ Tenga en cuenta que las referencias a "sistemas ONTAP locales" incluyen los sist
 ** La versión de ONTAP debe ser 9.8 o superior.
 ** La máquina virtual de almacenamiento (SVM) en la que reside el volumen debe tener un LIF de datos configurado.
 ** NFS debe estar habilitado en el volumen (se admiten volúmenes NFS y SMB/CIFS).
-** El servidor RPC SnapDiff debe estar activado en la SVM.  La consola hace esto automáticamente cuando habilita la indexación en el sistema.  (SnapDiff es la tecnología que identifica rápidamente las diferencias de archivos y directorios entre copias Snapshot).
+** El servidor RPC SnapDiff debe estar activado en la SVM. La consola hace esto automáticamente cuando habilita la indexación en el sistema. (SnapDiff es la tecnología que identifica rápidamente las diferencias de archivos y directorios entre instantáneas).
 
 
 
@@ -699,14 +699,14 @@ Después de que tengas<<enable-the-indexed-catalog-for-each-system,Habilitó la 
 +
 .. En la _Barra de búsqueda_, ingrese un nombre de volumen completo o parcial, un nombre de carpeta o un nombre de archivo.
 .. Seleccione el tipo de recurso: *Volúmenes*, *Archivos*, *Carpetas* o *Todos*.
-.. En el área _Filtrar por_, seleccione los criterios de filtro.  Por ejemplo, puede seleccionar el sistema donde residen los datos y el tipo de archivo, por ejemplo, un archivo .JPEG.  O puede seleccionar el tipo de Ubicación de respaldo si desea buscar resultados solo dentro de copias de instantáneas disponibles o archivos de respaldo en el almacenamiento de objetos.
+.. En el área _Filtrar por_, seleccione los criterios de filtro. Por ejemplo, puede seleccionar el sistema donde residen los datos y el tipo de archivo, por ejemplo, un archivo .JPEG. O bien, puede seleccionar el tipo de ubicación de copia de seguridad si desea buscar resultados solo dentro de las instantáneas o archivos de copia de seguridad disponibles en el almacenamiento de objetos.
 
 
 . Seleccione *Buscar* y el área Resultados de la búsqueda mostrará todos los recursos que tienen un archivo, carpeta o volumen que coincide con su búsqueda.
 . Localice el recurso que tiene los datos que desea restaurar y seleccione *Ver todas las copias de seguridad* para mostrar todos los archivos de copia de seguridad que contienen el volumen, la carpeta o el archivo correspondiente.
 . Localice el archivo de respaldo que desea utilizar para restaurar los datos y seleccione *Restaurar*.
 +
-Tenga en cuenta que los resultados identifican copias instantáneas de volúmenes locales y volúmenes replicados remotos que contienen el archivo en su búsqueda.  Puede elegir restaurar desde el archivo de respaldo en la nube, desde la copia instantánea o desde el volumen replicado.
+Tenga en cuenta que los resultados identifican instantáneas de volumen locales y volúmenes replicados remotos que contienen el archivo de su búsqueda.  Puede elegir restaurar desde el archivo de copia de seguridad en la nube, desde la instantánea o desde el volumen replicado.
 
 . Seleccione la ubicación de destino donde desea que se restaure el volumen, la carpeta o los archivos y seleccione *Restaurar*.
 +

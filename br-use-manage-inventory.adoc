@@ -39,7 +39,7 @@ Puede realizar las siguientes tareas relacionadas con la gestión de su inventar
 ** Realice una copia de seguridad ahora iniciando una copia de seguridad a pedido
 
 
-* Configure el directorio de registro (desde Inventario > Hosts).  Si desea realizar una copia de seguridad de los registros de los hosts de su base de datos en la instantánea, primero configure los registros en NetApp Backup and Recovery.  Para más detalles, consultelink:br-start-setup.html["Configurar los ajustes de NetApp Backup and Recovery"] .
+* Configure el directorio de registros (desde *Inventario* > *Hosts*). Si desea realizar una copia de seguridad de los registros de los hosts de su base de datos en la instantánea, primero configure los registros en NetApp Backup and Recovery. Para más detalles, consultelink:br-start-setup.html["Configurar los ajustes de NetApp Backup and Recovery"] .
 
 
 
