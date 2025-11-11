@@ -18,8 +18,6 @@ Proteja sus máquinas virtuales KVM y grupos de almacenamiento con NetApp Backup
 
 Puede realizar copias de seguridad de cargas de trabajo de KVM en Amazon Web Services S3, Azure NetApp Files o StorageGRID y restaurar cargas de trabajo de KVM en un host KVM local.
 
-image:../media/diagram-backup-recovery-general.png["Diagrama de arquitectura de backup y recuperación en general"]
-
 Utilice NetApp Backup and Recovery para implementar una estrategia de protección 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:
 
 * Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
