@@ -44,7 +44,7 @@ Si es la primera vez que inicia sesión en NetApp Backup and Recovery, ya tiene 
 ... Seleccione *Listo*.
 
 
-.. *Registro de host*: agregue un nuevo host de Hyper-V.  Ingrese el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto.
+.. *Registro de host*: Agregue un nuevo host Hyper-V ingresando el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto. Si el agente de la consola no puede resolver el FQDN, utilice la dirección IP en su lugar. Para los clústeres FCI, introduzca la dirección IP de gestión del clúster FCI.
 
 
 . Seleccione *Descubrir*.

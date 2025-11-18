@@ -22,7 +22,8 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 Las siguientes acciones no son compatibles con la versión preliminar privada de las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
 
-* Crear grupos de recursos
+* Cree grupos de recursos utilizando máquinas virtuales de varios hosts Hyper-V.
+* Restaurar máquinas virtuales a una ubicación alternativa
 * Expansión de discos (en varios recursos compartidos CIFS)
 * Proteger las máquinas virtuales a través de SAN
 * Editar grupos de protección

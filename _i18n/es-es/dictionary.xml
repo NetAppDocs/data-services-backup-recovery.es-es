@@ -346,7 +346,6 @@
   <block id="a9ad02ebb13f3d9fa3cb4a1b59be6548" category="paragraph">Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.</block>
   <block id="0e32e31adc232e70ce479856e16c7f00" category="section-title">Acciones no admitidas</block>
   <block id="57a114780f98fd4bb0b06506b0ca9577" category="paragraph">Las siguientes acciones no son compatibles con la versión preliminar privada de las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:</block>
-  <block id="020a36deb114af1bb518c70d5975e940" category="list-text">Crear grupos de recursos</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Expansión de discos (en varios recursos compartidos CIFS)</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">Proteger las máquinas virtuales a través de SAN</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">Proteja los hosts de Hyper-V que están agrupados mediante System Center Virtual Machine Manager (SCVMM)</block>
@@ -677,7 +676,6 @@
   <block id="6fa0f470d5826983538c3b3091b8d4f3" category="list-text">Seleccione el agente de consola que se utilizará con este host.</block>
   <block id="f536637d4867fa48ae5f42ffcabb3da0" category="list-text">Introduzca un nombre para esta credencial.</block>
   <block id="c7312d0cf4cda8f78a6f1769e7958906" category="list-text">Introduzca el nombre de usuario y la contraseña de la cuenta.</block>
-  <block id="5cf90f1e7bb7c40d89ed2ddaf928978f" category="list-text">*Registro de host*: agregue un nuevo host de Hyper-V.  Ingrese el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto.</block>
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">Este proceso puede tardar unos minutos.</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">Una vez que NetApp Backup and Recovery descubre recursos, la página Inventario muestra la carga de trabajo de Hyper-V en la lista de cargas de trabajo.</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">Continuar al panel de control de NetApp Backup and Recovery</block>
@@ -4538,8 +4536,6 @@
   <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Puede utilizar los volúmenes y datos restaurados inmediatamente. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.</block>
   <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración y elija los tipos de notificación que desee.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisitos de software para el host de Windows Server Hyper-V:</block>
-  <block id="1acabacd9fabb89313b2019250c36913" category="inline-link">Documentación de Microsoft Windows Server</block>
-  <block id="a05b36aea5976933f3daab44cd5602a1" category="list-text">Asegúrese de que la función de servicio Host Guardian esté instalada (consulte la<block ref="48d767cc816bb4d4b129a75bf7c81af1" category="inline-link-rx"></block> (para instrucciones)</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Si la operación de restauración no se completa, espere hasta que el Monitor de trabajo muestre "Error" antes de volver a intentar la operación de restauración.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Puede restaurar datos de máquinas virtuales desde la nube al servidor vCenter local con NetApp Backup and Recovery. Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa. Si se realizó una copia de seguridad de la máquina virtual mediante la política de archivo, puede establecer la prioridad de restauración de archivo.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consulte<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
@@ -4791,4 +4787,9 @@
   <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*Cargos por servicio*: Tarifas por NetApp Backup and Recovery.  Sin embargo, si el volumen de origen se encuentra en un sistema de almacenamiento que utiliza el plan CVO Professional, NetApp Backup and Recovery se proporciona de forma gratuita.</block>
   <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">Cuando utilice Google Cloud Platform, solicite una oferta privada a NetApp y seleccione su plan durante la activación en Google Cloud Marketplace.</block>
   <block id="3cd3cc23191003954a83615e7dc619e1" category="list-text">Cargas de trabajo de Oracle (Vista previa)</block>
+  <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">Cree grupos de recursos utilizando máquinas virtuales de varios hosts Hyper-V.</block>
+  <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*Registro de host*: Agregue un nuevo host Hyper-V ingresando el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto. Si el agente de la consola no puede resolver el FQDN, utilice la dirección IP en su lugar. Para los clústeres FCI, introduzca la dirección IP de gestión del clúster FCI.</block>
+  <block id="36c0d00755a4d8daae367144e5daca38" category="list-text">Si usuarios que no forman parte de un dominio de administrador van a proteger máquinas virtuales Hyper-V, asegúrese de que el usuario tenga los siguientes permisos:</block>
+  <block id="57d2171dbc8d8d7a864a60de1ab4656c" category="list-text">Asegúrese de que el usuario sea miembro del grupo de administradores locales.</block>
+  <block id="27bc296e867cae2ef33b5cac51392cb2" category="list-text">Asegúrese de que el usuario forme parte de la política de seguridad local "Iniciar sesión como servicio".</block>
 </blocks>
