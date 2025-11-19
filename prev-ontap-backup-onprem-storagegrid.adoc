@@ -206,7 +206,7 @@ Cuando configura la copia de seguridad en StorageGRID, el asistente de copia de 
 
 Estas claves de acceso deben estar asociadas a un usuario que tenga los siguientes permisos:
 
-[source, console]
+[source, text]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

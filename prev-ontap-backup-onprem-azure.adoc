@@ -111,7 +111,7 @@ Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Mic
 +
 [%collapsible]
 ====
-[source, console]
+[source, text]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

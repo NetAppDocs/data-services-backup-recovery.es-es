@@ -107,7 +107,15 @@ sidebar:
       - title: Administrar copias de seguridad de ONTAP
         url: "/prev-ontap-backup-manage.html"
       - title: Restaurar desde copias de seguridad de ONTAP
-        url: "/prev-ontap-restore.html"
+        entries:
+        - title: Descripción general de la restauración
+          url: "/prev-ontap-restore.html"
+        - title: Restaurar desde copias de seguridad de ONTAP mediante la función
+            Buscar y restaurar
+          url: "/prev-ontap-restore-search.html"
+        - title: Restaurar desde copias de seguridad de ONTAP mediante Explorar y
+            restaurar
+          url: "/prev-ontap-restore-browse.html"
     - title: Proteger las cargas de trabajo de Microsoft SQL Server
       entries:
       - title: Descripción general de la protección de las cargas de trabajo de Microsoft
