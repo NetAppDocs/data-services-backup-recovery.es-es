@@ -3734,10 +3734,6 @@
   <block id="c601431e32ca59eda5545781d799fc84" category="cell">Busque un volumen, carpeta o archivo en *todos los archivos de respaldo* por nombre de volumen parcial o completo, nombre de carpeta/archivo parcial o completo, rango de tamaño y filtros de búsqueda adicionales.</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">No maneja la recuperación de archivos si el archivo ha sido eliminado o renombrado y el usuario no conoce el nombre del archivo original</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">Maneja directorios recién creados/eliminados/renombrados y archivos recién creados/eliminados/renombrados</block>
-  <block id="c6df30fd69d443c5f65257f03e22d182" category="cell">No se requieren recursos adicionales del proveedor de la nube</block>
-  <block id="ba3b7ed6a9e20a17536af523c17d7d72" category="cell">Al restaurar desde la nube, se requieren recursos adicionales del proveedor de nube pública y de bucket por cuenta.</block>
-  <block id="f487cfb88239842615093e7eb26153a0" category="cell">No se requieren costos adicionales del proveedor de la nube</block>
-  <block id="e4da0c30ee3e36e87eec129bd901c319" category="cell">Al restaurar desde la nube, se requieren costos adicionales al escanear sus copias de seguridad y volúmenes para obtener resultados de búsqueda.</block>
   <block id="bc7f13477d0119c48bad565ccf971e6a" category="cell">Se admite la restauración rápida.</block>
   <block id="acf00c252198c9be0294aaf561c5d662" category="cell">No se admite la restauración rápida.</block>
   <block id="36bce3524e4446bfe42ccad6f813430a" category="paragraph">Esta tabla proporciona una lista de operaciones de restauración válidas según la ubicación donde residen sus archivos de respaldo.</block>
@@ -4715,7 +4711,6 @@
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">Tenga en cuenta que los resultados identifican instantáneas de volumen locales y volúmenes replicados remotos que contienen el archivo de su búsqueda.  Puede elegir restaurar desde el archivo de copia de seguridad en la nube, desde la instantánea o desde el volumen replicado.</block>
   <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">Primero deberá montar un volumen separado para almacenar los archivos del catálogo. Esto evita la pérdida de datos si el tamaño de los archivos que contienen las instantáneas se vuelve demasiado grande. Esto no es necesario en todos los clústeres; puede montar cualquier volumen de cualquiera de los clústeres de su entorno. Si no lo haces, es posible que la indexación no funcione correctamente.</block>
   <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">Para el volumen montado, utilice la siguiente guía de dimensionamiento:</block>
-  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">Utilice un volumen NetApp NVS.</block>
   <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">Se recomienda almacenamiento AFF con un rendimiento de disco de 300 MB/s. La menor capacidad de procesamiento afectará a las búsquedas y otras operaciones.</block>
   <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">Habilite las instantáneas de NetApp para proteger los metadatos del catálogo, además de los archivos zip de copia de seguridad del catálogo.</block>
   <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">50 GB por cada mil millones de archivos</block>
@@ -4779,4 +4774,7 @@
   <block id="b72cbffce68718636e4f9c2f1c2a8173" category="list-text"><block ref="f0a1a1822bca6dd563c941cbc831d447" category="inline-link-macro-rx"></block></block>
   <block id="cee41b55e417d2c681bd345802b719fd" category="sidebar">Descripción general de la restauración</block>
   <block id="a49488740a7ad2d76917598dae6b3fbb" category="sidebar">Restaurar desde copias de seguridad de ONTAP mediante Explorar y restaurar</block>
+  <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Asegúrese de que su entorno cumpla con estos requisitos antes de habilitar Buscar y restaurar:</block>
+  <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Los siguientes son los requisitos para buscar y restaurar cuando se utiliza la indexación heredada:</block>
+  <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilice un volumen NetApp NFS.</block>
 </blocks>

@@ -69,12 +69,6 @@ Esta tabla proporciona una comparación de las características de los dos méto
 | No maneja la recuperación de archivos si el archivo ha sido eliminado o renombrado y el usuario no conoce el nombre del archivo original | Maneja directorios recién creados/eliminados/renombrados y archivos recién creados/eliminados/renombrados 
 
 
-| No se requieren recursos adicionales del proveedor de la nube | Al restaurar desde la nube, se requieren recursos adicionales del proveedor de nube pública y de bucket por cuenta. 
-
-
-| No se requieren costos adicionales del proveedor de la nube | Al restaurar desde la nube, se requieren costos adicionales al escanear sus copias de seguridad y volúmenes para obtener resultados de búsqueda. 
-
-
 | Se admite la restauración rápida. | No se admite la restauración rápida. 
 |===
 Esta tabla proporciona una lista de operaciones de restauración válidas según la ubicación donde residen sus archivos de respaldo.

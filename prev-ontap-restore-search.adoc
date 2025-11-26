@@ -126,6 +126,8 @@ Tenga en cuenta que las referencias a "sistemas ONTAP locales" incluyen los sist
 
 == Requisitos previos de búsqueda y restauración
 
+Asegúrese de que su entorno cumpla con estos requisitos antes de habilitar Buscar y restaurar:
+
 * Requisitos del clúster:
 +
 ** La versión de ONTAP debe ser 9.8 o superior.
@@ -141,6 +143,10 @@ Tenga en cuenta que las referencias a "sistemas ONTAP locales" incluyen los sist
 
 === Requisitos previos para la búsqueda y restauración heredadas (utilizando el catálogo indexado v1)
 
+Los siguientes son los requisitos para buscar y restaurar cuando se utiliza la indexación heredada:
+
+[%collapsible]
+====
 ifdef::aws[]
 
 * Requisitos de AWS:
@@ -203,6 +209,7 @@ Incluso si utiliza un agente de consola local, se deben cumplir los requisitos d
 
 
 
+====
 
 
 == Proceso de búsqueda y restauración
@@ -251,7 +258,7 @@ Primero deberá montar un volumen separado para almacenar los archivos del catá
 
 Para el volumen montado, utilice la siguiente guía de dimensionamiento:
 
-* Utilice un volumen NetApp NVS.
+* Utilice un volumen NetApp NFS.
 * Se recomienda almacenamiento AFF con un rendimiento de disco de 300 MB/s. La menor capacidad de procesamiento afectará a las búsquedas y otras operaciones.
 * Habilite las instantáneas de NetApp para proteger los metadatos del catálogo, además de los archivos zip de copia de seguridad del catálogo.
 * 50 GB por cada mil millones de archivos
