@@ -46,6 +46,7 @@ No hay ninguna limitación para los volúmenes FlexVol : puede seleccionar todos
 
 
 * Al crear replicaciones desde sistemas ONTAP locales, si la versión de ONTAP en el sistema Cloud Volumes ONTAP de destino es 9.8, 9.9 o 9.11, solo se permiten políticas de bóveda reflejada.
+* NetApp Backup & Recovery no admite la conversión de un FlexVol volume con una relación de respaldo en la nube activa a un volumen FlexGroup mientras mantiene la funcionalidad de respaldo en la nube.
 
 
 
