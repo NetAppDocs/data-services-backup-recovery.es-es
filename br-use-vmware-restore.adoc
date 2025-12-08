@@ -27,7 +27,8 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 .Restaurar a estos puntos
 Puede restaurar datos en estos puntos:
 
-* Restaurar a la ubicación original
+* *Restaurar a la ubicación original*: la máquina virtual se restaura en la ubicación original, en la misma implementación de vCenter, host ESXi y almacén de datos. Se sobrescriben la VM y todos sus datos.
+* *Restaurar a una ubicación alternativa*: puede elegir un vCenter, un host ESXi o un almacén de datos diferente como destino de restauración para la máquina virtual. Esto es útil para administrar diferentes copias de la misma VM en diferentes ubicaciones y estados.
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
@@ -62,57 +63,56 @@ Restaure cargas de trabajo de VMware mediante la opción Restaurar. Puede buscar
 
 .Pasos
 . Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
-. En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Máquinas virtuales*.
+. En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *VMware*.
 . Ingrese el nombre del recurso que desea restaurar o filtre por el vCenter, centro de datos o almacén de datos donde se encuentra el recurso que desea restaurar.
 +
-Aparecerá una lista de instantáneas que coinciden con sus criterios de búsqueda.
+Aparecerá una lista de máquinas virtuales que coinciden con sus criterios de búsqueda.
 
-. Seleccione la instantánea que desea restaurar.
+. Busque la VM que desea restaurar en la lista y seleccione el botón *Restaurar máquina virtual* para esa VM.
 +
-Aparece una lista de opciones de ubicación de restauración.
+Aparece una lista de instantáneas (puntos de restauración) creadas en esa máquina virtual.
 
-. Seleccione la ubicación de restauración donde desea restaurar la instantánea:
+. Habilite la casilla de verificación de la instantánea que desea restaurar.
+. Seleccione *Siguiente*.
 +
-** Local: restaura la instantánea a la ubicación original.
-** Almacenamiento secundario: restaura la instantánea a una ubicación de almacenamiento secundaria.
+Aparecen las opciones de ubicación de la instantánea.
+
+. Seleccione el destino de restauración para la instantánea:
++
+** *Local*: restaura la instantánea desde la ubicación local.
+** *Secundario*: restaura la instantánea desde una ubicación de almacenamiento remota.
 +
 Si elige almacenamiento secundario, ingrese las ubicaciones de origen y destino tanto para los datos como para los registros.
 
-** Almacenamiento de objetos: restaura la instantánea a una ubicación de almacenamiento de objetos.
-+
-Si elige el almacenamiento de objetos, marque si desea escanear la instantánea nuevamente antes de restaurarla.
 
 
-
-. Seleccione *Listo* o *Siguiente* para continuar a la página de configuración de destino de restauración.
-+
-A continuación, elija la configuración de destino y las opciones previas y posteriores a la restauración.
-
+. Seleccione *Siguiente* para continuar a la página de configuración de destino de restauración.
+. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
 
 
 [discrete]
 ===== Selección de destino
 
-. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
-
-
 [role="tabbed-block"]
 ====
 .Restaurar a la ubicación original
 --
-En la página de detalles de Destino de restauración, ingrese la siguiente información:
+Al restaurar a la ubicación original, no puede cambiar el vCenter de destino, el host ESXi, el almacén de datos ni el nombre de la máquina virtual. La máquina virtual original se sobrescribe con la operación de restauración.
 
-. *Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Puede utilizar los volúmenes y datos restaurados inmediatamente. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
-. *Opciones previas a la restauración*: ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
-. *Opciones posteriores a la restauración*:
+. Seleccione el panel *Ubicación original*.
+. Elija entre las siguientes opciones:
 +
-** *Reiniciar VM*: seleccione esta opción para reiniciar la VM una vez completada la operación de restauración y después de que se aplique el script posterior a la restauración.
-** *Posdata*: Ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
-
-
-. Sección de *Notificación*:
+** Sección *Opciones previas a la restauración*:
 +
-** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración y elija los tipos de notificación que desee.
+*** *Prescript*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado antes de que comience la operación de restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+** Sección *Opciones posteriores a la restauración*:
++
+*** *Reiniciar máquina virtual*: habilite esta opción para reiniciar la máquina virtual una vez completada la operación de restauración y después de que se aplique el script posterior a la restauración.
+*** *Posdata*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado una vez que se complete la restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
 
 
 . Seleccione *Restaurar*.
@@ -121,7 +121,35 @@ En la página de detalles de Destino de restauración, ingrese la siguiente info
 --
 .Restaurar a una ubicación alternativa
 --
-No disponible para la vista previa de VMware.
+Al restaurar a una ubicación alternativa, puede cambiar el vCenter de destino, el host ESXi, el almacén de datos y el nombre de la VM para crear una nueva copia de la VM en una ubicación diferente o con un nombre diferente.
+
+. Seleccione el panel *Ubicación alternativa*.
+. Introduzca la siguiente información:
++
+** Sección *Configuración de destino*:
++
+*** *FQDN o dirección IP de vCenter*: seleccione el servidor vCenter donde desea restaurar la instantánea.
+*** *Host ESXi*: seleccione el host donde desea restaurar la instantánea.
+*** *Red*: Seleccione la red donde desea restaurar la instantánea.
+*** *Almacén de datos*: Ingrese el nombre del almacén de datos donde desea restaurar la instantánea.
+*** *Nombre de la máquina virtual*: ingrese el nombre de la máquina virtual donde desea restaurar la instantánea. Si el nombre coincide con una máquina virtual que ya existe en el almacén de datos, Backup and Recovery hace que el nombre sea único agregando una marca de tiempo actual.
+
+
+** Sección *Opciones previas a la restauración*:
++
+*** *Prescript*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado antes de que comience la operación de restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+** Sección *Opciones posteriores a la restauración*:
++
+*** *Reiniciar máquina virtual*: habilite esta opción para reiniciar la máquina virtual una vez completada la operación de restauración y después de que se aplique el script posterior a la restauración.
+*** *Posdata*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado una vez que se complete la restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+
+
+. Seleccione *Restaurar*.
+
 
 --
 ====

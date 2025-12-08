@@ -25,7 +25,7 @@ Puede restaurar máquinas virtuales desde diferentes ubicaciones de inicio:
 
 
 .Restaurar a estos puntos
-Puede restaurar datos a la ubicación original; la restauración a una ubicación alternativa no está disponible en esta versión preliminar.
+Puede restaurar datos en estos puntos:
 
 * Restaurar a la ubicación original
 
@@ -108,10 +108,7 @@ A continuación, puede elegir la configuración de destino y las opciones previa
 --
 .Restaurar a una ubicación alternativa
 --
-No disponible para la vista previa de KVM.
-
-. Seleccione *Restaurar*.
-
+No disponible para la vista previa de cargas de trabajo KVM.
 
 --
 ====

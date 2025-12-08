@@ -18,6 +18,24 @@ Descubra las novedades en NetApp Backup and Recovery.
 
 
 
+== 08 de diciembre de 2025
+
+Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
+
+
+
+=== Mejoras en la vista previa de las cargas de trabajo de VMware
+
+La versión preliminar de las cargas de trabajo de VMware presenta las siguientes capacidades mejoradas:
+
+* Ahora puede restaurar copias de seguridad e instantáneas en una ubicación alternativa. Esto es útil si desea administrar versiones de una máquina virtual en diferentes implementaciones de VMware vCenter, hosts VMware ESXi o almacenes de datos de VMware.
+* Ahora puede restaurar discos virtuales VMware específicos (imágenes VMDK) desde una ubicación principal o secundaria, lo que permite un control más granular sobre la restauración de datos de VM.
+
+
+link:br-use-vmware-restore.html["Obtenga más información sobre cómo restaurar cargas de trabajo de VMware con NetApp Backup and Recovery"].
+
+
+
 == 6 de octubre de 2025
 
 Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
