@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-vmdks-from-backups.html 
+keywords:  
+summary: Puede restaurar VMDK existentes o eliminados o separados desde una copia de seguridad primaria o secundaria de máquinas virtuales tradicionales o máquinas virtuales vVol. 
+---
+= Restaurar discos virtuales específicos a partir de copias de seguridad
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede restaurar discos virtuales existentes (VMDK), o discos virtuales eliminados o separados, desde copias de seguridad primarias o secundarias de máquinas virtuales tradicionales. Esto le permite restaurar solo datos o aplicaciones de VM específicos, de modo que no necesita restaurar toda la VM y todos sus discos virtuales asociados en situaciones donde solo se ven afectados datos específicos. Una vez restaurado el disco virtual, se conecta a su máquina virtual original y está listo para usarse.
+
+Puede restaurar uno o más discos de máquina virtual (VMDK) en una VM en el mismo almacén de datos o en almacenes de datos diferentes.
+
+
+TIP: Para mejorar el rendimiento de las operaciones de restauración en entornos NFS, habilite la API vStorage de la aplicación VMware para la integración de matrices (VAAI).
+
+.Antes de empezar
+* Debe existir una copia de seguridad.
+* La VM no debe estar en tránsito.
++
+La máquina virtual que desea restaurar no debe estar en estado vMotion o Storage vMotion.
+
+
+
+.Acerca de esta tarea
+* Si el VMDK se elimina o se separa de la VM, la operación de restauración adjunta el VMDK a la VM.
+* Una operación de restauración podría fallar si el nivel de almacenamiento del FabricPool donde se encuentra la máquina virtual no está disponible.
+* Las operaciones de conexión y restauración conectan VMDK mediante el controlador SCSi predeterminado. Sin embargo, cuando se realizan copias de seguridad de los VMDK que están conectados a una máquina virtual con un disco NVMe, las operaciones de conexión y restauración utilizan el controlador NVMe si está disponible.
+
+
+.Pasos
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
+. En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *VMware*.
+. Ingrese el nombre del recurso que desea restaurar o filtre por el vCenter, centro de datos o almacén de datos donde se encuentra el recurso que desea restaurar.
++
+Aparecerá una lista de máquinas virtuales que coinciden con sus criterios de búsqueda.
+
+. Busque la VM que desea restaurar en la lista y seleccione el botón del menú de opciones para esa VM.
+. En el menú resultante, seleccione *Restaurar discos virtuales*.
++
+Aparece una lista de instantáneas (puntos de restauración) creadas en esa máquina virtual. De forma predeterminada, se muestran las últimas instantáneas correspondientes al período de tiempo que seleccione en el menú desplegable *Período de tiempo*.
+
++
+Para cada instantánea, los íconos iluminados en la columna *Ubicación* indican las ubicaciones de almacenamiento donde la instantánea está disponible (almacenamiento primario, secundario o de objetos).
+
+. Habilite el botón de opción para la instantánea que desea restaurar.
+. Seleccione *Siguiente*.
++
+Aparecen las opciones de ubicación de la instantánea.
+
+. Seleccione el destino de restauración para la instantánea:
++
+** *Local*: restaura la instantánea desde la ubicación local.
+** *Secundario*: restaura la instantánea desde una ubicación de almacenamiento remota.
+** *Almacén de objetos*: restaura la instantánea desde el almacenamiento de objetos.
++
+Si elige almacenamiento secundario, seleccione la ubicación de destino de la lista desplegable.
+
+
+
+. Seleccione *Siguiente*.
+. Elija la configuración de destino y las opciones previas y posteriores a la restauración:
+
+
+[discrete]
+===== Selección de destino
+
+[role="tabbed-block"]
+====
+.Restaurar a la ubicación original
+--
+Al restaurar a la ubicación original, no puede cambiar el vCenter de destino, el host ESXi, el almacén de datos ni el nombre del disco virtual. Se sobrescribe el disco virtual original.
+
+. Seleccione el panel *Ubicación original*.
+. En la sección *Configuración de destino*, habilite la casilla de verificación para cualquier disco virtual que desee restaurar.
+. Elija entre las siguientes opciones:
++
+** Sección *Opciones previas a la restauración*:
++
+*** *Prescript*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado antes de que comience la operación de restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+** Sección *Opciones posteriores a la restauración*:
++
+*** *Posdata*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado una vez que se complete la restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+
+
+. Seleccione *Restaurar*.
+
+
+--
+.Restaurar a una ubicación alternativa
+--
+Al restaurar a una ubicación alternativa, puede cambiar el almacén de datos de destino. El disco virtual se conecta a la máquina virtual original después de la operación de restauración, independientemente del almacén de datos que elija.
+
+. Seleccione el panel *Ubicación alternativa*.
+. En la sección *Configuración de destino*, habilite la casilla de verificación para cualquier disco virtual que desee restaurar.
+. Para cualquier disco virtual que haya seleccionado:
++
+.. Seleccione *Seleccionar almacén de datos* para elegir un destino de restauración de almacén de datos diferente para el disco virtual.
+.. Seleccione *Seleccionar* para confirmar su elección y cerrar la ventana de selección.
+
+
+. Elija entre las siguientes opciones:
++
+** Sección *Opciones previas a la restauración*:
++
+*** *Prescript*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado antes de que comience la operación de restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+** Sección *Opciones posteriores a la restauración*:
++
+*** *Posdata*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado una vez que se complete la restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
+
+
+
+
+. Seleccione *Restaurar*.
+
+
+--
+====

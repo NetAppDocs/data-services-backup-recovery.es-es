@@ -20,8 +20,6 @@ Las siguientes acciones no son compatibles con la versión preliminar de las car
 
 * Montar
 * Desmontar
-* Restaurar a una ubicación alternativa
-* Restaurar VMDK
 * Adjuntar VMDK
 * Desconectar VMDK
 * Compatibilidad con vVol

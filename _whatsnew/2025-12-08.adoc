@@ -9,7 +9,11 @@
 La versión preliminar de las cargas de trabajo de VMware presenta las siguientes capacidades mejoradas:
 
 * Ahora puede restaurar copias de seguridad e instantáneas en una ubicación alternativa. Esto es útil si desea administrar versiones de una máquina virtual en diferentes implementaciones de VMware vCenter, hosts VMware ESXi o almacenes de datos de VMware.
+
+
+link:br-use-vmware-restore.html["Obtenga más información sobre cómo restaurar máquinas virtuales VMware con NetApp Backup and Recovery"].
+
 * Ahora puede restaurar discos virtuales VMware específicos (imágenes VMDK) desde una ubicación principal o secundaria, lo que permite un control más granular sobre la restauración de datos de VM.
 
 
-link:br-use-vmware-restore.html["Obtenga más información sobre cómo restaurar cargas de trabajo de VMware con NetApp Backup and Recovery"].
+link:br-use-vmware-restore-vmdks-from-backups.html["Obtenga más información sobre cómo restaurar discos virtuales de VMware con NetApp Backup and Recovery"].

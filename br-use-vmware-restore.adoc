@@ -43,8 +43,8 @@ TIP: Es posible que tenga que pagar tarifas adicionales a su proveedor de nube p
 
 Al restaurar cargas de trabajo, ocurre lo siguiente:
 
-* Cuando restaura una carga de trabajo desde un archivo de respaldo local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos del respaldo.
-* Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo en el sistema original o en un sistema ONTAP local.
+* Cuando restaura una carga de trabajo desde una instantánea local o una copia de seguridad remota, NetApp Backup and Recovery sobrescribe la máquina virtual original si restaura a la ubicación original y crea un _nuevo_ recurso si restaura a una ubicación alternativa.
+* Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo en el sistema ONTAP local original o en un sistema ONTAP local diferente.
 +
 image:diagram_browse_restore_volume-unified.png["Un diagrama que muestra el flujo para restaurar un recurso"]
 
@@ -68,11 +68,15 @@ Restaure cargas de trabajo de VMware mediante la opción Restaurar. Puede buscar
 +
 Aparecerá una lista de máquinas virtuales que coinciden con sus criterios de búsqueda.
 
-. Busque la VM que desea restaurar en la lista y seleccione el botón *Restaurar máquina virtual* para esa VM.
+. Busque la VM que desea restaurar en la lista y seleccione el botón del menú de opciones para esa VM.
+. En el menú resultante, seleccione *Restaurar máquina virtual*.
 +
-Aparece una lista de instantáneas (puntos de restauración) creadas en esa máquina virtual.
+Aparece una lista de instantáneas (puntos de restauración) creadas en esa máquina virtual. De forma predeterminada, se muestran las últimas instantáneas correspondientes al período de tiempo que seleccione en el menú desplegable *Período de tiempo*.
 
-. Habilite la casilla de verificación de la instantánea que desea restaurar.
++
+Para cada instantánea, los íconos iluminados en la columna *Ubicación* indican las ubicaciones de almacenamiento donde la instantánea está disponible (almacenamiento primario, secundario o de objetos).
+
+. Habilite el botón de opción para la instantánea que desea restaurar.
 . Seleccione *Siguiente*.
 +
 Aparecen las opciones de ubicación de la instantánea.
@@ -81,12 +85,13 @@ Aparecen las opciones de ubicación de la instantánea.
 +
 ** *Local*: restaura la instantánea desde la ubicación local.
 ** *Secundario*: restaura la instantánea desde una ubicación de almacenamiento remota.
+** *Almacén de objetos*: restaura la instantánea desde el almacenamiento de objetos.
 +
-Si elige almacenamiento secundario, ingrese las ubicaciones de origen y destino tanto para los datos como para los registros.
+Si elige almacenamiento secundario, seleccione la ubicación de destino de la lista desplegable.
 
 
 
-. Seleccione *Siguiente* para continuar a la página de configuración de destino de restauración.
+. Seleccione *Siguiente*.
 . Elija la configuración de destino y las opciones previas y posteriores a la restauración.
 
 
@@ -131,7 +136,7 @@ Al restaurar a una ubicación alternativa, puede cambiar el vCenter de destino, 
 *** *FQDN o dirección IP de vCenter*: seleccione el servidor vCenter donde desea restaurar la instantánea.
 *** *Host ESXi*: seleccione el host donde desea restaurar la instantánea.
 *** *Red*: Seleccione la red donde desea restaurar la instantánea.
-*** *Almacén de datos*: Ingrese el nombre del almacén de datos donde desea restaurar la instantánea.
+*** *Almacén de datos*: en la lista desplegable, seleccione el nombre del almacén de datos donde desea restaurar la instantánea.
 *** *Nombre de la máquina virtual*: ingrese el nombre de la máquina virtual donde desea restaurar la instantánea. Si el nombre coincide con una máquina virtual que ya existe en el almacén de datos, Backup and Recovery hace que el nombre sea único agregando una marca de tiempo actual.
 
 
