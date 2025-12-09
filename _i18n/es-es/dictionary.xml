@@ -4846,7 +4846,4 @@
   <block id="985aacac93e75bfb41dca796dd136773" category="cell">Error de restauración a pedido</block>
   <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">Operaciones del sistema</block>
   <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">Error en la creación de una instantánea de volumen ad hoc</block>
-  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">Los cargos por servicio se pagan a NetApp y cubren tanto el costo de crear copias de seguridad en un almacenamiento de objetos o un destino ONTAP como la restauración de volúmenes o archivos a partir de esas copias de seguridad.  Usted paga solo por los datos que protege en el almacenamiento de objetos o en ONTAP (esto incluye las configuraciones de SnapMirror ).  Los cargos se calculan utilizando la capacidad lógica utilizada de origen (antes de las eficiencias de ONTAP ) de los volúmenes de ONTAP que se respaldan en un almacenamiento de objetos o en un destino de ONTAP . Esta capacidad también se conoce como Front-End Terabytes (FETB).</block>
-  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">Hay tres formas de pagar por Backup and Recovery:</block>
-  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">La segunda opción es comprar un contrato anual.</block>
 </blocks>
