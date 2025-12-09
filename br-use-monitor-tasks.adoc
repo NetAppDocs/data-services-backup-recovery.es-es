@@ -118,7 +118,7 @@ Desde la información de Detalles de monitoreo de trabajos, puede descargar un a
 
 Supervise los flujos de retención (_ciclo de vida de la copia de seguridad_) para verificar las copias de seguridad, mantenerlas seguras y respaldar las auditorías.  Identifique cuándo caducan las copias de respaldo para realizar un seguimiento del ciclo de vida.
 
-Una tarea de ciclo de vida de copia de seguridad realiza un seguimiento de todas las instantáneas que se eliminan o que están en la cola para ser eliminadas. A partir de ONTAP 9.13, puede ver todos los tipos de trabajos llamados "Retención" en la página Monitoreo de trabajos.
+Una tarea de ciclo de vida de copia de seguridad realiza un seguimiento de todas las instantáneas que se eliminan o que están en la cola para ser eliminadas. A partir de ONTAP 9.13, puede ver todos los tipos de trabajos llamados "Retención" en la página Supervisión de trabajos.
 
 El tipo de trabajo "Retención" captura todos los trabajos de eliminación de instantáneas iniciados en un volumen protegido por NetApp Backup and Recovery.
 
@@ -140,37 +140,94 @@ El Centro de notificaciones muestra numerosos eventos de instantáneas, replicac
 
 [cols="1,2,1,1"]
 |===
-| Tipo de operación | Evento | Nivel de alerta | Correo electrónico enviado 
+| Tipo de operación | Evento | Alerta generada | Correo electrónico enviado 
 
 
-| Activación | La activación de Copia de seguridad y recuperación falló para el sistema | Error | Sí 
+| Activación | La activación de Copia de seguridad y recuperación falló para el sistema | Sí | Sí 
 
 
-| Activación | La edición de Copia de seguridad y recuperación falló para el sistema | Error | Sí 
+| Activación | La edición de Copia de seguridad y recuperación falló para el sistema | Sí | Sí 
 
 
-| Instantánea local | Error en la creación de una instantánea ad-hoc en NetApp Backup and Recovery | Error | Sí 
+| Activación | El volumen ahora está asociado con la política de instantáneas | Sí | Sí 
 
 
-| Replicación | Error en el trabajo de replicación ad-hoc de NetApp Backup and Recovery | Error | Sí 
+| Activación | Copia de seguridad de volumen o estado modificado | Sí | Sí 
 
 
-| Replicación | Error en la pausa del trabajo de replicación de NetApp Backup and Recovery | Error | No 
+| Activación | La activación de Backup and Recovery fue exitosa para el sistema | Sí | Sí 
 
 
-| Replicación | Error en la interrupción del trabajo de replicación de NetApp Backup and Recovery | Error | No 
+| Activación | Error en la copia de seguridad del volumen ad-hoc | Sí | Sí 
 
 
-| Replicación | Error en el trabajo de resincronización de replicación de NetApp Backup and Recovery | Error | No 
+| Activación | Copia de seguridad de volumen ad-hoc realizada correctamente | Sí | No 
 
 
-| Replicación | Error en la detención del trabajo de replicación de NetApp Backup and Recovery | Error | No 
+| Activación | Error en la copia de seguridad de varios volúmenes | Sí | Sí 
 
 
-| Replicación | Error en el trabajo de resincronización inversa de replicación de NetApp Backup and Recovery | Error | Sí 
+| Operaciones cron | Comprobación de etiquetas de instantáneas faltantes | Sí | Sí 
 
 
-| Replicación | Error en la eliminación del trabajo de replicación de NetApp Backup and Recovery | Error | Sí 
+| Operaciones cron | No se pudo enviar el token de seguridad a ONTAP para este sistema | Sí | Sí 
+
+
+| Eventos de Pub/Sub | Fallo de conexión | Sí | No 
+
+
+| Eventos de Pub/Sub | No se pudo eliminar una instantánea programada | Sí | No 
+
+
+| Eventos de Pub/Sub | Error en la copia de seguridad programada del volumen | Sí | No 
+
+
+| Eventos de Pub/Sub | La restauración del volumen se realizó correctamente | Sí | No 
+
+
+| Eventos de Pub/Sub | La restauración del volumen falló | Sí | No 
+
+
+| Ransomware | Posible ataque de ransomware identificado en una copia de seguridad | Sí | Sí 
+
+
+| Ransomware | Posible ataque de ransomware identificado en la copia de seguridad de este sistema | Sí | Sí 
+
+
+| Instantánea local | Error en la creación de una instantánea ad-hoc en NetApp Backup and Recovery | Sí | Sí 
+
+
+| Replicación | Modificación de la relación de replicación en caso de fallo de volumen | Sí | Sí 
+
+
+| Replicación | Error en el trabajo de replicación ad-hoc de NetApp Backup and Recovery | Sí | Sí 
+
+
+| Replicación | Error en la pausa del trabajo de replicación de NetApp Backup and Recovery | Sí | No 
+
+
+| Replicación | Error en la interrupción del trabajo de replicación de NetApp Backup and Recovery | Sí | No 
+
+
+| Replicación | Error en el trabajo de resincronización de replicación de NetApp Backup and Recovery | Sí | No 
+
+
+| Replicación | Error en la detención del trabajo de replicación de NetApp Backup and Recovery | Sí | No 
+
+
+| Replicación | Error en el trabajo de resincronización inversa de replicación de NetApp Backup and Recovery | Sí | Sí 
+
+
+| Replicación | Error en la eliminación del trabajo de replicación de NetApp Backup and Recovery | Sí | Sí 
+
+
+| Operaciones objetivo | Error al restaurar a destino local o en la nube | Sí | Sí 
+
+
+| Operaciones objetivo | Error de restauración a pedido | Sí | Sí 
+
+
+| Operaciones del sistema | Error en la creación de una instantánea de volumen ad hoc | Sí | Sí 
 |===
 
 NOTE: A partir de ONTAP 9.13.0, todas las alertas aparecen para Cloud Volumes ONTAP y los sistemas ONTAP locales.  Para los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP local, solo aparece la alerta relacionada con "Trabajo de restauración completado, pero con advertencias".
