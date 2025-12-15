@@ -23,7 +23,7 @@ Los beneficios del enfoque 3-2-1 incluyen:
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
-NetApp Backup and Recovery utiliza NetApp SnapMirror para sincronizar las copias de seguridad creando instantáneas y transfiriéndolas a las ubicaciones de copia de seguridad.
+NetApp Backup and Recovery utiliza NetApp SnapMirror para sincronizar copias de seguridad creando instantáneas y transfiriéndolas a las ubicaciones de copia de seguridad.
 
 Puede hacer lo siguiente para proteger sus datos:
 

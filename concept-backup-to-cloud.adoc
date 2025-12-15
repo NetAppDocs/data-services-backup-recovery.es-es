@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery es un servicio de datos que proporciona prot
 [role="lead"]
 NetApp Backup and Recovery es un servicio de datos que proporciona protección de datos eficiente, segura y rentable para todas sus cargas de trabajo de ONTAP , incluidos volúmenes, bases de datos, máquinas virtuales y cargas de trabajo de Kubernetes.
 
-El soporte para copias de seguridad y recuperación ya está integrado en todos los sistemas ONTAP , por lo que no se necesita hardware adicional, licencias de software ni puertas de enlace de medios.  Esto hace que las operaciones de respaldo sean sencillas y rentables.  La consola de NetApp simplifica la implementación de cualquier estrategia de respaldo, incluido el espectro completo de variantes de respaldo 3-2-1, sin necesidad de múltiples administradores de recursos o personal especializado.
+El soporte para copias de seguridad y recuperación ya está integrado en todos los sistemas ONTAP , por lo que no se necesita hardware adicional, licencias de software ni puertas de enlace de medios. Esto hace que las operaciones de respaldo sean sencillas y rentables. La NetApp Console simplifica la implementación de cualquier estrategia de respaldo, incluido el espectro completo de variantes de respaldo 3-2-1, sin necesidad de múltiples administradores de recursos o personal especializado.
 
 
 NOTE: Se proporciona documentación sobre la protección de cargas de trabajo de VMware, KVM, Hyper-V y Kubernetes como una vista previa de la tecnología. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de la disponibilidad general.
@@ -169,16 +169,16 @@ ifdef::gcp[]
 
 *Cargos por servicio*
 
-40ff88020bcb9f0e42545b8535db30db
+Los cargos por servicio se pagan a NetApp y cubren tanto el costo de crear copias de seguridad en un almacenamiento de objetos o un destino ONTAP como la restauración de volúmenes o archivos a partir de esas copias de seguridad. Usted paga solo por los datos que protege en el almacenamiento de objetos o en ONTAP (esto incluye las configuraciones de SnapMirror ). Los cargos se calculan utilizando la capacidad lógica utilizada de origen (antes de las eficiencias de ONTAP ) de los volúmenes de ONTAP que se respaldan en un almacenamiento de objetos o en un destino de ONTAP . Esta capacidad también se conoce como Front-End Terabytes (FETB).
 
 
 NOTE: Para Microsoft SQL Server, se aplican cargos cuando inicia la replicación de instantáneas a un destino ONTAP secundario o a un almacenamiento de objetos.
 
-da19f2e50cbb3312d0bcc973d8486544
+Hay tres formas de pagar por Backup and Recovery:
 
 * La primera opción es suscribirse a través de su proveedor de nube, lo que le permite pagar por mes.
-* a426b39cc5038676b39d2265b22cebec
-* La tercera opción es comprar licencias directamente de NetApp.  Lea el<<Licencias,Licencias>> Sección para más detalles.
+* La segunda opción es comprar un contrato anual.
+* La tercera opción es comprar licencias directamente de NetApp. Consulte la <<Licencias,Licencias>> Sección para más detalles.
 
 
 

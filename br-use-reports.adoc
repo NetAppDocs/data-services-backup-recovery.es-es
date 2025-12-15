@@ -12,7 +12,7 @@ summary: En NetApp Backup and Recovery, cree informes para ver el estado de sus 
 
 
 [role="lead"]
-En NetApp Backup and Recovery, cree informes para las cargas de trabajo de Microsoft SQL Server para ver el estado de sus copias de seguridad, incluida la cantidad de copias de seguridad, la cantidad de copias de seguridad exitosas y la cantidad de copias de seguridad fallidas.  También puede ver los detalles de cada copia de seguridad, incluido el tipo de copia de seguridad, el sistema de almacenamiento utilizado para la copia de seguridad y la hora de la copia de seguridad.
+En NetApp Backup and Recovery, cree informes para cargas de trabajo de Microsoft SQL Server para ver el estado y los detalles de la copia de seguridad, incluidos los recuentos de copias de seguridad exitosas y fallidas, los tipos de copia de seguridad, los sistemas de almacenamiento y las marcas de tiempo.
 
 
 
