@@ -169,10 +169,9 @@ ifdef::gcp[]
 
 *Cargos por servicio*
 
-Los cargos por servicio se pagan a NetApp y cubren tanto el costo de crear copias de seguridad en un almacenamiento de objetos o un destino ONTAP como la restauración de volúmenes o archivos a partir de esas copias de seguridad. Usted paga solo por los datos que protege en el almacenamiento de objetos o en ONTAP (esto incluye las configuraciones de SnapMirror ). Los cargos se calculan utilizando la capacidad lógica utilizada de origen (antes de las eficiencias de ONTAP ) de los volúmenes de ONTAP que se respaldan en un almacenamiento de objetos o en un destino de ONTAP . Esta capacidad también se conoce como Front-End Terabytes (FETB).
+Para las cargas de trabajo de volumen de ONTAP , solo se le cobrará por los volúmenes protegidos por el almacenamiento de objetos. Los cargos se basan en la capacidad lógica utilizada de los volúmenes ONTAP de origen antes de que se apliquen las eficiencias, también conocidas como Terabytes Front-End (FETB).
 
-
-NOTE: Para Microsoft SQL Server, se aplican cargos cuando inicia la replicación de instantáneas a un destino ONTAP secundario o a un almacenamiento de objetos.
+Para todas las demás cargas de trabajo, se le cobrará por los recursos protegidos en al menos un destino de almacenamiento de objetos o secundario. Los cargos se calculan utilizando el tamaño lógico de la carga de trabajo de origen. Para las bases de datos, esto significa el tamaño de la base de datos; para las máquinas virtuales, el tamaño de la máquina virtual.
 
 Hay tres formas de pagar por Backup and Recovery:
 
