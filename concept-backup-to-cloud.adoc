@@ -215,31 +215,31 @@ link:br-start-licensing.html["Aprenda a configurar licencias"].
 
 
 
-== Fuentes de datos, sistemas y destinos de respaldo compatibles
+== Cargas de trabajo, sistemas y objetivos de respaldo compatibles
 
-.Fuentes de datos de carga de trabajo compatibles
-NetApp Backup and Recovery protege las siguientes cargas de trabajo:
+.Cargas de trabajo admitidas
+NetApp Backup and Recovery protege los siguientes tipos de cargas de trabajo:
 
 * Volúmenes de ONTAP
-* Instancias y bases de datos de Microsoft SQL Server para NFS físico, VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK)
+* Instancias y bases de datos de Microsoft SQL Server almacenadas en un disco físico y VMware Virtual Machine Disk (VMDK) a través de VMFS o NFS
 * Máquinas virtuales y almacenes de datos de VMware
 * Cargas de trabajo KVM (Vista previa)
 * Cargas de trabajo de Hyper-V (versión preliminar)
-* Cargas de trabajo de Oracle (Vista previa)
+* Cargas de trabajo de Oracle Database (versión preliminar)
 * Cargas de trabajo de Kubernetes (versión preliminar)
 
 
 .Sistemas compatibles
-* SAN ONTAP local (protocolo iSCSI) y NAS (mediante protocolos NFS y CIFS) con ONTAP versión 9.8 y superior
+* SAN ONTAP local (protocolo iSCSI) y NAS (mediante protocolos NFS y CIFS) con ONTAP versión 9.8 o superior
 * Cloud Volumes ONTAP 9.8 o superior para AWS (usando SAN y NAS)
-
-
+* Cloud Volumes ONTAP 9.8 o superior para Google Cloud Platform (utilizando protocolos NFS y CIFS)
 * Cloud Volumes ONTAP 9.8 o superior para Microsoft Azure (usando SAN y NAS)
-* Amazon FSx for NetApp ONTAP
+* Amazon FSx for NetApp ONTAP (solo cargas de trabajo de Microsoft SQL Server)
 
 
-.Objetivos de respaldo admitidos
+.Destinos de copia de seguridad compatibles
 * Servicios web de Amazon (AWS) S3
+* Almacenamiento en la nube de Google
 * Microsoft Azure Blob (no disponible para cargas de trabajo de VMware en versión preliminar)
 * StorageGRID
 * ONTAP S3 (no disponible para cargas de trabajo de VMware en versión preliminar)

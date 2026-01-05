@@ -349,15 +349,6 @@
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Expansión de discos (en varios recursos compartidos CIFS)</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">Proteger las máquinas virtuales a través de SAN</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">Proteja los hosts de Hyper-V que están agrupados mediante System Center Virtual Machine Manager (SCVMM)</block>
-  <block id="a30c7324f4089fb51d237b923db4b02d" category="section-title">Cuentas de NetApp Console heredadas no compatibles</block>
-  <block id="45cdae40d584305ee875a883ef9ba19e" category="paragraph">Las cuentas de NetApp Console heredadas no admiten las funciones necesarias para proteger las cargas de trabajo de Hyper-V.  Comprueba si estás usando una cuenta heredada en la interfaz de usuario web de la consola.  Si tiene una cuenta de consola heredada, cree una cuenta nueva antes de proteger las cargas de trabajo de Hyper-V.</block>
-  <block id="67d95bafb080d0463671b51cb30ed772" category="list-text">Desde el menú de la NetApp Console , seleccione *Administración &gt; Identidad y acceso*.</block>
-  <block id="252a32da9415511e6633fdf05c3cbfc5" category="list-text">En *Organización*, verifique si se muestra un *ID de cuenta* junto al ID de la organización.</block>
-  <block id="d0052af1d0af270827e3db57cce81803" category="paragraph">Si se muestra un *ID de cuenta*, estás utilizando una cuenta heredada.</block>
-  <block id="f4e4e58b8e27317b0286b2d7a6325bb0" category="list-text">Si está utilizando una cuenta heredada, haga lo siguiente:</block>
-  <block id="e0c1910c886d7600a19660b88b3e28fb" category="inline-link">Página de inicio de sesión de la consola</block>
-  <block id="9708523b754b4574d7d943207eacd560" category="list-text">Cierre la sesión de la consola y luego navegue hasta la<block ref="5a8401fec198a207b346fd48bd2a9be6" category="inline-link-rx"></block> .</block>
-  <block id="9f4166fee581a8bb153eacc3c742daca" category="list-text">Seleccione *Registrarse* para crear una nueva cuenta.</block>
   <block id="4a03732927298c2d8d1492b3d08bb831" category="summary">Esta versión de NetApp Backup and Recovery tiene las siguientes limitaciones conocidas.</block>
   <block id="5050c99de0a6e1bcf02e7ce66edabd97" category="doc">Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo KVM</block>
   <block id="448a90c8bbb9415c292cb0e585249a04" category="paragraph">Las siguientes acciones y configuraciones no son compatibles con la versión preliminar privada de las cargas de trabajo KVM en NetApp Backup and Recovery:</block>
@@ -375,7 +366,6 @@
   <block id="5131ec6f366fecc1e6e217f1cd4771d5" category="list-text">Discos distribuidos en múltiples puntos de montaje o recursos compartidos de NFS</block>
   <block id="60cb90015b7d70207c84b5b4c09b1c4a" category="list-text">Formato de disco RAW</block>
   <block id="def5bb1c4fff047ce52153ac1f2ef9b5" category="list-text">Tipos de grupos de almacenamiento distintos de NetFS (solo se admite NetFS)</block>
-  <block id="09c71875e3bb444ec63263da7bac4c16" category="paragraph">Las cuentas de NetApp Console heredadas no admiten las funciones necesarias para proteger las cargas de trabajo de KVM.  Comprueba si estás usando una cuenta heredada en la interfaz de usuario web de la consola.  Si tiene una cuenta de consola heredada, cree una cuenta nueva antes de proteger las cargas de trabajo de KVM.</block>
   <block id="43250e477f245ad8251ae2cf9a6044b5" category="doc">Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo de Oracle</block>
   <block id="d905e8ea866675c3cf4643035604b776" category="paragraph">Las siguientes acciones no son compatibles con la versión preliminar privada de las cargas de trabajo de Oracle Database en NetApp Backup and Recovery:</block>
   <block id="203b3a4b594fb28b853f0cb7e5561c26" category="list-text">Copia de seguridad sin conexión</block>
@@ -1995,20 +1985,13 @@
   <block id="520d2c423b38acf3262d3f1e93b53d8a" category="paragraph"><block ref="5f449dd4c94fd29d3e3b83e45dd58382" category="inline-link-macro-rx"></block>.</block>
   <block id="0f3691e0fad1edbca841aabd38ddfc42" category="paragraph">NetApp Backup and Recovery ofrece licencias basadas en el consumo en un modelo de pago por uso.  Después de suscribirse a través del mercado de su proveedor de nube, usted paga por GiB por los datos respaldados (no hay pago inicial). Su proveedor de nube le facturará a través de su factura mensual.</block>
   <block id="9757bd87f9a5ff6758600430092b3955" category="paragraph">Tenga en cuenta que hay una prueba gratuita de 30 días disponible cuando se registra inicialmente con una suscripción PAYGO.</block>
-  <block id="8d76c3c56611813110af76c5eca39835" category="section-title">Fuentes de datos, sistemas y destinos de respaldo compatibles</block>
-  <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">Fuentes de datos de carga de trabajo compatibles</block>
-  <block id="471bdf4d52cdd0764f463e7010138e3f" category="paragraph">NetApp Backup and Recovery protege las siguientes cargas de trabajo:</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">Volúmenes de ONTAP</block>
-  <block id="42b12d53290c6e592a4d774a432752d6" category="list-text">Instancias y bases de datos de Microsoft SQL Server para NFS físico, VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK)</block>
   <block id="5c1924f6230f429d87dfb7fd242478ba" category="list-text">Máquinas virtuales y almacenes de datos de VMware</block>
   <block id="d696f54a4219f10612b2a92868d7f533" category="list-text">Cargas de trabajo KVM (Vista previa)</block>
   <block id="ba244ce1386922db2aac58f9ea35cf82" category="list-text">Cargas de trabajo de Hyper-V (versión preliminar)</block>
   <block id="339f6d69f0298e3d4bbd943ba3211c6c" category="list-text">Cargas de trabajo de Kubernetes (versión preliminar)</block>
-  <block id="40b884bfd6c5c8664261a0673de09aeb" category="list-title">Sistemas compatibles</block>
-  <block id="60bbb47f4c25fbe48c0eaa18d9174d22" category="list-text">SAN ONTAP local (protocolo iSCSI) y NAS (mediante protocolos NFS y CIFS) con ONTAP versión 9.8 y superior</block>
   <block id="d97ad1eba4f90ab1f835497c1e04b99f" category="list-text">Cloud Volumes ONTAP 9.8 o superior para AWS (usando SAN y NAS)</block>
   <block id="c5446f6574237d9a06e2a847d988c357" category="list-text">Cloud Volumes ONTAP 9.8 o superior para Microsoft Azure (usando SAN y NAS)</block>
-  <block id="d17b3abdd113c99dd97a58c22430220e" category="list-title">Objetivos de respaldo admitidos</block>
   <block id="736ca911d7d143d01bd8cbfe0d4afbca" category="list-text">Servicios web de Amazon (AWS) S3</block>
   <block id="fd986c9449acb5abd97bea849d50dc49" category="list-text">Microsoft Azure Blob (no disponible para cargas de trabajo de VMware en versión preliminar)</block>
   <block id="2892aac222ad56500a9c836677137630" category="list-text">ONTAP S3 (no disponible para cargas de trabajo de VMware en versión preliminar)</block>
@@ -4705,7 +4688,6 @@
   <block id="3e2ef02026c97d7e5a6f8783f142b8ca" category="list-text">*Cargos por recursos*: Basados en el uso del almacenamiento. Para obtener más información, consulte<block ref="fb7e1562747222c6aa716c91aa0ab813" category="inline-link-rx"></block> .</block>
   <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*Cargos por servicio*: Tarifas por NetApp Backup and Recovery.  Sin embargo, si el volumen de origen se encuentra en un sistema de almacenamiento que utiliza el plan CVO Professional, NetApp Backup and Recovery se proporciona de forma gratuita.</block>
   <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">Cuando utilice Google Cloud Platform, solicite una oferta privada a NetApp y seleccione su plan durante la activación en Google Cloud Marketplace.</block>
-  <block id="3cd3cc23191003954a83615e7dc619e1" category="list-text">Cargas de trabajo de Oracle (Vista previa)</block>
   <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">Cree grupos de recursos utilizando máquinas virtuales de varios hosts Hyper-V.</block>
   <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*Registro de host*: Agregue un nuevo host Hyper-V ingresando el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto. Si el agente de la consola no puede resolver el FQDN, utilice la dirección IP en su lugar. Para los clústeres FCI, introduzca la dirección IP de gestión del clúster FCI.</block>
   <block id="36c0d00755a4d8daae367144e5daca38" category="list-text">Si usuarios que no forman parte de un dominio de administrador van a proteger máquinas virtuales Hyper-V, asegúrese de que el usuario tenga los siguientes permisos:</block>
@@ -4849,4 +4831,14 @@
   <block id="41bda454559167e0de7967190676c8d0" category="list-text">La tercera opción es comprar licencias directamente de NetApp. Consulte la <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> Sección para más detalles.</block>
   <block id="6f2ce7f1231e53c03d29e2df6055acf0" category="paragraph">Para las cargas de trabajo de volumen de ONTAP , solo se le cobrará por los volúmenes protegidos por el almacenamiento de objetos. Los cargos se basan en la capacidad lógica utilizada de los volúmenes ONTAP de origen antes de que se apliquen las eficiencias, también conocidas como Terabytes Front-End (FETB).</block>
   <block id="2e122fa1e06865f6dee3fd6d67ea1488" category="paragraph">Para todas las demás cargas de trabajo, se le cobrará por los recursos protegidos en al menos un destino de almacenamiento de objetos o secundario. Los cargos se calculan utilizando el tamaño lógico de la carga de trabajo de origen. Para las bases de datos, esto significa el tamaño de la base de datos; para las máquinas virtuales, el tamaño de la máquina virtual.</block>
+  <block id="0d3a443ca8a1a321c3c002699cfc04c3" category="section-title">Cargas de trabajo, sistemas y objetivos de respaldo compatibles</block>
+  <block id="e98d121a976b5b0869d0f6964c675ad8" category="paragraph-title">Cargas de trabajo admitidas</block>
+  <block id="3f4a151090dc4fc248f982a6f4be9919" category="paragraph">NetApp Backup and Recovery protege los siguientes tipos de cargas de trabajo:</block>
+  <block id="23d6a9248d1083059233422499f3d2d5" category="list-text">Instancias y bases de datos de Microsoft SQL Server almacenadas en un disco físico y VMware Virtual Machine Disk (VMDK) a través de VMFS o NFS</block>
+  <block id="6619e379e3694efd4480482eee432681" category="list-text">Cargas de trabajo de Oracle Database (versión preliminar)</block>
+  <block id="933247e0be7796a309cfa4c95bd34938" category="list-title">Sistemas compatibles</block>
+  <block id="6480be056b2a8398cb100f9a310f6040" category="list-text">SAN ONTAP local (protocolo iSCSI) y NAS (mediante protocolos NFS y CIFS) con ONTAP versión 9.8 o superior</block>
+  <block id="7a90fde5622dcca215688cd078d7dd01" category="list-text">Cloud Volumes ONTAP 9.8 o superior para Google Cloud Platform (utilizando protocolos NFS y CIFS)</block>
+  <block id="6f1c9788058344e9232a35579eac91e2" category="list-text">Amazon FSx for NetApp ONTAP (solo cargas de trabajo de Microsoft SQL Server)</block>
+  <block id="0b115ac5b217f989a1fc7dd422161b82" category="list-title">Destinos de copia de seguridad compatibles</block>
 </blocks>
