@@ -24,11 +24,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 Puede cambiar las siguientes opciones en la página Configuración avanzada:
 
-* Cambiar el ancho de banda de red asignado para cargar copias de seguridad al almacenamiento de objetos mediante la opción Velocidad máxima de transferencia ifdef::aws[]
-
-
-endif::aws[]
-
+* Cambiar el ancho de banda de red asignado para cargar copias de seguridad al almacenamiento de objetos mediante la opción Velocidad máxima de transferencia
 * Cambiar si las instantáneas históricas se exportan como archivos de copia de seguridad y se incluyen en los archivos de copia de seguridad de referencia iniciales para volúmenes futuros.
 * Cambiar si las instantáneas "anuales" se eliminan del sistema de origen
 * Habilitar o deshabilitar análisis de ransomware para un sistema, incluidos los análisis programados
@@ -70,10 +66,6 @@ Cuando activa NetApp Backup and Recovery para un sistema, de manera predetermina
 
 
 Esta configuración no afecta el ancho de banda asignado a cualquier otra relación de replicación que pueda configurarse para los volúmenes del sistema.
-
-ifdef::aws[]
-
-endif::aws[]
 
 
 

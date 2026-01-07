@@ -236,27 +236,12 @@ Puede cambiar los atributos de una política de respaldo que se aplica actualmen
 Si su clúster ejecuta ONTAP 9.10.1 o superior, también tiene la opción de habilitar o deshabilitar la organización en niveles de las copias de seguridad en el almacenamiento de archivo después de una cierta cantidad de días.
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"]. (Requiere ONTAP 9.12.1.)
+
++
+Tenga en cuenta que todos los archivos de respaldo que se hayan organizado en niveles de almacenamiento de archivo se dejarán en ese nivel si deja de organizar en niveles las copias de seguridad en el archivo; no se moverán automáticamente de nuevo al nivel estándar. Sólo las nuevas copias de seguridad de volumen residirán en el nivel estándar.
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"]. (Requiere ONTAP 9.12.1.)
-
-endif::gcp[]
-
-+ Tenga en cuenta que todos los archivos de respaldo que se hayan organizado en niveles de almacenamiento de archivo se dejarán en ese nivel si deja de organizar en niveles las copias de seguridad en el archivo; no se moverán automáticamente de nuevo al nivel estándar.  Sólo las nuevas copias de seguridad de volumen residirán en el nivel estándar.
 
 
 
@@ -282,25 +267,9 @@ Si desea aplicar una nueva política de respaldo a determinados volúmenes de un
 Si su clúster ejecuta ONTAP 9.10.1 o superior, también tiene la opción de habilitar o deshabilitar la organización en niveles de las copias de seguridad en el almacenamiento de archivo después de una cierta cantidad de días.
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"]. (Requiere ONTAP 9.12.1.)
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivo de Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivos de Google"]. (Requiere ONTAP 9.12.1.)
-
-endif::gcp[]
 
 
 

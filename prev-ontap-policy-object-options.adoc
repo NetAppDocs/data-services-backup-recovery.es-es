@@ -72,7 +72,7 @@ Esta función no proporciona protección para los volúmenes de origen; solo par
 
 === ¿Qué es DataLock?
 
-Con esta función, puede bloquear las instantáneas en la nube replicadas a través de SnapMirror en la nube y también habilitar la función para detectar un ataque de ransomware y recuperar una copia consistente de la instantánea en el almacén de objetos.  Esta función es compatible con AWS, Azure y StorageGRID.
+Con esta función, puede bloquear las instantáneas en la nube replicadas a través de SnapMirror en la nube y también habilitar la función para detectar un ataque de ransomware y recuperar una copia consistente de la instantánea en el almacén de objetos. Esta función es compatible con AWS, Azure, Google Cloud Platform y StorageGRID.
 
 DataLock protege sus archivos de respaldo para que no se modifiquen ni eliminen durante un período de tiempo determinado, también llamado _almacenamiento inmutable_.  Esta funcionalidad utiliza tecnología del proveedor de almacenamiento de objetos para el "bloqueo de objetos".
 
@@ -165,25 +165,23 @@ Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ON
 
 [cols="55,45"]
 |===
-| Sistema fuente | Destino del archivo de respaldo ifdef::aws[] 
+| Sistema fuente | Destino del archivo de respaldo 
 
 
-| Cloud Volumes ONTAP en AWS | Amazon S3 endif::aws[] ifdef::azure[] 
+| Cloud Volumes ONTAP en AWS | Amazon S3 
 
 
-| Cloud Volumes ONTAP en Azure | Blob de Azure endif::azure[] ifdef::gcp[] 
+| Cloud Volumes ONTAP en Azure | Blob de Azure 
 
 
-| Cloud Volumes ONTAP en Google Cloud | Google Cloud endif::gcp[] 
+| Cloud Volumes ONTAP en Google Cloud | Google Cloud 
 
 
-| Sistema ONTAP local | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob de Azure endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
+| Sistema ONTAP local | Amazon S3 Azure Blob Google Cloud NetApp StorageGRID 
 |===
 
 
 === Requisitos
-
-ifdef::aws[]
 
 * Para AWS:
 +
@@ -228,33 +226,17 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Para Azure:
 +
 ** Sus clústeres deben ejecutar ONTAP 9.12.1 o superior
 ** El agente de consola se puede implementar en la nube o en sus instalaciones.
 
 
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Para Google Cloud:
 +
 ** Sus clústeres deben ejecutar ONTAP 9.17.1 o superior
 ** El agente de consola se puede implementar en la nube o en sus instalaciones.
 
-
-
-
-endif::gcp[]
 
 * Para StorageGRID:
 +
@@ -355,8 +337,6 @@ No se puede acceder a los datos en niveles de archivo inmediatamente cuando se l
 ====
 Cada política de respaldo proporciona una sección para _Política de archivo_ que puede aplicar a sus archivos de respaldo.
 
-ifdef::aws[]
-
 * En AWS, las copias de seguridad comienzan en la clase de almacenamiento _Estándar_ y pasan a la clase de almacenamiento _Estándar-Acceso infrecuente_ después de 30 días.
 +
 Si su clúster usa ONTAP 9.10.1 o superior, puede organizar las copias de seguridad más antiguas en almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"].
@@ -369,42 +349,23 @@ Si su clúster usa ONTAP 9.10.1 o superior, puede organizar las copias de seguri
 
 
 
-endif::aws[]
-
-ifdef::azure[]
-
 * En Azure, las copias de seguridad están asociadas con el nivel de acceso _Cool_.
 +
 Si su clúster usa ONTAP 9.10.1 o una versión superior, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"].
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * En GCP, las copias de seguridad están asociadas con la clase de almacenamiento _Estándar_.
 +
 Si su clúster local usa ONTAP 9.12.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"].
-
-
-
-endif::gcp[]
 
 * En StorageGRID, las copias de seguridad están asociadas con la clase de almacenamiento _Standard_.
 +
 Si su clúster local usa ONTAP 9.12.1 o superior, y su sistema StorageGRID usa 11.4 o superior, puede archivar archivos de respaldo más antiguos en un almacenamiento de archivo en la nube pública.
 
++
+** Para AWS, puede organizar las copias de seguridad en niveles de almacenamiento AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"^].
+** En el caso de Azure, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"^].
 
 
-ifdef::aws[]
 
-+ ** Para AWS, puede organizar las copias de seguridad en niveles de almacenamiento AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"^].
-
-endif::aws[]
-
-ifdef::azure[]
-
-+ ** Para Azure, puede organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivo de Azure"^].
-
-endif::azure[]

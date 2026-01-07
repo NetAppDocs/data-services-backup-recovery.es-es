@@ -257,19 +257,9 @@ Para obtener una lista de ubicaciones válidas del agente de consola, consulte u
 
 NetApp Backup and Recovery se puede utilizar en un sitio con conectividad a Internet limitada (también conocido como _modo restringido_) para realizar copias de seguridad de datos de volumen.  En este caso, necesitará implementar el agente de consola en la región de nube de destino.
 
-ifdef::aws[]
-
 * Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. link:prev-ontap-backup-cvo-aws.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3"].
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Puede realizar copias de seguridad de datos de sistemas ONTAP locales o de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. link:prev-ontap-backup-cvo-azure.html["Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
-
-endif::azure[]
 
 
 
@@ -281,11 +271,5 @@ NetApp Backup and Recovery se puede utilizar en un sitio sin conectividad a Inte
 NOTE: El modo privado de BlueXP (interfaz BlueXP heredada) generalmente se usa con entornos locales que no tienen conexión a Internet y con regiones de nube seguras, que incluyen AWS Secret Cloud, AWS Top Secret Cloud y Azure IL6. NetApp continúa brindando soporte a estos entornos con la interfaz BlueXP heredada. Para obtener documentación del modo privado en la interfaz heredada de BlueXP , consulte la https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentación en PDF para el modo privado de BlueXP"] .
 
 * Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas NetApp StorageGRID locales. link:prev-ontap-backup-onprem-storagegrid.html["Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID"].
-* Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas ONTAP locales o sistemas Cloud Volumes ONTAP configurados para el almacenamiento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Realice una copia de seguridad de los datos locales de ONTAP en ONTAP S3"] .ifdef::aws[]
+* Puede realizar copias de seguridad de datos desde sistemas ONTAP locales a sistemas ONTAP locales o sistemas Cloud Volumes ONTAP configurados para el almacenamiento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Realice una copia de seguridad de los datos locales de ONTAP en ONTAP S3"].
 
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
