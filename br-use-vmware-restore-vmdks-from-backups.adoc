@@ -65,8 +65,8 @@ Si elige almacenamiento secundario, seleccione la ubicación de destino de la li
 
 
 
-. Seleccione *Siguiente*.
-. Elija la configuración de destino y las opciones previas y posteriores a la restauración:
+. Seleccione *Siguiente* para continuar.
+. Elija el destino de restauración y la configuración:
 
 
 [discrete]

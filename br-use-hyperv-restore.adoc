@@ -69,34 +69,22 @@ Aparece una lista de posibles puntos de restauración.
 
 . Seleccione el punto de restauración que desea utilizar.
 . Seleccione una ubicación de origen de la instantánea.
-. Seleccione *Listo* o *Siguiente* para continuar a la página de configuración de destino de restauración.
-+
-A continuación, puede elegir la configuración de destino y las opciones previas y posteriores a la restauración.
-
+. Seleccione *Siguiente* para continuar.
+. Elija el destino de restauración y la configuración:
 
 
 [discrete]
 ===== Selección de destino
 
-. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
-
-
 [role="tabbed-block"]
 ====
 .Restaurar a la ubicación original
 --
-. *Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida. Los volúmenes y datos restaurados estarán disponibles de inmediato. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
-. *Opciones previas a la restauración*: ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
-. *Opciones posteriores a la restauración*:
+Al restaurar a la ubicación original, podrá ver las configuraciones de destino expandiendo la sección *Configuraciones de destino*, pero no podrá cambiarlas.
+
+. En la sección *Opciones posteriores a la restauración*, considere la siguiente opción:
 +
-** *Reiniciar VM*: seleccione esta opción para reiniciar la VM una vez completada la operación de restauración y después de que se aplique el script posterior a la restauración.
-** *Posdata*: Ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
-
-
-. Sección de *Notificación*:
-+
-** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración e indique qué tipo de notificaciones desea recibir.
-
+*Reiniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
 
 . Seleccione *Restaurar*.
 

@@ -73,17 +73,12 @@ Aparece una lista de posibles puntos de restauración.
 . Seleccione una ubicación de origen de la instantánea.
 
 
-. Seleccione *Listo* o *Siguiente* para continuar a la página de configuración de destino de restauración.
-+
-A continuación, puede elegir la configuración de destino y las opciones previas y posteriores a la restauración.
-
+. Seleccione *Siguiente* para continuar.
+. Elija el destino de restauración y la configuración:
 
 
 [discrete]
 ===== Selección de destino
-
-. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
-
 
 [role="tabbed-block"]
 ====
