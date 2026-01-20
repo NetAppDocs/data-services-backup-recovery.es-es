@@ -59,7 +59,7 @@ Si aún no tiene instalado el complemento SnapCenter para VMware, agregue la inf
 .Pasos
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
 +
-Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la consola, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
+Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en la consola pero no ha descubierto ningún recurso, aparecerá la página _Bienvenido a la nueva NetApp Backup and Recovery_ con una opción para *Descubrir recursos*.
 
 . Seleccione *Descubrir recursos*.
 . Introduzca la siguiente información:

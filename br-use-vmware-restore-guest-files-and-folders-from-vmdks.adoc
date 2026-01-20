@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html 
+keywords:  
+summary: Puede restaurar uno o más archivos o carpetas desde un VMDK en un sistema operativo invitado Windows. 
+---
+= Restaurar archivos y carpetas de invitados desde VMDK
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede restaurar uno o más archivos o carpetas desde un VMDK en un sistema operativo invitado Windows.
+
+.Antes de empezar
+
+NOTE: Debe crear credenciales para la máquina virtual invitada en NetApp Backup and Recovery antes de poder restaurar archivos y carpetas desde ella. NetApp Backup and Recovery utiliza estas credenciales para autenticarse con la máquina virtual invitada al conectar el disco virtual.
+
+.Acerca de esta tarea
+De forma predeterminada, NetApp Backup and Recovery hace que el disco virtual conectado esté disponible durante 24 horas y luego lo desconecta automáticamente. En el asistente, puede elegir eliminar la sesión de restauración del archivo invitado automáticamente después de la operación de restauración o eliminar la sesión manualmente.
+
+El rendimiento de la restauración de archivos o carpetas invitados depende de dos factores: el tamaño de los archivos o carpetas que se van a restaurar y la cantidad de archivos o carpetas que se van a restaurar. Restaurar una gran cantidad de archivos de tamaño pequeño puede llevar más tiempo del previsto en comparación con restaurar una pequeña cantidad de archivos de tamaño grande, si el conjunto de datos que se va a restaurar es del mismo tamaño.
+
+
+IMPORTANT: Solo se puede ejecutar una operación de conexión o restauración al mismo tiempo en una máquina virtual. No es posible ejecutar operaciones de conexión o restauración en paralelo en la misma máquina virtual.
+
+
+IMPORTANT: Con la función de restauración de invitado, puede ver y restaurar archivos del sistema y ocultos, así como ver archivos cifrados. No sobrescriba un archivo de sistema existente ni restaure archivos cifrados en una carpeta cifrada. Durante la operación de restauración, los atributos ocultos, del sistema y cifrados de los archivos invitados no se conservan en el archivo restaurado. Ver o explorar particiones reservadas podría provocar un error.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
+. Seleccione el menú *Máquinas virtuales*.
+. Elija una máquina virtual de la lista que contenga los archivos que desea restaurar.
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] para esa VM.
+. Seleccione *Restaurar archivos y carpetas*.
+. Seleccione una instantánea desde la cual restaurar y luego seleccione *Siguiente*.
+. Seleccione la ubicación de la instantánea desde la que desea restaurar. Si elige una ubicación secundaria, seleccione la instantánea secundaria de la lista.
+. Seleccione *Siguiente*.
+. Seleccione el disco virtual de la lista para conectarlo a la máquina virtual y luego seleccione *Siguiente*.
+. En la página _Seleccionar credencial de máquina virtual_, si aún no ha almacenado una credencial para la máquina virtual invitada, seleccione *Agregar credenciales* y haga lo siguiente:
++
+.. *Nombre de las credenciales*: Ingrese un nombre para las credenciales.
+.. *Modo de autenticación*: Seleccione *Windows*.
+.. *Agentes*: seleccione un agente de consola de la lista que manejará la comunicación entre NetApp Backup and Recovery y este host.
+.. *Dominio y nombre de usuario*: Ingrese el FQDN de NetBIOS o dominio y el nombre de usuario para las credenciales.
+.. *Contraseña*: Ingrese una contraseña para la credencial.
+.. Seleccione *Agregar*.
+
+
+. Elija una credencial de máquina virtual para usar para autenticarse con la máquina virtual invitada.
++
+NetApp Backup and Recovery conecta el disco virtual a la máquina virtual y muestra todos los archivos y carpetas, incluidos los ocultos. Asigna una letra de unidad a cada partición, incluidas las particiones reservadas del sistema.
+
++
+Los archivos y carpetas que ha seleccionado aparecen enumerados en el panel derecho de la pantalla.
+
+. Seleccione *Siguiente*.
+. Introduzca la ruta compartida UNC al invitado donde se restaurarán los archivos seleccionados.
++
+** Ejemplo de dirección IPv4: `\\10.60.136.65\c$`
+** Ejemplo de dirección IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
++
+Si existen archivos con el mismo nombre, puedes optar por sobrescribirlos u omitirlos.
+
+. Seleccione *Restaurar*.
++
+Puede ver el progreso de la restauración en la página Supervisión de trabajos.
+
+

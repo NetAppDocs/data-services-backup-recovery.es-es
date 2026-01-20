@@ -258,7 +258,7 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 +
 Si el destino de AWS para sus copias de seguridad existe como un sistema en la página *Sistemas* de la consola, puede arrastrar el clúster de ONTAP al almacenamiento de objetos de AWS.
 
-** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación.  Desde la pestaña Volúmenes, seleccione *Acciones*image:icon-action.png["Icono de acciones"] opción de icono y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
+** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación. Desde la pestaña Volúmenes, seleccione *Acciones* image:icon-action.png["Icono de acciones"] opción de icono y seleccione *Activar protección 3-2-1* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
 
 
 +
@@ -322,7 +322,7 @@ NOTE: Si los volúmenes que elige tienen políticas de instantáneas y replicaci
 +
 ** *Instantáneas locales*: si está realizando una replicación o una copia de seguridad en un almacenamiento de objetos, se deben crear instantáneas locales.
 ** *Replicación*: crea volúmenes replicados en otro sistema de almacenamiento ONTAP .
-** *Copia de seguridad*: realiza copias de seguridad de los volúmenes en el almacenamiento de objetos.
+** *Copia de seguridad*: realiza copias de seguridad de los volúmenes en el almacenamiento de objetos. Al seleccionar depósitos existentes o configurar depósitos nuevos, puede realizar copias de seguridad de volúmenes en hasta seis depósitos por clúster.
 
 
 . *Arquitectura*: Si eligió replicación y copia de seguridad, elija uno de los siguientes flujos de información:
@@ -343,14 +343,14 @@ TIP: Para crear una política personalizada antes de activar la instantánea, co
 Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
 
 +
-** Introduzca el nombre de la póliza.
-** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
-** Seleccione *Crear*.
+.. Introduzca el nombre de la póliza.
+.. Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+.. Seleccione *Crear*.
 
 
 . *Replicación*: Establezca las siguientes opciones:
 +
-** *Objetivo de replicación*: seleccione el sistema de destino y SVM.  Opcionalmente, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregarán al nombre del volumen replicado.
+** *Objetivo de replicación*: seleccione el sistema de destino y la máquina virtual de almacenamiento. Opcionalmente, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregarán al nombre del volumen replicado.
 ** *Política de replicación*: elija una política de replicación existente o cree una.
 +
 
@@ -360,14 +360,14 @@ TIP: Para crear una política personalizada, consultelink:br-use-policies-create
 Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
 
 +
-*** Introduzca el nombre de la póliza.
-*** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
-*** Seleccione *Crear*.
+... Introduzca el nombre de la póliza.
+... Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+... Seleccione *Crear*.
 
 
 
 
-. *Copia de seguridad del objeto*: si seleccionó *Copia de seguridad*, configure las siguientes opciones:
+. *Copia de seguridad*: Establezca las siguientes opciones:
 +
 ** *Proveedor*: Seleccione *Amazon Web Services*.
 ** *Configuración del proveedor*: ingrese los detalles del proveedor y la región donde se almacenarán las copias de seguridad.
@@ -383,17 +383,15 @@ Seleccione la región donde se almacenarán las copias de seguridad.  Esta puede
 +
 Cree un nuevo depósito o seleccione uno existente.
 
-** *Clave de cifrado*: si creó un nuevo depósito, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado de AWS predeterminadas o elegirá sus propias claves administradas por el cliente desde su cuenta de AWS para administrar el cifrado de sus datos. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Vea cómo utilizar sus propias claves de cifrado"^] ).
+** *Cifrado*: Si creó un nuevo depósito, ingrese la información de la clave de cifrado que le proporcionó el proveedor. Elija si utilizará las claves de cifrado de AWS predeterminadas o elegirá sus propias claves administradas por el cliente desde su cuenta de AWS para administrar el cifrado de sus datos. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Vea cómo utilizar sus propias claves de cifrado"^]).
 +
 Si elige utilizar sus propias claves administradas por el cliente, ingrese al almacén de claves y a la información de la clave.
-
-
 
 +
 
 NOTE: Si eligió un depósito existente, la información de cifrado ya está disponible, por lo que no necesita ingresarla ahora.
 
-+
+** *Redes*: configure las opciones de red para este proveedor.
 ** *Política de respaldo*: seleccione una política de almacenamiento de respaldo a objetos existente o cree una.
 +
 
@@ -403,13 +401,13 @@ TIP: Para crear una política personalizada antes de activar la copia de segurid
 Para crear una política, seleccione *Crear nueva política* y haga lo siguiente:
 
 +
-*** Introduzca el nombre de la póliza.
-*** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
-*** Para las políticas de copia de seguridad a objeto, configure las configuraciones DataLock y Ransomware Resilience.  Para obtener más detalles sobre DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"] .
-*** Seleccione *Crear*.
+... Introduzca el nombre de la póliza.
+... Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
+... Para las políticas de copia de seguridad a objeto, configure las configuraciones DataLock y Ransomware Resilience.  Para obtener más detalles sobre DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"] .
+... Seleccione *Crear*.
 
 
-** *Exportar instantáneas existentes al almacenamiento de objetos como copias de seguridad*: Si existen instantáneas locales para volúmenes en este sistema que coincidan con la etiqueta de programación de copias de seguridad que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se mostrará este mensaje adicional. Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+** *Exportar instantánea existente*: si hay instantáneas locales para volúmenes en este sistema que coinciden con la etiqueta de programación de respaldo que acaba de seleccionar para este sistema (por ejemplo, diaria, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
 
 
 . Seleccione *Siguiente*.
@@ -423,7 +421,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 .Pasos
 . En la página Revisar, revise sus selecciones.
-. Opcionalmente, marque la casilla para *Sincronizar automáticamente las etiquetas de la política de instantáneas con las etiquetas de la política de replicación y copia de seguridad*.  Esto crea instantáneas con una etiqueta que coincide con las etiquetas en las políticas de replicación y copia de seguridad.
+. Opcionalmente, marque la casilla para *Reparar automáticamente las etiquetas no coincidentes en la instantánea local, la replicación y la copia de seguridad*. Esto crea instantáneas con una etiqueta que coincide con las etiquetas de las políticas de instantáneas, replicación y copia de seguridad.
 . Seleccione *Activar copia de seguridad*.
 
 

@@ -138,9 +138,19 @@ sidebar:
       - title: Realizar copias de seguridad de las cargas de trabajo de VMware
         url: "/br-use-vmware-backup.html"
       - title: Restaurar cargas de trabajo de VMware
-        url: "/br-use-vmware-restore.html"
-      - title: Restaurar discos virtuales específicos a partir de copias de seguridad
-        url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        entries:
+        - title: Restaurar máquinas virtuales de VMware
+          url: "/br-use-vmware-restore.html"
+        - title: Restaurar discos virtuales específicos
+          url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        - title: Restaurar archivos y carpetas de invitados
+          entries:
+          - title: Flujo de trabajo, requisitos previos y limitaciones
+            url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
+          - title: Restaurar archivos y carpetas de invitados desde VMDK
+            url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
+          - title: Solución de problemas de restauración de archivos de invitados
+            url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: Proteja las cargas de trabajo de VMware (con el complemento SnapCenter
         para VMware)
       entries:

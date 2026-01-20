@@ -34,7 +34,7 @@ Ejecute una copia de seguridad a pedido antes de realizar cambios en el sistema 
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
-. En el mosaico de Oracle, seleccione *Descubrir y administrar*.
+. En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
 . Seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
@@ -59,7 +59,7 @@ Puede ejecutar una copia de seguridad a pedido de una sola base de datos.
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
-. En el mosaico de Oracle, seleccione *Descubrir y administrar*.
+. En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
 . Seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.

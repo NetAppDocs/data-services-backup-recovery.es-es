@@ -37,7 +37,7 @@ Para mostrar columnas adicionales (agregados, estilo de seguridad (Windows o UNI
 
 . Revise el estado de las opciones de protección en la columna "Protección existente". Los 3 iconos representan "Instantáneas locales", "Volúmenes replicados" y "Copias de seguridad en almacenamiento de objetos".
 +
-Cada ícono es azul cuando ese tipo de copia de seguridad está activado y es gris cuando el tipo de copia de seguridad está inactivo.  Puede pasar el cursor sobre cada ícono para ver la política de respaldo que se está utilizando y otra información pertinente para cada tipo de respaldo.
+Cada ícono se ilumina cuando ese tipo de copia de seguridad está activado y es gris cuando el tipo de copia de seguridad está inactivo. Puede pasar el cursor sobre cada ícono para ver la política de respaldo que se está utilizando y otra información pertinente para cada tipo de respaldo.
 
 
 
@@ -48,7 +48,7 @@ Cada ícono es azul cuando ese tipo de copia de seguridad está activado y es gr
 Si activó la copia de seguridad solo en algunos de los volúmenes de un sistema cuando habilitó por primera vez NetApp Backup and Recovery, puede activar copias de seguridad en volúmenes adicionales más adelante.
 
 .Pasos
-. Desde la pestaña *Volúmenes*, identifique el volumen en el que desea activar las copias de seguridad, seleccione el menú Accionesimage:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Activar copia de seguridad*.
+. Desde la pestaña *Volúmenes*, identifique el volumen en el que desea activar las copias de seguridad, seleccione el menú Acciones image:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Activar protección 3-2-1*.
 . En la página _Definir estrategia de copia de seguridad_, seleccione la arquitectura de copia de seguridad y, a continuación, defina las políticas y otros detalles para las instantáneas locales, los volúmenes replicados y los archivos de copia de seguridad. Consulte los detalles de las opciones de respaldo de los volúmenes iniciales que activó en este sistema. Luego, seleccione *Siguiente*.
 . Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
 
@@ -64,7 +64,7 @@ Puede cambiar las políticas de respaldo asignadas a sus volúmenes existentes q
 === Editar la configuración de copia de seguridad en un solo volumen
 
 .Pasos
-. Desde la pestaña *Volúmenes*, identifique el volumen en el que desea realizar cambios de política y seleccione el menú Accionesimage:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Editar estrategia de respaldo*.
+. Desde el menú *Volúmenes*, localice el volumen para el cual desea modificar la configuración de política, seleccione el menú Acciones image:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Editar estrategia de respaldo*.
 . En la página _Editar estrategia de copia de seguridad_, realice cambios en las políticas de copia de seguridad existentes para instantáneas locales, volúmenes replicados y archivos de copia de seguridad y seleccione *Siguiente*.
 +
 Si habilitó _DataLock y Ransomware Resilience_ para las copias de seguridad en la nube en la política de copia de seguridad inicial al activar NetApp Backup and Recovery para este clúster, solo verá otras políticas que se hayan configurado con DataLock.  Y si no habilitó _DataLock y Ransomware Resilience_ al activar NetApp Backup and Recovery, solo verá otras políticas de respaldo en la nube que no tengan DataLock configurado.
@@ -85,7 +85,7 @@ Al trabajar con varios volúmenes, todos ellos deben tener estas característica
 * mismo tipo (volumen de lectura-escritura o protección de datos)
 
 
-Cuando se habilitan más de cinco volúmenes para la copia de seguridad, NetApp Backup and Recovery inicializa solo cinco volúmenes a la vez.  Una vez finalizados estos, se crea el siguiente lote de cinco subtrabajos para iniciar el siguiente conjunto y continúa hasta que se inicializan todos los volúmenes.
+Cuando se habilitan más de cinco volúmenes para la copia de seguridad, NetApp Backup and Recovery inicializa solo cinco volúmenes a la vez. Cuando estos están terminados, se continúa en grupos de 5 hasta que se inicializan todos los volúmenes.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, filtre por el sistema en el que residen los volúmenes.
@@ -120,7 +120,7 @@ Si habilitó _DataLock y Ransomware Resilience_ para las copias de seguridad en 
 
 Puede crear una copia de seguridad a pedido en cualquier momento para capturar el estado actual del volumen.  Esto puede ser útil si se han realizado cambios muy importantes en un volumen y no desea esperar hasta la próxima copia de seguridad programada para proteger esos datos.  También puede utilizar esta funcionalidad para crear una copia de seguridad de un volumen que actualmente no se está respaldando y desea capturar su estado actual.
 
-Puede crear una instantánea o copia de seguridad ad hoc en un objeto de un volumen. No se puede crear un volumen replicado ad-hoc.
+Puede crear una instantánea ad hoc o una copia de seguridad en el almacén de objetos de un volumen. No se puede crear un volumen replicado ad-hoc.
 
 El nombre de la copia de seguridad incluye la marca de tiempo para que pueda identificar su copia de seguridad a pedido de otras copias de seguridad programadas.
 

@@ -34,8 +34,8 @@ Aparece la página de inicio de sesión de la NetApp Console .
 . Inicie sesión en la consola.
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
 +
-** Si es la primera vez que inicia sesión en Backup and Recovery y aún no ha agregado un sistema a la página *Sistemas*, Backup and Recovery muestra la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" y brinda una opción para agregar un sistema.  Para obtener detalles sobre cómo agregar un sistema a la página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la NetApp Console"^] .
-** Si es la primera vez que inicia sesión en Backup and Recovery y ya agregó un sistema a la página *Sistemas*, pero no descubrió ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
+** Si es la primera vez que inicia sesión en Backup and Recovery y aún no ha agregado un sistema a la página *Sistemas*, Backup and Recovery muestra la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" con una opción para agregar un sistema. Para obtener detalles sobre cómo agregar un sistema a la página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la NetApp Console"^].
+** Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en la consola pero no ha descubierto ningún recurso, aparecerá la página _Bienvenido a la nueva NetApp Backup and Recovery_ con una opción para *Descubrir recursos*.
 
 
 . Si aún no lo ha hecho, seleccione la opción *Descubrir y administrar*.

@@ -45,3 +45,14 @@ Las siguientes configuraciones no son compatibles:
 * Formato de disco RAW
 * Tipos de grupos de almacenamiento distintos de NetFS (solo se admite NetFS)
 
+
+
+
+== Notas de solución de problemas
+
+Tenga en cuenta lo siguiente al utilizar la vista previa privada de cargas de trabajo KVM con NetApp Backup and Recovery:
+
+* Para garantizar que las restauraciones de la carga de trabajo de KVM se completen correctamente, asegúrese de que la configuración *Habilitar instantánea consistente con VM* esté activa en la política de protección que utiliza para las copias de seguridad de KVM.
+* No puede realizar una copia de seguridad de un grupo de almacenamiento con hosts KVM administrados por Apache CloudStack a menos que agregue todos los hosts administrados a NetApp Backup and Recovery. Como solución alternativa, agregue todos los host KVM administrados por CloudStack a NetApp Backup and Recovery.
+* No se puede realizar una copia de seguridad de una máquina virtual detenida que pertenece a un grupo de protección. Como solución alternativa, elimine la máquina virtual detenida del grupo de protección antes de iniciar la copia de seguridad.
+

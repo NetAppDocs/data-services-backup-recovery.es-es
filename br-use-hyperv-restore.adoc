@@ -28,6 +28,7 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 Puede restaurar datos en estos puntos:
 
 * Restaurar a la ubicación original
+* Restaurar a una ubicación alternativa
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
@@ -46,7 +47,7 @@ Al restaurar cargas de trabajo, ocurre lo siguiente:
 * Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo en el sistema original o en un sistema ONTAP local.
 
 
-Desde la página Restaurar (también conocida como Buscar y restaurar)*, puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.
+Desde la página Restaurar (también conocida como Buscar y restaurar), puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.
 
 
 
@@ -84,7 +85,8 @@ Al restaurar a la ubicación original, podrá ver las configuraciones de destino
 
 . En la sección *Opciones posteriores a la restauración*, considere la siguiente opción:
 +
-*Reiniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
+** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
+
 
 . Seleccione *Restaurar*.
 
@@ -92,7 +94,26 @@ Al restaurar a la ubicación original, podrá ver las configuraciones de destino
 --
 .Restaurar a una ubicación alternativa
 --
-No disponible para la vista previa de cargas de trabajo de Hyper-V.
+. En la sección *Configuración de destino*, ingrese la siguiente información:
++
+** *FQDN o dirección IP de Hyper-V*: ingrese el nombre de dominio completo o la dirección IP del host Hyper-V de destino.
+** *Red*: Seleccione la red de destino donde desea restaurar la instantánea.
+** *Nombre de la máquina virtual*: Ingrese el nombre de la máquina virtual que desea restaurar.
+** *Ubicación de destino*: ingrese la carpeta de destino o el recurso compartido CIFS que debe contener los datos restaurados.
+
+
+. En la sección *Opciones previas a la restauración*, considere las siguientes opciones:
++
+** *Restauración rápida*: habilite esta opción para que la máquina virtual restaurada esté disponible de inmediato. Solo se restauran desde el almacén de objetos los archivos necesarios para ejecutar la máquina virtual, en lugar del volumen completo.
+
+
+. En la sección *Opciones posteriores a la restauración*, considere las siguientes opciones:
++
+** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
+
+
+. Seleccione *Restaurar*.
+
 
 --
 ====

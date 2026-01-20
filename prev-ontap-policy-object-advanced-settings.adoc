@@ -24,6 +24,8 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 Puede cambiar las siguientes opciones en la página Configuración avanzada:
 
+* Cambiar las claves de almacenamiento que le dan a su sistema ONTAP permiso para acceder al almacenamiento de objetos
+* Cambiar el espacio IP de ONTAP que está conectado al almacenamiento de objetos
 * Cambiar el ancho de banda de red asignado para cargar copias de seguridad al almacenamiento de objetos mediante la opción Velocidad máxima de transferencia
 * Cambiar si las instantáneas históricas se exportan como archivos de copia de seguridad y se incluyen en los archivos de copia de seguridad de referencia iniciales para volúmenes futuros.
 * Cambiar si las instantáneas "anuales" se eliminan del sistema de origen
@@ -34,21 +36,18 @@ Puede cambiar las siguientes opciones en la página Configuración avanzada:
 
 == Ver la configuración de copia de seguridad a nivel de clúster
 
-Puede ver la configuración de copia de seguridad a nivel de clúster para cada sistema.
+Puede ver la configuración del sistema a nivel de clúster y la configuración del proveedor para cada sistema.
 
 .Pasos
 . Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. Desde la página _Configuración de copia de seguridad_, seleccione la image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema* para ver los ajustes del sistema y *Configurar ajustes avanzados > Ajustes del proveedor* para ver los ajustes del proveedor.
 +
-La página _Configuración avanzada_ muestra la configuración actual para ese sistema.
-
-. Amplíe la opción y realice el cambio.
+La página resultante muestra la configuración actual de ese sistema. Al visualizar la configuración del proveedor, las configuraciones del proveedor que se muestran son relevantes para el depósito que seleccione en la parte superior de la página.
 
 
-Todas las operaciones de copia de seguridad posteriores al cambio utilizarán los nuevos valores.
 
-Tenga en cuenta que algunas opciones no están disponibles según la versión de ONTAP en el clúster de origen y según el destino del proveedor de nube donde residen las copias de seguridad.
+Tenga en cuenta que algunas opciones no están disponibles según la versión de ONTAP en el clúster de origen y el destino del proveedor de nube donde residen las copias de seguridad.
 
 
 
@@ -58,7 +57,7 @@ Cuando activa NetApp Backup and Recovery para un sistema, de manera predetermina
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
 . En la página Configuración avanzada, expanda la sección *Tasa máxima de transferencia*.
 . Elija un valor entre 1 y 1.000 Mbps como velocidad de transferencia máxima.
 . Seleccione el botón de opción *Limitado* e ingrese el ancho de banda máximo que se puede usar, o seleccione *Ilimitado* para indicar que no hay límite.
@@ -77,8 +76,8 @@ Tenga en cuenta que esta opción solo se aplica a nuevos archivos de respaldo pa
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
-. En la página de Configuración avanzada, expanda la sección *Exportar instantáneas existentes*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
+. En la página Configuración avanzada, expanda la sección *Exportar copias de instantáneas existentes*.
 . Seleccione si desea exportar las instantáneas existentes.
 . Seleccione *Aplicar*.
 
@@ -91,11 +90,8 @@ Cuando selecciona la etiqueta de copia de seguridad "anual" para una política d
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
 . En la página Configuración avanzada, expanda la sección *Eliminación de instantáneas anuales*.
-+
-image:screenshot_backup_edit_yearly_snap_delete.png["Una captura de pantalla de la entrada Instantáneas anuales en la página Configuración avanzada."]
-
 . Seleccione *Deshabilitado* para conservar las instantáneas anuales en el sistema de origen.
 . Seleccione *Aplicar*.
 
@@ -104,7 +100,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Una captura de pantalla de 
 
 == Habilitar o deshabilitar los análisis de ransomware
 
-Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de escaneo es de 7 días. El escaneo ocurre solo en la última instantánea. Puede activar o desactivar los análisis de ransomware en la última instantánea mediante la opción correspondiente en la página de Configuración avanzada. Si lo habilita, los análisis se realizan cada 7 días de forma predeterminada.
+Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de escaneo es de 7 días. El escaneo ocurre solo en la última instantánea.
 
 Para obtener detalles sobre las opciones de DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opciones de DataLock y resiliencia ante ransomware"] .
 
@@ -113,16 +109,38 @@ Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
 
 TIP: Habilitar análisis de ransomware generará cargos adicionales según el proveedor de la nube.
 
-Los análisis programados de ransomware se ejecutan únicamente en la instantánea más reciente.
-
 Si los análisis de ransomware programados están deshabilitados, aún puede realizar análisis a pedido y el análisis durante una operación de restauración se seguirá realizando.
 
 Referirse alink:prev-ontap-policy-manage.html["Administrar políticas"] para obtener detalles sobre la gestión de políticas que implementan la detección de ransomware.
 
+
+
+=== Habilitar o deshabilitar los análisis de ransomware para un sistema
+
+Puede habilitar o deshabilitar los análisis de ransomware para un clúster.
+
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configuración avanzada*.
-. En la página Configuración avanzada, expanda la sección *Análisis de ransomware*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
+. En la página resultante, expanda la sección *Análisis de ransomware*.
+. Habilitar o deshabilitar *Análisis de ransomware*.
+. Seleccione *Análisis de ransomware programado*.
+. Opcionalmente, cambie el escaneo predeterminado de cada semana a días o semanas.
+. Establezca la frecuencia en días o semanas con la que se debe ejecutar el análisis.
+. Seleccione *Aplicar*.
+
+
+
+
+=== Habilitar o deshabilitar los análisis de ransomware para un proveedor
+
+Puede habilitar o deshabilitar los análisis de ransomware a nivel de proveedor utilizando la página de configuración del proveedor. Las configuraciones de la página son relevantes para el depósito que seleccione en la parte superior de la página.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del proveedor*.
+. En la parte superior de la página resultante, seleccione el depósito cuya configuración necesita cambiar.
+. Expande la sección *Análisis de ransomware*.
 . Habilitar o deshabilitar *Análisis de ransomware*.
 . Seleccione *Análisis de ransomware programado*.
 . Opcionalmente, cambie el escaneo predeterminado de cada semana a días o semanas.

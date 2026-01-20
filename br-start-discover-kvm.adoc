@@ -14,36 +14,49 @@ summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo
 
 
 [role="lead"]
-NetApp Backup and Recovery necesita descubrir hosts KVM y máquinas virtuales antes de protegerlos.
+NetApp Backup and Recovery necesita descubrir hosts KVM y máquinas virtuales antes de protegerlos. Sus hosts KVM y máquinas virtuales deben estar administrados por una plataforma de administración como Apache CloudStack antes de poder agregarlos a Backup and Recovery.
 
 *Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 
 
-== Agregue un host KVM y descubra recursos
+== Agregue una plataforma de administración, un host KVM y descubra recursos
 
-Agregue información del host KVM y permita que NetApp Backup and Recovery descubra cargas de trabajo. Dentro de cada agente de consola, seleccione los sistemas en los que desea descubrir cargas de trabajo.
+Agregue la plataforma de administración y la información del host KVM y deje que NetApp Backup and Recovery descubra las cargas de trabajo.
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
-. En el mosaico KVM, seleccione *Descubrir y administrar*.
+. En *Cargas de trabajo*, seleccione el mosaico *KVM*.
 +
-Si es la primera vez que inicia sesión en Backup and Recovery, ya tiene un sistema en la consola, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" y muestra una opción para *Descubrir recursos*.
+Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en la consola pero no ha descubierto ningún recurso, aparecerá la página _Bienvenido a la nueva NetApp Backup and Recovery_ con una opción para *Descubrir recursos*.
 
 . Seleccione *Descubrir recursos*.
 . Introduzca la siguiente información:
 +
 .. *Tipo de carga de trabajo*: Seleccione *KVM*.
-.. Si aún no ha almacenado las credenciales para este host KVM, seleccione *Agregar credenciales*.
+.. Si aún no ha integrado su plataforma de administración con Backup and Recovery, seleccione *Agregar plataforma de administración*.
 +
-... Seleccione el agente de consola que se utilizará con este host.
-... Introduzca un nombre para esta credencial.
-... Elija si desea utilizar credenciales root o credenciales no root.
-... Introduzca el nombre de usuario y la contraseña de la cuenta.
-... Seleccione *Listo*.
+... Introduzca la siguiente información:
++
+**** *Dirección IP o FQDN de la plataforma de administración*: ingrese la dirección IP o el nombre de dominio completo de la plataforma de administración.
+**** *Clave API*: Ingrese la clave API que se utilizará para autenticar las solicitudes API.
+**** *Clave secreta*: Ingrese la clave secreta que se utilizará para autenticar las solicitudes de API.
+**** *Puerto*: Ingrese el puerto que se utilizará para la comunicación entre Backup and Recovery y la plataforma de administración.
+**** *Agentes*: seleccione un agente de consola para utilizar para facilitar la comunicación entre Backup and Recovery y la plataforma de administración.
 
 
-.. *Registro de host*: agregue un nuevo host KVM.  Ingrese el FQDN o la dirección IP del host, las credenciales, el agente de consola y el número de puerto.
+... Cuando haya terminado, seleccione *Agregar*.
+
+
+.. *Configuración de KVM*: agregue un nuevo host KVM ingresando la siguiente información:
++
+*** *FQDN o dirección IP de KVM*: ingrese el FQDN o la dirección IP del host.
+*** *Credenciales*: Ingrese el nombre de usuario y la contraseña para el host KVM.
+*** *Agente de consola*: elija el agente de consola que se utilizará para la comunicación entre Backup and Recovery y el host KVM.
+*** *Número de puerto*: Ingrese el puerto que se utilizará para la comunicación entre Backup and Recovery y el host KVM.
+*** *Plataforma de administración*: si el host KVM está administrado y ha agregado la plataforma de administración a Copia de seguridad y recuperación, seleccione la plataforma de administración de la lista.
+
+
 
 
 . Seleccione *Descubrir*.
