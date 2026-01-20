@@ -4873,7 +4873,6 @@
   <block id="0bf794e2b090829c5f342b426fa04d5c" category="summary">Puede restaurar uno o más archivos o carpetas desde un VMDK en un sistema operativo invitado Windows.</block>
   <block id="9cda0c7b074ab9336e54e5c799f32f1d" category="doc">Restaurar archivos y carpetas de invitados desde VMDK</block>
   <block id="a26360f952d07b84e1088cc6c613eafe" category="admonition">Debe crear credenciales para la máquina virtual invitada en NetApp Backup and Recovery antes de poder restaurar archivos y carpetas desde ella. NetApp Backup and Recovery utiliza estas credenciales para autenticarse con la máquina virtual invitada al conectar el disco virtual.</block>
-  <block id="50f6ae852890a51c1bdcbc5fa3074be0" category="paragraph">De forma predeterminada, NetApp Backup and Recovery hace que el disco virtual conectado esté disponible durante 24 horas y luego lo desconecta automáticamente. En el asistente, puede elegir eliminar la sesión de restauración del archivo invitado automáticamente después de la operación de restauración o eliminar la sesión manualmente.</block>
   <block id="84768fbdedcb14c4c8dd78daf9604451" category="paragraph">El rendimiento de la restauración de archivos o carpetas invitados depende de dos factores: el tamaño de los archivos o carpetas que se van a restaurar y la cantidad de archivos o carpetas que se van a restaurar. Restaurar una gran cantidad de archivos de tamaño pequeño puede llevar más tiempo del previsto en comparación con restaurar una pequeña cantidad de archivos de tamaño grande, si el conjunto de datos que se va a restaurar es del mismo tamaño.</block>
   <block id="851e8e79b33ecfa430d9ed62957e5cad" category="admonition">Solo se puede ejecutar una operación de conexión o restauración al mismo tiempo en una máquina virtual. No es posible ejecutar operaciones de conexión o restauración en paralelo en la misma máquina virtual.</block>
   <block id="7392d9ba3083cd42958684b4749d4c72" category="admonition">Con la función de restauración de invitado, puede ver y restaurar archivos del sistema y ocultos, así como ver archivos cifrados. No sobrescriba un archivo de sistema existente ni restaure archivos cifrados en una carpeta cifrada. Durante la operación de restauración, los atributos ocultos, del sistema y cifrados de los archivos invitados no se conservan en el archivo restaurado. Ver o explorar particiones reservadas podría provocar un error.</block>
@@ -4901,7 +4900,6 @@
   <block id="6682a5a344207b03b09bfb0798a193b6" category="section-title">Flujo de trabajo de restauración de invitados</block>
   <block id="dfb5e1e797a80916627d17588b36ab12" category="paragraph">Las operaciones de restauración del sistema operativo invitado incluyen los siguientes pasos:</block>
   <block id="7193518e6f5f0076ef05680742323f9c" category="list-text">Adjuntar</block>
-  <block id="f02fee54a71e292fba6eea93ae620b05" category="paragraph">Conecte un disco virtual a una máquina virtual invitada o una máquina virtual proxy e inicie una sesión de restauración de archivos de invitado.</block>
   <block id="0f68101772bd5397ef8eb1b632798652" category="list-text">Esperar</block>
   <block id="75acbae837699c01fe86ee8a2c9fec00" category="paragraph">Espere a que se complete la operación de conexión antes de poder explorar y restaurar. Cuando finaliza la operación de conexión, se crea automáticamente una sesión de restauración de archivos invitados.</block>
   <block id="137bf66cd89f2d7f861099ca8519563c" category="list-text">Seleccionar archivos o carpetas</block>
@@ -4912,7 +4910,6 @@
   <block id="6a7a37bd722f9a7ebe568ae7d8778d8f" category="paragraph">Revise todos los requisitos antes de restaurar archivos o carpetas desde un VMDK en un sistema operativo invitado Windows.</block>
   <block id="36139d788258b0f7f760e90a7e475cfb" category="list-text">Las herramientas de VMware deben estar instaladas y en ejecución.</block>
   <block id="9809213078fe536846ce61d52cfab742" category="paragraph">NetApp Backup and Recovery utiliza información de las herramientas de VMware para establecer una conexión con el sistema operativo invitado VMware.</block>
-  <block id="1572f8be6f1646b62b5c0d4d4c380fe8" category="list-text">El sistema operativo invitado Windows debe ejecutar Windows Server 2008 R2 o posterior.</block>
   <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="inline-link">Herramienta de matriz de interoperabilidad de NetApp (IMT)</block>
   <block id="95477275bd206a7fb98bf4a8ec799a0b" category="paragraph">Para obtener la información más reciente sobre las versiones compatibles, consulte<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block> .</block>
   <block id="73e99419f23009b467a68b78510f24c7" category="list-text">Las credenciales para la máquina virtual de destino utilizan el dominio integrado o la cuenta de administrador local con el nombre de usuario "Administrador". Antes de iniciar la operación de restauración, configure las credenciales de la máquina virtual donde desea conectar el disco virtual. Se requieren credenciales tanto para las operaciones de conexión como para las de restauración. Los usuarios del grupo de trabajo pueden utilizar la cuenta de administrador local incorporada.</block>
@@ -4926,8 +4923,6 @@
   <block id="9229096468701d10aab6b30f546310c1" category="section-title">Limitaciones de restauración de archivos de invitados</block>
   <block id="ce6cdc51d08da1519febc60a0e9593aa" category="paragraph">Antes de restaurar un archivo o carpeta desde un sistema operativo invitado, debe tener en cuenta las limitaciones de funciones.</block>
   <block id="0938c50db6a8d08637c074ab0c183305" category="list-text">No se pueden restaurar tipos de discos dinámicos dentro de un sistema operativo invitado.</block>
-  <block id="306e51cbbbbd449259f2c9a524080247" category="list-text">Si restaura un archivo o una carpeta cifrados, el atributo de cifrado no se conserva. No se pueden restaurar archivos o carpetas en una carpeta cifrada.</block>
-  <block id="631e06eeff5fdebb1ee6aaaa3f7502fd" category="list-text">La página de exploración de archivos de invitado muestra los archivos y carpetas ocultos que no se pueden filtrar.</block>
   <block id="21e6b4873654be153e3c8d0024f83773" category="list-text">No se puede restaurar desde un sistema operativo invitado Linux.</block>
   <block id="eccd74f81ec87affcad9c90ed7e1c714" category="paragraph">No es posible restaurar archivos ni carpetas desde una máquina virtual que ejecuta un sistema operativo invitado Linux. Sin embargo, puede adjuntar un VMDK y luego restaurar manualmente los archivos y carpetas. Para obtener la información más reciente sobre los sistemas operativos invitados compatibles, consulte<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block> .</block>
   <block id="a24b5bfa95a0c9efe3023cae447296e6" category="list-text">No se puede restaurar desde un sistema de archivos NTFS a un sistema de archivos FAT.</block>
@@ -4975,4 +4970,9 @@
   <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">Restaurar discos virtuales específicos</block>
   <block id="6d74a680eadd149117f584cf67b83c34" category="sidebar">Restaurar archivos y carpetas de invitados</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">Flujo de trabajo, requisitos previos y limitaciones</block>
+  <block id="d85468613eebe17a50e2bf01c2bd42f5" category="paragraph">Conecte un disco virtual a una máquina virtual invitada e inicie una sesión de restauración de archivos de invitado.</block>
+  <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">El sistema operativo invitado Windows debe ejecutar Windows Server 2008 R2 o posterior.</block>
+  <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Si restaura un archivo o una carpeta cifrados, el atributo de cifrado no se conserva.</block>
+  <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">No se pueden restaurar archivos o carpetas en una carpeta cifrada.</block>
+  <block id="86a44ece7a205cf4a21804522a9cd44a" category="list-text">Los archivos y carpetas ocultos se muestran en la página de exploración de archivos y no es posible filtrarlos.</block>
 </blocks>

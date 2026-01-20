@@ -24,7 +24,7 @@ Las operaciones de restauración del sistema operativo invitado incluyen los sig
 
 . Adjuntar
 +
-Conecte un disco virtual a una máquina virtual invitada o una máquina virtual proxy e inicie una sesión de restauración de archivos de invitado.
+Conecte un disco virtual a una máquina virtual invitada e inicie una sesión de restauración de archivos de invitado.
 
 . Esperar
 +
@@ -82,8 +82,9 @@ Puede restaurar archivos con nombres no alfabéticos, como kanji japoneses, rest
 Antes de restaurar un archivo o carpeta desde un sistema operativo invitado, debe tener en cuenta las limitaciones de funciones.
 
 * No se pueden restaurar tipos de discos dinámicos dentro de un sistema operativo invitado.
-* Si restaura un archivo o una carpeta cifrados, el atributo de cifrado no se conserva. No se pueden restaurar archivos o carpetas en una carpeta cifrada.
-* La página de exploración de archivos de invitado muestra los archivos y carpetas ocultos que no se pueden filtrar.
+* Si restaura un archivo o una carpeta cifrados, el atributo de cifrado no se conserva.
+* No se pueden restaurar archivos o carpetas en una carpeta cifrada.
+* Los archivos y carpetas ocultos se muestran en la página de exploración de archivos y no es posible filtrarlos.
 * No se puede restaurar desde un sistema operativo invitado Linux.
 +
 No es posible restaurar archivos ni carpetas desde una máquina virtual que ejecuta un sistema operativo invitado Linux. Sin embargo, puede adjuntar un VMDK y luego restaurar manualmente los archivos y carpetas. Para obtener la información más reciente sobre los sistemas operativos invitados compatibles, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] .
