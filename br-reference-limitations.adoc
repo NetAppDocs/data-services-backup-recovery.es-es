@@ -83,7 +83,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 +
 ** Cuando utiliza ONTAP 9.12.1 GA o superior, se admite la copia de seguridad cuando se conecta al sistema principal.  Toda la configuración de la copia de seguridad se transfiere al sistema secundario para que las copias de seguridad en la nube continúen automáticamente después del cambio.  No es necesario configurar una copia de seguridad en el sistema secundario (de hecho, no es posible hacerlo).
 ** Cuando utiliza ONTAP 9.12.0 y versiones anteriores, la copia de seguridad solo se admite desde el sistema secundario de ONTAP .
-** No se admiten copias de seguridad de volúmenes FlexGroup en este momento.
+** A partir de ONTAP 9.18.1, las copias de seguridad de volúmenes FlexGroup son compatibles en configuraciones MetroCluster.
 
 
 * La copia de seguridad de volumen ad-hoc con el botón *Hacer copia de seguridad ahora* no es compatible con volúmenes de protección de datos.
