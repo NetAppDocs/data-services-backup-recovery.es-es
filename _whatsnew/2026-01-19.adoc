@@ -10,7 +10,7 @@ Esta versión de cargas de trabajo de volumen de ONTAP presenta la siguiente cap
 
 *Compatibilidad con múltiples buckets*: (Vista previa privada) A partir de ONTAP 9.17.1 y versiones más recientes, ahora puede proteger los volúmenes dentro de un sistema con hasta 6 buckets por sistema en diferentes proveedores de nube.
 
-link:prev-ontap-backup-manage.html["Obtenga más información sobre cómo realizar copias de seguridad de los datos del volumen de ONTAP con NetApp Backup and Recovery"].
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["Obtenga más información sobre cómo realizar copias de seguridad de los datos del volumen de ONTAP con NetApp Backup and Recovery"].
 
 
 

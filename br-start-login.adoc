@@ -43,7 +43,7 @@ Aparece la página de inicio de sesión de la NetApp Console .
 ** Para cargas de trabajo de Microsoft SQL Server, consultelink:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server"] .
 ** Para cargas de trabajo de VMware, consultelink:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"] .
 ** Para cargas de trabajo KVM, consultelink:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"] .
-** Para las cargas de trabajo de Oracle, consultelink:br-start-discover-oracle.html["Descubra las cargas de trabajo de Oracle"] .
+** Para cargas de trabajo de Oracle Database, consulta link:br-start-discover-oracle.html["Descubre las cargas de trabajo de Oracle Database"].
 ** Para cargas de trabajo de Hyper-V, consultelink:br-start-discover-hyperv.html["Descubra las cargas de trabajo de Hyper-V"] .
 ** Para cargas de trabajo de Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"] .
 

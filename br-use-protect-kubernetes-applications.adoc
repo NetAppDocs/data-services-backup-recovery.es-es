@@ -28,6 +28,10 @@ El primer paso para proteger las aplicaciones de Kubernetes es crear una aplicac
 .Antes de empezar
 Antes de poder agregar y proteger una aplicación de Kubernetes, debelink:br-start-discover.html["Descubra las cargas de trabajo de Kubernetes"] .
 
+[role="tabbed-block"]
+====
+.Añade una aplicación usando la interfaz web
+--
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.
 . Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
@@ -58,41 +62,130 @@ NOTE: La consola no almacena los parámetros ni los resultados de la búsqueda; 
 .Resultado
 La aplicación se crea y aparece en la lista de aplicaciones en la pestaña *Aplicaciones* del inventario de Kubernetes.  La NetApp Console permite proteger la aplicación según su configuración, y usted puede supervisar el progreso en el área *Supervisión* de respaldo y recuperación.
 
-
-
-== Proteger una aplicación Kubernetes existente
-
-Habilite una política de protección en una aplicación de Kubernetes que ya haya agregado.
-
+--
+.Agrega una aplicación usando un CR
+--
 .Pasos
-. En NetApp Backup and Recovery, seleccione *Inventario*.
-. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
-. Seleccione la pestaña *Aplicaciones*.
-. En la lista de aplicaciones, elija la aplicación que desee proteger y seleccione el menú Acciones asociado.
-. Seleccione *Proteger*.
-. En el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva política. Referirse alink:br-use-policies-create.html#create-a-policy["Crear una política"] para obtener más información sobre la creación de políticas de protección.
-. En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescript o postscript que desee ejecutar antes o después de las operaciones de respaldo.  Puede configurar el tipo de gancho de ejecución, la plantilla que utiliza, los argumentos y los selectores de etiquetas.
-. Seleccione *Listo*.
+. Crea el archivo CR de la aplicación de destino:
++
+.. Crea el archivo de recurso personalizado (CR) y ponle un nombre (por ejemplo, `my-app-name.yaml`).
+.. Configura los siguientes atributos:
++
+*** *metadata.name*: (_Obligatorio_) El nombre del recurso personalizado de la aplicación. Ten en cuenta el nombre que elijas porque otros archivos CR necesarios para las operaciones de protección hacen referencia a este valor.
+*** *spec.includedNamespaces*: (_Requerido_) Usa el selector de espacio de nombres y de etiqueta para especificar los espacios de nombres y recursos que utiliza la aplicación. El espacio de nombres de la aplicación debe formar parte de esta lista. El selector de etiqueta es opcional y puedes usarlo para filtrar recursos dentro de cada espacio de nombres especificado.
+*** *spec.includedClusterScopedResources*: (_Opcional_) Usa este atributo para especificar los recursos de ámbito clúster que se incluirán en la definición de la aplicación. Este atributo te permite seleccionar estos recursos según su grupo, versión, tipo y etiquetas.
++
+**** *groupVersionKind*: (_Obligatorio_) especifica el grupo de API, la versión y el tipo del recurso con alcance de clúster.
+**** *labelSelector*: (_Opcional_) Filtra los recursos con ámbito de clúster según sus etiquetas.
 
 
-.Resultado
-La consola permite la protección de la aplicación en función de su configuración y puede supervisar el progreso en el área *Monitoreo* de copia de seguridad y recuperación.  Tan pronto como habilita la protección para una aplicación, la consola crea una copia de seguridad completa de la aplicación. Las copias de seguridad incrementales futuras se crean según la programación que defina en la política de protección asociada a la aplicación.
+
+
+.. Configura las siguientes anotaciones, si es necesario:
++
+*** *metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*: (_Opcional_) Esta anotación solo es aplicable a aplicaciones definidas a partir de máquinas virtuales, como en entornos KubeVirt, donde se producen congelaciones del sistema de archivos antes de las instantáneas. Especifica si esta aplicación puede escribir en el sistema de archivos durante una instantánea. Si se establece en true, la aplicación ignora la configuración global y puede escribir en el sistema de archivos durante una instantánea. Si se establece en false, la aplicación ignora la configuración global y el sistema de archivos se congela durante una instantánea. Si se especifica pero la aplicación no tiene máquinas virtuales en la definición de la aplicación, se ignora la anotación. Si no se especifica, la aplicación sigue la link:trident-protect-requirements.html#protecting-data-with-kubevirt-vms["configuración global de congelación del sistema de archivos"].
+*** *protect.trident.netapp.io/protection-command*: (_Opcional_) Usa esta anotación para indicar a Backup and Recovery que proteja o deje de proteger la aplicación. Los valores posibles son `protect` o `unprotect`.
+*** *protect.trident.netapp.io/protection-policy-name*: (_Opcional_) Usa esta anotación para especificar el nombre de la política de protección de NetApp Backup and Recovery que quieres usar para proteger esta aplicación. Esta política de protección ya debe existir en NetApp Backup and Recovery.
++
+[NOTE]
+====
+Si necesitas aplicar esta anotación después de que ya se haya creado una aplicación, puedes usar el siguiente comando:
+
+[source, console]
+----
+kubectl annotate application -n <application CR namespace> <application CR name> protect.trident.netapp.io/skip-vm-freeze="true"
+----
+====
++
+Ejemplo de YAML:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Application
+metadata:
+  annotations:
+    protect.trident.netapp.io/skip-vm-freeze: "false"
+    protect.trident.netapp.io/protection-command: "protect"
+    protect.trident.netapp.io/protection-policy-name: "policy-name"
+  name: my-app-name
+  namespace: my-app-namespace
+spec:
+  includedNamespaces:
+    - namespace: namespace-1
+      labelSelector:
+        matchLabels:
+          app: example-app
+    - namespace: namespace-2
+      labelSelector:
+        matchLabels:
+          app: another-example-app
+  includedClusterScopedResources:
+    - groupVersionKind:
+        group: rbac.authorization.k8s.io
+        kind: ClusterRole
+        version: v1
+      labelSelector:
+        matchLabels:
+          mylabel: test
+----
 
 
 
-== Realice una copia de seguridad de una aplicación de Kubernetes ahora
 
-Cree manualmente una copia de seguridad de una aplicación de Kubernetes para establecer una línea de base para futuras copias de seguridad e instantáneas, o para garantizar que los datos más recientes estén protegidos.
+. (_Opcional_) agrega filtrado que incluya o excluya recursos marcados con etiquetas específicas:
++
+** *resourceFilter.resourceSelectionCriteria*: (Obligatorio para el filtrado) Usa  `Include` o  `Exclude` para incluir o excluir un recurso definido en resourceMatchers. Agrega los siguientes parámetros resourceMatchers para definir los recursos que se van a incluir o excluir:
++
+*** *resourceFilter.resourceMatchers*: una matriz de objetos resourceMatcher. Si defines múltiples elementos en esta matriz, coinciden como una operación OR y los campos dentro de cada elemento (group, kind, version) coinciden como una operación AND.
++
+**** *resourceMatchers[].group*: (_Opcional_) Grupo del recurso a filtrar.
+**** *resourceMatchers[].kind*: (_Opcional_) Tipo del recurso a filtrar.
+**** *resourceMatchers[].version*: (_Opcional_) Versión del recurso a filtrar.
+**** *resourceMatchers[].names*: (_Opcional_) Nombres en el campo metadata.name de Kubernetes del recurso que se va a filtrar.
+**** *resourceMatchers[].namespaces*: (_Opcional_) Espacios de nombres en el campo metadata.name de Kubernetes del recurso que se va a filtrar.
+**** *resourceMatchers[].labelSelectors*: (_opcional_) Cadena de selector de etiqueta en el campo metadata.name de Kubernetes del recurso, como se define en https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Documentación de Kubernetes"^]. Por ejemplo: `"trident.netapp.io/os=linux"`.
++
 
-.Pasos
-. En NetApp Backup and Recovery, seleccione *Inventario*.
-. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
-. Seleccione la pestaña *Aplicaciones*.
-. En la lista de aplicaciones, elija una aplicación que desee respaldar y seleccione el menú Acciones asociado.
-. Seleccione *Hacer copia de seguridad ahora*.
-. Asegúrese de que esté seleccionado el nombre de aplicación correcto.
-. Seleccione *Hacer copia de seguridad*.
+NOTE: Cuando se utilizan tanto `resourceFilter` como `labelSelector`, `resourceFilter` se ejecuta primero y luego `labelSelector` se aplica a los recursos resultantes.
+
++
+Por ejemplo:
+
++
+[source, yaml]
+----
+spec:
+  resourceFilter:
+    resourceSelectionCriteria: "Include"
+    resourceMatchers:
+      - group: my-resource-group-1
+        kind: my-resource-kind-1
+        version: my-resource-version-1
+        names: ["my-resource-names"]
+        namespaces: ["my-resource-namespaces"]
+        labelSelectors: ["trident.netapp.io/os=linux"]
+      - group: my-resource-group-2
+        kind: my-resource-kind-2
+        version: my-resource-version-2
+        names: ["my-resource-names"]
+        namespaces: ["my-resource-namespaces"]
+        labelSelectors: ["trident.netapp.io/os=linux"]
+----
 
 
-.Resultado
-La consola crea una copia de seguridad de la aplicación y muestra el progreso en el área *Monitoreo* de Copia de seguridad y recuperación. La copia de seguridad se crea según la política de protección asociada a la aplicación.
+
+
+
+
+. Después de crear la CR de la aplicación para que coincida con tu entorno, aplica la CR. Por ejemplo:
++
+[source, console]
+----
+kubectl apply -f my-app-name.yaml
+----
+
+
+--
+====

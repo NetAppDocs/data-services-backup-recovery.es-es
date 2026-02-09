@@ -89,17 +89,18 @@ indexpage:
       url: "/br-use-hyperv-backup.html"
     - title: Restaurar cargas de trabajo de Hyper-V
       url: "/br-use-hyperv-restore.html"
-  - title: Proteger las cargas de trabajo de Oracle (vista previa privada)
+  - title: Protege las cargas de trabajo de Oracle Database (vista previa privada)
     links:
-    - title: Descripción general de Protect Oracle Workloads
+    - title: Descripción general de las cargas de trabajo de Protect Oracle Database
       url: "/br-use-oracle-protect-overview.html"
-    - title: Descubra las cargas de trabajo de Oracle
+    - title: Descubre las cargas de trabajo de Oracle Database
       url: "/br-start-discover-oracle.html"
-    - title: Crear y administrar grupos de protección para cargas de trabajo de Oracle
+    - title: Crea y gestiona grupos de protección para cargas de trabajo de Oracle
+        Database
       url: "/br-use-oracle-protection-groups.html"
-    - title: Realizar copias de seguridad de las cargas de trabajo de Oracle
+    - title: Realiza copias de seguridad de las cargas de trabajo de Oracle Database
       url: "/br-use-oracle-backup.html"
-    - title: Restaurar cargas de trabajo de Oracle
+    - title: Restaura cargas de trabajo de Oracle Database
       url: "/br-use-oracle-restore.html"
   - title: Proteger las cargas de trabajo de Kubernetes (versión preliminar)
     links:

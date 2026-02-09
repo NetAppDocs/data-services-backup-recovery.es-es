@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: br-use-back-up-now-kubernetes-applications-web-ui.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: NetApp Backup and Recovery le permite administrar la información del host de su carga de trabajo, la información de la base de datos y la información de las instancias.  Puede ver, editar y eliminar configuraciones de protección para su inventario. 
+---
+= Haz backup de aplicaciones Kubernetes ahora usando la interfaz web de Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery te permite hacer backups manuales de aplicaciones Kubernetes usando la interfaz web.
+
+.Rol de NetApp Console requerido
+Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+
+
+
+== Haz una copia de seguridad de una aplicación de Kubernetes ahora usando la interfaz web
+
+Cree manualmente una copia de seguridad de una aplicación de Kubernetes para establecer una línea de base para futuras copias de seguridad e instantáneas, o para garantizar que los datos más recientes estén protegidos.
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
+. En la lista de aplicaciones, elija una aplicación que desee respaldar y seleccione el menú Acciones asociado.
+. Seleccione *Hacer copia de seguridad ahora*.
+. Asegúrese de que esté seleccionado el nombre de aplicación correcto.
+. Seleccione *Hacer copia de seguridad*.
+
+
+.Resultado
+La consola crea una copia de seguridad de la aplicación y muestra el progreso en el área *Monitoreo* de Copia de seguridad y recuperación. La copia de seguridad se crea según la política de protección asociada a la aplicación.

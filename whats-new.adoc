@@ -18,6 +18,59 @@ Descubra las novedades en NetApp Backup and Recovery.
 
 
 
+== 09 de febrero de 2026
+
+Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
+
+
+
+=== Mejoras en cargas de trabajo de Kubernetes
+
+Esta versión de Kubernetes workloads introduce las siguientes funciones mejoradas:
+
+* *Compatibilidad con el flujo de trabajo de CR*: Ahora puedes realizar tareas de protección comunes usando CR, así como la interfaz web de Backup and Recovery.
+* *Migración de clústeres*: Ahora puedes agregar clústeres de Kubernetes existentes protegidos con Trident Protect a Backup and Recovery.
+* *Compatibilidad con el marco de alertas*: ahora puedes recibir alertas por correo electrónico y en la interfaz de usuario para ciertos eventos de carga de trabajo de Kubernetes.
+* *Integración de la pestaña Restaurar*: Ahora puedes acceder a las acciones de restauración de la carga de trabajo de Kubernetes desde el menú Restaurar.
+* *Compatibilidad con la arquitectura de copia de seguridad 3-2-1 fanout*: Ahora puedes usar una arquitectura 3-2-1 fanout en tu política de protección cuando proteges cargas de trabajo de Kubernetes.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+
+
+
+=== Mejoras en las cargas de trabajo de Oracle Database
+
+Esta versión de las cargas de trabajo de Oracle Database introduce las siguientes capacidades mejoradas:
+
+* *Soporte para usuarios no root*: Los usuarios no root ya pueden realizar operaciones de copia de seguridad, restauración y clonación, mejorando la seguridad y el cumplimiento.
+* *Soporte de clonación*: Las funciones de clonación ahora son compatibles en entornos NAS, SAN y ASM primarios y secundarios usando la biblioteca ASM v2, lo que permite flujos de trabajo de protección coordinados.
+* *Soporte para división de clones*: Ahora puedes dividir las instantáneas con permisos de escritura (clones) de sus volúmenes primarios, liberando almacenamiento y permitiendo operaciones independientes.
+* *Copia de seguridad y restauración para almacén de objetos*: ahora se admiten las capacidades nativas de copia de seguridad y restauración para objetivos de almacenamiento S3 compatibles basados en objetos.
+* *Gestión del ciclo de vida de los clones (CLM)*: las operaciones de actualización de clones son compatibles con el almacenamiento primario.
+* *Clonar a host alternativo*: ahora puedes clonar bases de datos a un host diferente (para pruebas o análisis) tanto desde el almacenamiento primario como desde el almacenamiento secundario.
+* *Compatibilidad con los grupos de coherencia de ONTAP*: ahora se admiten los grupos de coherencia de ONTAP, lo que garantiza instantáneas consistentes con las aplicaciones en varios volúmenes.
+* NetApp Backup and Recovery ahora admite las siguientes arquitecturas de política de protección para cargas de trabajo de Oracle Database:
++
+** Distribución 3-2-1
+** Disco a disco
+** Disco a almacén de objetos
+** En cascada
+** Instantánea local
+
+
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+
+
+
+=== Otras mejoras
+
+Las cargas de trabajo de Hyper-V, KVM y VMware ahora están generalmente disponibles (GA) en NetApp Backup and Recovery.
+
+
+
 == 19 de enero de 2026
 
 Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
@@ -30,7 +83,7 @@ Esta versión de cargas de trabajo de volumen de ONTAP presenta la siguiente cap
 
 *Compatibilidad con múltiples buckets*: (Vista previa privada) A partir de ONTAP 9.17.1 y versiones más recientes, ahora puede proteger los volúmenes dentro de un sistema con hasta 6 buckets por sistema en diferentes proveedores de nube.
 
-link:prev-ontap-backup-manage.html["Obtenga más información sobre cómo realizar copias de seguridad de los datos del volumen de ONTAP con NetApp Backup and Recovery"].
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["Obtenga más información sobre cómo realizar copias de seguridad de los datos del volumen de ONTAP con NetApp Backup and Recovery"].
 
 
 
@@ -198,7 +251,7 @@ Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y ad
 * Compatibilidad con el panel de control de Oracle
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de Protect Oracle Workloads"] .
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
 
 
 

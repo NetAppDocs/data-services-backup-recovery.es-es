@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-oracle-protection-groups.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle, database, workloads, volumes, snapshots 
-summary: Cree y administre grupos de protección para cargas de trabajo de Oracle en NetApp Backup and Recovery. 
+summary: Crea y gestiona grupos de protección para cargas de trabajo de Oracle Database en NetApp Backup and Recovery. 
 ---
-= Cree y administre grupos de protección para cargas de trabajo de Oracle con NetApp Backup and Recovery
+= Crea y gestiona grupos de protección para cargas de trabajo de Oracle Database con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 * Crear un grupo de protección.
 * Ver detalles de protección.
-* Realice una copia de seguridad de un grupo de protección ahora. Verlink:br-use-kvm-backup.html["Realice copias de seguridad de las cargas de trabajo de Oracle ahora"] .
+* Haz ahora una copia de seguridad de un grupo de protección. Consulta link:br-use-kvm-backup.html["Haz copias de seguridad ahora de las cargas de trabajo de Oracle Database"].
 * Eliminar un grupo de protección.
 
 

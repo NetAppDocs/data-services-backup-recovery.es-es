@@ -21,6 +21,7 @@ Después de configurar la NetApp Console, configure los ajustes de copia de segu
 * <<Importar y administrar recursos del host de SnapCenter>>. (Solo cargas de trabajo de Microsoft SQL Server)
 * <<Agregar una plataforma de administración KVM>>. (Solo cargas de trabajo KVM)
 * <<Configurar directorios de registro en instantáneas para hosts de Windows>>.
+* <<Crear una plantilla de gancho de ejecución>> para ejecutar scripts antes y después de los trabajos de backup. (Solo cargas de trabajo de Kubernetes)
 
 
 *Rol de NetApp Console requerido* Superadministrador de Backup and Recovery, Administrador de backup de Backup and Recovery, Administrador de restauración de Backup and Recovery.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
@@ -268,4 +269,27 @@ Antes de crear políticas para los hosts de Windows, debe configurar los directo
 . Desde la página de detalles de inventario, seleccione un host y seleccione el ícono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Configurar directorio de registro*.
 . Busque o ingrese la ruta del directorio de registro.
 . Seleccione *Guardar*.
+
+
+
+
+== Crear una plantilla de gancho de ejecución
+
+Puede crear una plantilla de gancho de ejecución personalizada que pueda utilizar para realizar acciones antes o después de una operación de protección de datos en una aplicación.
+
+
+NOTE: Las plantillas que crees aquí solo se pueden usar cuando proteges cargas de trabajo de Kubernetes.
+
+.Pasos
+. En la consola, vaya a *Protección* > *Copia de seguridad y recuperación*.
+. Seleccione la pestaña *Configuración*.
+. Expande la sección *Plantilla de gancho de ejecución*.
+. Seleccione *Crear plantilla de gancho de ejecución*.
+. Introduzca un nombre para el gancho de ejecución.
+. Opcionalmente, elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecuta una vez finalizada la operación.
+. En el cuadro de texto *Script*, ingrese el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución.  Opcionalmente, puede seleccionar *Cargar script* para cargar un archivo de script en su lugar.
+. Seleccione *Crear*.
++
+Después de crear la plantilla, ésta aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.
+
 

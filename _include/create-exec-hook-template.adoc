@@ -1,0 +1,26 @@
+= Crear una plantilla de gancho de ejecución
+:allow-uri-read: 
+
+
+
+
+== Crear una plantilla de gancho de ejecución
+
+Puede crear una plantilla de gancho de ejecución personalizada que pueda utilizar para realizar acciones antes o después de una operación de protección de datos en una aplicación.
+
+
+NOTE: Las plantillas que crees aquí solo se pueden usar cuando proteges cargas de trabajo de Kubernetes.
+
+.Pasos
+. En la consola, vaya a *Protección* > *Copia de seguridad y recuperación*.
+. Seleccione la pestaña *Configuración*.
+. Expande la sección *Plantilla de gancho de ejecución*.
+. Seleccione *Crear plantilla de gancho de ejecución*.
+. Introduzca un nombre para el gancho de ejecución.
+. Opcionalmente, elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecuta una vez finalizada la operación.
+. En el cuadro de texto *Script*, ingrese el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución.  Opcionalmente, puede seleccionar *Cargar script* para cargar un archivo de script en su lugar.
+. Seleccione *Crear*.
++
+Después de crear la plantilla, ésta aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.
+
+

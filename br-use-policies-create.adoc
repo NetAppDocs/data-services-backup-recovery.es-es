@@ -36,7 +36,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 . En el menú NetApp Backup and Recovery , seleccione *Políticas*.
 . Revise estos detalles de la política.
 +
-** *Carga de trabajo*: Los ejemplos incluyen Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V o Kubernetes.
+** *Carga de trabajo*: ejemplos incluyen Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.
 ** *Tipo de copia de seguridad*: Los ejemplos incluyen copia de seguridad completa y copia de seguridad de registros.
 ** *Arquitectura*: Los ejemplos incluyen instantáneas locales, distribución en abanico, cascada, disco a disco y disco a almacenamiento de objetos.
 ** *Recursos protegidos*: muestra cuántos recursos del total de recursos en esa carga de trabajo están protegidos.
@@ -78,7 +78,7 @@ TIP: Para ver una lista de caracteres que debes evitar, consulta la sugerencia f
 
 ** Sección *Arquitectura de respaldo*: seleccione la flecha hacia abajo y elija el flujo de datos para el respaldo, como abanico 3-2-1, cascada 3-2-1 o disco a disco.
 +
-*** *Distribución 3-2-1*: almacenamiento primario (disco) a almacenamiento secundario (disco) a nube (almacén de objetos). Crea múltiples copias de datos en diferentes sistemas de almacenamiento, como ONTAP a ONTAP y ONTAP a configuraciones de almacenamiento de objetos. Este puede ser un almacén de objetos de hiperescalador en la nube o un almacén de objetos privado: StorageGRID. Estas configuraciones ayudan a lograr una protección de datos óptima y una recuperación ante desastres.
+*** *3-2-1 fanout*: Almacenamiento principal (disco) a almacenamiento secundario (disco) a nube (almacén de objetos). Crea varias copias de datos en diferentes sistemas de almacenamiento, como ONTAP a ONTAP y ONTAP a almacén de objetos. Esto puede ser un almacén de objetos de cloud hyperscaler o un almacén de objetos privado. Estas configuraciones ayudan a lograr una protección de datos y recuperación ante desastres óptimas.
 +
 
 NOTE: Esta opción no está disponible para Amazon FSx for NetApp ONTAP.

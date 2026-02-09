@@ -104,7 +104,7 @@ Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y ad
 * Compatibilidad con el panel de control de Oracle
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de Protect Oracle Workloads"] .
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
 
 
 

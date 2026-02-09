@@ -77,7 +77,7 @@ Utilice NetApp Backup and Recovery para lograr los siguientes objetivos:
 ** Referirse alink:br-use-hyperv-protect-overview.html["Proteger las cargas de trabajo de Hyper-V"] .
 
 
-* *Cargas de trabajo de Oracle (vista previa)*:
+* *Cargas de trabajo de Oracle Database (Preview)*:
 +
 ** Realizar copias de seguridad y restaurar bases de datos y registros
 ** Utilice grupos de protección para administrar tareas de copia de seguridad
@@ -85,7 +85,7 @@ Utilice NetApp Backup and Recovery para lograr los siguientes objetivos:
 ** Protección de una base de datos con una arquitectura de copia de seguridad 3-2-1
 ** Configurar la retención de copias de seguridad
 ** Montar y desmontar copias de seguridad de ARCHIVELOG
-** Referirse alink:br-use-oracle-protect-overview.html["Proteja las cargas de trabajo de Oracle"] .
+** Consulta link:br-use-oracle-protect-overview.html["Protege las cargas de trabajo de Oracle Database"].
 
 
 * *Cargas de trabajo de Kubernetes (versión preliminar)*:
@@ -148,6 +148,8 @@ Debido a que NetApp Backup and Recovery preserva las eficiencias de almacenamien
 *Cargos por servicio*
 
 Para las cargas de trabajo de volumen de ONTAP , solo se le cobrará por los volúmenes protegidos por el almacenamiento de objetos. Los cargos se basan en la capacidad lógica utilizada de los volúmenes ONTAP de origen antes de que se apliquen las eficiencias, también conocidas como Terabytes Front-End (FETB).
+
+Para cargas de trabajo de Kubernetes, se te cobrará según el tamaño combinado de todos los volúmenes persistentes.
 
 Para todas las demás cargas de trabajo, se le cobrará por los recursos protegidos en al menos un destino de almacenamiento de objetos o secundario. Los cargos se calculan utilizando el tamaño lógico de la carga de trabajo de origen. Para las bases de datos, esto significa el tamaño de la base de datos; para las máquinas virtuales, el tamaño de la máquina virtual.
 

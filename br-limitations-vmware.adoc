@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations-vmware.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vcenter 
-summary: El servicio de NetApp Backup and Recovery primero debe descubrir datos para que usted pueda utilizar el servicio.  Durante el descubrimiento, NetApp Backup and Recovery analiza todos los volúmenes y archivos en los sistemas de su organización. 
+summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar Backup and Recovery en tu entorno. 
 ---
 = Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo de VMware
 :hardbreaks:
