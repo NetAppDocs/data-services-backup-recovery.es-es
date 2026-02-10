@@ -127,8 +127,7 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Crear informes de Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Proteger las cargas de trabajo de VMware (versión preliminar sin el complemento
-        SnapCenter para VMware)
+    - title: Protege las cargas de trabajo de VMware (sin SnapCenter Plug-in for VMware)
       entries:
       - title: Descripción general de Protect VMware Workloads
         url: "/br-use-vmware-protect-overview.html"
@@ -162,8 +161,6 @@ sidebar:
       - title: Requisitos previos para proteger las cargas de trabajo de las máquinas
           virtuales
         url: "/prev-vmware-prereqs.html"
-      - title: Registrar el SnapCenter Plug-in for VMware vSphere
-        url: "/prev-vmware-register-snapcenter.html"
       - title: Crear una política para realizar copias de seguridad de los datos de
           las máquinas virtuales
         url: "/prev-vmware-policy-create.html"
@@ -193,7 +190,7 @@ sidebar:
         url: "/br-use-kvm-backup.html"
       - title: Restaurar cargas de trabajo de KVM
         url: "/br-use-kvm-restore.html"
-    - title: Proteger las cargas de trabajo de Hyper-V (versión preliminar)
+    - title: Proteger las cargas de trabajo de Hyper-V
       entries:
       - title: Descripción general de Protect Hyper-V Workloads
         url: "/br-use-hyperv-protect-overview.html"

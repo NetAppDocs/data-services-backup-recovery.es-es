@@ -24,6 +24,18 @@ Esta versión de NetApp Backup and Recovery incluye las siguientes actualizacion
 
 
 
+=== Cargas de trabajo de Microsoft Hyper-V compatibles en General Availability (GA)
+
+La compatibilidad con cargas de trabajo de Microsoft Hyper-V ya está disponible de forma general (GA) en NetApp Backup and Recovery.
+
+
+
+=== Cargas de trabajo KVM compatibles con General Availability (GA)
+
+La compatibilidad con cargas de trabajo KVM ya está disponible de forma general (GA) en NetApp Backup and Recovery.
+
+
+
 === Mejoras en cargas de trabajo de Kubernetes
 
 Esta versión de Kubernetes workloads introduce las siguientes funciones mejoradas:
@@ -62,12 +74,6 @@ Esta versión de las cargas de trabajo de Oracle Database introduce las siguient
 
 
 Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
-
-
-
-=== Otras mejoras
-
-Las cargas de trabajo de Hyper-V, KVM y VMware ahora están generalmente disponibles (GA) en NetApp Backup and Recovery.
 
 
 
