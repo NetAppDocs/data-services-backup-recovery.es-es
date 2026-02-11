@@ -3822,172 +3822,7 @@
   <block id="f2b162f98b611318ceee106c4b60ae51" category="list-text">Para conocer los precios detallados de Google Cloud Storage por región, visite<block ref="51a97b69fb4ea5748d26915fe19e0057" category="inline-link-rx"></block> .</block>
   <block id="fd161debce2c53100b7c61aa8b2d7c6b" category="list-text">¿Cuánto tiempo tardará en restaurarse mis objetos archivados en Google Archive?</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*Tiempo de recuperación*: el tiempo necesario para recuperar el archivo de respaldo del archivo y colocarlo en el almacenamiento estándar.  A esto a veces se le llama el tiempo de “rehidratación”.  A diferencia de las soluciones de almacenamiento más "frías" que ofrecen otros proveedores de nube, sus datos son accesibles en cuestión de milisegundos.</block>
-  <block id="ea41fefc75b4937d079e3db8ee84bd6b" category="doc">Realice copias de seguridad de almacenes de datos en Amazon Web Services en NetApp Backup and Recovery</block>
-  <block id="88d382e3b7aa9d602ce38d8495a201ac" category="paragraph">Puede realizar copias de seguridad y archivar uno o más almacenes de datos con NetApp Backup and Recovery en Amazon Web Services para mejorar la eficiencia del almacenamiento y la transición a la nube.</block>
-  <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">Si el almacén de datos está asociado con una política de archivo, tiene la opción de seleccionar el nivel de archivo.  Los niveles de archivo admitidos son Glaciar y Glaciar Deep.</block>
-  <block id="c5697e1933bfd2df9d2052983e1d9241" category="inline-link-macro">Requisitos de protección de máquinas virtuales</block>
-  <block id="a7772e34879d0350763b229c08abb4ce" category="paragraph">Asegúrese de haber cumplido con todos los<block ref="b3cdcdb9363cf72cee94211d1cf49d2a" category="inline-link-macro-rx"></block> antes de realizar copias de seguridad de los almacenes de datos en la nube.</block>
-  <block id="ec20419fe9b99a13a7e6a63187f9ad59" category="list-text">En la interfaz de usuario de la consola, seleccione *Protección* &gt; *Copia de seguridad y recuperación* &gt; *Máquinas virtuales*.</block>
-  <block id="418c5509e2171d55b0aee5c2ea4442b5" category="inline-image-macro">acción</block>
-  <block id="4d2ca83fc058acd8fd1a2b0e9633319d" category="list-text">Seleccionar<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos que desea respaldar y haga clic en *Activar respaldo*.</block>
-  <block id="323d618819396c39de9471cdfb373ee7" category="list-text">En la página Asignar política, seleccione la política y seleccione *Siguiente*.</block>
-  <block id="65c66680701f71dd9f3d5af61f0f6b41" category="list-text">Añade el sistema.</block>
-  <block id="5acc11cd60ff7e94ad464f395b9bc687" category="paragraph">Configure el LIF de administración de clúster que desea que la consola detecte.  Después de agregar el sistema para uno de los almacenes de datos, se puede reutilizar para todos los demás almacenes de datos que residen en el mismo clúster ONTAP .</block>
-  <block id="c4f42debc709f58c735092418fa00fa1" category="list-text">Seleccione *Agregar sistema* correspondiente al SVM.</block>
-  <block id="30871e9b3db5bb3040245da62e031a45" category="list-text">En el asistente para agregar sistema:</block>
-  <block id="b19fb0dfd78b28bc5415a7f3f4ad6a49" category="list-text">Especifique la dirección IP del LIF de administración del clúster.</block>
-  <block id="73f07eefb51e62cc902b672233bd4977" category="list-text">Especifique las credenciales del usuario del clúster ONTAP .</block>
-  <block id="85f2ee063f5ea4d52167b81f6a73c16a" category="list-text">Seleccione *Agregar sistema*.</block>
-  <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Seleccione *Amazon Web Services* para configurarlo como proveedor de nube.</block>
-  <block id="4117af0b4d26b5ba222b63a2b7e1eb27" category="list-text">Especifique la cuenta de AWS.</block>
-  <block id="0b6515b0d85be4c32021431c5119a675" category="list-text">En el campo Clave de acceso de AWS, especifique la clave para el cifrado de datos.</block>
-  <block id="095a532bc2c4eed2ec2c64b6008b497f" category="list-text">En el campo Clave secreta de AWS, especifique la contraseña para el cifrado de datos.</block>
-  <block id="b5d98853353bde168501864a9aa65bfd" category="list-text">Seleccione la región donde desea crear las copias de seguridad.</block>
-  <block id="386a17271d92cc7a25bf8eec122b0494" category="list-text">Especifique las direcciones IP del LIF de administración de clúster que se agregaron como sistemas.</block>
-  <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">Seleccione el nivel de archivo.</block>
-  <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">Se recomienda establecer el nivel de archivo porque esta es una actividad única y no se puede configurar más tarde.</block>
-  <block id="aa6666c7d701e3d022bd0894584ba6bc" category="list-text">Revise los detalles y seleccione *Activar copia de seguridad*.</block>
-  <block id="0d41ec9efd8e5ceb127f404e3e8dc747" category="doc">Realice copias de seguridad de almacenes de datos en Microsoft Azure con NetApp Backup and Recovery</block>
-  <block id="edad35da0f3ccd8716a3ecbec6ba4250" category="paragraph">Puede realizar una copia de seguridad de uno o más almacenes de datos en Microsoft Azure integrando el SnapCenter Plug-in for VMware vSphere con NetApp Backup and Recovery.  Esto ayudará a los administradores de máquinas virtuales a realizar copias de seguridad y archivar datos de manera fácil y rápida para lograr una mayor eficiencia del almacenamiento y acelerar la transición a la nube.</block>
-  <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">Si el almacén de datos está asociado con una política de archivo, se le brindará una opción para seleccionar el nivel de archivo.  El nivel de archivo admitido es Azure Archive Blob Storage.</block>
-  <block id="a5d365a9b7414bdc6e9205c9e8eb585d" category="list-text">En la interfaz de usuario de la NetApp Console , seleccione *Protección* &gt; *Copia de seguridad y recuperación* &gt; *Máquinas virtuales*.</block>
-  <block id="b621b490b47d0134904539933037722c" category="list-text">Seleccionar<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos que desea respaldar y seleccione *Activar respaldo*.</block>
-  <block id="8a8bca40b3d548c634cd73d37e5a630c" category="list-text">Seleccione *Microsoft Azure* para configurarlo como proveedor de nube.</block>
-  <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">Especifique el identificador de suscripción de Azure.</block>
-  <block id="db7f740fbee2466830a1f559dba6b17b" category="list-text">Cree un nuevo grupo de recursos o utilice un grupo de recursos existente.</block>
-  <block id="9e8ed7b08261a94b9277289757488767" category="paragraph">Se recomienda establecer el nivel de archivo porque esta es una actividad única y no se le permitirá configurarla más adelante.</block>
-  <block id="ea30425cb29f7e447fdeace74c26461f" category="doc">Realice copias de seguridad de almacenes de datos en Google Cloud Platform con NetApp Backup and Recovery</block>
-  <block id="476c041ec40c52b29e7eff32f4cb7b32" category="paragraph">Puede realizar una copia de seguridad de uno o más almacenes de datos en Google Cloud Platform integrando el SnapCenter Plug-in for VMware vSphere con NetApp Backup and Recovery.  Esto ayudará a los administradores de máquinas virtuales a realizar copias de seguridad y archivar datos de manera fácil y rápida para lograr una mayor eficiencia del almacenamiento y acelerar la transición a la nube.</block>
-  <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">Seleccione *Google Cloud Platform* para configurarlo como proveedor de nube.</block>
-  <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="list-text">Seleccione el proyecto de Google Cloud donde desea que se cree el depósito de Google Cloud Storage para las copias de seguridad.</block>
-  <block id="fa0f3e6189a17df2b37f1f89872dbee4" category="list-text">En el campo Clave de acceso de Google Cloud, especifique la clave.</block>
-  <block id="3ee34b7fd8f9ec35694f9ada246e9a7b" category="list-text">En el campo Clave secreta de Google Cloud, especifique la contraseña.</block>
-  <block id="3ec390de7db5c59f007c717fb9aa2dac" category="list-text">Especifique el espacio IP.</block>
-  <block id="71fb704fe6aa28d59f46358c61d5b35a" category="doc">Realice copias de seguridad de almacenes de datos en StorageGRID con NetApp Backup and Recovery</block>
-  <block id="5cf880745ad0e6e8d8208ad538957b63" category="paragraph">Puede realizar una copia de seguridad de uno o más almacenes de datos en StorageGRID integrando el SnapCenter Plug-in for VMware vSphere con NetApp Backup and Recovery.  Esto ayudará a los administradores de máquinas virtuales a realizar copias de seguridad y archivar datos de manera fácil y rápida para lograr una mayor eficiencia del almacenamiento y acelerar la transición a la nube.</block>
-  <block id="6c5cc1315b69c8256bbc33cf47a5a7ab" category="list-text">Seleccione * StorageGRID*.</block>
-  <block id="cf4e6e70123f43cdec5ffd93f792c083" category="list-text">Especifique la IP del servidor de almacenamiento.</block>
-  <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">Seleccione la clave de acceso y la clave secreta.</block>
-  <block id="b26e7e8656acba73c7e69f8c75f299d1" category="doc">Administre la protección de almacenes de datos y máquinas virtuales en NetApp Backup and Recovery</block>
-  <block id="749f97c0bfe03215ddfcc33e348d0c86" category="paragraph">Puede ver políticas, almacenes de datos y máquinas virtuales antes de realizar copias de seguridad y restaurar datos con NetApp Backup and Recovery.  Según el cambio en la base de datos, las políticas o los grupos de recursos, puede ver las actualizaciones desde la interfaz de usuario de la NetApp Console .</block>
-  <block id="5bea9354a7049a7e639553b703f18e84" category="paragraph">Puede ver todas las políticas predeterminadas predefinidas.  Para cada una de estas políticas, cuando visualiza los detalles, se enumeran todas las políticas y máquinas virtuales asociadas.</block>
-  <block id="b69b2eb51081aa4642c6e881faa0bcb8" category="list-text">En el menú desplegable *Configuración*, seleccione *Políticas*.</block>
-  <block id="8448a57387950bac4af453a04975933d" category="list-text">Seleccione *Ver detalles* correspondiente a la póliza cuyos detalles desea ver.</block>
-  <block id="1c281da53a696408c46b6da9d44b27e7" category="paragraph">Se enumeran las políticas y máquinas virtuales asociadas.</block>
-  <block id="8ed12ef54cb1d9b3b955b96ba5173201" category="section-title">Ver almacenes de datos y máquinas virtuales</block>
-  <block id="e3dbc361d0cd589544c61663904eef2c" category="paragraph">Se muestran los almacenes de datos y las máquinas virtuales que están protegidos mediante el SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="4e98200f297bd7d5853a285fdfe1191f" category="list-text">En la interfaz de usuario de la consola, seleccione *Protección* &gt; *Copia de seguridad y recuperación* &gt; *Máquinas virtuales* &gt; *Configuración* &gt; * SnapCenter Plug-in for VMware vSphere*.</block>
-  <block id="18a02c3f300d1165ca70adad83d6a91a" category="list-text">Seleccione el SnapCenter Plug-in for VMware vSphere para el cual desea ver los almacenes de datos y las máquinas virtuales.</block>
-  <block id="b1314bfff132a050766ce5d32ac976de" category="section-title">Desproteger almacenes de datos</block>
-  <block id="24e973d26bb253c7b5fb8a764db6860a" category="paragraph">Puede desproteger un almacén de datos que ya estaba protegido anteriormente.  Puede desproteger un almacén de datos cuando desee eliminar las copias de seguridad en la nube o ya no desee realizar copias de seguridad en la nube.  El almacén de datos se puede proteger nuevamente después de que la desprotección sea exitosa.</block>
-  <block id="a4d4871f49f1183bee5e02ea1b2064f9" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos que desea desproteger y seleccione *Desproteger*.</block>
-  <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">Editar el SnapCenter Plug-in for VMware vSphere</block>
-  <block id="7d890413f9b664e2bcf99c30c870de89" category="paragraph">Puede editar los detalles del SnapCenter Plug-in for VMware vSphere en la consola.</block>
-  <block id="73f6eff78e2d5b4c91558c1e0c0e8a24" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> y seleccione *Editar*.</block>
-  <block id="05c829c7b617d014c0186656453575ea" category="list-text">Modifique los detalles según sea necesario.</block>
-  <block id="738c224049615eeb47fe5a57a6ea8f7c" category="section-title">Actualizar recursos y copias de seguridad</block>
-  <block id="0e9cec251ac8debda34d029f4302d4eb" category="paragraph">Si desea ver los últimos almacenes de datos y copias de seguridad que se han agregado a la aplicación, debe actualizar los recursos y las copias de seguridad.  Esto iniciará el descubrimiento de los recursos y las copias de seguridad y se mostrarán los últimos detalles.</block>
-  <block id="04fa58f349615d27149f6dda8efe38e2" category="list-text">Seleccione *Copia de seguridad y recuperación* &gt; *Máquinas virtuales*.</block>
-  <block id="266f9ff12956ac5692bc7be08bda846f" category="list-text">En el menú desplegable *Configuración*, seleccione * SnapCenter Plug-in for VMware vSphere*.</block>
-  <block id="3909de0b2400078920ffd3d72a06f81b" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al SnapCenter Plug-in for VMware vSphere y seleccione *Actualizar recursos y copias de seguridad*.</block>
-  <block id="aa8a6c50e00adebd857afeb3c163080e" category="section-title">Actualizar política o grupo de recursos</block>
-  <block id="a663847f6a4dfe84a9e34d968b306aef" category="paragraph">Si hay un cambio en la política o el grupo de recursos, debe actualizar la relación de protección.</block>
-  <block id="dfc67c4e882a2d4fffb8d16037fa7dd2" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos y seleccione *Actualizar protección*.</block>
-  <block id="ecb0c28cd21006ad8c86d4be09edf297" category="section-title">Anular el SnapCenter Plug-in for VMware vSphere</block>
-  <block id="3d61f1dcef482f1c526370542b798e50" category="paragraph">Todos los almacenes de datos y máquinas virtuales asociados con el SnapCenter Plug-in for VMware vSphere quedarán desprotegidos.</block>
-  <block id="b184ae3f5a4589cacbec55aa0fa973fc" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al SnapCenter Plug-in for VMware vSphere y seleccione *Cancelar registro*.</block>
-  <block id="d65dcf19e9eda758238d835f23a69642" category="section-title">Monitorear trabajos</block>
-  <block id="4044636ea8a32c730e3b044adcda1f8c" category="paragraph">Se crean trabajos para todas las operaciones de NetApp Backup and Recovery .  Puede supervisar todos los trabajos y todas las subtareas que se realizan como parte de cada tarea.</block>
-  <block id="942b89acbe370667e9d70389e84f8544" category="list-text">Seleccione *Copia de seguridad y recuperación* &gt; *Supervisión de trabajos*.</block>
-  <block id="5f2c87cb3d6dde849915754be64e1690" category="paragraph">Cuando se inicia una operación, aparece una ventana que indica que el trabajo se ha iniciado.  Puede seleccionar el enlace para supervisar el trabajo.</block>
-  <block id="84d686b7ff9ad225b36fb397dd4cbce7" category="list-text">Seleccione la tarea principal para ver las subtareas y el estado de cada una de estas subtareas.</block>
-  <block id="38f579d721675ddff9e2ac5938361837" category="doc">Cree una política para realizar copias de seguridad de almacenes de datos en NetApp Backup and Recovery</block>
-  <block id="b584330b721e66ff5dabb697badb5ff7" category="paragraph">Puede crear una política o utilizar una de las siguientes políticas predefinidas que están disponibles en NetApp Backup and Recovery.</block>
-  <block id="43852dc1e0c3229284688eb4c01dfef0" category="list-text">Debe crear políticas si no desea editar las políticas predefinidas.</block>
-  <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">Para mover copias de seguridad del almacén de objetos al almacenamiento de archivo, debe ejecutar ONTAP 9.10.1 o posterior y Amazon Web Services o Microsoft Azure debe ser el proveedor de la nube.</block>
-  <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">Debe configurar el nivel de acceso al archivo para cada proveedor de nube.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Acerca de esta tarea</block>
-  <block id="25a9fea1bd39d0e24939bbbf1f842b7a" category="paragraph">Las siguientes políticas predefinidas están disponibles en la NetApp Console:</block>
-  <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">Nombre de la póliza</block>
-  <block id="b021df6aac4654c454f46c77646e745f" category="cell">Etiqueta</block>
-  <block id="dfa56cb0ff8ac0e7087134a3d7e1f39d" category="cell">Valor de retención</block>
-  <block id="7250cb0d0c1524aec805084d9f0ffc21" category="paragraph">Retención a largo plazo (LTR) diaria de 1 año</block>
-  <block id="c512b685438f41daa7386329a3b8f8d3" category="paragraph">Diario</block>
-  <block id="5ef698cd9fe650923ea331c15af3b160" category="paragraph">366</block>
-  <block id="5ea7bb0579b5fe6d2acf33c0ab584548" category="paragraph">5 años de LTR diario</block>
-  <block id="069654d5ce089c13f642d19f09a3d1c0" category="paragraph">1830</block>
-  <block id="2cd29ea4d4dd80df56178fc41c9bc385" category="paragraph">LTR semanal de 7 años</block>
-  <block id="6c25e6a6da95b3d583c6ec4c3f82ed4d" category="paragraph">Semanalmente</block>
-  <block id="d709f38ef758b5066ef31b18039b8ce5" category="paragraph">370</block>
-  <block id="f76a9390149b62241c42efed985a431a" category="paragraph">LTR mensual de 10 años</block>
-  <block id="9030e39f00132d583da4122532e509e9" category="paragraph">Mensual</block>
-  <block id="da4fb5c6e93e74d3df8527599fa62642" category="paragraph">120</block>
-  <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">En la página Máquinas virtuales, en la lista desplegable Configuración, seleccione *Políticas*.</block>
-  <block id="db92c743d97601150bbdfa11bf3cf66b" category="list-text">Seleccione *Crear política*.</block>
-  <block id="9f6b1aa82322cc4f853fe0fe7c532ff0" category="list-text">En la sección Retención, seleccione uno de los tipos de retención y especifique la cantidad de copias de seguridad que desea conservar.</block>
-  <block id="db2205364549e4c4841dc9b5d66f62a3" category="list-text">Seleccione Primario o Secundario como fuente de almacenamiento de respaldo.</block>
-  <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">(Opcional) Si desea mover copias de seguridad del almacén de objetos al almacenamiento de archivo después de una cierta cantidad de días para optimizar los costos, seleccione la casilla de verificación *Copias de seguridad de nivel a archivo* e ingrese la cantidad de días después de los cuales se debe archivar la copia de seguridad.</block>
-  <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">No se puede editar ni eliminar una política que esté asociada a un almacén de datos.</block>
-  <block id="ac58e4fdaef529d7061db727c7d95b98" category="doc">Requisitos previos para las cargas de trabajo de máquinas virtuales en NetApp Backup and Recovery</block>
-  <block id="443b7d29fe382a91202282145dbedf43" category="paragraph">Antes de comenzar a proteger las cargas de trabajo de sus máquinas virtuales con NetApp Backup and Recovery, asegúrese de cumplir con los siguientes requisitos previos:</block>
-  <block id="d511399444cf864b695600d159b7c93b" category="list-text">SnapCenter Plug-in for VMware vSphere 4.6P1 o posterior</block>
-  <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">Debe utilizar el SnapCenter Plug-in for VMware vSphere 4.7P1 o posterior para realizar copias de seguridad de almacenes de datos desde el almacenamiento secundario local.</block>
-  <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">ONTAP 9.8 o posterior</block>
-  <block id="06126ace9559015b34270e5c984cb3c9" category="list-text">Para compatibilidad con VMFS, el SnapCenter Plug-in for VMware vSphere debe ejecutarse en la versión 4.9 o posterior.  Asegúrese de realizar una copia de seguridad del almacén de datos VMFS si el SnapCenter Plug-in for VMware vSphere se actualizó desde una versión anterior a la versión 4.9.</block>
-  <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">Se debería haber realizado al menos una copia de seguridad en el SnapCenter Plug-in for VMware vSphere 4.6P1.</block>
-  <block id="61607910a1db523098b12865f02faff4" category="list-text">Al menos una política diaria, semanal o mensual en el SnapCenter Plug-in for VMware vSphere sin etiqueta o con la misma etiqueta que la de la política de máquinas virtuales en la consola.</block>
-  <block id="9c2d7e78a68e18061466c4c12001d828" category="list-text">Para una política predefinida, el nivel de programación debe ser el mismo para el almacén de datos en el SnapCenter Plug-in for VMware vSphere y en la nube.</block>
-  <block id="ad747f24f06324c9bc58eeaa274f014a" category="list-text">Asegúrese de que no haya volúmenes FlexGroup en el almacén de datos porque no se admiten la realización de copias de seguridad ni la restauración de volúmenes FlexGroup .</block>
-  <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">Deshabilite "*_recent*" en los grupos de recursos requeridos.  Si tiene "*_recent*" habilitado para el grupo de recursos, las copias de seguridad de esos grupos de recursos no se pueden usar para la protección de datos en la nube y, posteriormente, no se pueden usar para la operación de restauración.</block>
-  <block id="391eb750d98c55b72607ff6ec6311db2" category="list-text">Asegúrese de que el almacén de datos de destino donde se restaurará la máquina virtual tenga suficiente espacio para albergar una copia de todos los archivos de la máquina virtual, como VMDK, VMX, VMSD, etc.</block>
-  <block id="6ee2c41b7a9bfae5bb618327d9499834" category="list-text">Asegúrese de que el almacén de datos de destino no tenga archivos de máquina virtual obsoletos en el formato restore_xxx_xxxxxx_filename debido a fallas en operaciones de restauración anteriores.  Debe eliminar los archivos obsoletos antes de iniciar una operación de restauración.</block>
-  <block id="7148963c1fe9bd20799d84596b688191" category="list-text">Para implementar un conector con proxy configurado, asegúrese de que todas las llamadas salientes del conector se enruten a través del servidor proxy.</block>
-  <block id="e0d0f7f19ee8c764850a895376299f6e" category="list-text">Si un volumen que realiza una copia de seguridad de un almacén de datos ya está protegido desde la pestaña Volúmenes (NetApp Backup and Recovery -&gt; Volúmenes), entonces el mismo almacén de datos no se puede proteger nuevamente desde la pestaña Máquinas virtuales (NetApp Backup and Recovery -&gt; Máquinas virtuales).</block>
-  <block id="455299fd2e4b438ff8661df0bfd1cace" category="paragraph">La siguiente imagen muestra cada componente y las conexiones que debes preparar entre ellos:</block>
-  <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">diagrama de arquitectura</block>
-  <block id="955c6f1851b4039bd20ae31d5f14d338" category="paragraph"><block ref="955c6f1851b4039bd20ae31d5f14d338" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1ad1b9b9f7ac4090b8d287b119a246b7" category="doc">Descripción general de la protección de las cargas de trabajo de las máquinas virtuales en NetApp Backup and Recovery</block>
-  <block id="f2e6828ccbddc013dabb3aca8551e78b" category="paragraph">Proteja las cargas de trabajo de sus máquinas virtuales con NetApp Backup and Recovery.  NetApp Backup and Recovery ofrece operaciones de respaldo y restauración rápidas, eficientes en términos de espacio, consistentes ante fallos y consistentes con las máquinas virtuales para máquinas virtuales, almacenes de datos y VMDK.</block>
-  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">Puede realizar copias de seguridad de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaurar máquinas virtuales en el host local del SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="21b169a7cabe8831cd38ce5fb6f77475" category="paragraph">Para obtener instrucciones sobre cómo proteger las cargas de trabajo de las máquinas virtuales, consulte los siguientes temas:</block>
-  <block id="49ef03573c7748afa14739a88a72a8fe" category="inline-link-macro">Crear una política para cargas de trabajo de VMware</block>
-  <block id="f906bca37e956e72a0c25eb84a587aba" category="list-text"><block ref="f906bca37e956e72a0c25eb84a587aba" category="inline-link-macro-rx"></block></block>
-  <block id="533a49682158340fa752f41b001c3ed7" category="inline-link-macro">Realizar copias de seguridad de almacenes de datos de VMware en Amazon Web Services</block>
-  <block id="28ed746142d082cc313c957c3916de57" category="list-text"><block ref="28ed746142d082cc313c957c3916de57" category="inline-link-macro-rx"></block></block>
-  <block id="b4d632569ac2a60a95624d732b062c21" category="inline-link-macro">Realizar copias de seguridad de almacenes de datos de VMware en Microsoft Azure</block>
-  <block id="8452a00d810c3f304181a9750756e3c3" category="list-text"><block ref="8452a00d810c3f304181a9750756e3c3" category="inline-link-macro-rx"></block></block>
-  <block id="f54c20442d5c079704492d9e9cc632b0" category="inline-link-macro">Realizar copias de seguridad de almacenes de datos de VMware en Google Cloud Platform</block>
-  <block id="08261c8a90295d24c0179c89fab872df" category="list-text"><block ref="08261c8a90295d24c0179c89fab872df" category="inline-link-macro-rx"></block></block>
-  <block id="d4e0304413c6571799459b3f2395df3b" category="inline-link-macro">Realizar copias de seguridad de almacenes de datos de VMware en StorageGRID</block>
-  <block id="a8fdfae9cbcef9f449ea9eb2143c4f64" category="list-text"><block ref="a8fdfae9cbcef9f449ea9eb2143c4f64" category="inline-link-macro-rx"></block></block>
-  <block id="2f8f18e2be23909e758abe786154b05f" category="list-text"><block ref="2f8f18e2be23909e758abe786154b05f" category="inline-link-macro-rx"></block></block>
-  <block id="1f325f707555c5e4623d4ca3ed92bc14" category="inline-link-macro">Administrar la protección para cargas de trabajo de VMware</block>
-  <block id="6b5e78f60de50d17c6c9e6c26f183c04" category="list-text"><block ref="6b5e78f60de50d17c6c9e6c26f183c04" category="inline-link-macro-rx"></block></block>
-  <block id="4f42130e8cfb9f713223107cb029a735" category="doc">Restaure datos de máquinas virtuales con NetApp Backup and Recovery</block>
-  <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">No es posible restaurar máquinas virtuales que se extiendan a varios almacenes de datos.</block>
-  <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">Si está restaurando a una ubicación alternativa:</block>
-  <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">Asegúrese de que los vCenters de origen y destino estén en modo vinculado.</block>
-  <block id="ccea797bbf5eba8cc950fa05c806cd76" category="list-text">Asegúrese de que los detalles del clúster de origen y destino se agreguen en la página *Sistemas* de la NetApp Console y en los vCenters en modo vinculado en ambos hosts del SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="52bda1d8d40e82cef23f0197a5e0c990" category="list-text">En la interfaz de usuario de la consola, seleccione *Protección* &gt; *Copia de seguridad y recuperación* &gt; *Máquinas virtuales* &gt; * SnapCenter Plug-in for VMware vSphere* y seleccione el host del SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="d180a4da8965c4cd5488cd05903774f0" category="list-text">Puede restaurar la máquina virtual a la ubicación original o a una ubicación alternativa desde el almacén de datos o desde las máquinas virtuales:</block>
-  <block id="db5366d69994d30376d1a970dcebb9ce" category="cell">Si desea restaurar la máquina virtual...</block>
-  <block id="5e2ad6fd9deb412d871137094ee43ef0" category="cell">Haz esto...</block>
-  <block id="ccc5c5f6926c7affe9ddb8b5fd8e78d0" category="paragraph">a la ubicación original desde el almacén de datos</block>
-  <block id="7103002346129eef1e9f38419a6c849d" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos que desea restaurar y haga clic en *Ver detalles*.</block>
-  <block id="a7b5011dd36cfe0539eff959f97ab523" category="list-text">Seleccione *Restaurar* correspondiente a la copia de seguridad que desea restaurar.</block>
-  <block id="ce924f0dcf910e34ec23b7b7ca88af8d" category="list-text">Seleccione la máquina virtual que desea restaurar desde la copia de seguridad y seleccione *Siguiente*.</block>
-  <block id="8cc375f4ce3601a663a600c7d8e620e5" category="list-text">Asegúrese de que *Original* esté seleccionado y seleccione *Continuar*.</block>
-  <block id="793f88b02160a70ac96d346b799dd570" category="list-text">Si la máquina virtual está protegida mediante una política donde se configuran las configuraciones de archivo, seleccione *Prioridad de restauración de archivo* y seleccione *Siguiente*.</block>
-  <block id="5f6a823289f7bbe90f46815d77f2f0f9" category="list-text">Revise los detalles y seleccione *Restaurar*.</block>
-  <block id="c0df5d97adcf3825af806d990e658e67" category="paragraph">a una ubicación alternativa desde el almacén de datos</block>
-  <block id="1be093b2878514e1a668a6557e0fa48f" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente al almacén de datos que desea restaurar y seleccione *Ver detalles*.</block>
-  <block id="2f663ab73d99f410b05e9f748fdb9f69" category="list-text">Seleccione *Alternativo*.</block>
-  <block id="1825907f18d398bff7d7bf89210651db" category="list-text">Seleccione el servidor vCenter alternativo, el host ESXi, el almacén de datos y la red.</block>
-  <block id="94187c3780ece70dc5689a3db077e744" category="list-text">Proporcione un nombre para la máquina virtual después de la restauración y seleccione *Continuar*.</block>
-  <block id="0236f808af929087f6a9616d379b96a4" category="paragraph">a la ubicación original desde las máquinas virtuales</block>
-  <block id="6cd8cc5fdd9e1409bcb46d17177068ee" category="list-text">Seleccione el icono Acciones<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondiente a la máquina virtual que desea restaurar y seleccione *Restaurar*.</block>
-  <block id="071df86763e0e93af80e50596aa0710c" category="list-text">Seleccione la copia de seguridad a través de la cual desea restaurar la máquina virtual.</block>
-  <block id="ccb90cb50d99e7cb9712a836810d4fae" category="paragraph">a una ubicación alternativa desde las máquinas virtuales</block>
   <block id="b92e6028af16604f3b6fd4eade9dfec6" category="summary">Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como "modo privado", los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola en el futuro, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery .</block>
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">Restaurar datos de configuración de NetApp Backup and Recovery en un sitio oscuro</block>
   <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery .</block>
@@ -4239,16 +4074,6 @@
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Administrar el inventario de Microsoft SQL Server</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Administrar instantáneas de Microsoft SQL Server</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Crear informes de Microsoft SQL Server</block>
-  <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">Proteja las cargas de trabajo de VMware (con el complemento SnapCenter para VMware)</block>
-  <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Descripción general de la protección de cargas de trabajo de máquinas virtuales</block>
-  <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Requisitos previos para proteger las cargas de trabajo de las máquinas virtuales</block>
-  <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">Crear una política para realizar copias de seguridad de los datos de las máquinas virtuales</block>
-  <block id="1d5ad62b9217b4a3f085f517534f40bb" category="sidebar">Realizar copias de seguridad de almacenes de datos en Amazon Web Services</block>
-  <block id="32d2b45dd98e36ad888d7156b4532053" category="sidebar">Realizar copias de seguridad de almacenes de datos en Microsoft Azure</block>
-  <block id="eb1ab874b09a7eab583845e8576be828" category="sidebar">Realizar copias de seguridad de almacenes de datos en Google Cloud Platform</block>
-  <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="sidebar">Realizar copias de seguridad de almacenes de datos en StorageGRID</block>
-  <block id="9a3f2e7eb30992bb084418711e5093f2" category="sidebar">Administrar la protección de almacenes de datos y datos de máquinas virtuales</block>
-  <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Restaurar datos de máquinas virtuales y almacenes de datos</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">Proteger las cargas de trabajo de KVM (versión preliminar)</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Montar y desmontar puntos de recuperación</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Proteger las cargas de trabajo de Kubernetes (versión preliminar)</block>
@@ -4288,11 +4113,7 @@
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Desde la página Restaurar (Buscar y restaurar), puede restaurar un recurso buscando la instantánea con filtros, incluso si no recuerda su nombre exacto, ubicación o última fecha conocida.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisitos de software para el host de Windows Server Hyper-V:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Si la operación de restauración no se completa, espere hasta que el Monitor de trabajo muestre "Error" antes de volver a intentar la operación de restauración.</block>
-  <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Puede restaurar datos de máquinas virtuales desde la nube al servidor vCenter local con NetApp Backup and Recovery. Puede restaurar la máquina virtual en la misma ubicación exacta desde donde se realizó la copia de seguridad o en una ubicación alternativa. Si se realizó una copia de seguridad de la máquina virtual mediante la política de archivo, puede establecer la prioridad de restauración de archivo.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consulte<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
-  <block id="2f3b7eef1cf7df43dea1233ed03f5f42" category="list-text">Asegúrese de que el sistema se agregue a la otra ubicación en la página *Sistemas* de la consola.</block>
-  <block id="870482577443f708a74b9dbe9b8fe928" category="admonition">Si mueve una máquina virtual mediante VMware vSphere vMotion y la restaura desde la consola, Backup and Recovery la restaura a la ubicación de respaldo original.</block>
-  <block id="6e6630b7443f8dd6eade1b55e3c59141" category="paragraph">Las prioridades de restauración de archivos admitidas son alta, estándar y baja para Amazon Web Services, y alta y estándar para Microsoft Azure.</block>
   <block id="2f52181b09a7c053aed22699e227b9db" category="paragraph">Cuando utiliza NetApp Backup and Recovery en un entorno SaaS con el agente de consola implementado en su proveedor de nube o en su propio host conectado a Internet, el sistema realiza copias de seguridad y protege todos los datos de configuración importantes en la nube.  Si tiene un problema con el agente de consola, cree un nuevo agente de consola y agregue sus sistemas.  Los detalles de la copia de seguridad se restauran automáticamente.</block>
   <block id="361cc78877d7de2ea952f510e7626ad4" category="paragraph">Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se almacenan en el depósito del sistema que se activó primero.</block>
   <block id="2be5ff28599e1447ad26486d058560b3" category="paragraph">Si su agente de consola local deja de funcionar, deberá instalar un nuevo agente de consola y luego restaurar los datos de NetApp Backup and Recovery en el nuevo agente de consola.</block>
@@ -5232,4 +5053,5 @@
   <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">Protege las cargas de trabajo de KVM (vista previa)</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Protege las cargas de trabajo de Oracle Database (vista previa)</block>
   <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">Protege las cargas de trabajo de VMware (sin SnapCenter Plug-in for VMware)</block>
+  <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Almacenamiento conectado compatible: ONTAP 9.13 o posterior</block>
 </blocks>
