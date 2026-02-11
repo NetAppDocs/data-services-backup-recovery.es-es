@@ -378,10 +378,6 @@ Cree su propio grupo de recursos que administre el contenedor de Blobs o selecci
 
 TIP: Si desea proteger sus archivos de respaldo para que no se modifiquen ni eliminen, asegúrese de que la cuenta de almacenamiento se haya creado con el almacenamiento inmutable habilitado utilizando un período de retención de 30 días.
 
-+
-
-TIP: Si desea organizar en niveles los archivos de respaldo más antiguos en Azure Archive Storage para optimizar aún más los costos, asegúrese de que la cuenta de almacenamiento tenga la regla de ciclo de vida adecuada.
-
 ** *Clave de cifrado*: si creó una nueva cuenta de almacenamiento de Azure, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado de Azure predeterminadas o elegirá sus propias claves administradas por el cliente desde su cuenta de Azure para administrar el cifrado de sus datos.
 +
 Si elige utilizar sus propias claves administradas por el cliente, ingrese al almacén de claves y a la información de la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Aprende a usar tus propias llaves"^] .

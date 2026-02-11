@@ -88,7 +88,7 @@ Necesita requisitos específicos para descubrir y proteger sus cargas de trabajo
 
 *Soporte de software*
 
-* Se admiten almacenes de datos NFS y VMFS. No se admiten vVols .
+* Se admiten los almacenes de datos NFS y VMFS.
 * Versiones de NFS compatibles: NFS 3 y NFS 4.1
 * Versiones de VMware ESXi Server compatibles: 7.0U1 y superiores
 * Versiones de VMware vCenter vSphere compatibles: 7.0U1 y superiores
@@ -106,11 +106,6 @@ Necesita requisitos específicos para descubrir y proteger sus cargas de trabajo
 
 | Puerto del servidor VMware ESXi  a| 
 443 (HTTPS), bidireccional. La función de restauración de archivos invitados utiliza este puerto.
-
-
-
-| Puerto de VMware vSphere vCenter Server  a| 
-Si está protegiendo máquinas virtuales vVol, debe utilizar el puerto 443.
 
 
 
