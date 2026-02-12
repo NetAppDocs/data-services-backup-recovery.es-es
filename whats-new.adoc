@@ -30,9 +30,9 @@ La compatibilidad con cargas de trabajo de Microsoft Hyper-V ya está disponible
 
 
 
-=== Cargas de trabajo KVM compatibles con General Availability (GA)
+=== Cargas de trabajo de VMware compatibles en General Availability (GA)
 
-La compatibilidad con cargas de trabajo KVM ya está disponible de forma general (GA) en NetApp Backup and Recovery.
+La compatibilidad con cargas de trabajo de VMware ya está disponible de forma general (GA) en NetApp Backup and Recovery.
 
 
 

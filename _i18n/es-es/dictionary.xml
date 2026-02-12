@@ -5045,11 +5045,9 @@
   <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">Restaura aplicaciones Kubernetes usando recursos personalizados</block>
   <block id="6108d5ad430f0631e5c6e10714ba980c" category="doc">Cargas de trabajo de Microsoft Hyper-V compatibles en General Availability (GA)</block>
   <block id="c5db154b8366e71dcf87e4624b1a0112" category="paragraph">La compatibilidad con cargas de trabajo de Microsoft Hyper-V ya está disponible de forma general (GA) en NetApp Backup and Recovery.</block>
-  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="section-title">Cargas de trabajo KVM compatibles con General Availability (GA)</block>
-  <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">La compatibilidad con cargas de trabajo KVM ya está disponible de forma general (GA) en NetApp Backup and Recovery.</block>
   <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">Protege las cargas de trabajo de KVM (vista previa)</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Protege las cargas de trabajo de Oracle Database (vista previa)</block>
-  <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">Protege las cargas de trabajo de VMware (sin SnapCenter Plug-in for VMware)</block>
   <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Almacenamiento conectado compatible: ONTAP 9.13 o posterior</block>
   <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">Se admiten los almacenes de datos NFS y VMFS.</block>
+  <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">Cargas de trabajo de VMware compatibles en General Availability (GA)</block>
 </blocks>
