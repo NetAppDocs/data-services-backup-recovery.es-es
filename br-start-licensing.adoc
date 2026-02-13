@@ -137,3 +137,9 @@ De manera opcional, si tiene una licencia basada en nodo no asignado para Cloud 
 Utilice la NetApp Console para administrar las licencias BYOL.  Puede agregar nuevas licencias, actualizar licencias existentes y ver el estado de las licencias desde la Consola.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Obtenga información sobre cómo agregar licencias"^].
+
+
+
+== Superando la capacidad de la licencia
+
+Si excedes la capacidad de tu licencia, se activan las tarifas PAYGO; sin una suscripción PAYGO, no puedes crear nuevas copias de seguridad, aunque las copias de seguridad existentes siguen siendo restaurables sin garantía de servicio. Asegúrate de renovar tu licencia antes de que caduque; una licencia caducada impide crear nuevas copias de seguridad y afecta el servicio.
