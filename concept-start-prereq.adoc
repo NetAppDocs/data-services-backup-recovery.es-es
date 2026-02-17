@@ -73,8 +73,8 @@ Asigne suficiente espacio en disco y supervise el consumo de almacenamiento de l
 
 
 | Paquetes de software necesarios  a| 
-* Paquete de alojamiento de ASP.NET Core Runtime 8.0.12 (y todos los parches 8.0.x posteriores)
-* PowerShell 7.4.2
+* ASP.NET Core Runtime 8.0.23 Hosting Bundle (y todos los parches posteriores de 8.0.x)
+* PowerShell 7.4.13
 
 
 Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["Herramienta de matriz de interoperabilidad de NetApp"^] .
@@ -219,8 +219,8 @@ Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos
 * Requisitos de software para el host de Windows Server Hyper-V:
 +
 ** Ediciones de Microsoft Hyper-V 2019, 2022 y 2025
-** Paquete de alojamiento de ASP.NET Core Runtime 8.0.12 (y todos los parches 8.0.x posteriores)
-** PowerShell 7.4.2 o posterior
+** ASP.NET Core Runtime 8.0.23 Hosting Bundle (y todos los parches posteriores de 8.0.x)
+** PowerShell 7.4.13 o posterior
 ** Si usuarios que no forman parte de un dominio de administrador van a proteger máquinas virtuales Hyper-V, asegúrese de que el usuario tenga los siguientes permisos:
 +
 *** Asegúrese de que el usuario sea miembro del grupo de administradores locales.
