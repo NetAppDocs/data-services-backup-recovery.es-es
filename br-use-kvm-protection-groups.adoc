@@ -21,6 +21,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 * Crear un grupo de protección.
 * Ver detalles de protección.
 * Realice una copia de seguridad de un grupo de protección ahora. Verlink:br-use-kvm-backup.html["Realice copias de seguridad de las cargas de trabajo de KVM ahora"] .
+* Edita un grupo de protección.
 * Eliminar un grupo de protección.
 
 
@@ -39,15 +40,39 @@ Agrupe las máquinas virtuales y los grupos de almacenamiento que desea proteger
 . Seleccione la pestaña *Grupos de protección*.
 . Seleccione *Crear grupo de protección*.
 . Proporcione un nombre para el grupo de protección.
-. Seleccione las máquinas virtuales o los grupos de almacenamiento que desea incluir en el grupo de protección.
+. Selecciona un host para ver las VMs disponibles en ese host. Para incluir VMs de todos los hosts descubiertos, selecciona *All* en la lista de hosts.
+. Selecciona las máquinas virtuales individuales que quieres incluir en el grupo de protección, o selecciona *All* para incluir todas las máquinas virtuales de la lista.
++
+Las máquinas virtuales que selecciones aparecen en el área *Máquinas virtuales añadidas*. Puedes quitar máquinas virtuales individuales de la lista o vaciar la lista por completo. Puedes añadir máquinas virtuales de varios hosts KVM a la lista.
+
 . Seleccione *Siguiente*.
-. Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
+. Selecciona la política de protección que quieres aplicar al grupo de protección, o crea una nueva política seleccionando *Crear nueva política*.
 +
 Para obtener más información sobre cómo crear una política de respaldo, consultelink:br-use-policies-create.html["Crear y gestionar políticas"] .
 
 . Seleccione *Siguiente*.
 . Revise la configuración.
 . Seleccione *Crear* para crear el grupo de protección.
+
+
+
+
+== Editar un grupo de protección
+
+Edita un grupo de protección si necesitas cambiar detalles del grupo de protección sin borrarlo y volver a crearlo.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
+. Seleccione una carga de trabajo para ver los detalles de protección.
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
+. Seleccione la pestaña *Grupos de protección*.
+. Seleccione el grupo de protección que desea editar.
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Editar*.
+. Haz los cambios que necesites en los detalles generales y en las máquinas virtuales del grupo de protección.
+. Seleccione *Siguiente*.
+. Si es necesario, cambia la política asociada al grupo de protección.
+. Seleccione *Siguiente*.
+. Revise la configuración y seleccione *Enviar*.
 
 
 
