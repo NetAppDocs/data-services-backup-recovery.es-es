@@ -6,13 +6,13 @@
 
 === Cargas de trabajo KVM compatibles con General Availability (GA)
 
-La compatibilidad con cargas de trabajo de Microsoft Hyper-V ya está disponible de forma general (GA) en NetApp Backup and Recovery.
+La compatibilidad con cargas de trabajo KVM ya está disponible de forma general (GA) en NetApp Backup and Recovery.
 
 Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
 
 
 
-=== Kubernetes compatible en General Availability (GA)
+=== Cargas de trabajo de Kubernetes compatibles en General Availability (GA)
 
 La compatibilidad con cargas de trabajo de Kubernetes ya está disponible de forma general (GA) en NetApp Backup and Recovery. Esta versión de cargas de trabajo de Kubernetes también introduce las siguientes capacidades mejoradas:
 
