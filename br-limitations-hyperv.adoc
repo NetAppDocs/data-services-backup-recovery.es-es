@@ -20,7 +20,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 == Acciones no admitidas
 
-Las siguientes acciones no son compatibles con la versión preliminar privada de las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
+Las siguientes acciones no son compatibles en las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
 
 * Cree grupos de recursos utilizando máquinas virtuales de varios hosts Hyper-V.
 * Restaurar máquinas virtuales a una ubicación alternativa

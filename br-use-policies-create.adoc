@@ -25,7 +25,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 * Crear una política para la replicación al almacenamiento secundario
 * Crear una política para la configuración del almacenamiento de objetos
 * Configurar configuraciones de políticas avanzadas
-* Editar políticas (no disponible para cargas de trabajo de vista previa de VMware)
+* Editar políticas (no disponible para cargas de trabajo de VMware)
 * Eliminar políticas
 
 

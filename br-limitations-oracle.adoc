@@ -16,7 +16,7 @@ summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar B
 [role="lead"]
 Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
 
-La siguiente acción no se admite en la versión de vista previa privada de las cargas de trabajo de Oracle Database en NetApp Backup and Recovery:
+La siguiente acción no se admite en la versión preliminar de las cargas de trabajo de Oracle Database en NetApp Backup and Recovery:
 
 * Copia de seguridad sin conexión
 

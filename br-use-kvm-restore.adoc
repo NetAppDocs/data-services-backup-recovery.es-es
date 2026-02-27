@@ -103,7 +103,7 @@ Aparece una lista de posibles puntos de restauración.
 --
 .Restaurar a una ubicación alternativa
 --
-No disponible para la vista previa de cargas de trabajo KVM.
+No disponible para cargas de trabajo KVM.
 
 --
 ====

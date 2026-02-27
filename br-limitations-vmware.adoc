@@ -16,7 +16,7 @@ summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar B
 [role="lead"]
 Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
 
-Las siguientes acciones no son compatibles con la versión preliminar de las cargas de trabajo de VMware en NetApp Backup and Recovery:
+Las siguientes acciones no son compatibles en las cargas de trabajo de VMware en NetApp Backup and Recovery:
 
 * Montar
 * Desmontar
