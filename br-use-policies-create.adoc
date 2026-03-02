@@ -36,7 +36,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 . En el menú NetApp Backup and Recovery , seleccione *Políticas*.
 . Revise estos detalles de la política.
 +
-** *Carga de trabajo*: ejemplos incluyen Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.
+** *Carga de trabajo*: ejemplos incluyen Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.
 ** *Tipo de copia de seguridad*: Los ejemplos incluyen copia de seguridad completa y copia de seguridad de registros.
 ** *Arquitectura*: Los ejemplos incluyen instantáneas locales, distribución en abanico, cascada, disco a disco y disco a almacenamiento de objetos.
 ** *Recursos protegidos*: muestra cuántos recursos del total de recursos en esa carga de trabajo están protegidos.

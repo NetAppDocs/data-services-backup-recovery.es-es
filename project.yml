@@ -188,6 +188,8 @@ sidebar:
         url: "/br-use-oracle-protection-groups.html"
       - title: Realiza copias de seguridad de las cargas de trabajo de Oracle Database
         url: "/br-use-oracle-backup.html"
+      - title: Clonar cargas de trabajo de Oracle Database
+        url: "/br-use-oracle-clone.html"
       - title: Restaura cargas de trabajo de Oracle Database
         url: "/br-use-oracle-restore.html"
       - title: Montar y desmontar puntos de recuperación
