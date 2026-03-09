@@ -20,8 +20,6 @@ Las siguientes acciones no son compatibles en las cargas de trabajo de VMware en
 
 * Montar
 * Desmontar
-* Adjuntar VMDK
-* Desconectar VMDK
 * Compatibilidad con vVol
 * Compatibilidad con NVMe
 * Integración de correo electrónico

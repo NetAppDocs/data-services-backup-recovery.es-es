@@ -88,7 +88,7 @@ Crea un CR de backup con atributos específicos para hacer backup de tu aplicaci
 ** *spec.applicationRef*: (_Required_) el nombre de Kubernetes de la aplicación que quieres respaldar.
 ** *spec.appVaultRef*: (_Requerido, mutuamente excluyente con spec.appVaultTargetsRef_) Si usas el mismo bucket para guardar la instantánea y el backup, este es el nombre de AppVault donde se debe almacenar el contenido del backup.
 ** *spec.appVaultTargetsRef*: (_Requerido, mutuamente excluyente con spec.appVaultRef_) Si usas diferentes buckets para almacenar el snapshot y el backup, este es el nombre del AppVault donde se debe almacenar el contenido del backup.
-** *spec.dataMover*: (_Opcional_) Una cadena que indica qué herramienta de backup usar para la operación de backup. El valor distingue mayúsculas de minúsculas y debe ser `CBS`.
+** *spec.dataMover*: (_Opcional, requerido para clusters migrados desde Trident Protect_) una cadena que indica qué herramienta de copia de seguridad usar para la operación de copia de seguridad. Si este cluster ha sido migrado a Backup and Recovery desde Trident Protect, el valor distingue mayúsculas de minúsculas y debe ser `CBS`.
 ** *spec.reclaimPolicy*: (_Opcional_) Define qué pasa con el contenido del backup (metadatos/datos del volumen) cuando se elimina el Backup CR. Valores posibles:
 +
 *** `Delete`

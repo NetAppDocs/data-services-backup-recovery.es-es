@@ -142,6 +142,7 @@ Al restaurar a una ubicación alternativa, puede cambiar el vCenter de destino, 
 
 ** Sección *Opciones previas a la restauración*:
 +
+*** *Restauración rápida*: activa esta opción para indicar a Backup and Recovery que solo restaure los metadatos de la VM (archivos, LUNs y namespaces) desde el almacén de objetos. Esto hace que los volúmenes estén disponibles más rápido que con una restauración completa.
 *** *Prescript*: habilite esta opción para automatizar tareas adicionales ejecutando un script personalizado antes de que comience la operación de restauración. Ingrese la ruta completa del script que debe ejecutarse y todos los argumentos que toma el script.
 
 

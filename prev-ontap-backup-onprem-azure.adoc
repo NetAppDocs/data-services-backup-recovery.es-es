@@ -444,6 +444,10 @@ TIP: Si desea proteger sus archivos de respaldo para que no se modifiquen ni eli
 
 TIP: Si desea organizar en niveles los archivos de respaldo más antiguos en Azure Archive Storage para optimizar aún más los costos, asegúrese de que la cuenta de almacenamiento tenga la regla de ciclo de vida adecuada.
 
++
+
+NOTE: Si seleccionas *Bring your own bucket*, asegúrate de que el contenedor que creas como destino de la copia de seguridad tiene el mismo nombre que la cuenta de almacenamiento Azure.
+
 ** *Clave de cifrado*: si creó una nueva cuenta de almacenamiento de Azure, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado de Azure predeterminadas o elegirá sus propias claves administradas por el cliente desde su cuenta de Azure para administrar el cifrado de sus datos.
 +
 Si elige utilizar sus propias claves administradas por el cliente, ingrese al almacén de claves y a la información de la clave.

@@ -1,0 +1,32 @@
+= Mejoras en las cargas de trabajo de ONTAP Volumes
+:allow-uri-read: 
+
+
+
+
+=== Mejoras en las cargas de trabajo de ONTAP Volumes
+
+En esta versión, ONTAP Volumes introduce las siguientes capacidades mejoradas:
+
+* *Restaurar en la ubicación de origen*: Ahora puedes restaurar archivos de instantáneas locales e instantáneas replicadas en la ubicación de origen, así como en una ubicación alternativa.
+* *Descubrimiento de volúmenes por hora*: el Dashboard ahora descubre y actualiza nuevos volúmenes más rápido.
+* *Soporte para dark sites*: Ahora puedes descargar Backup and Recovery for dark sites desde el  https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab/download/61906/4.4.0/downloads["Sitio de soporte de NetApp"]. En este momento, NetApp Backup and Recovery for dark sites solo admite cargas de trabajo de ONTAP Volumes.
+* *Mejoras de compatibilidad con Unicode*: la indexación de catálogos ahora maneja mejor los caracteres Unicode.
+* *Compatibilidad mejorada con FlexGroup*: Cuando conviertes un volumen ONTAP FlexVol a un volumen FlexGroup, ahora puedes restaurar las copias de seguridad hechas antes de la conversión.
+* *Compatibilidad con varios buckets*: ahora puedes proteger los volúmenes dentro de un sistema con hasta 6 buckets por sistema a través de diferentes proveedores de nube.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de ONTAP Volume, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descripción general de la protección de cargas de trabajo de volúmenes de ONTAP"].
+
+
+
+=== Mejoras en las cargas de trabajo de VMware
+
+En esta versión, VMware workloads introduce las siguientes capacidades mejoradas:
+
+* *Restaurar datos de invitados desde el almacén de objetos*: Ahora puedes restaurar archivos y carpetas de invitados desde el almacén de objetos.
+* *Restauración rápida para VMFS/NFS*: Ahora puedes activar la opción de restauración rápida al restaurar en una ubicación alternativa. Cuando está activada, solo se recuperan los metadatos de la VM (archivos, LUNs y espacios de nombres) del almacén de objetos, haciendo que los volúmenes estén disponibles más rápido que en una restauración completa.
+* *Soporte para Amazon FSx for NetApp ONTAP*: Las cargas de trabajo de VMware ahora son compatibles con Amazon FSx for NetApp ONTAP storage systems que ejecuten la versión 9.13.1 o posterior.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .
