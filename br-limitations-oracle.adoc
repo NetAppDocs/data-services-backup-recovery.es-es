@@ -20,5 +20,3 @@ La siguiente acción no se admite en la versión preliminar de las cargas de tra
 
 * Copia de seguridad sin conexión
 
-
-Oracle Database solo se admite como implementación independiente usando NFS, SAN o ASM SAN en la versión privada de vista previa de las cargas de trabajo de Oracle Database.
