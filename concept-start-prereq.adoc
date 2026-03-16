@@ -188,11 +188,7 @@ Asegúrate de que tu entorno cumple los requisitos específicos para descubrir y
 | Requisito | Compatible 
 
 
-| Topología de despliegue  a| 
-* Autónomo (NFS, SAN, ASM SAN)
-* RAC sobre ASM (VMDK en VMFS)
-
-
+| Topología de despliegue | Autónomo (NFS, SAN, ASM SAN) 
 
 
 | Versiones de Oracle Database  a| 
