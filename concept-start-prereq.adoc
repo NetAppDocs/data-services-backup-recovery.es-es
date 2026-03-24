@@ -261,7 +261,7 @@ Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos
 | ASP.NET Core Runtime | 8.0.23 Hosting Bundle (y todos los parches posteriores de 8.0.x) 
 
 
-| PowerShell | 7.0U1 y superiores 
+| PowerShell | 7.4.13 o posterior 
 
 
 | Si usuarios que no son administradores van a proteger máquinas virtuales Hyper-V, asegúrate de que los usuarios tienen los siguientes permisos  a| 
