@@ -1,0 +1,15 @@
+= Mejoras en las cargas de trabajo de Oracle Database
+:allow-uri-read: 
+
+
+
+
+=== Mejoras en las cargas de trabajo de Oracle Database
+
+En esta versión, Oracle Database workloads introduce la siguiente mejora:
+
+* *Compatibilidad con hosts en clúster*: Ahora puedes descubrir y proteger las bases de datos Oracle Real Application Clusters (RAC) que utilizan Oracle Automatic Storage Management (ASM) y se despliegan utilizando VMDK en sistemas de archivos VMFS. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-discover-oracle.html["Descubre las cargas de trabajo de Oracle Database"].
+* *Soporte del catálogo de RMAN*: Ahora puedes configurar Backup and Recovery para almacenar metadatos de protección en el catálogo de recuperación de RMAN, lo que proporciona redundancia y retención a largo plazo en caso de que se pierda el archivo de control de destino. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["Configurar una base de datos Oracle"].
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de la protección de cargas de trabajo de Oracle Database"].

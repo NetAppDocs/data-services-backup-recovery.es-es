@@ -4,7 +4,7 @@ permalink: br-use-oracle-mount-unmount.html
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Protege tus cargas de trabajo de Oracle Database con NetApp Backup and Recovery. 
 ---
-= Montar y desmontar puntos de recuperación de bases de datos de Oracle con NetApp Backup and Recovery
+= Montar, desmontar y catalogar puntos de recuperación de bases de datos Oracle con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo de Oracle Database con NetApp Backup and 
 
 
 [role="lead"]
-Es posible que desee montar un punto de recuperación de Oracle Database si necesita acceder a la base de datos en un estado controlado para realizar operaciones de recuperación.
+Es posible que quieras montar un punto de recuperación de Oracle Database si necesitas acceder a la base de datos en un estado controlado para realizar operaciones de recuperación. Cataloga manualmente el punto de recuperación cuando necesites almacenar los metadatos de la operación de copia de seguridad y recuperación en el catálogo de recuperación de RMAN y la opción de catalogar automáticamente los metadatos no esté activada.
 
 
 
@@ -66,4 +66,24 @@ Aparece una lista de puntos de recuperación para esa base de datos.
 
 . Elija un punto de recuperación de la lista y seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Desmontar*.
 . Confirme la acción seleccionando *Desmontar*.
+
+
+
+
+== Catalogar un punto de recuperación de bases de datos Oracle
+
+Cataloga manualmente un punto de recuperación cuando necesites conservar sus metadatos de operaciones de backup y recuperación. Los metadatos se almacenan según la configuración de *Configure RMAN catalog* que elijas para la base de datos (en el archivo de control de destino por defecto). Solo necesitas catalogar manualmente si la catalogación automática está desactivada en la política de protección asociada.
+
+.Pasos
+. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
+. Seleccione el mosaico Oracle.
+. En el menú Copia de seguridad y recuperación, seleccione *Inventario*.
+. Para la carga de trabajo de Oracle en la lista, seleccione *Ver*.
+. Seleccione el menú *Bases de datos*.
+. Elija una base de datos de la lista y seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles de protección*.
++
+Aparece una lista de puntos de recuperación para esa base de datos.
+
+. Elige un punto de recuperación de la lista y selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Catalog*.
+. Confirma la acción seleccionando *Catalog*.
 

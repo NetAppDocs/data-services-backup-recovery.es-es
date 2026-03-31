@@ -231,6 +231,13 @@ Opcionalmente, puede configurar opciones avanzadas en la política.  Estas confi
 . Habilite cualquiera de las configuraciones que desee ver o cambiar y luego seleccione *Aceptar*.
 . Proporcione la siguiente información:
 +
+** *Configuración del catálogo de RMAN*: (Sólo se aplica a cargas de trabajo de Oracle Database) Activa la opción *Catalog backup with Oracle Recovery Manager (RMAN)* para catalogar automáticamente los metadatos para las operaciones de copia de seguridad y recuperación de bases de datos Oracle. Los metadatos se almacenan según la configuración *Configure RMAN catalog* que elijas para la base de datos (en el archivo de control de destino de forma predeterminada). Consulta link:br-start-configure-oracle-database.html["Configurar una base de datos Oracle"] para cambiar esta configuración para una base de datos.
+** *SnapMirror volumen y formato de instantánea*: Elige entre las siguientes opciones:
++
+*** *Usa un formato de nombre personalizado para la copia de instantáneas*: Elige un esquema de nomenclatura para las instantáneas. Si se deja en blanco, se añade una marca de hora al final de cada nombre de instantánea.
+*** *Proporciona el formato de volumen SnapMirror*: especifica un prefijo, un sufijo o ambos para modificar el nombre predeterminado del volumen SnapMirror. Por defecto, un volumen SnapMirror hereda el nombre del volumen de origen.
+
+
 ** *Copia de seguridad de solo copia*: (Se aplica solo a cargas de trabajo de Microsoft SQL Server) Elija la copia de seguridad de solo copia (un tipo de copia de seguridad de Microsoft SQL Server) si necesita realizar una copia de seguridad de sus recursos mediante otra aplicación de copia de seguridad.
 ** *Configuración del grupo de disponibilidad*: (Se aplica solo a cargas de trabajo de Microsoft SQL Server) Seleccione las réplicas de respaldo preferidas o especifique una réplica en particular.  Esta configuración es útil si tiene un grupo de disponibilidad de SQL Server y desea controlar qué réplica se utiliza para las copias de seguridad.
 ** *Tasa máxima de transferencia*: para no establecer un límite en el uso del ancho de banda, seleccione *Ilimitado*.  Si desea limitar la velocidad de transferencia, seleccione *Limitado* y seleccione el ancho de banda de red entre 1 y 1000 Mbps asignado para cargar copias de seguridad al almacenamiento de objetos.  De forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de respaldo desde los volúmenes del sistema al almacenamiento de objetos.  Si observa que el tráfico de respaldo afecta las cargas de trabajo normales de los usuarios, considere disminuir la cantidad de ancho de banda de red que se utiliza durante la transferencia.
