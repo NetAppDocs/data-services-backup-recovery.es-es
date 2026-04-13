@@ -10,7 +10,7 @@ summary: Puedes personalizar las operaciones de restauración de CR usando anota
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

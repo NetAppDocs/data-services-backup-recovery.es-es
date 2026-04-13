@@ -16,8 +16,8 @@ summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Re
 [role="lead"]
 Realice copias de seguridad de máquinas virtuales y almacenes de datos de VMware desde sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
 
-* Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
-* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-vmware-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de VMware con NetApp Backup and Recovery"] Para más información.
+* Para realizar copias de seguridad de cargas de trabajo de forma programada, crea políticas que rijan las operaciones de backup y restauración. Consulta link:br-use-policies-create.html["Crear políticas de protección"] para obtener instrucciones.
+* Crea grupos de protección para gestionar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Consulta link:br-use-vmware-protection-groups.html["Crear y gestionar grupos de protección"] para más información.
 * Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
 
 
@@ -33,12 +33,12 @@ Cree una copia de seguridad a pedido de inmediato.  Es posible que desees ejecut
 . En el menú Copia de seguridad y recuperación, seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
-. Seleccione la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
-. Seleccione el grupo de protección, los almacenes de datos o las máquinas virtuales que desea respaldar.
+. Selecciona el encabezado de menú *Grupos de protección*, *Datastores*, *Máquinas virtuales* o *Etiquetas*.
+. Selecciona el grupo de protección, los datastores, las máquinas virtuales o los recursos etiquetados que quieres respaldar.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 +
 
-NOTE: La política que se aplica a la copia de seguridad es la misma política que se asigna al grupo de protección, al almacén de datos o a la máquina virtual.
+NOTE: La política que se aplica al backup es la misma política que se asigna al grupo de protección, al datastore, a la máquina virtual o a los recursos etiquetados.
 
 . Seleccione el nivel de programación.
 . Seleccione *Hacer copia de seguridad ahora*.

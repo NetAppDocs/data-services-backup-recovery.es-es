@@ -18,9 +18,9 @@ Cree grupos de protección para administrar las operaciones de copia de segurida
 
 Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
-* Crear un grupo de protección.
+* Crea un grupo de protección añadiendo manualmente máquinas virtuales al grupo o usando etiquetas de VMware vSphere.
 * Ver detalles de protección.
-* Realice una copia de seguridad de un grupo de protección ahora. Verlink:br-use-vmware-backup.html["Realice copias de seguridad de las cargas de trabajo de VMware ahora"] .
+* Haz ahora una copia de seguridad de un grupo de protección. Consulta link:br-use-vmware-backup.html["Realice copias de seguridad de las cargas de trabajo de VMware ahora"].
 * Suspender y reanudar la programación de copias de seguridad de un grupo de protección.
 * Eliminar un grupo de protección.
 
@@ -42,13 +42,74 @@ Agrupe las cargas de trabajo que desea proteger en un grupo de protección para 
 . Proporcione un nombre para el grupo de protección.
 . Seleccione las máquinas virtuales o bases de datos que desea incluir en el grupo de protección.
 . Seleccione *Siguiente*.
-. Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
+. Selecciona la política de protección que quieres aplicar al grupo de protección.
 +
 Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
 . Seleccione *Siguiente*.
 . Revise la configuración.
 . Seleccione *Crear* para crear el grupo de protección.
+
+
+
+
+== Crear un grupo de protección mediante etiquetas vSphere
+
+Usa la protección basada en etiquetas para simplificar la administración de los grupos de protección en Backup and Recovery.
+
+Estas son las ventajas de utilizar la protección basada en etiquetas:
+
+* Cuando añades una etiqueta vSphere a una VM o datastore en vCenter, ese objeto se incluye automáticamente en el siguiente backup para cualquier grupo de protección de Backup and Recovery que haga referencia a esa etiqueta.
+* Cuando eliminas una etiqueta vSphere de una máquina virtual o almacén de datos, ese objeto se excluye automáticamente de los backups posteriores para ese grupo de protección basado en etiquetas.
+* Si se borra una etiqueta vSphere en vCenter, las futuras copias de seguridad omiten esa etiqueta y muestran una advertencia.
+* Si una máquina virtual se migra a un almacén de datos diferente, seguirá estando protegida mientras siga teniendo la etiqueta que forma parte de un grupo de protección basado en etiquetas.
+
+
+
+IMPORTANT: No se admite la mezcla de tipos de recursos (por ejemplo, combinar etiquetas con máquinas virtuales individuales o almacenes de datos en el mismo grupo de protección).
+
+.Antes de empezar
+* Asegúrate de que tu entorno está usando versiones compatibles de VMware vSphere.
+* En vCenter, asegúrate de que las máquinas virtuales y los almacenes de datos que quieres proteger ya están asociados a una o más etiquetas vSphere.
+
+
+
+NOTE: La pertenencia a las etiquetas se resuelve desde vCenter en el tiempo de backup. Cualquier cambio que hagas en las etiquetas en vCenter (añadir/eliminar etiquetas, borrar etiquetas, añadir/eliminar VMs) se refleja automáticamente en el siguiente backup.
+
+.Pasos
+. Inicia sesión en NetApp Backup and Recovery.
+. Ve a la vista *Grupos de protección*.
+. Selecciona *Crear grupo de protección*.
+. En *Detalles generales > Nombre del grupo de protección*, introduce un nombre para el grupo de protección.
+. En la sección *Detalles generales > Recursos del grupo de protección*, selecciona *Etiquetas*.
+. Si hay varios vCenters configurados, selecciona el vCenter apropiado de la lista para mostrar las etiquetas disponibles para ese vCenter.
+. En la sección *Seleccionar etiquetas*:
++
+.. En el lado izquierdo:
++
+... Selecciona un vCenter de la lista.
+... Selecciona las casillas de verificación de una o varias etiquetas dentro de ese vCenter.
+
+
+.. En el lado derecho:
++
+... Revisa la lista de etiquetas seleccionadas, agrupadas por vCenter.
+... Elimina cualquier etiqueta que no quieras en el grupo de protección.
+
+
+
+
+. Seleccione *Siguiente*.
+. Selecciona la política de protección que quieres aplicar al grupo de protección.
++
+Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
+
+. Seleccione *Siguiente*.
+. Revisa la configuración de la etiqueta en el paso *Revisar*.
+. Seleccione *Crear* para crear el grupo de protección.
++
+El nuevo grupo de protección basado en etiquetas aparece en la lista, indicado por un icono de etiqueta.
+
 
 
 

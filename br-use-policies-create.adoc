@@ -34,7 +34,7 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 == Ver políticas
 
 . En el menú NetApp Backup and Recovery , seleccione *Políticas*.
-. Revise estos detalles de la política.
+. Revisa los detalles de la política. Por ejemplo:
 +
 ** *Carga de trabajo*: ejemplos incluyen Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.
 ** *Tipo de copia de seguridad*: Los ejemplos incluyen copia de seguridad completa y copia de seguridad de registros.
@@ -63,166 +63,99 @@ Para obtener información sobre el bloqueo de instantáneas en general, consulte
 .Pasos
 . En el menú NetApp Backup and Recovery , seleccione *Políticas*.
 . Desde la página Políticas, seleccione *Crear nueva política*.
-. En la página Políticas, proporcione la siguiente información.
 +
-** Sección *Detalles*:
+Aparece la página Policies.
+
+. Introduce la información en la sección *Detalles*:
 +
-*** Tipo de carga de trabajo: seleccione la carga de trabajo que utilizará la política.
-*** Introduzca un nombre para la política.
+** Tipo de carga de trabajo: seleccione la carga de trabajo que utilizará la política.
+** Introduzca un nombre para la política.
+** Seleccione un agente de consola de la lista *Agente*.
+
+
+. Introduce información en la sección *Arquitectura de copia de seguridad*. Elige el flujo de datos para el backup de la lista:
 +
-
-TIP: Para ver una lista de caracteres que debes evitar, consulta la sugerencia flotante.
-
-*** Seleccione un agente de consola de la lista *Agente*.
-
-
-** Sección *Arquitectura de respaldo*: seleccione la flecha hacia abajo y elija el flujo de datos para el respaldo, como abanico 3-2-1, cascada 3-2-1 o disco a disco.
-+
-*** *3-2-1 fanout*: Almacenamiento principal (disco) a almacenamiento secundario (disco) a nube (almacén de objetos). Crea varias copias de datos en diferentes sistemas de almacenamiento, como ONTAP a ONTAP y ONTAP a almacén de objetos. Esto puede ser un almacén de objetos de cloud hyperscaler o un almacén de objetos privado. Estas configuraciones ayudan a lograr una protección de datos y recuperación ante desastres óptimas.
-+
-
-NOTE: Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
-
+** *3-2-1 fanout*: Almacenamiento principal (disco) a almacenamiento secundario (disco) a nube (almacén de objetos). Crea múltiples copias de datos a través de diferentes sistemas de almacenamiento, como configuraciones de ONTAP a ONTAP y de ONTAP a almacén de objetos. Puede tratarse de un almacén de objetos de hiperescalado en la nube o de un almacén de objetos privado. Lo mejor para una protección óptima de los datos y la recuperación de desastres. Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
 +
 Para las cargas de trabajo de VMware, esto configura la instantánea local en los almacenes de datos o las máquinas virtuales en el disco primario y replica desde el almacenamiento en disco primario al almacenamiento en disco secundario, como también replica desde el almacenamiento de objetos primario al almacenamiento en la nube.
 
-*** *Cascada 3-2-1*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco) y almacenamiento principal (disco) a almacenamiento en la nube (almacén de objetos). Este puede ser un almacén de objetos de hiperescalador en la nube o un almacén de objetos privado: StorageGRID. Esto crea una cadena de replicación de datos en múltiples sistemas para garantizar la redundancia y la confiabilidad.
-+
-
-NOTE: Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
-
+** *cascada 3-2-1*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento primario (disco) a almacenamiento secundario (disco) y almacenamiento primario (disco) a almacenamiento en la nube (almacén de objetos). Puede ser un almacén de objetos de un hiperescalador en la nube o un almacén de objetos privado como StorageGRID. Esto crea una cadena de replicación de datos en varios sistemas para garantizar la redundancia y la fiabilidad. Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
 +
 Para las cargas de trabajo de VMware, esto configura la instantánea local en los almacenes de datos o las máquinas virtuales en el almacenamiento principal y una cascada desde el almacenamiento en disco principal al almacenamiento en disco secundario y luego al almacenamiento de objetos en la nube.
 
-*** *Disco a disco*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco). La estrategia de protección de datos de ONTAP a ONTAP replica datos entre dos sistemas ONTAP para garantizar alta disponibilidad y recuperación ante desastres. Esto normalmente se logra usando SnapMirror, que admite tanto la replicación sincrónica como la asincrónica. Este método garantiza que sus datos se actualicen continuamente y estén disponibles en múltiples ubicaciones, lo que proporciona una protección sólida contra la pérdida de datos.
+** *Disco a disco*: Almacenamiento primario (disco) a almacenamiento secundario (disco. La estrategia de protección de datos ONTAP a ONTAP replica los datos entre dos sistemas ONTAP para garantizar alta disponibilidad y recuperación ante desastres. Esto normalmente se logra usando SnapMirror, que admite replicación síncrona y asíncrona. Este método mantiene tus datos actualizados y disponibles en todas las ubicaciones para una protección de datos sólida.
 +
 Para las cargas de trabajo de VMware, esto configura la instantánea local en los almacenes de datos o VMware en el sistema de almacenamiento principal y luego replica los datos del sistema de almacenamiento en disco principal al sistema de almacenamiento en disco secundario.
 
-*** *Almacenamiento de disco a objeto*: almacenamiento principal (disco) a la nube (almacenamiento de objetos).  Esto replica datos de un sistema ONTAP a un sistema de almacenamiento de objetos, como AWS S3, Azure Blob Storage o StorageGRID.  Esto normalmente se logra usando SnapMirror Cloud, que proporciona copias de seguridad incrementales permanentes transfiriendo únicamente los bloques de datos modificados después de la transferencia de referencia inicial. Este puede ser un almacén de objetos de hiperescalador en la nube o un almacén de objetos privado: StorageGRID.  Este método es ideal para la retención y el archivo de datos a largo plazo, y ofrece una solución rentable y escalable para la protección de datos.
+** *Almacenamiento en disco a objeto*: Almacenamiento primario (disco) a la nube (almacén de objetos). Esto replica datos de un sistema ONTAP a un sistema de almacenamiento de objetos. Esto puede ser un almacén de objetos de un hiperescalador en la nube o un almacén de objetos privado como StorageGRID. Este método es ideal para la retención y el archivado de datos a largo plazo.
 +
 Para las cargas de trabajo de VMWare, esto configura la instantánea local en los almacenes de datos o las máquinas virtuales en el disco primario y la replicación desde el almacenamiento del disco primario al almacenamiento de objetos en la nube.
 
-*** *Distribución de disco a disco*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco) y almacenamiento principal (disco) a almacenamiento secundario (disco).
-+
-
-NOTE: Puede configurar varias configuraciones secundarias para la opción de distribución de disco a disco.
-
+** *Disk-to-disk fanout*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento primario (disco) a almacenamiento secundario (disco) y almacenamiento primario (disco) a almacenamiento secundario (disco. Puedes configurar varios ajustes secundarios para la opción de disk-to-disk fanout.
 +
 Para las cargas de trabajo de VMware, esto configura el almacenamiento de disco principal en el almacenamiento de disco secundario y replica el almacenamiento de disco principal en el almacenamiento de disco secundario.
 
-*** *Instantáneas locales*: instantánea local en el volumen seleccionado (Microsoft SQL Server). Las instantáneas locales son un componente clave de las estrategias de protección de datos y capturan el estado de sus datos en puntos específicos en el tiempo. Esto crea copias puntuales y de solo lectura de los volúmenes de producción donde se ejecutan sus cargas de trabajo. La instantánea consume un espacio de almacenamiento mínimo y genera una sobrecarga de rendimiento insignificante porque solo registra los cambios en los archivos desde la última instantánea. Puede utilizar instantáneas locales para recuperarse de la pérdida o corrupción de datos, así como para crear copias de seguridad con fines de recuperación ante desastres.
+** *Instantáneas locales*: Instantánea local en el volumen seleccionado. Esto crea copias de solo lectura en un momento específico de los volúmenes de producción donde se están ejecutando tus cargas de trabajo. Puedes usar instantáneas locales para recuperarte de la pérdida o corrupción de datos, así como para crear backups con fines de recuperación ante desastres.
 +
 Para las cargas de trabajo de VMware, esto configura la instantánea local en los almacenes de datos o las máquinas virtuales en el sistema de almacenamiento principal.
 
 
 
-
-
-
-
-
-
-=== Crear una política de instantáneas locales
-
-Proporcionar información para la instantánea local.
-
-* Seleccione la opción *Agregar programación* para seleccionar la programación o las programaciones de instantáneas.  Puedes tener un máximo de 5 horarios.
-* *Frecuencia de instantáneas*: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.  La frecuencia anual no está disponible para las cargas de trabajo de Kubernetes.
-* *Retención de instantáneas*: ingrese la cantidad de instantáneas que desea conservar.
-* *Habilitar copia de seguridad de registros*: (Se aplica únicamente a cargas de trabajo de Microsoft SQL Server y Oracle Database).  Habilite esta opción para realizar copias de seguridad de los registros y establecer la frecuencia y retención de las copias de seguridad de los registros. Para ello es necesario tener ya configurado una copia de seguridad del registro.  Verlink:br-start-configure.html["Configurar directorios de registro"] .
+. Proporciona información para la sección *Configuración local de instantáneas*:
 +
-** *Podar registros de archivo después de la copia de seguridad*: (solo cargas de trabajo de Oracle Database) Si las copias de seguridad de registros están habilitadas, puede habilitar opcionalmente esta función para limitar el tiempo durante el cual Backup and Recovery conserva los registros de archivo de Oracle.  Puede elegir el período de retención, así como también dónde Backup and Recovery debe eliminar los registros de archivo.
-
-
-* *Proveedor*: (solo cargas de trabajo de Kubernetes) Seleccione el proveedor de almacenamiento que aloja los recursos de la aplicación Kubernetes.
-
-
-
-
-=== Crear una política para configuraciones secundarias (replicación al almacenamiento secundario)
-
-Proporcionar información para la replicación al almacenamiento secundario. La información de programación de la configuración de instantáneas locales aparece en la configuración secundaria. Estas configuraciones no están disponibles para las cargas de trabajo de Kubernetes.
-
-* *Copia de seguridad*: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.
-* *Objetivo de la copia de seguridad*: seleccione el sistema de destino en el almacenamiento secundario para la copia de seguridad.
-* *Retención*: Ingrese la cantidad de instantáneas que desea conservar.
-* *Habilitar bloqueo de instantáneas*: seleccione si desea habilitar instantáneas a prueba de manipulaciones.
-* *Período de bloqueo de la instantánea*: ingrese la cantidad de días, meses o años que desea bloquear la instantánea.
-* *Traslado a secundaria*:
+** Seleccione la opción *Agregar programación* para seleccionar la programación o las programaciones de instantáneas.  Puedes tener un máximo de 5 horarios.
+** *Frecuencia de instantáneas*: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.  La frecuencia anual no está disponible para las cargas de trabajo de Kubernetes.
+** *Retención de instantáneas*: ingrese la cantidad de instantáneas que desea conservar.
+** *Habilitar copia de seguridad de registros*: (Se aplica únicamente a cargas de trabajo de Microsoft SQL Server y Oracle Database).  Habilite esta opción para realizar copias de seguridad de los registros y establecer la frecuencia y retención de las copias de seguridad de los registros. Para ello es necesario tener ya configurado una copia de seguridad del registro.  Verlink:br-start-configure.html["Configurar directorios de registro"] .
 +
-** La opción * ONTAP transfer schedule – Inline* está seleccionada de manera predeterminada y eso indica que las instantáneas se transfieren al sistema de almacenamiento secundario inmediatamente.  No es necesario programar la copia de seguridad.
-** Otras opciones: Si eliges una transferencia diferida, las transferencias no son inmediatas y puedes establecer un horario.
+*** *Podar registros de archivo después de la copia de seguridad*: (solo cargas de trabajo de Oracle Database) Si las copias de seguridad de registros están habilitadas, puede habilitar opcionalmente esta función para limitar el tiempo durante el cual Backup and Recovery conserva los registros de archivo de Oracle.  Puede elegir el período de retención, así como también dónde Backup and Recovery debe eliminar los registros de archivo.
 
 
-* * Relación secundaria entre SnapMirror y SnapVault SMAS *: utilice las relaciones secundarias entre SnapMirror y SnapVault SMAS para las cargas de trabajo de SQL Server.
+** *Proveedor*: (Solo cargas de trabajo de Kubernetes) Selecciona el proveedor de almacenamiento que aloja los recursos de aplicaciones de Kubernetes e introduce las credenciales para autenticarte con el proveedor.
 
 
+. Proporciona información para la sección *Configuración secundaria* (replicación en almacenamiento secundario):
++
+** *Copia de seguridad*: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.
+** *Objetivo de la copia de seguridad*: seleccione el sistema de destino en el almacenamiento secundario para la copia de seguridad.
+** *Retención*: Ingrese la cantidad de instantáneas que desea conservar.
+** *Habilitar bloqueo de instantáneas*: seleccione si desea habilitar instantáneas a prueba de manipulaciones.
+** *Período de bloqueo de la instantánea*: ingrese la cantidad de días, meses o años que desea bloquear la instantánea.
+** *Traslado a secundaria*:
++
+*** La opción * ONTAP transfer schedule – Inline* está seleccionada de manera predeterminada y eso indica que las instantáneas se transfieren al sistema de almacenamiento secundario inmediatamente.  No es necesario programar la copia de seguridad.
+*** Otras opciones: Si eliges una transferencia diferida, las transferencias no son inmediatas y puedes establecer un horario.
 
 
-=== Crear una política para la configuración del almacenamiento de objetos
+** * Relación secundaria entre SnapMirror y SnapVault SMAS *: utilice las relaciones secundarias entre SnapMirror y SnapVault SMAS para las cargas de trabajo de SQL Server.
+** *Proveedor*: (Solo cargas de trabajo de Kubernetes) Selecciona el proveedor de almacenamiento que aloja los recursos de aplicaciones de Kubernetes e introduce las credenciales para autenticarte con el proveedor.
 
-Proporcionar información para la copia de seguridad en el almacenamiento de objetos.  Estas configuraciones se denominan "Configuraciones de copia de seguridad" para las cargas de trabajo de Kubernetes.
 
+. Proporciona información para la sección *Configuración del almacén de objetos* (backup al almacén de objetos):
++
 
 NOTE: Los campos que aparecen varían según el proveedor y la arquitectura seleccionados.
 
++
+** *Proveedor*: Selecciona el proveedor para tu almacén de objetos e introduce las credenciales en los campos correspondientes (los campos de credenciales difieren según el proveedor).
+** *Objetivo de respaldo*: seleccione un destino de almacenamiento de objetos registrado.  Asegúrese de que el destino sea accesible dentro de su entorno de respaldo.
+** *IPspace*: seleccione el espacio IP que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varios espacios IP y desea controlar cuál se utiliza para las copias de seguridad.
+** *Configuración de programación*: seleccione la programación que se estableció para las instantáneas locales.  Puedes eliminar una programación, pero no puedes agregar una porque las programaciones se configuran de acuerdo con las programaciones de instantáneas locales.
+** *Copias de retención*: Ingrese la cantidad de instantáneas que desea conservar.
+** *Ejecutar en*: elija la programación de transferencia de ONTAP para realizar una copia de seguridad de los datos en el almacenamiento de objetos.
+** *Ordene sus copias de seguridad por niveles, desde el almacén de objetos hasta el almacenamiento de archivo*: si elige organizar las copias de seguridad por niveles en el almacenamiento de archivo (por ejemplo, AWS Glacier), seleccione la opción de nivel y la cantidad de días que desea archivar.
+** *Activar análisis de integridad*: (No disponible para cargas de trabajo de Kubernetes) Selecciona si quieres activar los análisis de integridad (bloqueo de instantáneas) en el almacenamiento de objetos. Esto garantiza que los backups sean válidos y restaurables. La frecuencia del análisis de integridad se establece en 7 días por defecto. Para proteger tus backups de ser modificados o eliminados, selecciona la opción *Integrity scan*. El análisis solo se realiza en la última instantánea. Puedes activar o desactivar los análisis de integridad en la última instantánea.
 
 
-==== Crear una política para el almacenamiento de objetos de AWS
-
-Introduzca información en estos campos:
-
-* *Proveedor*: Seleccione *AWS*.
-* *Cuenta de AWS*: seleccione la cuenta de AWS.
-* *Objetivo de respaldo*: seleccione un destino de almacenamiento de objetos S3 registrado.  Asegúrese de que el destino sea accesible dentro de su entorno de respaldo.
-* *IPspace*: seleccione el espacio IP que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varios espacios IP y desea controlar cuál se utiliza para las copias de seguridad.
-* *Configuración de programación*: seleccione la programación que se estableció para las instantáneas locales.  Puedes eliminar una programación, pero no puedes agregar una porque las programaciones se configuran de acuerdo con las programaciones de instantáneas locales.
-* *Copias de retención*: Ingrese la cantidad de instantáneas que desea conservar.
-* *Ejecutar en*: elija la programación de transferencia de ONTAP para realizar una copia de seguridad de los datos en el almacenamiento de objetos.
-* *Ordene sus copias de seguridad por niveles, desde el almacén de objetos hasta el almacenamiento de archivo*: si elige organizar las copias de seguridad por niveles en el almacenamiento de archivo (por ejemplo, AWS Glacier), seleccione la opción de nivel y la cantidad de días que desea archivar.
-* *Habilitar escaneo de integridad*: (No disponible para cargas de trabajo de Kubernetes) Seleccione si desea habilitar escaneos de integridad (bloqueo de instantáneas) en el almacenamiento de objetos.  Esto garantiza que las copias de seguridad sean válidas y puedan restaurarse correctamente.  La frecuencia de escaneo de integridad está establecida en 7 días de manera predeterminada.  Para proteger sus copias de seguridad y evitar que se modifiquen o eliminen, seleccione la opción *Análisis de integridad*.  El escaneo ocurre solo en la última instantánea.  Puede habilitar o deshabilitar los análisis de integridad en la última instantánea.
-
-
-
-
-==== Crear una política para el almacenamiento de objetos de Microsoft Azure
-
-Introduzca información en estos campos:
-
-* *Proveedor*: Seleccione *Azure*.
-* *Suscripción de Azure*: seleccione la suscripción de Azure entre las detectadas.
-* *Grupo de recursos de Azure*: seleccione el grupo de recursos de Azure entre los detectados.
-* *Objetivo de respaldo*: seleccione un destino de almacenamiento de objetos registrado.  Asegúrese de que el destino sea accesible dentro de su entorno de respaldo.
-* *IPspace*: seleccione el espacio IP que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varios espacios IP y desea controlar cuál se utiliza para las copias de seguridad.
-* *Configuración de programación*: seleccione la programación que se estableció para las instantáneas locales.  Puedes eliminar una programación, pero no puedes agregar una porque las programaciones se configuran de acuerdo con las programaciones de instantáneas locales.
-* *Copias de retención*: Ingrese la cantidad de instantáneas que desea conservar.
-* *Ejecutar en*: elija la programación de transferencia de ONTAP para realizar una copia de seguridad de los datos en el almacenamiento de objetos.
-* *Ordene sus copias de seguridad por niveles, desde el almacén de objetos hasta el almacenamiento de archivo*: si elige ordenar las copias de seguridad por niveles en el almacenamiento de archivo, seleccione la opción de nivel y la cantidad de días que desea archivar.
-* *Habilitar escaneo de integridad*: (No disponible para cargas de trabajo de Kubernetes) Seleccione si desea habilitar escaneos de integridad (bloqueo de instantáneas) en el almacenamiento de objetos.  Esto garantiza que las copias de seguridad sean válidas y puedan restaurarse correctamente.  La frecuencia de escaneo de integridad está establecida en 7 días de manera predeterminada.  Para proteger sus copias de seguridad y evitar que se modifiquen o eliminen, seleccione la opción *Análisis de integridad*.  El escaneo ocurre solo en la última instantánea.  Puede habilitar o deshabilitar los análisis de integridad en la última instantánea.
-
-
-
-
-==== Crear una política para el almacenamiento de objetos StorageGRID
-
-Introduzca información en estos campos:
-
-* *Proveedor*: Seleccione * StorageGRID*.
-* * Credenciales de StorageGRID *: seleccione las credenciales de StorageGRID entre las detectadas.  Estas credenciales se utilizan para acceder al sistema de almacenamiento de objetos StorageGRID y se ingresaron en la opción Configuración.
-* *Objetivo de respaldo*: seleccione un destino de almacenamiento de objetos S3 registrado.  Asegúrese de que el destino sea accesible dentro de su entorno de respaldo.
-* *IPspace*: seleccione el espacio IP que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varios espacios IP y desea controlar cuál se utiliza para las copias de seguridad.
-* *Configuración de programación*: seleccione la programación que se estableció para las instantáneas locales.  Puedes eliminar una programación, pero no puedes agregar una porque las programaciones se configuran de acuerdo con las programaciones de instantáneas locales.
-* *Copias de retención*: Ingrese la cantidad de instantáneas que desea conservar para cada frecuencia.
-* *Programación de transferencia para almacenamiento de objetos*: (No disponible para cargas de trabajo de Kubernetes) Elija la programación de transferencia de ONTAP para realizar una copia de seguridad de los datos en el almacenamiento de objetos.
-* *Habilitar escaneo de integridad*: (No disponible para cargas de trabajo de Kubernetes) Seleccione si desea habilitar escaneos de integridad (bloqueo de instantáneas) en el almacenamiento de objetos.  Esto garantiza que las copias de seguridad sean válidas y puedan restaurarse correctamente.  La frecuencia de escaneo de integridad está establecida en 7 días de manera predeterminada.  Para proteger sus copias de seguridad y evitar que se modifiquen o eliminen, seleccione la opción *Análisis de integridad*.  El escaneo ocurre solo en la última instantánea.  Puede habilitar o deshabilitar los análisis de integridad en la última instantánea.
-* *Ordene sus copias de seguridad por niveles, desde el almacén de objetos hasta el almacenamiento de archivo*: (No disponible para cargas de trabajo de Kubernetes) Si elige ordenar las copias de seguridad por niveles en el almacenamiento de archivo, seleccione la opción de nivel y la cantidad de días que desea archivar.
 
 
 
 
 === Configurar ajustes avanzados en la política
 
-Opcionalmente, puede configurar opciones avanzadas en la política.  Estas configuraciones están disponibles para todas las arquitecturas de respaldo, incluidas las instantáneas locales, la replicación en almacenamiento secundario y las copias de seguridad en almacenamiento de objetos. Estas configuraciones no están disponibles para las cargas de trabajo de Kubernetes.  Las configuraciones avanzadas disponibles variarán según la carga de trabajo que haya seleccionado en la parte superior de la página, por lo que las configuraciones avanzadas descritas aquí podrían no aplicarse a todas las cargas de trabajo.  Las configuraciones avanzadas no están disponibles al configurar una política para cargas de trabajo de Kubernetes.
+[%collapsible]
+====
+Puedes configurar opcionalmente opciones avanzadas en la política. Puedes usar estas opciones para todas las arquitecturas de backup y destinos de almacenamiento. Las opciones avanzadas disponibles dependen de la carga de trabajo que selecciones en la parte superior de la página, así que algunas opciones descritas aquí podrían no aplicar a todas las cargas de trabajo. No puedes configurar opciones avanzadas para cargas de trabajo de Kubernetes.
 
 .Pasos
 . En el menú NetApp Backup and Recovery , seleccione *Políticas*.
@@ -240,8 +173,8 @@ Opcionalmente, puede configurar opciones avanzadas en la política.  Estas confi
 
 ** *Copia de seguridad de solo copia*: (Se aplica solo a cargas de trabajo de Microsoft SQL Server) Elija la copia de seguridad de solo copia (un tipo de copia de seguridad de Microsoft SQL Server) si necesita realizar una copia de seguridad de sus recursos mediante otra aplicación de copia de seguridad.
 ** *Configuración del grupo de disponibilidad*: (Se aplica solo a cargas de trabajo de Microsoft SQL Server) Seleccione las réplicas de respaldo preferidas o especifique una réplica en particular.  Esta configuración es útil si tiene un grupo de disponibilidad de SQL Server y desea controlar qué réplica se utiliza para las copias de seguridad.
-** *Tasa máxima de transferencia*: para no establecer un límite en el uso del ancho de banda, seleccione *Ilimitado*.  Si desea limitar la velocidad de transferencia, seleccione *Limitado* y seleccione el ancho de banda de red entre 1 y 1000 Mbps asignado para cargar copias de seguridad al almacenamiento de objetos.  De forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de respaldo desde los volúmenes del sistema al almacenamiento de objetos.  Si observa que el tráfico de respaldo afecta las cargas de trabajo normales de los usuarios, considere disminuir la cantidad de ancho de banda de red que se utiliza durante la transferencia.
-** *Reintentos de copia de seguridad*: (No aplicable a cargas de trabajo de VMware) Para reintentar el trabajo en caso de una falla o interrupción, seleccione *Habilitar reintentos de trabajo durante una falla*. Introduzca el número máximo de reintentos de trabajos de instantáneas y de copia de seguridad y el intervalo de tiempo de reintento. El recuento debe ser menor a 10. Esta configuración es útil si desea asegurarse de que el trabajo de respaldo se vuelva a intentar en caso de una falla o interrupción.
+** *Tasa de transferencia máxima*: Para no establecer un límite en el uso del ancho de banda, selecciona *Ilimitado*. Si quieres limitar la tasa de transferencia, selecciona *Limitado* y elige el ancho de banda de red entre 1 y 1,000 Mbps asignado para subir backups al almacén de objetos. De forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de backup desde los volúmenes del sistema al almacén de objetos. Si el tráfico de backup afecta a las cargas de trabajo, reduce el ancho de banda de red para las transferencias.
+** *Reintentos de backup*: (No aplicable a cargas de trabajo de VMware) Para reintentar el trabajo en caso de fallo o interrupción, selecciona *Enable job retries during failure*. Introduce el número máximo de reintentos de trabajos de snapshot y backup y el intervalo de tiempo de reintento. El recuento debe ser menor que 10.
 +
 
 TIP: Si la frecuencia de las instantáneas se establece en 1 hora, la demora máxima junto con el recuento de reintentos no debe superar los 45 minutos.
@@ -272,11 +205,12 @@ Además, configure las siguientes opciones:
 
 
 
+====
 
 
 == Editar una política
 
-Puede editar la arquitectura de respaldo, la frecuencia de respaldo, la política de retención y otras configuraciones para una política.
+Puedes editar la arquitectura de backup, la frecuencia de backup, la política de retención y otros ajustes de una política. Para las políticas de carga de trabajo de Kubernetes, solo puedes editar los ajustes de programación y retención.
 
 Puede agregar otro nivel de protección al editar una política, pero no puede eliminar un nivel de protección.  Por ejemplo, si la política solo protege instantáneas locales, puede agregar replicación al almacenamiento secundario o copias de seguridad al almacenamiento de objetos.  Si tiene instantáneas y replicación locales, puede agregar almacenamiento de objetos.  Sin embargo, si tiene instantáneas locales, replicación y almacenamiento de objetos, no puede eliminar uno de estos niveles.
 

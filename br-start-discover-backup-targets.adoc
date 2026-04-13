@@ -31,10 +31,11 @@ Debe descubrir al menos una carga de trabajo antes de poder agregar un destino d
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
-. Seleccione la pestaña *Destinos de copia de seguridad externos*.
+. Selecciona la pestaña *Objetivos de backup externos gestionados*.
 . Seleccione *Descubrir destino de copia de seguridad*.
-. Seleccione uno de los tipos de destino de copia de seguridad: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
-. En la sección *Elegir ubicación de credenciales*, elija la ubicación donde residen las credenciales y luego elija cómo asociarlas.
+. Selecciona uno de los tipos de destino de backup disponibles: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* o *GCP*.
+. Seleccione *Siguiente*.
+. (Solo para destinos de backup de AWS y Azure) En la sección *Elegir ubicación de credenciales*, elige la ubicación donde residen las credenciales y luego elige cómo asociar las credenciales.
 . Seleccione *Siguiente*.
 . Ingrese la información de las credenciales. Esta información varía según el tipo de destino de copia de seguridad seleccionado y la ubicación de las credenciales elegida.
 +
@@ -71,6 +72,13 @@ Debe descubrir al menos una carga de trabajo antes de poder agregar un destino d
 *** *Clave secreta*: Ingrese la clave secreta de ONTAP S3.
 
 
+** Para GCP:
++
+*** *Nombre de la credencial*: Ingresa el nombre de la credencial de Google Cloud.
+*** *Clave de acceso*: Introduce la clave de acceso de Google Cloud.
+*** *Clave secreta*: Ingresa la clave secreta de Google Cloud.
+
+
 
 
 . Seleccione *Descubrir*.
@@ -84,7 +92,7 @@ En lugar de que NetApp Backup and Recovery descubra los depósitos automáticame
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
-. Seleccione *Destinos de copia de seguridad externos*.
+. Selecciona *Objetivos de backup externos gestionados*.
 . Seleccione el objetivo y a la derecha, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Agregar depósito*.
 . Ingrese la información del depósito.  La información varía según el tipo de destino de copia de seguridad que haya seleccionado.
 +
@@ -135,6 +143,14 @@ En lugar de que NetApp Backup and Recovery descubra los depósitos automáticame
 *** *Capacidad*: Ingrese la capacidad para el depósito ONTAP S3.  Esta es la cantidad máxima de datos que se pueden almacenar en el depósito.
 *** *Habilitar control de versiones*: seleccione esta opción para habilitar el control de versiones para el bucket ONTAP S3.  El control de versiones le permite mantener múltiples versiones de objetos en el depósito, lo que puede resultar útil para fines de copia de seguridad y recuperación.
 *** *Bloqueo de objetos*: seleccione esta opción para habilitar el bloqueo de objetos para el depósito ONTAP S3.  El bloqueo de objetos evita que se eliminen o sobrescriban objetos durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.
+
+
+** Para GCP:
++
+*** *Nombre del bucket*: Ingresa el nombre del bucket de Google Cloud.
+*** *Proyecto GCP*: Selecciona el nombre del proyecto de Google Cloud.
+*** *Región del bucket*: Selecciona una región para el bucket de Google Cloud.
+*** *Bloqueo de objetos*: selecciona esta opción para habilitar los periodos de retención para los objetos en este bucket. Mientras un periodo de retención esté en vigor, los objetos no pueden modificarse ni eliminarse y son inmutables hasta que el periodo expire. Si habilitas esta opción para un bucket, no se puede desactivar.
 
 
 

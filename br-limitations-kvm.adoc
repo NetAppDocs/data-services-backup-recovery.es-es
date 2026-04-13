@@ -25,7 +25,6 @@ Las siguientes acciones y configuraciones no son compatibles en cargas de trabaj
 Las siguientes acciones no son compatibles:
 
 * Clonar, montar o desmontar máquinas virtuales
-* Restaurar máquinas virtuales a una ubicación alternativa
 * Proteger las máquinas virtuales almacenadas en SAN
 * Proteger aplicaciones
 * Crear copias de seguridad definidas por el usuario (solo se admiten las copias de seguridad iniciadas desde la NetApp Console )

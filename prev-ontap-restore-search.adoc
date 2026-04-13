@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-search.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Puede utilizar la función Buscar y restaurar para recuperar volúmenes, carpetas o archivos de archivos de copia de seguridad de ONTAP . 
+summary: Puedes usar Buscar y Restaurar para recuperar volúmenes, carpetas o archivos de los archivos de copia de seguridad de ONTAP. 
 ---
-= Restaurar desde copias de seguridad de ONTAP mediante la función Buscar y restaurar
+= Restaura desde copias de seguridad de ONTAP usando Search and Restore
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede utilizar la función Buscar y restaurar para recuperar volúmenes
 
 
 [role="lead"]
-Puede utilizar la función Buscar y restaurar para recuperar volúmenes, carpetas o archivos de archivos de copia de seguridad de ONTAP .  La función Buscar y Restaurar le permite buscar en todas las copias de seguridad (incluidas las instantáneas locales, los volúmenes replicados y el almacenamiento de objetos) sin necesidad de conocer los nombres exactos del sistema, el volumen o los archivos.
+Puedes usar Buscar y Restaurar para recuperar volúmenes, carpetas o archivos de los archivos de copia de seguridad de ONTAP. Buscar y Restaurar te permite buscar en todas las copias de seguridad (incluyendo instantáneas locales, volúmenes replicados y almacén de objetos) sin necesidad de nombres exactos de sistemas, volúmenes o archivos.
 
 Restaurar desde instantáneas locales o volúmenes replicados suele ser más rápido y menos costoso que restaurar desde almacenamiento de objetos.
 
@@ -121,8 +121,6 @@ Tenga en cuenta que si ya estaba usando NetApp Backup and Recovery con un agente
 
 
 
-
-
 * Requisitos de Azure:
 +
 ** Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") con su suscripción. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Vea cómo registrar este proveedor de recursos para su suscripción"^] .  Debe ser el *Propietario* o *Colaborador* de la suscripción para registrar al proveedor de recursos.
@@ -131,8 +129,6 @@ Tenga en cuenta que si ya estaba usando NetApp Backup and Recovery con un agente
 Tenga en cuenta que si ya estaba usando NetApp Backup and Recovery con un agente de consola que configuró en el pasado, ahora deberá agregar los permisos de Azure Synapse Workspace y Data Lake Storage Account al rol de usuario de consola.  Son necesarios para buscar y restaurar.
 
 ** El agente de consola debe configurarse *sin* un servidor proxy para la comunicación HTTP a Internet.  Si ha configurado un servidor proxy HTTP para su agente de consola, no podrá utilizar la funcionalidad de búsqueda y restauración.
-
-
 
 
 * Requisitos de Google Cloud:
@@ -169,6 +165,10 @@ Incluso si utiliza un agente de consola local, se deben cumplir los requisitos d
 El proceso es así:
 
 . Antes de poder usar Buscar y restaurar, debe habilitar "Indexación" en cada sistema de origen desde el cual desee restaurar datos de volumen.  Esto permite que el Catálogo indexado realice un seguimiento de los archivos de respaldo de cada volumen.
++
+
+NOTE: Backup and Recovery no indexa ninguna instantánea cuya marca de hora de creación coincida exactamente con otra instantánea del mismo volumen.
+
 . Cuando desee restaurar un volumen o archivos desde una copia de seguridad de volumen, en _Buscar y restaurar_, seleccione *Buscar y restaurar*.
 . Ingrese los criterios de búsqueda para un volumen, carpeta o archivo por nombre de volumen parcial o completo, nombre de archivo parcial o completo, ubicación de respaldo, rango de tamaño, rango de fecha de creación, otros filtros de búsqueda y seleccione *Buscar*.
 +

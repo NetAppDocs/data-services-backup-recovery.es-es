@@ -42,8 +42,6 @@ sidebar:
       url: "/task-setup-ca-certificates.html"
     - title: Configure destinos de respaldo antes de usar NetApp Backup and Recovery
       url: "/br-start-setup.html"
-    - title: Inicie sesión en NetApp Backup and Recovery
-      url: "/br-start-login.html"
     - title: Descubrir objetivos de respaldo
       url: "/br-start-discover-backup-targets.html"
     - title: Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery
@@ -54,6 +52,8 @@ sidebar:
       url: "/br-rbac-setup.html"
   - title: Utilice NetApp Backup and Recovery
     entries:
+    - title: Inicie sesión en NetApp Backup and Recovery
+      url: "/br-start-login.html"
     - title: Ver el estado de la protección en el Panel de Control
       url: "/br-use-dashboard.html"
     - title: Crear políticas para gestionar copias de seguridad y restauraciones
@@ -142,13 +142,13 @@ sidebar:
           url: "/br-use-vmware-restore.html"
         - title: Restaurar discos virtuales específicos
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
-        - title: Restaurar archivos y carpetas de invitados
+        - title: Restaurar archivos y carpetas
           entries:
           - title: Flujo de trabajo, requisitos previos y limitaciones
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: Restaurar archivos y carpetas de invitados desde VMDK
+          - title: Restaurar archivos y carpetas desde VMDKs
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
-          - title: Solución de problemas de restauración de archivos de invitados
+          - title: Soluciona problemas al restaurar archivos y carpetas
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: Proteja las cargas de trabajo de KVM
       entries:

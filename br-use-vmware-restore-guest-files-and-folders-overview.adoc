@@ -14,7 +14,7 @@ summary: 'Puede restaurar archivos o carpetas desde un disco de máquina virtual
 
 
 [role="lead"]
-Puede restaurar archivos o carpetas desde un disco de máquina virtual (VMDK) en un sistema operativo invitado Windows.
+Puedes restaurar archivos o carpetas de un disco de máquina virtual (VMDK) en un sistema operativo invitado Windows o Linux.
 
 
 
@@ -44,25 +44,13 @@ Restaurar los archivos o carpetas seleccionados a una ubicación específica.
 
 == Requisitos previos para restaurar archivos y carpetas de invitados
 
-Revise todos los requisitos antes de restaurar archivos o carpetas desde un VMDK en un sistema operativo invitado Windows.
+Revisa todos los requisitos antes de restaurar archivos o carpetas desde un VMDK.
 
 * Las herramientas de VMware deben estar instaladas y en ejecución.
 +
-NetApp Backup and Recovery utiliza información de las herramientas de VMware para establecer una conexión con el sistema operativo invitado VMware.
-
-* El sistema operativo invitado Windows debe ejecutar Windows Server 2008 R2 o posterior.
-+
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] .
-
-* Las credenciales para la máquina virtual de destino utilizan el dominio integrado o la cuenta de administrador local con el nombre de usuario "Administrador". Antes de iniciar la operación de restauración, configure las credenciales de la máquina virtual donde desea conectar el disco virtual. Se requieren credenciales tanto para las operaciones de conexión como para las de restauración. Los usuarios del grupo de trabajo pueden utilizar la cuenta de administrador local incorporada.
-+
-
-IMPORTANT: Si debe utilizar una cuenta que no es la cuenta de administrador integrada, pero tiene privilegios administrativos dentro de la VM, debe deshabilitar UAC en la VM invitada.
+NetApp Backup and Recovery utiliza información de las herramientas de VMware para establecer una conexión con el sistema operativo invitado de VMware.
 
 * Debe conocer la instantánea de respaldo y el VMDK desde donde restaurar.
-+
-NetApp Backup and Recovery no admite la búsqueda de archivos o carpetas para restaurar. Antes de comenzar, debe saber dónde están los archivos o carpetas en la instantánea y el VMDK correspondiente.
-
 * El disco virtual que se conectará debe estar en una copia de seguridad de NetApp Backup and Recovery .
 +
 El disco virtual que contiene el archivo o la carpeta que desea restaurar debe estar en una copia de seguridad de VM realizada con NetApp Backup and Recovery.
@@ -75,6 +63,38 @@ Puede restaurar archivos con nombres no alfabéticos, como kanji japoneses, rest
 
 
 
+Para obtener la información más reciente sobre la compatibilidad con sistemas operativos invitados, consulta la  https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^].
+
+
+
+=== Invitados de Windows
+
+* El sistema operativo invitado Windows debe ejecutar Windows Server 2008 R2 o posterior.
++
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] .
+
+* Las credenciales para la máquina virtual de destino utilizan el dominio integrado o la cuenta de administrador local con el nombre de usuario "Administrador". Antes de iniciar la operación de restauración, configure las credenciales de la máquina virtual donde desea conectar el disco virtual. Se requieren credenciales tanto para las operaciones de conexión como para las de restauración. Los usuarios del grupo de trabajo pueden utilizar la cuenta de administrador local incorporada.
++
+
+IMPORTANT: Si debe utilizar una cuenta que no es la cuenta de administrador integrada, pero tiene privilegios administrativos dentro de la VM, debe deshabilitar UAC en la VM invitada.
+
+
+
+
+
+=== Huéspedes Linux
+
+* Se admiten las siguientes distribuciones de SO huésped:
++
+** Red Hat Enterprise Linux
+** Ubuntu
+** Debian
+
+
+* La cuenta Run-As necesita permisos de root o sudo.
+* Para la restauración entre máquinas virtuales (restaurar en una máquina virtual Linux diferente), SSH debe estar ejecutándose en la máquina virtual de destino.
+
+
 
 
 == Limitaciones de restauración de archivos de invitados
@@ -85,10 +105,7 @@ Antes de restaurar un archivo o carpeta desde un sistema operativo invitado, deb
 * Si restaura un archivo o una carpeta cifrados, el atributo de cifrado no se conserva.
 * No se pueden restaurar archivos o carpetas en una carpeta cifrada.
 * Los archivos y carpetas ocultos se muestran en la página de exploración de archivos y no es posible filtrarlos.
-* No se puede restaurar desde un sistema operativo invitado Linux.
-+
-No es posible restaurar archivos ni carpetas desde una máquina virtual que ejecuta un sistema operativo invitado Linux. Sin embargo, puede adjuntar un VMDK y luego restaurar manualmente los archivos y carpetas. Para obtener la información más reciente sobre los sistemas operativos invitados compatibles, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] .
-
+* No se pueden restaurar archivos o carpetas entre huéspedes con sistemas operativos diferentes (cuando se restaura a una máquina virtual diferente, el tipo de sistema operativo de destino debe ser el mismo que el tipo de sistema operativo de origen).
 * No se puede restaurar desde un sistema de archivos NTFS a un sistema de archivos FAT.
 +
 Cuando intenta restaurar del formato NTFS al formato FAT, el descriptor de seguridad NTFS no se copia porque el sistema de archivos FAT no admite los atributos de seguridad de Windows.

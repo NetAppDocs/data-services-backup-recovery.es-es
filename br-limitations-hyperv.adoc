@@ -23,11 +23,6 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 Las siguientes acciones no son compatibles en las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
 
 * Cree grupos de recursos utilizando máquinas virtuales de varios hosts Hyper-V.
-* Restaurar máquinas virtuales a una ubicación alternativa
 * Expansión de discos (en varios recursos compartidos CIFS)
-* Proteger las máquinas virtuales a través de SAN
 * No se pueden restaurar máquinas virtuales ni datos de máquinas virtuales entre sistemas con diferentes proveedores de CPU (de Intel a AMD o viceversa), independientemente de la configuración de "Compatibilidad de procesadores" en Hyper-V. Esta configuración solo admite la compatibilidad entre diferentes generaciones del mismo proveedor (por ejemplo, de Intel a Intel o de AMD a AMD).
 
-
-
-NOTE: En la versión del 19 de enero de 2026, no es posible actualizar los complementos de NetApp para Hyper-V o Windows mediante la opción *Actualizar* en el menú Acciones. En su lugar, elimine cada host de Hyper-V y agréguelo nuevamente para actualizar los complementos.

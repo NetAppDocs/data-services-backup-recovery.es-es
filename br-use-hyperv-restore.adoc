@@ -47,13 +47,13 @@ Al restaurar cargas de trabajo, ocurre lo siguiente:
 * Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo en el sistema original o en un sistema ONTAP local.
 
 
-Desde la página Restaurar (también conocida como Buscar y restaurar), puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez. Puede buscar la instantánea utilizando filtros.
+Desde la página Restaurar, puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que reside o la fecha en la que estuvo en buen estado por última vez. Puedes buscar la instantánea usando filtros.
 
 
 
-== Restaurar datos de carga de trabajo desde la opción Restaurar (Buscar y restaurar)
+== Restaurar cargas de trabajo de Hyper-V
 
-Restaure las cargas de trabajo de Hyper-V mediante la opción Restaurar. Puede buscar la instantánea por su nombre o utilizando filtros.
+Restaura cargas de trabajo Hyper-V usando el menú Restaurar. Puedes buscar la instantánea por su nombre o usando filtros.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -72,48 +72,48 @@ Aparece una lista de posibles puntos de restauración.
 . Seleccione una ubicación de origen de la instantánea.
 . Seleccione *Siguiente* para continuar.
 . Elija el destino de restauración y la configuración:
-
-
++
 [discrete]
 ===== Selección de destino
 
++
 [role="tabbed-block"]
 ====
 .Restaurar a la ubicación original
 --
-Al restaurar a la ubicación original, podrá ver las configuraciones de destino expandiendo la sección *Configuraciones de destino*, pero no podrá cambiarlas.
-
-. En la sección *Opciones posteriores a la restauración*, considere la siguiente opción:
+.. Selecciona el panel *Ubicación original*. Cuando restaures a la ubicación original, puedes ver la configuración de destino expandiendo la sección *Configuración de destino*, pero no puedes cambiarla.
+.. En la sección *Opciones posteriores a la restauración*, considere la siguiente opción:
 +
-** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
+*** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
 
 
-. Seleccione *Restaurar*.
 
 
 --
 .Restaurar a una ubicación alternativa
 --
-. En la sección *Configuración de destino*, ingrese la siguiente información:
+.. Seleccione el panel *Ubicación alternativa*.
+.. En la sección *Configuración de destino*, ingrese la siguiente información:
 +
-** *FQDN o dirección IP de Hyper-V*: ingrese el nombre de dominio completo o la dirección IP del host Hyper-V de destino.
-** *Red*: Seleccione la red de destino donde desea restaurar la instantánea.
-** *Nombre de la máquina virtual*: Ingrese el nombre de la máquina virtual que desea restaurar.
-** *Ubicación de destino*: ingrese la carpeta de destino o el recurso compartido CIFS que debe contener los datos restaurados.
+*** *FQDN o dirección IP de Hyper-V*: ingrese el nombre de dominio completo o la dirección IP del host Hyper-V de destino.
+*** *Red*: Seleccione la red de destino donde desea restaurar la instantánea.
+*** *Nombre de la máquina virtual*: Ingrese el nombre de la máquina virtual que desea restaurar.
+*** *Ubicación de destino*: ingrese la carpeta de destino o el recurso compartido CIFS que debe contener los datos restaurados.
 
 
-. En la sección *Opciones previas a la restauración*, considere las siguientes opciones:
+.. En la sección *Opciones previas a la restauración*, considere las siguientes opciones:
 +
-** *Restauración rápida*: habilite esta opción para que la máquina virtual restaurada esté disponible de inmediato. Solo se restauran desde el almacén de objetos los archivos necesarios para ejecutar la máquina virtual, en lugar del volumen completo.
+*** *Restauración rápida*: habilite esta opción para que la máquina virtual restaurada esté disponible de inmediato. Solo se restauran desde el almacén de objetos los archivos necesarios para ejecutar la máquina virtual, en lugar del volumen completo.
 
 
-. En la sección *Opciones posteriores a la restauración*, considere las siguientes opciones:
+.. En la sección *Opciones posteriores a la restauración*, considere las siguientes opciones:
 +
-** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
+*** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
 
 
-. Seleccione *Restaurar*.
 
 
 --
 ====
+. Seleccione *Restaurar*.
+

@@ -18,6 +18,77 @@ Descubra las novedades en NetApp Backup and Recovery.
 
 
 
+== 13 abril 2026
+
+Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
+
+
+
+=== Mejoras en las cargas de trabajo de ONTAP Volumes
+
+En esta versión, las cargas de trabajo de ONTAP Volumes introducen la siguiente mejora:
+
+*NetApp MetroCluster configuraciones activo/activo compatibles*: NetApp Backup and Recovery for Volumes ahora admite MetroCluster en la configuración activo-activo.
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descripción general de la protección de cargas de trabajo de ONTAP Volumes"].
+
+
+
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras en la política de protección:
+
+* *Editar políticas de protección*: Ahora puedes editar las políticas de protección de la carga de trabajo de Kubernetes si necesitas cambiar
+* *Compatibilidad disco a disco*: Ahora puedes configurar las políticas de protección de Kubernetes con una arquitectura de backup de disco a disco.
+* *Compatibilidad con cubos de almacenamiento de Google Cloud Platform*: Ahora puedes configurar las políticas de protección de Kubernetes para hacer backup en los buckets de almacenamiento de Google Cloud Platform.
+
+
+Para más información sobre las políticas de protección, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Crea y gestiona políticas de protección en NetApp Backup and Recovery"].
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+
+
+
+=== Mejoras en las cargas de trabajo de Hyper-V
+
+En esta versión, las cargas de trabajo Hyper-V introducen las siguientes mejoras:
+
+* *Mejora de la gestión de tareas*: Backup and Recovery ahora gestiona varios trabajos simultáneos de forma más eficiente.
+* *Soporte SAN (vista previa)*: Backup and Recovery ahora admite la protección de máquinas virtuales Hyper-V almacenadas en almacenamiento SAN.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+
+
+
+=== Mejoras en las cargas de trabajo KVM
+
+En esta versión, las cargas de trabajo KVM introducen las siguientes mejoras:
+
+* *Mejora de la gestión de tareas*: Backup and Recovery ahora gestiona varios trabajos simultáneos de forma más eficiente.
+* *Restaurar a ubicación alternativa (vista previa)*: Ahora puedes restaurar las máquinas virtuales KVM a un destino alternativo. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Restaurar máquinas virtuales KVM con NetApp Backup and Recovery"].
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+
+
+
+=== Mejoras en las cargas de trabajo de VMware
+
+En esta versión, VMware workloads introduce las siguientes mejoras:
+
+* *Protección basada en etiquetas*: Backup and Recovery para cargas de trabajo de VMware ahora admite la protección basada en etiquetas para máquinas virtuales almacenadas en volúmenes NFS y VMFS, lo que te permite crear grupos de protección a partir de etiquetas de vCenter en lugar de a partir de máquinas virtuales o almacenes de datos individuales. Cuando etiquetas máquinas virtuales y almacenes de datos en vCenter, Backup and Recovery los descubre automáticamente y los incluye en futuras copias de seguridad sin ningún mantenimiento manual de grupos. Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["Crear y gestionar grupos de protección"].
+* *Restaurar en un sistema de almacenamiento alternativo*: Ahora puedes restaurar máquinas virtuales en un sistema de almacenamiento alternativo incluso cuando el sistema de almacenamiento original (principal) está completamente fuera de servicio. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Restaurar cargas de trabajo de VMware"].
+* *Restaurar archivos en máquinas virtuales Linux*: Ahora puedes restaurar archivos y carpetas de máquinas virtuales en máquinas virtuales Linux. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html["Restaurar archivos y carpetas"].
+* *Compatibilidad con máquinas virtuales proxy al restaurar archivos y carpetas* - ahora puedes restaurar archivos y carpetas en otras máquinas virtuales alojadas en el vCenter de origen. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Restaurar cargas de trabajo de VMware"].
+* *Búsqueda recursiva de archivos y carpetas* - Ahora puedes buscar en todo un VMDK un archivo o carpeta específicos. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Restaurar cargas de trabajo de VMware"].
+* *Mejora de la gestión de tareas*: Backup and Recovery ahora gestiona varios trabajos simultáneos de forma más eficiente.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .
+
+
+
 == 31 de marzo de 2026
 
 Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
