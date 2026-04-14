@@ -24,7 +24,7 @@ Las operaciones de restauración del sistema operativo invitado incluyen los sig
 
 . Adjuntar
 +
-Conecte un disco virtual a una máquina virtual invitada e inicie una sesión de restauración de archivos de invitado.
+Conecta un disco virtual a una máquina virtual huésped o proxy y comienza una sesión de restauración de archivos huésped.
 
 . Esperar
 +
@@ -32,7 +32,7 @@ Espere a que se complete la operación de conexión antes de poder explorar y re
 
 . Seleccionar archivos o carpetas
 +
-Examine los archivos VMDK y seleccione uno o más archivos o carpetas para restaurar.
+Examina o busca los archivos del disco virtual y selecciona uno o varios archivos o carpetas para restaurar.
 
 . Restaurar
 +
@@ -55,7 +55,9 @@ NetApp Backup and Recovery utiliza información de las herramientas de VMware pa
 +
 El disco virtual que contiene el archivo o la carpeta que desea restaurar debe estar en una copia de seguridad de VM realizada con NetApp Backup and Recovery.
 
-
+* Para usar una máquina virtual proxy, la máquina virtual proxy debe estar configurada.
++
+Si quieres adjuntar un disco virtual a una VM proxy, la VM proxy debe estar configurada antes de que comience la operación de adjuntar y restaurar.
 
 * Para los archivos cuyos nombres no estén en alfabeto inglés, debe restaurarlos en un directorio, no como un solo archivo.
 +
