@@ -312,21 +312,24 @@ CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza ext
 
 Eliminar todas las copias de seguridad de un volumen también deshabilita las copias de seguridad futuras para ese volumen.
 
+
+NOTE: No puedes eliminar archivos individuales de copia de seguridad de un volumen una vez que se ha eliminado la relación de copia de seguridad. Elimina los archivos de copia de seguridad de un volumen antes de eliminar la relación de copia de seguridad del volumen.
+
 .Pasos
-. Desde la pestaña *Volúmenes*, haga clic enimage:icon-actions-horizontal.gif["Icono más"] para el volumen de origen y seleccione *Detalles y lista de respaldo*.
+. En el menú *Volúmenes*, haz clic en image:icon-actions-horizontal.gif["Icono más"] para el volumen de origen y selecciona *Gestionar copias de seguridad > Ver copia de seguridad*.
 +
 Se muestra la lista de todos los archivos de respaldo.
 
-. Seleccione *Acciones* > *Eliminar todas las copias de seguridad*.
-. Introduzca el nombre del volumen.
-. Seleccione *Configuración avanzada*.
-. *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
+. Elige una copia de seguridad de la lista y selecciona *Acciones > Eliminar todas las copias de seguridad*.
+. Confirma la eliminación introduciendo el nombre del volumen.
+. Expande el área de *Configuración avanzada*.
+. En *Forzar borrado de copias de seguridad*, selecciona si quieres forzar el borrado de todas las copias de seguridad.
 +
-En algunos casos extremos, es posible que desee que NetApp Backup and Recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las desea. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puedes usar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y sistema).
+En raras ocasiones, podrías necesitar revocar el acceso de NetApp Backup and Recovery a las copias de seguridad; por ejemplo, si Backup and Recovery pierde acceso al bucket de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las quieres. Usa esta opción para forzar la eliminación de copias de seguridad a nivel de volumen y sistema.
 
 +
 
-CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza extremas. NetApp Backup and Recovery ya no tendrá acceso a estas copias de seguridad incluso si no se eliminan del almacenamiento de objetos. Necesitará ir a su proveedor de nube y eliminar manualmente las copias de seguridad.
+CAUTION: Usa esta opción solo para limpiezas extremas. Una vez activada, NetApp Backup and Recovery ya no accederá a estas copias de seguridad (aunque los objetos permanezcan en el almacenamiento en la nube). Debes eliminarlas manualmente de tu proveedor de nube.
 
 . Seleccione *Eliminar*.
 
@@ -335,9 +338,10 @@ CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza ext
 
 === Eliminar un solo archivo de respaldo para un volumen
 
-Puede eliminar un solo archivo de respaldo si ya no lo necesita. Esto incluye eliminar una única copia de seguridad de una instantánea de volumen o de una copia de seguridad en almacenamiento de objetos.
+Elimina una copia de seguridad individual cuando ya no la necesites. No puedes eliminar volúmenes replicados (volúmenes de protección de datos).
 
-No se pueden eliminar volúmenes replicados (volúmenes de protección de datos).
+
+NOTE: No puedes eliminar archivos de copia de seguridad de volumen individuales una vez que se ha eliminado la relación de copia de seguridad. Sin embargo, puedes <<Eliminar todos los archivos de respaldo de un volumen,eliminar todos los archivos de copia de seguridad del volumen>>.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono más"] para el volumen de origen y seleccione *Ver detalles del volumen*.
@@ -362,7 +366,7 @@ Esta función solo está disponible si su sistema ejecuta ONTAP 9.12.1 o superio
 No se puede eliminar el volumen de origen desde la interfaz de usuario de NetApp Backup and Recovery .  Sin embargo, puede abrir la página Detalles del volumen en la página *Sistemas* de la consola y https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Borra el volumen de ahí"] .
 
 
-NOTE: No es posible eliminar archivos de respaldo de volúmenes individuales una vez que se haya eliminado la relación.  Sin embargo, puedes eliminar todas las copias de seguridad del volumen.
+NOTE: No puedes eliminar archivos de copia de seguridad de volúmenes individuales una vez que se ha eliminado la relación de copia de seguridad. Sin embargo, puedes <<Eliminar todos los archivos de respaldo de un volumen,eliminar todos los archivos de copia de seguridad del volumen>>. Si necesitas eliminar una relación de copia de seguridad para un volumen, asegúrate de eliminar primero las copias de seguridad del volumen y luego elimina la relación de copia de seguridad.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el volumen de origen y seleccione *Copia de seguridad* > *Eliminar relación*.
@@ -372,7 +376,7 @@ NOTE: No es posible eliminar archivos de respaldo de volúmenes individuales una
 
 == Desactivar NetApp Backup and Recovery para un sistema
 
-Al desactivar NetApp Backup and Recovery para un sistema, se deshabilitan las copias de seguridad de cada volumen del sistema y también se deshabilita la capacidad de restaurar un volumen.  No se eliminarán ninguna copia de seguridad existente.  Esto no anula el registro del servicio de respaldo de este sistema; básicamente, le permite pausar toda la actividad de respaldo y restauración por un período de tiempo.
+La desactivación de NetApp Backup and Recovery para un sistema pausa las copias de seguridad y las restauraciones para todos sus volúmenes sin eliminar las copias de seguridad existentes. Esto te permite pausar toda la actividad de copia de seguridad y restauración durante un período de tiempo sin dar de baja el servicio de copia de seguridad de este sistema.
 
 Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de almacenamiento de objetos por la capacidad que utilizan sus copias de seguridad a menos que<<Eliminar copias de seguridad,eliminar las copias de seguridad>> .
 
