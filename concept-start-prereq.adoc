@@ -113,6 +113,7 @@ Necesita requisitos específicos para descubrir y proteger sus cargas de trabajo
 | Almacenamiento conectado  a| 
 * ONTAP 9.13.1 o posterior
 * Amazon FSx para sistemas de almacenamiento NetApp ONTAP que ejecuten la versión 9.13.1 o posterior
+* Sistemas ASA r2 solo SAN (se requiere ONTAP 9.17.1 o posterior)
 
 
 |===

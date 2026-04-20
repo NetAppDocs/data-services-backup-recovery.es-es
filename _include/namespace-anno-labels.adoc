@@ -6,12 +6,18 @@
 
 == Anotaciones y etiquetas de namespace durante las operaciones de restauración y conmutación por error
 
-Durante las operaciones de restauración y conmutación por error, las etiquetas y anotaciones en el espacio de nombres de destino se hacen coincidir con las etiquetas y anotaciones en el espacio de nombres de origen. Las etiquetas o anotaciones del espacio de nombres de origen que no existen en el espacio de nombres de destino se añaden, y cualquier etiqueta o anotación que ya exista se sobrescribe para que coincida con el valor del espacio de nombres de origen. Las etiquetas o anotaciones que existen solo en el espacio de nombres de destino permanecen sin cambios.
+Durante la restauración y la conmutación por error, las etiquetas y anotaciones del espacio de nombres de destino se actualizan para que coincidan con las del origen: las claves del origen se añaden a las claves de destino o las sobrescriben, mientras que las claves que solo existen en el destino no se modifican.
 
 
-NOTE: Si usas Red Hat OpenShift, es importante que notes el papel fundamental de las anotaciones de espacios de nombres en entornos OpenShift. Las anotaciones de espacios de nombres aseguran que los pods restaurados sigan los permisos y configuraciones de seguridad apropiados definidos por las restricciones de contexto de seguridad (SCC) de OpenShift y puedan acceder a los volúmenes sin problemas de permisos. Para más información, consulta el link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/authentication_and_authorization/managing-pod-security-policies["OpenShift documentación de restricciones de contexto de seguridad"^].
+NOTE: En Red Hat OpenShift, las anotaciones de espacio de nombres son importantes porque garantizan que los pods restaurados reciban las restricciones y permisos de contexto de seguridad correctos, lo que les permite acceder a los volúmenes y ejecutarse sin errores de permisos. Para más información, consulta link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/authentication_and_authorization/managing-pod-security-policies["OpenShift documentación de restricciones de contexto de seguridad"^].
 
-Puedes evitar que se sobrescriban anotaciones específicas en el espacio de nombres de destino configurando la variable de entorno de Kubernetes `RESTORE_SKIP_NAMESPACE_ANNOTATIONS` antes de realizar la restauración o la conmutación por error. Por ejemplo:
+Establece la variable de entorno de Kubernetes
+
+[listing]
+----
+RESTORE_SKIP_NAMESPACE_ANNOTATIONS
+----
+antes de la restauración o conmutación por error para evitar que se sobrescriban anotaciones específicas del espacio de nombres de destino. Por ejemplo:
 
 [source, console]
 ----
@@ -20,15 +26,15 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
   --reuse-values
 ----
 
-NOTE: Al realizar una operación de restauración o conmutación por error, las anotaciones y etiquetas de espacios de nombres especificadas en `restoreSkipNamespaceAnnotations` y `restoreSkipNamespaceLabels` quedan excluidas de la operación de restauración o conmutación por error. Asegúrate de que estos ajustes se configuren durante la instalación inicial de Helm. Para obtener más información, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configura los ajustes adicionales del helm chart de Trident Protect"].
+NOTE: Durante la restauración o conmutación por error, las anotaciones y etiquetas de espacios de nombres especificadas en `restoreSkipNamespaceAnnotations` y `restoreSkipNamespaceLabels` se excluyen de la operación de restauración o conmutación por error. Asegúrate de que estos ajustes se configuren durante la instalación inicial de Helm. Para obtener más información, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configura los ajustes adicionales del helm chart de Trident Protect"].
 
-Si instalaste la aplicación de origen usando Helm con la `--create-namespace` flag, se da un tratamiento especial a la clave de etiqueta `name`. Durante el proceso de restauración o conmutación por error, Trident Protect copia esta etiqueta al espacio de nombres de destino, pero actualiza el valor al valor del espacio de nombres de destino si el valor del origen coincide con el espacio de nombres de origen. Si este valor no coincide con el espacio de nombres de origen, se copia al espacio de nombres de destino sin cambios.
+Si utilizaste Helm con el indicador `--create-namespace` para instalar la aplicación de origen, Trident Protect copia la etiqueta del nombre al espacio de nombres de destino. Si el valor de la etiqueta coincide con el nombre del espacio de nombres de origen, se reemplaza por el nombre del espacio de nombres de destino; si no, se deja igual.
 
 
 
 === Ejemplo
 
-El siguiente ejemplo presenta un espacio de nombres de origen y uno de destino, cada uno con anotaciones y etiquetas diferentes. Puedes ver el estado del espacio de nombres de destino antes y después de la operación, y cómo se combinan o sobrescriben las anotaciones y etiquetas en el espacio de nombres de destino.
+El siguiente ejemplo muestra los espacios de nombres de origen y destino con diferentes etiquetas y anotaciones, y muestra el espacio de nombres de destino antes y después de la operación para ilustrar cómo se añaden, fusionan o sobrescriben las claves.
 
 
 
