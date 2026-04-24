@@ -231,6 +231,8 @@ sidebar:
       url: "/br-use-monitor-tasks.html"
     - title: Reiniciar NetApp Backup and Recovery
       url: "/reference-restart-backup.html"
+    - title: Activar la vista previa y las funciones ocultas
+      url: "/enable-preview-features.html"
   - title: Automatizar con la API REST
     url: "/br-api-backup-restore.html"
   - title: Referencia

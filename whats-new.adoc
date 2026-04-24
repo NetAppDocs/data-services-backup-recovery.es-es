@@ -28,8 +28,7 @@ Esta versión de NetApp Backup and Recovery incluye las siguientes actualizacion
 
 En esta versión, VMware workloads introduce la siguiente mejora:
 
-* *Compatibilidad con ASA r2 SAN*: Las cargas de trabajo de VMware ahora admiten la protección de máquinas virtuales en almacenes de datos VMFS alojados en entornos NetApp ASA r2 solo SAN.
-
+*Compatibilidad con ASA r2 SAN*: Las cargas de trabajo de VMware ahora admiten la protección de máquinas virtuales en almacenes de datos VMFS alojados en entornos NetApp ASA r2 solo SAN.
 
 Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .
 

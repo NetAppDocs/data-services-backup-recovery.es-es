@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: enable-preview-features.html 
+keywords: preview features, preview, Backup and Recovery, configuration, NetApp Backup and Recovery 
+summary: Habilita la vista previa y las funciones ocultas para NetApp Backup and Recovery. 
+---
+= Activar la vista previa y las funciones ocultas para NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Habilita la vista previa y las funciones ocultas para NetApp Backup and Recovery.
+
+*Rol de NetApp Console requerido* Superadministrador de backup y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+
+
+
+== Funciones de previsualización disponibles
+
+Puedes activar las siguientes funciones de vista previa para NetApp Backup and Recovery.
+
+[cols="50,50"]
+|===
+| Indicador de funcionalidad | Descripción de la función 
+
+
+| `"folder-restore-from-local": true` | Habilita la restauración a nivel de carpeta a partir de instantáneas de volúmenes locales de ONTAP. Por defecto, ONTAP solo admite la restauración de carpetas a partir de copias de seguridad de almacenamiento de objetos. Con este indicador habilitado, también puedes restaurar directorios completos a partir de instantáneas locales y replicadas. 
+
+
+| `"prioritize-restore": true` | Hace que la opción *Priorizar la restauración sobre la cola de trabajos existente* se pueda seleccionar durante el flujo de trabajo de restauración en la interfaz web de NetApp Backup and Recovery. Cuando seleccionas esta opción durante el flujo de trabajo de restauración, las operaciones de restauración tienen prioridad sobre otros trabajos en cola, así que se ejecutan incluso cuando la cola está ocupada. 
+|===
+
+
+== Activar funciones de vista previa
+
+Habilita las opciones del indicador de funciones de vista previa para usar funcionalidades que aún no están disponibles de forma general. Usa las funciones de vista previa con precaución en entornos de producción.
+
+.Pasos
+. Usa SSH para iniciar sesión en el agente de la consola.
+. Cambia al usuario raíz:
++
+[source, console]
+----
+sudo su
+----
+. Encuentra el volumen de Backup and Recovery en Docker:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+El resultado debería ser similar al siguiente:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Encuentra el punto de montaje del volumen:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+El punto de montaje difiere entre los despliegues en nube y privados. Este ejemplo de salida muestra un despliegue en nube:
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Cambia al directorio docker volume config, que está dentro del directorio mountpoint. Por ejemplo:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+----
+. Crea un archivo que contenga la siguiente estructura JSON y un par clave/valor para cada indicador de función que quieras activar. Nombra el archivo según tu tipo de implementación:
++
+** Despliegue en la nube: `production-customer.json`
+** Despliegue en sitios privados / oscuros: `darksite-customer.json`
++
+Consulta <<anchor-flags,banderas disponibles>> para obtener información sobre los indicadores de características. Por ejemplo:
+
++
+[source, json]
+----
+{
+  "feature-flags": {
+    "folder-restore-from-local": true,
+    "prioritize-restore": true
+  }
+}
+----
+
+
+. Reinicia el contenedor de NetApp Backup and Recovery:
++
+[source, console]
+----
+docker restart cloudmanager_cbs
+----
+. Vuelve a cargar la interfaz de usuario de NetApp Backup and Recovery en tu navegador web.
++
+
+NOTE: Para desactivar una función de vista previa, sigue los mismos pasos pero establece el valor del indicador de función en `false`.
+
+
+
+
+
+== Desactivar la indexación de todos los volúmenes que pertenecen a una storage VM
+
+Sigue estos pasos para desactivar la indexación de todos los volúmenes que pertenecen a una máquina virtual de almacenamiento específica, en lugar de desactivar la indexación de cada volumen individual.
+
+.Pasos
+. Usa SSH para iniciar sesión en el agente de la consola.
+. Cambia al usuario raíz:
++
+[source, console]
+----
+sudo su
+----
+. Encuentra el volumen de Backup and Recovery en Docker:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+El resultado debería ser similar al siguiente:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Encuentra el punto de montaje del volumen:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+El punto de montaje difiere entre los despliegues en nube y privados. Este ejemplo de salida muestra un despliegue en nube:
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Cambia al directorio docker volume config, que está dentro del directorio mountpoint. Por ejemplo:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
+----
+. Crea un archivo llamado `production-customer.json` con el siguiente contenido. Reemplaza los nombres de las máquinas virtuales de almacenamiento del ejemplo por los nombres de las máquinas virtuales de almacenamiento de tu entorno:
++
+[source, json]
+----
+{
+  "indexing": {
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+  }
+}
+----
+. Reinicia el contenedor del catálogo de indexación de NetApp Backup and Recovery:
++
+[source, console]
+----
+docker restart cloudmanager_cbs_catalog
+----
+
