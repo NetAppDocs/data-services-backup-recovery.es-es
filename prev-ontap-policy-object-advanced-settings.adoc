@@ -102,7 +102,7 @@ Cuando selecciona la etiqueta de copia de seguridad "anual" para una política d
 
 Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de escaneo es de 7 días. El escaneo ocurre solo en la última instantánea.
 
-Para obtener detalles sobre las opciones de DataLock y Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opciones de DataLock y resiliencia ante ransomware"] .
+Para obtener más información sobre las opciones de protección Datalock y Ransomware, consulta link:prev-ontap-policy-object-options.html["Opciones de protección de Datalock y ransomware"].
 
 Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
 

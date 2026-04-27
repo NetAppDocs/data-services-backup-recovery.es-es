@@ -193,7 +193,7 @@ Dado que NetApp Backup and Recovery preserva las eficiencias de almacenamiento d
 
 
 * Si planea restaurar datos de volumen desde un archivo de respaldo que se ha movido al almacenamiento de objetos de archivo, entonces hay una tarifa de recuperación adicional por GiB y una tarifa por solicitud del proveedor de la nube.
-* Si planea escanear un archivo de respaldo en busca de ransomware durante el proceso de restauración de datos de volumen (si ha habilitado DataLock y Ransomware Resilience para sus copias de seguridad en la nube), también incurrirá en costos de salida adicionales de su proveedor de la nube.
+* Si planeas escanear un archivo de backup en busca de ransomware durante el proceso de restauración de datos de volumen (si has activado la protección Datalock y Ransomware para tus backups en la nube), también incurrirás en costes de salida adicionales de tu proveedor de nube.
 
 
 *Cargos por servicio*
@@ -311,7 +311,7 @@ TIP: El período de retención de las copias de seguridad de los volúmenes de p
 
 === Configuración de protección de archivos de respaldo
 
-Si su clúster usa ONTAP 9.11.1 o superior, puede proteger sus copias de seguridad en el almacenamiento de objetos contra ataques de eliminación y ransomware.  Cada política de respaldo proporciona una sección para _DataLock y Resiliencia ante ransomware_ que se puede aplicar a sus archivos de respaldo durante un período de tiempo específico: el _período de retención_.
+Si tu clúster está usando ONTAP 9.11.1 o superior, puedes proteger tus backups en el almacenamiento de objetos contra el borrado y ataques de ransomware. Cada política de backup ofrece una sección para _Datalock y protección contra ransomware_ que puedes aplicar a tus archivos de backup durante un periodo de tiempo específico: el _periodo de retención_.
 
 * _DataLock_ protege sus archivos de respaldo para que no sean modificados ni eliminados.
 * La _protección contra ransomware_ escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware cuando se crea un archivo de respaldo y cuando se restauran los datos de un archivo de respaldo.

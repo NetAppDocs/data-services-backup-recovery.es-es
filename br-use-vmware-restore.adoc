@@ -32,7 +32,7 @@ Puede restaurar datos en estos puntos:
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
-Si Ransomware Resilience está habilitado para un archivo de respaldo en el almacenamiento de objetos, se le solicitará que ejecute una verificación adicional antes de restaurar.  Recomendamos realizar el escaneo.
+Si la protección contra ransomware está activada para un archivo de backup en almacenamiento de objetos, se te pedirá que ejecutes una comprobación adicional antes de restaurar. Te recomendamos realizar el análisis.
 
 
 TIP: Es posible que tenga que pagar tarifas adicionales a su proveedor de nube para acceder al archivo de respaldo.

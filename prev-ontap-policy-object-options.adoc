@@ -57,7 +57,7 @@ Las copias de seguridad anuales se eliminan automáticamente del sistema de orig
 
 NetApp Backup and Recovery brinda soporte para DataLock y protección contra ransomware para sus copias de seguridad de volumen.  Estas funciones le permiten bloquear sus archivos de respaldo y escanearlos para detectar posible ransomware en ellos.  Esta es una configuración opcional que puede definir en sus políticas de respaldo cuando desee protección adicional para sus copias de seguridad de volumen para un clúster.
 
-Ambas funciones protegen sus archivos de respaldo para que siempre tenga un archivo de respaldo válido para recuperar datos en caso de un intento de ataque de ransomware en sus copias de seguridad.  También es útil cumplir con ciertos requisitos reglamentarios donde las copias de seguridad deben bloquearse y conservarse durante un período de tiempo determinado.  Cuando la opción DataLock y Ransomware Resilience está habilitada, el depósito de nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo y el control de versiones de objetos.
+Ambas funciones protegen tus archivos de backup para que siempre tengas un archivo de backup válido del que recuperar datos en caso de un intento de ataque de ransomware a tus backups. También es útil para cumplir ciertos requisitos normativos donde los backups deben estar bloqueados y retenidos durante un periodo de tiempo determinado. Cuando la opción *Datalock and Ransomware protection* está activada, el bucket de cloud que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo de objetos y el versionado de objetos.
 
 Esta función no proporciona protección para los volúmenes de origen; solo para las copias de seguridad de esos volúmenes de origen.  Utilice algunos de los https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones anti-ransomware proporcionadas por ONTAP"^] para proteger sus volúmenes de origen.
 
@@ -120,12 +120,12 @@ La configuración de retención de DataLock anula la configuración de retenció
 
 Puede habilitar la protección contra DataLock y Ransomware al crear una política.  No se puede habilitar, modificar ni deshabilitar esto una vez creada la política.
 
-. Cuando cree una política, expanda la sección *DataLock y resiliencia ante ransomware*.
+. Cuando crees una política, amplía la sección *Datalock and Ransomware protection*.
 . Elija una de las siguientes opciones:
 +
-** *Ninguno*: La protección DataLock y la resiliencia frente a ransomware están deshabilitadas.
-** *Desbloqueado*: La protección DataLock y la resiliencia contra ransomware están habilitadas.  Los usuarios con permisos específicos pueden sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.
-** *Bloqueado*: la protección DataLock y la resiliencia frente a ransomware están habilitadas.  Ningún usuario puede sobrescribir o eliminar archivos de respaldo protegidos durante el período de retención.  Esto satisface el pleno cumplimiento normativo.
+** *Ninguno*: la protección DataLock y la protección contra ransomware están desactivadas.
+** *Desbloqueado*: la protección DataLock y la protección contra ransomware están activadas. Los usuarios con permisos específicos pueden sobrescribir o eliminar los archivos de backup protegidos durante el periodo de retención.
+** *Bloqueado*: la protección DataLock y la protección contra ransomware están activadas. Ningún usuario puede sobrescribir o eliminar archivos de backup protegidos durante el periodo de retención. Esto satisface el cumplimiento normativo completo.
 
 
 
