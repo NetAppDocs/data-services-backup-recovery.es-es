@@ -48,9 +48,9 @@ Al realizar llamadas API, agregará el token de usuario en el encabezado de Auto
 NOTE: Si está utilizando una cuenta de servicio, debe utilizar el token de acceso al servicio en lugar de un token de usuario. El valor de "client_id" ("Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC") es un valor fijo y no se puede cambiar. En este caso, siga las instrucciones aquí: https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["Crear un token de acceso al servicio"^] .
 
 .Pasos
-. Obtenga un token de usuario desde el sitio web de la NetApp Console de NetApp .
+. Obtén un token de usuario del sitio web de NetApp Console.
 +
-Asegúrese de generar el token de actualización desde el siguiente enlace: https://services.cloud.netapp.com/refresh-token/.  El token de actualización es una cadena alfanumérica que utilizará para generar un token de usuario.
+Asegúrate de generar el token de actualización desde el siguiente enlace: https://services.cloud.netapp.com/refresh-token/. El token de actualización es una cadena alfanumérica que usarás para generar un token de usuario.
 
 +
 [source, console]

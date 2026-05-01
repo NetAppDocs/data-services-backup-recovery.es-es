@@ -18,7 +18,7 @@ Para obtener más información sobre la protección de las cargas de trabajo de 
 
 En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras en la política de protección:
 
-* *Editar políticas de protección*: Ahora puedes editar las políticas de protección de la carga de trabajo de Kubernetes si necesitas cambiar
+* *Editar políticas de protección*: Ahora puedes editar las políticas de protección de cargas de trabajo de Kubernetes si necesitas cambiarlas.
 * *Compatibilidad disco a disco*: Ahora puedes configurar las políticas de protección de Kubernetes con una arquitectura de backup de disco a disco.
 * *Compatibilidad con cubos de almacenamiento de Google Cloud Platform*: Ahora puedes configurar las políticas de protección de Kubernetes para hacer backup en los buckets de almacenamiento de Google Cloud Platform.
 

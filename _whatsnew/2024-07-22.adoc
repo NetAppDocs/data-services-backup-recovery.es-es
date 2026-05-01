@@ -38,4 +38,4 @@ Con esta versión, la compatibilidad con la restauración de carpetas FlexGroup 
 
 Para más detalles, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Restaurar carpetas y archivos usando Explorar y restaurar"] .
 
-Para obtener detalles sobre cómo habilitarlo manualmente, consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog de lanzamiento de NetApp Backup and Recovery de julio de 2024"] .
+Para saber cómo activarlo manualmente, consulta https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog de lanzamiento de NetApp Backup and Recovery de julio de 2024"].

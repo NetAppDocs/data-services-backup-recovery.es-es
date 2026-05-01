@@ -67,7 +67,7 @@ Este archivo se encuentra en la siguiente ubicación en el depósito `netapp-bac
 
 === Instalar un nuevo agente de consola en un nuevo host Linux local
 
-Al instalar un nuevo agente de consola, descargue la misma versión de software que el agente original.  Los cambios en la base de datos de NetApp Backup and Recovery pueden provocar que las versiones de software más nuevas no funcionen con copias de seguridad de bases de datos antiguas. Puede https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo"^] .
+Cuando instales un nuevo agente de la Consola, descarga la misma versión de software que el agente original. Los cambios en la base de datos NetApp Backup and Recovery pueden hacer que las versiones más recientes del software no funcionen con copias de seguridad antiguas de la base de datos. Puedes https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo"^].
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instalar el agente de consola en un nuevo host Linux local"^]
 . Inicie sesión en la consola utilizando las credenciales de usuario administrador que acaba de crear.

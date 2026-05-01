@@ -193,7 +193,7 @@ TIP: Después de importar los recursos del host de SnapCenter , NetApp Backup an
 . Seleccione *Importar* para validar sus entradas y registrar el servidor SnapCenter .
 +
 
-NOTE: Si el servidor SnapCenter ya está registrado, puede actualizar los detalles de registro existentes.
+NOTE: Si el servidor SnapCenter ya está registrado, puedes actualizar los datos de registro existentes.
 
 
 
@@ -219,7 +219,7 @@ La página Inventario muestra *Administrado* debajo del nombre del host para ind
 
 === Editar recursos de SnapCenter importados
 
-Posteriormente puede volver a importar recursos de SnapCenter o editar los recursos de SnapCenter importados para actualizar los detalles de registro.
+Más adelante puedes volver a importar los recursos de SnapCenter o editar los recursos importados de SnapCenter para actualizar los datos de registro.
 
 Puede cambiar solo los detalles del puerto y la contraseña para el servidor SnapCenter .
 

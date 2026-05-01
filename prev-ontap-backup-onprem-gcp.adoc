@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
+summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
 = Realice una copia de seguridad de los datos locales de ONTAP en Google Cloud Storage con NetApp Backup and Recovery
 :hardbreaks:
@@ -194,7 +194,7 @@ Cuando configura NetApp Backup and Recovery, se le solicita el espacio IP que de
 +
 Si está utilizando Private Google Access o Private Service Connect, asegúrese de que sus servidores DNS estén configurados para apuntar `storage.googleapis.com` a la dirección IP interna (privada) correcta.
 
-* Tenga en cuenta que si utiliza un espacio IP diferente al predeterminado, es posible que necesite crear una ruta estática para obtener acceso al almacenamiento de objetos.
+* Ten en cuenta que si estás usando un IPspace diferente al Default, puede que necesites crear una ruta estática para acceder al almacén de objetos.
 * Actualice las reglas de firewall, si es necesario, para permitir conexiones de NetApp Backup and Recovery desde ONTAP al almacenamiento de objetos a través del puerto 443, y tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS a través del puerto 53 (TCP/UDP).
 
 

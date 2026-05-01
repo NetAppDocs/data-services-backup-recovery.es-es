@@ -30,7 +30,7 @@ Para corregir el problema, vuelva a poner manualmente los VMDK en línea en el s
 
 Este problema ocurre cuando se inicia una operación de restauración de archivo invitado, pero la operación de conexión de disco falla incluso aunque VMware Tools se esté ejecutando y las credenciales del sistema operativo invitado sean correctas. Si esto ocurre, se devuelve el siguiente error:
 
-`Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMWare tools is running properly on system and account used is Administrator account, Error is SystemError vix error codes = (3016, 0).`
+`Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMware Tools is running properly on the system and that the account used is an Administrator account. Error is SystemError vix error codes = (3016, 0).`
 
 Para corregir el problema, reinicie el servicio de Windows VMware Tools en el sistema operativo invitado y vuelva a intentar la operación de restauración del archivo invitado.
 

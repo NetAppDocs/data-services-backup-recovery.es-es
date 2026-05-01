@@ -39,4 +39,4 @@ Si bien esta función está en versión preliminar, existen ciertas limitaciones
 
 *Empezando*
 
-Para comenzar a utilizar esta función de vista previa, debe habilitar una bandera en el agente de la consola.  Luego, puede ingresar los detalles de conexión de su almacén de objetos de terceros MinIO en el flujo de trabajo de protección eligiendo almacén de objetos *Compatible con terceros* en la sección de respaldo.
+Para empezar a utilizar esta función de vista previa, debes activar una bandera en el agente de la NetApp Console. Luego puedes introducir los detalles de conexión de tu almacén de objetos de terceros MinIO en el flujo de trabajo de protección eligiendo *Third party Compatible* object store en la sección de copia de seguridad.

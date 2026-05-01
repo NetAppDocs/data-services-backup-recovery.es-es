@@ -47,7 +47,7 @@ Los administradores de la organización o los administradores de carpetas o proy
 
 . Agrega usuarios a los proyectos.
 +
-Los administradores de la organización o los administradores de carpetas/proyectos añaden usuarios de Console a proyectos con cargas de trabajo. Asigna a los usuarios el rol de Organization viewer y un rol de Backup and Recovery según sus necesidades de acceso. Los usuarios con el rol correcto de Backup and Recovery obtendrán acceso automáticamente a las nuevas cargas de trabajo en estos proyectos.
+Los administradores de la organización o los administradores de carpetas/proyectos añaden usuarios de la consola a proyectos con cargas de trabajo. Asigna a los usuarios el rol de visor de la organización y un rol de Backup and Recovery según sus necesidades de acceso. Los usuarios con el rol adecuado de Backup and Recovery obtendrán acceso automáticamente a las nuevas cargas de trabajo en estos proyectos.
 
 
 

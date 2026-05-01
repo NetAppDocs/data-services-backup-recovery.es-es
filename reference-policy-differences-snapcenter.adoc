@@ -53,7 +53,7 @@ NetApp Backup and Recovery ajusta las programaciones de SnapCenter de la siguien
 +
 *Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 3 días a partir del lunes, NetApp Backup and Recovery establece la programación en semanal los lunes, jueves y domingos.  Se saltarán algunos días porque no es exactamente cada 3 días.
 
-* Si la programación de SnapCenter está configurada para más de 7 días, NetApp Backup and Recovery configura la programación para que sea mensual.  Se omitirán algunas instantáneas durante el mes.
+* Si la planificación de SnapCenter se establece en más de 7 días, NetApp Backup and Recovery establece la planificación en mensual. Algunas instantáneas se omitirán durante el mes.
 +
 *Ejemplo*: Si tiene una política diaria de SnapCenter con un intervalo de repetición de cada 10 días a partir del día 2 de cada mes, NetApp Backup and Recovery, después de la migración, establece la programación en mensual los días 2, 12 y 22 del mes.  NetApp Backup and Recovery omitirá algunos días el próximo mes.
 
@@ -67,7 +67,7 @@ Las políticas por hora de SnapCenter con intervalos de repetición superiores a
 
 Cualquier política horaria con intervalos de repetición que no sean un factor de 24 (por ejemplo, 5, 7, etc.) omitirá algunas instantáneas en un día.
 
-*Ejemplo*: Si tiene una política horaria de SnapCenter con un intervalo de repetición cada 5 horas a partir de la 1:00 a. m., NetApp Backup and Recovery (después de la migración) establecerá la programación en diaria con intervalos de 5 horas a la 1:00 a. m., 6:00 a. m., 11:00 a. m., 4:00 p. m. y 9:00 p. m.  Se saltarán algunas horas, después de las 9:00 PM debería ser las 2:00 AM para repetir después de cada 5 horas, pero siempre será la 1:00 AM.
+*Ejemplo*: Si tienes una política horaria en SnapCenter con un intervalo de repetición cada 5 horas a partir de la 1:00 AM, NetApp Backup and Recovery (después de la migración) establecerá la programación como diaria con intervalos de 5 horas a la 1:00 AM, 6:00 AM, 11:00 AM, 4:00 PM y 9:00 PM. Se omitirán algunas horas: después de las 9:00 PM debería ser a las 2:00 AM para repetir cada 5 horas, pero siempre será a la 1:00 AM.
 
 
 

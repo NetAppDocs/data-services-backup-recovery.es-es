@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
+summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
 = Realice copias de seguridad de los datos locales de ONTAP en Amazon S3 con NetApp Backup and Recovery
 :hardbreaks:
@@ -165,7 +165,7 @@ El clúster inicia una conexión HTTPS saliente a través del puerto 443 desde l
 Cuando configura NetApp Backup and Recovery, se le solicita el espacio IP que desea utilizar. Debes elegir el espacio IP con el que están asociados estos LIF. Ese podría ser el espacio IP "predeterminado" o un espacio IP personalizado que usted creó.
 
 +
-Si utiliza un espacio IP diferente al "Predeterminado", es posible que necesite crear una ruta estática para obtener acceso al almacenamiento de objetos.
+Si utilizas un IPspace diferente a "Default", puede que necesites crear una ruta estática para acceder al almacén de objetos.
 
 +
 Todos los LIF entre clústeres dentro del espacio IP deben tener acceso al almacén de objetos. Si no puede configurar esto para el espacio IP actual, entonces necesitará crear un espacio IP dedicado donde todos los LIF entre clústeres tengan acceso al almacén de objetos.
@@ -369,7 +369,7 @@ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vp
 [source, text]
 ----
 Certificate chain
-0 s:/CN=s3.us-west-2.amazonaws.com`
+0 s:/CN=s3.us-west-2.amazonaws.com
    i:/C=US/O=Amazon/OU=Server CA 1B/CN=Amazon
 -----BEGIN CERTIFICATE-----
 MIIM6zCCC9OgAwIBAgIQA7MGJ4FaDBR8uL0KR3oltTANBgkqhkiG9w0BAQsFADBG

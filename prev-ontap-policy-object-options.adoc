@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-options.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo de VMware con NetApp NetApp Backup and Recovery. 
+summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
 = Opciones de política de copia de seguridad a objeto en NetApp Backup and Recovery
 :hardbreaks:
@@ -185,7 +185,7 @@ Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ON
 
 * Para AWS:
 +
-** Sus clústeres deben ejecutar ONTAP 9.11.1 o superior
+** Tus clusters deben ejecutar ONTAP 9.11.1 o superior
 ** El agente de consola se puede implementar en la nube o en sus instalaciones.
 ** Los siguientes permisos de S3 deben ser parte de la función de IAM que proporciona permisos al agente de la consola.  Se encuentran en la sección "backupS3Policy" del recurso "arn:aws:s3:::netapp-backup-*":
 +
@@ -228,7 +228,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 * Para Azure:
 +
-** Sus clústeres deben ejecutar ONTAP 9.12.1 o superior
+** Tus clústeres deben estar ejecutando ONTAP 9.12.1 o superior
 ** El agente de consola se puede implementar en la nube o en sus instalaciones.
 
 
@@ -240,7 +240,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 * Para StorageGRID:
 +
-** Sus clústeres deben ejecutar ONTAP 9.11.1 o superior
+** Tus clusters deben ejecutar ONTAP 9.11.1 o superior
 ** Sus sistemas StorageGRID deben ejecutar 11.6.0.3 o superior
 ** El agente de consola debe implementarse en sus instalaciones (se puede instalar en un sitio con o sin acceso a Internet)
 ** Los siguientes permisos de S3 deben ser parte de la función de IAM que proporciona permisos al agente de la consola:
