@@ -97,8 +97,7 @@ Asegúrese de que su entorno cumpla con estos requisitos antes de habilitar Busc
 * Requisitos del clúster:
 +
 ** La versión de ONTAP debe ser 9.8 o superior.
-** La máquina virtual de almacenamiento (SVM) en la que reside el volumen debe tener un LIF de datos configurado.
-** NFS debe estar habilitado en el volumen (se admiten volúmenes NFS y SMB/CIFS).
+** Debes configurar un LIF de datos NFS IPv4 en la máquina virtual de almacenamiento y una exportación NFS para el volumen. Search & Restore admite tanto volúmenes NFS como SMB/CIFS.
 ** El servidor RPC SnapDiff debe estar activado en la SVM. La consola hace esto automáticamente cuando habilita la indexación en el sistema. (SnapDiff es la tecnología que identifica rápidamente las diferencias de archivos y directorios entre instantáneas).
 
 
