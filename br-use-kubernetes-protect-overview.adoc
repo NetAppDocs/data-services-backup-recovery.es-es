@@ -14,7 +14,7 @@ summary: Puede proteger las aplicaciones de Kubernetes y los datos de aplicacion
 
 
 [role="lead"]
-La administración de cargas de trabajo de Kubernetes en NetApp Backup and Recovery le permite descubrir, administrar y proteger sus clústeres y aplicaciones de Kubernetes, todo en un solo lugar. Puede administrar recursos y aplicaciones alojados en sus clústeres de Kubernetes. También puede crear y asociar políticas de protección con sus cargas de trabajo de Kubernetes, todo desde una única interfaz.
+Gestionar cargas de trabajo de Kubernetes en NetApp Backup and Recovery te permite descubrir, gestionar y proteger tus clústeres y aplicaciones de Kubernetes, todo en un solo lugar. Puedes gestionar recursos y aplicaciones alojados en tus clústeres de Kubernetes. También puedes crear y asociar políticas de protección con tus aplicaciones de Kubernetes, todo usando una sola interfaz.
 
 El siguiente diagrama muestra los componentes y la arquitectura básica de la copia de seguridad y la recuperación para cargas de trabajo de Kubernetes y cómo se pueden almacenar diferentes copias de sus datos en diferentes ubicaciones:
 

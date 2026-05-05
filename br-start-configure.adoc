@@ -16,12 +16,13 @@ summary: Complete unos pocos pasos para configurar NetApp Backup and Recovery.
 [role="lead"]
 Después de configurar la NetApp Console, configure los ajustes de copia de seguridad y recuperación.  Agregue credenciales para los recursos del host, importe recursos de SnapCenter , configure directorios de registro y establezca la configuración de VMware vCenter.  Complete estos pasos antes de realizar una copia de seguridad o recuperar datos.
 
-* <<Agregar credenciales para los recursos del host>> para cualquier host de Windows, Microsoft SQL Server, Oracle Database o Linux con el que NetApp Backup and Recovery necesite autenticarse. Esto incluye las credenciales del sistema operativo invitado Windows utilizadas al restaurar archivos o carpetas invitados.
+* <<Agregar credenciales para los recursos del host>> para cualquier host Windows, Microsoft SQL Server, Oracle Database o Linux con el que NetApp Backup and Recovery necesite autenticarse. Esto incluye las credenciales del SO invitado usadas al restaurar archivos o carpetas.
 * <<Mantener la configuración de VMware vCenter>>.
 * <<Importar y administrar recursos del host de SnapCenter>>. (Solo cargas de trabajo de Microsoft SQL Server)
 * <<Agregar una plataforma de administración KVM>>. (Solo cargas de trabajo KVM)
 * <<Configurar directorios de registro en instantáneas para hosts de Windows>>.
 * <<Crear una plantilla de gancho de ejecución>> para ejecutar scripts antes y después de los trabajos de backup. (Solo cargas de trabajo de Kubernetes)
+* <<Crear una plantilla de transformación de recursos>> para modificar los recursos a medida que los restauras.
 
 
 *Rol de NetApp Console requerido* Superadministrador de Backup and Recovery, Administrador de backup de Backup and Recovery, Administrador de restauración de Backup and Recovery.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
@@ -292,4 +293,36 @@ NOTE: Las plantillas que crees aquí solo se pueden usar cuando proteges cargas 
 +
 Después de crear la plantilla, ésta aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.
 
+
+
+
+
+== Crear una plantilla de transformación de recursos
+
+Crea plantillas de transformación de recursos para guardar las transformaciones habituales que haces a los recursos mientras los restauras.
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery , seleccione *Configuración*.
+. Selecciona la flecha hacia abajo para expandir la sección *Resource modifer template*.
+. Selecciona *Crear plantilla*.
+. Introduce un nombre para la plantilla de transformación de recursos.
+. Opcionalmente, introduce una descripción de la plantilla.
+. Describe el recurso objetivo:
++
+.. Introduce el tipo de recurso (como Pod o Deployment). Este campo es obligatorio.
+.. Opcionalmente, introduce un grupo de recursos, versión, nombre.
+
+
+. Construye una operación:
++
+.. Elige una operación de la lista *Operación*.
+.. Introduce la ruta JSON a la que se aplica la operación.
+.. Si procede, introduce un valor para añadir o actualizar, o una ruta JSON desde la que desplazarte.
++
+Estos campos solo aparecen para las operaciones que los requieren.
+
+.. Para añadir otra operación a esta plantilla, selecciona *Add operation*.
+
+
+. Cuando haya terminado, seleccione *Agregar*.
 

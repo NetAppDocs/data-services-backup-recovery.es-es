@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-limitations-hyperv.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Hyper-V, SAP HANA database, virtual machine, vm 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, SAP HANA database, virtual machine, vm 
 summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar Backup and Recovery en tu entorno. 
 ---
 = Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo de Hyper-V

@@ -48,3 +48,20 @@ Para dejar de proteger un clúster de Kubernetes, deshabilite la protección y e
 . Seleccione *Eliminar clúster*.
 . Revise la información en el cuadro de diálogo de confirmación y seleccione *Eliminar*.
 
+
+
+
+== Actualizar Trident Protect
+
+Para los clústeres de Kubernetes que ejecutan Trident Protect 26.04 o posterior, puedes actualizar Trident Protect directamente desde NetApp Backup and Recovery. La opción de actualización solo aparece si hay disponible una versión más reciente.
+
+.Pasos
+. En NetApp Backup and Recovery, seleccione *Inventario* > *Clústeres*.
+. Elige un clúster de Kubernetes para actualizar y selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Actualizar clúster*.
+. En el cuadro de diálogo de actualización, haz lo siguiente:
++
+.. En la lista, selecciona la versión a la que quieres actualizar.
+.. Selecciona *Upgrade*.
+
+
+

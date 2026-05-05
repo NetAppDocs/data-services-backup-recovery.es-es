@@ -440,6 +440,9 @@ kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 
 Puedes restaurar una instantánea al espacio de nombres original en cualquier momento.
 
+
+NOTE: Actualmente no se admite la restauración sin movimiento (restaurar al espacio de nombres y clúster originales) de aplicaciones basadas en máquinas virtuales a partir de instantáneas locales.
+
 .Antes de empezar
 Asegúrate de que la caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración s3 de larga duración. Si el token caduca durante la operación de restauración, la operación puede fallar.
 

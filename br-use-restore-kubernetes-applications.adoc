@@ -16,11 +16,36 @@ summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya p
 [role="lead"]
 NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. Para restaurar una aplicación, esta debe tener al menos un punto de restauración disponible. Un punto de restauración puede ser la instantánea local o la copia de seguridad en el almacén de objetos (o ambas). Puede restaurar una aplicación utilizando el archivo local, secundario o del almacén de objetos.
 
+
+
+== Ver recursos protegidos para un punto de restauración de la aplicación
+
+Para cada aplicación que protejas con NetApp Backup and Recovery, puedes ver los recursos que se han respaldado para un punto de recuperación específico.
+
+.Rol de NetApp Console requerido
+Visor de copia de seguridad y recuperación. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+.Pasos
+. En NetApp Backup and Recovery, selecciona *Inventario* > *Aplicaciones*.
+. En la lista de aplicaciones, elige una aplicación y selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Ver y restaurar*.
+. En la lista de puntos de restauración, elige un punto de restauración y selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Ver recursos*.
++
+Aparece una lista de recursos y sus detalles. Puedes ver los recursos por espacio de nombres o ámbito de clúster y descargar la lista como archivo JSON para futuras auditorías.
+
+. Cuando hayas terminado, selecciona *Cerrar*.
+
+
+
+
+== Restaurar aplicaciones de Kubernetes
+
+Puedes restaurar aplicaciones basadas en espacios de nombres o en máquinas virtuales desde un punto de recuperación, ya sea restaurando todos los recursos o seleccionando un subconjunto de recursos para restaurar.
+
 .Antes de empezar
 Si vas a restaurar una aplicación que se respaldó usando Trident Protect, asegúrate de que Trident Protect esté instalado tanto en el clúster de origen como en el clúster de destino.
 
 .Rol de NetApp Console requerido
-Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+Backup and Recovery super admin o Backup and Recovery restore admin. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú NetApp Backup and Recovery, selecciona *Restaurar*.
@@ -29,58 +54,88 @@ Administrador de la organización o administrador de SnapCenter . link:reference
 Aparece la lista de puntos de restauración.
 
 . Selecciona el botón *Restaurar* para el punto de restauración que quieras usar.
-
-
-[discrete]
-===== Configuración general
++
+Se inicia el asistente de restauración de datos y aparece la página _Configuración general_.
 
 . Elige la ubicación de origen desde la que quieres restaurar.
 . Seleccione el clúster de destino de la lista *Clúster*.
+. Elige restaurar en los espacios de nombres originales o en nuevos espacios de nombres.
 +
 
-NOTE: Restaurar una instantánea local creada por Trident Protect en un clúster diferente no es compatible en este momento.
+NOTE: Actualmente no se admite la restauración sin movimiento (restaurar al espacio de nombres y clúster originales) de aplicaciones basadas en máquinas virtuales a partir de instantáneas locales.
 
-. Elige restaurar en los espacios de nombres originales o en nuevos espacios de nombres.
 . Si elegiste restaurar en nuevos espacios de nombres, introduce el espacio o los espacios de nombres de destino que vas a usar.
 . Seleccione *Siguiente*.
-
-
-[discrete]
-===== Selección de recursos
++
+Aparece la página _Selección de recursos_.
 
 . Elija si desea restaurar todos los recursos asociados con la aplicación o utilizar un filtro para seleccionar recursos específicos para restaurar:
-
-
++
 [role="tabbed-block"]
 ====
-.Restaurar todos los recursos
+.Todos los recursos
 --
-. Seleccione *Restaurar todos los recursos*.
-. Seleccione *Siguiente*.
+.. Seleccione *Restaurar todos los recursos*.
++
+Al restaurar una aplicación basada en VM, Backup and Recovery enumera todas las máquinas virtuales en el punto de recuperación.
+
+.. Seleccione *Siguiente*.
 
 
 --
-.Restaurar recursos específicos
+.Recursos específicos de la aplicación basados en el espacio de nombres
 --
-. Seleccione *Recursos selectivos*.
-. Elija el comportamiento del filtro de recursos.  Si elige *Incluir*, se restaurarán los recursos que seleccione.  Si elige *Excluir*, los recursos que seleccione no se restaurarán.
-. Seleccione *Agregar reglas* para agregar reglas que definan filtros para seleccionar recursos.  Necesita al menos una regla para filtrar recursos.
+.. Selecciona *Recursos selectivos* y elige si quieres filtrar los recursos que seleccionas según reglas o según el espacio de nombres.
++
+[cols="1,1"]
+|===
+| Método de selección de recursos | Pasos 
+
+
+| Filtrar recursos mediante reglas  a| 
+... Selecciona la pestaña *Reglas*.
+... Elija el comportamiento del filtro de recursos.  Si elige *Incluir*, se restaurarán los recursos que seleccione.  Si elige *Excluir*, los recursos que seleccione no se restaurarán.
+... Seleccione *Agregar reglas* para agregar reglas que definan filtros para seleccionar recursos.  Necesita al menos una regla para filtrar recursos.
 +
 Cada regla puede filtrar según criterios como el espacio de nombres del recurso, las etiquetas, el grupo, la versión y el tipo.
 
-. Seleccione *Guardar* para guardar cada regla.
-. Cuando haya agregado todas las reglas que necesita, seleccione *Buscar* para ver los recursos disponibles en el archivo de respaldo que coinciden con sus criterios de filtro.
+... Seleccione *Guardar* para guardar cada regla.
+... Cuando hayas añadido todas las reglas que necesites, selecciona *Mostrar recursos* para ver los recursos disponibles en el archivo de copia de seguridad que coinciden con tus criterios de filtrado.
+
+
+
+
+| Seleccionar manualmente recursos de una lista  a| 
+... Selecciona la pestaña *Personalizar*.
+... Selecciona *Namespace-Scoped* o *Cluster-Scoped* para ver los recursos correspondientes.
++
+Copia de seguridad y recuperación enumera todos los recursos del punto de recuperación.
+
+... Selecciona qué recursos quieres incluir en la operación de restauración.
+
+
+|===
 +
 
 NOTE: Los recursos que se muestran son los recursos que existen actualmente en el clúster.
 
-. Cuando esté satisfecho con los resultados, seleccione *Siguiente*.
+.. Cuando termines, selecciona *Siguiente*.
+
+
+--
+.Recursos específicos de aplicaciones basadas en máquinas virtuales
+--
+.. Seleccione *Recursos selectivos*.
++
+Backup and Recovery enumera todas las máquinas virtuales en el punto de recuperación. Puedes seleccionar qué máquinas virtuales incluir en la operación de restauración.
+
+.. Cuando termines, selecciona *Siguiente*.
 
 
 --
 ====
-[discrete]
-===== Configuración de destino
++
+Aparece la página _Configuración del destino_.
 
 . Expande la sección *Configuración de destino* y elige restaurar a la clase de almacenamiento predeterminada, a una clase de almacenamiento diferente o, si estás restaurando a un clúster diferente, asignar las clases de almacenamiento al clúster de destino.
 . Si elegiste restaurar en una clase de almacenamiento diferente, selecciona una clase de almacenamiento de destino que coincida con cada clase de almacenamiento de origen.
@@ -90,5 +145,24 @@ NOTE: Los recursos que se muestran son los recursos que existen actualmente en e
 NOTE: Si necesitas crear un AppVault en un clúster de Kubernetes para facilitar la restauración de una copia de seguridad o instantánea creada usando Trident Protect, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Usa los objetos de Trident Protect AppVault para gestionar buckets"].
 
 . Opcionalmente, expande la sección *Restore scripts* y habilita la opción *Postscript* para elegir una plantilla de hook de ejecución que se ejecutará después de que la operación de restauración haya terminado. Si lo necesitas, introduce cualquier argumento que el script necesite y añade selectores de etiquetas para filtrar recursos según las etiquetas de los recursos.
-. Seleccione *Restaurar*.
+. Opcionalmente, amplía la sección *Transformaciones de recursos* para añadir, eliminar o modificar atributos de recursos durante el proceso de restauración. Luego, haz lo siguiente:
++
+
+NOTE: Actualmente no es posible modificar PersistentVolumeClaims ni los espacios de nombres.
+
++
+.. Activa la opción *Transformación de recursos* para hacer cambios en el modificador.
+.. Selecciona una plantilla de la lista *Template* para aplicar rápidamente los ajustes de los modificadores que utilizas habitualmente. Esta lista incluye plantillas predefinidas para escenarios comunes, así como plantillas personalizadas que hayas creado.
++
+
+NOTE: Crea plantillas de transformación de recursos en el área global link:br-start-configure.html#create-a-resource-modifier-template["Configuración"^].
+
+.. Especifica qué recurso quieres modificar introduciendo el grupo de recursos, la versión, el tipo y el nombre.
+.. Especifica la operación que quieres realizar en el recurso seleccionando una operación de la lista *Operación*.
+.. Introduce una ruta JSON para la clave específica que quieres cambiar.
+.. Si procede, introduce un nuevo valor para usar. El campo *Valor* solo aparece para ciertas operaciones (como *Add* o *Replace*).
+.. Opcionalmente, añade más transformaciones de recursos según lo necesites.
+
+
+. Cuando termines, selecciona *Restaurar*.
 

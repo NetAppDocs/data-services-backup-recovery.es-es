@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-limitations.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, SAP HANA database 
 summary: NetApp Backup and Recovery primero debe descubrir los datos para que usted pueda utilizar el servicio.  Durante el descubrimiento, NetApp Backup and Recovery analiza todos los volúmenes y archivos de los sistemas de su organización. 
 ---
 = Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo de Microsoft SQL Server

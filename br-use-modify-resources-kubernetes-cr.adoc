@@ -1,0 +1,223 @@
+---
+sidebar: sidebar 
+permalink: br-use-modify-resources-kubernetes-cr.html 
+keywords: Resource modify, transform, restore, Kubernetes, custom resource, Backup and Recovery, NetApp, transformation, transformations, resource, resource transformations, modify 
+summary: Modifica los recursos durante las operaciones de restauración en NetApp Backup and Recovery. 
+---
+= Modifica los recursos a medida que los restauras usando recursos personalizados
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Las transformaciones de recursos te permiten modificar un recurso a medida que se restaura. Esto es útil cuando la versión restaurada necesita ser diferente de la original, por ejemplo, cambiar la dirección IP de una máquina virtual al restaurarla en una red diferente. También puedes link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["modificar los recursos a medida que los restauras usando la interfaz web"^].
+
+*Rol requerido de la NetApp Console* Backup and Recovery super admin o Backup and Recovery restore admin. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+
+
+== Cómo funciona la modificación de recursos
+
+El campo `transformations` de `SnapshotRestore`, `BackupRestore`, `AppMirrorRelationship` y otros recursos de restauración te permite modificar los recursos de Kubernetes durante el proceso de restauración. Esto es útil para adaptar aplicaciones o máquinas virtuales a un nuevo clúster cambiando nombres de host, URL de registro, límites de recursos o variables de entorno.
+
+Las transformaciones de recursos usan https://tools.ietf.org/html/rfc6902["RFC 6902"] operaciones JSON Patch y https://tools.ietf.org/html/rfc6901["RFC 6901"] rutas JSON Pointer para apuntar y modificar campos específicos dentro de los recursos de Kubernetes.
+
+Esta es la estructura básica de un objeto de restauración que contiene transformaciones de recursos:
+
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: SnapshotRestore
+metadata:
+  name: my-restore
+  namespace: target-namespace
+spec:
+  appVaultRef: my-vault
+  appArchivePath: /path/to/snapshot
+  namespaceMapping:
+    - source: source-ns
+      destination: target-ns
+  transformations:
+    - resource:
+        kind: ConfigMap       # Required: resource kind
+        group: ""             # Optional: API group (empty for core resources)
+        version: ""           # Optional: API version
+        name: ""              # Optional: specific resource name
+      operations:
+        - op: replace         # Operation type
+          path: "/data/key"   # JSON Pointer path
+          value: "new-value"  # New value (for add/replace/test)
+----
+
+
+=== Recursos compatibles
+
+Puedes usar transformaciones de recursos con recursos que cumplan los siguientes criterios:
+
+* `kind` (obligatorio): el tipo de recurso de Kubernetes (por ejemplo, `ConfigMap`, `Deployment`, `Pod`)
+* `group` (opcional): el grupo API (por ejemplo, `apps`, `route.openshift.io`) - omitir para los recursos básicos
+* `version` (opcional): la versión de la API (por ejemplo, `v1`, `v1beta1`)
+* `name` (opcional): aplicar solo a un recurso específico por su nombre
+
+
+
+NOTE: Actualmente no es posible modificar PersistentVolumeClaims ni los espacios de nombres.
+
+
+
+=== Operaciones compatibles
+
+Puedes usar las siguientes operaciones para modificar recursos:
+
+* `add`: Agrega un valor a un recurso.
+* `copy`: Copia un valor de una ruta a otra.
+* `move`: Desplazar un valor dentro de un recurso.
+* `remove`: Elimina un valor de un recurso.
+* `replace`: Sustituye un valor dentro de un recurso.
+* `test`: Prueba una operación antes de realizarla.
+
+
+
+
+== Agrega un valor a un recurso
+
+Usa la operación `add` para añadir un nuevo campo o valor en la ruta especificada. Puedes añadir datos a objetos o arrays. El siguiente ejemplo añade un selector de nodo a un recurso Deployment:
+
+[source, yaml]
+----
+transformations:
+  - resource:
+      kind: Deployment
+    operations:
+      - op: add
+        path: "/spec/template/spec/nodeSelector"
+        value:
+          "topology.kubernetes.io/zone": "us-east-1a"
+          disktype: "ssd"
+----
+Usa el siguiente comando para ejecutar esta transformación usando la línea de comandos:
+
+[source, bash]
+----
+tridentctl-protect --transformation 'apps,v1,Deployment:add{"path":"/spec/template/spec/nodeSelector","value":{"topology.kubernetes.io/zone":"us-east-1a","disktype":"ssd"}}'
+----
+
+
+== Copia un valor dentro de un recurso
+
+Usa la operación `copy` para copiar un valor de una ruta a otra dentro del mismo recurso. El origen no se modifica. El siguiente ejemplo duplica una clave de datos para un objeto ConfigMap:
+
+[source, yaml]
+----
+transformations:
+  - resource:
+      kind: ConfigMap
+    operations:
+      - op: copy
+        from: "/data/source-key"
+        path: "/data/backup-key"
+----
+Usa el siguiente comando para ejecutar esta transformación usando la línea de comandos:
+
+[source, bash]
+----
+tridentctl-protect --transformation ',v1,ConfigMap:copy{"from":"/data/source-key","path":"/data/backup-key"}'
+----
+
+
+== Mover un valor dentro de un recurso
+
+Usa la operación `move` para mover un valor de una ruta a otra dentro del mismo recurso. El origen se elimina y el valor se coloca en el destino. El siguiente ejemplo cambia el nombre de una clave de datos para un objeto ConfigMap:
+
+[source, yaml]
+----
+transformations:
+  - resource:
+      kind: ConfigMap
+    operations:
+      - op: move
+        from: "/data/OLD_KEY"
+        path: "/data/NEW_KEY"
+----
+Usa el siguiente comando para ejecutar esta transformación usando la línea de comandos:
+
+[source, bash]
+----
+tridentctl-protect --transformation ',v1,ConfigMap:move{"from":"/data/OLD_KEY","path":"/data/NEW_KEY"}'
+----
+
+
+== Eliminar un valor de un recurso
+
+Usa la operación `remove` para eliminar un campo o valor en la ruta especificada. El siguiente ejemplo elimina una anotación de un recurso ConfigMap:
+
+[source, yaml]
+----
+transformations:
+  - resource:
+      kind: ConfigMap
+    operations:
+      - op: remove
+        path: "/metadata/annotations/kubectl.kubernetes.io~1last-applied-configuration"
+----
+
+NOTE: En la ruta del ejemplo anterior, `~1` es la secuencia de escape del puntero JSON para `/`.
+
+Usa el siguiente comando para ejecutar esta transformación usando la línea de comandos:
+
+[source, bash]
+----
+tridentctl-protect --transformation ',v1,ConfigMap:remove{"path":"/metadata/annotations/kubectl.kubernetes.io~1last-applied-configuration"}'
+----
+
+
+== Sustituir un valor dentro de un recurso
+
+Usa la operación `replace` para reemplazar un valor existente dentro de un recurso en la ruta especificada. La ruta JSON ya debe existir. El siguiente ejemplo cambia un hostname para un objeto Route:
+
+[source, yaml]
+----
+transformations:
+  - resource:
+      kind: Route
+      group: route.openshift.io
+    operations:
+      - op: replace
+        path: "/spec/host"
+        value: "prod.example.com"
+----
+Usa el siguiente comando para ejecutar esta transformación usando la línea de comandos:
+
+[source, bash]
+----
+tridentctl-protect --transformation 'route.openshift.io,v1,Route:replace{"path":"/spec/host","value":"prod.example.com"}'
+----
+
+
+== Probar la modificación de los recursos
+
+Usa la operación `test` para comprobar si el valor en una ruta coincide con el valor esperado. Si la comprobación falla, se revierte toda la modificación. El siguiente ejemplo solo actualiza `database-host` si `environment` es `staging`:
+
+[source, yaml]
+----
+transformations:
+  - resource:
+      kind: ConfigMap
+    operations:
+      - op: test
+        path: "/data/environment"
+        value: "staging"
+      - op: replace
+        path: "/data/database-host"
+        value: "prod-db.example.com"
+----
+Usa el siguiente comando para ejecutar esta transformación usando la línea de comandos:
+
+[source, bash]
+----
+tridentctl-protect --transformation ',v1,ConfigMap:test{"path":"/data/environment","value":"staging"},replace{"path":"/data/database-host","value":"prod-db.example.com"}'
+----
