@@ -1,0 +1,50 @@
+= Mejoras en las cargas de trabajo de Hyper-V
+:allow-uri-read: 
+
+
+
+
+=== Mejoras en las cargas de trabajo de Hyper-V
+
+En esta versión, las cargas de trabajo Hyper-V introducen las siguientes mejoras:
+
+* *Protege las máquinas virtuales en almacenamiento SAN*: Ahora puedes proteger máquinas virtuales en almacenamiento de objetos SAN.
+* *Mejoras en la restauración a una ubicación alternativa*: Ahora puedes restaurar a una ubicación alternativa desde ubicaciones primarias y secundarias para máquinas virtuales en almacenamiento SAN.
+* *Restaurar archivos y carpetas a una máquina virtual invitada*: Ahora puedes restaurar archivos y carpetas desde una instantánea en el almacenamiento primario a una máquina virtual Windows invitada. Esta función solo es compatible con máquinas virtuales CIFS.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+
+
+
+=== Mejoras en las cargas de trabajo KVM
+
+En esta versión, las cargas de trabajo KVM introducen la siguiente mejora:
+
+*Restaurar a una ubicación alternativa*: Ahora puedes restaurar máquinas virtuales KVM a un destino alternativo (esta función ya está disponible de forma general).
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+
+
+
+=== Mejoras en las cargas de trabajo de Oracle Database
+
+En esta versión, las cargas de trabajo de Oracle Database introducen las siguientes mejoras:
+
+* *Soporte para Oracle AI Database 26ai*: NetApp Backup and Recovery ahora es compatible con Oracle AI Database 26ai.
+* *Soporte de verificación de copias de seguridad*: Ahora puedes configurar políticas de backup para verificar automáticamente la integridad de tus copias de seguridad de bases de datos Oracle.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+
+
+
+=== Mejoras en las cargas de trabajo de VMware
+
+En esta versión, VMware workloads introduce las siguientes mejoras:
+
+* *Compatibilidad de los grupos de protección con varios datastores*: Ahora puedes elegir el comportamiento de los grupos de protección al proteger máquinas virtuales cuyos discos virtuales abarcan varios datastores.
+* *Compatibilidad con clones*: Ahora puedes crear clones de instantáneas de máquinas virtuales desde el almacenamiento primario y secundario.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .

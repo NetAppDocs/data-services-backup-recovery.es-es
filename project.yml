@@ -56,8 +56,6 @@ sidebar:
       url: "/br-start-login.html"
     - title: Ver el estado de la protección en el Panel de Control
       url: "/br-use-dashboard.html"
-    - title: Crear políticas para gestionar copias de seguridad y restauraciones
-      url: "/br-use-policies-create.html"
     - title: Proteger las cargas de trabajo de volumen de ONTAP
       entries:
       - title: Descripción general de las cargas de trabajo de volumen de Protect
@@ -112,6 +110,9 @@ sidebar:
         url: "/concept-start-prereq-snapcenter-import.html"
       - title: Descubra las cargas de trabajo de Microsoft SQL Server
         url: "/br-start-discover.html"
+      - title: Crea y gestiona políticas de backup para cargas de trabajo de Microsoft
+          SQL Server
+        url: "/br-use-policies-mssql-create.html"
       - title: Realizar copias de seguridad de las cargas de trabajo de Microsoft
           SQL Server
         url: "/br-use-mssql-backup.html"
@@ -134,8 +135,12 @@ sidebar:
       - title: Crear y administrar grupos de protección para cargas de trabajo de
           VMware
         url: "/br-use-vmware-protection-groups.html"
+      - title: Crea y gestiona políticas de backup de cargas de trabajo de VMware
+        url: "/br-use-policies-vmware-create.html"
       - title: Realizar copias de seguridad de las cargas de trabajo de VMware
         url: "/br-use-vmware-backup.html"
+      - title: Clonar cargas de trabajo VMware
+        url: "/br-use-vmware-clone.html"
       - title: Restaurar cargas de trabajo de VMware
         entries:
         - title: Restaurar máquinas virtuales de VMware
@@ -158,6 +163,8 @@ sidebar:
         url: "/br-start-discover-kvm.html"
       - title: Crear y administrar grupos de protección para cargas de trabajo KVM
         url: "/br-use-kvm-protection-groups.html"
+      - title: Crea y gestiona políticas de backup de cargas de trabajo KVM
+        url: "/br-use-policies-kvm-create.html"
       - title: Realizar copias de seguridad de las cargas de trabajo de KVM
         url: "/br-use-kvm-backup.html"
       - title: Restaurar cargas de trabajo de KVM
@@ -171,10 +178,16 @@ sidebar:
       - title: Crear y administrar grupos de protección para cargas de trabajo de
           Hyper-V
         url: "/br-use-hyperv-protection-groups.html"
+      - title: Crea y gestiona políticas de backup de cargas de trabajo Hyper-V
+        url: "/br-use-policies-hyper-v-create.html"
       - title: Realizar copias de seguridad de las cargas de trabajo de Hyper-V
         url: "/br-use-hyperv-backup.html"
       - title: Restaurar cargas de trabajo de Hyper-V
-        url: "/br-use-hyperv-restore.html"
+        entries:
+        - title: Restaurar cargas de trabajo de Hyper-V
+          url: "/br-use-hyperv-restore.html"
+        - title: Restaurar archivos y carpetas
+          url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Protege las cargas de trabajo de Oracle Database (vista previa)
       entries:
       - title: Descripción general de las cargas de trabajo de Protect Oracle Database
@@ -186,6 +199,9 @@ sidebar:
       - title: Crea y gestiona grupos de protección para cargas de trabajo de Oracle
           Database
         url: "/br-use-oracle-protection-groups.html"
+      - title: Crea y gestiona políticas de backup de la carga de trabajo de Oracle
+          Database
+        url: "/br-use-policies-oracle-create.html"
       - title: Realiza copias de seguridad de las cargas de trabajo de Oracle Database
         url: "/br-use-oracle-backup.html"
       - title: Clonar cargas de trabajo de Oracle Database
@@ -204,6 +220,8 @@ sidebar:
         entries:
         - title: Agregar y proteger aplicaciones de Kubernetes
           url: "/br-use-protect-kubernetes-applications.html"
+        - title: Crea y gestiona políticas de backup de cargas de trabajo de Kubernetes
+          url: "/br-use-policies-kubernetes-create.html"
         - title: Haz una copia de seguridad de una aplicación de Kubernetes ahora
             usando la interfaz web
           url: "/br-use-back-up-now-kubernetes-applications-web-ui.html"

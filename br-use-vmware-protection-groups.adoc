@@ -27,37 +27,13 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 
 
-== Crear un grupo de protección
+== Grupos de protección basados en etiquetas
 
-Agrupe las cargas de trabajo que desea proteger en un grupo de protección para realizar copias de seguridad y restaurarlas juntas.
+Cuando elijas recursos para añadir a un grupo de protección, puedes organizarlos por almacenes de datos, máquinas virtuales o por etiquetas vSphere.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+La protección basada en etiquetas (mediante etiquetas vSphere) simplifica la administración de los grupos de protección en NetApp Backup and Recovery.
 
-.Pasos
-. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
-. Seleccione una carga de trabajo para ver los detalles de protección.
-. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
-. Seleccione la pestaña *Grupos de protección*.
-. Seleccione *Crear grupo de protección*.
-. Proporcione un nombre para el grupo de protección.
-. Seleccione las máquinas virtuales o bases de datos que desea incluir en el grupo de protección.
-. Seleccione *Siguiente*.
-. Selecciona la política de protección que quieres aplicar al grupo de protección.
-+
-Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
-
-. Seleccione *Siguiente*.
-. Revise la configuración.
-. Seleccione *Crear* para crear el grupo de protección.
-
-
-
-
-== Crear un grupo de protección mediante etiquetas vSphere
-
-Usa la protección basada en etiquetas para simplificar la administración de los grupos de protección en Backup and Recovery.
-
-Estas son las ventajas de utilizar la protección basada en etiquetas:
+Utilizar la protección basada en etiquetas tiene algunas ventajas:
 
 * Cuando añades una etiqueta vSphere a una VM o datastore en vCenter, ese objeto se incluye automáticamente en el siguiente backup para cualquier grupo de protección de Backup and Recovery que haga referencia a esa etiqueta.
 * Cuando eliminas una etiqueta vSphere de una máquina virtual o almacén de datos, ese objeto se excluye automáticamente de los backups posteriores para ese grupo de protección basado en etiquetas.
@@ -65,51 +41,52 @@ Estas son las ventajas de utilizar la protección basada en etiquetas:
 * Si una máquina virtual se migra a un almacén de datos diferente, seguirá estando protegida mientras siga teniendo la etiqueta que forma parte de un grupo de protección basado en etiquetas.
 
 
+La pertenencia a las etiquetas se resuelve desde vCenter en el tiempo de backup. Cualquier cambio que hagas en las etiquetas en vCenter (añadir/eliminar etiquetas, borrar etiquetas, añadir/eliminar VMs) se refleja automáticamente en el siguiente backup.
 
-IMPORTANT: No se admite la mezcla de tipos de recursos (por ejemplo, combinar etiquetas con máquinas virtuales individuales o almacenes de datos en el mismo grupo de protección).
+
+
+== Crear un grupo de protección
+
+Crea un grupo de protección para organizar los recursos que quieras respaldar y restaurar juntos.
+
+*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Antes de empezar
 * Asegúrate de que tu entorno está usando versiones compatibles de VMware vSphere.
-* En vCenter, asegúrate de que las máquinas virtuales y los almacenes de datos que quieres proteger ya están asociados a una o más etiquetas vSphere.
+* Al crear un grupo de protección basado en etiquetas, asegúrate de que las máquinas virtuales y los almacenes de datos que quieres proteger ya están asociados a una o varias etiquetas vSphere en vCenter.
 
-
-
-NOTE: La pertenencia a las etiquetas se resuelve desde vCenter en el tiempo de backup. Cualquier cambio que hagas en las etiquetas en vCenter (añadir/eliminar etiquetas, borrar etiquetas, añadir/eliminar VMs) se refleja automáticamente en el siguiente backup.
 
 .Pasos
-. Inicia sesión en NetApp Backup and Recovery.
-. Ve a la vista *Grupos de protección*.
-. Selecciona *Crear grupo de protección*.
-. En *Detalles generales > Nombre del grupo de protección*, introduce un nombre para el grupo de protección.
-. En la sección *Detalles generales > Recursos del grupo de protección*, selecciona *Etiquetas*.
-. Si hay varios vCenters configurados, selecciona el vCenter apropiado de la lista para mostrar las etiquetas disponibles para ese vCenter.
-. En la sección *Seleccionar etiquetas*:
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
+. Seleccione una carga de trabajo para ver los detalles de protección.
+. Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
+. Seleccione la pestaña *Grupos de protección*.
+. Seleccione *Crear grupo de protección*.
+. Proporciona un nombre para el grupo de protección y elige cómo quieres añadir recursos al grupo de protección. Puedes añadir recursos organizados por *Datastores*, *máquinas virtuales* o *etiquetas*.
 +
-.. En el lado izquierdo:
+
+IMPORTANT: No se admite la mezcla de tipos de recursos (por ejemplo, combinar etiquetas con máquinas virtuales individuales o almacenes de datos en el mismo grupo de protección).
+
+. En la lista que aparece, selecciona los recursos que quieres incluir en el grupo de protección.
 +
-... Selecciona un vCenter de la lista.
-... Selecciona las casillas de verificación de una o varias etiquetas dentro de ese vCenter.
+Puedes filtrar los recursos disponibles en la lista seleccionando un vCenter o datacenter específico. Los recursos seleccionados aparecen en la lista de la derecha.
 
-
-.. En el lado derecho:
+. Cuando termines, selecciona *Siguiente*.
+. Elige cómo el grupo de protección gestiona las máquinas virtuales cuyos discos virtuales abarcan varios almacenes de datos:
 +
-... Revisa la lista de etiquetas seleccionadas, agrupadas por vCenter.
-... Elimina cualquier etiqueta que no quieras en el grupo de protección.
-
-
+** *Excluye siempre todos los almacenes de datos de expansión*: El grupo de protección solo incluirá los almacenes de datos que se le añadan directamente, junto con el volumen primario de cualquier máquina virtual que se añada directamente al grupo de protección.
+** *Incluir siempre todos los almacenes de datos abarcados*: El grupo de protección incluirá todos los almacenes de datos abarcados por las máquinas virtuales incluidas.
+** *Selecciona manualmente los almacenes de datos de expansión que se incluirán*: si eliges esta opción, necesitas seleccionar manualmente qué almacenes de datos de expansión incluir en el grupo de protección de la lista que aparece. Esta selección es estática; debes actualizar la lista de almacenes de datos de expansión cada vez que se agreguen nuevas máquinas virtuales al grupo.
 
 
 . Seleccione *Siguiente*.
 . Selecciona la política de protección que quieres aplicar al grupo de protección.
 +
-Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
+Para crear una nueva política, selecciona *Crear nueva política* y sigue las instrucciones. Consulta link:br-use-policies-create.html["Crear políticas"] para más información.
 
 . Seleccione *Siguiente*.
-. Revisa la configuración de la etiqueta en el paso *Revisar*.
+. Revise la configuración.
 . Seleccione *Crear* para crear el grupo de protección.
-+
-El nuevo grupo de protección basado en etiquetas aparece en la lista, indicado por un icono de etiqueta.
-
 
 
 

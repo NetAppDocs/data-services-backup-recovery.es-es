@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
+keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
+summary: Puedes restaurar uno o más archivos o carpetas desde una instantánea de una VM de Hyper-V a una VM invitada de Windows. 
+---
+= Restaura archivos y carpetas desde backups de Hyper-V VM
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaura archivos y carpetas de backups de Hyper-V VM en el almacenamiento primario a una VM huésped de Windows.
+
+
+
+== Restaurar archivos y carpetas
+
+Monta un disco virtual desde una instantánea y restaura archivos y carpetas desde él a la VM de Windows original (origen).
+
+.Antes de empezar
+Antes de poder restaurar archivos y carpetas, debes crear una credencial para la máquina virtual de origen en NetApp Backup and Recovery. Esta credencial se usa para autenticarte con la máquina virtual durante el proceso de restauración.
+
+.Acerca de esta tarea
+Cuando abres una sesión de restauración de archivos y carpetas montando un disco virtual, la sesión permanece activa durante 48 horas.
+
+El rendimiento de la restauración depende tanto del tamaño como del número de archivos o carpetas que se restauran. Para un tamaño de conjunto de datos determinado, restaurar un gran número de archivos pequeños suele llevar más tiempo que restaurar un pequeño número de archivos grandes.
+
+Ten en cuenta lo siguiente al restaurar archivos y carpetas:
+
+[NOTE]
+====
+* No puedes restaurar archivos y carpetas en máquinas virtuales invitadas Linux en este momento.
+* La restauración de archivos y carpetas no es compatible con las copias de seguridad almacenadas en el almacenamiento secundario o el almacén de objetos.
+* No puedes restaurar archivos o carpetas en máquinas virtuales que residen en almacenamiento SAN.
+* Solo se puede ejecutar una operación de conexión o restauración al mismo tiempo en una máquina virtual. No es posible ejecutar operaciones de conexión o restauración en paralelo en la misma máquina virtual.
+* Ver o explorar particiones reservadas puede causar un error.
+* Durante la operación de restauración, los atributos oculto, de sistema y cifrado de los archivos invitados no se conservan en el archivo restaurado.
+* Puedes ver y restaurar archivos del sistema y ocultos, y ver archivos cifrados.
+* No sobrescribas un archivo de sistema existente ni restaures archivos cifrados en una carpeta cifrada.
+
+
+====
+.Pasos
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
+. Selecciona *Hyper-V* en la lista de cargas de trabajo situada en la parte superior derecha de la página.
+. En la lista de máquinas virtuales, selecciona la acción *Restaurar* para una máquina virtual que contenga archivos o carpetas que quieras restaurar.
+. Selecciona *Archivos y carpetas*.
+. En la página *Restaurar desde instantáneas*, haz lo siguiente:
++
+.. Opcionalmente, selecciona un marco temporal para filtrar la lista de instantáneas por hora de creación.
+.. Selecciona una instantánea en el almacenamiento primario desde la que quieres restaurar y luego selecciona *Siguiente*.
+
+
+. En la lista, elige un disco virtual que tenga los archivos y carpetas que necesitas restaurar y luego selecciona *Siguiente*.
+. En la página _Detalles de la máquina virtual huésped_, haz lo siguiente:
++
+.. En la sección *Detalles de la máquina virtual huésped*, adjunta el disco virtual a la máquina virtual original seleccionando *Máquina virtual original*.
+.. Opcionalmente, en la sección *Credenciales de la máquina virtual huésped*, si aún no has almacenado una credencial para el disco virtual de origen y la máquina virtual de destino, selecciona *Agregar credenciales*, introduce la información de la credencial de Windows y selecciona *Agregar*.
+.. En la lista, elige una credencial de máquina virtual para usar.
+.. Seleccione *Siguiente*.
++
+NetApp Backup and Recovery adjunta el disco virtual a la máquina virtual original y muestra todos los archivos y carpetas, incluidos los ocultos. Asigna una letra de unidad a cada partición, incluidas las particiones reservadas del sistema.
+
++
+Puedes usar el icono de la lupa (buscar) que está cerca del panel del explorador de archivos para buscar archivos y carpetas. No se admite la coincidencia de patrones, pero puedes buscar archivos o carpetas usando una parte del nombre o la extensión.
+
+
+
+. En la página _Elegir archivos o carpetas para restaurar_, haz lo siguiente:
++
+.. Selecciona los archivos o carpetas que quieres restaurar.
++
+Los archivos y carpetas que has seleccionado para restaurar aparecen en el área *Archivos y carpetas seleccionados*.
+
+.. Seleccione *Siguiente*.
+
+
+. En la página _Restauración de archivos de invitados - destino_, haz lo siguiente:
++
+.. En la sección "Restaurar en ruta", introduce la ruta UNC a la máquina virtual de destino y la ubicación del sistema de archivos donde se restaurarán los archivos seleccionados:
++
+*** Ejemplo de ruta IPv4: `\\10.60.136.65\c$`
+*** Ejemplo de ruta IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
+
+
++
+Si existen archivos con el mismo nombre, puedes optar por sobrescribirlos u omitirlos.
+
+. En la sección "Post-restore-options", puedes desconectar opcionalmente la sesión de invitado después de que finalice la restauración activando la opción *Disconnect guest session after the restore completes*. Esto desconecta el disco virtual y desmonta el datastore. Esto significa que tendrás que volver a conectar la sesión de invitado antes de realizar cualquier otra operación de restauración de archivos y carpetas.
+. Seleccione *Restaurar*.
++
+Puede ver el progreso de la restauración en la página Supervisión de trabajos.
+
+
+
+
+
+== Gestiona sesiones activas de montaje de discos en vivo
+
+Visualiza, usa y elimina las sesiones activas de restauración de archivos y carpetas de Hyper-V desde Backup and Recovery.
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery , seleccione *Clonar*.
+. Selecciona *Hyper-V* en la lista de cargas de trabajo situada en la parte superior derecha de la página.
+. Selecciona el menú *Sesiones de montaje de disco en vivo*.
++
+Aparece la lista de sesiones de montaje de discos virtuales abiertas.
+
+. Opcionalmente, para usar una sesión para restaurar archivos y carpetas en una VM huésped, abre el menú Acciones image:../media/icon-action.png["Opción de acciones"] para una sesión y selecciona *Restaurar archivos y carpetas*.
+. Opcionalmente, para borrar una sesión, abre el menú Acciones image:../media/icon-action.png["Opción de acciones"] para una sesión y selecciona *Borrar*.
+

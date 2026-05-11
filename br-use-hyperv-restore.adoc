@@ -21,14 +21,17 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 
 * Restaurar desde una ubicación principal (instantánea local)
 * Restaurar desde un recurso replicado en un almacenamiento secundario
-* Restaurar desde una copia de seguridad de almacenamiento de objetos
+* Restaurar desde una copia de seguridad de almacén de objetos (solo en la ubicación original)
 
+
+
+NOTE: La restauración a partir de la copia de seguridad del almacén de objetos no es compatible con las máquinas virtuales que residen en el almacenamiento SAN.
 
 .Restaurar a estos puntos
 Puede restaurar datos en estos puntos:
 
-* Restaurar a la ubicación original
-* Restaurar a una ubicación alternativa
+* Restaurar en la ubicación original (desde almacenamiento primario, secundario y almacén de objetos)
+* Restaurar en una ubicación alternativa (desde almacenamiento primario y secundario)
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos

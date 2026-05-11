@@ -73,7 +73,7 @@ Asigne suficiente espacio en disco y supervise el consumo de almacenamiento de l
 
 
 | Paquetes de software necesarios  a| 
-* ASP.NET Core Runtime 8.0.23 Hosting Bundle (y todos los parches posteriores de 8.0.x)
+* ASP.NET Core Runtime 8.0.24 Hosting Bundle (y todos los parches posteriores de 8.0.x)
 * PowerShell 7.4.13
 
 
@@ -202,6 +202,7 @@ Asegúrate de que tu entorno cumple los requisitos específicos para descubrir y
 | Versiones de Oracle Database  a| 
 * Oracle Database 19c
 * Oracle Database 21c
+* Oracle AI Database 26ai
 
 
 
@@ -260,7 +261,7 @@ Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos
 | Microsoft Hyper-V | 2019, 2022 y 2025 ediciones 
 
 
-| ASP.NET Core Runtime | 8.0.23 Hosting Bundle (y todos los parches posteriores de 8.0.x) 
+| ASP.NET Core Runtime | 8.0.24 Hosting Bundle (y todos los parches posteriores de 8.0.x) 
 
 
 | PowerShell | 7.4.13 o posterior 
@@ -283,7 +284,7 @@ Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos
 | Almacenamiento conectado  a| 
 * ONTAP 9.13.1 o posterior
 * Amazon FSx para sistemas de almacenamiento NetApp ONTAP que ejecuten la versión 9.13.1 o posterior
-* Almacenamiento SAN (vista previa) (compatible con copias de seguridad y restauración a la ubicación original desde almacenamiento primario y almacenamiento secundario)
+* Almacenamiento SAN (compatible con backups y para restaurar en la ubicación original desde almacenamiento primario o secundario)
 
 
 |===

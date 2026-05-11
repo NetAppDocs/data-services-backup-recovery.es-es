@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html 
-keywords:  
-summary: Puede restaurar uno o más archivos o carpetas desde un VMDK en un sistema operativo invitado Windows. 
+keywords: restore, guest, files, folders, files and folders, guest VM, windows, linux, VMDK, attach 
+summary: Puedes restaurar uno o más archivos o carpetas desde un VMDK a una VM huésped. 
 ---
 = Restaurar archivos y carpetas de discos virtuales
 :hardbreaks:
@@ -14,6 +14,12 @@ summary: Puede restaurar uno o más archivos o carpetas desde un VMDK en un sist
 
 
 [role="lead"]
+Restaurar archivos o carpetas individuales de un disco virtual a la máquina virtual original o a otra máquina virtual. Esto es útil cuando no necesitas restaurar una máquina virtual completa, sino que solo necesitas archivos o carpetas específicos.
+
+
+
+== Restaurar archivos y carpetas de discos virtuales
+
 Restaura archivos o carpetas desde un disco virtual a la VM original o a otra VM. Si prefieres no adjuntar el disco virtual a la VM original, puedes adjuntarlo a una VM proxy en su lugar.
 
 .Antes de empezar
@@ -170,3 +176,17 @@ Puede ver el progreso de la restauración en la página Supervisión de trabajos
 
 --
 ====
+
+
+== Ver sesiones de montaje VMDK activas
+
+Ve las sesiones de invitado activas cuando estás restaurando archivos o carpetas. Esto te muestra los VMDKs que están actualmente adjuntos con sesiones abiertas.
+
+.Pasos
+. Desde el menú NetApp Backup and Recovery , seleccione *Clonar*.
+. Selecciona *VMware* en la lista de cargas de trabajo situada en la parte superior derecha de la página.
+. Selecciona el menú *Sesiones de montaje de disco en vivo*.
++
+Se muestra una lista de las sesiones de montaje VMDK abiertas. Puedes ver el backup asociado, la VM de origen, la ruta de montaje y otra información.
+
+
