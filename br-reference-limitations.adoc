@@ -57,7 +57,7 @@ No hay ninguna limitación para los volúmenes FlexVol : puede seleccionar todos
 +
 Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Descripción general de la configuración de NetApp Volume Encryption"^] .
 
-* Si se habilitan las instantáneas de retención a largo plazo en un volumen de destino de SnapMirror mediante la programación en la política de SnapMirror , las instantáneas se crean directamente en el volumen de destino.  En este caso, no debe realizar una copia de seguridad de esos volúmenes con NetApp Backup and Recovery porque esas instantáneas no se moverán al almacenamiento de objetos.
+* No realices copias de seguridad de volúmenes de destino de SnapMirror que tengan instantáneas de retención a largo plazo habilitadas. Estas instantáneas se crean directamente en el destino y no se moverán al almacenamiento de objetos. Esta restricción se aplica incluso si la política de SnapMirror se cambia después para deshabilitar la retención a largo plazo.
 * Cuando crea o edita una política de respaldo cuando no hay volúmenes asignados a la política, la cantidad de copias de seguridad retenidas puede ser un máximo de 1018.  Después de asignar volúmenes a la política, puede editarla para crear hasta 4000 copias de seguridad.
 * Al realizar copias de seguridad de volúmenes de protección de datos (DP):
 +

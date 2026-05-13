@@ -205,6 +205,9 @@ Puedes crear el depósito desde la consola o desde tu proveedor de nube.
 
 Si planea utilizar un prefijo de depósito diferente a "netapp-backup-xxxxxx", deberá modificar los permisos de S3 para el rol de IAM del agente de consola.
 
+
+NOTE: Al crear un contenedor para usarlo como destino de la copia de seguridad en Azure, asegúrate de que el contenedor que crees tenga el mismo nombre que la cuenta de almacenamiento de Azure.
+
 *Configuración avanzada del depósito*
 
 Si planea mover archivos de respaldo antiguos al almacenamiento de archivo, o si planea habilitar DataLock y la protección contra ransomware para bloquear sus archivos de respaldo y escanearlos en busca de posible ransomware, deberá crear el contenedor con ciertas configuraciones:
