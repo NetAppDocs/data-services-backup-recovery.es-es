@@ -86,7 +86,7 @@ Para las cargas de trabajo de VMware, esto configura la instantánea local en lo
 +
 Para las cargas de trabajo de VMware, esto configura la instantánea local en los almacenes de datos o VMware en el sistema de almacenamiento principal y luego replica los datos del sistema de almacenamiento en disco principal al sistema de almacenamiento en disco secundario.
 
-** *Almacenamiento en disco a objeto*: Almacenamiento primario (disco) a la nube (almacén de objetos). Esto replica datos de un sistema ONTAP a un sistema de almacenamiento de objetos. Esto puede ser un almacén de objetos de un hiperescalador en la nube o un almacén de objetos privado como StorageGRID. Este método es ideal para la retención y el archivado de datos a largo plazo.
+** *Almacenamiento en disco a objeto*: Almacenamiento primario (disco) a la nube (almacén de objetos). Esto replica datos de un sistema ONTAP a un sistema de almacenamiento de objetos. Puede ser un almacén de objetos de hiperescalador en la nube o un almacén de objetos privado como StorageGRID. Este método es ideal para la retención y el archivado de datos a largo plazo. Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
 +
 Para las cargas de trabajo de VMWare, esto configura la instantánea local en los almacenes de datos o las máquinas virtuales en el disco primario y la replicación desde el almacenamiento del disco primario al almacenamiento de objetos en la nube.
 
