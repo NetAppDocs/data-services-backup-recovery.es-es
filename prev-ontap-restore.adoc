@@ -20,7 +20,7 @@ Las copias de seguridad de los datos de volumen de su ONTAP se almacenan como in
 NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
 * Puede restaurar un *volumen* (como un nuevo volumen) en el sistema original, en un sistema diferente que use la misma cuenta en la nube o en un sistema ONTAP local.
-* Puede restaurar una *carpeta* a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local.
+* Puedes restaurar una *carpeta* desde instantáneas replicadas o de almacenamiento de objetos a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local. No se admite la restauración de carpetas desde instantáneas locales.
 * Puede restaurar *archivos* a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local.
 
 

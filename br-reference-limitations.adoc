@@ -93,6 +93,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 
 Estas limitaciones se aplican tanto a los métodos de búsqueda y restauración como a los de exploración y restauración de archivos y carpetas, a menos que se indique específicamente.
 
+* No es posible restaurar carpetas a partir de instantáneas locales.
 * Explorar y restaurar puede restaurar hasta 100 archivos individuales a la vez.
 * Buscar y restaurar puede restaurar 1 archivo a la vez.
 * Al utilizar ONTAP 9.13.0 o superior, Explorar y restaurar y Buscar y restaurar pueden restaurar una carpeta junto con todos los archivos y subcarpetas que contiene.
