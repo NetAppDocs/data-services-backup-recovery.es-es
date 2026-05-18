@@ -116,3 +116,11 @@ Al utilizar una versión de ONTAP anterior a 9.11.1, no se admite la restauraci�
 
 
 
+
+
+
+== Habilitar la indexación en una configuración de recuperación de desastres
+
+Al activar la indexación en un clúster de SVM de almacenamiento en una configuración de recuperación ante desastres (DR), aparece un error que indica que la operación no está permitida en una SVM que está configurada como destino para SVM DR. A pesar del error, el proceso de backend establece el estado `snapdiff-rpc-server` en "activado" para las SVM de almacenamiento de origen. Después de que se ejecute la programación de la política de DR de SVM de almacenamiento, este estado se propaga a las SVM de almacenamiento de destino.
+
+*Solución*: Espera a que se ejecute la programación de la política de DR de la SVM después del error inicial y luego intenta habilitar la indexación de nuevo.
