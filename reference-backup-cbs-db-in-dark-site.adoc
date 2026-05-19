@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como "modo privado", los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola en el futuro, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery .' 
+summary: 'En modo privado (sin acceso a internet), NetApp Backup and Recovery almacena sus datos de configuración en el mismo bucket StorageGRID u ONTAP S3 que usas para tus copias de seguridad. Si el sistema host del agente de la consola falla, puedes implementar un nuevo agente de la consola y restaurar estos datos.' 
 ---
 = Restaurar datos de configuración de NetApp Backup and Recovery en un sitio oscuro
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, 
 
 
 [role="lead"]
-Al usar NetApp Backup and Recovery en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de NetApp Backup and Recovery se respaldan en el depósito StorageGRID o ONTAP S3 donde se almacenan sus copias de seguridad.  Si tiene un problema con el sistema host del agente de consola, puede implementar un nuevo agente de consola y restaurar los datos críticos de NetApp Backup and Recovery .
+En modo _privado_ (sin acceso a Internet), NetApp Backup and Recovery almacena sus datos de configuración en el mismo bucket de StorageGRID u ONTAP S3 utilizado para tus copias de seguridad. Si el sistema host del agente de la consola falla, puedes implementar un nuevo agente de la consola y restaurar estos datos.
 
 También puedes seguir estos pasos para reemplazar el agente de la Consola y restaurar los datos de configuración que se almacenaron en él cuando usas Backup and Recovery en _standard mode_ en las instalaciones, cuando no hay cuentas en la nube involucradas (por ejemplo, cuando usas NetApp StorageGrid como destino de la copia de seguridad).
 
