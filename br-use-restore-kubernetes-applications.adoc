@@ -60,10 +60,6 @@ Se inicia el asistente de restauración de datos y aparece la página _Configura
 . Elige la ubicación de origen desde la que quieres restaurar.
 . Seleccione el clúster de destino de la lista *Clúster*.
 . Elige restaurar en los espacios de nombres originales o en nuevos espacios de nombres.
-+
-
-NOTE: Actualmente no se admite la restauración sin movimiento (restaurar al espacio de nombres y clúster originales) de aplicaciones basadas en máquinas virtuales a partir de instantáneas locales.
-
 . Si elegiste restaurar en nuevos espacios de nombres, introduce el espacio o los espacios de nombres de destino que vas a usar.
 . Seleccione *Siguiente*.
 +

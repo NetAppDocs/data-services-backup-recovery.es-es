@@ -31,9 +31,3 @@ Cuando cambias la política de protección asociada a una aplicación para usar 
 Cuando creas una política de protección 3-2-1 donde no se realizan copias de seguridad en el almacén de objetos al mismo tiempo que la replicación al almacenamiento secundario, la política de protección se queda colgada al proteger la aplicación.
 
 *Solución*: elimina y vuelve a agregar la aplicación y protégela con una política de protección diferente.
-
-
-
-== No se admiten las restauraciones in situ de aplicaciones basadas en máquinas virtuales a partir de instantáneas locales
-
-Actualmente no se admite la restauración sin movimiento (restaurar al espacio de nombres y clúster originales) de aplicaciones basadas en máquinas virtuales a partir de instantáneas locales.

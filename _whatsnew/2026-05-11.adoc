@@ -48,3 +48,15 @@ En esta versión, VMware workloads introduce las siguientes mejoras:
 
 
 Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .
+
+
+
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
+
+* *Trident Protect 26.05.1*: Esta versión incluye Trident Protect 26.05.1.
+* *Restauración sin movimiento para aplicaciones basadas en VM*: Ahora puedes restaurar aplicaciones basadas en VM en el espacio de nombres y el clúster originales.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .

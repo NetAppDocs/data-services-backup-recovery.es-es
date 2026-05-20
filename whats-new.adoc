@@ -71,6 +71,18 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, cons
 
 
 
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
+
+* *Trident Protect 26.05.1*: Esta versión incluye Trident Protect 26.05.1.
+* *Restauración sin movimiento para aplicaciones basadas en VM*: Ahora puedes restaurar aplicaciones basadas en VM en el espacio de nombres y el clúster originales.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+
+
+
 == 05 de mayo de 2026
 
 Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
@@ -81,9 +93,10 @@ Esta versión de NetApp Backup and Recovery incluye las siguientes actualizacion
 
 En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
 
+* *Trident Protect 26.05*: Esta versión incluye Trident Protect 26.05.
+* *Actualiza Trident Protect desde Backup and Recovery*: Si tu clúster de Kubernetes está ejecutando Trident Protect 26.05 o una versión más reciente, ahora puedes actualizar Trident Protect directamente desde Backup and Recovery.
 * *Compatibilidad nativa con la protección de máquinas virtuales*: Ahora puedes crear aplicaciones basadas en VM, lo que te permite proteger las máquinas virtuales del mismo modo que proteges cualquier otra aplicación.
 * *Transformaciones de recursos*: Ahora puedes usar transformaciones de recursos y plantillas de transformación de recursos para añadir, eliminar y modificar atributos de recursos durante el proceso de restauración.
-* *Actualiza Trident Protect desde Backup and Recovery*: Ahora puedes actualizar Trident Protect para un clúster de Kubernetes directamente desde Backup and Recovery.
 * *Ver recursos protegidos*: Ahora puedes ver los recursos incluidos en cada punto de recuperación de una aplicación y descargar un informe JSON detallado. Esto te da visibilidad total de tus puntos de recuperación y simplifica el cumplimiento de auditorías.
 
 
