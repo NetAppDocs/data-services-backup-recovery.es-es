@@ -27,9 +27,6 @@ Utilice NetApp Backup and Recovery para implementar una estrategia de protecció
 
 Cuando agrega hosts Hyper-V y descubre recursos, NetApp Backup and Recovery instala el complemento NetApp Hyper-V y el complemento NetApp SnapCenter Windows FileSystem en el host Hyper-V para ayudar con la administración y protección de máquinas virtuales.
 
-
-NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
-
 Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de Hyper-V:
 
 * link:br-start-discover-hyperv.html["Descubra las cargas de trabajo de Hyper-V"]

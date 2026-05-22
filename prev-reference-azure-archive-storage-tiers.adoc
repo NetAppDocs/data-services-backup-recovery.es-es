@@ -16,12 +16,6 @@ summary: NetApp Backup and Recovery admite un nivel de acceso de archivo de Azur
 [role="lead"]
 NetApp Backup and Recovery admite un nivel de acceso de archivo de Azure y la mayoría de las regiones.
 
-[]
-====
-
-NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
-
-====
 
 
 == Niveles de acceso de Azure Blob compatibles con NetApp Backup and Recovery

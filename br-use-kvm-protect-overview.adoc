@@ -25,9 +25,6 @@ Utilice NetApp Backup and Recovery para implementar una estrategia de protecció
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
-
-NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
-
 Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de KVM:
 
 * link:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"]

@@ -16,12 +16,6 @@ summary: NetApp Backup and Recovery admite una clase de almacenamiento de archiv
 [role="lead"]
 NetApp Backup and Recovery admite una clase de almacenamiento de archivo de Google y la mayoría de las regiones.
 
-[]
-====
-
-NOTE: Para cambiar entre las versiones de la interfaz de usuario de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a la interfaz de usuario anterior de NetApp Backup and Recovery"] .
-
-====
 
 
 == Clases de almacenamiento de archivo de Google compatibles con NetApp Backup and Recovery
