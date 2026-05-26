@@ -58,7 +58,7 @@ NOTE: Backup and Recovery no almacena los parámetros de búsqueda ni los result
 
 . NetApp Backup and Recovery muestra una lista de recursos que coinciden con tus criterios de búsqueda.
 . Si la lista contiene los recursos que desea proteger, seleccione *Siguiente*.
-. Opcionalmente, en el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva. Si no selecciona ninguna, la aplicación se creará sin política de protección. Puedelink:br-use-policies-create.html#create-a-policy["añadir una política de protección"] más tarde.
+. Opcionalmente, en el área *Policy*, elige una política de protección existente para proteger la aplicación o crea una nueva política. Si no seleccionas una política, la aplicación se crea sin política de protección. Puedes link:br-use-policies-kubernetes-create.html#create-a-policy["añadir una política de protección"] más adelante.
 . En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescript o postscript que desee ejecutar antes o después de las operaciones de respaldo.  Para habilitar prescriptos o posscriptos, debe haber creado previamente al menos unolink:br-use-manage-execution-hook-templates.html["plantilla de gancho de ejecución"] .
 . Seleccione *Crear*.
 
@@ -86,7 +86,7 @@ NOTE: Si seleccionas VMs de la lista, la definición de la aplicación es estát
 Las máquinas virtuales seleccionadas aparecen en la lista de la derecha.
 
 . Si la lista contiene las máquinas virtuales que quieres proteger, selecciona *Siguiente*.
-. Opcionalmente, en el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva. Si no selecciona ninguna, la aplicación se creará sin política de protección. Puedelink:br-use-policies-create.html#create-a-policy["añadir una política de protección"] más tarde.
+. Opcionalmente, en el área *Policy*, elige una política de protección existente para proteger la aplicación o crea una nueva política. Si no seleccionas una política, la aplicación se crea sin política de protección. Puedes link:br-use-policies-kubernetes-create.html#create-a-policy["añadir una política de protección"] más adelante.
 . En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescript o postscript que desee ejecutar antes o después de las operaciones de respaldo.  Para habilitar prescriptos o posscriptos, debe haber creado previamente al menos unolink:br-use-manage-execution-hook-templates.html["plantilla de gancho de ejecución"] .
 . Seleccione *Crear*.
 

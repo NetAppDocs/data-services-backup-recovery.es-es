@@ -151,7 +151,7 @@ NOTE: Actualmente no es posible modificar PersistentVolumeClaims ni los espacios
 .. Selecciona una plantilla de la lista *Template* para aplicar rápidamente los ajustes de los modificadores que utilizas habitualmente. Esta lista incluye plantillas predefinidas para escenarios comunes, así como plantillas personalizadas que hayas creado.
 +
 
-NOTE: Crea plantillas de transformación de recursos en el área global link:br-start-configure.html#create-a-resource-modifier-template["Configuración"^].
+NOTE: Crea plantillas de transformación de recursos en el área global link:br-start-configure.html#create-a-resource-transformation-template["Configuración"^].
 
 .. Especifica qué recurso quieres modificar introduciendo el grupo de recursos, la versión, el tipo y el nombre.
 .. Especifica la operación que quieres realizar en el recurso seleccionando una operación de la lista *Operación*.
