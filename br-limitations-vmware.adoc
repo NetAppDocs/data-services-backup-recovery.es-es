@@ -18,12 +18,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 Las siguientes acciones no son compatibles en las cargas de trabajo de VMware en NetApp Backup and Recovery:
 
-* Montar
-* Desmontar
 * Compatibilidad con vVol
-* Compatibilidad con NVMe
 * Integración de correo electrónico
-* Editar política
-* Editar grupo de protección
 * Compatibilidad con control de acceso basado en roles (RBAC)
 
