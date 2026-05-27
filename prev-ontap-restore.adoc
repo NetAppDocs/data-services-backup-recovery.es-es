@@ -17,7 +17,7 @@ summary: Puedes usar Buscar y Restaurar para recuperar volúmenes, carpetas o ar
 Las copias de seguridad de los datos de volumen de su ONTAP se almacenan como instantáneas, en volúmenes replicados o en almacenamiento de objetos.  Puedes restaurar datos desde cualquiera de estas ubicaciones en un momento específico.  Con NetApp Backup and Recovery, puede restaurar un volumen completo, una carpeta o archivos individuales según sea necesario.
 
 
-NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
+NOTE: Cuando restauras un volumen habilitado para SnapLock, el volumen restaurado conserva la protección SnapLock solo si el almacenamiento de destino está habilitado para WORM. Si restauras en un destino que no está habilitado para WORM, se elimina el estado SnapLock del volumen restaurado.
 
 * Puede restaurar un *volumen* (como un nuevo volumen) en el sistema original, en un sistema diferente que use la misma cuenta en la nube o en un sistema ONTAP local.
 * Puedes restaurar una *carpeta* desde instantáneas replicadas o de almacenamiento de objetos a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local. No se admite la restauración de carpetas desde instantáneas locales.

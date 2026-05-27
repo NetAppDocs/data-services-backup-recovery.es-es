@@ -42,6 +42,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información so
 * Si el archivo de respaldo en el almacenamiento de objetos reside en el almacenamiento de archivo, la restauración a nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o superior.  Si está utilizando una versión anterior de ONTAP, puede restaurar la carpeta desde un archivo de respaldo más nuevo que no se haya archivado, o puede restaurar el volumen completo desde el respaldo archivado y luego acceder a la carpeta y los archivos que necesita.
 * La prioridad de restauración "Alta" no se admite al restaurar datos desde el almacenamiento de archivo de Azure a sistemas StorageGRID .
 * Actualmente no se admite la restauración de carpetas desde volúmenes en el almacenamiento de objetos ONTAP S3.
+* Cuando restauras un volumen habilitado para SnapLock, el volumen restaurado conserva la protección SnapLock solo si el almacenamiento de destino está habilitado para WORM. Si restauras en un destino que no está habilitado para WORM, se elimina el estado SnapLock del volumen restaurado.
 
 
 ====
