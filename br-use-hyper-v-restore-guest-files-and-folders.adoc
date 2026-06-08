@@ -14,7 +14,7 @@ summary: Puedes restaurar uno o más archivos o carpetas desde una instantánea 
 
 
 [role="lead"]
-Restaura archivos y carpetas de backups de Hyper-V VM en el almacenamiento primario a una VM huésped de Windows.
+Restaura archivos y carpetas desde copias de seguridad de Hyper-V VM en almacenamiento primario o secundario a una VM huésped de Windows.
 
 
 
@@ -35,8 +35,7 @@ Ten en cuenta lo siguiente al restaurar archivos y carpetas:
 [NOTE]
 ====
 * No puedes restaurar archivos y carpetas en máquinas virtuales invitadas Linux en este momento.
-* La restauración de archivos y carpetas no es compatible con las copias de seguridad almacenadas en el almacenamiento secundario o el almacén de objetos.
-* No puedes restaurar archivos o carpetas en máquinas virtuales que residen en almacenamiento SAN.
+* No se admite la restauración de archivos y carpetas a partir de copias de seguridad almacenadas en un almacén de objetos.
 * Solo se puede ejecutar una operación de conexión o restauración al mismo tiempo en una máquina virtual. No es posible ejecutar operaciones de conexión o restauración en paralelo en la misma máquina virtual.
 * Ver o explorar particiones reservadas puede causar un error.
 * Durante la operación de restauración, los atributos oculto, de sistema y cifrado de los archivos invitados no se conservan en el archivo restaurado.
@@ -53,7 +52,7 @@ Ten en cuenta lo siguiente al restaurar archivos y carpetas:
 . En la página *Restaurar desde instantáneas*, haz lo siguiente:
 +
 .. Opcionalmente, selecciona un marco temporal para filtrar la lista de instantáneas por hora de creación.
-.. Selecciona una instantánea en el almacenamiento primario desde la que quieres restaurar y luego selecciona *Siguiente*.
+.. Selecciona una instantánea en el almacenamiento primario o secundario desde la que quieres restaurar y luego selecciona *Siguiente*.
 
 
 . En la lista, elige un disco virtual que tenga los archivos y carpetas que necesitas restaurar y luego selecciona *Siguiente*.

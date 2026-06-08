@@ -1,0 +1,24 @@
+= Mejoras en las cargas de trabajo de ONTAP Volumes
+:allow-uri-read: 
+
+
+
+
+=== Mejoras en las cargas de trabajo de ONTAP Volumes
+
+En esta versión, las cargas de trabajo de ONTAP Volumes introducen la siguiente mejora:
+
+*Soporte para almacenamiento en la nube compatible con S3*: NetApp Backup and Recovery para cargas de trabajo de Volumes ahora admite la realización de copias de seguridad en almacenamiento en la nube compatible con S3.
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descripción general de la protección de cargas de trabajo de ONTAP Volumes"].
+
+
+
+=== Mejoras en las cargas de trabajo de Hyper-V
+
+En esta versión, las cargas de trabajo Hyper-V introducen las siguientes mejoras:
+
+* *Mejoras en la restauración de archivos y carpetas en una máquina virtual invitada*: Ahora puedes restaurar archivos y carpetas de una instantánea en el almacenamiento primario o secundario a una máquina virtual de Windows invitada. Esta función ahora es compatible con VMs CIFS y SAN.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .

@@ -105,27 +105,64 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Obtenga más informació
 
 NetApp Backup and Recovery le permite realizar copias de seguridad de volúmenes ONTAP desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube pública y privada. Las instantáneas residen en el sistema de origen.
 
+
+NOTE: Wasabi es el único proveedor de almacenamiento de objetos compatible con S3 cualificado en este momento. No se han validado otros proveedores compatibles con S3.
+
 [cols="33,33,33"]
 |===
 | Sistema fuente | Sistema secundario (Replicación) | Almacén de objetos de destino (copia de seguridad) 
 
 
-| Cloud Volumes ONTAP en AWS | Cloud Volumes ONTAP en el sistema ONTAP local de AWS | Amazon S3 
+| Cloud Volumes ONTAP en AWS  a| 
+* Cloud Volumes ONTAP en AWS
+* Sistema ONTAP local
+
+| Amazon S3 
 
 
-| Cloud Volumes ONTAP en Azure | Cloud Volumes ONTAP en el sistema ONTAP local de Azure | Blob de Azure 
+| Cloud Volumes ONTAP en Azure  a| 
+* Cloud Volumes ONTAP en Azure
+* Sistema ONTAP local
+
+| Blob de Azure 
 
 
-| Cloud Volumes ONTAP en Google | Cloud Volumes ONTAP en el sistema Google On-premises ONTAP | Almacenamiento en la nube de Google 
+| Cloud Volumes ONTAP en Google  a| 
+* Cloud Volumes ONTAP en Google
+* Sistema ONTAP local
+
+| Almacenamiento en la nube de Google 
 
 
-| Sistema ONTAP local | Cloud Volumes ONTAP Sistema ONTAP local | Amazon S3 Azure Blob Google Cloud Storage NetApp StorageGRID ONTAP S3 
+| Sistema ONTAP local  a| 
+* Cloud Volumes ONTAP
+* Sistema ONTAP local
+
+ a| 
+* Amazon S3
+* Almacenamiento compatible con S3
+* Blob de Azure
+* Almacenamiento en la nube de Google
+* StorageGRID en NetApp
+* ONTAP S3
+
+
+
+
+| Cloud Volumes ONTAP en almacenamiento de objetos compatible con S3  a| 
+* Cloud Volumes ONTAP en almacenamiento de objetos compatible con S3
+* Sistema ONTAP local
+
+| Almacenamiento de objetos compatible con S3 
 |===
 
 
 === Destinos de restauración admitidos
 
 Puede restaurar datos de ONTAP desde un archivo de copia de seguridad que reside en un sistema secundario (un volumen replicado) o en almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
+
+
+NOTE: Wasabi es el único proveedor de almacenamiento de objetos compatible con S3 cualificado en este momento. No se han validado otros proveedores compatibles con S3.
 
 [cols="33,33,33"]
 |===
@@ -135,19 +172,62 @@ Puede restaurar datos de ONTAP desde un archivo de copia de seguridad que reside
 | *Almacén de objetos (copia de seguridad)* | *Sistema secundario (replicación)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP en el sistema ONTAP local de AWS | Cloud Volumes ONTAP en el sistema ONTAP local de AWS 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP en AWS
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP en AWS
+* Sistema ONTAP local
 
 
-| Blob de Azure | Cloud Volumes ONTAP en el sistema ONTAP local de Azure | Cloud Volumes ONTAP en el sistema ONTAP local de Azure 
 
 
-| Almacenamiento en la nube de Google | Cloud Volumes ONTAP en el sistema Google On-premises ONTAP | Cloud Volumes ONTAP en el sistema Google On-premises ONTAP 
+| Blob de Azure  a| 
+* Cloud Volumes ONTAP en Azure
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP en Azure
+* Sistema ONTAP local
 
 
-| StorageGRID en NetApp | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
 
 
-| ONTAP S3 | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
+| Almacenamiento en la nube de Google  a| 
+* Cloud Volumes ONTAP en Google
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP en Google
+* Sistema ONTAP local
+
+
+
+
+| StorageGRID en NetApp  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
+
+
+| ONTAP S3  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
+
+
+| Almacenamiento de objetos compatible con S3  a| 
+* Cloud Volumes ONTAP en almacenamiento de objetos compatible con S3
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP en almacenamiento de objetos compatible con S3
+* Sistema ONTAP local
+
+
 |===
 Tenga en cuenta que las referencias a "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
 

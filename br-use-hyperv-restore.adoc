@@ -24,9 +24,6 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 * Restaurar desde una copia de seguridad de almacén de objetos (solo en la ubicación original)
 
 
-
-NOTE: La restauración a partir de la copia de seguridad del almacén de objetos no es compatible con las máquinas virtuales que residen en el almacenamiento SAN.
-
 .Restaurar a estos puntos
 Puede restaurar datos en estos puntos:
 

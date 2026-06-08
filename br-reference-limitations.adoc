@@ -94,6 +94,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 Estas limitaciones se aplican tanto a los métodos de búsqueda y restauración como a los de exploración y restauración de archivos y carpetas, a menos que se indique específicamente.
 
 * No es posible restaurar carpetas a partir de instantáneas locales.
+* Restauración de archivos y carpetas en una configuración de recuperación ante desastres (DR): después de una conmutación por error, los volúmenes de una máquina virtual de almacenamiento configurada para DR conservan relaciones SnapMirror preexistentes en un estado de ruptura. Los intentos de restaurar archivos o carpetas que crean relaciones RST temporales de SnapMirror son bloqueados por ONTAP porque el volumen de destino ya tiene una relación.
 * Explorar y restaurar puede restaurar hasta 100 archivos individuales a la vez.
 * Buscar y restaurar puede restaurar 1 archivo a la vez.
 * Al utilizar ONTAP 9.13.0 o superior, Explorar y restaurar y Buscar y restaurar pueden restaurar una carpeta junto con todos los archivos y subcarpetas que contiene.
