@@ -29,6 +29,9 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 
 
 
+NOTE: Para las cargas de trabajo de VMware, los horarios de backup usan la zona horaria del servidor VMware vCenter, no UTC ni la hora local de tu navegador. Esta zona horaria se establece cuando creas el horario. Si la zona horaria del host cambia, tienes que actualizar el host y volver a crear el horario para que la nueva zona horaria tenga efecto. Consulta link:br-use-vmware-protection-groups.html["Crear y administrar grupos de protección para cargas de trabajo de VMware"] para más información.
+
+
 
 == Ver políticas
 

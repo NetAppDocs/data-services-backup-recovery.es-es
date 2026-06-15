@@ -32,6 +32,10 @@ Agrupe las cargas de trabajo que desea proteger juntas en un grupo de protecció
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
+.Antes de empezar
+* Ten en cuenta que, en el caso de las cargas de trabajo de Hyper-V, el tiempo de backup se interpreta según la zona horaria del host de administración. Consulta link:br-use-policies-hyper-v-create.html["Crea y gestiona políticas de backup de Hyper-V en NetApp Backup and Recovery"] para obtener más información.
+
+
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
@@ -60,10 +64,25 @@ Edite un grupo de protección para cambiar su nombre o configuración. Es posibl
 . Seleccione la pestaña *Grupos de protección*.
 . Seleccione el grupo de protección que desea editar.
 . Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Editar*.
-. Cambie cualquier configuración del grupo de protección, como el nombre o qué máquinas virtuales están en el grupo.
-. Seleccione *Siguiente*.
-. Cambie la política de protección si es necesario. Cuando haya terminado, seleccione *Siguiente*.
-. Revise la configuración y seleccione *Enviar*.
++
+El asistente para editar grupos de protección te guía a través de la configuración del grupo de protección.
+
+. Haz los cambios necesarios en cada pantalla del asistente.
+. Cuando hayas terminado, selecciona *Enviar*.
+
+
+
+
+=== Aplicar una zona horaria actualizada del host a un grupo de protección existente
+
+Las copias de seguridad programadas utilizan la zona horaria del host de Hyper-V que se registra al crear la programación del grupo de protección. Si cambias la zona horaria del host, los grupos de protección existentes siguen ejecutándose en su zona horaria original (normalmente UTC) hasta que actualices sus programaciones.
+
+
+NOTE: Las programaciones solo se vuelven a crear cuando modificas el nombre del grupo de protección, añades o eliminas una máquina virtual, cambias la política asignada o actualizas los scripts previos o posteriores. Guardar sin hacer ningún cambio no actualizará las programaciones. Esta actualización de la programación es una acción única por grupo de protección y no inicia un backup inmediato.
+
+.Pasos
+. Actualiza el host de Hyper-V para que se obtenga su zona horaria actual.
+. Edita el grupo de protección y cambia su nombre por otro valor, luego guarda.
 
 
 

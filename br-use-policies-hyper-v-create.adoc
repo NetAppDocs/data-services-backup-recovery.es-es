@@ -27,6 +27,9 @@ Puedes lograr los siguientes objetivos relacionados con las políticas:
 
 
 
+NOTE: En el caso de las cargas de trabajo de Hyper-V, las programaciones de backup utilizan la zona horaria del host de Hyper-V, no UTC ni la hora local de tu navegador. Esta zona horaria se configura al crear la programación. Si cambia la zona horaria del host, debes actualizar el host y volver a crear la programación para que la nueva zona horaria surta efecto. Consulta link:br-use-hyperv-protection-groups.html["Crear y administrar grupos de protección para cargas de trabajo de Hyper-V"] para obtener más información.
+
+
 
 == Ver políticas
 
