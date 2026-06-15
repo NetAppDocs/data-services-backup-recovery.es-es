@@ -1869,7 +1869,6 @@
   <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
   <block id="d3cbd09d6a0974ee6a694826a8598eb6" category="section-title">Requisitos para proteger las aplicaciones de Kubernetes</block>
   <block id="35efe147e51e11d3e82b92163214c36a" category="paragraph">Necesita requisitos específicos para descubrir recursos de Kubernetes y proteger sus aplicaciones de Kubernetes.</block>
-  <block id="b4223a9285b846e8b6c959752c4aef73" category="paragraph">Para conocer los requisitos de la NetApp Console , consulte<block ref="7a97fc65ea04291b3564618ee6e90325" category="inline-xref-macro-rx"></block> .</block>
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">Requisitos para proteger las cargas de trabajo de Hyper-V</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos para descubrir y proteger máquinas virtuales.</block>
   <block id="e8ab74a683c73fd7edd0ea5adc16b2b6" category="list-text">Se admiten hosts independientes y agrupados en FCI</block>
@@ -5551,7 +5550,6 @@
   <block id="9a6bb04c2b277b55faab469f2d04692b" category="paragraph">A continuación se indican las acciones admitidas al realizar una copia de seguridad en un almacenamiento compatible con S3:</block>
   <block id="1588002f4465aee8a1e35fc95dbebabd" category="list-text">Copia de seguridad de instantáneas coherentes con fallos y coherentes con aplicaciones desde ONTAP local a almacenes de objetos de terceros compatibles con S3</block>
   <block id="00de0e91b8bfb37d4831f3333b8df9fa" category="list-text">Flujos de trabajo básicos para la protección de datos: copia de seguridad, restauración y eliminación de copia de seguridad</block>
-  <block id="0a7a61be3bd51e21631c884f7d8de9ef" category="list-text">Validado frente a proveedores compatibles con S3, incluidos Wasabi, MinIO, IBM Object Store y Apple Object Store</block>
   <block id="21e1cea657da329388848ff59f3eea5d" category="list-text">NetApp Support acepta y clasifica todas las solicitudes de soporte que involucren almacenes de objetos compatibles con S3 de terceros</block>
   <block id="a368c9277e64abd2f91bd6fdc8cafbda" category="section-title">Funciones y configuraciones no compatibles</block>
   <block id="ad8f08e5de0a588e08fde1c710915292" category="paragraph">Las siguientes funciones y configuraciones no son compatibles al realizar copias de seguridad en almacenamiento compatible con S3:</block>
@@ -5626,4 +5624,6 @@
   <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">Para restaurar reclamaciones de volumen persistente individuales, selecciona la pestaña *Persistent volume claims*.</block>
   <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">La función «Copia de seguridad y recuperación» muestra todas las reclamaciones de volúmenes persistentes del punto de recuperación. Puedes seleccionar qué reclamaciones de volúmenes persistentes incluir en la operación de restauración.</block>
   <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">15 de junio de 2026</block>
+  <block id="eb985c23c2b4157b8059d99e50538799" category="paragraph">Para conocer los requisitos de NetApp Console, consulta <block ref="a1e048c2b33797bd5e09f13ddaff6fff" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d1a5a28bec1ce98df5bea6fe830a4f31" category="list-text">Probado y validado con Wasabi object storage; los clientes también han informado implementaciones satisfactorias con MinIO, IBM Cloud Object Storage y Apple Object Store</block>
 </blocks>

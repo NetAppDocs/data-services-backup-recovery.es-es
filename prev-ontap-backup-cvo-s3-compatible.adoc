@@ -45,7 +45,7 @@ A continuación se indican las acciones admitidas al realizar una copia de segur
 
 * Copia de seguridad de instantáneas coherentes con fallos y coherentes con aplicaciones desde ONTAP local a almacenes de objetos de terceros compatibles con S3
 * Flujos de trabajo básicos para la protección de datos: copia de seguridad, restauración y eliminación de copia de seguridad
-* Validado frente a proveedores compatibles con S3, incluidos Wasabi, MinIO, IBM Object Store y Apple Object Store
+* Probado y validado con Wasabi object storage; los clientes también han informado implementaciones satisfactorias con MinIO, IBM Cloud Object Storage y Apple Object Store
 * NetApp Support acepta y clasifica todas las solicitudes de soporte que involucren almacenes de objetos compatibles con S3 de terceros
 
 
