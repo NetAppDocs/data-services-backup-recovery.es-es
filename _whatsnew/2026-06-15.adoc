@@ -1,0 +1,17 @@
+= Mejoras en cargas de trabajo de Kubernetes
+:allow-uri-read: 
+
+
+
+
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
+
+* *Trident Protect 26.06*: Esta versión incluye Trident Protect 26.06.
+* *Omitir la creación de aplicaciones durante la restauración*: Ahora puedes omitir la creación automática de objetos de recursos personalizados de aplicaciones durante las operaciones de restauración. Esto reduce las entradas innecesarias en el inventario de aplicaciones.
+* *Restaurar reclamaciones de volúmenes persistentes de máquinas virtuales*: Al restaurar aplicaciones basadas en máquinas virtuales, ahora puedes restaurar reclamaciones de volúmenes persistentes individuales sin restaurar toda la máquina virtual, lo que hace que la recuperación sea más rápida cuando discos o volúmenes específicos se ven afectados por corrupción o pérdida de datos.
+* *Mejoras en el monitor de tareas*: El monitor de tareas ahora ofrece una mayor visibilidad de las tareas de protección de Kubernetes. Puedes consultar información detallada sobre el estado de las tareas y subtareas, y ver el almacenamiento de destino que utiliza cada una.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .

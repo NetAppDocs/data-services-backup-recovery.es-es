@@ -60,7 +60,13 @@ Se inicia el asistente de restauración de datos y aparece la página _Configura
 . Elige la ubicación de origen desde la que quieres restaurar.
 . Seleccione el clúster de destino de la lista *Clúster*.
 . Elige restaurar en los espacios de nombres originales o en nuevos espacios de nombres.
-. Si elegiste restaurar en nuevos espacios de nombres, introduce el espacio o los espacios de nombres de destino que vas a usar.
+. Si has optado por restaurar en nuevos espacios de nombres, haz lo siguiente:
++
+.. Introduce el espacio de nombres o los espacios de nombres de destino que quieres usar.
+.. Introduce el nombre de la aplicación de destino.
+.. Si lo deseas, selecciona la opción *No crear una aplicación para los recursos restaurados* para restaurar los recursos sin crear un objeto de recurso personalizado de la aplicación. Esto reduce las entradas innecesarias en el inventario de la aplicación.
+
+
 . Seleccione *Siguiente*.
 +
 Aparece la página _Selección de recursos_.
@@ -122,8 +128,17 @@ NOTE: Los recursos que se muestran son los recursos que existen actualmente en e
 .Recursos específicos de aplicaciones basadas en máquinas virtuales
 --
 .. Seleccione *Recursos selectivos*.
+.. Debe realizar una de las siguientes acciones:
++
+*** Para restaurar máquinas virtuales completas, selecciona la pestaña *Virtual machines*.
 +
 Backup and Recovery enumera todas las máquinas virtuales en el punto de recuperación. Puedes seleccionar qué máquinas virtuales incluir en la operación de restauración.
+
+*** Para restaurar reclamaciones de volumen persistente individuales, selecciona la pestaña *Persistent volume claims*.
++
+La función «Copia de seguridad y recuperación» muestra todas las reclamaciones de volúmenes persistentes del punto de recuperación. Puedes seleccionar qué reclamaciones de volúmenes persistentes incluir en la operación de restauración.
+
+
 
 .. Cuando termines, selecciona *Siguiente*.
 
