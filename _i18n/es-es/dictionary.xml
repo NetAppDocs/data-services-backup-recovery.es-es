@@ -5641,4 +5641,5 @@
   <block id="ee19d16e1df2ea16cdf0906f9c62e70b" category="paragraph">Las copias de seguridad programadas usan la zona horaria del servidor vCenter que se registra cuando se crea la programación del grupo de protección. Si cambias la zona horaria del servidor vCenter, los grupos de protección existentes siguen funcionando en su zona horaria original (normalmente UTC) hasta que actualices sus programaciones.</block>
   <block id="2b33678c8eba4dacaa294cad350a79f8" category="list-text">Actualiza el servidor vCenter para que se recupere su zona horaria actual.</block>
   <block id="746c4e9758e4e986d2c5f289c1d7e4ed" category="list-text">Probado y validado con el almacenamiento de objetos Wasabi; los clientes también han informado de implementaciones satisfactorias con MinIO e IBM Cloud Object Storage</block>
+  <block id="9044dfb75ff38841e5c3112d327e52cf" category="admonition">Los scripts en el repositorio Verda GitHub se proporcionan tal cual y no cuentan con soporte oficial por parte de NetApp. Solo el framework de hooks de ejecución dentro de Trident Protect y Backup and Recovery cuenta con soporte oficial por parte de NetApp.</block>
 </blocks>
