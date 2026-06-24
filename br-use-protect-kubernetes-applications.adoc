@@ -34,7 +34,8 @@ Antes de poder agregar y proteger una aplicación de Kubernetes, debelink:br-sta
 --
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.
-. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. En la parte superior derecha de la página, asegúrate de que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.
+. Selecciona *Ver* en la línea de la carga de trabajo para ver los recursos de Kubernetes.
 . Seleccione la pestaña *Aplicaciones*.
 . Seleccione *Crear aplicación*.
 . Introduzca un nombre para la aplicación.
@@ -71,7 +72,8 @@ La aplicación se crea y aparece en la lista de aplicaciones de la pestaña *App
 --
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.
-. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. En la parte superior derecha de la página, asegúrate de que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.
+. Selecciona *Ver* en la línea de la carga de trabajo para ver los recursos de Kubernetes.
 . Seleccione la pestaña *Aplicaciones*.
 . Seleccione *Crear aplicación*.
 . Introduzca un nombre para la aplicación.

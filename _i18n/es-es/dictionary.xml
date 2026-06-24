@@ -384,8 +384,6 @@
   <block id="b76fe15e5efb181107a884a8a169710c" category="section-title">Horarios que no están en intervalos de 15 minutos</block>
   <block id="150bc9b32553d2cdbf1033715f83d268" category="paragraph">Si tiene una programación de políticas de SnapCenter que comienza a una hora determinada y se repite en intervalos distintos de 15 minutos, NetApp Backup and Recovery no importará la programación.</block>
   <block id="da5c7a32fb1f34042f2d0d433f50328c" category="paragraph">*Solución alternativa*: utilice SnapCenter para ajustar la política de modo que se repita en intervalos de 15 minutos.</block>
-  <block id="2d9cb3f69beb79a3c5b8d0153c88c2db" category="section-title">Soporte limitado para software de gestión de virtualización</block>
-  <block id="cb6fc7dd7b45612ba1f18392811f988b" category="paragraph">Al proteger cargas de trabajo KVM, NetApp Backup and Recovery no admite la detección de cargas de trabajo KVM cuando se utiliza software de gestión de virtualización como Apache CloudStack o Red Hat OpenShift Virtualization.</block>
   <block id="5d8aef9555e5438ddeff623786db2956" category="summary">Las limitaciones conocidas identifican funciones que no son compatibles con esta versión del producto o que no interactúan correctamente con ella. Revise estas limitaciones cuidadosamente.</block>
   <block id="23eb49de2f5ba6e24c6af10a73585797" category="doc">Limitaciones conocidas con NetApp Backup and Recovery para volúmenes ONTAP</block>
   <block id="32c27a5a3b9d3ca4a4a83c91adb6b781" category="list-text">NetApp Backup and Recovery puede realizar una copia de seguridad de Cloud Volumes ONTAP en un almacén de objetos en las regiones de AWS China (incluidas Beijing y Ningxia); sin embargo, es posible que primero deba modificar manualmente las políticas de identidad y acceso.</block>
@@ -1648,7 +1646,6 @@
   <block id="4513150785c046bfbcd37a0b9dcb7a35" category="list-text">Marca la casilla "¿Desea continuar con la migración?" y selecciona *Migrar*.</block>
   <block id="13be03aaa1d065e4e2a3d1cb64d9f254" category="paragraph">La página Inventario muestra los recursos de vCenter recientemente administrados.</block>
   <block id="9f292a76282f4f6731d03460bcd3b924" category="doc">Descripción general de Proteja las cargas de trabajo de VMware con NetApp Backup and Recovery</block>
-  <block id="c59e55a8f797ea977bb075c0da4e3733" category="paragraph">Proteja sus máquinas virtuales y almacenes de datos VMware con NetApp Backup and Recovery.  NetApp Backup and Recovery ofrece operaciones de backup y restauración rápidas, eficientes en términos de espacio, consistentes ante fallos y compatibles con máquinas virtuales. Puede realizar copias de seguridad de cargas de trabajo de VMware en Amazon Web Services S3 o StorageGRID y restaurarlas en un host VMware local.</block>
   <block id="13a7ab00fe9ae146021f5c5ab40ca443" category="paragraph">Utilice NetApp Backup and Recovery para implementar una estrategia 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:</block>
   <block id="eb2d112b017e683992cc9b9b338c90a1" category="paragraph">Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de VMware:</block>
   <block id="4c90ef6c5dc037251bf65afdeeb1ee6c" category="list-text"><block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block></block>
@@ -4736,7 +4733,6 @@
   <block id="b46d8ca76f6fb8083d6d1c87abd6ef50" category="list-text">Cargas de trabajo KVM</block>
   <block id="5c4a8ce913e27612e0af180d6ef12ee6" category="list-text">Cargas de trabajo Hyper-V</block>
   <block id="49396edcdc3d3d7e4bec42adc037a5ef" category="list-text">Cargas de trabajo Kubernetes</block>
-  <block id="2432a396f38937322a4e606bf0aa7f0a" category="list-text">Microsoft Azure Blob (no disponible para cargas de trabajo VMware)</block>
   <block id="1d57820923cf47d0bb8ab74db80344ab" category="list-text">Con ONTAP 9.15.1, puedes restaurar carpetas de FlexGroup usando la opción "Examinar y restaurar".</block>
   <block id="5bc860fb25e08cbdf4fb6e1eb9fa16c9" category="paragraph">Descubrir bases de datos Oracle permite que NetApp Backup and Recovery las proteja creando y restaurando backups e instantáneas.</block>
   <block id="e82e6b5a702d1fc223d9ea698359376e" category="section-title">Añade un host de base de datos Oracle y descubre recursos</block>
@@ -5068,7 +5064,6 @@
   <block id="238d7a2bebc2cf898422ec1dbda4a73b" category="paragraph">Una carga de trabajo es una agrupación lógica de recursos dentro de un sistema que se gestiona como una sola unidad para protección, gobernanza, detección y recuperación. En Backup and Recovery, una carga de trabajo es la unidad que proteges. Su significado depende del origen de los datos: para Kubernetes una carga de trabajo es una aplicación, para entornos VM es una máquina virtual y para entornos de bases de datos es una base de datos.</block>
   <block id="eb0aff97ddec7b6894c0ea9cc7a6b66c" category="list-text">En Google Cloud, se despliega un nuevo bucket, y los<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block> se aprovisionan a nivel de cuenta/proyecto.</block>
   <block id="3addfc338787d5dc6d9709962161e00d" category="list-text">La tercera opción es adquirir licencias directamente de NetApp. Consulta la sección <block ref="ba0ccbd18ea5b5cc8b06635e1ea19aa1" category="inline-xref-macro-rx"></block> para más detalles.</block>
-  <block id="09e249805f01ac51656bbbc88c3f5e37" category="list-text">ONTAP S3 (no disponible para cargas de trabajo VMware)</block>
   <block id="e9ebab79f1c4e6f0b2fa9bfe92e9381d" category="summary">Habilita la vista previa y las funciones ocultas para NetApp Backup and Recovery.</block>
   <block id="145966dcf8392a62159a1226e54e749e" category="doc">Activar la vista previa y las funciones ocultas para NetApp Backup and Recovery</block>
   <block id="5737194cdc99152eb3d54bca68703776" category="section-title">Funciones de previsualización disponibles</block>
@@ -5642,4 +5637,9 @@
   <block id="2b33678c8eba4dacaa294cad350a79f8" category="list-text">Actualiza el servidor vCenter para que se recupere su zona horaria actual.</block>
   <block id="746c4e9758e4e986d2c5f289c1d7e4ed" category="list-text">Probado y validado con el almacenamiento de objetos Wasabi; los clientes también han informado de implementaciones satisfactorias con MinIO e IBM Cloud Object Storage</block>
   <block id="9044dfb75ff38841e5c3112d327e52cf" category="admonition">Los scripts en el repositorio Verda GitHub se proporcionan tal cual y no cuentan con soporte oficial por parte de NetApp. Solo el framework de hooks de ejecución dentro de Trident Protect y Backup and Recovery cuenta con soporte oficial por parte de NetApp.</block>
+  <block id="0ea4d3ea6dde327be7585dd707c798c5" category="list-text">En la parte superior derecha de la página, asegúrate de que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.</block>
+  <block id="ea5b48c7d3f8b0a9e0a12672ffc2b29a" category="list-text">Selecciona *Ver* en la línea de la carga de trabajo para ver los recursos de Kubernetes.</block>
+  <block id="9a6733678bfc1a6a630c61271f174949" category="paragraph">Protege tus VMware VMs y datastores con NetApp Backup and Recovery. NetApp Backup and Recovery ofrece operaciones de copia de seguridad y restauración rápidas, con gestión eficiente del espacio, coherentes ante fallos y coherentes a nivel de VM. Puedes hacer copias de seguridad de cargas de trabajo de VMware en destinos de backup compatibles y restaurar cargas de trabajo de VMware en un host de VMware local.</block>
+  <block id="a7ffc4809e4a33a20f30769fc3e62703" category="list-text">Almacenamiento compatible con S3 (solo cargas de trabajo de ONTAP Volumes)</block>
+  <block id="7229e78ecf33d07a5618d54695f22e2b" category="list-text">Almacenamiento de blobs de Microsoft Azure</block>
 </blocks>

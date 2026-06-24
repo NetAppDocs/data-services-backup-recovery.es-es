@@ -94,15 +94,6 @@ Aparece la página Policies.
 ** *Copia de seguridad*: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.
 ** *Objetivo de la copia de seguridad*: seleccione el sistema de destino en el almacenamiento secundario para la copia de seguridad.
 ** *Retención*: Ingrese la cantidad de instantáneas que desea conservar.
-** *Habilitar bloqueo de instantáneas*: seleccione si desea habilitar instantáneas a prueba de manipulaciones.
-** *Período de bloqueo de la instantánea*: ingrese la cantidad de días, meses o años que desea bloquear la instantánea.
-** *Traslado a secundaria*:
-+
-*** La opción * ONTAP transfer schedule – Inline* está seleccionada de manera predeterminada y eso indica que las instantáneas se transfieren al sistema de almacenamiento secundario inmediatamente.  No es necesario programar la copia de seguridad.
-*** Otras opciones: Si eliges una transferencia diferida, las transferencias no son inmediatas y puedes establecer un horario.
-
-
-** * Relación secundaria entre SnapMirror y SnapVault SMAS *: utilice las relaciones secundarias entre SnapMirror y SnapVault SMAS para las cargas de trabajo de SQL Server.
 ** *Proveedor*: Selecciona el proveedor de almacenamiento que aloja los recursos de la aplicación de Kubernetes e introduce las credenciales para autenticarte con el proveedor.
 
 

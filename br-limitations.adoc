@@ -109,9 +109,3 @@ SnapCenter no tiene clústeres de almacenamiento de mapas ni SVM para los recurs
 Si tiene una programación de políticas de SnapCenter que comienza a una hora determinada y se repite en intervalos distintos de 15 minutos, NetApp Backup and Recovery no importará la programación.
 
 *Solución alternativa*: utilice SnapCenter para ajustar la política de modo que se repita en intervalos de 15 minutos.
-
-
-
-== Soporte limitado para software de gestión de virtualización
-
-Al proteger cargas de trabajo KVM, NetApp Backup and Recovery no admite la detección de cargas de trabajo KVM cuando se utiliza software de gestión de virtualización como Apache CloudStack o Red Hat OpenShift Virtualization.
