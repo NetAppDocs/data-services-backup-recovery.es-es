@@ -1990,7 +1990,6 @@
   <block id="bade104de773419f0c559bd71478cc40" category="inline-link-macro">Activar la copia de seguridad para volúmenes adicionales en el sistema</block>
   <block id="7b58ae9806fd4e9bf78fdc8568395ab6" category="paragraph">Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar la copia de seguridad de un sistema.  Vea cómo<block ref="7239f8ae1ce8c5a40d4003de7480554a" category="inline-link-macro-rx"></block> (FlexVol o FlexGroup) después de haber configurado la copia de seguridad para los volúmenes iniciales.</block>
   <block id="e9dfd7a5bc1d9c55d3cafeb50c863440" category="list-text">Puede activar una copia de seguridad solo en un único volumen FlexGroup a la vez.</block>
-  <block id="8678ec2b63284b1fce3f9da35c37df05" category="list-text">Los volúmenes que seleccione deben tener la misma configuración SnapLock .  Todos los volúmenes deben tener SnapLock Enterprise habilitado o tener SnapLock deshabilitado.</block>
   <block id="8a6e28d635ac6cca84e8efc5d0dd4b54" category="paragraph">Si los volúmenes que elige ya tienen políticas de instantáneas o replicación aplicadas, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.</block>
   <block id="60956fee8c3d9f3ef0f2f7652f27143f" category="list-text">En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.</block>
   <block id="faf9e3428a892363316a8c1e34a4551b" category="list-text">Opcionalmente, filtre las filas para mostrar solo volúmenes con determinados tipos de volumen, estilos y más para facilitar la selección.</block>
@@ -5518,7 +5517,6 @@
   <block id="0b0bee32bf0c7158fbba14e4b17f1e23" category="paragraph">Para utilizar NetApp Backup and Recovery para cargas de trabajo de volumen ONTAP, necesitas los siguientes requisitos previos de sistema host, espacio y ajuste de tamaño.</block>
   <block id="f17da14a026a5974537cf1303ac53974" category="list-text">Se requiere ONTAP 9.8 o posterior.</block>
   <block id="45b096193f4470968c1063df19d1c253" category="list-text">Se debe activar una licencia de ONTAP One en la instancia local de ONTAP.</block>
-  <block id="9cf387a6f708f4467810768eb8e4d31f" category="list-text">La copia de seguridad o restauración en un almacén de objetos compatible con S3 requiere ONTAP 9.17.1 o posterior.</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">Para obtener información sobre las funciones compatibles, los tipos de volumen, los destinos de copia de seguridad y restauración, y más, consulta <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>.</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">Host de base de datos</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">Almacenamiento compatible</block>
@@ -5642,4 +5640,7 @@
   <block id="9a6733678bfc1a6a630c61271f174949" category="paragraph">Protege tus VMware VMs y datastores con NetApp Backup and Recovery. NetApp Backup and Recovery ofrece operaciones de copia de seguridad y restauración rápidas, con gestión eficiente del espacio, coherentes ante fallos y coherentes a nivel de VM. Puedes hacer copias de seguridad de cargas de trabajo de VMware en destinos de backup compatibles y restaurar cargas de trabajo de VMware en un host de VMware local.</block>
   <block id="a7ffc4809e4a33a20f30769fc3e62703" category="list-text">Almacenamiento compatible con S3 (solo cargas de trabajo de ONTAP Volumes)</block>
   <block id="7229e78ecf33d07a5618d54695f22e2b" category="list-text">Almacenamiento de blobs de Microsoft Azure</block>
+  <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">Se requiere ONTAP 9.12.1 o una versión posterior para la protección de volúmenes FlexGroup. Consulta <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> para más información.</block>
+  <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">Se requiere ONTAP 9.17.1 o una versión posterior para hacer copias de seguridad o restaurar en un almacenamiento de objetos compatible con S3.</block>
+  <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">Al seleccionar los volúmenes de origen que quieres proteger, solo puedes seleccionar aquellos que tengan una configuración de SnapLock coincidente. Los volúmenes que selecciones deben tener todos la función SnapLock activada o todos la función SnapLock desactivada.</block>
 </blocks>

@@ -283,7 +283,7 @@ Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede
 [NOTE]
 ====
 * Puede activar una copia de seguridad solo en un único volumen FlexGroup a la vez.
-* Los volúmenes que seleccione deben tener la misma configuración SnapLock .  Todos los volúmenes deben tener SnapLock Enterprise habilitado o tener SnapLock deshabilitado.
+* Al seleccionar los volúmenes de origen que quieres proteger, solo puedes seleccionar aquellos que tengan una configuración de SnapLock coincidente. Los volúmenes que selecciones deben tener todos la función SnapLock activada o todos la función SnapLock desactivada.
 
 
 ====
