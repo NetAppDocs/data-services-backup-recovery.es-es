@@ -23,7 +23,7 @@ Restaura archivos y carpetas desde copias de seguridad de Hyper-V VM en almacena
 Monta un disco virtual desde una instantánea y restaura archivos y carpetas desde él a la VM de Windows original (origen).
 
 .Antes de empezar
-Antes de poder restaurar archivos y carpetas, debes crear una credencial para la máquina virtual de origen en NetApp Backup and Recovery. Esta credencial se usa para autenticarte con la máquina virtual durante el proceso de restauración.
+Antes de poder restaurar archivos y carpetas, debes crear una credencial para la máquina virtual de origen en NetApp Backup and Recovery. Esta credencial se utiliza para autenticarte con la máquina virtual durante el proceso de restauración.
 
 .Acerca de esta tarea
 Cuando abres una sesión de restauración de archivos y carpetas montando un disco virtual, la sesión permanece activa durante 48 horas.

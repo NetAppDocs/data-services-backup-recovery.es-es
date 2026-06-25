@@ -778,7 +778,6 @@
   <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">Para cargas de trabajo de Kubernetes, consulte<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> .</block>
   <block id="47531513e36377c6a5c78be39708d962" category="summary">Antes de utilizar NetApp Backup and Recovery, realice algunos pasos para configurar los destinos de respaldo.</block>
   <block id="e902bc2010ef35580633bf1114aee5b3" category="doc">Configure destinos de respaldo antes de usar NetApp Backup and Recovery</block>
-  <block id="8a0933307f827fb9f8c7b526a219880b" category="paragraph">Antes de utilizar NetApp Backup and Recovery, realice algunos pasos para configurar los destinos de respaldo.</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">prerrequisitos</block>
   <block id="1ee0b624eb9dbd226bf2ec0c999c84a7" category="paragraph">Antes de comenzar, revise<block ref="2eebb303c5f465d9ddee1afb9c070240" category="inline-link-macro-rx"></block> para garantizar que su entorno esté preparado.</block>
   <block id="7fada33e4007d6c45f21f39f8f564f62" category="section-title">Preparar el destino de la copia de seguridad</block>
@@ -5298,7 +5297,6 @@
   <block id="87e187714ad3406b822e2c0bf109240b" category="summary">Puedes restaurar uno o más archivos o carpetas desde una instantánea de una VM de Hyper-V a una VM invitada de Windows.</block>
   <block id="cd21aa174cd18a8828140ba323628bfb" category="doc">Restaura archivos y carpetas desde backups de Hyper-V VM</block>
   <block id="d822ec23856d26a5af79fad29ce2f55e" category="paragraph">Monta un disco virtual desde una instantánea y restaura archivos y carpetas desde él a la VM de Windows original (origen).</block>
-  <block id="d4bb35603ef1e4c4f849336d35413c6f" category="paragraph">Antes de poder restaurar archivos y carpetas, debes crear una credencial para la máquina virtual de origen en NetApp Backup and Recovery. Esta credencial se usa para autenticarte con la máquina virtual durante el proceso de restauración.</block>
   <block id="17a458fd7a6b6ae191ac9219e3b46deb" category="paragraph">Cuando abres una sesión de restauración de archivos y carpetas montando un disco virtual, la sesión permanece activa durante 48 horas.</block>
   <block id="392177f0b4a0bc4b5bc23ef82eee9fff" category="paragraph">El rendimiento de la restauración depende tanto del tamaño como del número de archivos o carpetas que se restauran. Para un tamaño de conjunto de datos determinado, restaurar un gran número de archivos pequeños suele llevar más tiempo que restaurar un pequeño número de archivos grandes.</block>
   <block id="0c1d8f103b8f05dc9e681f213a4140ed" category="paragraph">Ten en cuenta lo siguiente al restaurar archivos y carpetas:</block>
@@ -5378,7 +5376,6 @@
   <block id="96cd77faff8587f3ee978f6d738fc506" category="list-text">*Servidor de verificación*: Opcionalmente, selecciona uno o varios hosts Oracle registrados de la lista para usarlos como servidores de verificación fuera del host. Si no se selecciona ningún servidor, la verificación se ejecuta directamente en el host de la base de datos de origen. De lo contrario, Backup and Recovery monta el clon de snapshot en uno de los hosts seleccionados y verifica el backup allí, aislando la E/S de verificación del servidor de bases de datos de producción. Un servidor de verificación debe:</block>
   <block id="a96c5b49f0e2679b8f6884c399905c08" category="list-text">Tener instalado el plug-in NetApp</block>
   <block id="aa525d522adb224988fcdcd6f1e78c30" category="list-text">Tener instalados los binarios de Oracle Database</block>
-  <block id="7ed52864c10e2ddd715752fb3ab3a33f" category="list-text">Tener la misma versión de Oracle Database que la base de datos de origen</block>
   <block id="ed72ca5994ca086c703a8fad4669ac29" category="list-text">Tener acceso de red al almacenamiento que contiene la instantánea (primario o secundario)</block>
   <block id="a6b9c0ae442c5226d495a5c8fcbaec6c" category="list-text">Ser capaz de montar el volumen clonado y ejecutar la utilidad DBVERIFY de Oracle Database.</block>
   <block id="ee722f1985ae6abb41cf3cea75ae2afd" category="list-text">*Tasa de transferencia máxima*: Activa la opción *Enable maximum transfer rate* para establecer una tasa de transferencia máxima para los hosts seleccionados. Para no establecer un límite en el uso del ancho de banda, selecciona *Unlimited*. Si quieres limitar la tasa de transferencia, selecciona *Limited* y selecciona el ancho de banda de red entre 1 y 1,000 Mbps asignado para cargar los backups en el almacén de objetos. Por defecto, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de backup desde los volúmenes del sistema al almacén de objetos. Si el tráfico de backup afecta a las cargas de trabajo, reduce el ancho de banda de red para las transferencias.</block>
@@ -5644,4 +5641,6 @@
   <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">Realiza copias de seguridad de las cargas de trabajo de VMware en proveedores de almacenamiento compatibles.</block>
   <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage (solo volúmenes ONTAP y cargas de trabajo de Kubernetes)</block>
   <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">También puedes seguir estos pasos para sustituir el agente de la consola y restaurar los datos de configuración que se almacenaban en él al utilizar Backup and Recovery en _modo estándar_ en las instalaciones, cuando no intervienen cuentas en la nube (por ejemplo, al utilizar NetApp StorageGRID como destino de la copia de seguridad).</block>
+  <block id="2be7e1093c386d54e43c7fc0e8de4a1f" category="paragraph">Antes de poder restaurar archivos y carpetas, debes crear una credencial para la máquina virtual de origen en NetApp Backup and Recovery. Esta credencial se utiliza para autenticarte con la máquina virtual durante el proceso de restauración.</block>
+  <block id="9f5917bbc05d835882ed9022aa56ac20" category="list-text">Tener la misma versión de Oracle Database que la base de datos de origen</block>
 </blocks>
