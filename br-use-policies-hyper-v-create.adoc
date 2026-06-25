@@ -111,7 +111,7 @@ Para las cargas de trabajo de VMware, esto configura la instantánea local en lo
 *** Otras opciones: Si eliges una transferencia diferida, las transferencias no son inmediatas y puedes establecer un horario.
 
 
-** * Relación secundaria entre SnapMirror y SnapVault SMAS *: utilice las relaciones secundarias entre SnapMirror y SnapVault SMAS para las cargas de trabajo de SQL Server.
+** *Utiliza la relación secundaria existente SnapMirror y SyncMirror*: Activa esta opción para usar la relación existente SnapMirror o SyncMirror para transferir instantáneas al clúster de destino designado.
 
 
 . Proporciona información para la sección *Configuración del almacén de objetos* (backup al almacén de objetos):

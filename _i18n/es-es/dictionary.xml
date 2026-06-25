@@ -1513,7 +1513,6 @@
   <block id="b46669fe80ca2a5b9a2d07aed9bdb568" category="list-text">*Traslado a secundaria*:</block>
   <block id="c6b1efb6a3381715b935aaf64195be83" category="list-text">La opción * ONTAP transfer schedule – Inline* está seleccionada de manera predeterminada y eso indica que las instantáneas se transfieren al sistema de almacenamiento secundario inmediatamente.  No es necesario programar la copia de seguridad.</block>
   <block id="ea593eb0ffc75f929e0088d1e36356cf" category="list-text">Otras opciones: Si eliges una transferencia diferida, las transferencias no son inmediatas y puedes establecer un horario.</block>
-  <block id="cc7a1e67eff230a3c65fb315a1c8d1f0" category="list-text">* Relación secundaria entre SnapMirror y SnapVault SMAS *: utilice las relaciones secundarias entre SnapMirror y SnapVault SMAS para las cargas de trabajo de SQL Server.</block>
   <block id="5d53f1521f3c11d2c706909ba7322fd1" category="admonition">Los campos que aparecen varían según el proveedor y la arquitectura seleccionados.</block>
   <block id="aea6f666cce57b356fb2085a81658754" category="list-text">*IPspace*: seleccione el espacio IP que se utilizará para las operaciones de respaldo.  Esto es útil si tiene varios espacios IP y desea controlar cuál se utiliza para las copias de seguridad.</block>
   <block id="61c7ccb12ec5421abd7bf85769ede78b" category="list-text">*Configuración de programación*: seleccione la programación que se estableció para las instantáneas locales.  Puedes eliminar una programación, pero no puedes agregar una porque las programaciones se configuran de acuerdo con las programaciones de instantáneas locales.</block>
@@ -4724,8 +4723,6 @@
   <block id="5a7772dd6a45520c18defbce09d0dedf" category="paragraph">La siguiente acción no se admite en la versión preliminar de las cargas de trabajo de Oracle Database en NetApp Backup and Recovery:</block>
   <block id="fffe6dab1367a6da9b1ff43e10e3c12a" category="paragraph">Las siguientes acciones no son compatibles en las cargas de trabajo de VMware en NetApp Backup and Recovery:</block>
   <block id="97c13d527bcfec5ed7f29badd43016d8" category="list-text">Editar políticas (no disponible para cargas de trabajo de VMware)</block>
-  <block id="332f36926e04f03459b83b7c8da214a6" category="list-text">*Cargas de trabajo VMware (con la nueva interfaz de usuario sin SnapCenter Plug-in for VMware vSphere)*:</block>
-  <block id="66484fcd4199c3f1b40e50c680ad4e56" category="list-text">Haz copias de seguridad de las cargas de trabajo de VMware en Amazon Web Services S3 o StorageGRID.</block>
   <block id="6a4470b3ca7a52803928f40d397b0521" category="list-text">*Cargas de trabajo KVM*:</block>
   <block id="c4d36d8f4f3b72c9d5cac59995049781" category="list-text">*Cargas de trabajo Hyper-V*:</block>
   <block id="b6178e1ff85723d95932c36399cc61c2" category="list-text">*Cargas de trabajo Kubernetes*:</block>
@@ -4835,7 +4832,6 @@
   <block id="4698b69bed4ee276f187d88f25644b08" category="cell">Asegúrate de que el tráfico HTTPS bidireccional esté permitido para los siguientes puertos en la configuración del Firewall de Windows</block>
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144 (plugin de NetApp para Hyper-V)</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145 (Plugin de NetApp para Windows)</block>
-  <block id="86a1075e6640849bd364878900fd5412" category="paragraph">También puedes seguir estos pasos para reemplazar el agente de la Consola y restaurar los datos de configuración que se almacenaron en él cuando usas Backup and Recovery en _standard mode_ en las instalaciones, cuando no hay cuentas en la nube involucradas (por ejemplo, cuando usas NetApp StorageGrid como destino de la copia de seguridad).</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Ejecuta el comando *ls* para asegurarte de que se ha creado la carpeta "catalogdb1" y que contiene las subcarpetas<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block> y<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>.</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16 de marzo de 2026</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 o posterior</block>
@@ -5643,4 +5639,9 @@
   <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">Se requiere ONTAP 9.12.1 o una versión posterior para la protección de volúmenes FlexGroup. Consulta <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> para más información.</block>
   <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">Se requiere ONTAP 9.17.1 o una versión posterior para hacer copias de seguridad o restaurar en un almacenamiento de objetos compatible con S3.</block>
   <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">Al seleccionar los volúmenes de origen que quieres proteger, solo puedes seleccionar aquellos que tengan una configuración de SnapLock coincidente. Los volúmenes que selecciones deben tener todos la función SnapLock activada o todos la función SnapLock desactivada.</block>
+  <block id="fa428977bbfd079a1a152d734ac0da9a" category="list-text">*Utiliza la relación secundaria existente SnapMirror y SyncMirror*: Activa esta opción para usar la relación existente SnapMirror o SyncMirror para transferir instantáneas al clúster de destino designado.</block>
+  <block id="2d86afc1dea874d04cb6b44f9329cb39" category="list-text">*Cargas de trabajo de VMware*:</block>
+  <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">Realiza copias de seguridad de las cargas de trabajo de VMware en proveedores de almacenamiento compatibles.</block>
+  <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage (solo volúmenes ONTAP y cargas de trabajo de Kubernetes)</block>
+  <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">También puedes seguir estos pasos para sustituir el agente de la consola y restaurar los datos de configuración que se almacenaban en él al utilizar Backup and Recovery en _modo estándar_ en las instalaciones, cuando no intervienen cuentas en la nube (por ejemplo, al utilizar NetApp StorageGRID como destino de la copia de seguridad).</block>
 </blocks>
