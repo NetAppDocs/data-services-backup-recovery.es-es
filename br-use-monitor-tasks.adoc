@@ -146,6 +146,9 @@ El Centro de notificaciones muestra numerosos eventos de instantáneas, replicac
 | Activación | La activación de Copia de seguridad y recuperación falló para el sistema | Sí | Sí 
 
 
+| Activación | La activación de Backup and Recovery fue exitosa para el sistema | Sí | Sí 
+
+
 | Activación | La edición de Copia de seguridad y recuperación falló para el sistema | Sí | Sí 
 
 
@@ -153,9 +156,6 @@ El Centro de notificaciones muestra numerosos eventos de instantáneas, replicac
 
 
 | Activación | Copia de seguridad de volumen o estado modificado | Sí | Sí 
-
-
-| Activación | La activación de Backup and Recovery fue exitosa para el sistema | Sí | Sí 
 
 
 | Activación | Error en la copia de seguridad del volumen ad-hoc | Sí | Sí 
@@ -167,10 +167,10 @@ El Centro de notificaciones muestra numerosos eventos de instantáneas, replicac
 | Activación | Error en la copia de seguridad de varios volúmenes | Sí | Sí 
 
 
-| Operaciones cron | Comprobación de etiquetas de instantáneas faltantes | Sí | Sí 
+| Operaciones cron | Discrepancia entre la política de SnapVault y la etiqueta de la política de backup | Sí | Sí 
 
 
-| Operaciones cron | No se pudo enviar el token de seguridad a ONTAP para este sistema | Sí | Sí 
+| Operaciones cron | No se han podido actualizar las credenciales del almacén de objetos en ONTAP para este sistema | Sí | Sí 
 
 
 | Eventos de Pub/Sub | Fallo de conexión | Sí | No 
@@ -203,22 +203,22 @@ El Centro de notificaciones muestra numerosos eventos de instantáneas, replicac
 | Replicación | Error en el trabajo de replicación ad-hoc de NetApp Backup and Recovery | Sí | Sí 
 
 
-| Replicación | Error en la pausa del trabajo de replicación de NetApp Backup and Recovery | Sí | No 
+| Replicación | NetApp error en la tarea de pausa de la relación de replicación de Backup and Recovery | Sí | No 
 
 
-| Replicación | Error en la interrupción del trabajo de replicación de NetApp Backup and Recovery | Sí | No 
+| Replicación | NetApp error en la tarea por interrupción en la relación de replicación de NetApp Backup and Recovery | Sí | No 
 
 
-| Replicación | Error en el trabajo de resincronización de replicación de NetApp Backup and Recovery | Sí | No 
+| Replicación | NetApp Error en la tarea de resincronización de la relación de replicación de NetApp Backup and Recovery | Sí | No 
 
 
 | Replicación | Error en la detención del trabajo de replicación de NetApp Backup and Recovery | Sí | No 
 
 
-| Replicación | Error en el trabajo de resincronización inversa de replicación de NetApp Backup and Recovery | Sí | Sí 
+| Replicación | NetApp Error en la tarea de resincronización inversa de la relación de replicación de NetApp Backup and Recovery | Sí | Sí 
 
 
-| Replicación | Error en la eliminación del trabajo de replicación de NetApp Backup and Recovery | Sí | Sí 
+| Replicación | NetApp Error en la eliminación de un trabajo de replicación de NetApp Backup and Recovery | Sí | Sí 
 
 
 | Operaciones objetivo | Error al restaurar a destino local o en la nube | Sí | Sí 
@@ -228,6 +228,9 @@ El Centro de notificaciones muestra numerosos eventos de instantáneas, replicac
 
 
 | Operaciones del sistema | Error en la creación de una instantánea de volumen ad hoc | Sí | Sí 
+
+
+| Operaciones del sistema | Error al indexar la copia de seguridad del volumen | Sí | Sí 
 |===
 
 NOTE: A partir de ONTAP 9.13.0, todas las alertas aparecen para Cloud Volumes ONTAP y los sistemas ONTAP locales.  Para los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP local, solo aparece la alerta relacionada con "Trabajo de restauración completado, pero con advertencias".

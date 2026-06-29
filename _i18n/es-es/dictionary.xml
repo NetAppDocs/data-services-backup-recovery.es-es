@@ -1209,13 +1209,8 @@
   <block id="32316833f8e2552223d79fb99979ff7f" category="cell">Error en la creación de una instantánea ad-hoc en NetApp Backup and Recovery</block>
   <block id="8c340dc334134096f68b880b42a8692c" category="cell">Replicación</block>
   <block id="def1939e9c93c839079171f6dd5e3291" category="cell">Error en el trabajo de replicación ad-hoc de NetApp Backup and Recovery</block>
-  <block id="08a671649ac55e1aa9d353651e865c93" category="cell">Error en la pausa del trabajo de replicación de NetApp Backup and Recovery</block>
   <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">No</block>
-  <block id="de07da0681d640a8e5bfdf21bac49e81" category="cell">Error en la interrupción del trabajo de replicación de NetApp Backup and Recovery</block>
-  <block id="d275c1564b9f2a250f9bf30d6e8bab26" category="cell">Error en el trabajo de resincronización de replicación de NetApp Backup and Recovery</block>
   <block id="9f6cd0f0a12191a75f16414b3b601822" category="cell">Error en la detención del trabajo de replicación de NetApp Backup and Recovery</block>
-  <block id="93d1a6c01d156e393187858c16c5c626" category="cell">Error en el trabajo de resincronización inversa de replicación de NetApp Backup and Recovery</block>
-  <block id="594e604651fd901124d237d8caf5c86f" category="cell">Error en la eliminación del trabajo de replicación de NetApp Backup and Recovery</block>
   <block id="910e8697aa5e0e59e920af3a4cf26b12" category="admonition">A partir de ONTAP 9.13.0, todas las alertas aparecen para Cloud Volumes ONTAP y los sistemas ONTAP locales.  Para los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP local, solo aparece la alerta relacionada con "Trabajo de restauración completado, pero con advertencias".</block>
   <block id="4e1654b110548c12172bd1f4aa2a9b85" category="paragraph">Para recibir las alertas por correo electrónico de NetApp Backup and Recovery , deberá seleccionar los tipos de gravedad de notificación "Crítico", "Advertencia" y "Error" en la página de configuración de Notificaciones.</block>
   <block id="ac92ec63bcc51fd7fbdc332411a1c313" category="inline-link">Aprenda a enviar correos electrónicos de alerta para trabajos de copia de seguridad y restauración</block>
@@ -4138,8 +4133,6 @@
   <block id="80fd95bd893f8df76c2fa9dd4bad6849" category="cell">Copia de seguridad de volumen ad-hoc realizada correctamente</block>
   <block id="5ed835b77018cbf32fbdfb39bcc25527" category="cell">Error en la copia de seguridad de varios volúmenes</block>
   <block id="0298583ff5a55aeec25dc314bbd47357" category="cell">Operaciones cron</block>
-  <block id="f771739629c02b8a1545a40985444450" category="cell">Comprobación de etiquetas de instantáneas faltantes</block>
-  <block id="39e7a35fbe3bf187f05710b99a1abab5" category="cell">No se pudo enviar el token de seguridad a ONTAP para este sistema</block>
   <block id="1da6059b2e40a5d5dcd0f29c0344d522" category="cell">Eventos de Pub/Sub</block>
   <block id="75c3b3bb89bde01f9166a94cbfa98588" category="cell">Fallo de conexión</block>
   <block id="4d40cebef25fff7de69b66a1fd2b91ac" category="cell">No se pudo eliminar una instantánea programada</block>
@@ -5642,4 +5635,12 @@
   <block id="6b181f9b8f3365a62a308265f446f30b" category="admonition">El cifrado con claves gestionadas por el cliente solo es compatible con Amazon FSx for NetApp ONTAP. No es compatible con Cloud Volumes ONTAP for AWS.</block>
   <block id="e46ce594d7f94f0d680627c5f9150ad6" category="inline-link">Configura el cifrado con claves gestionadas por el cliente en AWS</block>
   <block id="fe921914a3a58bce833cfd4d4785fb2b" category="paragraph">Consulta<block ref="445e5997f02f6fbbedcd2ff2bda158c4" category="inline-link-rx"></block>.</block>
+  <block id="a5f837afad6e28e74cc2bc1ddf30b10c" category="cell">Discrepancia entre la política de SnapVault y la etiqueta de la política de backup</block>
+  <block id="0c1df2a13aa2696a312b568815c83f15" category="cell">No se han podido actualizar las credenciales del almacén de objetos en ONTAP para este sistema</block>
+  <block id="14714a38e65ddb4109cc93b0e6a171b9" category="cell">NetApp error en la tarea de pausa de la relación de replicación de Backup and Recovery</block>
+  <block id="6532e5d724a28a601ca7648d508d625b" category="cell">NetApp error en la tarea por interrupción en la relación de replicación de NetApp Backup and Recovery</block>
+  <block id="cb807b65bdf438c727793dce019ff942" category="cell">NetApp Error en la tarea de resincronización de la relación de replicación de NetApp Backup and Recovery</block>
+  <block id="633255f387c732126e8cdceb4ac9fceb" category="cell">NetApp Error en la tarea de resincronización inversa de la relación de replicación de NetApp Backup and Recovery</block>
+  <block id="d59074181d2dab51d18ca27cb4fc47d8" category="cell">NetApp Error en la eliminación de un trabajo de replicación de NetApp Backup and Recovery</block>
+  <block id="5df069a4ec3b3f8731b57ed05f942930" category="cell">Error al indexar la copia de seguridad del volumen</block>
 </blocks>
