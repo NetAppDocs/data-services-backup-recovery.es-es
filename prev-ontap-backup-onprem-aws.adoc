@@ -336,9 +336,10 @@ Si desea utilizar las claves de cifrado predeterminadas de Amazon S3 para cifrar
 
 Si, en cambio, desea utilizar sus propias claves administradas por el cliente para el cifrado de datos en lugar de utilizar las claves predeterminadas, deberá tener las claves administradas de cifrado ya configuradas antes de iniciar el asistente de NetApp Backup and Recovery .
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Consulte cómo utilizar sus propias claves de cifrado de Amazon con Cloud Volumes ONTAP"^].
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Consulte cómo utilizar sus propias claves de cifrado de Amazon con NetApp Backup and Recovery"^].
+NOTE: El cifrado con claves gestionadas por el cliente solo es compatible con Amazon FSx for NetApp ONTAP. No es compatible con Cloud Volumes ONTAP for AWS.
+
+Consulta https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Configura el cifrado con claves gestionadas por el cliente en AWS"^].
 
 
 
