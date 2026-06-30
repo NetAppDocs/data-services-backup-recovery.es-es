@@ -357,8 +357,8 @@ Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos
 
 | Almacenamiento conectado  a| 
 * ONTAP 9.13.1 o posterior
-* Amazon FSx para sistemas de almacenamiento NetApp ONTAP que ejecuten la versión 9.13.1 o posterior
-* Almacenamiento SAN (compatible con backups y para restaurar en la ubicación original desde almacenamiento primario o secundario)
+* Comparticiones SMB
+* Almacenamiento SAN conectado a través de iSCSI o Fibre Channel
 
 
 |===
@@ -374,5 +374,5 @@ NOTE: Asegúrese de asignar suficiente espacio en disco en el host Hyper-V para 
 
 .NetApp requisitos de configuración de ONTAP
 * Un sistema ONTAP primario (ONTAP 9.14.1 o posterior)
-* Para las implementaciones de Hyper-V que utilizan recursos compartidos CIFS para almacenar datos de máquinas virtuales, asegúrese de que la propiedad de recursos compartidos de disponibilidad continua esté habilitada en el sistema ONTAP .  Consulte la https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["Documentación de ONTAP"^] para obtener instrucciones.
+* En el caso de las implementaciones de Hyper-V que utilicen recursos compartidos SMB para almacenar datos de máquinas virtuales, asegúrate de que la propiedad de disponibilidad continua del recurso compartido esté habilitada en el sistema ONTAP. Consulta la  https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["Documentación de ONTAP"^] para obtener instrucciones.
 
