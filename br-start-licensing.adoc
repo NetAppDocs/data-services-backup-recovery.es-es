@@ -86,7 +86,7 @@ Utilice estos enlaces para suscribirse a NetApp Backup and Recovery desde el mer
 
 Pague NetApp Backup and Recovery anualmente comprando un contrato anual.  Están disponibles en plazos de 1, 2 o 3 años.
 
-Si tiene un contrato anual de un mercado, todo el consumo de NetApp Backup and Recovery se cargará a ese contrato.  No es posible combinar un contrato de mercado anual con un BYOL.
+Si tienes un contrato anual de un marketplace, todo el consumo de NetApp Backup and Recovery se imputa a ese contrato.
 
 Cuando utiliza AWS, hay dos contratos anuales disponibles desde https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Página de AWS Marketplace"^] Para Cloud Volumes ONTAP y sistemas ONTAP locales:
 
