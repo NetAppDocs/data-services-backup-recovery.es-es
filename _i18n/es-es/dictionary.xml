@@ -617,7 +617,6 @@
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Debe realizar una de las siguientes acciones:</block>
   <block id="6226950d1b144f972ce9b5d3caea9b42" category="list-text">Si ya ha descubierto cargas de trabajo de Kubernetes, en NetApp Backup and Recovery, seleccione *Inventario* &gt; *Cargas de trabajo* y luego seleccione *Descubrir recursos*.</block>
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">Seleccione el tipo de carga de trabajo *Kubernetes*.</block>
-  <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">Ingrese un nombre de clúster y elija un conector para usar con el clúster.</block>
   <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">Siga las instrucciones de la línea de comandos que aparecen:</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="list-text">Crear un secreto de Kubernetes</block>
   <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">Agregar un repositorio de Helm</block>
@@ -5644,4 +5643,5 @@
   <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">Almacenamiento SAN conectado a través de iSCSI o Fibre Channel</block>
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">En el caso de las implementaciones de Hyper-V que utilicen recursos compartidos SMB para almacenar datos de máquinas virtuales, asegúrate de que la propiedad de disponibilidad continua del recurso compartido esté habilitada en el sistema ONTAP. Consulta la <block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> para obtener instrucciones.</block>
   <block id="09e4a6980ec8e49e9c338d71a078b029" category="paragraph">Si tienes un contrato anual de un marketplace, todo el consumo de NetApp Backup and Recovery se imputa a ese contrato.</block>
+  <block id="fe336167ccf46f9fb348006254d0f3ee" category="list-text">Introduce un nombre para el clúster y selecciona un agente de Console para usarlo con el clúster.</block>
 </blocks>
