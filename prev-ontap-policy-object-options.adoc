@@ -24,6 +24,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 
 
+[[backup-schedule-options]]
 == Opciones de programación de copias de seguridad
 
 NetApp Backup and Recovery le permite crear múltiples políticas de respaldo con programaciones únicas para cada sistema (clúster).  Puede asignar diferentes políticas de respaldo a volúmenes que tengan diferentes objetivos de punto de recuperación (RPO).
@@ -53,6 +54,7 @@ Las copias de seguridad anuales se eliminan automáticamente del sistema de orig
 
 
 
+[[datalock-and-ransomware-protection-options]]
 == Opciones de protección contra DataLock y Ransomware
 
 NetApp Backup and Recovery brinda soporte para DataLock y protección contra ransomware para sus copias de seguridad de volumen.  Estas funciones le permiten bloquear sus archivos de respaldo y escanearlos para detectar posible ransomware en ellos.  Esta es una configuración opcional que puede definir en sus políticas de respaldo cuando desee protección adicional para sus copias de seguridad de volumen para un clúster.
@@ -70,6 +72,7 @@ Esta función no proporciona protección para los volúmenes de origen; solo par
 ====
 
 
+[[what-is-datalock]]
 === ¿Qué es DataLock?
 
 Con esta función, puede bloquear las instantáneas en la nube replicadas a través de SnapMirror en la nube y también habilitar la función para detectar un ataque de ransomware y recuperar una copia consistente de la instantánea en el almacén de objetos. Esta función es compatible con AWS, Azure, Google Cloud Platform y StorageGRID.
@@ -88,6 +91,7 @@ El período mínimo de retención de instantáneas es de 30 días.  Veamos algun
 
 
 
+[[what-is-retention-until-date-rud-and-how-is-it-calculated]]
 === ¿Qué es la Retención hasta la Fecha (RUD) y cómo se calcula?
 
 La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas.  La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.
@@ -116,6 +120,7 @@ La configuración de retención de DataLock anula la configuración de retenció
 
 
 
+[[enable-datalock-and-ransomware-protection]]
 === Habilitar DataLock y la protección contra ransomware
 
 Puede habilitar la protección contra DataLock y Ransomware al crear una política.  No se puede habilitar, modificar ni deshabilitar esto una vez creada la política.
@@ -134,6 +139,7 @@ Referirse alink:prev-ontap-policy-object-advanced-settings.html["Cómo actualiza
 
 
 
+[[what-is-ransomware-protection]]
 === ¿Qué es la protección contra ransomware?
 
 La protección contra ransomware escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware. La detección de ataques de ransomware se realiza mediante una comparación de suma de comprobación. Si se identifica un posible ransomware en un nuevo archivo de respaldo en comparación con el archivo de respaldo anterior, ese archivo de respaldo más nuevo se reemplaza por el archivo de respaldo más reciente que no muestra ningún signo de un ataque de ransomware. (El archivo que fue identificado como víctima de un ataque de ransomware se elimina 1 día después de haber sido reemplazado).
@@ -159,6 +165,7 @@ Veamos cómo funciona esto:
 
 
 
+[[supported-systems-and-object-storage-providers]]
 === Sistemas compatibles y proveedores de almacenamiento de objetos
 
 Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ONTAP de los siguientes sistemas al utilizar almacenamiento de objetos en los siguientes proveedores de nube pública y privada.
@@ -181,6 +188,7 @@ Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ON
 |===
 
 
+[[requirements]]
 === Requisitos
 
 * Para AWS:
@@ -282,6 +290,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
+[[restrictions]]
 === Restricciones
 
 * La función de protección DataLock y Ransomware no está disponible si ha configurado el almacenamiento de archivo en la política de respaldo.
@@ -294,6 +303,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
+[[tips-on-how-to-mitigate-datalock-costs]]
 === Consejos sobre cómo mitigar los costos de DataLock
 
 Puede habilitar o deshabilitar la función Ransomware Scan mientras mantiene activa la función DataLock.  Para evitar cargos adicionales, puede desactivar los análisis de ransomware programados.  Esto le permite personalizar su configuración de seguridad y evitar incurrir en costos del proveedor de la nube.
@@ -321,6 +331,7 @@ Además, puede obtener estimaciones del costo asociado con DataLock visitando el
 
 
 
+[[archival-storage-options]]
 == Opciones de almacenamiento de archivos
 
 Al usar el almacenamiento en la nube de AWS, Azure o Google, puede mover archivos de respaldo más antiguos a una clase de almacenamiento de archivo o nivel de acceso menos costoso después de una cierta cantidad de días.  También puede optar por enviar sus archivos de respaldo al almacenamiento de archivo inmediatamente sin escribirlos en el almacenamiento en la nube estándar.  Simplemente ingrese *0* como "Archivar después de días" para enviar su archivo de respaldo directamente al almacenamiento de archivo.  Esto puede ser especialmente útil para usuarios que rara vez necesitan acceder a datos de copias de seguridad en la nube o para usuarios que están reemplazando una solución de copia de seguridad en cinta.

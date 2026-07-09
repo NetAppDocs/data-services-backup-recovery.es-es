@@ -27,6 +27,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 
 
+[[create-a-protection-group]]
 == Crear un grupo de protección
 
 Agrupe las máquinas virtuales y los grupos de almacenamiento que desea proteger juntos en un grupo de protección.
@@ -57,6 +58,7 @@ Para obtener más información sobre cómo crear una política de respaldo, cons
 
 
 
+[[edit-a-protection-group]]
 == Editar un grupo de protección
 
 Edita un grupo de protección si necesitas cambiar detalles del grupo de protección sin borrarlo y volver a crearlo.
@@ -77,6 +79,7 @@ Edita un grupo de protección si necesitas cambiar detalles del grupo de protecc
 
 
 
+[[delete-a-protection-group]]
 == Eliminar un grupo de protección
 
 Al eliminar un grupo de protección, se elimina dicho grupo y todos los programas de copia de seguridad asociados. Es posible que desee eliminar un grupo de protección si ya no es necesario.

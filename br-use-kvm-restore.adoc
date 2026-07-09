@@ -39,6 +39,7 @@ TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acc
 
 
 
+[[how-restoring-virtual-machines-works]]
 == Cómo funciona la restauración de máquinas virtuales
 
 Al restaurar máquinas virtuales, ocurre lo siguiente:
@@ -52,6 +53,7 @@ Desde la página Restaurar, puedes restaurar una máquina virtual, incluso si no
 
 
 
+[[restore-kvm-virtual-machines]]
 == Restaurar máquinas virtuales KVM
 
 Restaura máquinas virtuales KVM usando el menú Restaurar. Puedes buscar la instantánea por su nombre o usando filtros.

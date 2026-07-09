@@ -20,6 +20,7 @@ NetApp Backup and Recovery necesita descubrir las cargas de trabajo de Kubernete
 
 
 
+[[discover-kubernetes-workloads]]
 == Descubra las cargas de trabajo de Kubernetes
 
 En el inventario de Copia de seguridad y recuperación, descubra las cargas de trabajo de Kubernetes en su entorno.  Al agregar una carga de trabajo, se agrega un clúster de Kubernetes a NetApp Backup and Recovery.  Luego puede agregar aplicaciones y proteger los recursos del clúster.
@@ -58,6 +59,7 @@ El clúster se agrega al inventario.
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continuar al panel de control de NetApp Backup and Recovery
 
 Siga estos pasos para ver el panel de control de NetApp Backup and Recovery .

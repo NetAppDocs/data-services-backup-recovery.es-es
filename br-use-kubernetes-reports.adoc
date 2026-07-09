@@ -18,6 +18,7 @@ En NetApp Backup and Recovery, crea informes de protección para cargas de traba
 
 
 
+[[create-a-protection-report]]
 == Crear un informe de protección
 
 Crea un informe de protección para ver el estado de protección de tus clústeres.
@@ -46,6 +47,7 @@ Configure las notificaciones por correo electrónico en la página Configuració
 
 
 
+[[download-a-protection-report]]
 == Descarga un informe de protección
 
 Descarga un informe de protección generado como archivo JSON o documento PDF para que puedas verlo y compartirlo.
@@ -63,6 +65,7 @@ Descarga un informe de protección generado como archivo JSON o documento PDF pa
 
 
 
+[[view-a-protection-report]]
 == Ver un informe de protección
 
 Visualiza rápidamente los detalles interactivos de un informe de protección dentro de NetApp Backup and Recovery. Puedes ver información resumida del trabajo, el estado de la protección de datos, detalles de la configuración y mucho más.
@@ -78,6 +81,7 @@ Aparecen los detalles del informe.
 
 
 
+[[delete-a-protection-report]]
 == Eliminar un informe de protección
 
 Elimina un informe de protección cuando ya no lo necesites.

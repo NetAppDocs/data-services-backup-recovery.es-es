@@ -58,6 +58,7 @@ Para cada acción auditada, la consola registra el nombre del servicio, el agent
 
 
 
+[[more-information]]
 == Más información
 
 * https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Audita la actividad de los usuarios desde la página Auditoría"^]

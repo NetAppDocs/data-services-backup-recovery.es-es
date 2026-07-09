@@ -18,6 +18,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 
 
+[[unsupported-actions]]
 == Acciones no admitidas
 
 Las siguientes acciones no son compatibles en las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:

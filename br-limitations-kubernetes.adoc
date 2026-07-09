@@ -18,6 +18,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 
 
+[[changing-the-protection-policy-for-an-application]]
 == Cambiar la política de protección de una aplicación
 
 Cuando cambias la política de protección asociada a una aplicación para usar un bucket u objetivo de replicación secundario diferente, la política de protección puede fallar.
@@ -26,6 +27,7 @@ Cuando cambias la política de protección asociada a una aplicación para usar 
 
 
 
+[[3-2-1-protection-policy-configuration-limitation]]
 == Limitación de la configuración de la política de protección 3-2-1
 
 Cuando creas una política de protección 3-2-1 donde no se realizan copias de seguridad en el almacén de objetos al mismo tiempo que la replicación al almacenamiento secundario, la política de protección se queda colgada al proteger la aplicación.

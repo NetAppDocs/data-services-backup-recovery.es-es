@@ -18,6 +18,7 @@ NetApp Backup and Recovery admite dos clases de almacenamiento de archivo S3 y l
 
 
 
+[[supported-s3-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Clases de almacenamiento de archivo S3 compatibles con NetApp Backup and Recovery
 
 Cuando se crean inicialmente los archivos de respaldo, se almacenan en el almacenamiento _estándar_ de S3.  Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero que también permite acceder a ellos de inmediato.  Después de 30 días, las copias de seguridad pasan a la clase de almacenamiento S3 _Standard-Infrequent Access_ para ahorrar costos.
@@ -37,6 +38,7 @@ https://aws.amazon.com/s3/storage-classes/["Obtenga más información sobre las 
 
 
 
+[[restore-data-from-archival-storage]]
 == Restaurar datos desde el almacenamiento de archivo
 
 Si bien almacenar archivos de respaldo más antiguos en un almacenamiento de archivo es mucho menos costoso que el almacenamiento Estándar o Estándar-IA, acceder a los datos de un archivo de respaldo en un almacenamiento de archivo para operaciones de restauración llevará más tiempo y costará más dinero.

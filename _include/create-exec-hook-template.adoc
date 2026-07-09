@@ -4,6 +4,7 @@
 
 
 
+[[create-an-execution-hook-template]]
 == Crear una plantilla de gancho de ejecución
 
 Puede crear una plantilla de gancho de ejecución personalizada que pueda utilizar para realizar acciones antes o después de una operación de protección de datos en una aplicación.

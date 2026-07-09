@@ -44,6 +44,7 @@ Puede realizar las siguientes tareas relacionadas con la gestión de su inventar
 
 
 
+[[manage-host-information]]
 == Administrar la información del host
 
 Puede administrar la información del host para garantizar que se protejan los hosts correctos.  Puede ver, editar y eliminar información del host.
@@ -58,6 +59,7 @@ Puede administrar la información del host para garantizar que se protejan los h
 
 
 
+[[manage-hosts]]
 === Administrar hosts
 
 Puede administrar los hosts que se descubren en su sistema.  Puedes gestionarlos por separado o como grupo.
@@ -88,6 +90,7 @@ Después de administrar los hosts en NetApp Backup and Recovery, SnapCenter ya n
 
 
 
+[[suspend-schedules]]
 === Suspender horarios
 
 Suspender programaciones para detener operaciones de respaldo y restauración durante el mantenimiento del host.
@@ -101,6 +104,7 @@ Suspender programaciones para detener operaciones de respaldo y restauración du
 
 
 
+[[edit-a-host]]
 === Editar un host
 
 Puede cambiar la información del servidor vCenter, las credenciales de registro del host y las opciones de configuración avanzada.
@@ -115,6 +119,7 @@ Puede cambiar la información del servidor vCenter, las credenciales de registro
 
 
 
+[[delete-a-host]]
 === Eliminar un host
 
 Puede eliminar la información del host para detener los cargos por servicio.
@@ -128,6 +133,7 @@ Puede eliminar la información del host para detener los cargos por servicio.
 
 
 
+[[manage-instances-information]]
 == Administrar información de instancias
 
 Puede administrar la información de instancias para asignar las credenciales adecuadas para la protección de recursos y realizar copias de seguridad de los recursos de las siguientes maneras:
@@ -143,6 +149,7 @@ Puede administrar la información de instancias para asignar las credenciales ad
 
 
 
+[[protect-database-instances]]
 === Proteger instancias de bases de datos
 
 Puede asignar una política a una instancia de base de datos utilizando políticas que rigen los cronogramas y la retención de la protección de recursos.
@@ -174,6 +181,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 
 
+[[associate-credentials-with-a-resource]]
 === Asociar credenciales a un recurso
 
 Puede asociar credenciales a un recurso para que pueda existir protección.
@@ -191,6 +199,7 @@ Para más detalles, consultelink:br-start-configure.html["Configurar los ajustes
 
 
 
+[[edit-protection-settings]]
 === Editar la configuración de protección
 
 Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
@@ -208,6 +217,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 
 
+[[back-up-now]]
 === Realizar una copia de seguridad ahora
 
 Haga una copia de seguridad de sus datos ahora para protegerlos de inmediato.
@@ -226,6 +236,7 @@ Para obtener detalles sobre cómo crear una copia de seguridad ad hoc, consultel
 
 
 
+[[manage-database-information]]
 == Administrar la información de la base de datos
 
 Puede administrar la información de la base de datos de las siguientes maneras:
@@ -239,6 +250,7 @@ Puede administrar la información de la base de datos de las siguientes maneras:
 
 
 
+[[protect-databases]]
 === Proteger bases de datos
 
 Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
@@ -258,6 +270,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 
 
+[[restore-databases]]
 === Restaurar bases de datos
 
 Restaurar una base de datos para proteger sus datos.
@@ -274,6 +287,7 @@ Para obtener información sobre cómo restaurar cargas de trabajo, consultelink:
 
 
 
+[[edit-protection-settings]]
 === Editar la configuración de protección
 
 Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
@@ -293,6 +307,7 @@ Para obtener detalles sobre cómo crear una política, consultelink:br-use-polic
 
 
 
+[[back-up-now]]
 === Realizar una copia de seguridad ahora
 
 Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para proteger sus datos de inmediato.

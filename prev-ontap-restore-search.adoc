@@ -50,6 +50,7 @@ Antes de comenzar, debe tener alguna idea del nombre o la ubicación del volumen
 
 
 
+[[search-restore-supported-systems-and-object-storage-providers]]
 == Buscar y restaurar sistemas compatibles y proveedores de almacenamiento de objetos
 
 Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
@@ -91,6 +92,7 @@ Tenga en cuenta que las referencias a "sistemas ONTAP locales" incluyen los sist
 
 
 
+[[search-restore-prerequisites]]
 == Requisitos previos de búsqueda y restauración
 
 Asegúrese de que su entorno cumpla con estos requisitos antes de habilitar Buscar y restaurar:
@@ -107,6 +109,7 @@ Asegúrese de que su entorno cumpla con estos requisitos antes de habilitar Busc
 
 
 
+[[legacy-search-restore-prerequisites-using-indexed-catalog-v1]]
 === Requisitos previos para la búsqueda y restauración heredadas (utilizando el catálogo indexado v1)
 
 Los siguientes son los requisitos para buscar y restaurar cuando se utiliza la indexación heredada:
@@ -160,6 +163,7 @@ Incluso si utiliza un agente de consola local, se deben cumplir los requisitos d
 ====
 
 
+[[search-restore-process]]
 == Proceso de búsqueda y restauración
 
 El proceso es así:
@@ -185,6 +189,7 @@ Solo necesitas conocer un nombre parcial y NetApp Backup and Recovery buscará e
 
 
 
+[[enable-the-indexed-catalog-for-each-system]]
 == Habilitar el Catálogo Indexado para cada sistema
 
 Antes de poder usar Buscar y restaurar, debe habilitar "Indexación" en cada sistema de origen desde el cual planea restaurar volúmenes o archivos.  Esto permite que el Catálogo indexado rastree cada volumen y cada archivo de respaldo, lo que hace que sus búsquedas sean muy rápidas y eficientes.
@@ -257,6 +262,7 @@ Dependiendo del tamaño de los volúmenes en el sistema y la cantidad de archivo
 
 
 
+[[restore-volumes-folders-and-files-using-search-restore]]
 == Restaurar volúmenes, carpetas y archivos mediante Buscar y restaurar
 
 Después de que tengas<<enable-the-indexed-catalog-for-each-system,Habilitó la indexación para su sistema>> , puede restaurar volúmenes, carpetas y archivos mediante Buscar y restaurar. Esto le permite utilizar una amplia gama de filtros para encontrar el archivo o volumen exacto que desea restaurar de todos los archivos de respaldo.

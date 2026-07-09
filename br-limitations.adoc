@@ -18,6 +18,7 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 
 
+[[clone-lifecycle-support]]
 == Soporte del ciclo de vida de los clones
 
 * No se admite la clonación desde el almacenamiento de objetos.
@@ -28,18 +29,21 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 
 
+[[standard-deployment-mode-only]]
 == Solo modo de implementación estándar
 
 Esta versión de NetApp Backup and Recovery solo funciona en el modo de implementación estándar, no en modos restringidos o privados.
 
 
 
+[[windows-cluster-name-restriction]]
 == Restricción de nombre de clúster de Windows
 
 El nombre del clúster de Windows no puede contener un carácter de guión bajo (_).
 
 
 
+[[snapcenter-migration-issues]]
 == Problemas de migración de SnapCenter
 
 La migración de recursos de SnapCenter a NetApp Backup and Recovery tiene las siguientes limitaciones.
@@ -48,6 +52,7 @@ Para obtener detalles sobre cómo las políticas de SnapCenter migran a las pol�
 
 
 
+[[resource-group-limitations]]
 === Limitaciones del grupo de recursos
 
 Si todos los recursos de un grupo de recursos están protegidos y uno de esos recursos también está protegido fuera del grupo de recursos, la migración desde SnapCenter se bloquea.
@@ -56,6 +61,7 @@ Si todos los recursos de un grupo de recursos están protegidos y uno de esos re
 
 
 
+[[resources-with-multiple-policies-using-the-same-schedule-tier-not-supported]]
 === No se admiten recursos con múltiples políticas que utilizan el mismo nivel de programación
 
 No es posible asignar varias políticas que utilicen el mismo nivel de programación (por ejemplo, por hora, por día, por semana, etc.) a un recurso.  NetApp Backup and Recovery no importará esos recursos desde SnapCenter.
@@ -64,6 +70,7 @@ No es posible asignar varias políticas que utilicen el mismo nivel de programac
 
 
 
+[[hourly-policies-must-begin-at-the-start-of-the-hour]]
 === Las políticas horarias deben comenzar al inicio de la hora
 
 Si tiene una política de SnapCenter que se repite cada hora pero no utiliza intervalos al comienzo de la hora, NetApp Backup and Recovery no importará el recurso.  Por ejemplo, no se admiten políticas con horarios de 1:30, 2:30, 3:30, etc., mientras que sí se admiten políticas con horarios de 1:00, 2:00, 3:00, etc.
@@ -72,6 +79,7 @@ Si tiene una política de SnapCenter que se repite cada hora pero no utiliza int
 
 
 
+[[both-daily-and-monthly-policies-attached-to-one-resource-not-supported]]
 === No se admiten políticas diarias ni mensuales asociadas a un recurso
 
 Si una política de SnapCenter se repite en intervalos de día y de mes, NetApp Backup and Recovery no importará la política.
@@ -82,12 +90,14 @@ Por ejemplo, no puede adjuntar una política diaria (con una duración menor o i
 
 
 
+[[on-demand-backup-policies-not-migrated]]
 === Políticas de respaldo a pedido no migradas
 
 NetApp Backup and Recovery no importa políticas de respaldo a pedido desde SnapCenter.
 
 
 
+[[log-only-backup-policies-not-migrated]]
 === Políticas de respaldo de solo registro no migradas
 
 NetApp Backup and Recovery no importa políticas de respaldo de solo registro desde SnapCenter.  Si una política de SnapCenter incluye copias de seguridad de solo registro, NetApp Backup and Recovery no importará el recurso.
@@ -96,6 +106,7 @@ NetApp Backup and Recovery no importa políticas de respaldo de solo registro de
 
 
 
+[[host-mapping]]
 === Mapeo de host
 
 SnapCenter no tiene clústeres de almacenamiento de mapas ni SVM para los recursos de los hosts, pero NetApp Backup and Recovery sí.  El clúster ONTAP local o SVM no se asignará a un host en las versiones preliminares de NetApp Backup and Recovery .  Además, NetApp Console no admite SVM.
@@ -104,6 +115,7 @@ SnapCenter no tiene clústeres de almacenamiento de mapas ni SVM para los recurs
 
 
 
+[[schedules-not-in-15-minute-intervals]]
 === Horarios que no están en intervalos de 15 minutos
 
 Si tiene una programación de políticas de SnapCenter que comienza a una hora determinada y se repite en intervalos distintos de 15 minutos, NetApp Backup and Recovery no importará la programación.

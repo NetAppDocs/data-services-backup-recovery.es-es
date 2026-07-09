@@ -16,6 +16,7 @@ Existen algunas diferencias entre las políticas utilizadas en SnapCenter y las 
 
 
 
+[[schedule-tiers]]
 == Niveles de programación
 
 SnapCenter utiliza los siguientes niveles de programación:
@@ -37,6 +38,7 @@ NetApp Backup and Recovery utiliza los siguientes niveles de programación, que 
 
 
 
+[[multiple-policies-in-snapcenter-with-the-same-schedule-tier]]
 == Varias políticas en SnapCenter con el mismo nivel de programación
 
 Puede asignar varias políticas con el mismo nivel de programación a un recurso en SnapCenter.  Sin embargo, NetApp Backup and Recovery no admite múltiples políticas en un recurso que utiliza el mismo nivel de programación.
@@ -45,6 +47,7 @@ Puede asignar varias políticas con el mismo nivel de programación a un recurso
 
 
 
+[[imported-snapcenter-daily-schedules]]
 == Programaciones diarias de SnapCenter importadas
 
 NetApp Backup and Recovery ajusta las programaciones de SnapCenter de la siguiente manera:
@@ -61,6 +64,7 @@ NetApp Backup and Recovery ajusta las programaciones de SnapCenter de la siguien
 
 
 
+[[imported-snapcenter-hourly-schedules]]
 == Horarios por hora de SnapCenter importados
 
 Las políticas por hora de SnapCenter con intervalos de repetición superiores a una hora se convierten en una política diaria en NetApp Backup and Recovery.
@@ -71,6 +75,7 @@ Cualquier política horaria con intervalos de repetición que no sean un factor 
 
 
 
+[[log-retention-from-snapcenter-policies]]
 == Retención de registros de las políticas de SnapCenter
 
 Si tiene un recurso en SnapCenter con múltiples políticas, NetApp Backup and Recovery utiliza el siguiente orden de prioridad para asignar el valor de retención de registros:
@@ -83,12 +88,14 @@ Si tiene un recurso en SnapCenter con múltiples políticas, NetApp Backup and R
 
 
 
+[[log-backup-retention]]
 == Retención de copias de seguridad de registros
 
 SnapCenter admite múltiples valores de retención para las políticas de un recurso.  NetApp Backup and Recovery solo admite un valor de retención por recurso.
 
 
 
+[[retention-count-from-snapcenter-policies]]
 == Recuento de retención de las políticas de SnapCenter
 
 Si tiene un recurso con protección secundaria habilitada en SnapCenter con múltiples volúmenes de origen, múltiples volúmenes de destino y múltiples relaciones de SnapMirror , NetApp Backup and Recovery usa solo el recuento de retención de la primera política.
@@ -97,6 +104,7 @@ Si tiene un recurso con protección secundaria habilitada en SnapCenter con múl
 
 
 
+[[snapmirror-labels-from-snapcenter-policies]]
 == Etiquetas de SnapMirror de las políticas de SnapCenter
 
 SnapCenter conserva las etiquetas SnapMirror para cada política después de la migración, incluso si cambia el nivel.

@@ -18,6 +18,7 @@ Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de Ne
 
 
 
+[[delete-a-snapshot]]
 == Eliminar una instantánea
 
 Solo puedes eliminar instantáneas locales.

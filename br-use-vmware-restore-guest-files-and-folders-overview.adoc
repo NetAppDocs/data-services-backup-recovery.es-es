@@ -18,6 +18,7 @@ Puedes restaurar archivos o carpetas de un disco de máquina virtual (VMDK) en u
 
 
 
+[[guest-restore-workflow]]
 == Flujo de trabajo de restauración de invitados
 
 Las operaciones de restauración del sistema operativo invitado incluyen los siguientes pasos:
@@ -42,6 +43,7 @@ Restaurar los archivos o carpetas seleccionados a una ubicación específica.
 
 
 
+[[prerequisites-for-restoring-guest-files-and-folders]]
 == Requisitos previos para restaurar archivos y carpetas de invitados
 
 Revisa todos los requisitos antes de restaurar archivos o carpetas desde un VMDK.
@@ -69,6 +71,7 @@ Para obtener la información más reciente sobre la compatibilidad con sistemas 
 
 
 
+[[windows-guests]]
 === Invitados de Windows
 
 * El sistema operativo invitado Windows debe ejecutar Windows Server 2008 R2 o posterior.
@@ -84,6 +87,7 @@ IMPORTANT: Si debe utilizar una cuenta que no es la cuenta de administrador inte
 
 
 
+[[linux-guests]]
 === Huéspedes Linux
 
 * Se admiten las siguientes distribuciones de SO huésped:
@@ -99,6 +103,7 @@ IMPORTANT: Si debe utilizar una cuenta que no es la cuenta de administrador inte
 
 
 
+[[guest-file-restore-limitations]]
 == Limitaciones de restauración de archivos de invitados
 
 Antes de restaurar un archivo o carpeta desde un sistema operativo invitado, debe tener en cuenta las limitaciones de funciones.

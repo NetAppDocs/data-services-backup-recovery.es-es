@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volumes-workloads-enhancements]]
 === Mejoras en las cargas de trabajo de ONTAP Volumes
 
 En esta versión, ONTAP Volumes introduce las siguientes capacidades mejoradas:
@@ -20,6 +21,7 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de ONTAP Volume
 
 
 
+[[vmware-workloads-enhancements]]
 === Mejoras en las cargas de trabajo de VMware
 
 En esta versión, VMware workloads introduce las siguientes capacidades mejoradas:

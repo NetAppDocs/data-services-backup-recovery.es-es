@@ -24,6 +24,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 
 
+[[identify-the-connection-method]]
 == Identificar el método de conexión
 
 Elija cuál de los dos métodos de conexión utilizará al configurar copias de seguridad de los sistemas ONTAP locales a AWS S3.
@@ -44,12 +45,14 @@ image:diagram_cloud_backup_onprem_aws_private.png["Un diagrama que muestra cómo
 
 
 
+[[prepare-your-console-agent]]
 == Prepare su agente de consola
 
 El agente de consola es el software principal para la funcionalidad de la NetApp Console .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
 
 
 
+[[create-or-switch-console-agents]]
 === Crear o cambiar agentes de consola
 
 Si ya tiene un agente de consola implementado en su VPC de AWS o en sus instalaciones, entonces está todo listo.
@@ -67,6 +70,7 @@ NetApp Backup and Recovery es compatible con las regiones GovCloud cuando el age
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === Preparar los requisitos de red del agente de consola
 
 Asegúrese de que se cumplan los siguientes requisitos de red:
@@ -83,6 +87,7 @@ Asegúrese de que se cumplan los siguientes requisitos de red:
 
 
 
+[[verify-license-requirements]]
 == Verificar los requisitos de la licencia
 
 Deberá verificar los requisitos de licencia tanto para AWS como para la NetApp Console:
@@ -102,6 +107,7 @@ Puede crear copias de seguridad desde sistemas locales a Amazon S3 en todas las 
 
 
 
+[[prepare-your-ontap-clusters]]
 == Prepare sus clústeres de ONTAP
 
 Prepare su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
@@ -116,6 +122,7 @@ La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Descubra sus sistemas ONTAP en NetApp Console
 
 Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .
@@ -124,6 +131,7 @@ Necesitará saber la dirección IP de administración del clúster y la contrase
 
 
 
+[[verify-ontap-system-requirements]]
 === Verificar los requisitos del sistema ONTAP
 
 Asegúrese de que su sistema ONTAP cumpla con los siguientes requisitos:
@@ -145,6 +153,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Verificar los requisitos de red de ONTAP para realizar copias de seguridad de datos en el almacenamiento de objetos
 
 Debe configurar los siguientes requisitos en el sistema que se conecta al almacenamiento de objetos.
@@ -178,6 +187,7 @@ Todos los LIF entre clústeres dentro del espacio IP deben tener acceso al almac
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Verificar los requisitos de red de ONTAP para replicar volúmenes
 
 Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.
@@ -202,6 +212,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 
 
+[[prepare-amazon-s3-as-your-backup-target]]
 == Prepare Amazon S3 como su destino de respaldo
 
 La preparación de Amazon S3 como destino de respaldo implica los siguientes pasos:
@@ -214,6 +225,7 @@ La preparación de Amazon S3 como destino de respaldo implica los siguientes pas
 
 
 
+[[set-up-s3-permissions]]
 === Configurar permisos S3
 
 Necesitarás configurar dos conjuntos de permisos:
@@ -287,6 +299,7 @@ Consulte la https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for
 
 
 
+[[create-your-own-buckets]]
 === Crea tus propios cubos
 
 De forma predeterminada, el servicio crea depósitos para usted.  O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esos depósitos en el asistente.
@@ -330,6 +343,7 @@ Si crea sus propios depósitos, debe utilizar el nombre de depósito "netapp-bac
 ====
 
 
+[[set-up-customer-managed-aws-keys-for-data-encryption]]
 === Configurar claves de AWS administradas por el cliente para el cifrado de datos
 
 Si desea utilizar las claves de cifrado predeterminadas de Amazon S3 para cifrar los datos que se transmiten entre su clúster local y el depósito S3, entonces está todo listo porque la instalación predeterminada usa ese tipo de cifrado.
@@ -343,6 +357,7 @@ Consulta https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/ta
 
 
 
+[[configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface]]
 === Configure su sistema para una conexión privada mediante una interfaz de punto final de VPC
 
 Si desea utilizar una conexión a Internet pública estándar, todos los permisos los establece el agente de la consola y no es necesario hacer nada más.
@@ -390,6 +405,7 @@ Please enter Certificate: Press <Enter> when done
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Activar copias de seguridad en sus volúmenes ONTAP
 
 Active las copias de seguridad en cualquier momento directamente desde su sistema local.
@@ -405,6 +421,7 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 
 
 
+[[start-the-wizard]]
 === Iniciar el asistente
 
 .Pasos
@@ -430,6 +447,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Seleccione los volúmenes que desea respaldar
 
 Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
@@ -458,6 +476,7 @@ Si los volúmenes que elige ya tienen políticas de instantáneas o replicación
 
 
 
+[[define-the-backup-strategy]]
 === Definir la estrategia de backup
 
 Definir la estrategia de backup implica configurar las siguientes opciones:
@@ -569,6 +588,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 
 
 
+[[review-your-selections]]
 === Revise sus selecciones
 
 Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
@@ -590,6 +610,7 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 
 
 
+[[show-the-api-commands]]
 === Mostrar los comandos API
 
 Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.

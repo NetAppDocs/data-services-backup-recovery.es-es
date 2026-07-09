@@ -37,6 +37,7 @@ Puede revisar los siguientes tipos de información:
 
 
 
+[[view-the-protection-summary]]
 == Ver el resumen de protección
 
 Revise la siguiente información en el Resumen de protección:
@@ -52,6 +53,7 @@ TIP: Una base de datos protegida es aquella que tiene una política de respaldo 
 
 
 
+[[view-the-job-summary]]
 == Ver el resumen del trabajo
 
 Revise el total de trabajos completados, en ejecución o fallidos en el Resumen de trabajos.
@@ -63,6 +65,7 @@ Revise el total de trabajos completados, en ejecución o fallidos en el Resumen 
 
 
 
+[[view-the-restore-summary]]
 == Ver el resumen de restauración
 
 Revise la siguiente información en el resumen de restauración:

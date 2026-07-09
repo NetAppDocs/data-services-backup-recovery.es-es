@@ -18,6 +18,7 @@ Puede cambiar entre las diferentes cargas de trabajo de NetApp Backup and Recove
 
 
 
+[[switch-to-a-different-workload]]
 == Cambiar a una carga de trabajo diferente
 
 Puede cambiar a una carga de trabajo diferente en la interfaz de usuario de NetApp Backup and Recovery .

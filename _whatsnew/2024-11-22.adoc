@@ -4,6 +4,7 @@
 
 
 
+[[snaplock-compliance-and-snaplock-enterprise-protection-modes]]
 === Modos de protección SnapLock Compliance y SnapLock Enterprise
 
 NetApp Backup and Recovery ahora puede hacer copias de seguridad de volúmenes locales de FlexVol y FlexGroup que están configurados usando los modos de protección SnapLock Compliance o SnapLock Enterprise. Tus clústeres deben estar ejecutando ONTAP 9.14 o una versión posterior para contar con este soporte. Hacer copias de seguridad de volúmenes FlexVol en modo SnapLock Enterprise está soportado desde ONTAP 9.11.1. Las versiones anteriores de ONTAP no admiten copias de seguridad de volúmenes protegidos con SnapLock.
@@ -12,6 +13,7 @@ Consulta la lista completa de volúmenes compatibles en https://docs.netapp.com/
 
 
 
+[[indexing-for-search-restore-process-on-volumes-page]]
 === Indexación para el proceso de búsqueda y restauración en la página Volúmenes
 
 Antes de poder usar Buscar y restaurar, debe habilitar "Indexación" en cada sistema de origen desde el cual desee restaurar datos de volumen.  Esto permite que el Catálogo indexado realice un seguimiento de los archivos de respaldo de cada volumen.  La página Volúmenes ahora muestra el estado de indexación:

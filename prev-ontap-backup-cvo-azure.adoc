@@ -21,6 +21,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 
 
+[[verify-support-for-your-configuration]]
 == Verificar la compatibilidad con su configuración
 
 Lea los siguientes requisitos para asegurarse de tener una configuración compatible antes de comenzar a realizar copias de seguridad de volúmenes en Azure Blob Storage.
@@ -43,6 +44,7 @@ Configuración necesaria para crear copias de seguridad en una suscripción de A
 
 
 
+[[verify-license-requirements]]
 == Verificar los requisitos de la licencia
 
 Para obtener una licencia PAYGO de NetApp Backup and Recovery , se requiere una suscripción a través de Azure Marketplace antes de habilitar NetApp Backup and Recovery.  La facturación de NetApp Backup and Recovery se realiza a través de esta suscripción. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Puede suscribirse desde la página Detalles y Credenciales del asistente del sistema"^] .
@@ -53,6 +55,7 @@ Y necesita tener una suscripción a Microsoft Azure para el espacio de almacenam
 
 
 
+[[prepare-your-console-agent]]
 == Prepare su agente de consola
 
 El agente de consola se puede instalar en una región de Azure con acceso a Internet completo o limitado (modo "estándar" o "restringido"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte los modos de implementación de la NetApp Console para obtener más detalles"^] .
@@ -64,6 +67,7 @@ El agente de consola se puede instalar en una región de Azure con acceso a Inte
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Verificar o agregar permisos al agente de la consola
 
 Para utilizar la funcionalidad de búsqueda y restauración de NetApp Backup and Recovery , debe tener permisos específicos en el rol del agente de consola para que pueda acceder al área de trabajo de Azure Synapse y a la cuenta de almacenamiento de Data Lake.  Vea los permisos a continuación y siga los pasos si necesita modificar la política.
@@ -142,6 +146,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[required-information-for-using-customer-managed-keys-for-data-encryption]]
 === Información necesaria para utilizar claves administradas por el cliente para el cifrado de datos
 
 Puede utilizar sus propias claves administradas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado administradas por Microsoft predeterminadas.  En este caso, necesitará tener la suscripción de Azure, el nombre de Key Vault y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo utilizar sus propias llaves"^] .
@@ -150,6 +155,7 @@ NetApp Backup and Recovery admite las _políticas de acceso de Azure_, el modelo
 
 
 
+[[create-your-azure-blob-storage-account]]
 === Cree su cuenta de almacenamiento de blobs de Azure
 
 De forma predeterminada, el servicio crea cuentas de almacenamiento para usted.  Si desea utilizar sus propias cuentas de almacenamiento, puede crearlas antes de iniciar el asistente de activación de copia de seguridad y luego seleccionar esas cuentas de almacenamiento en el asistente.
@@ -158,6 +164,7 @@ link:prev-ontap-protect-journey.html["Obtenga más información sobre cómo crea
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 == Verificar los requisitos de red de ONTAP para replicar volúmenes
 
 Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.
@@ -185,6 +192,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 
 
+[[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Habilitar NetApp Backup and Recovery en Cloud Volumes ONTAP
 
 Habilitar NetApp Backup and Recovery es fácil.  Los pasos varían levemente dependiendo de si tiene un sistema Cloud Volumes ONTAP existente o uno nuevo.
@@ -225,6 +233,7 @@ Si el destino de Azure Blob para sus copias de seguridad existe como un sistema 
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Activar copias de seguridad en sus volúmenes ONTAP
 
 Active las copias de seguridad en cualquier momento directamente desde su sistema local.
@@ -240,6 +249,7 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 
 
 
+[[start-the-wizard]]
 === Iniciar el asistente
 
 .Pasos
@@ -265,6 +275,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Seleccione los volúmenes que desea respaldar
 
 Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes características: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
@@ -293,6 +304,7 @@ Si los volúmenes que elige ya tienen políticas de instantáneas o replicación
 
 
 
+[[define-the-backup-strategy]]
 === Definir la estrategia de backup
 
 Definir la estrategia de backup implica configurar las siguientes opciones:
@@ -418,6 +430,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 
 
 
+[[review-your-selections]]
 === Revise sus selecciones
 
 Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
@@ -443,6 +456,7 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 
 
 
+[[show-the-api-commands]]
 === Mostrar los comandos API
 
 Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
@@ -454,6 +468,7 @@ Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizado
 
 
 
+[[whats-next]]
 == ¿Que sigue?
 
 * Puedelink:prev-ontap-backup-manage.html["Administrar sus archivos de respaldo y políticas de respaldo"] .  Esto incluye iniciar y detener copias de seguridad, eliminar copias de seguridad, agregar y cambiar la programación de copias de seguridad, y más.

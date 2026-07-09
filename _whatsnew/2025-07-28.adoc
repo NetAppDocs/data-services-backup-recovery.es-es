@@ -4,6 +4,7 @@
 
 
 
+[[kubernetes-workload-support-as-a-preview]]
 === Compatibilidad con cargas de trabajo de Kubernetes como vista previa
 
 Esta versión de NetApp Backup and Recovery introduce soporte para descubrir y gestionar cargas de trabajo Kubernetes:

@@ -23,6 +23,7 @@ Realice copias de seguridad de los datos de aplicaciones de Microsoft SQL Server
 
 
 
+[[view-workload-protection-status]]
 == Ver el estado de protección de la carga de trabajo
 
 Antes de iniciar una copia de seguridad, vea el estado de protección de sus cargas de trabajo.
@@ -38,6 +39,7 @@ Antes de iniciar una copia de seguridad, vea el estado de protección de sus car
 
 
 
+[[configure-the-log-directory-for-discovered-hosts]]
 == Configurar el directorio de registro para los hosts detectados
 
 Establezca la ruta del registro de actividad para que los hosts descubiertos rastreen el estado de la operación antes de realizar copias de seguridad de las cargas de trabajo.
@@ -61,6 +63,7 @@ NOTE: Los campos que aparecen varían según el modelo de implementación selecc
 
 
 
+[[create-a-protection-group]]
 == Crear un grupo de protección
 
 Cree un grupo de protección para administrar operaciones de copia de seguridad y restauración para múltiples cargas de trabajo.  Un grupo de protección es una agrupación lógica de cargas de trabajo.
@@ -87,6 +90,7 @@ Si desea crear una política, seleccione *Crear nueva política* y siga las inst
 
 
 
+[[back-up-workloads-now-with-an-on-demand-backup]]
 == Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
 
 Ejecute una copia de seguridad a pedido antes de realizar cambios en su sistema para garantizar que sus datos estén protegidos.
@@ -107,6 +111,7 @@ Ejecute una copia de seguridad a pedido antes de realizar cambios en su sistema 
 
 
 
+[[suspend-the-backup-schedule]]
 == Suspender la programación de copias de seguridad
 
 Suspender la programación para detener temporalmente las copias de seguridad durante el mantenimiento o la resolución de problemas.
@@ -124,6 +129,7 @@ Suspender la programación para detener temporalmente las copias de seguridad du
 
 
 
+[[delete-a-protection-group]]
 == Eliminar un grupo de protección
 
 Al eliminar un grupo de protección, se elimina dicho grupo y todos los programas de copia de seguridad asociados. Es posible que desee eliminar un grupo de protección si ya no es necesario.
@@ -140,6 +146,7 @@ Al eliminar un grupo de protección, se elimina dicho grupo y todos los programa
 
 
 
+[[remove-protection-from-a-workload]]
 == Eliminar la protección de una carga de trabajo
 
 Puede eliminar la protección de una carga de trabajo si ya no desea realizar copias de seguridad de ella o si desea dejar de administrarla en NetApp Backup and Recovery.

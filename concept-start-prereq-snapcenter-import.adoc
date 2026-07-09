@@ -18,12 +18,14 @@ Si va a importar recursos del servicio de complemento SnapCenter para Microsoft 
 
 
 
+[[create-systems-in-netapp-console-first]]
 == Primero cree sistemas en la NetApp Console
 
 Si va a importar recursos desde SnapCenter, primero debe agregar todo el almacenamiento del clúster local de SnapCenter a la página *Sistemas* de la consola antes de importar desde SnapCenter.  Esto garantiza que los recursos del host se puedan descubrir e importar correctamente.
 
 
 
+[[ensure-host-requirements-to-install-the-snapcenter-plug-in]]
 == Asegúrese de que se cumplan los requisitos del host para instalar el complemento SnapCenter
 
 Para importar recursos desde el complemento de SnapCenter para Microsoft SQL Server, asegúrese de que se cumplan los requisitos del host para instalar el complemento de SnapCenter para Microsoft SQL Server.
@@ -32,6 +34,7 @@ Consulte específicamente los requisitos de SnapCenter enlink:concept-start-prer
 
 
 
+[[disable-user-account-control-remote-restrictions]]
 == Deshabilitar las restricciones remotas del Control de cuentas de usuario
 
 Antes de importar recursos desde SnapCenter, deshabilite las restricciones remotas del Control de cuentas de usuario (UAC) en el host Windows de SnapCenter .  Deshabilite UAC si usa una cuenta administrativa local para conectarse de forma remota al host del servidor SnapCenter o al host SQL.
@@ -69,6 +72,7 @@ Haga esto utilizando uno de los siguientes, con instrucciones a continuación:
 
 
 
+[[method-1-disable-user-account-control-by-using-the-registry-editor]]
 === Método 1: Deshabilitar el Control de cuentas de usuario mediante el Editor del Registro
 
 Este es uno de los métodos que puede utilizar para deshabilitar el Control de cuentas de usuario.
@@ -112,6 +116,7 @@ Este ejemplo establece LocalAccountTokenFilterPolicy en "1", deshabilitando las 
 ----
 
 
+[[method-2-disable-user-account-control-by-using-a-powershell-script]]
 === Método 2: deshabilite el control de cuentas de usuario mediante un script de PowerShell
 
 Este es otro método que puedes utilizar para deshabilitar el Control de cuentas de usuario.

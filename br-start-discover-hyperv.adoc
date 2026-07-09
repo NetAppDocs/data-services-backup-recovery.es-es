@@ -20,6 +20,7 @@ NetApp Backup and Recovery debe descubrir las máquinas virtuales Hyper-V antes 
 
 
 
+[[add-a-hyper-v-host-and-discover-resources]]
 == Agregue un host Hyper-V y descubra recursos
 
 Agregue información del host de Hyper-V y permita que NetApp Backup and Recovery descubra máquinas virtuales.  Dentro de cada agente de consola, seleccione los sistemas donde desea descubrir los recursos.
@@ -59,6 +60,7 @@ Una vez que NetApp Backup and Recovery descubre recursos, la página Inventario 
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continuar al panel de control de NetApp Backup and Recovery
 
 .Pasos

@@ -18,6 +18,7 @@ Al intentar restaurar un archivo invitado, es posible que se encuentre con cualq
 
 
 
+[[guest-file-restore-session-is-blank]]
 == La sesión de restauración de archivos de invitado está en blanco
 
 Este problema ocurre si crea una sesión de restauración de archivos invitados y el sistema operativo invitado se reinicia durante la sesión. Los VMDK en el sistema operativo invitado pueden permanecer fuera de línea, por lo que la lista de sesiones de restauración de archivos del invitado estará en blanco.
@@ -26,6 +27,7 @@ Para corregir el problema, vuelva a poner manualmente los VMDK en línea en el s
 
 
 
+[[guest-file-restore-attach-disk-operation-fails]]
 == La operación de adjuntar disco para restaurar el archivo invitado falla
 
 Este problema ocurre cuando se inicia una operación de restauración de archivo invitado, pero la operación de conexión de disco falla incluso aunque VMware Tools se esté ejecutando y las credenciales del sistema operativo invitado sean correctas. Si esto ocurre, se devuelve el siguiente error:
@@ -36,6 +38,7 @@ Para corregir el problema, reinicie el servicio de Windows VMware Tools en el si
 
 
 
+[[backups-are-not-detached-after-guest-file-restore-session-is-discontinued]]
 == Las copias de seguridad no se separan después de que se interrumpe la sesión de restauración de archivos del invitado
 
 Este problema ocurre cuando se realiza una operación de restauración de archivo invitado desde una copia de seguridad consistente con la máquina virtual. Mientras la sesión de restauración de archivos invitados está activa, se realiza otra copia de seguridad consistente con la misma máquina virtual para la misma máquina virtual. Cuando la sesión de restauración de archivos invitados se desconecta, ya sea de forma manual o automática después de 24 horas, las copias de seguridad de la sesión no se separan.

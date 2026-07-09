@@ -20,6 +20,7 @@ Puedes cambiar la autenticación y la configuración del nodo para una nueva bas
 
 
 
+[[configure-an-oracle-database]]
 == Configurar una base de datos Oracle
 
 Cambia la configuración de una base de datos Oracle independiente o en clúster.

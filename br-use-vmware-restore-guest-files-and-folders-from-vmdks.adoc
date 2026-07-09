@@ -18,6 +18,7 @@ Restaurar archivos o carpetas individuales de un disco virtual a la máquina vir
 
 
 
+[[restore-files-and-folders-from-virtual-disks]]
 == Restaurar archivos y carpetas de discos virtuales
 
 Restaura archivos o carpetas desde un disco virtual a la VM original o a otra VM. Si prefieres no adjuntar el disco virtual a la VM original, puedes adjuntarlo a una VM proxy en su lugar.
@@ -178,6 +179,7 @@ Puede ver el progreso de la restauración en la página Supervisión de trabajos
 ====
 
 
+[[view-active-vmdk-mount-sessions]]
 == Ver sesiones de montaje VMDK activas
 
 Ve las sesiones de invitado activas cuando estás restaurando archivos o carpetas. Esto te muestra los VMDKs que están actualmente adjuntos con sesiones abiertas.

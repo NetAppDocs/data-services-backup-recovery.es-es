@@ -21,6 +21,7 @@ Administrador de la organización o administrador de SnapCenter . link:reference
 
 
 
+[[back-up-a-kubernetes-application-now-using-the-web-ui]]
 == Haz una copia de seguridad de una aplicación de Kubernetes ahora usando la interfaz web
 
 Cree manualmente una copia de seguridad de una aplicación de Kubernetes para establecer una línea de base para futuras copias de seguridad e instantáneas, o para garantizar que los datos más recientes estén protegidos.

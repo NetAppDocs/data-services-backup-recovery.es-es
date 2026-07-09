@@ -4,6 +4,7 @@
 
 
 
+[[vmware-workloads-preview-enhancements]]
 === Mejoras en la vista previa de las cargas de trabajo de VMware
 
 La versión preliminar de las cargas de trabajo de VMware presenta las siguientes capacidades mejoradas:

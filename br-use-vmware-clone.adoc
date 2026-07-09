@@ -23,6 +23,7 @@ Asegúrate de que las máquinas virtuales cuyas instantáneas quieres clonar se 
 
 
 
+[[create-a-clone-of-a-vmware-vm]]
 == Crear un clon de una VMware VM
 
 Crea un clon inmediatamente a partir de una instantánea existente.
@@ -57,6 +58,7 @@ La opción *Seleccionar ubicación de la instantánea* aparece si la instantáne
 
 
 
+[[split-a-clone]]
 == Dividir un clon
 
 Puedes dividir un clon de una VMware VM para separarlo de su volumen primario. Una vez dividido, el clon se convierte en un volumen independiente que ya no depende del volumen primario.
@@ -73,6 +75,7 @@ Tras la división, los datastores asociados a la máquina virtual clonada se con
 
 
 
+[[remove-a-clone]]
 == Eliminar un clon
 
 Puedes eliminar un clon de VMware VM. Cuando eliminas un clon de VM, el clon se elimina de vCenter y los almacenes de datos asociados con la VM se desmontan y eliminan del sistema de almacenamiento.

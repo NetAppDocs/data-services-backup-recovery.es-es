@@ -47,6 +47,7 @@ TIP: Al utilizar el Administrador del sistema, seleccione *Asincrónico* como ti
 
 
 
+[[view-policies-for-a-system]]
 == Ver políticas para un sistema
 
 . En la interfaz de usuario de la consola, seleccione *Volúmenes* > *Configuración de copia de seguridad*.
@@ -59,6 +60,7 @@ Aparece la página de administración de políticas.  Las políticas de instant�
 
 
 
+[[create-policies]]
 == Crear políticas
 
 Puede crear políticas que rijan sus instantáneas, replicaciones y copias de seguridad en el almacenamiento de objetos:
@@ -70,6 +72,7 @@ Puede crear políticas que rijan sus instantáneas, replicaciones y copias de se
 
 
 
+[[create-a-snapshot-policy-before-initiating-the-snapshot]]
 === Cree una política de instantáneas antes de iniciar la instantánea
 
 Parte de su estrategia 3-2-1 implica crear una instantánea del volumen en el sistema de almacenamiento *primario*.
@@ -118,6 +121,7 @@ Este ejemplo crea una política de instantáneas con dos clústeres:
 
 
 
+[[create-a-replication-policy-before-initiating-the-replication]]
 === Cree una política de replicación antes de iniciar la replicación
 
 Su estrategia 3-2-1 podría incluir replicar un volumen en un sistema de almacenamiento diferente.  La política de replicación reside en el sistema de almacenamiento *secundario*.
@@ -132,6 +136,7 @@ Su estrategia 3-2-1 podría incluir replicar un volumen en un sistema de almacen
 
 
 
+[[create-a-backup-to-object-storage-policy-before-initiating-the-backup]]
 === Cree una política de copia de seguridad en almacenamiento de objetos antes de iniciar la copia de seguridad
 
 Su estrategia 3-2-1 podría incluir realizar una copia de seguridad de un volumen en un almacenamiento de objetos.
@@ -163,6 +168,7 @@ link:prev-ontap-policy-object-options.html["Obtenga más información sobre las 
 
 
 
+[[edit-a-policy]]
 == Editar una política
 
 Puede editar una instantánea personalizada, una política de replicación o de respaldo.
@@ -181,6 +187,7 @@ NOTE: El proceso es el mismo para las políticas de replicación y copia de segu
 
 
 
+[[delete-a-policy]]
 == Eliminar una política
 
 Puede eliminar políticas que no estén asociadas a ningún volumen.
@@ -194,6 +201,7 @@ Si una política está asociada a un volumen y desea eliminarla, primero debe el
 
 
 
+[[find-more-information]]
 == Encuentra más información
 
 Para obtener instrucciones sobre cómo crear políticas mediante el Administrador del sistema o la CLI de ONTAP , consulte lo siguiente:

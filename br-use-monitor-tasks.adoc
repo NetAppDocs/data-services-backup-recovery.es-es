@@ -22,6 +22,7 @@ NetApp Backup and Recovery conserva la información del trabajo durante 15 días
 
 
 
+[[view-job-status-on-the-job-monitor]]
 == Ver el estado del trabajo en el Monitor de trabajos
 
 Puede ver una lista de todas las operaciones de instantáneas, replicación, copia de seguridad en almacenamiento de objetos y restauración y su estado actual en la pestaña *Supervisión de trabajos*.  Esto incluye operaciones desde su Cloud Volumes ONTAP, ONTAP local, aplicaciones y máquinas virtuales.  Cada operación o trabajo tiene un ID único y un estado.
@@ -47,6 +48,7 @@ NOTE: Si ha actualizado sus sistemas ONTAP a 9.13.x y no ve operaciones de respa
 
 
 
+[[search-and-filter-the-list-of-jobs]]
 === Buscar y filtrar la lista de trabajos
 
 Puede filtrar las operaciones en la página Supervisión de trabajos utilizando varios filtros, como política, etiqueta de instantánea, tipo de operación (protección, restauración, retención u otra) y tipo de protección (instantánea local, replicación o copia de seguridad en la nube).
@@ -83,6 +85,7 @@ La mayoría de los filtros se explican por sí solos. El filtro de "Carga de tra
 
 
 
+[[view-job-details]]
 === Ver detalles del trabajo
 
 Puede ver los detalles correspondientes a un trabajo específico completado.  Puede exportar detalles de un trabajo en particular en formato JSON.
@@ -100,6 +103,7 @@ Los trabajos de restauración muestran detalles como el proveedor de destino de 
 
 
 
+[[download-job-monitoring-results-as-a-report]]
 === Descargar los resultados de Monitoreo de trabajos como informe
 
 Puede descargar el contenido de la página principal de Monitoreo de trabajos como un informe después de filtrar u ordenar los resultados. NetApp Backup and Recovery genera y descarga un archivo .CSV que puede revisar y enviar a otros grupos según sea necesario. El archivo .CSV incluye hasta 10.000 filas de datos.
@@ -114,6 +118,7 @@ Desde la información de Detalles de monitoreo de trabajos, puede descargar un a
 
 
 
+[[review-retention-backup-lifecycle-jobs]]
 == Revisar trabajos de retención (ciclo de vida de la copia de seguridad)
 
 Supervise los flujos de retención (_ciclo de vida de la copia de seguridad_) para verificar las copias de seguridad, mantenerlas seguras y respaldar las auditorías.  Identifique cuándo caducan las copias de respaldo para realizar un seguimiento del ciclo de vida.
@@ -130,6 +135,7 @@ El tipo de trabajo "Retención" captura todos los trabajos de eliminación de in
 
 
 
+[[review-backup-and-restore-alerts-in-the-netapp-console-notification-center]]
 == Revise las alertas de copia de seguridad y restauración en el Centro de notificaciones de la NetApp Console
 
 El Centro de notificaciones de la NetApp Console realiza un seguimiento del progreso de los trabajos de respaldo y restauración que ha iniciado para que pueda verificar si la operación fue exitosa o no.
@@ -248,6 +254,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 
 
 
+[[review-operation-activity-in-console-timeline]]
 == Revisar la actividad de la operación en la línea de tiempo de la consola
 
 Puede ver los detalles de las operaciones de copia de seguridad y restauración para realizar más investigaciones en la línea de tiempo de la consola.  La línea de tiempo de la consola proporciona detalles de cada evento, ya sea iniciado por el usuario o por el sistema, y muestra las acciones iniciadas en la interfaz de usuario o a través de la API.

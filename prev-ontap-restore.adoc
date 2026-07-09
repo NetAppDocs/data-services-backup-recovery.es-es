@@ -41,6 +41,7 @@ NOTE: Para conocer las limitaciones relacionadas con la restauración de datos d
 
 
 
+[[the-restore-dashboard]]
 == El panel de restauración
 
 Utilice el Panel de restauración para realizar operaciones de restauración de volúmenes, carpetas y archivos. Para acceder al Panel de Restauración, seleccione *Copia de seguridad y recuperación* en el menú Consola y, a continuación, seleccione la pestaña *Restaurar*.  También puedes seleccionarimage:icon-options-vertical.gif["Botón Más"] > *Consulta el panel de control de restauración* desde el servicio de copia de seguridad y recuperación en el panel de Servicios.
@@ -52,6 +53,7 @@ El Panel de restauración proporciona dos formas diferentes de restaurar datos d
 
 
 
+[[comparing-browse-restore-and-search-restore]]
 == Comparación entre Explorar y restaurar y Buscar y restaurar
 
 En términos generales, _Explorar y restaurar_ suele ser mejor cuando necesita restaurar un volumen, una carpeta o un archivo específico de la última semana o mes (y conoce el nombre y la ubicación del archivo y la fecha en que estuvo en buen estado por última vez).  _Buscar y restaurar_ suele ser mejor cuando necesita restaurar un volumen, una carpeta o un archivo, pero no recuerda el nombre exacto, ni el volumen en el que se encuentra, ni la fecha en la que estuvo en buen estado por última vez.

@@ -22,6 +22,7 @@ El soporte para Backup and Recovery ya está integrado en todos los sistemas ONT
 
 
 
+[[what-you-can-do-with-netapp-backup-and-recovery]]
 == Qué puede hacer con NetApp Backup and Recovery
 
 Utilice NetApp Backup and Recovery para lograr los siguientes objetivos:
@@ -92,6 +93,7 @@ Utilice NetApp Backup and Recovery para lograr los siguientes objetivos:
 
 
 
+[[benefits-of-using-netapp-backup-and-recovery]]
 == Beneficios de utilizar NetApp Backup and Recovery
 
 NetApp Backup and Recovery ofrece los siguientes beneficios:
@@ -105,6 +107,7 @@ NetApp Backup and Recovery ofrece los siguientes beneficios:
 
 
 
+[[cost]]
 == Costo
 
 NetApp no ​​le cobra por utilizar la versión de prueba.  Sin embargo, usted es responsable de los costos asociados con los recursos en la nube que utiliza, como los costos de almacenamiento y transferencia de datos.
@@ -153,6 +156,7 @@ Hay tres formas de pagar por Backup and Recovery:
 
 
 
+[[licensing]]
 == Licencias
 
 NetApp Backup and Recovery ofrece una prueba gratuita que le permite usarlo sin una clave de licencia durante un tiempo limitado.
@@ -186,6 +190,7 @@ link:br-start-licensing.html["Aprenda a configurar licencias"].
 
 
 
+[[supported-workloads-systems-and-backup-targets]]
 == Cargas de trabajo, sistemas y objetivos de respaldo compatibles
 
 .Cargas de trabajo admitidas
@@ -219,6 +224,7 @@ NetApp Backup and Recovery protege los siguientes tipos de cargas de trabajo:
 
 
 
+[[how-netapp-backup-and-recovery-works]]
 == Cómo funciona NetApp Backup and Recovery
 
 Cuando habilita NetApp Backup and Recovery, el servicio realiza una copia de seguridad completa de sus datos.  Después de la copia de seguridad inicial, todas las copias de seguridad adicionales son incrementales.  Esto mantiene el tráfico de red al mínimo.
@@ -232,6 +238,7 @@ NOTE: También se admite el paso del almacenamiento primario al almacenamiento d
 
 
 
+[[where-backups-reside-in-object-store-locations]]
 === Dónde residen las copias de seguridad en las ubicaciones del almacén de objetos
 
 Las copias de seguridad se almacenan en un almacén de objetos que la NetApp Console crea en su cuenta en la nube.  Hay un almacén de objetos por clúster o sistema, y ​​la consola nombra el almacén de objetos de la siguiente manera: `netapp-backup-clusteruuid` .  Asegúrese de no eliminar este almacén de objetos.
@@ -244,6 +251,7 @@ Las copias de seguridad se almacenan en un almacén de objetos que la NetApp Con
 
 
 
+[[backup-copies-are-associated-with-your-netapp-console-organization]]
 === Las copias de seguridad están asociadas con su organización de la NetApp Console
 
 Las copias de seguridad están asociadas con la organización de la NetApp Console en la que reside el agente de la consola. https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Obtenga más información sobre la identidad y el acceso a la NetApp Console"^] .
@@ -252,6 +260,7 @@ Si tiene varios agentes de consola en la misma organización de NetApp Console ,
 
 
 
+[[terms-that-might-help-you-with-netapp-backup-and-recovery]]
 == Términos que podrían ayudarle con NetApp Backup and Recovery
 
 Podría resultarle beneficioso comprender algunos términos relacionados con la protección.

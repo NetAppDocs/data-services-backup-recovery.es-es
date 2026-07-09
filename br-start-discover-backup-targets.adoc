@@ -18,6 +18,7 @@ Complete unos pocos pasos para descubrir o agregar manualmente destinos de respa
 
 
 
+[[discover-a-backup-target]]
 == Descubra un destino de respaldo
 
 Configure sus destinos de respaldo (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) antes de usar NetApp Backup and Recovery.
@@ -86,6 +87,7 @@ Debe descubrir al menos una carga de trabajo antes de poder agregar un destino d
 
 
 
+[[add-a-bucket-for-a-backup-target]]
 == Agregar un depósito para un objetivo de respaldo
 
 En lugar de que NetApp Backup and Recovery descubra los depósitos automáticamente, puede agregar manualmente un depósito a un destino de respaldo externo.
@@ -160,6 +162,7 @@ En lugar de que NetApp Backup and Recovery descubra los depósitos automáticame
 
 
 
+[[change-credentials-for-a-backup-target]]
 == Cambiar las credenciales de un destino de respaldo
 
 Introduzca las credenciales necesarias para acceder al destino de la copia de seguridad.

@@ -33,6 +33,7 @@ NOTE: Para las cargas de trabajo de VMware, los horarios de backup usan la zona 
 
 
 
+[[view-policies]]
 == Ver políticas
 
 . En el menú NetApp Backup and Recovery , seleccione *Políticas*.
@@ -49,6 +50,7 @@ NOTE: Para las cargas de trabajo de VMware, los horarios de backup usan la zona 
 
 
 
+[[create-a-policy]]
 == Crear una política
 
 Puede crear políticas que rijan sus instantáneas locales, replicaciones en almacenamiento secundario y copias de seguridad en almacenamiento de objetos. Parte de su estrategia 3-2-1 implica crear una instantánea de las instancias, bases de datos, aplicaciones o máquinas virtuales en el sistema de almacenamiento *primario*.
@@ -146,6 +148,7 @@ NOTE: Los campos que aparecen varían según el proveedor y la arquitectura sele
 
 
 
+[[configure-advanced-settings-in-the-policy]]
 === Configurar ajustes avanzados en la política
 
 [%collapsible]
@@ -185,6 +188,7 @@ TIP: Si la frecuencia de las instantáneas se establece en 1 hora, la demora má
 ====
 
 
+[[delete-a-policy]]
 == Eliminar una política
 
 Puedes eliminar una política si ya no la necesitas.

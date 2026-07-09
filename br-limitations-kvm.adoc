@@ -20,6 +20,7 @@ Las siguientes acciones y configuraciones no son compatibles en cargas de trabaj
 
 
 
+[[unsupported-actions]]
 == Acciones no admitidas
 
 Las siguientes acciones no son compatibles:
@@ -32,6 +33,7 @@ Las siguientes acciones no son compatibles:
 
 
 
+[[unsupported-configurations]]
 == Configuraciones no compatibles
 
 Las siguientes configuraciones no son compatibles:
@@ -45,6 +47,7 @@ Las siguientes configuraciones no son compatibles:
 
 
 
+[[troubleshooting-notes]]
 == Notas de solución de problemas
 
 Ten en cuenta lo siguiente cuando uses cargas de trabajo KVM con NetApp Backup and Recovery.

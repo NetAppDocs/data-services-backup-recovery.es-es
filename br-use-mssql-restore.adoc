@@ -40,6 +40,7 @@ TIP: Usted paga tarifas adicionales a su proveedor de nube para acceder al archi
 
 
 
+[[how-restoring-workloads-works]]
 == Cómo funciona la restauración de cargas de trabajo
 
 Al restaurar cargas de trabajo, ocurre lo siguiente:
@@ -54,6 +55,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagrama que muestra el fluj
 
 
 
+[[restore-methods]]
 == Métodos de restauración
 
 Restaure cargas de trabajo utilizando uno de estos métodos:
@@ -66,6 +68,7 @@ Restaure cargas de trabajo utilizando uno de estos métodos:
 
 
 
+[[restore-workload-data-from-the-restore-option]]
 == Restaurar datos de carga de trabajo desde la opción Restaurar
 
 Restaure las cargas de trabajo de la base de datos mediante la opción Restaurar.
@@ -84,6 +87,7 @@ Restaure las cargas de trabajo de la base de datos mediante la opción Restaurar
 
 
 
+[[restore-workloads-from-snapshots]]
 === Restaurar cargas de trabajo desde instantáneas
 
 . Continuando desde la página de opciones de restauración, seleccione *Restaurar desde instantáneas*.
@@ -121,6 +125,7 @@ Verás las opciones de destino a continuación.
 
 
 
+[[restore-to-specific-point-in-time]]
 === Restaurar a un punto específico en el tiempo
 
 NetApp Backup and Recovery utiliza registros y las instantáneas más recientes para crear una restauración en un punto en el tiempo de sus datos.
@@ -160,6 +165,7 @@ NetApp Backup and Recovery utiliza registros y las instantáneas más recientes 
 
 
 
+[[restore-to-the-latest-backup]]
 === Restaurar a la última copia de seguridad
 
 Esta opción utiliza las últimas copias de seguridad completas y de registros para restaurar sus datos al último estado correcto.  El sistema escanea los registros desde la última instantánea hasta el presente.  El proceso rastrea los cambios y las actividades para restaurar la versión más reciente y precisa de sus datos.
@@ -197,6 +203,7 @@ NetApp Backup and Recovery le muestra las instantáneas que están disponibles p
 
 
 
+[[restore-workload-data-from-the-inventory-option]]
 == Restaurar datos de carga de trabajo desde la opción Inventario
 
 Restaurar cargas de trabajo de bases de datos desde la página Inventario.  Al utilizar la opción Inventario, puede restaurar solo bases de datos, no instancias.

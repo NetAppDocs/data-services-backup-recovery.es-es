@@ -4,6 +4,7 @@
 
 
 
+[[ui-improvements]]
 === Mejoras en la interfaz de usuario
 
 Esta versión mejora tu experiencia al simplificar la interfaz:
@@ -17,12 +18,14 @@ Esta versión mejora tu experiencia al simplificar la interfaz:
 
 
 
+[[enhanced-volume-dashboard-preview]]
 === Panel de control de volumen mejorado (vista previa)
 
 El panel de volumen ahora se carga en menos de 10 segundos, lo que proporciona una interfaz mucho más rápida y eficiente.  Esta versión preliminar está disponible para clientes seleccionados y les ofrece un vistazo anticipado de estas mejoras.
 
 
 
+[[support-for-third-party-wasabi-object-store-preview]]
 === Compatibilidad con el almacén de objetos Wasabi de terceros (versión preliminar)
 
 NetApp Backup and Recovery ahora extiende su soporte a almacenes de objetos de terceros con un enfoque principal en Wasabi.  Esta nueva función de vista previa le permite aprovechar cualquier almacén de objetos compatible con S3 para sus necesidades de respaldo y recuperación.

@@ -37,6 +37,7 @@ NOTE: La prioridad alta no se admite al restaurar datos desde el almacenamiento 
 
 
 
+[[browse-restore-supported-systems-and-object-storage-providers]]
 == Explorar y restaurar sistemas compatibles y proveedores de almacenamiento de objetos
 
 Puede restaurar datos de ONTAP desde un archivo de respaldo que reside en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de respaldo) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
@@ -75,6 +76,7 @@ NOTE: Si la versión de ONTAP en su sistema es inferior a 9.13.1, no podrá rest
 
 
 
+[[restore-volumes-using-browse-restore]]
 == Restaurar volúmenes mediante Explorar y restaurar
 
 Cuando restaura un volumen desde un archivo de respaldo, NetApp Backup and Recovery crea un _nuevo_ volumen usando los datos del respaldo.  Al usar una copia de seguridad desde un almacenamiento de objetos, puede restaurar los datos en un volumen en el sistema original, en un sistema diferente ubicado en la misma cuenta en la nube que el sistema de origen o en un sistema ONTAP local.
@@ -141,6 +143,7 @@ Tenga en cuenta que restaurar un volumen desde un archivo de respaldo que reside
 
 
 
+[[restore-folders-and-files-using-browse-restore]]
 == Restaurar carpetas y archivos usando Explorar y restaurar
 
 Si necesita restaurar solo unos pocos archivos de una copia de seguridad de volumen ONTAP , puede optar por restaurar una carpeta o archivos individuales en lugar de restaurar el volumen completo.  Puede restaurar carpetas y archivos en un volumen existente en el sistema original o en un sistema diferente que utilice la misma cuenta en la nube.  También puede restaurar carpetas y archivos a un volumen en un sistema ONTAP local.
@@ -165,6 +168,7 @@ Puedes probarlo usando una bandera especial descrita en el https://community.net
 ====
 
 
+[[restore-folders-and-files]]
 === Restaurar carpetas y archivos
 
 Siga estos pasos para restaurar carpetas o archivos a un volumen desde una copia de seguridad de volumen ONTAP .  Debe saber el nombre del volumen y la fecha del archivo de respaldo que desea utilizar para restaurar la carpeta o los archivos.  Esta funcionalidad utiliza la navegación en vivo para que pueda ver la lista de directorios y archivos dentro de cada archivo de respaldo.

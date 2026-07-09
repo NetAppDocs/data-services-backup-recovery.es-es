@@ -4,12 +4,14 @@
 
 
 
+[[restore-volumes-less-than-1-gb]]
 === Restaurar volúmenes de menos de 1 GB
 
 Con esta versión, ahora puede restaurar volúmenes que haya creado en ONTAP que tengan menos de 1 GB.  El tamaño mínimo de volumen que puede crear utilizando ONTAP es 20 MB.
 
 
 
+[[tips-on-how-to-mitigate-datalock-costs]]
 === Consejos sobre cómo mitigar los costos de DataLock
 
 La función DataLock protege sus archivos de respaldo para que no se modifiquen ni eliminen durante un período de tiempo específico.  Esto es útil para proteger sus archivos contra ataques de ransomware.
@@ -18,6 +20,7 @@ Para obtener detalles sobre DataLock y sugerencias sobre cómo mitigar los costo
 
 
 
+[[aws-iam-roles-anywhere-integration]]
 === Integración de AWS IAM Roles Anywhere
 
 El servicio Roles Anywhere de identidad y acceso de Amazon Web Services (AWS) le permite usar roles de IAM y credenciales a corto plazo para sus cargas de trabajo _fuera_ de AWS para acceder a las API de AWS de forma segura, de la misma manera que usa roles de IAM para cargas de trabajo _en_ AWS.  Cuando utiliza la infraestructura de clave privada de IAM Roles Anywhere y los tokens de AWS, no necesita claves de acceso ni claves secretas de AWS a largo plazo.  Esto le permite rotar las credenciales con mayor frecuencia, mejorando la seguridad.
@@ -30,6 +33,7 @@ Referirse a https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-R
 
 
 
+[[flexgroup-folder-or-directory-restore-now-available]]
 === La restauración de carpetas o directorios de FlexGroup ya está disponible
 
 Anteriormente, se podían restaurar los volúmenes FlexVol , pero no se podían restaurar las carpetas o directorios FlexGroup .  Con ONTAP 9.15.1 p2, puede restaurar carpetas FlexGroup utilizando la opción Explorar y restaurar.

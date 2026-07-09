@@ -53,6 +53,7 @@ Los administradores de la organización o los administradores de carpetas/proyec
 
 
 
+[[related-information]]
 == Información relacionada
 
 * link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Conoce la gestión de identidades y accesos de NetApp Console"^].

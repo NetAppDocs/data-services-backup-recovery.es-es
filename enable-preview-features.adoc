@@ -20,10 +20,12 @@ Habilita la vista previa y las funciones ocultas para NetApp Backup and Recovery
 
 
 
+[[available-preview-features]]
 == Funciones de previsualización disponibles
 
 Puedes activar las siguientes funciones de vista previa para NetApp Backup and Recovery.
 
+[[anchor-flags]]
 [cols="50,50"]
 |===
 | Indicador de funcionalidad | Descripción de la función 
@@ -36,6 +38,7 @@ Puedes activar las siguientes funciones de vista previa para NetApp Backup and R
 |===
 
 
+[[enable-preview-features]]
 == Activar funciones de vista previa
 
 Habilita las opciones del indicador de funciones de vista previa para usar funcionalidades que aún no están disponibles de forma general. Usa las funciones de vista previa con precaución en entornos de producción.
@@ -116,6 +119,7 @@ NOTE: Para desactivar una función de vista previa, sigue los mismos pasos pero 
 
 
 
+[[disable-indexing-for-volumes]]
 == Desactivar la indexación de volúmenes
 
 Desactiva la indexación para volúmenes específicos o para todos los volúmenes que pertenezcan a una o más storage VMs usando las siguientes flags de opción:

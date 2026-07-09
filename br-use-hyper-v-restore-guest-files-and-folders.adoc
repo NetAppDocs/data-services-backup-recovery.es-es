@@ -18,6 +18,7 @@ Restaura archivos y carpetas desde copias de seguridad de Hyper-V VM en almacena
 
 
 
+[[restore-files-and-folders]]
 == Restaurar archivos y carpetas
 
 Monta un disco virtual desde una instantánea y restaura archivos y carpetas desde él a la VM de Windows original (origen).
@@ -101,6 +102,7 @@ Puede ver el progreso de la restauración en la página Supervisión de trabajos
 
 
 
+[[manage-active-live-disk-mount-sessions]]
 == Gestiona sesiones activas de montaje de discos en vivo
 
 Visualiza, usa y elimina las sesiones activas de restauración de archivos y carpetas de Hyper-V desde Backup and Recovery.

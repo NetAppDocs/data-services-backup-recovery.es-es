@@ -24,6 +24,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 
 
+[[identify-the-connection-method]]
 == Identificar el método de conexión
 
 La siguiente imagen muestra cada componente al realizar una copia de seguridad de un sistema ONTAP local en StorageGRID y las conexiones que debe preparar entre ellos.
@@ -36,12 +37,14 @@ Cuando el agente de consola y el sistema ONTAP local están instalados en una ub
 
 
 
+[[prepare-your-console-agent]]
 == Prepare su agente de consola
 
 El agente de consola es el software principal para la funcionalidad de la consola.  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
 
 
 
+[[create-or-switch-console-agents]]
 === Crear o cambiar agentes de consola
 
 Al realizar una copia de seguridad de datos en StorageGRID, debe haber un agente de consola disponible en sus instalaciones.  Necesitará instalar un nuevo agente de consola o asegurarse de que el agente de consola seleccionado actualmente resida localmente.  El agente de consola se puede instalar en un sitio con o sin acceso a Internet.
@@ -54,6 +57,7 @@ Al realizar una copia de seguridad de datos en StorageGRID, debe haber un agente
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === Preparar los requisitos de red del agente de consola
 
 Asegúrese de que la red donde está instalado el agente de consola permita las siguientes conexiones:
@@ -76,6 +80,7 @@ La nueva versión de NetApp Backup and Recovery , que incluye la capacidad de pr
 
 
 
+[[verify-license-requirements]]
 == Verificar los requisitos de la licencia
 
 Antes de poder activar NetApp Backup and Recovery para su clúster, deberá comprar y activar una licencia BYOL de NetApp Backup and Recovery de NetApp.  Esta licencia es para la cuenta y se puede utilizar en múltiples sistemas.
@@ -87,6 +92,7 @@ TIP: La licencia PAYGO no es compatible al realizar copias de seguridad de archi
 
 
 
+[[prepare-your-ontap-clusters]]
 == Prepare sus clústeres de ONTAP
 
 Prepare su sistema local de origen ONTAP y cualquier sistema local secundario ONTAP o Cloud Volumes ONTAP .
@@ -101,6 +107,7 @@ La preparación de sus clústeres ONTAP implica los siguientes pasos:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Descubra sus sistemas ONTAP en NetApp Console
 
 Tanto su sistema ONTAP local de origen como cualquier sistema ONTAP local secundario o sistemas Cloud Volumes ONTAP deben estar disponibles en la página *Sistemas* de la NetApp Console .
@@ -109,6 +116,7 @@ Necesitará saber la dirección IP de administración del clúster y la contrase
 
 
 
+[[verify-ontap-system-requirements]]
 === Verificar los requisitos del sistema ONTAP
 
 Asegúrese de que su sistema ONTAP cumpla con los siguientes requisitos:
@@ -130,6 +138,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Verificar los requisitos de red de ONTAP para realizar copias de seguridad de datos en el almacenamiento de objetos
 
 Debe configurar los siguientes requisitos en el sistema que se conecta al almacenamiento de objetos.
@@ -157,6 +166,7 @@ Cuando configura NetApp Backup and Recovery, se le solicita el espacio IP que de
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Verificar los requisitos de red de ONTAP para replicar volúmenes
 
 Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante NetApp Backup and Recovery, asegúrese de que los sistemas de origen y destino cumplan con los siguientes requisitos de red.
@@ -181,6 +191,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 
 
+[[prepare-storagegrid-as-your-backup-target]]
 == Prepare StorageGRID como su destino de respaldo
 
 StorageGRID debe cumplir los siguientes requisitos. Ver el https://docs.netapp.com/us-en/storagegrid-117/["Documentación de StorageGRID"^] Para más información.
@@ -221,6 +232,7 @@ Control de versiones de objetos:: No debe habilitar manualmente el control de ve
 
 
 
+[[prepare-to-archive-older-backup-files-to-public-cloud-storage]]
 === Prepárese para archivar archivos de respaldo antiguos en un almacenamiento en la nube pública
 
 Agrupar los archivos de respaldo más antiguos en un almacenamiento de archivo le permite ahorrar dinero al utilizar una clase de almacenamiento menos costosa para respaldos que quizás no necesite.  StorageGRID es una solución local (nube privada) que no proporciona almacenamiento de archivo, pero puede mover archivos de respaldo más antiguos al almacenamiento de archivo en la nube pública.  Cuando se usa de esta manera, los datos almacenados en la nube o restaurados desde el almacenamiento en la nube van entre StorageGRID y el almacenamiento en la nube; la consola no participa en esta transferencia de datos.
@@ -274,6 +286,7 @@ Las configuraciones de política de archivo que seleccione generarán una polít
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Activar copias de seguridad en sus volúmenes ONTAP
 
 Active las copias de seguridad en cualquier momento directamente desde su sistema local.
@@ -289,6 +302,7 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 
 
 
+[[start-the-wizard]]
 === Iniciar el asistente
 
 .Pasos
@@ -314,6 +328,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Seleccione los volúmenes que desea respaldar
 
 Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
@@ -342,6 +357,7 @@ Si los volúmenes que elige ya tienen políticas de instantáneas o replicación
 
 
 
+[[define-the-backup-strategy]]
 === Definir la estrategia de backup
 
 Definir la estrategia de backup implica configurar las siguientes opciones:
@@ -455,6 +471,7 @@ Seleccione o cree un nuevo clúster StorageGRID .  Para obtener detalles sobre c
 
 
 
+[[review-your-selections]]
 === Revise sus selecciones
 
 Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
@@ -478,6 +495,7 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 
 
 
+[[show-the-api-commands]]
 === Mostrar los comandos API
 
 Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.

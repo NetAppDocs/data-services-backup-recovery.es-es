@@ -23,6 +23,7 @@ Realice copias de seguridad de las máquinas virtuales Hyper-V desde sistemas ON
 
 
 
+[[back-up-workloads-now-with-an-on-demand-backup]]
 == Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
 
 Utilice la copia de seguridad a pedido para que sus datos estén protegidos antes de realizar cambios en el sistema.

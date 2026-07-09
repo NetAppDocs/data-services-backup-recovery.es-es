@@ -24,6 +24,7 @@ NOTE: Para descubrir clústeres de Kubernetes, consultelink:br-start-discover.ht
 
 
 
+[[edit-kubernetes-cluster-information]]
 == Editar la información del clúster de Kubernetes
 
 Puede editar un clúster si necesita cambiar su nombre.
@@ -38,6 +39,7 @@ Puede editar un clúster si necesita cambiar su nombre.
 
 
 
+[[remove-a-kubernetes-cluster]]
 == Eliminar un clúster de Kubernetes
 
 Para dejar de proteger un clúster de Kubernetes, deshabilite la protección y elimine las aplicaciones asociadas; luego, elimine el clúster de NetApp Backup and Recovery.  NetApp Backup and Recovery no elimina el clúster ni sus recursos; solo elimina el clúster del inventario de la NetApp Console .
@@ -51,6 +53,7 @@ Para dejar de proteger un clúster de Kubernetes, deshabilite la protección y e
 
 
 
+[[upgrade-trident-protect]]
 == Actualizar Trident Protect
 
 Para los clústeres de Kubernetes que ejecutan Trident Protect 26.05 o posterior, puedes actualizar Trident Protect directamente desde NetApp Backup and Recovery. La opción de actualización solo aparece si hay disponible una versión más reciente.

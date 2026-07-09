@@ -29,6 +29,7 @@ Después de configurar la NetApp Console, configure los ajustes de copia de segu
 
 
 
+[[add-credentials-for-host-resources]]
 == Agregar credenciales para los recursos del host
 
 Agregar credenciales para los recursos del host. NetApp Backup and Recovery utiliza estas credenciales para descubrir cargas de trabajo y aplicar políticas de respaldo.
@@ -116,6 +117,7 @@ TIP: Para las cargas de trabajo de Microsoft SQL Server, debe ingresar credencia
 
 
 
+[[edit-credentials-for-host-resources]]
 === Editar credenciales para recursos del host
 
 Posteriormente podrás editar la contraseña de cualquier credencial que hayas creado.
@@ -133,6 +135,7 @@ Posteriormente podrás editar la contraseña de cualquier credencial que hayas c
 
 
 
+[[maintain-vmware-vcenter-settings]]
 == Mantener la configuración de VMware vCenter
 
 Proporcione las credenciales de VMware vCenter para descubrir cargas de trabajo para realizar copias de seguridad.  Si no tiene credenciales, créelas con permisos para acceder y administrar las cargas de trabajo de VMware vCenter Server.
@@ -154,6 +157,7 @@ Proporcione las credenciales de VMware vCenter para descubrir cargas de trabajo 
 
 
 
+[[import-and-manage-snapcenter-host-resources]]
 == Importar y administrar recursos del host de SnapCenter
 
 Si anteriormente utilizó SnapCenter para realizar copias de seguridad de sus recursos, puede importar y administrar esos recursos en NetApp Backup and Recovery. Esta opción le permite importar información del servidor SnapCenter para registrar varios servidores SnapCenter y descubrir cargas de trabajo de bases de datos.
@@ -166,6 +170,7 @@ Este es un proceso de dos partes:
 
 
 
+[[import-snapcenter-server-application-and-host-resources]]
 === Importar recursos de host y aplicaciones de SnapCenter Server
 
 Este primer paso importa recursos del host desde SnapCenter y muestra esos recursos en la página Inventario de NetApp Backup and Recovery .  En ese momento, los recursos aún no están administrados por NetApp Backup and Recovery.
@@ -203,6 +208,7 @@ La página Inventario muestra los recursos de SnapCenter importados.
 
 
 
+[[manage-snapcenter-host-resources]]
 === Administrar los recursos del host de SnapCenter
 
 Después de importar los recursos de SnapCenter , administre esos recursos de host en NetApp Backup and Recovery.  Después de seleccionar administrar esos recursos importados, NetApp Backup and Recovery puede realizar copias de seguridad y recuperar los recursos que está importando desde SnapCenter.  Ya no es necesario administrar esos recursos en SnapCenter Server.
@@ -218,6 +224,7 @@ La página Inventario muestra *Administrado* debajo del nombre del host para ind
 
 
 
+[[edit-imported-snapcenter-resources]]
 === Editar recursos de SnapCenter importados
 
 Más adelante puedes volver a importar los recursos de SnapCenter o editar los recursos importados de SnapCenter para actualizar los datos de registro.
@@ -237,6 +244,7 @@ La página Importar desde SnapCenter muestra todas las importaciones anteriores.
 
 
 
+[[add-a-kvm-management-platform]]
 == Agregar una plataforma de administración KVM
 
 Si utiliza la plataforma de administración Apache CloudStack para administrar recursos KVM, debe integrarla con NetApp Backup and Recovery para que Backup and Recovery pueda descubrir y proteger los hosts y las máquinas virtuales KVM administrados.
@@ -259,6 +267,7 @@ Si utiliza la plataforma de administración Apache CloudStack para administrar r
 
 
 
+[[configure-log-directories-in-snapshots-for-windows-hosts]]
 == Configurar directorios de registro en instantáneas para hosts de Windows
 
 Antes de crear políticas para los hosts de Windows, debe configurar los directorios de registro en las instantáneas para los hosts de Windows.  Los directorios de registro se utilizan para almacenar los registros que se generan durante el proceso de copia de seguridad.
@@ -274,6 +283,7 @@ Antes de crear políticas para los hosts de Windows, debe configurar los directo
 
 
 
+[[create-an-execution-hook-template]]
 == Crear una plantilla de gancho de ejecución
 
 Puede crear una plantilla de gancho de ejecución personalizada que pueda utilizar para realizar acciones antes o después de una operación de protección de datos en una aplicación.
@@ -297,6 +307,7 @@ Después de crear la plantilla, ésta aparece en la lista de plantillas en la se
 
 
 
+[[create-a-resource-transformation-template]]
 == Crear una plantilla de transformación de recursos
 
 Crea plantillas de transformación de recursos para guardar las transformaciones habituales que haces a los recursos mientras los restauras.

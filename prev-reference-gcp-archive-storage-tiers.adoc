@@ -18,6 +18,7 @@ NetApp Backup and Recovery admite una clase de almacenamiento de archivo de Goog
 
 
 
+[[supported-google-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Clases de almacenamiento de archivo de Google compatibles con NetApp Backup and Recovery
 
 Cuando se crean inicialmente los archivos de respaldo, se almacenan en el almacenamiento _Estándar_.  Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero que también permite acceder a ellos de inmediato.
@@ -30,6 +31,7 @@ https://cloud.google.com/storage/docs/storage-classes["Obtenga más información
 
 
 
+[[restore-data-from-archival-storage]]
 == Restaurar datos desde el almacenamiento de archivo
 
 Si bien almacenar archivos de respaldo antiguos en el almacenamiento de archivo es mucho menos costoso que el almacenamiento estándar, acceder a los datos de un archivo de respaldo en el almacenamiento de archivo para operaciones de restauración tomará un poco más de tiempo y costará más dinero.

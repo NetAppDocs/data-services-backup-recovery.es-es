@@ -4,6 +4,7 @@
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Anotaciones y etiquetas de namespace durante las operaciones de restauración y conmutación por error
 
 Durante la restauración y la conmutación por error, las etiquetas y anotaciones del espacio de nombres de destino se actualizan para que coincidan con las del origen: las claves del origen se añaden a las claves de destino o las sobrescriben, mientras que las claves que solo existen en el destino no se modifican.
@@ -32,6 +33,7 @@ Si utilizaste Helm con el indicador `--create-namespace` para instalar la aplica
 
 
 
+[[example]]
 === Ejemplo
 
 El siguiente ejemplo muestra los espacios de nombres de origen y destino con diferentes etiquetas y anotaciones, y muestra el espacio de nombres de destino antes y después de la operación para ilustrar cómo se añaden, fusionan o sobrescriben las claves.

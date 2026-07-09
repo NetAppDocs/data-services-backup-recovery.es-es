@@ -18,6 +18,7 @@ NetApp Backup and Recovery admite un nivel de acceso de archivo de Azure y la ma
 
 
 
+[[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == Niveles de acceso de Azure Blob compatibles con NetApp Backup and Recovery
 
 Cuando se crean inicialmente los archivos de respaldo, se almacenan en el nivel de acceso _Cool_.  Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero a los que se puede acceder de inmediato cuando es necesario.
@@ -30,6 +31,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Obte
 
 
 
+[[restore-data-from-archival-storage]]
 == Restaurar datos desde el almacenamiento de archivo
 
 Si bien almacenar archivos de respaldo más antiguos en un almacenamiento de archivo es mucho menos costoso que el almacenamiento esporádico, acceder a los datos de un archivo de respaldo en Azure Archive para operaciones de restauración llevará más tiempo y costará más dinero.

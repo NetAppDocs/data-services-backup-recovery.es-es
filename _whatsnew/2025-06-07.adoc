@@ -4,6 +4,7 @@
 
 
 
+[[enhanced-ontap-volume-dashboard]]
 === Panel de control de volumen ONTAP mejorado
 
 En abril de 2025, lanzamos una vista previa de un panel de volumen ONTAP mejorado que es mucho más rápido y eficiente.
@@ -16,6 +17,7 @@ Para más detalles, consultelink:br-use-dashboard.html["Ver el estado de la prot
 
 
 
+[[microsoft-sql-server-workload-support-as-a-public-technology-preview]]
 === Compatibilidad con cargas de trabajo de Microsoft SQL Server como versión preliminar de tecnología pública
 
 Esta versión de NetApp Backup and Recovery proporciona una interfaz de usuario actualizada que le permite administrar las cargas de trabajo de Microsoft SQL Server mediante una estrategia de protección 3-2-1, familiar en NetApp Backup and Recovery. Con esta nueva versión, puede realizar copias de seguridad de estas cargas de trabajo en el almacenamiento principal, replicarlas en el almacenamiento secundario y realizar copias de seguridad de ellas en el almacenamiento de objetos en la nube.

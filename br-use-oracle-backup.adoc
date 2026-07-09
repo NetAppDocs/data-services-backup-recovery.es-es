@@ -26,6 +26,7 @@ NOTE: Para realizar copias de seguridad de grupos de protección o bases de dato
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Realice copias de seguridad de los grupos de protección ahora con una copia de seguridad a pedido
 
 Ejecute una copia de seguridad a pedido antes de realizar cambios en el sistema para garantizar que sus datos estén protegidos.
@@ -51,6 +52,7 @@ NOTE: NetApp Backup and Recovery utiliza la misma política tanto para el grupo 
 
 
 
+[[back-up-a-database-now-with-an-on-demand-backup]]
 == Realice una copia de seguridad de una base de datos ahora con una copia de seguridad a pedido
 
 Puede ejecutar una copia de seguridad a pedido de una sola base de datos.
