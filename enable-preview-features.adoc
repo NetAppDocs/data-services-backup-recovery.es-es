@@ -16,7 +16,7 @@ summary: Habilita la vista previa y las funciones ocultas para NetApp Backup and
 [role="lead"]
 Habilita la vista previa y las funciones ocultas para NetApp Backup and Recovery.
 
-*Rol de NetApp Console requerido* Superadministrador de backup y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 

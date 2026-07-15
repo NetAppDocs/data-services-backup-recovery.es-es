@@ -16,7 +16,7 @@ summary: Modifica los recursos durante las operaciones de restauración en NetAp
 [role="lead"]
 Las transformaciones de recursos te permiten modificar un recurso a medida que se restaura. Esto es útil cuando la versión restaurada necesita ser diferente de la original, por ejemplo, cambiar la dirección IP de una máquina virtual al restaurarla en una red diferente. También puedes link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["modificar los recursos a medida que los restauras usando la interfaz web"^].
 
-*Rol requerido de la NetApp Console* Backup and Recovery super admin o Backup and Recovery restore admin. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: super admin de Backup and Recovery o restore admin de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
