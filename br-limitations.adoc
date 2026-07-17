@@ -109,7 +109,7 @@ NetApp Backup and Recovery no importa políticas de respaldo de solo registro de
 [[host-mapping]]
 === Mapeo de host
 
-SnapCenter no tiene clústeres de almacenamiento de mapas ni SVM para los recursos de los hosts, pero NetApp Backup and Recovery sí.  El clúster ONTAP local o SVM no se asignará a un host en las versiones preliminares de NetApp Backup and Recovery .  Además, NetApp Console no admite SVM.
+SnapCenter no tiene clústeres de almacenamiento ni máquinas virtuales de almacenamiento asignados a los recursos en los hosts, pero NetApp Backup and Recovery sí. El clúster ONTAP local o la máquina virtual de almacenamiento no se asignará a un host en las versiones preliminares de NetApp Backup and Recovery. Además, NetApp Console no es compatible con las máquinas virtuales de almacenamiento.
 
 *Solución alternativa*: antes de importar recursos desde SnapCenter, cree un sistema en NetApp Backup and Recovery para todos los sistemas de almacenamiento ONTAP locales que estén registrados en SnapCenter local.  Luego, importe los recursos para ese clúster desde SnapCenter a NetApp Backup and Recovery.
 

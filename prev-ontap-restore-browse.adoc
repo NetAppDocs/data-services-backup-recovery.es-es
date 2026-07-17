@@ -14,7 +14,7 @@ summary: Con NetApp Backup and Recovery, restaura los datos de ONTAP usando Brow
 
 
 [role="lead"]
-Con NetApp Backup and Recovery, restaure los datos de ONTAP mediante la función Explorar y restaurar. Antes de restaurar, anote el nombre del volumen de origen, el sistema de origen y el SVM, y la fecha del archivo de copia de seguridad. Puede restaurar datos de ONTAP desde una instantánea, un volumen replicado o desde copias de seguridad almacenadas en almacenamiento de objetos.
+Con NetApp Backup and Recovery, restaura los datos de ONTAP usando Browse & Restore. Antes de restaurar, toma nota del nombre del volumen de origen, el sistema de origen, la máquina virtual de almacenamiento y la fecha del archivo de copia de seguridad. Puedes restaurar datos de ONTAP desde una instantánea, un volumen replicado o desde copias de seguridad almacenadas en un almacén de objetos.
 
 Las capacidades de restauración dependen de su versión de ONTAP :
 

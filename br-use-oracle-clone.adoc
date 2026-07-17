@@ -84,7 +84,7 @@ Programa la creación de un clon instantáneo y la actualización continua del c
 
 Puedes dividir un clon de tus cargas de trabajo de Oracle Database. Dividir un clon crea una nueva copia de seguridad a partir del clon. Puedes usar la nueva copia de seguridad para restaurar bases de datos.
 
-Puedes elegir dividir un clon como clones independientes o de largo plazo.  Un asistente muestra la lista de agregados que forman parte del SVM, sus tamaños y dónde reside el volumen clonado.  NetApp Backup and Recovery también indica si hay suficiente espacio para dividir el clon.  Una vez dividido el clon, éste se convierte en una base de datos independiente para su protección.
+Puedes elegir dividir un clon como independiente o como clon a largo plazo. Un asistente muestra la lista de agregados que forman parte de la máquina virtual de almacenamiento, sus tamaños y dónde reside el volumen clonado. NetApp Backup and Recovery también indica si hay suficiente espacio para dividir el clon. Después de dividir el clon, este se convierte en una base de datos independiente para su protección.
 
 El trabajo de clonación no se elimina y puede reutilizarse para otros clones.
 

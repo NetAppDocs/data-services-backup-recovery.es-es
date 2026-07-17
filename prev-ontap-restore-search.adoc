@@ -101,7 +101,7 @@ Asegúrese de que su entorno cumpla con estos requisitos antes de habilitar Busc
 +
 ** La versión de ONTAP debe ser 9.8 o superior.
 ** Debes configurar un LIF de datos NFS IPv4 en la máquina virtual de almacenamiento y una exportación NFS para el volumen. Search & Restore admite tanto volúmenes NFS como SMB/CIFS.
-** El servidor RPC SnapDiff debe estar activado en la SVM. La consola hace esto automáticamente cuando habilita la indexación en el sistema. (SnapDiff es la tecnología que identifica rápidamente las diferencias de archivos y directorios entre instantáneas).
+** El servidor RPC de SnapDiff debe estar activado en la máquina virtual de almacenamiento. La Console lo hace automáticamente cuando habilitas la indexación en el sistema. (SnapDiff es la tecnología que identifica rápidamente las diferencias de archivos y directorios entre snapshots.)
 
 
 * NetApp recomienda montar un volumen separado en el agente de consola para aumentar la resiliencia de la función de búsqueda y restauración.  Para obtener instrucciones, consulte<<mount-volume-steps,Monte el volumen para reindexar el catálogo.>> .

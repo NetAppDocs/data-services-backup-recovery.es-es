@@ -73,7 +73,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 +
 ** Las copias de seguridad solo se admiten desde el servidor secundario de ONTAP .
 ** La política de instantáneas aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery, incluidas las diarias, semanales, mensuales, etc. La política predeterminada "sm_created" (usada para *Duplicar todas las instantáneas*) no se reconoce y el volumen DP no se mostrará en la lista de volúmenes que se pueden respaldar.
-** La copia de seguridad y recuperación de volumen y SVM-DR funcionan de forma totalmente independiente cuando la copia de seguridad se realiza desde el origen o el destino.  La única restricción es que SVM-DR no replica la relación de nube de SnapMirror .  En el escenario de recuperación ante desastres, cuando el SVM se conecta en la ubicación secundaria, debe actualizar manualmente la relación en la nube de SnapMirror .
+** SVM-DR y la copia de seguridad y recuperación de volúmenes funcionan de forma totalmente independiente cuando la copia de seguridad se realiza desde el origen o desde el destino. La única restricción es que SVM-DR no replica la relación de nube SnapMirror. En el escenario de recuperación ante desastres, cuando la máquina virtual de almacenamiento pasa a estar en línea en la ubicación secundaria, debes actualizar manualmente la relación de nube SnapMirror.
 
 
 * Soporte de MetroCluster :

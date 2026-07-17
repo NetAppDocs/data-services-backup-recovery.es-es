@@ -527,7 +527,7 @@ TIP: Para crear una política personalizada antes de activar la instantánea, co
 
 . *Replicación*: Establezca las siguientes opciones:
 +
-** *Objetivo de replicación*: seleccione el sistema de destino y SVM.  Opcionalmente, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregarán al nombre del volumen replicado.
+** *Objetivo de replicación*: seleccione el sistema de destino y la máquina virtual de almacenamiento. Opcionalmente, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregarán al nombre del volumen replicado.
 ** *Política de replicación*: elija una política de replicación existente o cree una política.
 +
 

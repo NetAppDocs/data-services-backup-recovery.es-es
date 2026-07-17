@@ -43,7 +43,7 @@ NOTE: Si ha actualizado sus sistemas ONTAP a 9.13.x y no ve operaciones de respa
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Monitoreo*.
-. Para mostrar columnas adicionales (Sistema, SVM, Nombre de usuario, Carga de trabajo, Nombre de política, Etiqueta de instantánea), seleccione el signo más.
+. Para mostrar columnas adicionales (Sistema, VM de almacenamiento, Nombre de usuario, Carga de trabajo, Nombre de la política, Etiqueta de instantánea), selecciona el signo más.
 
 
 
@@ -75,7 +75,7 @@ La mayoría de los filtros se explican por sí solos. El filtro de "Carga de tra
 +
 [TIP]
 ====
-** Puede buscar datos dentro de un "SVM" específico solo si primero ha seleccionado un Sistema.
+** Solo podrás buscar datos dentro de una máquina virtual de almacenamiento concreta si antes has seleccionado un sistema.
 ** Podrás buscar utilizando el filtro “Tipo de protección” sólo cuando hayas seleccionado el “Tipo” de “Protección”.
 
 
@@ -92,7 +92,7 @@ Puede ver los detalles correspondientes a un trabajo específico completado.  Pu
 
 Puede ver detalles como el tipo de trabajo (programado o bajo demanda), el tipo de copia de seguridad de SnapMirror (inicial o periódica), las horas de inicio y finalización, la duración, la cantidad de datos transferidos del sistema al almacenamiento de objetos, la tasa de transferencia promedio, el nombre de la política, el bloqueo de retención habilitado, el análisis de ransomware realizado, los detalles de la fuente de protección y los detalles del objetivo de protección.
 
-Los trabajos de restauración muestran detalles como el proveedor de destino de la copia de seguridad (Amazon Web Services, Microsoft Azure, Google Cloud, local), el nombre del depósito S3, el nombre de SVM, el nombre del volumen de origen, el volumen de destino, la etiqueta de la instantánea, la cantidad de objetos recuperados, los nombres de los archivos, los tamaños de los archivos, la fecha de la última modificación y la ruta completa del archivo.
+Las tareas de restauración muestran detalles como el proveedor de destino de la copia de seguridad (Amazon Web Services, Microsoft Azure, Google Cloud, on-premises), el nombre del bucket de S3, el nombre de la máquina virtual de almacenamiento, el nombre del volumen de origen, el volumen de destino, la etiqueta del snapshot, la cantidad de objetos recuperados, los nombres de los archivos, los tamaños de los archivos, la fecha de la última modificación y la ruta completa del archivo.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Monitoreo*.
