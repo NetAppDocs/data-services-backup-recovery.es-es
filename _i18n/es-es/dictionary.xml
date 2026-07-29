@@ -5285,7 +5285,6 @@
   <block id="57c9526981addf2ea70c6ad409673cb5" category="list-text">Opcionalmente, para borrar una sesión, abre el menú Acciones <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> para una sesión y selecciona *Borrar*.</block>
   <block id="970e7dbe358429eacf37bb0e37943138" category="list-text">Restaurar desde una copia de seguridad de almacén de objetos (solo en la ubicación original)</block>
   <block id="4b59b9c80f0f0e40294e53eb75b4e004" category="list-text">Restaurar en la ubicación original (desde almacenamiento primario, secundario y almacén de objetos)</block>
-  <block id="a6f964fecafa0484fc07f1b47496f82c" category="list-text">Restaurar en una ubicación alternativa (desde almacenamiento primario y secundario)</block>
   <block id="bff6f5877ada2718589866425ae83e38" category="doc">Crea y gestiona políticas de backup de Hyper-V en NetApp Backup and Recovery</block>
   <block id="7c54de5e880bd010125642ffb949ccad" category="paragraph">En NetApp Backup and Recovery, crea tus propias políticas de backup de Hyper-V que determinan la frecuencia de backup, el tiempo en que se realiza el backup y la cantidad de archivos de backup que se conservan.</block>
   <block id="110202b139c8c8a25346f036c902b4c8" category="list-text">Editar políticas</block>
@@ -5436,7 +5435,6 @@
   <block id="860b17c21dae4758109cd6109bb92be4" category="list-text">*Mejoras en la restauración de archivos y carpetas en una máquina virtual invitada*: Ahora puedes restaurar archivos y carpetas de una instantánea en el almacenamiento primario o secundario a una máquina virtual de Windows invitada. Esta función ahora es compatible con VMs CIFS y SAN.</block>
   <block id="3e96e50a62c2cc112989ccd5d4d264aa" category="list-text">Restauración de archivos y carpetas en una configuración de recuperación ante desastres (DR): después de una conmutación por error, los volúmenes de una máquina virtual de almacenamiento configurada para DR conservan relaciones SnapMirror preexistentes en un estado de ruptura. Los intentos de restaurar archivos o carpetas que crean relaciones RST temporales de SnapMirror son bloqueados por ONTAP porque el volumen de destino ya tiene una relación.</block>
   <block id="d98b87c41bd7151a94b3271b45bd340f" category="paragraph">Restaura archivos y carpetas desde copias de seguridad de Hyper-V VM en almacenamiento primario o secundario a una VM huésped de Windows.</block>
-  <block id="7438f70a76f855b704ba892f9c003542" category="list-text">No se admite la restauración de archivos y carpetas a partir de copias de seguridad almacenadas en un almacén de objetos.</block>
   <block id="7d3d3c20273081b66e3ecec1f0d07f51" category="list-text">Selecciona una instantánea en el almacenamiento primario o secundario desde la que quieres restaurar y luego selecciona *Siguiente*.</block>
   <block id="3808991f408e2ffd90ae953886ec1e79" category="doc">NetApp requisitos de copia de seguridad y recuperación</block>
   <block id="44b68849dd3e2689fb41242f736a140f" category="paragraph">Antes de empezar a utilizar NetApp Backup and Recovery, asegúrate de que tu NetApp Console y tu entorno operativo cumplen los siguientes requisitos.</block>
@@ -5654,4 +5652,6 @@
   <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">Se requiere ONTAP 9.19.1 o una versión posterior para admitir más de 6 buckets por sistema en diferentes proveedores de nube (hasta 100 buckets como máximo).</block>
   <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 o posterior (se requiere ONTAP 9.19.1 o posterior para admitir más de 6 buckets por sistema en diferentes proveedores de nube; hasta un máximo de 100 buckets)</block>
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">Un sistema ONTAP principal (ONTAP 9.14.1 o posterior - se requiere ONTAP 9.19.1 o posterior para admitir más de 6 buckets por sistema entre diferentes proveedores de nube; hasta un máximo de 100 buckets)</block>
+  <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">No se admite la protección de máquinas virtuales de segunda generación que están almacenadas en almacenamiento SAN cuando usas Microsoft Windows Server 2025.</block>
+  <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">Restaurar en una ubicación alternativa (desde el almacenamiento primario, secundario y de objetos)</block>
 </blocks>

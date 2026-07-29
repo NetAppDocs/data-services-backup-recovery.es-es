@@ -28,7 +28,7 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 Puede restaurar datos en estos puntos:
 
 * Restaurar en la ubicación original (desde almacenamiento primario, secundario y almacén de objetos)
-* Restaurar en una ubicación alternativa (desde almacenamiento primario y secundario)
+* Restaurar en una ubicación alternativa (desde el almacenamiento primario, secundario y de objetos)
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos

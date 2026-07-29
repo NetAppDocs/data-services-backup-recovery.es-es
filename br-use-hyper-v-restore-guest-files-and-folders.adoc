@@ -36,7 +36,6 @@ Ten en cuenta lo siguiente al restaurar archivos y carpetas:
 [NOTE]
 ====
 * No puedes restaurar archivos y carpetas en máquinas virtuales invitadas Linux en este momento.
-* No se admite la restauración de archivos y carpetas a partir de copias de seguridad almacenadas en un almacén de objetos.
 * Solo se puede ejecutar una operación de conexión o restauración al mismo tiempo en una máquina virtual. No es posible ejecutar operaciones de conexión o restauración en paralelo en la misma máquina virtual.
 * Ver o explorar particiones reservadas puede causar un error.
 * Durante la operación de restauración, los atributos oculto, de sistema y cifrado de los archivos invitados no se conservan en el archivo restaurado.
