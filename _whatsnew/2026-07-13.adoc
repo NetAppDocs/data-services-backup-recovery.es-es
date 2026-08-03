@@ -7,6 +7,6 @@
 [[enhanced-multi-bucket-support-for-all-workloads]]
 === Compatibilidad mejorada con múltiples compartimentos para todas las cargas de trabajo
 
-En esta versión de Backup and Recovery, ya puedes proteger las cargas de trabajo dentro de un sistema con hasta 100 buckets por sistema en diferentes proveedores de nube.
+NetApp Backup and Recovery ahora permite proteger las cargas de trabajo dentro de un sistema con hasta 100 buckets repartidos entre diferentes proveedores de nube. Se requiere ONTAP 9.19.1 o una versión posterior para admitir más de 6 buckets por sistema.
 
 Para obtener más información sobre NetApp Backup and Recovery, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Obtenga más información sobre NetApp Backup and Recovery"].
