@@ -2029,7 +2029,6 @@
   <block id="dd67539e70d93b9889e0cb5a77274b0b" category="paragraph">Para utilizar la funcionalidad de búsqueda y restauración de NetApp Backup and Recovery , debe tener permisos específicos en el rol del agente de consola para que pueda acceder al área de trabajo de Azure Synapse y a la cuenta de almacenamiento de Data Lake.  Vea los permisos a continuación y siga los pasos si necesita modificar la política.</block>
   <block id="bf49a2af93184828c602f30985ab7b3e" category="list-title">Antes de empezar</block>
   <block id="ad21a85e531f324768ed107500147c11" category="inline-link">Vea cómo registrar este proveedor de recursos para su suscripción</block>
-  <block id="8e735e680b7368147fd11864544dafdc" category="list-text">Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") con su suscripción.<block ref="66e7a06283e2f9b1945c2e3b539d5c17" category="inline-link-rx"></block> .  Debe ser el *Propietario* o *Colaborador* de la suscripción para registrar al proveedor de recursos.</block>
   <block id="31dc01c9493f1634e02a0b09bd5b59bd" category="list-text">El puerto 1433 debe estar abierto para la comunicación entre el agente de la consola y los servicios SQL de Azure Synapse.</block>
   <block id="caf1eee1629cb07ebbce66130fb04f94" category="list-text">Identifique el rol asignado a la máquina virtual del agente de consola:</block>
   <block id="dd7dc066cb6a0b619ef397e8b37b57c3" category="list-text">En el portal de Azure, abra el servicio de máquinas virtuales.</block>
@@ -5645,7 +5644,6 @@
   <block id="ce2f56e5c9015b28eb92d0581ad9a718" category="list-text">*90 días de retención de trabajos*: Backup and Recovery ahora conserva la información de los trabajos en el Monitor de trabajos durante 90 días.</block>
   <block id="1a83c2d5d73015e6e971eff46d37e9d8" category="list-text">*Compatibilidad con la restauración en una ubicación alternativa para SAN VMs*: Ahora puedes restaurar copias de seguridad de SAN VMs en una ubicación alternativa.</block>
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Compatibilidad con la eliminación de varias copias de seguridad*: Ahora puedes eliminar varias copias de seguridad a la vez.</block>
-  <block id="7ac62e0d250037c318f5fcf102e2e700" category="list-text">*Restauración y clonación de bases de datos conectables (PDB)*: Backup and Recovery for NetApp Console ahora admite la restauración y clonación de bases de datos conectables.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Compatibilidad en versión preliminar con recursos aislados físicamente*: Si ejecutas NetApp Backup and Recovery en una implementación local de NetApp Console, puedes descubrir, proteger y restaurar recursos de Kubernetes aislados físicamente. Esta función está en versión preliminar para este lanzamiento.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">En esta versión, las cargas de trabajo de ONTAP Volumes incorporan las siguientes mejoras:</block>
   <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Dar prioridad a las tareas de restauración frente a las de copia de seguridad*: Ahora puedes dar prioridad a las tareas de restauración frente a las de copia de seguridad al restaurar máquinas virtuales o archivos.</block>
@@ -5805,4 +5803,5 @@
   <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">Si ejecutas manualmente <block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block> y luego intentas reinstalar, el PV se instalará con el mismo nombre y provocará un conflicto de nomenclatura.</block>
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Mejora el rendimiento de la función Buscar y restaurar de volúmenes para la implementación local de NetApp Console</block>
+  <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Debes registrar el proveedor de recursos de Azure Synapse Analytics (denominado «Microsoft.Synapse») en tu suscripción.<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block>. Debes ser el *Owner* o *Contributor* de la suscripción para registrar el proveedor de recursos.</block>
 </blocks>
