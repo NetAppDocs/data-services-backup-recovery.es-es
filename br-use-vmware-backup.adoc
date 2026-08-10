@@ -32,7 +32,7 @@ Cree una copia de seguridad a pedido de inmediato.  Es posible que desees ejecut
 
 .Pasos
 . En el menú Copia de seguridad y recuperación, seleccione *Inventario*.
-. Seleccione una carga de trabajo para ver los detalles de protección.
+. Selecciona la carga de trabajo de VMware.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
 . Selecciona el encabezado de menú *Grupos de protección*, *Datastores*, *Máquinas virtuales* o *Etiquetas*.
 . Selecciona el grupo de protección, los datastores, las máquinas virtuales o los recursos etiquetados que quieres respaldar.
@@ -43,4 +43,39 @@ NOTE: La política que se aplica al backup es la misma política que se asigna a
 
 . Seleccione el nivel de programación.
 . Seleccione *Hacer copia de seguridad ahora*.
+
+
+
+
+[[delete-backups]]
+== Eliminar copias de seguridad
+
+Puedes eliminar las copias de seguridad locales que ya no sean necesarias para liberar espacio de almacenamiento o cumplir con los requisitos de conservación de datos.
+
+.Pasos
+. Inicia sesión en NetApp Backup and Recovery y, desde la pantalla de inicio, selecciona el mosaico de la carga de trabajo de VMware.
++
+Aparece la página de inventario de VMware.
+
+. Selecciona el encabezado *Virtual machines*.
+. En la lista de máquinas virtuales, elige una máquina virtual y selecciona el icono de acciones image:../media/icon-action.png["Opción de acciones"] > *Ver detalles de protección*.
+. Selecciona un intervalo de tiempo para ver las instantáneas correspondientes.
+. Eliminar una o varias instantáneas:
++
+[role="tabbed-block"]
+====
+.Eliminar una instantánea concreta
+--
+.. Elige una instantánea de la lista que quieras eliminar y selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Eliminar instantánea local*.
+
+
+--
+.Eliminar varias instantáneas
+--
+.. Marca la casilla de comprobación situada a la izquierda de cada instantánea que quieras eliminar.
+.. Selecciona *Eliminar selección*.
+
+
+--
+====
 

@@ -52,8 +52,6 @@ image:diagram_browse_restore_volume-unified.png["Un diagrama que muestra el fluj
 * Al restaurar una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el sistema original o en un sistema ONTAP local.
 
 
-Desde la página Restaurar (Buscar y restaurar), puede restaurar un recurso buscando la instantánea con filtros, incluso si no recuerda su nombre exacto, ubicación o última fecha conocida.
-
 
 
 [[restore-workload-data-from-the-restore-option-search-restore]]

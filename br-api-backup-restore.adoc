@@ -55,7 +55,7 @@ NOTE: Si está utilizando una cuenta de servicio, debe utilizar el token de acce
 Asegúrate de generar el token de actualización desde el siguiente enlace: https://services.cloud.netapp.com/refresh-token/. El token de actualización es una cadena alfanumérica que usarás para generar un token de usuario.
 
 +
-[source, console]
+[source, shell]
 ----
 curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token?=' \
 --header 'Content-Type: application/json' \
@@ -122,7 +122,7 @@ El siguiente ejemplo muestra una llamada API para activar NetApp Backup and Reco
 .Solicitud de API
 Verá que usamos el ID de cuenta de la NetApp Console `account-DpTFcxN3` , ID del agente de la consola `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` , y token de usuario `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` en este comando.
 
-[source, console]
+[source, shell]
 ----
 curl --location --request POST 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
 --header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
@@ -164,7 +164,7 @@ curl --location --request POST 'https://api.bluexp.netapp.com/account/account-Dp
 }
 ----
 .Monitorizar la respuesta:
-[source, console]
+[source, shell]
 ----
 curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
 --header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \

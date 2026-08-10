@@ -376,7 +376,7 @@ Si está utilizando el puerto 443 (HTTPS) para comunicarse con el punto final pr
 . Obtenga el nombre DNS del punto final desde la consola de AWS.
 . Obtenga el certificado del punto final S3 de VPC. Esto lo haces mediante https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Iniciar sesión en la máquina virtual que aloja el agente de consola"^] y ejecutando el siguiente comando. Al ingresar el nombre DNS del punto final, agregue "bucket" al comienzo, reemplazando el "*":
 +
-[source, console]
+[source, shell]
 ----
 openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
 ----
@@ -396,9 +396,9 @@ GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
 ----
 . Inicie sesión en la CLI del clúster ONTAP y aplique el certificado que copió usando el siguiente comando (sustituya el nombre de su propia máquina virtual de almacenamiento):
 +
-[source, console]
+[source, shell]
 ----
-cluster1::> security certificate install -vserver cluster1 -type server-ca
+security certificate install -vserver cluster1 -type server-ca
 Please enter Certificate: Press <Enter> when done
 ----
 

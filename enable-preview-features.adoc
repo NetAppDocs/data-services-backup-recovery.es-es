@@ -47,13 +47,13 @@ Habilita las opciones del indicador de funciones de vista previa para usar funci
 . Usa SSH para iniciar sesión en el agente de la consola.
 . Cambia al usuario raíz:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Encuentra el volumen de Backup and Recovery en Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -67,7 +67,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Encuentra el punto de montaje del volumen:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -81,7 +81,7 @@ El punto de montaje difiere entre los despliegues en nube y privados. Este ejemp
 ----
 . Cambia al directorio docker volume config, que está dentro del directorio mountpoint. Por ejemplo:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
 ----
@@ -106,7 +106,7 @@ Consulta <<anchor-flags,banderas disponibles>> para obtener información sobre l
 
 . Reinicia el contenedor de NetApp Backup and Recovery:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -132,13 +132,13 @@ Desactiva la indexación para volúmenes específicos o para todos los volúmene
 . Usa SSH para iniciar sesión en el agente de la consola.
 . Cambia al usuario raíz:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Encuentra el volumen de Backup and Recovery en Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -152,7 +152,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Encuentra el punto de montaje del volumen:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -166,7 +166,7 @@ El punto de montaje difiere entre los despliegues en nube y privados. Este ejemp
 ----
 . Cambia al directorio docker volume config, que está dentro del directorio mountpoint. Por ejemplo:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
@@ -183,7 +183,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_c
 ----
 . Reinicia el contenedor del catálogo de indexación de NetApp Backup and Recovery:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----

@@ -49,11 +49,7 @@ Cada ícono se ilumina cuando ese tipo de copia de seguridad está activado y es
 
 Si activó la copia de seguridad solo en algunos de los volúmenes de un sistema cuando habilitó por primera vez NetApp Backup and Recovery, puede activar copias de seguridad en volúmenes adicionales más adelante.
 
-.Pasos
-. Desde la pestaña *Volúmenes*, identifique el volumen en el que desea activar las copias de seguridad, seleccione el menú Acciones image:icon-action.png["Icono de acciones"] al final de la fila y seleccione *Activar protección 3-2-1*.
-. En la página _Definir estrategia de copia de seguridad_, seleccione la arquitectura de copia de seguridad y, a continuación, defina las políticas y otros detalles para las instantáneas locales, los volúmenes replicados y los archivos de copia de seguridad. Consulte los detalles de las opciones de respaldo de los volúmenes iniciales que activó en este sistema. Luego, seleccione *Siguiente*.
-. Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
-
+Consulta link:br-start-enable.html["Activa Backup and Recovery para proteger los volúmenes"^] para obtener instrucciones.
 
 
 

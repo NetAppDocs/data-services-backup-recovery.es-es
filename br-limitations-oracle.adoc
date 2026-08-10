@@ -18,5 +18,6 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 La siguiente acción no se admite en la versión preliminar de las cargas de trabajo de Oracle Database en NetApp Backup and Recovery:
 
+* En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
 * Copia de seguridad sin conexión
 

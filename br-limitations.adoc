@@ -18,6 +18,13 @@ Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o n
 
 
 
+[[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
+=== Limitación de la versión preliminar de Backup and Recovery para la implementación local de NetApp Console
+
+En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
+
+
+
 [[clone-lifecycle-support]]
 == Soporte del ciclo de vida de los clones
 

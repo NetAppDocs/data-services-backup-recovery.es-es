@@ -25,6 +25,7 @@ Las siguientes acciones y configuraciones no son compatibles en cargas de trabaj
 
 Las siguientes acciones no son compatibles:
 
+* En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
 * Clonar, montar o desmontar máquinas virtuales
 * Proteger las máquinas virtuales almacenadas en SAN
 * Proteger aplicaciones

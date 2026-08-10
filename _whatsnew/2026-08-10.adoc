@@ -1,0 +1,62 @@
+= Mejoras generales de NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+[[general-netapp-backup-and-recovery-enhancements]]
+=== Mejoras generales de NetApp Backup and Recovery
+
+* *Compatibilidad con la implementación local de NetApp Console*: Esta versión de NetApp Backup and Recovery es compatible con la implementación local de NetApp Console en estado de vista previa.
+* *90 días de retención de trabajos*: Backup and Recovery ahora conserva la información de los trabajos en el Monitor de trabajos durante 90 días.
+
+
+
+
+[[vmware-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de VMware
+
+En esta versión, VMware workloads introduce las siguientes mejoras:
+
+* *Compatibilidad con la restauración en una ubicación alternativa para SAN VMs*: Ahora puedes restaurar copias de seguridad de SAN VMs en una ubicación alternativa.
+* *Compatibilidad con la eliminación de varias copias de seguridad*: Ahora puedes eliminar varias copias de seguridad a la vez.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Descripción general de Protect VMware Workloads"] .
+
+
+
+[[oracle-database-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de Oracle Database
+
+En esta versión, las cargas de trabajo de Oracle Database introducen las siguientes mejoras:
+
+* *Restauración y clonación de bases de datos conectables (PDB)*: Backup and Recovery for NetApp Console ahora admite la restauración y clonación de bases de datos conectables.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
+
+* *Compatibilidad en versión preliminar con recursos aislados físicamente*: Si ejecutas NetApp Backup and Recovery en una implementación local de NetApp Console, puedes descubrir, proteger y restaurar recursos de Kubernetes aislados físicamente. Esta función está en versión preliminar para este lanzamiento.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descripción general de las cargas de trabajo de Protect Kubernetes"] .
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de ONTAP Volumes
+
+En esta versión, las cargas de trabajo de ONTAP Volumes incorporan las siguientes mejoras:
+
+* *Dar prioridad a las tareas de restauración frente a las de copia de seguridad*: Ahora puedes dar prioridad a las tareas de restauración frente a las de copia de seguridad al restaurar máquinas virtuales o archivos.
+* *Detectar sistemas y volúmenes ONTAP sin activar Backup and Recovery*: Ahora puedes detectar sistemas y volúmenes sin activar Backup and Recovery.
+
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descripción general de la protección de cargas de trabajo de ONTAP Volumes"].

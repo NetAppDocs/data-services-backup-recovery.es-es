@@ -27,9 +27,14 @@ Para iniciar sesión en la NetApp Console, puede utilizar sus credenciales del s
 Para agregar un agente de consola, debe tener el rol de superadministrador de Copia de seguridad y recuperación.
 
 .Pasos
-. Abra un navegador web y vaya a https://console.netapp.com/["NetApp Console"^] .
+. Debe realizar una de las siguientes acciones:
++
+** Si utilizas la consola de NetApp, abre un navegador web y ve a https://console.netapp.com/["NetApp Console"^].
+** Si estás utilizando una instalación local de la NetApp Console, abre un navegador web y accede a la dirección IP de la interfaz de usuario web de tu instalación local de la Console.
 +
 Aparece la página de inicio de sesión de la NetApp Console .
+
+
 
 . Inicie sesión en la consola.
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.

@@ -70,7 +70,7 @@ spec:
 
 . Después de rellenar el archivo `local-snapshot-cr.yaml` con los valores correctos, aplica la CR:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f local-snapshot-cr.yaml
 ----
@@ -139,7 +139,7 @@ spec:
 
 . Después de rellenar el archivo `object-store-backup-cr.yaml` con los valores correctos, aplica la CR:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f object-store-backup-cr.yaml
 ----
@@ -198,7 +198,7 @@ spec:
 
 . Después de rellenar el archivo `3-2-1-fanout-backup-cr.yaml` con los valores correctos, aplica la CR:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f 3-2-1-fanout-backup-cr.yaml
 ----

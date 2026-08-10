@@ -12,7 +12,7 @@ NOTE: Durante las operaciones de restauración, cualquier `VirtualMachineSnapsho
 ====
 Trident Protect congela y descongela automáticamente los sistemas de archivos KubeVirt durante las operaciones de protección de datos para garantizar la coherencia. A partir de Trident Protect 25.10, puedes desactivar este comportamiento usando el parámetro  `vm.freeze` durante la instalación del chart de Helm. El parámetro está activado por defecto.
 
-[source, console]
+[source, shell]
 ----
 helm install ... --set vm.freeze=false ...
 ----
@@ -22,7 +22,7 @@ helm install ... --set vm.freeze=false ...
 ====
 A partir de Trident Protect 24.10.1, Trident Protect congela y descongela automáticamente los sistemas de archivos KubeVirt durante las operaciones de protección de datos. Opcionalmente, puedes desactivar este comportamiento automático usando el siguiente comando:
 
-[source, console]
+[source, shell]
 ----
 kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=false -n trident-protect
 ----
@@ -34,7 +34,7 @@ Trident Protect 24.10 no garantiza automáticamente un estado consistente para l
 
 Puedes configurar Trident Protect 24.10 para gestionar la congelación y descongelación del sistema de archivos de la máquina virtual durante las operaciones de protección de datos mediante link:https://docs.openshift.com/container-platform/4.16/virt/install/installing-virt.html["configurando la virtualización"^] y luego usar el siguiente comando:
 
-[source, console]
+[source, shell]
 ----
 kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=true -n trident-protect
 ----
