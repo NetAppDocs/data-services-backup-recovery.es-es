@@ -3267,11 +3267,9 @@
   <block id="e57e5c06a7f562addb87315f013677ab" category="inline-link-macro">Obtenga más información sobre cómo restaurar desde el almacenamiento de archivo de Google</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">La prioridad alta no se admite al restaurar datos desde el almacenamiento de archivo de Azure a sistemas StorageGRID .</block>
   <block id="598e51a2b37024d5f553af642c739db8" category="section-title">Explorar y restaurar sistemas compatibles y proveedores de almacenamiento de objetos</block>
-  <block id="bc6bfb0b14fd7cced8ee62c645d8aa17" category="paragraph">*Nota:* Puede restaurar un volumen desde cualquier tipo de archivo de respaldo, pero en este momento solo puede restaurar una carpeta o archivos individuales desde un archivo de respaldo en el almacenamiento de objetos.</block>
   <block id="4392d15c8884c7cc66b17ff794eb41d2" category="cell">*Desde el almacén de objetos (copia de seguridad)*</block>
   <block id="a4e7ccecf7c1ff2d3e2de88d9f7559d4" category="cell">*Desde Primaria (Instantánea)*</block>
   <block id="c1ad4111606308626e152e2bc5089a8b" category="cell">*Desde el sistema secundario (replicación)*</block>
-  <block id="f6bc09197fbc5599ccf48032f3ead672" category="cell">Al sistema ONTAP local</block>
   <block id="56a66e1fc15e989f40186eb5d1841f59" category="paragraph">Para explorar y restaurar, el agente de consola se puede instalar en las siguientes ubicaciones:</block>
   <block id="26b66b8e6541c0f2e46ee638955dab17" category="list-text">Para Amazon S3, el agente de consola se puede implementar en AWS o en sus instalaciones</block>
   <block id="ead25fef0ccdffb4daf4bbf7bcb1dfb5" category="list-text">Para Azure Blob, el agente de consola se puede implementar en Azure o en sus instalaciones.</block>
@@ -5804,4 +5802,6 @@
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Mejora el rendimiento de la función Buscar y restaurar de volúmenes para la implementación local de NetApp Console</block>
   <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Debes registrar el proveedor de recursos de Azure Synapse Analytics (denominado «Microsoft.Synapse») en tu suscripción.<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block>. Debes ser el *Owner* o *Contributor* de la suscripción para registrar el proveedor de recursos.</block>
+  <block id="309ab91ccf975daed364d3636f21792a" category="paragraph">Puedes restaurar datos de ONTAP desde un archivo de copia de seguridad que se encuentre en un sistema secundario (un volumen replicado) o en almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes sistemas.</block>
+  <block id="e9a171dcb6f5a1441f086b12be8cbc6b" category="cell">Almacenes de objetos compatibles con S3</block>
 </blocks>
