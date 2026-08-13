@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: Al intentar restaurar un archivo invitado, es posible que se encuentre con situaciones en las que la sesión de restauración del archivo invitado esté en blanco, la operación de conexión de disco para la restauración del archivo invitado falle o las copias de seguridad no se desconecten después de que se interrumpa la sesión de restauración del archivo invitado. 
 ---
-= Solución de problemas de restauración de archivos de invitados
+= Solución de problemas de restauración de archivos invitados en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

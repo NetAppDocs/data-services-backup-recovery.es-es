@@ -4,7 +4,7 @@ permalink: br-use-oracle-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Puede proteger máquinas virtuales de Oracle desde sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando así que sus datos estén protegidos. 
 ---
-= Descripción general de las cargas de trabajo de Protect Oracle Database
+= Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

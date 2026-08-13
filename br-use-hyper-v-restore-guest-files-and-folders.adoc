@@ -4,7 +4,7 @@ permalink: br-use-hyper-v-restore-guest-files-and-folders.html
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
 summary: Puedes restaurar uno o más archivos o carpetas desde una instantánea de una VM de Hyper-V a una VM invitada de Windows. 
 ---
-= Restaura archivos y carpetas desde backups de Hyper-V VM
+= Restaura archivos y carpetas desde copias de seguridad de máquinas virtuales Hyper-V con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

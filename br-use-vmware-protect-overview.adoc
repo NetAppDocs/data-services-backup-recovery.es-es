@@ -4,7 +4,7 @@ permalink: br-use-vmware-protect-overview.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
-= Descripción general de Proteja las cargas de trabajo de VMware con NetApp Backup and Recovery
+= Flujo de trabajo de protección de VMware con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

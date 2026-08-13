@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-overview.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
-= Proteja sus datos de volumen ONTAP con NetApp Backup and Recovery
+= Aprende sobre NetApp Backup and Recovery para volúmenes de ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -49,7 +49,7 @@ Cada ícono se ilumina cuando ese tipo de copia de seguridad está activado y es
 
 Si activó la copia de seguridad solo en algunos de los volúmenes de un sistema cuando habilitó por primera vez NetApp Backup and Recovery, puede activar copias de seguridad en volúmenes adicionales más adelante.
 
-Consulta link:br-start-enable.html["Activa Backup and Recovery para proteger los volúmenes"^] para obtener instrucciones.
+Consulta link:br-start-enable.html["Habilita NetApp Backup and Recovery para proteger volúmenes"^] para obtener instrucciones.
 
 
 

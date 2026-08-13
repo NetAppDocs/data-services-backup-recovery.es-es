@@ -9,7 +9,7 @@
 
 La compatibilidad con cargas de trabajo KVM ya está disponible de forma general (GA) en NetApp Backup and Recovery.
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 

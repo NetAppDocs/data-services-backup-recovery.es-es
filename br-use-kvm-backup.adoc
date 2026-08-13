@@ -19,7 +19,7 @@ Realice copias de seguridad de los grupos de protección KVM desde los sistemas 
 
 NOTE: Para realizar copias de seguridad de los grupos de protección según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 
-* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Verlink:br-use-kvm-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo KVM con NetApp Backup and Recovery"] Para más información.
+* Crea grupos de protección para gestionar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Consulta link:br-use-kvm-protection-groups.html["Gestiona grupos de protección KVM en NetApp Backup and Recovery"] para más información.
 
 
 

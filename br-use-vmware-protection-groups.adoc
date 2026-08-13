@@ -4,7 +4,7 @@ permalink: br-use-vmware-protection-groups.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
 summary: Cree y administre grupos de protección para cargas de trabajo de VMware en NetApp Backup and Recovery. 
 ---
-= Cree y administre grupos de protección para cargas de trabajo de VMware con NetApp Backup and Recovery
+= Gestiona grupos de protección de VMware en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

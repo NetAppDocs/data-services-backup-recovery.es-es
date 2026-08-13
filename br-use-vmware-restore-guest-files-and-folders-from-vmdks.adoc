@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html
 keywords: restore, guest, files, folders, files and folders, guest VM, windows, linux, VMDK, attach 
 summary: Puedes restaurar uno o más archivos o carpetas desde un VMDK a una VM huésped. 
 ---
-= Restaurar archivos y carpetas de discos virtuales
+= Restaura archivos y carpetas de invitados de VMware en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ Restaurar archivos o carpetas individuales de un disco virtual a la máquina vir
 Restaura archivos o carpetas desde un disco virtual a la VM original o a otra VM. Si prefieres no adjuntar el disco virtual a la VM original, puedes adjuntarlo a una VM proxy en su lugar.
 
 .Antes de empezar
-* Revisa los requisitos previos y las limitaciones en link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisitos y limitaciones al restaurar archivos y carpetas de invitados"].
+* Revisa los requisitos previos y las limitaciones en link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisitos para la restauración de archivos invitados de VMware en NetApp Backup and Recovery"].
 * Para restaurar archivos y carpetas usando una proxy VM, asegúrate de que la proxy VM ya esté configurada antes de comenzar el proceso de restauración de archivos y carpetas.
 * Necesitas crear credenciales para el disco virtual de origen y la máquina virtual de destino en NetApp Backup and Recovery antes de poder restaurar archivos y carpetas. NetApp Backup and Recovery usa estas credenciales para autenticarse con el disco virtual y la máquina virtual de destino al restaurar archivos y carpetas.
 

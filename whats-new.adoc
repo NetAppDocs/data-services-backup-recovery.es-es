@@ -137,7 +137,7 @@ En esta versión, las cargas de trabajo Hyper-V introducen las siguientes mejora
 * *Los grupos de protección ahora utilizan la programación basada en la zona horaria del host*: Los grupos de protección ahora utilizan la zona horaria del host de Hyper-V. Los grupos de protección creados antes de que se introdujera la programación basada en la zona horaria del host siguen utilizando la hora configurada anteriormente (normalmente UTC). Para actualizar estos grupos de protección y que utilicen la zona horaria del host de Hyper-V, tienes que volver a crear las programaciones. Consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Crear y administrar grupos de protección para cargas de trabajo de Hyper-V"] para más información.
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flujo de trabajo de protección de Hyper-V con NetApp Backup and Recovery"].
 
 
 
@@ -170,7 +170,7 @@ En esta versión, las cargas de trabajo Hyper-V introducen las siguientes mejora
 * *Restaurar archivos y carpetas a una máquina virtual invitada*: Ahora puedes restaurar archivos y carpetas desde una instantánea en el almacenamiento primario a una máquina virtual Windows invitada. Esta función solo es compatible con máquinas virtuales CIFS.
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flujo de trabajo de protección de Hyper-V con NetApp Backup and Recovery"].
 
 
 
@@ -181,7 +181,7 @@ En esta versión, las cargas de trabajo KVM introducen la siguiente mejora:
 
 *Restaurar a una ubicación alternativa*: Ahora puedes restaurar máquinas virtuales KVM a un destino alternativo (esta función ya está disponible de forma general).
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 
@@ -194,7 +194,7 @@ En esta versión, las cargas de trabajo de Oracle Database introducen las siguie
 * *Soporte de verificación de copias de seguridad*: Ahora puedes configurar políticas de backup para verificar automáticamente la integridad de tus copias de seguridad de bases de datos Oracle.
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
 
 
 
@@ -308,7 +308,7 @@ En esta versión, las cargas de trabajo Hyper-V introducen las siguientes mejora
 * *Soporte SAN (vista previa)*: Backup and Recovery ahora admite la protección de máquinas virtuales Hyper-V almacenadas en almacenamiento SAN.
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flujo de trabajo de protección de Hyper-V con NetApp Backup and Recovery"].
 
 
 
@@ -321,7 +321,7 @@ En esta versión, las cargas de trabajo KVM introducen las siguientes mejoras:
 * *Restaurar a ubicación alternativa (vista previa)*: Ahora puedes restaurar las máquinas virtuales KVM a un destino alternativo. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Restaurar máquinas virtuales KVM con NetApp Backup and Recovery"].
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 
@@ -358,7 +358,7 @@ En esta versión, Oracle Database workloads introduce la siguiente mejora:
 * *Soporte del catálogo de RMAN*: Ahora puedes configurar Backup and Recovery para almacenar metadatos de protección en el catálogo de recuperación de RMAN, lo que proporciona redundancia y retención a largo plazo en caso de que se pierda el archivo de control de destino. Para más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["Configurar una base de datos Oracle"].
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
 
 
 
@@ -430,7 +430,7 @@ Esta versión de NetApp Backup and Recovery incluye las siguientes actualizacion
 
 La compatibilidad con cargas de trabajo KVM ya está disponible de forma general (GA) en NetApp Backup and Recovery.
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 
@@ -505,7 +505,7 @@ Esta versión de las cargas de trabajo de Oracle Database introduce las siguient
 
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
 
 
 
@@ -562,7 +562,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 La vista previa de cargas de trabajo KVM ahora protege los hosts KVM y las máquinas virtuales que son gestionadas por Apache CloudStack.
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 
@@ -626,7 +626,7 @@ Esta versión de NetApp Backup and Recovery introduce soporte para descubrir y g
 * Buscar y restaurar copias de seguridad de máquinas virtuales
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flujo de trabajo de protección de Hyper-V con NetApp Backup and Recovery"].
 
 
 
@@ -643,7 +643,7 @@ Esta versión de NetApp Backup and Recovery introduce soporte para descubrir y g
 * Proceso guiado para realizar copias de seguridad y restaurar máquinas virtuales basadas en KVM y datos de máquinas virtuales
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 
@@ -704,7 +704,7 @@ Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y ad
 * Compatibilidad con el panel de control de Oracle
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
 
 
 

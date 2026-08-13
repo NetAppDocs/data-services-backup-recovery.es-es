@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. 
 ---
-= Restaura aplicaciones de Kubernetes usando la interfaz web
+= Restaura aplicaciones de Kubernetes mediante la interfaz de usuario web de NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

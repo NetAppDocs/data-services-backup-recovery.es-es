@@ -33,7 +33,7 @@ Esta versión de NetApp Backup and Recovery introduce soporte para descubrir y g
 * Buscar y restaurar copias de seguridad de máquinas virtuales
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Descripción general de Protect Hyper-V Workloads"] .
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flujo de trabajo de protección de Hyper-V con NetApp Backup and Recovery"].
 
 
 
@@ -50,7 +50,7 @@ Esta versión de NetApp Backup and Recovery introduce soporte para descubrir y g
 * Proceso guiado para realizar copias de seguridad y restaurar máquinas virtuales basadas en KVM y datos de máquinas virtuales
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descripción general de las cargas de trabajo de Protect KVM"] .
+Para obtener más información sobre cómo proteger las cargas de trabajo KVM, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery"].
 
 
 
@@ -111,7 +111,7 @@ Esta versión de NetApp Backup and Recovery presenta soporte para descubrir y ad
 * Compatibilidad con el panel de control de Oracle
 
 
-Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descripción general de las cargas de trabajo de Protect Oracle Database"].
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
 
 
 
