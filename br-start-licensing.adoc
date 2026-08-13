@@ -86,7 +86,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 Utilice estos enlaces para suscribirse a NetApp Backup and Recovery desde el mercado de su proveedor de nube:
 
 * AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^] .
-* Azur: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^] .
+* Azure: https://marketplace.microsoft.com/en-us/product/netapp.cloud-manager?tab=Overview["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^].
 * Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta de Marketplace para NetApp Intelligent Services para obtener detalles de precios"^] .
 
 
@@ -114,7 +114,7 @@ Si desea utilizar esta opción, puede configurar el contrato anual cuando cree u
 
 
 
-Cuando utiliza Azure, hay dos contratos anuales disponibles desde https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Página de Azure Marketplace"^] Para Cloud Volumes ONTAP y sistemas ONTAP locales:
+Al utilizar Azure, hay dos contratos anuales disponibles de https://marketplace.microsoft.com/en-us/product/netapp.netapp-bluexp["Página de Azure Marketplace"^] para Cloud Volumes ONTAP y los sistemas ONTAP locales:
 
 * Un plan de "Copia de seguridad en la nube" que le permite realizar copias de seguridad de los datos de Cloud Volumes ONTAP y de los datos de ONTAP locales.
 +
