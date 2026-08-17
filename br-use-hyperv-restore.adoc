@@ -21,7 +21,7 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 
 * Restaurar desde una ubicación principal (instantánea local)
 * Restaurar desde un recurso replicado en un almacenamiento secundario
-* Restaurar desde una copia de seguridad de almacén de objetos (solo en la ubicación original)
+* Restaurar desde una copia de seguridad de almacenamiento de objetos
 
 
 .Restaurar a estos puntos
@@ -101,6 +101,11 @@ Aparece una lista de posibles puntos de restauración.
 *** *Red*: Seleccione la red de destino donde desea restaurar la instantánea.
 *** *Nombre de la máquina virtual*: Ingrese el nombre de la máquina virtual que desea restaurar.
 *** *Ubicación de destino*: ingrese la carpeta de destino o el recurso compartido CIFS que debe contener los datos restaurados.
+
+
+.. En la sección *Almacenamiento de destino* (visible únicamente al restaurar desde un almacén de objetos):
++
+*** *Cambiar la ubicación de almacenamiento predeterminada*: activa esta opción para restaurar una copia de seguridad del almacén de objetos en una ubicación diferente, en caso de que no se pueda acceder a la ubicación de almacenamiento de origen o esta esté llena. Elige un clúster, una máquina virtual de almacenamiento o un agregado diferente para usar.
 
 
 .. En la sección *Opciones previas a la restauración*, considere las siguientes opciones:

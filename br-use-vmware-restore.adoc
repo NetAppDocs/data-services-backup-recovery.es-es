@@ -142,7 +142,7 @@ Al restaurar a una ubicación alternativa, puede cambiar el vCenter de destino, 
 
 ** *Sección de almacenamiento de destino* (visible solo cuando se restaura desde el almacén de objetos):
 +
-*** *Cambiar ubicación de almacenamiento predeterminada*: Activa esta opción para restaurar una copia de seguridad del almacén de objetos en una máquina virtual de almacenamiento diferente en caso de que la ubicación de almacenamiento de origen sea inaccesible o esté llena. Elige un clúster, una máquina virtual de almacenamiento o un agregado diferente para usar.
+*** *Cambiar la ubicación de almacenamiento predeterminada*: activa esta opción para restaurar una copia de seguridad del almacén de objetos en una ubicación diferente, en caso de que no se pueda acceder a la ubicación de almacenamiento de origen o esta esté llena. Elige un clúster, una máquina virtual de almacenamiento o un agregado diferente para usar.
 
 
 ** Sección *Opciones previas a la restauración*:

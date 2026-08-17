@@ -1,0 +1,44 @@
+= Mejoras en las cargas de trabajo de Hyper-V
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de Hyper-V
+
+En esta versión, las cargas de trabajo de Hyper-V incorporan la siguiente mejora:
+
+*Restaurar una copia de seguridad del almacenamiento de objetos en una ubicación alternativa*: Ahora puedes restaurar máquinas virtuales de Hyper-V, archivos y carpetas desde el almacenamiento de objetos a una ubicación de almacenamiento alternativa.
+
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Aprende a proteger las cargas de trabajo de Hyper-V con NetApp Backup and Recovery"].
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
+
+* *Trident Protect 26.08*: Esta versión incluye Trident Protect 26.08.
+* *Reintentos de copia de seguridad*: Ahora puedes activar los reintentos de copia de seguridad y configurar el número de intentos y los intervalos entre ellos como ajustes avanzados en las políticas de protección de Kubernetes.
+* *Éxito parcial del backup*: Ahora puedes configurar ajustes avanzados en las políticas de protección de Kubernetes para que el backup continúe cuando fallen recursos individuales, permitiendo que las tareas de backup se completen como parcialmente exitosas. Esto te permite restaurar los recursos respaldados incluso si algunos recursos fallan durante la operación de backup.
+* *Copias de seguridad coherentes con los fallos y coherentes con la máquina virtual*: El servicio NetApp Backup and Recovery for NetApp Console ahora permite configurar políticas de protección que crean copias de seguridad o instantáneas coherentes con los fallos o coherentes con la máquina virtual. También puedes personalizar cómo se realizan las congelaciones de la máquina virtual durante la operación de protección.
+* *Volver a conectar el clúster de Kubernetes tras un cambio de IP del agente de Console*: el servicio Backup and Recovery para NetApp Console ahora te permite volver a conectar un clúster a su agente de Console si la dirección IP del agente cambia.
+* *Migra el clúster a un nuevo agente de Console*: el servicio Backup and Recovery for NetApp Console ahora te permite migrar un clúster a un nuevo agente de Console si el agente original falla o se elimina, lo que garantiza una protección de aplicaciones sin interrupciones.
+
+
+Para obtener más información sobre cómo proteger las cargas de trabajo de Kubernetes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Kubernetes con NetApp Backup and Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Mejora de las cargas de trabajo de Oracle Database
+
+En esta versión, las cargas de trabajo de Oracle Database introducen las siguientes mejoras:
+
+* *Restauración de bases de datos conectables (PDB)*: ahora puedes restaurar bases de datos conectables (PDB) y espacios de tabla de PDB de forma individual, incluida la recuperación a un momento específico.
+* *Clon de una base de datos conectable (PDB)*: ahora puedes clonar una sola PDB en una base de datos contenedora (CDB) de destino ya existente y, si quieres, excluir PDBs cuando clones una base de datos contenedora completa.
+
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
