@@ -114,6 +114,27 @@ NOTE: Los campos que aparecen varían según el proveedor y la arquitectura sele
 ** *Ordene sus copias de seguridad por niveles, desde el almacén de objetos hasta el almacenamiento de archivo*: si elige organizar las copias de seguridad por niveles en el almacenamiento de archivo (por ejemplo, AWS Glacier), seleccione la opción de nivel y la cantidad de días que desea archivar.
 
 
+. Si lo deseas, configura los parámetros avanzados de la política.
++
+[%collapsible]
+====
+** *Intentos de copia de seguridad*: Para volver a intentar la tarea un número determinado de veces en caso de fallo o interrupción, despliega la sección *Intentos de copia de seguridad* e introduce el número máximo de intentos para las instantáneas y las tareas de copia de seguridad y el intervalo de tiempo entre intentos.
+
+
+
+TIP: Si la frecuencia de las instantáneas se establece en 1 hora, la demora máxima junto con el recuento de reintentos no debe superar los 45 minutos.
+
+** *Éxito parcial*: Activa esta opción para permitir que una operación de copia de seguridad se complete con éxito incluso si Backup and Recovery no logra hacer copia de seguridad de todos los recursos.
+** *Configuración de la máquina virtual*: selecciona el tipo de consistencia de copia de seguridad que necesites:
++
+*** *Backup coherente con fallos*: selecciona esta opción para omitir la congelación de la máquina virtual antes de realizar una instantánea o una copia de seguridad. La instantánea o la copia de seguridad serán coherentes con fallos, lo que significa que no se capturará la memoria del sistema en el momento de la instantánea o la copia de seguridad.
+*** *Copia de seguridad consistente con la máquina virtual*: selecciona esta opción para congelar las máquinas virtuales antes de realizar una instantánea o copia de seguridad. Esto captura el estado completo de la máquina virtual (incluida la memoria) para proporcionar una protección consistente con la máquina virtual. Opcionalmente, en *Max VMs at once*, especifica cuántas máquinas virtuales puede congelar y respaldar Backup and Recovery al mismo tiempo. Si habilitas la opción *Freeze all VMs*, Backup and Recovery congela todas las máquinas virtuales simultáneamente, inicia las copias de seguridad y luego descongela todas las máquinas virtuales cuando terminan todas las operaciones de copia de seguridad.
+
+
+
+
+====
+. Cuando termines, selecciona *Hecho*.
 
 
 
@@ -137,6 +158,12 @@ Superadministrador de copias de seguridad y recuperación. Si estás protegiendo
 . Seleccione la opción *Políticas*.
 . Seleccione la política que desea editar.
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Editar*.
+. Cuando hayas terminado de editar, selecciona *Listo*.
+. En el cuadro de diálogo de confirmación, escribe el nombre de la política para confirmar los cambios.
++
+Guardar los cambios afecta a todas las aplicaciones que están protegidas por esta política de protección.
+
+. Selecciona *Hecho* para confirmar.
 
 
 
