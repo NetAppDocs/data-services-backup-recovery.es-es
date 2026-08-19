@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Completa unos pasos en NetApp Backup and Recovery para empezar a hacer copias de seguridad de los datos de volúmenes de tus sistemas ONTAP locales principales. Puedes enviar las copias de seguridad a un sistema de almacenamiento ONTAP secundario (un volumen replicado), a un bucket en un sistema de almacenamiento compatible con S3 o a ambos.
+Utiliza esta página para comprobar que tu configuración es compatible y para configurar copias de seguridad desde tus sistemas ONTAP locales principales a un almacenamiento de objetos compatible con S3 en NetApp Backup and Recovery.
 
 
 
@@ -71,7 +71,7 @@ Ten en cuenta los siguientes puntos cuando hagas copias de seguridad en un almac
 [[prepare-your-console-agent]]
 == Prepare su agente de consola
 
-El agente de consola es el software principal para la funcionalidad de la consola.  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
+El agente de consola es el software principal para la funcionalidad de la NetApp Console .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
 
 
 
@@ -232,9 +232,9 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 === Iniciar el asistente
 
 .Pasos
-. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
+. Accede al asistente «Activar Backup and Recovery» de una de las siguientes formas:
 +
-** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto a Copia de seguridad y recuperación en el panel derecho.
+** En la página *Sistemas* de la Console, selecciona el sistema y selecciona *Enable > Backup Volumes* junto a Backup and Recovery en el panel derecho.
 ** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación.  Desde la pestaña Volúmenes, seleccione la opción *Acciones (...)* y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
 
 
@@ -369,7 +369,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 +
 *** Introduzca el nombre de la póliza.
 *** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
-*** Para las políticas de backup a objetos, configura los ajustes de Datalock y protección contra ransomware. Para más detalles sobre Datalock y la protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"].
+*** Para las políticas de backup a almacén de objetos, configura los ajustes de DataLock y la protección contra ransomware. Para obtener más información sobre DataLock y la protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"].
 *** Seleccione *Crear*.
 
 
@@ -408,9 +408,9 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 [[show-the-api-commands]]
 === Mostrar los comandos API
 
-Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+Quizá te interese mostrar y, si lo deseas, copiar los comandos de la API usados en el asistente Activate Backup and Recovery. Quizá te interese hacerlo para automatizar la activación del backup en sistemas futuros.
 
 .Pasos
-. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. En el asistente «Activar Backup and Recovery», selecciona *Ver solicitud de API*.
 . Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
 

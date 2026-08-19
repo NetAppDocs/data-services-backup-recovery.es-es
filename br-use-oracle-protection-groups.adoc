@@ -14,13 +14,13 @@ summary: Crea y gestiona grupos de protección para cargas de trabajo de Oracle 
 
 
 [role="lead"]
-Cree grupos de protección para administrar las operaciones de respaldo de un conjunto de recursos de Oracle Database.  Un grupo de protección es una agrupación lógica de recursos, como bases de datos, que desea proteger juntos.  Necesita crear un grupo de protección para realizar copias de seguridad de las bases de datos de Oracle.
+Crea grupos de protección para gestionar las operaciones de backup de los recursos de Oracle Database. Un grupo de protección es una agrupación lógica de recursos, como bases de datos, que quieres proteger juntos.
 
 Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 * Crear un grupo de protección.
 * Ver detalles de protección.
-* Haz ahora una copia de seguridad de un grupo de protección. Consulta link:br-use-kvm-backup.html["Haz copias de seguridad ahora de las cargas de trabajo de Oracle Database"].
+* Haz ahora una copia de seguridad de un grupo de protección. Consulta link:br-use-oracle-backup.html["Haz copias de seguridad ahora de las cargas de trabajo de Oracle Database"].
 * Eliminar un grupo de protección.
 
 
@@ -29,7 +29,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 [[create-a-protection-group]]
 == Crear un grupo de protección
 
-Agrupe las máquinas virtuales y los grupos de almacenamiento que desea proteger juntos en un grupo de protección.
+Agrupa los recursos de Oracle Database que quieras proteger juntos en un grupo de protección.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -40,7 +40,7 @@ Agrupe las máquinas virtuales y los grupos de almacenamiento que desea proteger
 . Seleccione la pestaña *Grupos de protección*.
 . Seleccione *Crear grupo de protección*.
 . Proporcione un nombre para el grupo de protección.
-. Seleccione las máquinas virtuales o los grupos de almacenamiento que desea incluir en el grupo de protección.
+. Selecciona las bases de datos que quieras incluir en el grupo de protección.
 . Seleccione *Siguiente*.
 . Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
 +

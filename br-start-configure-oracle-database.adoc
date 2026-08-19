@@ -14,9 +14,9 @@ summary: Configura tu base de datos Oracle en NetApp Backup and Recovery.
 
 
 [role="lead"]
-Puedes cambiar la autenticación y la configuración del nodo para una nueva base de datos Oracle independiente o en clúster. NetApp Backup and Recovery protege bases de datos sin estos cambios. Si tu entorno cambia después del descubrimiento, puede que necesites actualizar la configuración de la base de datos.
+Modifica la configuración de autenticación y de los nodos de una base de datos Oracle independiente o en clúster. NetApp Backup and Recovery protege las bases de datos sin tener en cuenta estos cambios, pero es posible que tengas que actualizar la configuración si tu entorno cambia tras el análisis.
 
-*Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery. Conoce más sobre link:reference-roles.html["Funciones y privilegios de backup y recuperación"] y https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp roles de acceso a la consola para todos los servicios"^].
 
 
 
@@ -29,8 +29,8 @@ Cambia la configuración de una base de datos Oracle independiente o en clúster
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
 . En el inventario de Oracle, selecciona el menú *Bases de datos*.
-. En la lista de bases de datos, selecciona *Configurar base de datos* (base de datos independiente) o *Configurar base de datos RAC* (base de datos en clúster) para la base de datos que quieras configurar.
-. *Configura las opciones de la base de datos*: Configura los ajustes de autenticación para la base de datos independiente o en clúster.
+. En la lista de bases de datos, selecciona *Configurar base de datos* (autónoma) o *Configurar base de datos RAC* (en clúster) para la base de datos que quieras configurar.
+. *Configura los parámetros de la base de datos*: Establece los parámetros de autenticación para la base de datos independiente o en clúster.
 +
 ** Selecciona *autenticación de SO* para autenticarte solo con el sistema operativo del host. NetApp Backup and Recovery utiliza las credenciales del host que especificaste durante el descubrimiento.
 ** Selecciona *Database authentication* cuando la base de datos requiera credenciales. Luego elige las credenciales existentes o añade nuevas, y selecciona el puerto que quieres usar para la conexión.
@@ -41,7 +41,7 @@ Cambia la configuración de una base de datos Oracle independiente o en clúster
 ** Selecciona *Archivo de control de destino* para almacenar los metadatos en el archivo de control de destino de la base de datos.
 ** Selecciona *Catalog database* para almacenar metadatos en el catálogo de recuperación de RMAN. Elige las credenciales y el nombre de Transparent Network Substrate (TNS) para conectarte al catálogo de recuperación.
 +
-El catálogo de recuperación de RMAN es un esquema de base de datos independiente utilizado por la utilidad RMAN para almacenar metadatos sobre copias de seguridad y operaciones de recuperación para bases de datos registradas. Proporciona redundancia y retención a largo plazo en caso de que se pierda el archivo de control de destino o cuando se necesiten datos históricos. Activa esta opción para registrar archivos de datos y copias de archivelog en el repositorio de RMAN para que RMAN pueda realizar un seguimiento y gestionar esas copias para informes y recuperación.
+El catálogo de recuperación de RMAN es un esquema de base de datos independiente que la utilidad RMAN utiliza para almacenar metadatos de backup y recuperación de las bases de datos registradas. Proporciona redundancia y retención a largo plazo si se pierde el archivo de control de destino o cuando necesitas datos históricos. Al habilitar esta opción, se registran los archivos de datos y las copias de los registros de archivo en el repositorio de RMAN para que RMAN pueda hacer un seguimiento y gestionarlos para informes y recuperación.
 
 
 

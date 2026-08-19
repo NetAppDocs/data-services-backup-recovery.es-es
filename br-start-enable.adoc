@@ -4,7 +4,7 @@ permalink: br-start-enable.html
 keywords: backup, Backup and Recovery, enable backup, Console, service, local deployment 
 summary: Activa la copia de seguridad y la recuperación en un sistema en NetApp Console o en una implementación local de NetApp Console. 
 ---
-= Habilita NetApp Backup and Recovery para proteger volúmenes
+= Activa NetApp Backup and Recovery para volúmenes de ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Activa la copia de seguridad y la recuperación en un sistema en NetApp
 
 
 [role="lead"]
-Necesitas habilitar NetApp Backup and Recovery para un sistema de almacenamiento en NetApp Console o NetApp Console local deployment antes de poder proteger las cargas de trabajo de los volúmenes ONTAP. Puedes habilitar Backup and Recovery en un sistema cuando lo agregas o en otro momento más adelante.
+Activa NetApp Backup and Recovery para un sistema de almacenamiento en NetApp Console o en una implementación local de NetApp Console antes de proteger los volúmenes ONTAP. Puedes activar el servicio al añadir un sistema o más tarde.
 
 
 
@@ -26,13 +26,13 @@ Activa el servicio de Backup and Recovery en la NetApp Console.
 .Pasos
 . Selecciona el menú *Volúmenes*.
 . En la página de resumen de la protección de volúmenes, selecciona *Backup Settings*.
-. Identifica el sistema en el que quieres activar las copias de seguridad y selecciona el botón *Activar copia de seguridad*.
+. Identifica el sistema que deseas proteger y selecciona *Activar copia de seguridad*.
 . Seleccione *Siguiente*.
 . Selecciona los volúmenes de origen que deseas proteger y selecciona *Siguiente*.
 . En la página Define backup strategy, selecciona la arquitectura de backup y, a continuación, define las políticas y otros detalles para los snapshots locales, los volúmenes replicados y los archivos de backup. Consulta los detalles de las opciones de backup de los volúmenes iniciales que activaste en este sistema. A continuación, selecciona *Siguiente*.
-. Opcionalmente, elige que Backup and Recovery corrija automáticamente las etiquetas de copia de seguridad, instantánea y replicación que no coincidan.
-. Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
-. Los volúmenes que has protegido aparecen en la página de resumen de volúmenes.
+. Opcionalmente, haz que NetApp Backup and Recovery corrija automáticamente las etiquetas de copia de seguridad, instantánea y replicación que no coincidan.
+. Revisa la configuración de backup de estos volúmenes y luego selecciona *Activar copia de seguridad*.
+. Los volúmenes protegidos aparecen en la página de resumen *Volúmenes*.
 
 
 
@@ -46,18 +46,18 @@ Activa el servicio de Backup and Recovery en la implementación local de NetApp 
 Asegúrate de haber obtenido una licencia para NetApp Backup and Recovery. Consulta https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Obtener una licencia"^] para más información.
 
 .Pasos
-. En el menú de la NetApp Console, selecciona *Storage > Fleets*.
-. Si es necesario, añade los detalles de tu flota seleccionando *Add fleet*.
-. Selecciona *Administración > Licencias*.
-. Selecciona *Add license* para añadir una licencia para Backup and Recovery. Para obtener más información sobre cómo añadir una licencia, consulta https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["Agrega una licencia"^].
+. En el menú de la NetApp Console, selecciona *Almacenamiento* > *Flotas*.
+. Si es necesario, añade tu flota seleccionando *Add fleet*.
+. Selecciona *Administración* > *Licencias*.
+. Selecciona *Add license* para añadir una licencia de Backup and Recovery. Para obtener más información sobre cómo añadir una licencia, consulta https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["Agrega una licencia"^].
 . Selecciona *Almacenamiento* > *Flotas* y luego abre el menú *Sistemas*.
 . Selecciona *Add* para añadir un sistema, introduce los datos del sistema y guarda el nuevo sistema seleccionando *Add*.
-. Elige un sistema y selecciona un clúster. En el panel de información situado a la derecha de la página, selecciona el botón *Habilitar* para el servicio de Backup and Recovery.
+. Elige un sistema y selecciona un clúster. En el panel de información de la derecha, selecciona *Habilitar* para el servicio de Backup and Recovery.
 . Selecciona *Volúmenes de copia de seguridad*.
 . Seleccione *Siguiente*.
 . Selecciona los volúmenes de origen que deseas proteger y selecciona *Siguiente*.
 . En la página Define backup strategy, selecciona la arquitectura de backup y, a continuación, define las políticas y otros detalles para los snapshots locales, los volúmenes replicados y los archivos de backup. Consulta los detalles de las opciones de backup de los volúmenes iniciales que activaste en este sistema. A continuación, selecciona *Siguiente*.
-. Opcionalmente, elige que Backup and Recovery corrija automáticamente las etiquetas de copia de seguridad, instantánea y replicación que no coincidan.
-. Revise la configuración de respaldo para este volumen y luego seleccione *Activar respaldo*.
-. Los volúmenes que has protegido aparecen en la página de resumen de volúmenes.
+. Opcionalmente, haz que NetApp Backup and Recovery corrija automáticamente las etiquetas de copia de seguridad, instantánea y replicación que no coincidan.
+. Revisa la configuración de backup de estos volúmenes y luego selecciona *Activar copia de seguridad*.
+. Los volúmenes protegidos aparecen en la página de resumen *Volúmenes*.
 

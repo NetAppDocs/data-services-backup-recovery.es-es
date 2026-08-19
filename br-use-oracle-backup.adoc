@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-oracle-backup.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Protege tus cargas de trabajo de Oracle Database con la copia de seguridad y recuperación de NetApp. 
+keywords: backing up, back up, backup, backup application data, Amazon Web Services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+summary: Protege tus cargas de trabajo de Oracle Database con NetApp Backup and Recovery. 
 ---
 = Haz copias de seguridad de las cargas de trabajo de Oracle Database usando NetApp Backup and Recovery
 :hardbreaks:
@@ -14,22 +14,22 @@ summary: Protege tus cargas de trabajo de Oracle Database con la copia de seguri
 
 
 [role="lead"]
-Utilice NetApp Backup and Recovery para realizar copias de seguridad de grupos de protección de bases de datos o bases de datos de Oracle desde sistemas ONTAP locales al almacenamiento en la nube, incluidos Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage u ONTAP S3.  NetApp Backup and Recovery realiza copias de seguridad de las bases de datos y los datos de registro en cada grupo de protección.
+Haz backup de los grupos de protección de bases de datos Oracle o de bases de datos individuales desde sistemas ONTAP locales usando NetApp Backup and Recovery. Envía los backups a almacenamiento en la nube, incluyendo Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage u ONTAP S3.
 
 
 NOTE: Para realizar copias de seguridad de grupos de protección o bases de datos individuales según una programación, cree políticas que administren las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
 
-* Crea grupos de protección para gestionar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Consulta link:br-use-kvm-protection-groups.html["Crea y gestiona grupos de protección para cargas de trabajo de Oracle Database con NetApp Backup and Recovery"] para más información.
-* Realice una copia de seguridad de un grupo de protección ahora (cree una copia de seguridad a pedido ahora).
-* Haga una copia de seguridad de una base de datos ahora.
+* Crea grupos de protección para gestionar las operaciones de backup y restauración de un conjunto de recursos. Consulta link:br-use-kvm-protection-groups.html["Crea y gestiona grupos de protección para cargas de trabajo de Oracle Database con NetApp Backup and Recovery"] para obtener más información.
+* Crea una copia de seguridad bajo demanda de un grupo de protección.
+* Crea un backup bajo demanda de una base de datos.
 
 
 
 
-[[back-up-protection-groups-now-with-an-on-demand-backup]]
-== Realice copias de seguridad de los grupos de protección ahora con una copia de seguridad a pedido
+[[create-an-on-demand-backup-of-a-protection-group]]
+== Crear un backup bajo demanda de un grupo de protección
 
-Ejecute una copia de seguridad a pedido antes de realizar cambios en el sistema para garantizar que sus datos estén protegidos.
+Realiza una copia de seguridad bajo demanda antes de realizar cambios en el sistema para proteger tus datos.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -39,7 +39,7 @@ Ejecute una copia de seguridad a pedido antes de realizar cambios en el sistema 
 . Seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
-. Seleccione la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
+. Selecciona la pestaña *Grupos de protección*.
 . Seleccione el grupo de protección que desea respaldar.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 +
@@ -52,10 +52,10 @@ NOTE: NetApp Backup and Recovery utiliza la misma política tanto para el grupo 
 
 
 
-[[back-up-a-database-now-with-an-on-demand-backup]]
-== Realice una copia de seguridad de una base de datos ahora con una copia de seguridad a pedido
+[[create-an-on-demand-backup-of-a-database]]
+== Crear un backup bajo demanda de una base de datos
 
-Puede ejecutar una copia de seguridad a pedido de una sola base de datos.
+Realiza una copia de seguridad bajo demanda antes de realizar cambios en el sistema para proteger tus datos.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 

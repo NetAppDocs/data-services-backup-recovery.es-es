@@ -4,7 +4,7 @@ permalink: prev-ontap-discover-no-activate.html
 keywords: activate, backup and recovery, volumes, back up, discover 
 summary: Descubre sistemas y volúmenes sin activar NetApp Backup and Recovery. 
 ---
-= Descubre sistemas y volúmenes ONTAP sin activación en NetApp Backup and Recovery
+= Descubre sistemas y volúmenes de ONTAP sin activar NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Descubre sistemas y volúmenes sin activar NetApp Backup and Recovery.
 
 
 [role="lead"]
-Puedes descubrir sistemas y volúmenes tanto cuando activas Backup and Recovery para los volúmenes, como antes de activar NetApp Backup and Recovery. Si descubres volúmenes sin activación, no puedes proteger los volúmenes hasta que actives Backup and Recovery para ellos.
+Descubre los sistemas y volúmenes ONTAP antes de activar NetApp Backup and Recovery. Después del descubrimiento, puedes revisar los volúmenes, pero no puedes protegerlos hasta que actives Backup and Recovery.
 
 .Pasos
 . Ve a *Protección > Backup and Recovery*.

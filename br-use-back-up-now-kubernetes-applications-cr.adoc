@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-back-up-now-kubernetes-applications-cr.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: 'NetApp Backup and Recovery te permite hacer backups manuales de aplicaciones Kubernetes usando recursos personalizados (CRs).' 
+summary: 'Utiliza recursos personalizados (CR) para crear instantáneas y copias de seguridad bajo demanda de una aplicación de Kubernetes, estableciendo una línea de base o protegiendo los cambios más recientes en tus datos.' 
 ---
 = Haz copias de seguridad de aplicaciones de Kubernetes ahora usando recursos personalizados en NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'NetApp Backup and Recovery te permite hacer backups manuales de aplica
 
 
 [role="lead"]
-NetApp Backup and Recovery te permite hacer backups manuales de aplicaciones Kubernetes usando recursos personalizados (CRs).
+Utiliza recursos personalizados (CR) para crear instantáneas y copias de seguridad bajo demanda de una aplicación de Kubernetes, estableciendo una línea de base o protegiendo los cambios más recientes en tus datos.
 
 
 
@@ -47,7 +47,7 @@ Para crear una instantánea de tu aplicación Kubernetes y guardarla localmente,
 ** *metadata.name*: (_Required_) El nombre de este recurso personalizado; elige un nombre único y sensato para tu entorno.
 ** *spec.applicationRef*: el nombre de Kubernetes de la aplicación para hacer snapshot.
 ** *spec.appVaultRef*: (_Required_) El nombre de AppVault donde se debe almacenar el contenido de la instantánea (metadatos).
-** *spec.reclaimPolicy*: (_opcional_) Define lo que pasa con la AppArchive de una instantánea cuando se elimina el CR de la instantánea. Esto significa que incluso cuando se establece en `Retain`, la instantánea se eliminará. Opciones válidas:
+** *espec.reclaimPolicy*: (_Opcional_) Define qué ocurre con el AppArchive de una instantánea cuando se elimina el registro de control (CR) de la instantánea. Aunque se establezca en `Retain`, el registro de control (CR) de la instantánea se sigue eliminando; solo se conserva el AppArchive. Opciones válidas:
 +
 *** `Retain` (predeterminado)
 *** `Delete`
@@ -228,5 +228,5 @@ La siguiente tabla describe las anotaciones que puedes usar al crear un backup C
 | protect.trident.netapp.io/volume-snapshots-created-timeout | cadena | El tiempo máximo permitido para que se creen instantáneas de volumen. | "5m" 
 
 
-| protect.trident.netapp.io/pvc-bind-timeout-sec | cadena | Tiempo máximo (en segundos) para esperar a que cualquier PersistentVolumeClaims (PVCs) recién creado alcance la fase `Bound` antes de que la operación falle. | "1200" (20 minutos) 
+| protect.trident.netapp.io/pvc-bind-timeout-sec | cadena | Tiempo máximo (en segundos) para esperar a que cualquier PersistentVolumeClaims (PVC) recién creado alcance la fase  `Bound` antes de que falle la operación. | "1200" (20 minutos) 
 |===

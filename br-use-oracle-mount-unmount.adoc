@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo de Oracle Database con NetApp Backup and 
 
 
 [role="lead"]
-Es posible que quieras montar un punto de recuperación de Oracle Database si necesitas acceder a la base de datos en un estado controlado para realizar operaciones de recuperación. Cataloga manualmente el punto de recuperación cuando necesites almacenar los metadatos de la operación de copia de seguridad y recuperación en el catálogo de recuperación de RMAN y la opción de catalogar automáticamente los metadatos no esté activada.
+Monta un punto de recuperación de la base de datos Oracle cuando necesites acceder a la base de datos en un estado controlado para operaciones de recuperación. Si la catalogación automática está desactivada, puedes catalogar manualmente los metadatos del punto de recuperación en el catálogo de recuperación de RMAN.
 
 
 
@@ -52,7 +52,7 @@ El punto de recuperación está montado en el host de Oracle.
 
 
 [[unmount-an-oracle-database-recovery-point]]
-== Desmonta un punto de recuperación de bases de datos Oracle
+== Desmontar un punto de recuperación de Oracle Database
 
 Desmonte el punto de recuperación cuando ya no necesite ver los cambios realizados en esa base de datos.
 
@@ -73,7 +73,7 @@ Aparece una lista de puntos de recuperación para esa base de datos.
 
 
 [[catalog-an-oracle-database-recovery-point]]
-== Catalogar un punto de recuperación de bases de datos Oracle
+== Catalogar un punto de recuperación de Oracle Database
 
 Cataloga manualmente un punto de recuperación cuando necesites conservar sus metadatos de operaciones de backup y recuperación. Los metadatos se almacenan según la configuración de *Configure RMAN catalog* que elijas para la base de datos (en el archivo de control de destino por defecto). Solo necesitas catalogar manualmente si la catalogación automática está desactivada en la política de protección asociada.
 

@@ -14,9 +14,9 @@ summary: Referencia de las acciones de copia de seguridad y recuperación compat
 
 
 [role="lead"]
-La página de auditoría de la NetApp Console registra las siguientes acciones que los usuarios realizan en Backup and Recovery como parte de su función de auditoría. Para obtener más información sobre cómo ver y filtrar los eventos de auditoría, consulta https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Audita la actividad de los usuarios desde la página Auditoría"^] la documentación de la NetApp Console.
+Utiliza esta referencia para ver qué acciones de NetApp Backup and Recovery registra NetApp Console en la página de auditoría. Para obtener detalles sobre cómo ver y filtrar eventos de auditoría, consulta  https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Audita la actividad de los usuarios desde la página Auditoría"^] en la documentación de NetApp Console.
 
-Para cada acción auditada, la consola registra el nombre del servicio, el agente, el recurso, el usuario y el estado de la acción.
+Para cada acción auditada, NetApp Console registra el nombre del servicio, el agente, el recurso, el usuario y el estado de la acción.
 
 .Acciones auditadas de copia de seguridad y recuperación
 * Restaurar volumen o archivos a partir de una copia de seguridad

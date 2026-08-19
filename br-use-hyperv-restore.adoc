@@ -14,10 +14,10 @@ summary: Proteja sus cargas de trabajo de Hyper-V con NetApp Backup and Recovery
 
 
 [role="lead"]
-Restaure cargas de trabajo de Hyper-V a partir de instantáneas, de una copia de seguridad de la carga de trabajo replicada en almacenamiento secundario o de copias de seguridad almacenadas en almacenamiento de objetos mediante NetApp Backup and Recovery.
+Restaura cargas de trabajo de Hyper-V desde instantáneas locales, backups replicados en almacenamiento secundario o backups en almacén de objetos usando NetApp Backup and Recovery.
 
 .Restaurar desde estas ubicaciones
-Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
+Puedes restaurar cargas de trabajo desde estas ubicaciones:
 
 * Restaurar desde una ubicación principal (instantánea local)
 * Restaurar desde un recurso replicado en un almacenamiento secundario
@@ -25,14 +25,14 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 
 
 .Restaurar a estos puntos
-Puede restaurar datos en estos puntos:
+Puedes restaurar datos en estos destinos:
 
 * Restaurar en la ubicación original (desde almacenamiento primario, secundario y almacén de objetos)
 * Restaurar en una ubicación alternativa (desde el almacenamiento primario, secundario y de objetos)
 
 
 .Consideraciones sobre la restauración desde el almacenamiento de objetos
-Si seleccionas un archivo de backup en el almacenamiento de objetos y la protección contra ransomware está activa para ese backup (si activaste Datalock y la protección contra ransomware en la política de backup), entonces se te pedirá que realices una comprobación de integridad adicional en el archivo de backup antes de restaurar los datos. Te recomendamos que realices el escaneo.
+Si seleccionas un archivo de backup en el almacén de objetos y la protección contra ransomware está activa para ese backup porque habilitaste DataLock y la protección contra ransomware en la política de backup, se te pedirá que realices una comprobación de integridad adicional antes de restaurar los datos. Te recomendamos que realices el análisis.
 
 
 TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
@@ -42,27 +42,27 @@ TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acc
 [[how-restoring-workloads-works]]
 == Cómo funciona la restauración de cargas de trabajo
 
-Al restaurar cargas de trabajo, ocurre lo siguiente:
+Al restaurar una carga de trabajo, ocurre lo siguiente:
 
 * Cuando restaura una carga de trabajo desde un archivo de respaldo local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos del respaldo.
 * Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo en el sistema original o en un sistema ONTAP local.
 
 
-Desde la página Restaurar, puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que reside o la fecha en la que estuvo en buen estado por última vez. Puedes buscar la instantánea usando filtros.
+Desde la página «Restaurar», puedes restaurar un recurso aunque no recuerdes su nombre exacto, su ubicación o la fecha de su última copia de seguridad válida. Puedes buscar la instantánea utilizando filtros.
 
 
 
 [[restore-hyper-v-workloads]]
 == Restaurar cargas de trabajo de Hyper-V
 
-Restaura cargas de trabajo Hyper-V usando el menú Restaurar. Puedes buscar la instantánea por su nombre o usando filtros.
+Restaura las cargas de trabajo de Hyper-V mediante el menú «Restaurar». Puedes buscar una instantánea por nombre o utilizando filtros.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
 . Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
 . En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Hyper-V*.
-. Ingrese el nombre del recurso que desea restaurar o filtre por el nombre de la máquina virtual, el host de la máquina virtual o el grupo de almacenamiento donde se encuentra el recurso que desea restaurar.
+. Introduce el nombre del recurso que deseas restaurar o filtra por nombre de máquina virtual, host de la máquina virtual o el grupo de almacenamiento en el que se encuentra el recurso.
 +
 Aparecerá una lista de instantáneas que coinciden con sus criterios de búsqueda.
 
@@ -95,7 +95,7 @@ Aparece una lista de posibles puntos de restauración.
 .Restaurar a una ubicación alternativa
 --
 .. Seleccione el panel *Ubicación alternativa*.
-.. En la sección *Configuración de destino*, ingrese la siguiente información:
+.. En la sección *Configuración de destino*, introduce la siguiente información:
 +
 *** *FQDN o dirección IP de Hyper-V*: ingrese el nombre de dominio completo o la dirección IP del host Hyper-V de destino.
 *** *Red*: Seleccione la red de destino donde desea restaurar la instantánea.
@@ -105,15 +105,15 @@ Aparece una lista de posibles puntos de restauración.
 
 .. En la sección *Almacenamiento de destino* (visible únicamente al restaurar desde un almacén de objetos):
 +
-*** *Cambiar la ubicación de almacenamiento predeterminada*: activa esta opción para restaurar una copia de seguridad del almacén de objetos en una ubicación diferente, en caso de que no se pueda acceder a la ubicación de almacenamiento de origen o esta esté llena. Elige un clúster, una máquina virtual de almacenamiento o un agregado diferente para usar.
+*** *Cambiar la ubicación de almacenamiento predeterminada*: activa esta opción para restaurar una copia de seguridad del almacén de objetos en una ubicación diferente si no se puede acceder a la ubicación de almacenamiento de origen o si está llena. Elige un clúster, una máquina virtual de almacenamiento o un agregado diferente para usar.
 
 
-.. En la sección *Opciones previas a la restauración*, considere las siguientes opciones:
+.. En la sección *Pre-restore options*, ten en cuenta las siguientes opciones:
 +
 *** *Restauración rápida*: habilite esta opción para que la máquina virtual restaurada esté disponible de inmediato. Solo se restauran desde el almacén de objetos los archivos necesarios para ejecutar la máquina virtual, en lugar del volumen completo.
 
 
-.. En la sección *Opciones posteriores a la restauración*, considere las siguientes opciones:
+.. En la sección *Opciones tras la restauración*, ten en cuenta las siguientes opciones:
 +
 *** *Iniciar la máquina virtual*: habilite esta opción para iniciar la nueva máquina virtual después de restaurarla.
 

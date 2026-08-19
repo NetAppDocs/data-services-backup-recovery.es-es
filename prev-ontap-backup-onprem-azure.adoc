@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales a un sistema de almacenamiento secundario y al almacenamiento de blobs de Azure.
+En NetApp Backup and Recovery, puedes hacer copias de seguridad de los datos de los volúmenes de tus sistemas ONTAP locales en un sistema de almacenamiento secundario y en Azure Blob. Usa esta página para preparar tu entorno y activar las copias de seguridad.
 
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
@@ -64,7 +64,7 @@ De lo contrario, deberá crear un agente de consola en una de esas ubicaciones p
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Instale un agente de consola en sus instalaciones"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-install-restricted-mode.html["Instalar un agente de consola en una región de Azure Government"^]
 +
-NetApp Backup and Recovery es compatible con las regiones de Azure Government cuando el agente de consola se implementa en la nube, no cuando se instala en sus instalaciones.  Además, debe implementar el agente de consola desde Azure Marketplace.  No es posible implementar el agente de la consola en una región gubernamental desde el sitio web de Console SaaS.
+NetApp Backup and Recovery es compatible con las regiones de Azure Government cuando el agente de la Console se implementa en la nube, no cuando se instala en tus instalaciones. Además, debes implementar el agente de la Console desde Azure Marketplace. No puedes implementar el agente de la Console en una región de Government desde el sitio web de NetApp Console SaaS.
 
 
 
@@ -290,7 +290,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 
 . Puede utilizar sus propias claves personalizadas administradas para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado administradas predeterminadas por Microsoft.  En este caso, necesitará tener la suscripción de Azure, el nombre de Key Vault y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Aprende a usar tus propias llaves"^] .
 +
-Tenga en cuenta que la copia de seguridad y la recuperación admiten _políticas de acceso de Azure_ como modelo de permisos.  El modelo de permisos de _control de acceso basado en roles de Azure_ (Azure RBAC) no es compatible actualmente.
+Ten en cuenta que NetApp Backup and Recovery admite las _políticas de acceso de Azure_ como modelo de permisos. El modelo de permisos de _control de acceso basado en roles de Azure_ (Azure RBAC) no es compatible actualmente.
 
 . Si desea tener una conexión más segura a través de Internet público desde su centro de datos local a la red virtual, existe una opción para configurar un punto de conexión privado de Azure en el asistente de activación.  En este caso, necesitará conocer la VNet y la subred para esta conexión. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Consulte los detalles sobre el uso de un punto final privado"^] .
 
@@ -326,9 +326,9 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 === Iniciar el asistente
 
 .Pasos
-. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
+. Accede al asistente «Activar Backup and Recovery» de una de las siguientes formas:
 +
-** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto al servicio de Respaldo y recuperación en el panel derecho.
+** En la página *Systems* de la NetApp Console, selecciona el sistema y selecciona *Enable > Backup Volumes* junto al servicio de Backup and recovery en el panel derecho.
 +
 Si el destino de Azure para sus copias de seguridad existe en la página *Sistemas* de la consola, puede arrastrar el clúster de ONTAP al almacenamiento de objetos Blob de Azure.
 
@@ -336,7 +336,7 @@ Si el destino de Azure para sus copias de seguridad existe en la página *Sistem
 
 
 +
-La página de Introducción del asistente muestra las opciones de protección, incluidas instantáneas locales, replicación y copias de seguridad.  Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de respaldo con un volumen seleccionado.
+La página de Introducción del asistente muestra las opciones de protección, incluyendo instantáneas locales, replicación y backups. Si hiciste la segunda opción en este paso, aparece la página Define Backup Strategy con un volumen seleccionado.
 
 . Continúe con las siguientes opciones:
 +
@@ -493,7 +493,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 +
 *** Introduzca el nombre de la póliza.
 *** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
-*** Para las políticas de backup a objetos, configura los ajustes de Datalock y protección contra ransomware. Para más detalles sobre Datalock y la protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"].
+*** Para las políticas de backup a almacén de objetos, configura los ajustes de DataLock y la protección contra ransomware. Para obtener más información sobre DataLock y la protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"].
 *** Seleccione *Crear*.
 
 
@@ -530,9 +530,9 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 [[show-the-api-commands]]
 === Mostrar los comandos API
 
-Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+Quizá te interese mostrar y, si lo deseas, copiar los comandos de la API usados en el asistente Activate Backup and Recovery. Quizá te interese hacerlo para automatizar la activación del backup en sistemas futuros.
 
 .Pasos
-. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. En el asistente «Activar Backup and Recovery», selecciona *Ver solicitud de API*.
 . Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
 

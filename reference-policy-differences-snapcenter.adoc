@@ -4,7 +4,7 @@ permalink: reference-policy-differences-snapcenter.html
 keywords: backup policy, backup policies, snapcenter, migration 
 summary: Existen algunas diferencias entre las políticas utilizadas en NetApp Backup and Recovery y las utilizadas en SnapCenter. 
 ---
-= Políticas en SnapCenter comparadas con las de NetApp Backup and Recovery
+= Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: Existen algunas diferencias entre las políticas utilizadas en NetApp B
 
 
 [role="lead"]
-Existen algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery que podrían afectar lo que ve después de importar recursos y políticas desde SnapCenter.
+Utiliza esta referencia para entender las diferencias de políticas entre SnapCenter y NetApp Backup and Recovery que pueden afectar a los recursos y políticas importados.
 
 
 
@@ -27,7 +27,7 @@ SnapCenter utiliza los siguientes niveles de programación:
 * *Mensual*: De enero a diciembre, con opción de actuar en días específicos o múltiples cada mes, por ejemplo, el 7.
 
 
-NetApp Backup and Recovery utiliza los siguientes niveles de programación, que son ligeramente diferentes:
+NetApp Backup and Recovery utiliza los siguientes niveles de programación, que difieren ligeramente:
 
 * *Cada hora*: realiza instantáneas solo en intervalos de 15 minutos, por ejemplo, 1 hora o intervalos de 15 minutos menores a 60.
 * *Diario*: Horas del día (0-23) con hora de inicio por ejemplo a las 10:00 AM con opción a realizarse cada cierta cantidad de horas.

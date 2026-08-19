@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-oracle.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
-summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo para poder protegerlas. 
+summary: NetApp Backup and Recovery debe primero descubrir las cargas de trabajo antes de poder protegerlas. 
 ---
 = Descubre las cargas de trabajo de Oracle Database en NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo
 
 
 [role="lead"]
-Descubrir bases de datos Oracle permite que NetApp Backup and Recovery las proteja creando y restaurando backups e instantáneas.
+Descubre las cargas de trabajo de Oracle Database en NetApp Backup and Recovery para que puedas protegerlas con copias de seguridad e instantáneas.
 
-*Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery. Conoce más sobre link:reference-roles.html["Funciones y privilegios de backup y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
@@ -130,10 +130,10 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 [[add-an-oracle-database-host-and-discover-resources]]
 == Añade un host de base de datos Oracle y descubre recursos
 
-Agregue información del host de Oracle y permita que NetApp Backup and Recovery descubra cargas de trabajo. Dentro de cada agente de consola, seleccione los sistemas en los que desea descubrir cargas de trabajo.
+Añade la información del host de la base de datos Oracle y deja que NetApp Backup and Recovery descubra las cargas de trabajo. Para cada agente de Console, selecciona los sistemas que quieres descubrir.
 
 .Pasos
-. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
+. En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.
 . En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
 . Seleccione *Descubrir recursos*.
 . Selecciona *Oracle* para el campo *Tipo de carga de trabajo*.
@@ -145,10 +145,10 @@ Agregue información del host de Oracle y permita que NetApp Backup and Recovery
 .. Seleccione *Listo*.
 
 
-. *Registro de host*: Añade un nuevo host de Oracle Database. En el campo *Host FQDN or IP address*, introduce el FQDN o la dirección IP del host; para bases de datos en clúster puedes introducir el FQDN o la IP de cualquier nodo del clúster. Luego proporciona las credenciales, el agente de la Console y el número de puerto.
+. *Registro de host*: Añade un nuevo host de Oracle Database. En el campo *FQDN o dirección IP del host*, introduce el FQDN o la dirección IP del host. Para bases de datos en clúster, puedes introducir el FQDN o la dirección IP de cualquier nodo del clúster. Luego proporciona las credenciales, el agente de la Console y el número de puerto.
 . (Opcional) Si eliges credenciales para un usuario que no es root, haz lo siguiente:
 +
-.. Para obtener instrucciones sobre cómo agregar el usuario no root que seleccionaste al archivo sudoers en el host de Oracle Database, selecciona *Configure sudoers*.
+.. Para obtener instrucciones sobre cómo añadir el usuario no raíz seleccionado al archivo sudoers en el host de la base de datos Oracle, selecciona *Configurar sudoers*.
 .. Sigue las instrucciones en el cuadro de diálogo, activa la casilla cuando termines y selecciona *Done*.
 
 
@@ -159,7 +159,7 @@ Agregue información del host de Oracle y permita que NetApp Backup and Recovery
 +
 [NOTE]
 ====
-Backup and Recovery se conecta a cada host a través de SSH para instalar el complemento automáticamente. Activa *Usar instalación manual* cuando se dé cualquiera de los siguientes casos:
+NetApp Backup and Recovery se conecta a cada host a través de SSH para instalar el complemento automáticamente. Activa *Usar instalación manual* cuando se dé alguna de las siguientes circunstancias:
 
 *** Uno o más hosts no están ejecutando el servicio SSH.
 *** Cualquier host ya dispone del complemento NetApp (incluso si solo lo tienen algunos miembros del clúster).
@@ -174,20 +174,20 @@ Backup and Recovery se conecta a cada host a través de SSH para instalar el com
 . Seleccione *Descubrir*.
 +
 
-TIP: Añadir recursos puede llevar varios minutos. Para ver el progreso, selecciona *Seguir progreso* en el cuadro de diálogo de estado en la parte inferior de la página de Inventario o selecciona *Supervisión* en el menú de la izquierda.
+TIP: Añadir recursos puede tardar varios minutos. Para ver el progreso, selecciona *Seguir el progreso* en el cuadro de diálogo de estado en la parte inferior de la página de Inventario o selecciona *Supervisión* en la navegación de la izquierda.
 
 
 
 .Resultado
-La carga de trabajo de Oracle Database se muestra en la lista de cargas de trabajo en la página Inventory.
+La carga de trabajo de Oracle Database aparece en la lista de cargas de trabajo en la página de Inventario.
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continuar al panel de control de NetApp Backup and Recovery
 
-. Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
-. Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).
+. En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.
+. Selecciona un mosaico de carga de trabajo (por ejemplo, Oracle Database).
 . Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.
-. Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
+. Comprueba el estado de la protección de datos. El número de cargas de trabajo en riesgo o protegidas aumenta en función de las cargas de trabajo recién detectadas, protegidas y respaldadas.
 

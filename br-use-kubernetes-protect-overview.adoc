@@ -4,7 +4,7 @@ permalink: br-use-kubernetes-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Puede proteger las aplicaciones de Kubernetes y los datos de aplicaciones desde los sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando así la protección de sus datos. 
 ---
-= Descubre cómo gestionar las cargas de trabajo de Kubernetes con NetApp Backup and Recovery
+= Flujo de trabajo de protección de Kubernetes con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,20 +14,20 @@ summary: Puede proteger las aplicaciones de Kubernetes y los datos de aplicacion
 
 
 [role="lead"]
-Gestionar cargas de trabajo de Kubernetes en NetApp Backup and Recovery te permite descubrir, gestionar y proteger tus clústeres y aplicaciones de Kubernetes, todo en un solo lugar. Puedes gestionar recursos y aplicaciones alojados en tus clústeres de Kubernetes. También puedes crear y asociar políticas de protección con tus aplicaciones de Kubernetes, todo usando una sola interfaz.
+Utiliza NetApp Backup and Recovery para descubrir, gestionar y proteger clústeres y aplicaciones de Kubernetes desde una única interfaz.
 
-El siguiente diagrama muestra los componentes y la arquitectura básica de la copia de seguridad y la recuperación para cargas de trabajo de Kubernetes y cómo se pueden almacenar diferentes copias de sus datos en diferentes ubicaciones:
+El siguiente diagrama muestra los componentes y la arquitectura básica para el backup y la recuperación de Kubernetes y cómo se pueden almacenar copias de tus datos en diferentes ubicaciones:
 
 image:../media/backup-recovery-architecture-diagram.png["Diagrama de arquitectura de respaldo y recuperación para cargas de trabajo de Kubernetes"]
 
 NetApp Backup and Recovery ofrece los siguientes beneficios para administrar cargas de trabajo de Kubernetes:
 
-* Un único plano de control para proteger aplicaciones que se ejecutan en varios clústeres de Kubernetes. Estas aplicaciones pueden incluir contenedores o máquinas virtuales que se ejecutan en sus clústeres de Kubernetes.
-* Integración nativa con NetApp SnapMirror, que permite capacidades de descarga de almacenamiento para todos los flujos de trabajo de respaldo y recuperación.
+* Un único plano de control para proteger aplicaciones en múltiples clústeres de Kubernetes, incluidos contenedores y máquinas virtuales.
+* La integración nativa con NetApp SnapMirror permite la descarga de almacenamiento para los flujos de trabajo de backup y recuperación.
 * Copias de seguridad incrementales permanentes para aplicaciones de Kubernetes, lo que se traduce en objetivos de punto de recuperación (RPO) y objetivos de tiempo de recuperación (RTO) más bajos.
 
 
-Puede realizar las siguientes tareas relacionadas con la gestión de cargas de trabajo de Kubernetes:
+Puedes realizar las siguientes tareas para las cargas de trabajo de Kubernetes:
 
 * link:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"].
 * link:br-use-manage-kubernetes-clusters.html["Gestiona clústeres de Kubernetes en NetApp Backup and Recovery"].

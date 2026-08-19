@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales primarios a un sistema de almacenamiento secundario y a Google Cloud Storage.
+En NetApp Backup and Recovery, puedes hacer copias de seguridad de los datos de los volúmenes de tus sistemas ONTAP locales en un sistema de almacenamiento secundario y en Google Cloud Storage. Usa esta página para preparar tu entorno y activar las copias de seguridad.
 
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
@@ -48,7 +48,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["Un diagrama que muestra cómo
 [[prepare-your-console-agent]]
 == Prepare su agente de consola
 
-El agente de consola es el software principal para la funcionalidad de la consola.  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
+El agente de consola es el software principal para la funcionalidad de la NetApp Console .  Se requiere un agente de consola para realizar copias de seguridad y restaurar sus datos de ONTAP .
 
 
 
@@ -283,7 +283,7 @@ storage.objects.update
 . Ir a https://console.cloud.google.com/storage/settings["Configuración de almacenamiento de GCP"^] y crear claves de acceso para la cuenta de servicio:
 +
 .. Seleccione un proyecto y seleccione *Interoperabilidad*. Si aún no lo ha hecho, seleccione *Habilitar acceso de interoperabilidad*.
-.. En *Claves de acceso para cuentas de servicio*, seleccione *Crear una clave para una cuenta de servicio*, seleccione la cuenta de servicio que acaba de crear y haga clic en *Crear clave*.
+.. En *Teclas de acceso para cuentas de servicio*, selecciona *Crear una clave para una cuenta de servicio*, selecciona la cuenta de servicio que acabas de crear y selecciona *Crear clave*.
 +
 Necesitará ingresar las claves en NetApp Backup and Recovery más adelante cuando configure el servicio de respaldo.
 
@@ -357,17 +357,17 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 === Iniciar el asistente
 
 .Pasos
-. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
+. Accede al asistente «Activar Backup and Recovery» de una de las siguientes formas:
 +
-** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto a Copia de seguridad y recuperación en el panel derecho.
+** En la página *Sistemas* de la Console, selecciona el sistema y selecciona *Enable > Backup Volumes* junto a Backup and Recovery en el panel derecho.
 +
-Si el destino de Google Cloud Storage para sus copias de seguridad existe como en la página *Sistemas* de la consola, puede arrastrar el clúster de ONTAP al almacenamiento de objetos de Google Cloud.
+Si el destino de Google Cloud Storage para tus copias de seguridad aparece en la página *Systems* de la Console, puedes arrastrar el clúster ONTAP a Google Cloud Storage.
 
 ** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación.  Desde la pestaña Volúmenes, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
 
 
 +
-La página de Introducción del asistente muestra las opciones de protección, incluidas instantáneas locales, replicación y copias de seguridad.  Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de respaldo con un volumen seleccionado.
+La página de Introducción del asistente muestra las opciones de protección, incluyendo instantáneas locales, replicación y backups. Si hiciste la segunda opción en este paso, aparece la página Define Backup Strategy con un volumen seleccionado.
 
 . Continúe con las siguientes opciones:
 +
@@ -488,10 +488,10 @@ TIP: Si desea almacenar archivos de respaldo más antiguos en el almacenamiento 
 +
 Introduzca la clave de acceso y la clave secreta de Google Cloud.
 
-** *Clave de cifrado*: si creó una nueva cuenta de almacenamiento de Google Cloud, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado predeterminadas de Google Cloud o elegirá sus propias claves administradas por el cliente desde su cuenta de Google Cloud para administrar el cifrado de sus datos.
+** *Clave de cifrado*: Si has creado un nuevo depósito de Google Cloud Storage, introduce la información de la clave de cifrado que te haya facilitado el proveedor. Elige si vas a utilizar las claves de cifrado predeterminadas de Google Cloud o si vas a utilizar tus propias claves gestionadas por el cliente desde tu cuenta de Google Cloud para gestionar el cifrado de tus datos.
 +
 
-NOTE: Si eligió una cuenta de almacenamiento de Google Cloud existente, la información de cifrado ya está disponible, por lo que no necesita ingresarla ahora.
+NOTE: Si has elegido un bucket existente de Google Cloud Storage, la información sobre el cifrado ya está disponible, así que no necesitas introducirla ahora.
 
 +
 Si elige utilizar sus propias claves administradas por el cliente, ingrese el llavero y el nombre de la clave. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado administradas por el cliente"^] .
@@ -547,9 +547,9 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 [[show-the-api-commands]]
 === Mostrar los comandos API
 
-Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+Quizá te interese mostrar y, si lo deseas, copiar los comandos de la API usados en el asistente Activate Backup and Recovery. Quizá te interese hacerlo para automatizar la activación del backup en sistemas futuros.
 
 .Pasos
-. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. En el asistente «Activar Backup and Recovery», selecciona *Ver solicitud de API*.
 . Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
 

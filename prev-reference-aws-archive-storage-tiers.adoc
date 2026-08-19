@@ -14,14 +14,14 @@ summary: NetApp Backup and Recovery admite dos clases de almacenamiento de archi
 
 
 [role="lead"]
-NetApp Backup and Recovery admite dos clases de almacenamiento de archivo S3 y la mayoría de las regiones.
+Utiliza esta información para elegir un nivel de archivo de AWS S3 para las copias de seguridad de NetApp Backup and Recovery. También puedes consultar los costes de restauración y los tiempos de recuperación de las copias de seguridad archivadas.
 
 
 
 [[supported-s3-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Clases de almacenamiento de archivo S3 compatibles con NetApp Backup and Recovery
 
-Cuando se crean inicialmente los archivos de respaldo, se almacenan en el almacenamiento _estándar_ de S3.  Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero que también permite acceder a ellos de inmediato.  Después de 30 días, las copias de seguridad pasan a la clase de almacenamiento S3 _Standard-Infrequent Access_ para ahorrar costos.
+Cuando se crean inicialmente los archivos de backup, se almacenan en el almacenamiento S3 _Standard_. Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero sigue permitiendo acceso inmediato. Después de 30 días, los backups pasan a la clase de almacenamiento S3 _Standard-Infrequent Access_ para ahorrar en costes.
 
 Si sus clústeres de origen ejecutan ONTAP 9.10.1 o posterior, puede optar por organizar las copias de seguridad en niveles de almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_ después de una cierta cantidad de días (normalmente más de 30 días) para optimizar aún más los costos.  Puede establecerlo en "0" o entre 1 y 999 días.  Si lo establece en "0" días, no podrá cambiarlo posteriormente a 1-999 días.
 

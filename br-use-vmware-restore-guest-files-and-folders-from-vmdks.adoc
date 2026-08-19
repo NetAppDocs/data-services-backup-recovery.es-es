@@ -14,7 +14,7 @@ summary: Puedes restaurar uno o más archivos o carpetas desde un VMDK a una VM 
 
 
 [role="lead"]
-Restaurar archivos o carpetas individuales de un disco virtual a la máquina virtual original o a otra máquina virtual. Esto es útil cuando no necesitas restaurar una máquina virtual completa, sino que solo necesitas archivos o carpetas específicos.
+Restaura archivos o carpetas concretos de un VMDK a la máquina virtual original o a otra máquina virtual. Usa esta opción cuando necesites archivos o carpetas específicos en lugar de toda la máquina virtual.
 
 
 
@@ -25,12 +25,12 @@ Restaura archivos o carpetas desde un disco virtual a la VM original o a otra VM
 
 .Antes de empezar
 * Revisa los requisitos previos y las limitaciones en link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisitos para la restauración de archivos invitados de VMware en NetApp Backup and Recovery"].
-* Para restaurar archivos y carpetas usando una proxy VM, asegúrate de que la proxy VM ya esté configurada antes de comenzar el proceso de restauración de archivos y carpetas.
+* Para restaurar archivos y carpetas mediante una máquina virtual proxy, asegúrate de que esta ya esté configurada antes de iniciar el proceso de restauración.
 * Necesitas crear credenciales para el disco virtual de origen y la máquina virtual de destino en NetApp Backup and Recovery antes de poder restaurar archivos y carpetas. NetApp Backup and Recovery usa estas credenciales para autenticarse con el disco virtual y la máquina virtual de destino al restaurar archivos y carpetas.
 
 
 .Acerca de esta tarea
-El rendimiento de la restauración de archivos o carpetas depende de dos factores: el tamaño de los archivos o carpetas que se restauran y el número de archivos o carpetas que se restauran. La restauración de un gran número de archivos de pequeño tamaño puede tardar más de lo previsto que la restauración de un pequeño número de archivos de gran tamaño, si el conjunto de datos que se va a restaurar es del mismo tamaño.
+El rendimiento de la restauración de archivos o carpetas depende del tamaño y del número de elementos que restaures. Restaurar muchos archivos pequeños puede tardar más que restaurar unos pocos archivos grandes con el mismo tamaño total.
 
 Puedes restaurar en una máquina virtual remota (lo que se conoce como restauración cruzada de máquinas virtuales), pero los sistemas operativos de origen y destino deben ser el mismo.
 
@@ -75,7 +75,7 @@ Puedes usar el icono de la lupa (buscar) que está cerca del panel del explorado
 
 . Selecciona los archivos o carpetas que quieres restaurar.
 +
-Los archivos y carpetas que has seleccionado para restaurar aparecen en el panel derecho de la pantalla.
+Los archivos y carpetas que selecciones para restaurar aparecen en el panel de la derecha.
 
 . Seleccione *Siguiente*.
 . En la sección "Restaurar en ruta", introduce la ruta de la máquina virtual de destino y la ubicación del sistema de archivos donde se restaurarán los archivos seleccionados:
@@ -108,7 +108,7 @@ Puede ver el progreso de la restauración en la página Supervisión de trabajos
 --
 .Adjunta el VMDK a una máquina virtual proxy para restaurar archivos y carpetas
 --
-Usa una VM proxy (una VM diferente en el mismo vCenter que la original) para restaurar archivos y carpetas del invitado cuando no quieras adjuntar el disco virtual a la VM original.
+Utiliza una máquina virtual proxy, que es una máquina virtual diferente en el mismo vCenter que la máquina virtual original, para restaurar archivos y carpetas del sistema invitado cuando no quieras conectar el disco virtual a la máquina virtual original.
 
 .Pasos
 . Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
@@ -145,7 +145,7 @@ Puedes usar el icono de la lupa (buscar) que está cerca del panel del explorado
 
 . Selecciona los archivos o carpetas que quieres restaurar.
 +
-Los archivos y carpetas que has seleccionado para restaurar aparecen en el panel derecho de la pantalla.
+Los archivos y carpetas que selecciones para restaurar aparecen en el panel de la derecha.
 
 . Seleccione *Siguiente*.
 . En la sección "Restaurar en ruta", introduce la ruta de la máquina virtual de destino y la ubicación del sistema de archivos donde se restaurarán los archivos seleccionados:
@@ -182,7 +182,7 @@ Puede ver el progreso de la restauración en la página Supervisión de trabajos
 [[view-active-vmdk-mount-sessions]]
 == Ver sesiones de montaje VMDK activas
 
-Ve las sesiones de invitado activas cuando estás restaurando archivos o carpetas. Esto te muestra los VMDKs que están actualmente adjuntos con sesiones abiertas.
+Consulta las sesiones de invitado activas al restaurar archivos o carpetas. Esta vista muestra los VMDK que están conectados actualmente con sesiones abiertas.
 
 .Pasos
 . Desde el menú NetApp Backup and Recovery , seleccione *Clonar*.

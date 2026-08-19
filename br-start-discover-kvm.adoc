@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery primero debe descubrir las cargas de trabajo
 
 
 [role="lead"]
-NetApp Backup and Recovery necesita descubrir hosts KVM y máquinas virtuales antes de protegerlos. Sus hosts KVM y máquinas virtuales deben estar administrados por una plataforma de administración como Apache CloudStack antes de poder agregarlos a Backup and Recovery.
+Descubre los hosts y las máquinas virtuales KVM en NetApp Backup and Recovery para que puedas protegerlos con políticas de protección. Tu entorno KVM debe estar gestionado por una plataforma de gestión como Apache CloudStack antes de la detección.
 
 *Rol de consola requerido* Superadministrador de Copia de seguridad y recuperación.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -26,10 +26,10 @@ NetApp Backup and Recovery necesita descubrir hosts KVM y máquinas virtuales an
 Agregue la plataforma de administración y la información del host KVM y deje que NetApp Backup and Recovery descubra las cargas de trabajo.
 
 .Pasos
-. Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
+. Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
 . En *Cargas de trabajo*, seleccione el mosaico *KVM*.
 +
-Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en la consola pero no ha descubierto ningún recurso, aparecerá la página _Bienvenido a la nueva NetApp Backup and Recovery_ con una opción para *Descubrir recursos*.
+Si es la primera vez que inicias sesión en NetApp Backup and Recovery y ya tienes un sistema en la Console pero no hay recursos detectados, aparece la página "Bienvenido a la nueva NetApp Backup and Recovery" con una opción para *Descubrir recursos*.
 
 . Seleccione *Descubrir recursos*.
 . Introduzca la siguiente información:
@@ -39,7 +39,7 @@ Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en l
 +
 ... Introduzca la siguiente información:
 +
-**** *Dirección IP o FQDN de la plataforma de administración*: ingrese la dirección IP o el nombre de dominio completo de la plataforma de administración.
+**** *Dirección IP o FQDN de la plataforma de gestión*: Introduce la dirección IP o un FQDN de la plataforma de gestión.
 **** *Clave API*: Ingrese la clave API que se utilizará para autenticar las solicitudes API.
 **** *Clave secreta*: Ingrese la clave secreta que se utilizará para autenticar las solicitudes de API.
 **** *Puerto*: Ingrese el puerto que se utilizará para la comunicación entre Backup and Recovery y la plataforma de administración.
@@ -77,7 +77,7 @@ La carga de trabajo de KVM se muestra en la lista de cargas de trabajo en la pá
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
-. Seleccione un mosaico de carga de trabajo (por ejemplo, Microsoft SQL Server).
+. Selecciona el mosaico de la carga de trabajo KVM.
 . Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.
 . Revisar la salud de la protección de datos.  La cantidad de cargas de trabajo en riesgo o protegidas aumenta según las cargas de trabajo recientemente descubiertas, protegidas y respaldadas.
 

@@ -14,11 +14,11 @@ summary: Con NetApp Backup and Recovery, supervise las instantáneas locales, la
 
 
 [role="lead"]
-Con NetApp Backup and Recovery, supervise las instantáneas locales, las replicaciones y los trabajos de respaldo que inicie.  Realice un seguimiento de los trabajos de restauración que inicie.  Ver trabajos completados, en progreso o que fallaron para ayudar a diagnosticar problemas.  Habilite las notificaciones por correo electrónico en el Centro de notificaciones de la NetApp Console para mantenerse informado sobre la actividad del sistema cuando no haya iniciado sesión. Utilice la línea de tiempo de la consola para ver los detalles de todas las acciones iniciadas desde la interfaz de usuario o la API.
+Supervisa las tareas de instantáneas, replicación, copias de seguridad y restauración. Configura las notificaciones por correo electrónico y utiliza la línea de tiempo de la consola para analizar la actividad.
 
-NetApp Backup and Recovery conserva la información del trabajo durante 15 días, luego elimina dicha información y la quita del Monitor de trabajos.
+NetApp Backup and Recovery conserva la información de los trabajos durante 15 días, luego la elimina y la retira del Monitor de trabajos.
 
-*Rol requerido de NetApp Console*: Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o Backup and Recovery viewer role. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o Backup and Recovery viewer. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Funciones y privilegios de backup y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
@@ -43,7 +43,7 @@ NOTE: Si ha actualizado sus sistemas ONTAP a 9.13.x y no ve operaciones de respa
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Monitoreo*.
-. Para mostrar columnas adicionales (Sistema, VM de almacenamiento, Nombre de usuario, Carga de trabajo, Nombre de la política, Etiqueta de instantánea), selecciona el signo más.
+. Para mostrar columnas adicionales (Sistema, Máquina virtual de almacenamiento, Nombre de usuario, Carga de trabajo, Nombre de la política, Etiqueta de instantánea), selecciona el signo más.
 
 
 
@@ -51,7 +51,7 @@ NOTE: Si ha actualizado sus sistemas ONTAP a 9.13.x y no ve operaciones de respa
 [[search-and-filter-the-list-of-jobs]]
 === Buscar y filtrar la lista de trabajos
 
-Puede filtrar las operaciones en la página Supervisión de trabajos utilizando varios filtros, como política, etiqueta de instantánea, tipo de operación (protección, restauración, retención u otra) y tipo de protección (instantánea local, replicación o copia de seguridad en la nube).
+En la página «Supervisión de tareas» puedes filtrar las operaciones utilizando varios filtros, como la política, la etiqueta de la instantánea, el tipo de operación (protección, restauración, retención u otra) y el tipo de protección (instantánea local, replicación o copia de seguridad en la nube).
 
 De forma predeterminada, la página Supervisión de trabajos muestra trabajos de protección y recuperación de las últimas 24 horas.  Puede cambiar el período de tiempo utilizando el filtro de período de tiempo.
 
@@ -60,7 +60,7 @@ De forma predeterminada, la página Supervisión de trabajos muestra trabajos de
 . Para ordenar los resultados de forma diferente, seleccione cada encabezado de columna para ordenar por Estado, Hora de inicio, Nombre del recurso y más.
 . Si está buscando trabajos específicos, seleccione el área *Búsqueda avanzada y filtrado* para abrir el panel de búsqueda.
 +
-Utilice este panel para ingresar una búsqueda de texto libre para cualquier recurso; por ejemplo, "volumen 1" o "aplicación 3".  También puede filtrar la lista de trabajos según los elementos de los menús desplegables.
+Utiliza este panel para realizar una búsqueda de texto libre de cualquier recurso; por ejemplo, "volumen 1" o "aplicación 3". También puedes filtrar la lista de trabajos según las opciones de los menús desplegables.
 
 +
 La mayoría de los filtros se explican por sí solos. El filtro de "Carga de trabajo" le permite ver trabajos en las siguientes categorías:
@@ -88,16 +88,16 @@ La mayoría de los filtros se explican por sí solos. El filtro de "Carga de tra
 [[view-job-details]]
 === Ver detalles del trabajo
 
-Puede ver los detalles correspondientes a un trabajo específico completado.  Puede exportar detalles de un trabajo en particular en formato JSON.
+Puedes consultar los detalles correspondientes a un trabajo concreto ya finalizado. Puedes exportar los detalles de un trabajo concreto en formato JSON.
 
-Puede ver detalles como el tipo de trabajo (programado o bajo demanda), el tipo de copia de seguridad de SnapMirror (inicial o periódica), las horas de inicio y finalización, la duración, la cantidad de datos transferidos del sistema al almacenamiento de objetos, la tasa de transferencia promedio, el nombre de la política, el bloqueo de retención habilitado, el análisis de ransomware realizado, los detalles de la fuente de protección y los detalles del objetivo de protección.
+Puedes consultar detalles como el tipo de tarea (programada o bajo demanda), el tipo de copia de seguridad SnapMirror (inicial o periódica), las horas de inicio y fin, la duración, la cantidad de datos transferidos del sistema al almacenamiento de objetos, la tasa de transferencia media, el nombre de la política, bloqueo de retención activado, análisis de ransomware realizado, detalles de la fuente de protección y detalles del destino de protección.
 
 Las tareas de restauración muestran detalles como el proveedor de destino de la copia de seguridad (Amazon Web Services, Microsoft Azure, Google Cloud, on-premises), el nombre del bucket de S3, el nombre de la máquina virtual de almacenamiento, el nombre del volumen de origen, el volumen de destino, la etiqueta del snapshot, la cantidad de objetos recuperados, los nombres de los archivos, los tamaños de los archivos, la fecha de la última modificación y la ruta completa del archivo.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Monitoreo*.
 . Seleccione el nombre del trabajo.
-. Seleccione el menú Accionesimage:icon-action.png["Icono de acciones"] y seleccione *Ver detalles*.
+. Selecciona el menú Acciones image:icon-action.png["Icono de acciones"], y selecciona *Ver detalles*.
 . Amplíe cada sección para ver los detalles.
 
 
@@ -106,7 +106,7 @@ Las tareas de restauración muestran detalles como el proveedor de destino de la
 [[download-job-monitoring-results-as-a-report]]
 === Descargar los resultados de Monitoreo de trabajos como informe
 
-Puede descargar el contenido de la página principal de Monitoreo de trabajos como un informe después de filtrar u ordenar los resultados. NetApp Backup and Recovery genera y descarga un archivo .CSV que puede revisar y enviar a otros grupos según sea necesario. El archivo .CSV incluye hasta 10.000 filas de datos.
+Puedes descargar el contenido de la página principal de Supervisión de tareas en forma de informe después de filtrar u ordenar los resultados. NetApp Backup and Recovery genera y descarga un archivo CSV que puedes revisar y enviar a otros grupos según sea necesario. El archivo CSV incluye hasta 10 000 filas de datos.
 
 Desde la información de Detalles de monitoreo de trabajos, puede descargar un archivo JSON que contiene detalles de un solo trabajo.
 
@@ -121,7 +121,7 @@ Desde la información de Detalles de monitoreo de trabajos, puede descargar un a
 [[review-retention-backup-lifecycle-jobs]]
 == Revisar trabajos de retención (ciclo de vida de la copia de seguridad)
 
-Supervise los flujos de retención (_ciclo de vida de la copia de seguridad_) para verificar las copias de seguridad, mantenerlas seguras y respaldar las auditorías.  Identifique cuándo caducan las copias de respaldo para realizar un seguimiento del ciclo de vida.
+Supervisa las tareas de retención (_ciclo de vida de backup_) para controlar cuándo caducan las copias de backup y facilitar las auditorías.
 
 Una tarea de ciclo de vida de copia de seguridad realiza un seguimiento de todas las instantáneas que se eliminan o que están en la cola para ser eliminadas. A partir de ONTAP 9.13, puede ver todos los tipos de trabajos llamados "Retención" en la página Supervisión de trabajos.
 
@@ -138,7 +138,7 @@ El tipo de trabajo "Retención" captura todos los trabajos de eliminación de in
 [[review-backup-and-restore-alerts-in-the-netapp-console-notification-center]]
 == Revise las alertas de copia de seguridad y restauración en el Centro de notificaciones de la NetApp Console
 
-El Centro de notificaciones de la NetApp Console realiza un seguimiento del progreso de los trabajos de respaldo y restauración que ha iniciado para que pueda verificar si la operación fue exitosa o no.
+El Centro de notificaciones de la NetApp Console realiza un seguimiento del progreso de las tareas de copia de seguridad y restauración que hayas iniciado, para que puedas comprobar si la operación fue exitosa.
 
 Puede ver alertas en el Centro de notificaciones y configurar la Consola para enviar alertas por correo electrónico sobre actividad importante del sistema, incluso cuando no haya iniciado sesión. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el Centro de notificaciones y cómo enviar correos electrónicos de alerta para trabajos de copia de seguridad y restauración."^] .
 
@@ -259,6 +259,6 @@ https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Config
 [[review-operation-activity-in-console-timeline]]
 == Revisar la actividad de la operación en la línea de tiempo de la consola
 
-Puede ver los detalles de las operaciones de copia de seguridad y restauración para realizar más investigaciones en la línea de tiempo de la consola.  La línea de tiempo de la consola proporciona detalles de cada evento, ya sea iniciado por el usuario o por el sistema, y muestra las acciones iniciadas en la interfaz de usuario o a través de la API.
+Puedes consultar los detalles de las operaciones de copia de seguridad y restauración para un análisis más detallado en la Console Timeline. La Console Timeline ofrece detalles de cada evento, tanto si lo ha iniciado el usuario como si lo ha iniciado el sistema, y muestra las acciones iniciadas en la interfaz de usuario o a través de la API.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Conozca las diferencias entre la Línea de tiempo y el Centro de notificaciones"^].
+https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Conoce cómo supervisar las operaciones de NetApp Console"^].

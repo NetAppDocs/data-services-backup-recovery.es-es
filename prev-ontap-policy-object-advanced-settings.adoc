@@ -4,7 +4,7 @@ permalink: prev-ontap-policy-object-advanced-settings.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
-= Gestiona las opciones de copia de seguridad a almacenamiento de objetos en NetApp Backup and Recovery
+= Gestiona la configuración avanzada de backup a objeto en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Puede cambiar la configuración de almacenamiento de respaldo a objeto a nivel de clúster que configure al activar NetApp Backup and Recovery para cada sistema ONTAP mediante la página Configuración avanzada. También puede modificar algunas configuraciones que se aplican como configuraciones de copia de seguridad "predeterminadas". Esto incluye cambiar la velocidad de transferencia de las copias de seguridad al almacenamiento de objetos, si las instantáneas históricas se exportan como archivos de copia de seguridad y habilitar o deshabilitar los análisis de ransomware para un sistema.
+Utiliza la página de configuración avanzada para cambiar los ajustes de copia de seguridad en almacén de objetos a nivel de clúster para cada sistema ONTAP después de activar NetApp Backup and Recovery. Puedes ajustar el ancho de banda, la exportación de instantáneas históricas, la eliminación anual de instantáneas y la configuración de análisis de ransomware.
 
 
 NOTE: Estas configuraciones solo están disponibles para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta su configuración de instantánea o replicación.
@@ -59,7 +59,7 @@ Cuando activa NetApp Backup and Recovery para un sistema, de manera predetermina
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
+. En la _página de Backup Settings_, selecciona image:icon-actions-horizontal.gif["Icono más"] para el sistema y selecciona *Configure advanced settings > System settings*.
 . En la página Configuración avanzada, expanda la sección *Tasa máxima de transferencia*.
 . Elija un valor entre 1 y 1.000 Mbps como velocidad de transferencia máxima.
 . Seleccione el botón de opción *Limitado* e ingrese el ancho de banda máximo que se puede usar, o seleccione *Ilimitado* para indicar que no hay límite.
@@ -79,7 +79,7 @@ Tenga en cuenta que esta opción solo se aplica a nuevos archivos de respaldo pa
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
+. En la _página de Backup Settings_, selecciona image:icon-actions-horizontal.gif["Icono más"] para el sistema y selecciona *Configure advanced settings > System settings*.
 . En la página Configuración avanzada, expanda la sección *Exportar copias de instantáneas existentes*.
 . Seleccione si desea exportar las instantáneas existentes.
 . Seleccione *Aplicar*.
@@ -94,7 +94,7 @@ Cuando selecciona la etiqueta de copia de seguridad "anual" para una política d
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
+. En la _página de Backup Settings_, selecciona image:icon-actions-horizontal.gif["Icono más"] para el sistema y selecciona *Configure advanced settings > System settings*.
 . En la página Configuración avanzada, expanda la sección *Eliminación de instantáneas anuales*.
 . Seleccione *Deshabilitado* para conservar las instantáneas anuales en el sistema de origen.
 . Seleccione *Aplicar*.
@@ -105,11 +105,11 @@ Cuando selecciona la etiqueta de copia de seguridad "anual" para una política d
 [[enable-or-disable-ransomware-scans]]
 == Habilitar o deshabilitar los análisis de ransomware
 
-Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de escaneo es de 7 días. El escaneo ocurre solo en la última instantánea.
+Los análisis de protección contra ransomware están activados de forma predeterminada. De forma predeterminada, los análisis se ejecutan cada 7 días. El análisis solo se realiza en la última snapshot.
 
-Para obtener más información sobre las opciones de protección Datalock y Ransomware, consulta link:prev-ontap-policy-object-options.html["Opciones de protección de Datalock y ransomware"].
+Para obtener más información sobre DataLock y las opciones de protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Opciones de protección contra DataLock y Ransomware"].
 
-Puedes cambiar ese horario a días o semanas o desactivarlo, ahorrando costos.
+Puedes cambiar ese programa a un número de días o semanas, o desactivarlo para ahorrar costes.
 
 
 TIP: Habilitar análisis de ransomware generará cargos adicionales según el proveedor de la nube.
@@ -127,7 +127,7 @@ Puede habilitar o deshabilitar los análisis de ransomware para un clúster.
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del sistema*.
+. En la _página de Backup Settings_, selecciona image:icon-actions-horizontal.gif["Icono más"] para el sistema y selecciona *Configure advanced settings > System settings*.
 . En la página resultante, expanda la sección *Análisis de ransomware*.
 . Habilitar o deshabilitar *Análisis de ransomware*.
 . Seleccione *Análisis de ransomware programado*.
@@ -145,7 +145,7 @@ Puede habilitar o deshabilitar los análisis de ransomware a nivel de proveedor 
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el sistema y seleccione *Configurar ajustes avanzados > Ajustes del proveedor*.
+. En la _página de Backup Settings_, selecciona image:icon-actions-horizontal.gif["Icono más"] para el sistema y selecciona *Configurar opciones avanzadas > Provider settings*.
 . En la parte superior de la página resultante, seleccione el depósito cuya configuración necesita cambiar.
 . Expande la sección *Análisis de ransomware*.
 . Habilitar o deshabilitar *Análisis de ransomware*.

@@ -14,12 +14,12 @@ summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar B
 
 
 [role="lead"]
-Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
+Consulta las limitaciones actuales y las soluciones alternativas para las cargas de trabajo de Kubernetes en NetApp Backup and Recovery.
 
 
 
-[[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
-== Limitación de la versión preliminar de Backup and Recovery para la implementación local de NetApp Console
+[[limitation-in-the-backup-and-recovery-preview-for-netapp-console-local-deployment]]
+== Limitación en la versión preliminar de Backup and Recovery para el despliegue local de NetApp Console
 
 En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
 
@@ -28,15 +28,15 @@ En la versión preliminar de Backup and Recovery para la implementación local d
 [[changing-the-protection-policy-for-an-application]]
 == Cambiar la política de protección de una aplicación
 
-Cuando cambias la política de protección asociada a una aplicación para usar un bucket u objetivo de replicación secundario diferente, la política de protección puede fallar.
+Si cambias la política de protección de una aplicación para usar un bucket diferente o un destino de replicación secundario, la protección puede fallar.
 
-*Solución*: elimina y vuelve a añadir la aplicación.
+*Solución alternativa*: Elimina la aplicación y agrégala de nuevo.
 
 
 
 [[3-2-1-protection-policy-configuration-limitation]]
 == Limitación de la configuración de la política de protección 3-2-1
 
-Cuando creas una política de protección 3-2-1 donde no se realizan copias de seguridad en el almacén de objetos al mismo tiempo que la replicación al almacenamiento secundario, la política de protección se queda colgada al proteger la aplicación.
+Si creas una política de protección 3-2-1 que programa los backups del almacén de objetos de forma independiente de la replicación al almacenamiento secundario, la protección puede quedarse colgada.
 
-*Solución*: elimina y vuelve a agregar la aplicación y protégela con una política de protección diferente.
+*Solución alternativa*: Elimina la aplicación y agrégala de nuevo, y luego protégela con una política de protección diferente.

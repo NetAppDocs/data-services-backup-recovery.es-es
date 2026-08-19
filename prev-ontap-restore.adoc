@@ -14,13 +14,13 @@ summary: Puedes usar Buscar y Restaurar para recuperar volúmenes, carpetas o ar
 
 
 [role="lead"]
-Las copias de seguridad de los datos de volumen de su ONTAP se almacenan como instantáneas, en volúmenes replicados o en almacenamiento de objetos.  Puedes restaurar datos desde cualquiera de estas ubicaciones en un momento específico.  Con NetApp Backup and Recovery, puede restaurar un volumen completo, una carpeta o archivos individuales según sea necesario.
+Utiliza NetApp Backup and Recovery para restaurar los datos de tu volumen ONTAP a partir de snapshots, volúmenes replicados o almacenamiento de objetos en un momento específico. Puedes restaurar un volumen completo, una carpeta o archivos individuales según lo necesites.
 
 
 NOTE: Cuando restauras un volumen habilitado para SnapLock, el volumen restaurado conserva la protección SnapLock solo si el almacenamiento de destino está habilitado para WORM. Si restauras en un destino que no está habilitado para WORM, se elimina el estado SnapLock del volumen restaurado.
 
 * Puede restaurar un *volumen* (como un nuevo volumen) en el sistema original, en un sistema diferente que use la misma cuenta en la nube o en un sistema ONTAP local.
-* Puedes restaurar una *carpeta* desde instantáneas replicadas o de almacenamiento de objetos a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local. No se admite la restauración de carpetas desde instantáneas locales.
+* Puedes restaurar una *carpeta* desde un volumen replicado o una copia de seguridad de almacenamiento de objetos a un volumen en el sistema original, a un volumen en otro sistema que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local. No se admite la restauración de carpetas desde instantáneas locales.
 * Puede restaurar *archivos* a un volumen en el sistema original, a un volumen en un sistema diferente que use la misma cuenta en la nube o a un volumen en un sistema ONTAP local.
 
 
@@ -42,7 +42,7 @@ NOTE: Para conocer las limitaciones relacionadas con la restauración de datos d
 
 
 [[the-restore-dashboard]]
-== El panel de restauración
+== El panel de control de restauración
 
 Utilice el Panel de restauración para realizar operaciones de restauración de volúmenes, carpetas y archivos. Para acceder al Panel de Restauración, seleccione *Copia de seguridad y recuperación* en el menú Consola y, a continuación, seleccione la pestaña *Restaurar*.  También puedes seleccionarimage:icon-options-vertical.gif["Botón Más"] > *Consulta el panel de control de restauración* desde el servicio de copia de seguridad y recuperación en el panel de Servicios.
 
@@ -53,10 +53,10 @@ El Panel de restauración proporciona dos formas diferentes de restaurar datos d
 
 
 
-[[comparing-browse-restore-and-search-restore]]
-== Comparación entre Explorar y restaurar y Buscar y restaurar
+[[compare-browse-restore-and-search-restore]]
+== Compara Browse & Restore y Search & Restore
 
-En términos generales, _Explorar y restaurar_ suele ser mejor cuando necesita restaurar un volumen, una carpeta o un archivo específico de la última semana o mes (y conoce el nombre y la ubicación del archivo y la fecha en que estuvo en buen estado por última vez).  _Buscar y restaurar_ suele ser mejor cuando necesita restaurar un volumen, una carpeta o un archivo, pero no recuerda el nombre exacto, ni el volumen en el que se encuentra, ni la fecha en la que estuvo en buen estado por última vez.
+En términos generales, _Explorar y restaurar_ suele ser más adecuado cuando necesitas restaurar un volumen, una carpeta o un archivo concreto de la última semana o del último mes y conoces el nombre y la ubicación del archivo y la fecha en la que estaba en buen estado por última vez. _Search & Restore_ suele ser más adecuado cuando necesitas restaurar un volumen, una carpeta o un archivo, pero no recuerdas el nombre exacto, el volumen en el que se encuentra ni la fecha en la que estaba en buen estado por última vez.
 
 Esta tabla proporciona una comparación de las características de los dos métodos.
 
@@ -68,7 +68,7 @@ Esta tabla proporciona una comparación de las características de los dos méto
 | Explore una estructura de estilo de carpeta para encontrar el volumen, la carpeta o el archivo dentro de un solo archivo de respaldo. | Busque un volumen, carpeta o archivo en *todos los archivos de respaldo* por nombre de volumen parcial o completo, nombre de carpeta/archivo parcial o completo, rango de tamaño y filtros de búsqueda adicionales. 
 
 
-| No maneja la recuperación de archivos si el archivo ha sido eliminado o renombrado y el usuario no conoce el nombre del archivo original | Maneja directorios recién creados/eliminados/renombrados y archivos recién creados/eliminados/renombrados 
+| No permite la recuperación de archivos si el archivo se ha eliminado o se le ha cambiado el nombre y no sabes el nombre original del archivo | Gestiona los directorios y archivos recién creados, eliminados y renombrados 
 
 
 | Se admite la restauración rápida. | No se admite la restauración rápida. 

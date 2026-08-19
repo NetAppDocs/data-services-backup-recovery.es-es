@@ -14,14 +14,14 @@ summary: 'Puede restaurar archivos o carpetas desde un disco de máquina virtual
 
 
 [role="lead"]
-Puedes restaurar archivos o carpetas de un disco de máquina virtual (VMDK) en un sistema operativo invitado Windows o Linux.
+Utiliza la función de restauración de archivos del sistema invitado para restaurar archivos o carpetas del disco de una máquina virtual (VMDK) en un sistema operativo invitado Windows o Linux.
 
 
 
-[[guest-restore-workflow]]
-== Flujo de trabajo de restauración de invitados
+[[guest-file-restore-workflow]]
+== Flujo de trabajo para la restauración de archivos de invitados
 
-Las operaciones de restauración del sistema operativo invitado incluyen los siguientes pasos:
+La restauración de archivos de invitado incluye los siguientes pasos:
 
 . Adjuntar
 +
@@ -48,12 +48,12 @@ Restaurar los archivos o carpetas seleccionados a una ubicación específica.
 
 Revisa todos los requisitos antes de restaurar archivos o carpetas desde un VMDK.
 
-* Las herramientas de VMware deben estar instaladas y en ejecución.
+* VMware Tools debe estar instalado y en funcionamiento.
 +
-NetApp Backup and Recovery utiliza información de las herramientas de VMware para establecer una conexión con el sistema operativo invitado de VMware.
+NetApp Backup and Recovery utiliza información de VMware Tools para establecer una conexión con el sistema operativo invitado de VMware.
 
 * Debe conocer la instantánea de respaldo y el VMDK desde donde restaurar.
-* El disco virtual que se conectará debe estar en una copia de seguridad de NetApp Backup and Recovery .
+* El disco virtual que conectes debe estar en un backup de NetApp Backup and Recovery.
 +
 El disco virtual que contiene el archivo o la carpeta que desea restaurar debe estar en una copia de seguridad de VM realizada con NetApp Backup and Recovery.
 
@@ -61,9 +61,9 @@ El disco virtual que contiene el archivo o la carpeta que desea restaurar debe e
 +
 Si quieres adjuntar un disco virtual a una VM proxy, la VM proxy debe estar configurada antes de que comience la operación de adjuntar y restaurar.
 
-* Para los archivos cuyos nombres no estén en alfabeto inglés, debe restaurarlos en un directorio, no como un solo archivo.
+* En el caso de los archivos cuyos nombres contengan caracteres que no sean del alfabeto inglés, debes restaurarlos en un directorio, no como un único archivo.
 +
-Puede restaurar archivos con nombres no alfabéticos, como kanji japoneses, restaurando el directorio en el que se encuentran los archivos.
+Puedes restaurar archivos con caracteres que no sean del alfabeto inglés, como los kanji japoneses, restaurando el directorio en el que se encuentran los archivos.
 
 
 
@@ -106,14 +106,14 @@ IMPORTANT: Si debe utilizar una cuenta que no es la cuenta de administrador inte
 [[guest-file-restore-limitations]]
 == Limitaciones de restauración de archivos de invitados
 
-Antes de restaurar un archivo o carpeta desde un sistema operativo invitado, debe tener en cuenta las limitaciones de funciones.
+Antes de restaurar un archivo o una carpeta desde un sistema operativo invitado, ten en cuenta estas limitaciones.
 
 * No se pueden restaurar tipos de discos dinámicos dentro de un sistema operativo invitado.
 * Si restaura un archivo o una carpeta cifrados, el atributo de cifrado no se conserva.
 * No se pueden restaurar archivos o carpetas en una carpeta cifrada.
 * Los archivos y carpetas ocultos se muestran en la página de exploración de archivos y no es posible filtrarlos.
 * No se pueden restaurar archivos o carpetas entre huéspedes con sistemas operativos diferentes (cuando se restaura a una máquina virtual diferente, el tipo de sistema operativo de destino debe ser el mismo que el tipo de sistema operativo de origen).
-* No se puede restaurar desde un sistema de archivos NTFS a un sistema de archivos FAT.
+* No puedes restaurar desde un sistema de archivos NTFS a un sistema de archivos FAT.
 +
 Cuando intenta restaurar del formato NTFS al formato FAT, el descriptor de seguridad NTFS no se copia porque el sistema de archivos FAT no admite los atributos de seguridad de Windows.
 

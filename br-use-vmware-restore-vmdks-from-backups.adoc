@@ -14,7 +14,7 @@ summary: Puede restaurar VMDK existentes o eliminados o separados desde una copi
 
 
 [role="lead"]
-Puede restaurar discos virtuales existentes (VMDK), o discos virtuales eliminados o separados, desde copias de seguridad primarias o secundarias de máquinas virtuales tradicionales. Esto le permite restaurar solo datos o aplicaciones de VM específicos, de modo que no necesita restaurar toda la VM y todos sus discos virtuales asociados en situaciones donde solo se ven afectados datos específicos. Una vez restaurado el disco virtual, se conecta a su máquina virtual original y está listo para usarse.
+Restaura discos virtuales (VMDK) existentes, eliminados o desconectados a partir de backups primarios o secundarios de máquinas virtuales tradicionales. Esto te permite recuperar datos o aplicaciones específicos de una máquina virtual sin restaurar toda la máquina virtual. Una vez restaurado el disco virtual, se conecta a su máquina virtual original y ya está listo para usarse.
 
 Puede restaurar uno o más discos de máquina virtual (VMDK) en una VM en el mismo almacén de datos o en almacenes de datos diferentes.
 
@@ -32,7 +32,7 @@ La máquina virtual que desea restaurar no debe estar en estado vMotion o Storag
 .Acerca de esta tarea
 * Si el VMDK se elimina o se separa de la VM, la operación de restauración adjunta el VMDK a la VM.
 * Una operación de restauración podría fallar si el nivel de almacenamiento del FabricPool donde se encuentra la máquina virtual no está disponible.
-* Las operaciones de conexión y restauración conectan VMDK mediante el controlador SCSi predeterminado. Sin embargo, cuando se realizan copias de seguridad de los VMDK que están conectados a una máquina virtual con un disco NVMe, las operaciones de conexión y restauración utilizan el controlador NVMe si está disponible.
+* Las operaciones de conexión y restauración conectan los VMDK mediante el controlador SCSI predeterminado. Sin embargo, si haces backup de VMDK que están conectados a una máquina virtual con un disco NVMe, las operaciones de conexión y restauración usan un controlador NVMe si hay uno disponible.
 
 
 .Pasos

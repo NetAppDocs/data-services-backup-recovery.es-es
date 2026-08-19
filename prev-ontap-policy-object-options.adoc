@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-NetApp Backup and Recovery le permite crear políticas de respaldo con una variedad de configuraciones para sus sistemas ONTAP locales y Cloud Volumes ONTAP .
+Utiliza las políticas de backup a objeto en NetApp Backup and Recovery para definir programaciones, retención, DataLock, protección contra ransomware y configuración de archivado para tus sistemas ONTAP locales y Cloud Volumes ONTAP.
 
 
 NOTE: Estas configuraciones de políticas son relevantes únicamente para el almacenamiento de copias de seguridad en objetos.  Ninguna de estas configuraciones afecta sus políticas de instantáneas o replicación.
@@ -59,7 +59,7 @@ Las copias de seguridad anuales se eliminan automáticamente del sistema de orig
 
 NetApp Backup and Recovery brinda soporte para DataLock y protección contra ransomware para sus copias de seguridad de volumen.  Estas funciones le permiten bloquear sus archivos de respaldo y escanearlos para detectar posible ransomware en ellos.  Esta es una configuración opcional que puede definir en sus políticas de respaldo cuando desee protección adicional para sus copias de seguridad de volumen para un clúster.
 
-Ambas funciones protegen tus archivos de backup para que siempre tengas un archivo de backup válido del que recuperar datos en caso de un intento de ataque de ransomware a tus backups. También es útil para cumplir ciertos requisitos normativos donde los backups deben estar bloqueados y retenidos durante un periodo de tiempo determinado. Cuando la opción *Datalock and Ransomware protection* está activada, el bucket de cloud que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo de objetos y el versionado de objetos.
+Ambas funciones protegen tus archivos de copia de seguridad para que siempre tengas un archivo de backup válido desde el que recuperar datos en caso de un intento de ataque de ransomware contra tus backups. También es útil para cumplir ciertos requisitos normativos donde las copias de seguridad deben estar bloqueadas y conservarse durante un periodo de tiempo determinado. Cuando la opción *DataLock and Ransomware protection* está activada, el bucket en la nube que se aprovisiona como parte de la activación de NetApp Backup and Recovery tendrá habilitado el bloqueo de objetos y la versión de objetos.
 
 Esta función no proporciona protección para los volúmenes de origen; solo para las copias de seguridad de esos volúmenes de origen.  Utilice algunos de los https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones anti-ransomware proporcionadas por ONTAP"^] para proteger sus volúmenes de origen.
 
@@ -125,7 +125,7 @@ La configuración de retención de DataLock anula la configuración de retenció
 
 Puede habilitar la protección contra DataLock y Ransomware al crear una política.  No se puede habilitar, modificar ni deshabilitar esto una vez creada la política.
 
-. Cuando crees una política, amplía la sección *Datalock and Ransomware protection*.
+. Cuando crees una política, despliega la sección *DataLock y protección contra ransomware*.
 . Elija una de las siguientes opciones:
 +
 ** *Ninguno*: la protección DataLock y la protección contra ransomware están desactivadas.
@@ -181,7 +181,7 @@ Puede habilitar la protección contra DataLock y Ransomware en los volúmenes ON
 | Cloud Volumes ONTAP en Azure | Blob de Azure 
 
 
-| Cloud Volumes ONTAP en Google Cloud | Google Cloud 
+| Cloud Volumes ONTAP en Google Cloud | Almacenamiento en la nube de Google 
 
 
 | Sistema ONTAP local | Amazon S3 Azure Blob Google Cloud NetApp StorageGRID 
@@ -334,7 +334,7 @@ Además, puede obtener estimaciones del costo asociado con DataLock visitando el
 [[archival-storage-options]]
 == Opciones de almacenamiento de archivos
 
-Al usar el almacenamiento en la nube de AWS, Azure o Google, puede mover archivos de respaldo más antiguos a una clase de almacenamiento de archivo o nivel de acceso menos costoso después de una cierta cantidad de días.  También puede optar por enviar sus archivos de respaldo al almacenamiento de archivo inmediatamente sin escribirlos en el almacenamiento en la nube estándar.  Simplemente ingrese *0* como "Archivar después de días" para enviar su archivo de respaldo directamente al almacenamiento de archivo.  Esto puede ser especialmente útil para usuarios que rara vez necesitan acceder a datos de copias de seguridad en la nube o para usuarios que están reemplazando una solución de copia de seguridad en cinta.
+Al utilizar AWS, Azure o Google Cloud Storage, puedes trasladar los archivos de backup más antiguos a una clase de almacenamiento de archivo o a un nivel de almacenamiento más económico después de cierto número de días. También puedes elegir enviar tus archivos de backup al almacenamiento de archivo inmediatamente, sin que se guarden primero en el almacenamiento estándar en la nube. Solo tienes que introducir *0* en el campo «Archivar tras días» para enviar tu archivo de backup directamente al almacenamiento de archivo. Esto puede ser especialmente útil para usuarios que rara vez necesitan acceder a los datos de los backups en la nube o para quienes están reemplazando una solución de backup en cinta.
 
 No se puede acceder a los datos en niveles de archivo inmediatamente cuando se los necesita y requerirán un mayor costo de recuperación, por lo que deberá considerar con qué frecuencia necesitará restaurar datos de los archivos de respaldo antes de decidir archivar sus archivos de respaldo.
 

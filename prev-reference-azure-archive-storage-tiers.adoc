@@ -14,14 +14,14 @@ summary: NetApp Backup and Recovery admite un nivel de acceso de archivo de Azur
 
 
 [role="lead"]
-NetApp Backup and Recovery admite un nivel de acceso de archivo de Azure y la mayoría de las regiones.
+Utiliza esta información para entender el nivel de archivo de Azure que es compatible con NetApp Backup and Recovery. También puedes revisar los costes de restauración y los tiempos de recuperación de las copias de seguridad archivadas.
 
 
 
 [[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == Niveles de acceso de Azure Blob compatibles con NetApp Backup and Recovery
 
-Cuando se crean inicialmente los archivos de respaldo, se almacenan en el nivel de acceso _Cool_.  Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero a los que se puede acceder de inmediato cuando es necesario.
+Cuando se crean los archivos de backup por primera vez, se almacenan en el nivel de acceso _Cool_. Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero a los que se puede acceder de forma inmediata cuando sea necesario.
 
 Si sus clústeres de origen ejecutan ONTAP 9.10.1 o una versión posterior, puede optar por organizar las copias de seguridad en niveles desde el almacenamiento _Cool_ al almacenamiento _Azure Archive_ después de una cierta cantidad de días (normalmente más de 30 días) para optimizar aún más los costos.  No se puede acceder a los datos de este nivel inmediatamente cuando se los necesita y requerirán un mayor costo de recuperación, por lo que debe considerar con qué frecuencia podría necesitar restaurar datos de estos archivos de respaldo archivados.  Consulte la sección en esta página sobre cómo restaurar datos desde el almacenamiento de archivo.
 
@@ -49,7 +49,7 @@ Cada método tiene una tarifa de recuperación por GB y una tarifa por solicitud
 
 
 
-NOTE: La prioridad alta no se admite al restaurar datos de Azure a sistemas StorageGRID .
+NOTE: No se admite la prioridad alta al restaurar datos desde Azure a los sistemas StorageGRID.
 
 ¿Cuánto tiempo tomará restaurar mis datos archivados en Azure Archive?:: Hay 2 partes que componen el tiempo de restauración:
 +

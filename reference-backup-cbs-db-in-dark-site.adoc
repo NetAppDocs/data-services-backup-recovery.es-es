@@ -72,7 +72,7 @@ Este archivo se encuentra en la siguiente ubicación en el depósito `netapp-bac
 Cuando instales un nuevo agente de la Consola, descarga la misma versión de software que el agente original. Los cambios en la base de datos NetApp Backup and Recovery pueden hacer que las versiones más recientes del software no funcionen con copias de seguridad antiguas de la base de datos. Puedes https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Actualice el software del agente de la consola a la versión más actual después de restaurar la base de datos de respaldo"^].
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instalar el agente de consola en un nuevo host Linux local"^]
-. Inicie sesión en la consola utilizando las credenciales de usuario administrador que acaba de crear.
+. Inicia sesión en NetApp Console usando las credenciales del usuario admin que acabas de crear.
 
 
 
@@ -80,7 +80,7 @@ Cuando instales un nuevo agente de la Consola, descarga la misma versión de sof
 [[restore-the-netapp-backup-and-recovery-database]]
 === Restaurar la base de datos de NetApp Backup and Recovery
 
-. Copie la copia de seguridad de MySQL desde la ubicación de la copia de seguridad al nuevo host del agente de consola. Usaremos el nombre de archivo de ejemplo "CBS_DB_Backup_23_05_2023.sql" a continuación.
+. Copia la copia de seguridad de MySQL desde la ubicación de backup al nuevo host del agente de Console. El siguiente ejemplo usa el nombre de archivo `CBS_DB_Backup_23_05_2023.sql`.
 . Copie la copia de seguridad en el contenedor Docker de MySQL utilizando uno de los siguientes comandos, dependiendo de si está utilizando un contenedor Docker o Podman:
 +
 [source, cli]
@@ -132,7 +132,7 @@ mysql> select * from volume;
 [[restore-the-indexed-catalog-files]]
 === Restaurar los archivos del catálogo indexado
 
-. Copie el archivo zip de respaldo del Catálogo indexado (usaremos el nombre de archivo de ejemplo "Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip") desde la ubicación de respaldo al nuevo host del agente de consola en la carpeta "/opt/application/netapp/cbs".
+. Copia el archivo ZIP de la copia de backup del catálogo indexado desde la ubicación de la copia de backup a la carpeta  `/opt/application/netapp/cbs` en el nuevo host del agente de NetApp Console. El siguiente ejemplo utiliza el nombre de archivo  `Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip`.
 . Descomprima el archivo "Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip" usando el siguiente comando:
 +
 [source, cli]
@@ -156,7 +156,7 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 [[set-up-the-storagegrid-environment-details]]
 === Configurar los detalles del entorno de StorageGRID
 
-Agregue los detalles del sistema StorageGRID asociado con sus sistemas ONTAP tal como se configuraron en la configuración del agente de consola original utilizando el https://docs.netapp.com/us-en/console-automation/index.html["API de la NetApp Console"^] .
+Agrega los detalles del sistema StorageGRID que está asociado con tus sistemas ONTAP, tal como se configuraron en la configuración original del agente de la Console, usando el  https://docs.netapp.com/us-en/console-automation/index.html["API de la NetApp Console"^].
 
 La siguiente información se aplica a las instalaciones en modo privado a partir de NetApp Console 3.9.xx.  Para versiones anteriores, utilice el siguiente procedimiento: https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["Copia de seguridad en la nube de DarkSite: copia de seguridad y restauración de MySQL y catálogo indexado"^] .
 
@@ -170,10 +170,10 @@ curl 'http://10.193.192.202/oauth/token' -X POST -H 'Accept: application/json' -
 > '
 ----
 +
-Si bien la dirección IP, el nombre de usuario y las contraseñas son valores personalizados, el nombre de la cuenta no lo es. El nombre de la cuenta siempre es "cuenta-DARKSITE1". Además, el nombre de usuario debe utilizar un nombre con formato de correo electrónico.
+Aunque los valores de la dirección IP, el nombre de usuario y la contraseña son personalizados, el nombre de la cuenta no lo es. El nombre de la cuenta es siempre `account-DARKSITE1`. Además, el nombre de usuario debe usar un nombre con formato de correo electrónico.
 
 +
-Esta API devolverá una respuesta como la siguiente. Puede recuperar el token de autorización como se muestra a continuación.
+Esta API devuelve una respuesta como la siguiente. Puedes recuperar el token de autorización tal y como se muestra a continuación.
 
 +
 [source, text]
@@ -187,14 +187,14 @@ Esta API devolverá una respuesta como la siguiente. Puede recuperar el token de
 curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARKSITE1 -H 'accept: application/json' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzIyNzEzLCJleHAiOjE2NzI3NDQzMTMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9X_cQF8xttD0-S7sU2uph2cdu_kN-fLWpdJJX98HODwPpVUitLcxV28_sQhuopjWobozPelNISf7KvMqcoXc5kLDyX-yE0fH9gr4XgkdswjWcNvw2rRkFzjHpWrETgfqAMkZcAukV4DHuxogHWh6-DggB1NgPZT8A_szHinud5W0HJ9c4AaT0zC-sp81GaqMahPf0KcFVyjbBL4krOewgKHGFo_7ma_4mF39B1LCj7Vc2XvUd0wCaJvDMjwp19-KbZqmmBX9vDnYp7SSxC1hHJRDStcFgJLdJHtowweNH2829KsjEGBTTcBdO8SvIDtctNH_GAxwSgMT3zUfwaOimPw'
 ----
 +
-Esta API devolverá una respuesta como la siguiente. El valor bajo "resourceIdentifier" denota _WorkingEnvironment Id_ y el valor bajo "agentId" denota _x-agent-id_.
+Esta API devuelve una respuesta como la siguiente. El valor que aparece en `resourceIdentifier` corresponde al _ID del entorno de trabajo_, y el valor que aparece en `agentId` corresponde al _x-agent-id_.
 
 +
 [source, text]
 ----
 [{"resourceIdentifier":"OnPremWorkingEnvironment-pMtZND0M","resourceType":"ON_PREM","agentId":"vB_1xShPpBtUosjD7wfBlLIhqDgIPA0wclients","resourceClass":"ON_PREM","name":"CBSFAS8300-01-02","metadata":"{\"clusterUuid\": \"2cb6cb4b-dc07-11ec-9114-d039ea931e09\"}","workspaceIds":["workspace2wKYjTy9"],"agentIds":["vB_1xShPpBtUosjD7wfBlLIhqDgIPA0wclients"]}]
 ----
-. Actualice la base de datos de NetApp Backup and Recovery con los detalles del sistema StorageGRID asociado con los sistemas. Asegúrese de ingresar el nombre de dominio completo de StorageGRID, así como la clave de acceso y la clave de almacenamiento como se muestra a continuación:
+. Actualiza la base de datos de NetApp Backup and Recovery con los detalles del sistema StorageGRID que está asociado con los sistemas. Asegúrate de ingresar el nombre de dominio completo de StorageGRID, junto con la clave de acceso y la clave de almacenamiento, como se muestra a continuación:
 +
 [source, shell]
 ----
@@ -211,13 +211,13 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 [[verify-netapp-backup-and-recovery-settings]]
 === Verificar la configuración de NetApp Backup and Recovery
 
-. Seleccione cada sistema ONTAP y haga clic en *Ver copias de seguridad* junto al servicio de copia de seguridad y recuperación en el panel derecho.
+. Selecciona cada sistema ONTAP y selecciona *Ver backups* junto al servicio de Backup and Recovery en el panel derecho.
 +
 Debería ver todas las copias de seguridad creadas para sus volúmenes.
 
-. Desde el Panel de restauración, en la sección Buscar y restaurar, haga clic en *Configuración de indexación*.
+. Desde el panel de control de Restore, en la sección Search & Restore, selecciona *Indexing Settings*.
 +
-Asegúrese de que los sistemas que tenían habilitada la catalogación indexada anteriormente permanezcan habilitados.
+Asegúrate de que los sistemas en los que se había activado previamente la catalogación indexada sigan activados.
 
 . Desde la página Buscar y restaurar, ejecute algunas búsquedas en el catálogo para confirmar que la restauración del catálogo indexado se ha completado correctamente.
 

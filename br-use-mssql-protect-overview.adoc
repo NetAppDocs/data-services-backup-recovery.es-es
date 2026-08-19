@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-use-mssql-protect-overview.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Proteja los datos de sus aplicaciones de Microsoft SQL Server desde sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure o StorageGRID utilizando NetApp Backup and Recovery. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery 
+summary: Protege los datos de tu aplicación Microsoft SQL Server desde sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure o StorageGRID usando NetApp Backup and Recovery. 
 ---
-= Flujo de trabajo de protección de Microsoft SQL Server en NetApp Backup and Recovery
+= Protege las cargas de trabajo de Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,11 @@ summary: Proteja los datos de sus aplicaciones de Microsoft SQL Server desde sis
 
 
 [role="lead"]
-Realice una copia de seguridad de los datos de su aplicación Microsoft SQL Server desde los sistemas ONTAP locales a AWS, Azure o StorageGRID utilizando NetApp Backup and Recovery.  El sistema crea y almacena automáticamente copias de seguridad en su cuenta en la nube, siguiendo sus políticas.  Utilice una estrategia 3-2-1: mantenga tres copias de sus datos en dos sistemas de almacenamiento y una copia en la nube.
-
-Los beneficios del enfoque 3-2-1 incluyen:
-
-* Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
-* El uso de diferentes tipos de medios le ayudará a recuperarse si uno de ellos falla.
-* Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
-
+Haz backup de las bases de datos de Microsoft SQL Server desde sistemas ONTAP locales a AWS, Azure o StorageGRID usando NetApp Backup and Recovery. Implementa una estrategia de backup 3-2-1 con snapshots en el almacenamiento principal, replicación al almacenamiento secundario y copias en el almacén de objetos.
 
 NetApp Backup and Recovery utiliza NetApp SnapMirror para sincronizar copias de seguridad creando instantáneas y transfiriéndolas a las ubicaciones de copia de seguridad.
 
-Puede hacer lo siguiente para proteger sus datos:
+Utiliza los siguientes flujos de trabajo para proteger tus datos:
 
 * link:concept-start-prereq-snapcenter-import.html["Configurar elementos adicionales si se importa desde SnapCenter"]
 * link:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server y, opcionalmente, importe recursos de SnapCenter"]
@@ -42,11 +35,11 @@ Puede hacer lo siguiente para proteger sus datos:
 Para realizar copias de seguridad de las cargas de trabajo, se crean políticas que administran las operaciones de copia de seguridad y restauración. Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
 .Destinos de copia de seguridad admitidos
-NetApp Backup and Recovery le permite realizar copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde los siguientes sistemas de origen a los siguientes sistemas secundarios y almacenamiento de objetos en proveedores de nube pública y privada. Las instantáneas residen en el sistema de origen.
+NetApp Backup and Recovery admite backups de instancias y bases de datos de Microsoft SQL Server desde los siguientes sistemas de origen hacia los sistemas secundarios y almacenes de objetos indicados en la lista, tanto en nubes públicas como privadas. Las instantáneas permanecen en el sistema de origen.
 
 [cols="33,33,33"]
 |===
-| Sistema fuente | Sistema secundario (Replicación) | Almacén de objetos de destino (copia de seguridad) 
+| Sistema fuente | Sistema secundario (replicación) | Almacén de objetos de destino (backup) 
 
 
 | Cloud Volumes ONTAP en AWS | Cloud Volumes ONTAP en el sistema ONTAP local de AWS | Amazon S3 ONTAP S3 
@@ -61,17 +54,17 @@ NetApp Backup and Recovery le permite realizar copias de seguridad de instancias
 | Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / A 
 |===
 .Destinos de restauración admitidos
-Puede restaurar instancias y bases de datos de Microsoft SQL Server desde una copia de seguridad que resida en un almacenamiento principal o en un sistema secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes sistemas. Las instantáneas residen en el sistema de origen y solo se pueden restaurar en ese mismo sistema.
+Puedes restaurar instancias y bases de datos de Microsoft SQL Server a partir de un backup que se encuentre en el almacenamiento primario, en un sistema secundario (volumen replicado) o en un almacén de objetos (archivo de backup) en los siguientes sistemas de destino. Las snapshots residen en el sistema de origen y solo pueden restaurarse en ese mismo sistema.
 
 [cols="33,33,33"]
 |===
-2+| Desde la ubicación del archivo de respaldo | Al sistema de destino 
+2+| Desde la ubicación del archivo de backup | Al sistema de destino 
 
 
-| *Almacén de objetos (copia de seguridad)* | *Sistema secundario (replicación)* |  
+| *Almacén de objetos (backup)* | *Sistema secundario (replicación)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP en el sistema ONTAP local de AWS | Volúmenes en la nube en el sistema local ONTAP de AWS ONTAP S3 
+| Amazon S3 | Cloud Volumes ONTAP en el sistema ONTAP local de AWS | Cloud Volumes ONTAP en AWS sistema ONTAP local ONTAP S3 
 
 
 | Blob de Azure | Cloud Volumes ONTAP en el sistema ONTAP local de Azure | Cloud Volumes ONTAP en Azure Sistema ONTAP local ONTAP S3 

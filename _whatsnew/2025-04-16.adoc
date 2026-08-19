@@ -34,7 +34,7 @@ NetApp Backup and Recovery ahora extiende su soporte a almacenes de objetos de t
 
 ==== Introducción al wasabi
 
-Para comenzar a utilizar el almacenamiento de terceros como almacén de objetos, debe habilitar una marca dentro del agente de la consola.  Luego, puede ingresar los detalles de conexión para su almacén de objetos de terceros e integrarlo en sus flujos de trabajo de respaldo y recuperación.
+Para empezar a utilizar un almacenamiento de terceros como almacén de objetos, debes activar una opción en el agente de la Console. Luego, puedes introducir los datos de conexión de tu almacén de objetos de terceros e integrarlo en tus flujos de trabajo de Backup and Recovery.
 
 .Pasos
 . Acceda por SSH a su conector.

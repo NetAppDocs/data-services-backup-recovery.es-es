@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-migrate-pvc.html
 keywords: migrate, pvc, nfs, storage, performance, persistence 
 summary: Aumenta el rendimiento del índice del catálogo en entornos de implementación local de NetApp Console. 
 ---
-= Mejora el rendimiento de búsqueda y restauración en las implementaciones locales de NetApp Backup and Recovery
+= Migra el almacenamiento del catálogo de Search and Restore a ONTAP NFS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Aumenta el rendimiento del índice del catálogo en entornos de impleme
 
 
 [role="lead"]
-Migra el almacenamiento del índice del catálogo desde la clase de almacenamiento predeterminada del clúster a un recurso compartido NFS respaldado por ONTAP para mejorar significativamente el rendimiento del catálogo en una implementación local de NetApp Console. El índice del catálogo se usa para la funcionalidad de búsqueda y restauración. Aunque el catálogo funciona con el almacenamiento predeterminado, usar un recurso compartido NFS respaldado por ONTAP ofrece mejoras medibles en el rendimiento de búsqueda y restauración.
+Para mejorar el rendimiento de búsqueda y restauración en una implementación local de NetApp Console, migra el almacenamiento del índice del catálogo de la clase de almacenamiento predeterminada del clúster a un recurso compartido NFS respaldado por ONTAP. El índice del catálogo admite búsqueda y restauración, y el recurso compartido NFS respaldado por ONTAP puede proporcionar mejoras medibles en el rendimiento.
 
 .Antes de empezar
 Asegúrate de tener lo siguiente antes de empezar:
@@ -52,7 +52,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 
 
 [discrete]
-===== Monta el volumen de ONTAP en el despliegue local de NetApp Console y copia desde el pod
+===== Monta el volumen ONTAP en la implementación local de NetApp Console y copia los datos del pod
 
 . Monta la exportación NFS de ONTAP en un punto de montaje local en la máquina virtual creada cuando se implementó el archivo OVA de implementación local de la NetApp Console.
 . Copia los datos del pod del coordinador en ejecución en el montaje ONTAP, sin directorio intermedio. El coordinador debe seguir en ejecución.
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. Aplica los objetos YAML, primero el PV y luego el PVC (el PV debe existir para que el selector de etiquetas del PVC pueda vincularse a él). Luego verifica que la reclamación del PVC esté vinculada:
+. Aplica los objetos YAML asignando primero el PV y luego el PVC (el PV debe existir para que el selector de etiqueta del PVC pueda vincularse a él). Luego, verifica que la reclamación del PVC esté vinculada:
 +
 [source, shell]
 ----

@@ -7,7 +7,7 @@
 [[microsoft-sql-server-workload-supported-in-general-availability-ga]]
 === Carga de trabajo de Microsoft SQL Server compatible con disponibilidad general (GA)
 
-La compatibilidad con cargas de trabajo de Microsoft SQL Server ahora está disponible de manera general (GA) en NetApp Backup and Recovery. Las organizaciones que utilizan un entorno MSSQL en ONTAP, Cloud Volumes ONTAP y Amazon FSx for NetApp ONTAP ahora pueden aprovechar este nuevo servicio de respaldo y recuperación para proteger sus datos.
+La compatibilidad con cargas de trabajo de Microsoft SQL Server ya está disponible de forma general (GA) en NetApp Backup and Recovery. Las organizaciones que utilizan un entorno MSSQL en ONTAP, Cloud Volumes ONTAP y Amazon FSx for NetApp ONTAP storage ahora pueden aprovechar este nuevo servicio de Backup and Recovery para proteger sus datos.
 
 Esta versión incluye las siguientes mejoras en la compatibilidad de la carga de trabajo de Microsoft SQL Server con respecto a la versión preliminar anterior:
 

@@ -14,7 +14,7 @@ summary: Puede administrar las instantáneas de Microsoft SQL Server eliminándo
 
 
 [role="lead"]
-Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de NetApp Backup and Recovery.
+Elimina instantáneas locales de Microsoft SQL Server desde NetApp Backup and Recovery.
 
 
 
@@ -23,15 +23,15 @@ Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de Ne
 
 Solo puedes eliminar instantáneas locales.
 
-*Rol de NetApp Console requerido:* Storage viewer, Backup and Recovery super admin, rol de Backup and Recovery backup admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también necesitarás el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: Storage viewer, Backup and Recovery super admin o Backup and Recovery backup admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.
 . Seleccione la carga de trabajo y seleccione *Ver*.
 . Seleccione la pestaña *Bases de datos*.
-. Seleccione la base de datos de la que desea eliminar una instantánea.
+. Selecciona la base de datos cuya instantánea quieras eliminar.
 . En el menú Acciones, seleccione *Ver detalles de protección*.
-. Seleccione la instantánea local que desea eliminar.
+. Selecciona la instantánea local que deseas eliminar.
 +
 
 TIP: Verifique que el ícono de instantánea local en la columna *Ubicación* de esa fila aparezca en azul.

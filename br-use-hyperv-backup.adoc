@@ -14,11 +14,11 @@ summary: Proteja sus cargas de trabajo de Hyper-V con el respaldo y la recuperac
 
 
 [role="lead"]
-Realice copias de seguridad de las máquinas virtuales Hyper-V desde sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
+Realiza copias de seguridad de las máquinas virtuales de Hyper-V de los sistemas ONTAP locales en destinos de almacenamiento de objetos compatibles para proteger tus datos. Las copias de seguridad programadas y bajo demanda se almacenan en tu nube o en tu almacén de objetos privado.
 
 * Para realizar copias de seguridad de las cargas de trabajo según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
-* Crea grupos de protección para gestionar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Consulta link:br-use-hyperv-protection-groups.html["Crea y gestiona grupos de protección de Hyper-V en NetApp Backup and Recovery"] para más información.
-* Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
+* Crea grupos de protección para gestionar las operaciones de backup y restauración de un conjunto de recursos. Consulta link:br-use-hyperv-protection-groups.html["Crea y gestiona grupos de protección de Hyper-V en NetApp Backup and Recovery"] para obtener más información.
+* Haz una copia de seguridad de tus cargas de trabajo ahora con un backup bajo demanda.
 
 
 
@@ -26,16 +26,16 @@ Realice copias de seguridad de las máquinas virtuales Hyper-V desde sistemas ON
 [[back-up-workloads-now-with-an-on-demand-backup]]
 == Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
 
-Utilice la copia de seguridad a pedido para que sus datos estén protegidos antes de realizar cambios en el sistema.
+Utiliza una copia de seguridad bajo demanda para proteger tus datos antes de realizar cambios en el sistema.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Desde el menú, seleccione *Inventario*.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
-. Seleccione la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
-. Seleccione el grupo de protección o las máquinas virtuales que desea respaldar.
+. Selecciona la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
+. Selecciona el grupo de protección o las máquinas virtuales que quieres respaldar.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 +
 

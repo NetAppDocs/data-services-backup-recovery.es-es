@@ -14,15 +14,15 @@ summary: Utilice la NetApp Console para iniciar sesión en el servicio de NetApp
 
 
 [role="lead"]
-Utilice la NetApp Console para iniciar sesión en NetApp Backup and Recovery.
+Inicia sesión en NetApp Backup and Recovery desde NetApp Console para descubrir cargas de trabajo y gestionar operaciones de protección.
 
 NetApp Backup and Recovery utiliza la gestión de identidad y acceso para controlar lo que puede hacer cada usuario.
 
 Para obtener detalles sobre las acciones que puede realizar cada rol, consultelink:reference-roles.html["Roles de usuario de NetApp Backup and Recovery"] .
 
-Para iniciar sesión en la NetApp Console, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la NetApp Console usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
+Para iniciar sesión en NetApp Console, puedes usar tus credenciales del sitio de soporte de NetApp, o puedes registrarte para obtener una cuenta de NetApp Console usando tu dirección de correo electrónico y una contraseña. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^].
 
-*Rol requerido de NetApp Console* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también es necesario el rol de administrador de Cloud Volumes ONTAP. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: super admin de Backup and Recovery o restore admin de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 Para agregar un agente de consola, debe tener el rol de superadministrador de Copia de seguridad y recuperación.
 
@@ -39,18 +39,18 @@ Aparece la página de inicio de sesión de la NetApp Console .
 . Inicie sesión en la consola.
 . Desde la navegación izquierda de la Consola, seleccione *Protección* > *Copia de seguridad y recuperación*.
 +
-** Si es la primera vez que inicia sesión en Backup and Recovery y aún no ha agregado un sistema a la página *Sistemas*, Backup and Recovery muestra la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" con una opción para agregar un sistema. Para obtener detalles sobre cómo agregar un sistema a la página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la NetApp Console"^].
+** Si es la primera vez que inicias sesión en Backup and Recovery y aún no has añadido ningún sistema a la página *Sistemas*, el servicio de Backup and Recovery muestra la página de inicio "Bienvenido al nuevo NetApp Backup and Recovery" con una opción para añadir un sistema. Para obtener más información sobre cómo añadir un sistema a la página *Sistemas*, consulta https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción al modo estándar de la NetApp Console"^].
 ** Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en la consola pero no ha descubierto ningún recurso, aparecerá la página _Bienvenido a la nueva NetApp Backup and Recovery_ con una opción para *Descubrir recursos*.
 
 
-. Si aún no lo ha hecho, seleccione la opción *Descubrir y administrar*.
+. Si aún no lo has hecho, selecciona *Discover and manage*.
 +
-** Para cargas de trabajo de Microsoft SQL Server, consultelink:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server"] .
-** Para cargas de trabajo de VMware, consultelink:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"] .
-** Para cargas de trabajo KVM, consultelink:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"] .
-** Para cargas de trabajo de Oracle Database, consulta link:br-start-discover-oracle.html["Descubre las cargas de trabajo de Oracle Database"].
-** Para cargas de trabajo de Hyper-V, consultelink:br-start-discover-hyperv.html["Descubra las cargas de trabajo de Hyper-V"] .
-** Para cargas de trabajo de Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"] .
+** Para las cargas de trabajo de Microsoft SQL Server, consulta link:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server"].
+** Para las cargas de trabajo de VMware, consulta link:br-use-vmware-discovery.html["Descubra las cargas de trabajo de VMware"].
+** Para conocer las cargas de trabajo de KVM, consulta link:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"].
+** Para las cargas de trabajo de Oracle Database, consulta link:br-start-discover-oracle.html["Descubre las cargas de trabajo de Oracle Database"].
+** Para las cargas de trabajo de Hyper-V, consulta link:br-start-discover-hyperv.html["Descubra las cargas de trabajo de Hyper-V"].
+** Para las cargas de trabajo de Kubernetes, consulta link:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"].
 
 
 

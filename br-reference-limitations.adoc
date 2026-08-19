@@ -14,7 +14,7 @@ summary: Las limitaciones conocidas identifican funciones que no son compatibles
 
 
 [role="lead"]
-Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
+Consulta estas limitaciones antes de usar NetApp Backup and Recovery para volúmenes ONTAP.
 
 * NetApp Backup and Recovery puede realizar una copia de seguridad de Cloud Volumes ONTAP en un almacén de objetos en las regiones de AWS China (incluidas Beijing y Ningxia); sin embargo, es posible que primero deba modificar manualmente las políticas de identidad y acceso.
 +
@@ -35,9 +35,9 @@ Para obtener detalles sobre cómo crear un agente de consola en Azure, consulte 
 [[replication-limitations-for-ontap-volumes]]
 == Limitaciones de replicación para volúmenes ONTAP
 
-* Puede seleccionar solo un volumen FlexGroup a la vez para la replicación.  Necesitará activar las copias de seguridad por separado para cada volumen FlexGroup .
+* Solo puedes seleccionar un volumen FlexGroup a la vez para la replicación. Necesitas activar las copias de seguridad por separado para cada volumen FlexGroup.
 +
-No hay ninguna limitación para los volúmenes FlexVol : puede seleccionar todos los volúmenes FlexVol en su sistema y asignar las mismas políticas de respaldo.
+Los volúmenes FlexVol no tienen esa limitación: puedes seleccionar todos los volúmenes FlexVol de tu sistema y asignarles las mismas políticas de backup.
 
 * La siguiente funcionalidad es compatible con https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , pero no cuando se utiliza la función de replicación de NetApp Backup and Recovery:
 +
@@ -64,11 +64,11 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 * Cuando crea o edita una política de respaldo cuando no hay volúmenes asignados a la política, la cantidad de copias de seguridad retenidas puede ser un máximo de 1018.  Después de asignar volúmenes a la política, puede editarla para crear hasta 4000 copias de seguridad.
 * Al realizar copias de seguridad de volúmenes de protección de datos (DP):
 +
-** Relaciones con las etiquetas de SnapMirror `app_consistent` y `all_source_snapshot` No se realizará una copia de seguridad en la nube.
-** Si crea copias locales de instantáneas en el volumen de destino de SnapMirror (independientemente de las etiquetas de SnapMirror utilizadas), estas instantáneas no se moverán a la nube como copias de seguridad.  En este momento, deberá crear una política de instantáneas con las etiquetas deseadas para el volumen DP de origen para que NetApp Backup and Recovery pueda realizar un respaldo de ellas.
+** Las relaciones con las etiquetas SnapMirror `app_consistent` y `all_source_snapshot` no se respaldarán en la nube.
+** Si creas copias locales de Snapshots en el volumen de destino de SnapMirror (independientemente de las etiquetas de SnapMirror que uses), estos Snapshots no se moverán a la nube como backups. Debes crear una Snapshot policy con las etiquetas que quieras en el volumen de origen DP para que NetApp Backup and Recovery pueda hacerles backup.
 
 
-* Las copias de seguridad de volumen de FlexGroup no se pueden mover al almacenamiento de archivo.
+* FlexGroup las copias de seguridad de volúmenes no se pueden trasladar al almacenamiento de archivo.
 * Las copias de seguridad de volumen de FlexGroup pueden usar DataLock y protección contra ransomware si el clúster ejecuta ONTAP 9.13.1 o superior.
 * La copia de seguridad del volumen SVM-DR se admite con las siguientes restricciones:
 +
@@ -79,14 +79,14 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 
 * Soporte de MetroCluster :
 +
-** Cuando utiliza ONTAP 9.12.1 GA o superior, se admite la copia de seguridad cuando se conecta al sistema principal.  Toda la configuración de la copia de seguridad se transfiere al sistema secundario para que las copias de seguridad en la nube continúen automáticamente después del cambio.  No es necesario configurar una copia de seguridad en el sistema secundario (de hecho, no es posible hacerlo).
+** Si utilizas ONTAP 9.12.1 GA o una versión posterior, el backup es compatible cuando estás conectado al sistema primario. Toda la configuración de backup se transfiere al sistema secundario para que los backups en la nube continúen automáticamente después de la conmutación de sitios. No necesitas configurar el backup en el sistema secundario (de hecho, no puedes hacerlo).
 ** Cuando utiliza ONTAP 9.12.0 y versiones anteriores, la copia de seguridad solo se admite desde el sistema secundario de ONTAP .
 ** A partir de ONTAP 9.18.1, las copias de seguridad de volúmenes FlexGroup son compatibles en configuraciones MetroCluster.
 
 
-* La copia de seguridad de volumen ad-hoc con el botón *Hacer copia de seguridad ahora* no es compatible con volúmenes de protección de datos.
+* La copia de seguridad ad hoc de un volumen mediante el botón *Backup Now* no es compatible con los volúmenes de protección de datos.
 * No se admiten configuraciones SM-BC.
-* ONTAP no admite la distribución de relaciones de SnapMirror desde un único volumen a múltiples almacenes de objetos; por lo tanto, NetApp Backup and Recovery no admite esta configuración.
+* ONTAP no admite la distribución en ramificación de las relaciones de SnapMirror desde un único volumen a varios almacenes de objetos; por lo tanto, esta configuración no es compatible con NetApp Backup and Recovery.
 * El modo WORM/Compliance en un almacén de objetos se admite en Amazon S3, Google Cloud Platform (GCP), Azure y StorageGRID en este momento. Esto se conoce como la función DataLock, y debe gestionarse usando la configuración de NetApp Backup and Recovery, no usando la interfaz del proveedor de la nube.
 
 
@@ -100,7 +100,7 @@ Estas limitaciones se aplican tanto a los métodos de búsqueda y restauración 
 * No es posible restaurar carpetas a partir de instantáneas locales.
 * Restauración de archivos y carpetas en una configuración de recuperación ante desastres (DR): después de una conmutación por error, los volúmenes de una máquina virtual de almacenamiento configurada para DR conservan relaciones SnapMirror preexistentes en un estado de ruptura. Los intentos de restaurar archivos o carpetas que crean relaciones RST temporales de SnapMirror son bloqueados por ONTAP porque el volumen de destino ya tiene una relación.
 * Explorar y restaurar puede restaurar hasta 100 archivos individuales a la vez.
-* Buscar y restaurar puede restaurar 1 archivo a la vez.
+* Search & Restore puede restaurar un archivo a la vez.
 * Al utilizar ONTAP 9.13.0 o superior, Explorar y restaurar y Buscar y restaurar pueden restaurar una carpeta junto con todos los archivos y subcarpetas que contiene.
 +
 Al utilizar una versión de ONTAP posterior a la 9.11.1 pero anterior a la 9.13.0, la operación de restauración solo puede restaurar la carpeta seleccionada y los archivos en esa carpeta; no se restauran las subcarpetas ni los archivos en las subcarpetas.

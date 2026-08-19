@@ -14,7 +14,7 @@ summary: Cree y administre grupos de protección para cargas de trabajo de VMwar
 
 
 [role="lead"]
-Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de cargas de trabajo. Un grupo de protección es una agrupación lógica de recursos, como máquinas virtuales y almacenes de datos, que desea proteger juntos.
+Crea grupos de protección para gestionar las operaciones de backup y restauración de un conjunto de cargas de trabajo. Un grupo de protección es una agrupación lógica de recursos, como máquinas virtuales y almacenes de datos, que quieres proteger juntos.
 
 Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
@@ -32,7 +32,7 @@ Puede realizar las siguientes tareas relacionadas con los grupos de protección:
 
 Cuando elijas recursos para añadir a un grupo de protección, puedes organizarlos por almacenes de datos, máquinas virtuales o por etiquetas vSphere.
 
-La protección basada en etiquetas (mediante etiquetas vSphere) simplifica la administración de los grupos de protección en NetApp Backup and Recovery.
+La protección basada en etiquetas usando las etiquetas de vSphere simplifica la administración de los grupos de protección en NetApp Backup and Recovery.
 
 Utilizar la protección basada en etiquetas tiene algunas ventajas:
 
@@ -56,7 +56,7 @@ Crea un grupo de protección para organizar los recursos que quieras respaldar y
 .Antes de empezar
 * Asegúrate de que tu entorno está usando versiones compatibles de VMware vSphere.
 * Al crear un grupo de protección basado en etiquetas, asegúrate de que las máquinas virtuales y los almacenes de datos que quieres proteger ya están asociados a una o varias etiquetas vSphere en vCenter.
-* Ten en cuenta que, en el caso de las cargas de trabajo de VMware, el tiempo de backup programado se interpreta según la zona horaria del host de gestión. Consulta link:br-use-policies-vmware-create.html["Crea y gestiona políticas de backup de VMware en NetApp Backup and Recovery"] para más información.
+* En el caso de las cargas de trabajo de VMware, el tiempo de backup se basa en la zona horaria del host de gestión. Consulta link:br-use-policies-vmware-create.html["Crea y gestiona políticas de backup de VMware en NetApp Backup and Recovery"] para más información.
 
 
 .Pasos
@@ -172,7 +172,7 @@ NOTE: Las programaciones solo se vuelven a crear cuando modificas el nombre del 
 [[delete-a-protection-group]]
 == Eliminar un grupo de protección
 
-Cuando elimina un grupo de protección, lo elimina junto con todas las programaciones de copia de seguridad del grupo.  Elimine un grupo de protección si ya no lo necesita.
+Cuando eliminas un grupo de protección, lo quitas junto con todas las programaciones de backup del grupo. Elimina un grupo de protección si ya no lo necesitas.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.

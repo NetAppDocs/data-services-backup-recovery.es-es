@@ -14,11 +14,9 @@ summary: La función SnapMirror to Cloud Resync de NetApp Backup and Recovery op
 
 
 [role="lead"]
-La función SnapMirror to Cloud Resync de NetApp Backup and Recovery optimiza la protección y la continuidad de los datos durante las migraciones de volumen en entornos de NetApp . Cuando se migra un volumen mediante SnapMirror Logical Replication (LRSE) desde una implementación local de NetApp a otra, o a una solución basada en la nube como Cloud Volumes ONTAP, SnapMirror to Cloud Resync garantiza que las copias de seguridad existentes en la nube permanezcan intactas y operativas.
+Usa SnapMirror to Cloud Resync en NetApp Backup and Recovery para mantener disponibles las copias de seguridad en la nube existentes después de migrar un volumen con SnapMirror Logical Replication (LRSE). Esta función permite que las copias de seguridad continúen sin una nueva línea base y está disponible a partir de ONTAP 9.16.1.
 
-Esta función elimina la necesidad de un proceso de re-línea base y permite que las copias de seguridad continúen después de la migración. Esta característica es valiosa en escenarios de migración de carga de trabajo, ya que admite tanto FlexVols como FlexGroups y está disponible a partir de la versión 9.16.1 de ONTAP .
-
-SnapMirror to Cloud Resync mantiene la continuidad de las copias de seguridad en todos los entornos, lo que facilita la gestión de datos en configuraciones híbridas y multi-nube.
+SnapMirror to Cloud Resync es compatible con las migraciones de FlexVol y FlexGroup y te ayuda a mantener la continuidad de backup en entornos híbridos y multinube.
 
 
 NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
@@ -46,7 +44,7 @@ Si completa una actualización técnica o migra volúmenes de un clúster de ONT
 
 He aquí un ejemplo:
 
-Imagina que tienes un volumen local llamado Vol1a. Este volumen tiene tres instantáneas: S1, S2 y S3. Estas instantáneas son puntos de restauración.  Vol1 tiene una copia de seguridad en la nube mediante SnapMirror to Cloud (SM-C), pero solo S1 y S2 están en el almacenamiento de objetos.
+Imagina que tienes un volumen local llamado Vol1a. Este volumen tiene tres instantáneas: S1, S2 y S3. Estas instantáneas son puntos de restauración. Vol1a se respalda en la nube usando SnapMirror to Cloud (SM-C), pero solo S1 y S2 están en el almacén de objetos.
 
 Ahora, desea migrar Vol1 a otro clúster ONTAP .  Para ello, crea una relación de replicación lógica de SnapMirror (LRSE) con un nuevo volumen en la nube llamado Vol1b.  Esto transfiere las tres instantáneas (S1, S2 y S3) de Vol1a a Vol1b.
 
@@ -168,7 +166,7 @@ NOTE: Se debe utilizar el UUID de la instancia de volumen, no el ID del volumen.
 NetApp Backup and Recovery valida que cada volumen seleccionado para la resincronización comparta una instantánea común con el almacén de objetos. En concreto, la última instantánea almacenada en el almacén de objetos también debe existir en la instantánea local del nuevo volumen clonado. Esta comprobación garantiza que los volúmenes estén listos para la operación SnapMirror to Cloud Resync.
 
 . Revise los resultados de la validación, incluidos los nuevos nombres de los volúmenes de origen y el estado de resincronización de cada volumen.
-. Comprueba la elegibilidad del volumen. El sistema comprueba si los volúmenes son elegibles para la resincronización. Si un volumen no es elegible, significa que no se establecieron los criterios comunes de instantánea.
+. Comprueba la elegibilidad del volumen. El sistema comprueba si los volúmenes son elegibles para la resincronización. Si un volumen no es elegible, significa que no se cumplieron los criterios comunes de snapshot.
 +
 
 IMPORTANT: Para garantizar que los volúmenes sigan siendo elegibles para la operación de resincronización de SnapMirror a la nube, tome una instantánea final de cada volumen antes de eliminar cualquier relación de SnapMirror durante la fase previa a la migración.  Esto conserva el estado más reciente de los datos.

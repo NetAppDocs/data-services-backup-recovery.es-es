@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: Al intentar restaurar un archivo invitado, es posible que se encuentre con situaciones en las que la sesión de restauración del archivo invitado esté en blanco, la operación de conexión de disco para la restauración del archivo invitado falle o las copias de seguridad no se desconecten después de que se interrumpa la sesión de restauración del archivo invitado. 
 ---
-= Solución de problemas de restauración de archivos invitados en NetApp Backup and Recovery
+= Soluciona problemas de restauración de archivos invitados de VMware en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Al intentar restaurar un archivo invitado, es posible que se encuentre 
 
 
 [role="lead"]
-Al intentar restaurar un archivo invitado, es posible que se encuentre con cualquiera de los siguientes escenarios.
+Si tienes problemas al restaurar un archivo de invitado, utiliza estos escenarios para identificar y corregir el problema.
 
 
 
@@ -30,11 +30,11 @@ Para corregir el problema, vuelva a poner manualmente los VMDK en línea en el s
 [[guest-file-restore-attach-disk-operation-fails]]
 == La operación de adjuntar disco para restaurar el archivo invitado falla
 
-Este problema ocurre cuando se inicia una operación de restauración de archivo invitado, pero la operación de conexión de disco falla incluso aunque VMware Tools se esté ejecutando y las credenciales del sistema operativo invitado sean correctas. Si esto ocurre, se devuelve el siguiente error:
+Este problema se produce cuando inicias una operación de restauración de archivos del sistema invitado, pero la operación de conexión del disco falla aunque VMware Tools se está ejecutando y las credenciales del sistema operativo invitado son correctas. Si esto ocurre, se muestra el siguiente error:
 
 `Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMware Tools is running properly on the system and that the account used is an Administrator account. Error is SystemError vix error codes = (3016, 0).`
 
-Para corregir el problema, reinicie el servicio de Windows VMware Tools en el sistema operativo invitado y vuelva a intentar la operación de restauración del archivo invitado.
+Para solucionar el problema, reinicia el servicio de VMware Tools de Windows en el sistema operativo invitado y luego vuelve a intentar la operación de restauración de archivos del sistema invitado.
 
 
 

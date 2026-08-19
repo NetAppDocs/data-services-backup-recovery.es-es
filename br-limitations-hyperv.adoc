@@ -14,18 +14,18 @@ summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar B
 
 
 [role="lead"]
-Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
+Consulta las limitaciones actuales y las acciones no compatibles con las cargas de trabajo de Hyper-V en NetApp Backup and Recovery.
 
 
 
 [[unsupported-actions]]
 == Acciones no admitidas
 
-Las siguientes acciones no son compatibles en las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
+Las siguientes acciones no son compatibles con las cargas de trabajo de Hyper-V en NetApp Backup and Recovery:
 
 * En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
 * No se admite la protección de máquinas virtuales de segunda generación que están almacenadas en almacenamiento SAN cuando usas Microsoft Windows Server 2025.
-* Cree grupos de recursos utilizando máquinas virtuales de varios hosts Hyper-V.
-* Expansión de discos (en varios recursos compartidos CIFS)
+* Creación de grupos de recursos usando máquinas virtuales de varios hosts de Hyper-V
+* Uso de discos de extensión en varios recursos compartidos CIFS
 * No se pueden restaurar máquinas virtuales ni datos de máquinas virtuales entre sistemas con diferentes proveedores de CPU (de Intel a AMD o viceversa), independientemente de la configuración de "Compatibilidad de procesadores" en Hyper-V. Esta configuración solo admite la compatibilidad entre diferentes generaciones del mismo proveedor (por ejemplo, de Intel a Intel o de AMD a AMD).
 

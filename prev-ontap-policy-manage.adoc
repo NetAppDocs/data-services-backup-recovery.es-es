@@ -14,12 +14,12 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Con NetApp Backup and Recovery, utilice las políticas de respaldo predeterminadas proporcionadas por NetApp para crear sus copias de seguridad o cree políticas personalizadas.  Las políticas rigen la frecuencia de las copias de seguridad, el momento en que se realizan y la cantidad de archivos de copia de seguridad que se conservan.
+En NetApp Backup and Recovery, puedes usar las políticas de backup predeterminadas o crear políticas personalizadas para tus volúmenes ONTAP. Las políticas controlan la frecuencia de backup, el momento en que se realiza y la retención.
 
 
 NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-Cuando utiliza el asistente de activación para habilitar el servicio de respaldo y recuperación para sus volúmenes, puede seleccionar entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local).  Si desea utilizar una política diferente a las existentes, puede crear la política antes o mientras utiliza el asistente de activación.
+Cuando utilices el asistente de activación para habilitar el servicio de Backup and Recovery para tus volúmenes, puedes elegir entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local). Si quieres usar una política diferente a las políticas existentes, puedes crear la política antes o mientras usas el asistente de activación.
 
 Para obtener más información sobre las políticas de respaldo predeterminadas proporcionadas, consultelink:prev-ontap-protect-journey.html["Planifique su viaje de protección"] .
 
@@ -85,7 +85,7 @@ Parte del proceso de creación de políticas implica identificar etiquetas de in
 +
 Aparece la página de administración de políticas.
 
-. En la página Políticas, seleccione *Crear política* > *Crear política de instantánea*.
+. En la página de gestión de políticas, selecciona *Crear política* > *Crear Snapshot policy*.
 . Especifique el nombre de la política.
 . Seleccione el o los horarios de las instantáneas.  Puedes tener un máximo de 5 etiquetas.  O bien, crea un horario.
 . Si decide crear un horario:
@@ -127,7 +127,7 @@ Este ejemplo crea una política de instantáneas con dos clústeres:
 Su estrategia 3-2-1 podría incluir replicar un volumen en un sistema de almacenamiento diferente.  La política de replicación reside en el sistema de almacenamiento *secundario*.
 
 .Pasos
-. En la página Políticas, seleccione *Crear política* > *Crear política de replicación*.
+. En la página de gestión de políticas, selecciona *Crear política* > *Crear política de replicación*.
 . En la sección Detalles de la política, especifique el nombre de la política.
 . Especifique las etiquetas SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
 . Especifique el cronograma de transferencia.
@@ -148,7 +148,7 @@ Esta política de almacenamiento reside en diferentes ubicaciones del sistema de
 
 
 .Pasos
-. En la página de administración de políticas, seleccione *Crear política* > *Crear política de respaldo*.
+. En la página de gestión de políticas, selecciona *Crear política* > *Crear política de backup*.
 . En la sección Detalles de la política, especifique el nombre de la política.
 . Especifique las etiquetas SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
 . Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.

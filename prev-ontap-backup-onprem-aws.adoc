@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Complete unos pocos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales a un sistema de almacenamiento secundario y al almacenamiento en la nube de Amazon S3.
+En NetApp Backup and Recovery, puedes hacer backup de los datos de los volúmenes de tus sistemas ONTAP locales en un sistema de almacenamiento secundario y en Amazon S3. Usa esta página para preparar tu entorno y activar los backups.
 
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
@@ -425,9 +425,9 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 === Iniciar el asistente
 
 .Pasos
-. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
+. Accede al asistente «Activar Backup and Recovery» de una de las siguientes formas:
 +
-** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto a Copia de seguridad y recuperación en el panel derecho.
+** En la página *Sistemas* de la Console, selecciona el sistema y selecciona *Enable > Backup Volumes* junto a Backup and Recovery en el panel derecho.
 +
 Si el destino de Amazon S3 para sus copias de seguridad existe como un sistema en la página *Sistemas* de la consola, puede arrastrar el clúster ONTAP al almacenamiento de objetos de Amazon S3.
 
@@ -435,7 +435,7 @@ Si el destino de Amazon S3 para sus copias de seguridad existe como un sistema e
 
 
 +
-La página de Introducción del asistente muestra las opciones de protección, incluidas instantáneas locales, replicación y copias de seguridad.  Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de respaldo con un volumen seleccionado.
+La página de Introducción del asistente muestra las opciones de protección, incluyendo instantáneas locales, replicación y backups. Si hiciste la segunda opción en este paso, aparece la página Define Backup Strategy con un volumen seleccionado.
 
 . Continúe con las siguientes opciones:
 +
@@ -502,7 +502,7 @@ NOTE: Si los volúmenes que elige tienen políticas de instantáneas y replicaci
 
 . *Arquitectura*: Si eligió replicación y copia de seguridad, elija uno de los siguientes flujos de información:
 +
-** *En cascada*: la información fluye desde el almacenamiento primario al secundario, al almacenamiento de objetos, y desde el secundario al almacenamiento de objetos.
+** *En cascada*: la información fluye del almacenamiento primario al secundario y luego del secundario al de objetos.
 ** *Distribución en abanico*: la información fluye desde el almacenamiento primario al secundario _y_ desde el primario al almacenamiento de objetos.
 +
 Para obtener detalles sobre estas arquitecturas, consultelink:prev-ontap-protect-journey.html["Planifique su viaje de protección"] .
@@ -519,7 +519,7 @@ TIP: Para crear una política personalizada antes de activar la instantánea, co
 ** Introduzca el nombre de la póliza.
 ** Seleccione hasta cinco horarios, normalmente de diferentes frecuencias.
 +
-*** Para las políticas de backup a objetos, configura los ajustes de Datalock y protección contra ransomware. Para más detalles sobre Datalock y la protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"].
+*** Para las políticas de backup a almacén de objetos, configura los ajustes de DataLock y la protección contra ransomware. Para obtener más información sobre DataLock y la protección contra ransomware, consulta link:prev-ontap-policy-object-options.html["Configuración de la política de copia de seguridad en objeto"].
 
 
 ** Seleccione *Crear*.
@@ -613,9 +613,9 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 [[show-the-api-commands]]
 === Mostrar los comandos API
 
-Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+Quizá te interese mostrar y, si lo deseas, copiar los comandos de la API usados en el asistente Activate Backup and Recovery. Quizá te interese hacerlo para automatizar la activación del backup en sistemas futuros.
 
 .Pasos
-. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. En el asistente «Activar Backup and Recovery», selecciona *Ver solicitud de API*.
 . Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
 

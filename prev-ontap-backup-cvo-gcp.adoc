@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-cvo-gcp.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
 ---
-= Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Google Cloud Storage con NetApp Backup and Recovery
+= Haz una copia de seguridad de Cloud Volumes ONTAP en Google Cloud Storage con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de los datos de volumen de sus sistemas Cloud Volumes ONTAP en Google Cloud Storage.
+Utiliza NetApp Backup and Recovery para hacer copias de seguridad de los datos de los volúmenes de tus sistemas Cloud Volumes ONTAP en Google Cloud Storage.
 
 
 NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
@@ -46,7 +46,7 @@ Para las licencias PAYGO de NetApp Backup and Recovery , hay una suscripción de
 
 Para obtener una licencia BYOL de NetApp Backup and Recovery , necesita el número de serie de NetApp que le permite utilizar el servicio durante la duración y la capacidad de la licencia. link:br-start-licensing.html["Aprenda a administrar sus licencias BYOL"].
 
-Además, es necesario tener una suscripción a Google para el espacio de almacenamiento donde se ubicarán las copias de seguridad.
+También necesitas una cuenta de Google Cloud para el espacio de almacenamiento donde se ubicarán tus backups.
 
 
 
@@ -64,7 +64,7 @@ El agente de consola debe instalarse en una región de Google con acceso a Inter
 [[verify-or-add-permissions-to-the-console-agent]]
 === Verificar o agregar permisos al agente de la consola
 
-Para utilizar la funcionalidad "Buscar y restaurar" de NetApp Backup and Recovery , debe tener permisos específicos en el rol del agente de consola para que pueda acceder al servicio Google Cloud BigQuery.  Vea los permisos a continuación y siga los pasos si necesita modificar la política.
+Para usar la funcionalidad de búsqueda y restauración de NetApp Backup and Recovery, el rol para el agente de la Console debe incluir permisos específicos para que pueda acceder al servicio BigQuery de Google Cloud. Consulta los permisos a continuación y sigue los pasos si necesitas modificar la política.
 
 .Pasos
 . En el https://console.cloud.google.com["Consola de Google Cloud"^] , vaya a la página *Roles*.
@@ -165,7 +165,7 @@ Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los
 [[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Habilitar NetApp Backup and Recovery en Cloud Volumes ONTAP
 
-Los pasos para habilitar NetApp Backup and Recovery difieren levemente según si tiene un sistema Cloud Volumes ONTAP existente o uno nuevo.
+Puedes habilitar NetApp Backup and Recovery en un sistema Cloud Volumes ONTAP nuevo o existente. Los pasos difieren ligeramente para cada opción.
 
 *Habilitar NetApp Backup and Recovery en un nuevo sistema*
 
@@ -181,7 +181,7 @@ Ver https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-de
 . *Elegir tipo*: Seleccione * Cloud Volumes ONTAP* (nodo único o alta disponibilidad).
 . *Detalles y credenciales*: Ingrese la siguiente información:
 +
-.. Haga clic en *Editar proyecto* y seleccione un nuevo proyecto si el que desea utilizar es diferente del proyecto predeterminado (donde reside el agente de la consola).
+.. Selecciona *Editar proyecto* y elige un nuevo proyecto si el que deseas utilizar es distinto del proyecto predeterminado (donde se encuentra el agente de la Console).
 .. Especifique el nombre del clúster.
 .. Habilite el interruptor *Cuenta de servicio* y seleccione la Cuenta de servicio que tenga el rol de Administrador de almacenamiento predefinido.  Esto es necesario para habilitar las copias de seguridad y la organización en niveles.
 .. Especifique las credenciales.
@@ -190,7 +190,7 @@ Asegúrese de tener una suscripción a GCP Marketplace.
 
 
 
-. *Servicios*: Deje NetApp Backup and Recovery habilitado y haga clic en *Continuar*.
+. *Servicios*: Deja activado NetApp Backup and Recovery y selecciona *Continuar*.
 . Complete las páginas del asistente para implementar el sistema como se describe en https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Lanzamiento de Cloud Volumes ONTAP en GCP"^] .
 
 
@@ -202,7 +202,7 @@ NetApp Backup and Recovery está habilitado en el sistema.  Después de haber cr
 Puede habilitar NetApp Backup and Recovery en cualquier momento directamente desde el sistema.
 
 .Pasos
-. Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar* junto a Copia de seguridad y recuperación en el panel derecho.
+. En la página *Sistemas* de la NetApp Console, selecciona el sistema y selecciona *Habilitar* junto a Backup and Recovery en el panel derecho.
 +
 Si el destino de Google Cloud Storage para sus copias de seguridad existe como un sistema en la página *Sistemas* de la Consola, puede arrastrar el clúster al sistema de Google Cloud Storage para iniciar el asistente de configuración.
 
@@ -258,7 +258,7 @@ storage.objects.update
 . Ir a https://console.cloud.google.com/storage/settings["Configuración de almacenamiento de GCP"^] y crear claves de acceso para la cuenta de servicio:
 +
 .. Seleccione un proyecto y seleccione *Interoperabilidad*. Si aún no lo ha hecho, seleccione *Habilitar acceso de interoperabilidad*.
-.. En *Claves de acceso para cuentas de servicio*, seleccione *Crear una clave para una cuenta de servicio*, seleccione la cuenta de servicio que acaba de crear y haga clic en *Crear clave*.
+.. En *Teclas de acceso para cuentas de servicio*, selecciona *Crear una clave para una cuenta de servicio*, selecciona la cuenta de servicio que acabas de crear y selecciona *Crear clave*.
 +
 Necesitará ingresar las claves en NetApp Backup and Recovery más adelante cuando configure el servicio de respaldo.
 
@@ -315,7 +315,7 @@ Consideraciones sobre CMEK:
 [[activate-backups-on-your-ontap-volumes]]
 == Activar copias de seguridad en sus volúmenes ONTAP
 
-Active las copias de seguridad en cualquier momento directamente desde su sistema local.
+Activa las copias de seguridad en cualquier momento directamente desde tu sistema Cloud Volumes ONTAP.
 
 Un asistente lo guiará a través de los siguientes pasos principales:
 
@@ -332,17 +332,17 @@ También puedes<<Mostrar los comandos API>> en el paso de revisión, para que pu
 === Iniciar el asistente
 
 .Pasos
-. Acceda al asistente para activar copias de seguridad y recuperación mediante una de las siguientes maneras:
+. Accede al asistente «Activar Backup and Recovery» de una de las siguientes formas:
 +
-** Desde la página *Sistemas* de la Consola, seleccione el sistema y seleccione *Habilitar > Volúmenes de respaldo* junto a Copia de seguridad y recuperación en el panel derecho.
+** En la página *Sistemas* de la Console, selecciona el sistema y selecciona *Enable > Backup Volumes* junto a Backup and Recovery en el panel derecho.
 +
-Si el destino de GCP para sus copias de seguridad existe como un sistema en la página *Sistemas* de la consola, puede arrastrar el clúster de ONTAP al almacenamiento de objetos de GCP.
+Si el destino de Google Cloud Storage para tus copias de seguridad aparece como un sistema en la página *Sistemas* de la NetApp Console, puedes arrastrar el clúster ONTAP hasta el sistema de Google Cloud Storage.
 
 ** Seleccione *Volúmenes* en la barra de Copia de seguridad y recuperación.  Desde la pestaña Volúmenes, seleccione *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga habilitada la replicación o la copia de seguridad en el almacenamiento de objetos).
 
 
 +
-La página de Introducción del asistente muestra las opciones de protección, incluidas instantáneas locales, replicación y copias de seguridad.  Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de respaldo con un volumen seleccionado.
+La página de introducción del asistente muestra las opciones de protección, incluyendo instantáneas locales, replicación y backups. Si usaste la segunda opción en este paso, aparece la página de definición de estrategia de backup con un volumen seleccionado.
 
 . Continúe con las siguientes opciones:
 +
@@ -459,7 +459,7 @@ Cree un nuevo depósito o seleccione uno existente.
 
 ** *Clave de cifrado*: si creó un nuevo depósito de Google, ingrese la información de la clave de cifrado que le proporcionó el proveedor.  Elija si utilizará las claves de cifrado predeterminadas de Google Cloud o elegirá sus propias claves administradas por el cliente desde su cuenta de Google para administrar el cifrado de sus datos.
 +
-Si elige utilizar sus propias claves administradas por el cliente, ingrese al almacén de claves y a la información de la clave.
+Si decides utilizar tus propias claves gestionadas por el cliente, introduce la información del llavero y de la clave.
 
 
 
@@ -510,7 +510,7 @@ Se crea un depósito de Google Cloud Storage en la cuenta de servicio indicada p
 
 Las copias de seguridad están asociadas con la clase de almacenamiento _Estándar_ de forma predeterminada.  Puede utilizar las clases de almacenamiento _Nearline_, _Coldline_ o _Archive_, de menor costo.  Sin embargo, la clase de almacenamiento se configura a través de Google, no a través de la interfaz de usuario de NetApp Backup and Recovery .  Ver el tema de Google https://cloud.google.com/storage/docs/changing-default-storage-class["Cambiar la clase de almacenamiento predeterminada de un bucket"^] Para más detalles.
 
-Se muestra el panel de control de copias de seguridad de volumen para que pueda supervisar el estado de las copias de seguridad.
+Aparece el panel de control de backup de volúmenes para que puedas supervisar el estado de los backups.
 
 También puede supervisar el estado de los trabajos de copia de seguridad y restauración mediante ellink:br-use-monitor-tasks.html["Página de seguimiento de trabajos"] .
 
@@ -519,10 +519,10 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 [[show-the-api-commands]]
 === Mostrar los comandos API
 
-Es posible que desee mostrar y, opcionalmente, copiar los comandos API utilizados en el asistente Activar copia de seguridad y recuperación.  Es posible que desee hacer esto para automatizar la activación de la copia de seguridad en sistemas futuros.
+Quizá te interese mostrar y, si lo deseas, copiar los comandos de la API usados en el asistente Activate Backup and Recovery. Quizá te interese hacerlo para automatizar la activación del backup en sistemas futuros.
 
 .Pasos
-. Desde el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. En el asistente «Activar Backup and Recovery», selecciona *Ver solicitud de API*.
 . Para copiar los comandos al portapapeles, seleccione el icono *Copiar*.
 
 

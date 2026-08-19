@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery primero debe descubrir los datos para que us
 
 
 [role="lead"]
-Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
+Consulta estas limitaciones antes de usar NetApp Backup and Recovery para cargas de trabajo de SQL Server.
 
 
 
@@ -71,7 +71,7 @@ Si todos los recursos de un grupo de recursos están protegidos y uno de esos re
 [[resources-with-multiple-policies-using-the-same-schedule-tier-not-supported]]
 === No se admiten recursos con múltiples políticas que utilizan el mismo nivel de programación
 
-No es posible asignar varias políticas que utilicen el mismo nivel de programación (por ejemplo, por hora, por día, por semana, etc.) a un recurso.  NetApp Backup and Recovery no importará esos recursos desde SnapCenter.
+No puedes asignar varias políticas que utilicen el mismo nivel de programación (por ejemplo, por horas, por días o por semanas) a un recurso. NetApp Backup and Recovery no importará esos recursos desde SnapCenter.
 
 *Solución alternativa*: adjunte solo una política que utilice el mismo nivel de programación a un recurso.
 
@@ -89,18 +89,18 @@ Si tiene una política de SnapCenter que se repite cada hora pero no utiliza int
 [[both-daily-and-monthly-policies-attached-to-one-resource-not-supported]]
 === No se admiten políticas diarias ni mensuales asociadas a un recurso
 
-Si una política de SnapCenter se repite en intervalos de día y de mes, NetApp Backup and Recovery no importará la política.
+Si una política de SnapCenter se repite tanto en intervalos diarios como mensuales, NetApp Backup and Recovery no importará la política.
 
-Por ejemplo, no puede adjuntar una política diaria (con una duración menor o igual a 7 días o mayor a 7 días) a un recurso y también adjuntar una política mensual al mismo recurso.
+Por ejemplo, no puedes asociar una política diaria (con un intervalo de 7 días o menos, o de más de 7 días) a un recurso y también asociar una política mensual al mismo recurso.
 
 *Solución alternativa*: utilice una política que utilice un intervalo diario o mensual, pero no ambos.
 
 
 
 [[on-demand-backup-policies-not-migrated]]
-=== Políticas de respaldo a pedido no migradas
+=== No se han migrado las políticas de backup bajo demanda
 
-NetApp Backup and Recovery no importa políticas de respaldo a pedido desde SnapCenter.
+NetApp Backup and Recovery no importa las políticas de backup bajo demanda de SnapCenter.
 
 
 
@@ -116,7 +116,7 @@ NetApp Backup and Recovery no importa políticas de respaldo de solo registro de
 [[host-mapping]]
 === Mapeo de host
 
-SnapCenter no tiene clústeres de almacenamiento ni máquinas virtuales de almacenamiento asignados a los recursos en los hosts, pero NetApp Backup and Recovery sí. El clúster ONTAP local o la máquina virtual de almacenamiento no se asignará a un host en las versiones preliminares de NetApp Backup and Recovery. Además, NetApp Console no es compatible con las máquinas virtuales de almacenamiento.
+SnapCenter no asigna clústeres de almacenamiento ni máquinas virtuales de almacenamiento de recursos a hosts, pero NetApp Backup and Recovery sí lo hace. El clúster ONTAP local o la máquina virtual de almacenamiento no se asignarán a un host en las versiones preliminares de NetApp Backup and Recovery. Además, NetApp Console no es compatible con máquinas virtuales de almacenamiento.
 
 *Solución alternativa*: antes de importar recursos desde SnapCenter, cree un sistema en NetApp Backup and Recovery para todos los sistemas de almacenamiento ONTAP locales que estén registrados en SnapCenter local.  Luego, importe los recursos para ese clúster desde SnapCenter a NetApp Backup and Recovery.
 

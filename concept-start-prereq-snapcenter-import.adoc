@@ -14,7 +14,7 @@ summary: Comience a utilizar NetApp Backup and Recovery verificando la preparaci
 
 
 [role="lead"]
-Si va a importar recursos del servicio de complemento SnapCenter para Microsoft SQL Server a NetApp Backup and Recovery, necesitará configurar algunos elementos más.
+Antes de importar recursos desde el SnapCenter Plug-in for Microsoft SQL Server en NetApp Backup and Recovery, asegúrate de que tu entorno cumple estos requisitos adicionales.
 
 
 
@@ -25,10 +25,10 @@ Si va a importar recursos desde SnapCenter, primero debe agregar todo el almacen
 
 
 
-[[ensure-host-requirements-to-install-the-snapcenter-plug-in]]
-== Asegúrese de que se cumplan los requisitos del host para instalar el complemento SnapCenter
+[[ensure-host-requirements-for-the-snapcenter-plug-in]]
+== Asegúrate de que el host cumpla los requisitos para el SnapCenter Plug-in
 
-Para importar recursos desde el complemento de SnapCenter para Microsoft SQL Server, asegúrese de que se cumplan los requisitos del host para instalar el complemento de SnapCenter para Microsoft SQL Server.
+Para importar recursos desde el SnapCenter Plug-in for Microsoft SQL Server, asegúrate de que se cumplan los requisitos del host para instalar el SnapCenter Plug-in for Microsoft SQL Server.
 
 Consulte específicamente los requisitos de SnapCenter enlink:concept-start-prereq.html["Requisitos previos de NetApp Backup and Recovery"] .
 
@@ -97,10 +97,10 @@ Este es uno de los métodos que puede utilizar para deshabilitar el Control de c
 . Se admiten los siguientes valores:  Para este escenario, establezca el valor en `1` :
 +
 ** `0`(Predeterminado): Las restricciones remotas de UAC están habilitadas.  Las cuentas locales tienen tokens filtrados cuando acceden de forma remota.
-** `1`:Las restricciones remotas de UAC están deshabilitadas.  Las cuentas locales eluden el filtrado de tokens y tienen privilegios administrativos completos cuando acceden de forma remota.
+** `1`: Las restricciones remotas de UAC están desactivadas. Las cuentas locales eluden el filtrado de tokens y tienen privilegios administrativos completos al acceder remotamente.
 
 
-. Haga clic en *Aceptar*.
+. Selecciona *OK*.
 . Cierre el Editor del Registro.
 . Reinicie el host de Windows de SnapCenter .
 
@@ -127,7 +127,7 @@ CAUTION: Ejecutar comandos de PowerShell con privilegios elevados puede afectar 
 .Pasos
 . Abra una ventana de PowerShell con privilegios administrativos en el host Windows de SnapCenter :
 +
-.. Haga clic en el menú *Inicio*.
+.. Selecciona el menú *Inicio*.
 .. Busque *PowerShell 7* o *Windows Powershell*.
 .. Haga clic derecho en esa opción y seleccione *Ejecutar como administrador*.
 
@@ -143,7 +143,7 @@ TIP: PowerShell está incluido de forma predeterminada en Windows 7 y versiones 
 ----
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
 ----
-. Verifique que el valor actual esté establecido en "1" en `LocalAccountTokenFilterPolicy`` ejecutando:
+. Comprueba que el valor actual esté establecido en «1» en `LocalAccountTokenFilterPolicy` ejecutando:
 +
 [listing]
 ----

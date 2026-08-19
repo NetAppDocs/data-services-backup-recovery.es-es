@@ -14,7 +14,7 @@ summary: Clona tus cargas de trabajo de máquinas virtuales VMware con NetApp Ba
 
 
 [role="lead"]
-Usa NetApp Backup and Recovery para crear clones escribibles de máquinas virtuales VMware a partir de instantáneas primarias o secundarias. Con los clones de máquinas virtuales, puedes crear y gestionar máquinas virtuales para pruebas, integración y formación sin afectar los datos de producción.
+Utiliza NetApp Backup and Recovery para crear clones modificables de máquinas virtuales de VMware a partir de instantáneas primarias o secundarias. Puedes crear y gestionar máquinas virtuales clonadas para pruebas, integración y formación sin afectar los datos de producción.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 

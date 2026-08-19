@@ -14,7 +14,7 @@ summary: Con NetApp Backup and Recovery, restaura los datos de ONTAP usando Brow
 
 
 [role="lead"]
-Con NetApp Backup and Recovery, restaura los datos de ONTAP usando Browse & Restore. Antes de restaurar, toma nota del nombre del volumen de origen, el sistema de origen, la máquina virtual de almacenamiento y la fecha del archivo de copia de seguridad. Puedes restaurar datos de ONTAP desde una instantánea, un volumen replicado o desde copias de seguridad almacenadas en un almacén de objetos.
+Utiliza «Browse & Restore» cuando conozcas el nombre del volumen de origen, el sistema de origen, la máquina virtual de almacenamiento y la fecha del archivo de backup. Puedes restaurar datos de ONTAP a partir de una snapshot, un volumen replicado o un backup almacenado en un almacén de objetos.
 
 Las capacidades de restauración dependen de su versión de ONTAP :
 
@@ -33,7 +33,7 @@ Las capacidades de restauración dependen de su versión de ONTAP :
 link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre la restauración desde el almacenamiento de archivo de AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre la restauración desde el almacenamiento de archivo de Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre cómo restaurar desde el almacenamiento de archivo de Google"].
 
 
-NOTE: La prioridad alta no se admite al restaurar datos desde el almacenamiento de archivo de Azure a sistemas StorageGRID .
+NOTE: La prioridad de restauración alta no es compatible al restaurar datos desde el almacenamiento de archivo de Azure a sistemas StorageGRID.
 
 
 
@@ -92,7 +92,7 @@ Puedes restaurar datos de ONTAP desde un archivo de copia de seguridad que se en
 
 
 
-| StorageGRID en NetApp | Sistema ONTAP local  a| 
+| StorageGRID | Sistema ONTAP local  a| 
 * Sistema ONTAP local
 * Cloud Volumes ONTAP
 
@@ -114,14 +114,14 @@ Puedes restaurar datos de ONTAP desde un archivo de copia de seguridad que se en
 |===
 Para explorar y restaurar, el agente de consola se puede instalar en las siguientes ubicaciones:
 
-* Para Amazon S3, el agente de consola se puede implementar en AWS o en sus instalaciones
-* Para Azure Blob, el agente de consola se puede implementar en Azure o en sus instalaciones.
+* Para Amazon S3, el agente de Console se puede implementar en AWS o en las instalaciones locales
+* Para Azure Blob, el agente de la consola se puede implementar en Azure o en las instalaciones locales
 * Para Google Cloud Storage, el agente de la consola debe implementarse en su VPC de Google Cloud Platform
-* Para StorageGRID, el agente de consola debe implementarse en sus instalaciones, con o sin acceso a Internet.
-* Para ONTAP S3, el agente de consola se puede implementar en sus instalaciones (con o sin acceso a Internet) o en un entorno de proveedor de nube.
+* Para StorageGRID, el agente de la consola debe desplegarse en las instalaciones, con o sin acceso a internet
+* Para ONTAP S3, el agente de la consola se puede implementar en las instalaciones (con o sin acceso a internet) o en el entorno de un proveedor de nube
 
 
-Tenga en cuenta que las referencias a "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
+Ten en cuenta que las referencias a «sistemas ONTAP locales» incluyen FAS, AFF y ONTAP Select.
 
 
 NOTE: Si la versión de ONTAP en su sistema es inferior a 9.13.1, no podrá restaurar carpetas o archivos si el archivo de respaldo se ha configurado con DataLock y Ransomware.  En este caso, puede restaurar todo el volumen desde el archivo de respaldo y luego acceder a los archivos que necesita.
@@ -139,7 +139,7 @@ NOTE: Cuando restauras un volumen habilitado para SnapLock, el volumen restaurad
 Al restaurar una copia de seguridad en la nube en un sistema Cloud Volumes ONTAP que utiliza ONTAP 9.13.0 o superior, o en un sistema ONTAP local que ejecuta ONTAP 9.14.1, tendrá la opción de realizar una operación de _restauración rápida_. La restauración rápida es ideal para situaciones de recuperación ante desastres donde necesita proporcionar acceso a un volumen lo antes posible. Una restauración rápida restaura los metadatos del archivo de respaldo a un volumen en lugar de restaurar el archivo de respaldo completo.  No se recomienda la restauración rápida para aplicaciones sensibles al rendimiento o a la latencia, y no es compatible con copias de seguridad en almacenamiento archivado.
 
 
-NOTE: La restauración rápida solo es compatible con volúmenes FlexGroup si el sistema de origen desde el cual se creó la copia de seguridad en la nube ejecutaba ONTAP 9.12.1 o superior.  Y solo es compatible con volúmenes SnapLock si el sistema de origen ejecutaba ONTAP 9.11.0 o superior.
+NOTE: La restauración rápida es compatible con volúmenes FlexGroup solo si el sistema de origen desde el que se creó el backup en la nube ejecutaba ONTAP 9.12.1 o una versión posterior. Es compatible con volúmenes SnapLock solo si el sistema de origen ejecutaba ONTAP 9.11.0 o una versión posterior.
 
 Al restaurar desde un volumen replicado, puede restaurar el volumen al sistema original o a un sistema Cloud Volumes ONTAP o ONTAP local.
 
@@ -149,7 +149,7 @@ Para restaurar un volumen, necesita el nombre del sistema de origen, la máquina
 
 .Pasos
 . Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
-. Seleccione la pestaña *Restaurar* y se mostrará el Panel de restauración.
+. Selecciona la pestaña *Restaurar* para mostrar el panel de control de restauración.
 . Desde la sección _Explorar y restaurar_, seleccione *Restaurar volumen*.
 . En la página _Seleccionar origen_, navegue hasta el archivo de respaldo del volumen que desea restaurar.  Seleccione el *sistema*, el *volumen* y el archivo de *copia de seguridad* que tenga la marca de fecha y hora desde el que desea restaurar.
 +
@@ -157,7 +157,7 @@ La columna *Ubicación* muestra si el archivo de copia de seguridad (instantáne
 
 . Seleccione *Siguiente*.
 +
-Ten en cuenta que si seleccionas un archivo de backup en el almacenamiento de objetos y la protección contra ransomware está activa para ese backup (si activaste Datalock y la protección contra ransomware en la política de backup), entonces se te pedirá que ejecutes un análisis adicional de ransomware en el archivo de backup antes de restaurar los datos. Te recomendamos que analices el archivo de backup en busca de ransomware. (Vas a incurrir en costes de salida adicionales de tu proveedor de nube para acceder al contenido del archivo de backup.)
+Ten en cuenta que si seleccionas un archivo de backup en el almacenamiento de objetos y la protección contra ransomware está activa para ese backup (si habilitaste DataLock y la protección contra ransomware en la política de backup), se te pedirá que realices un análisis adicional contra ransomware en el archivo de backup antes de restaurar los datos. Te recomendamos que analices el archivo de backup en busca de ransomware. (Vas a incurrir en costes adicionales de salida de datos por parte de tu proveedor de nube para acceder al contenido del archivo de backup.)
 
 . En la página _Seleccionar destino_, seleccione el *sistema* donde desea restaurar el volumen.
 . Al restaurar un archivo de respaldo desde un almacenamiento de objetos, si selecciona un sistema ONTAP local y aún no ha configurado la conexión del clúster al almacenamiento de objetos, se le solicitará información adicional:
@@ -235,7 +235,7 @@ image:diagram_browse_restore_file.png["Un diagrama que muestra el flujo para rea
 
 .Pasos
 . Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
-. Seleccione la pestaña *Restaurar* y se mostrará el Panel de restauración.
+. Selecciona la pestaña *Restaurar* para mostrar el panel de control de restauración.
 . Desde la sección _Explorar y restaurar_, seleccione *Restaurar archivos o carpeta*.
 . En la página _Seleccionar origen_, navegue hasta el archivo de respaldo del volumen que contiene la carpeta o los archivos que desea restaurar.  Seleccione el *sistema*, el *volumen* y la *copia de seguridad* que tenga la marca de fecha y hora desde donde desea restaurar los archivos.
 . Seleccione *Siguiente* y se mostrará la lista de carpetas y archivos de la copia de seguridad del volumen.
@@ -246,7 +246,7 @@ Si está restaurando carpetas o archivos desde un archivo de respaldo que reside
 link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre la restauración desde el almacenamiento de archivo de AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Obtenga más información sobre la restauración desde el almacenamiento de archivo de Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre cómo restaurar desde el almacenamiento de archivo de Google"]. Los archivos de respaldo en el nivel de almacenamiento de Google Archive se restauran casi de inmediato y no requieren prioridad de restauración.
 
 +
-Y si la protección contra ransomware está activa para el archivo de backup (si activaste Datalock y la protección contra ransomware en la política de backup), entonces se te pedirá que ejecutes un análisis adicional de ransomware en el archivo de backup antes de restaurar los datos. Te recomendamos que analices el archivo de backup en busca de ransomware. (Vas a incurrir en costes de salida adicionales de tu proveedor de nube para acceder al contenido del archivo de backup.)
+Si la protección contra ransomware está activa para el archivo de backup (si habilitaste DataLock y la protección contra ransomware en la política de backup), se te pedirá que realices un análisis adicional contra ransomware en el archivo de backup antes de restaurar los datos. Te recomendamos que analices el archivo de backup en busca de ransomware. (Vas a tener costes adicionales de salida por parte de tu proveedor de servicios en la nube para acceder al contenido del archivo de backup.)
 
 . En la página _Seleccionar elementos_, seleccione la carpeta o los archivos que desea restaurar y seleccione *Continuar*.  Para ayudarle a encontrar el artículo:
 +
@@ -271,16 +271,16 @@ Si selecciona un clúster local y aún no ha configurado la conexión del clúst
 
 . Luego seleccione el *Volumen* y la *Carpeta* donde desea restaurar la carpeta o los archivos.
 +
-Tiene algunas opciones para la ubicación al restaurar carpetas y archivos.
+Tienes varias opciones para la ubicación cuando restauras carpetas y archivos.
 
 +
 ** Cuando haya elegido *Seleccionar carpeta de destino*, como se muestra arriba:
 +
 *** Puede seleccionar cualquier carpeta.
-*** Puede pasar el cursor sobre una carpeta y hacer clic al final de la fila para explorar las subcarpetas y luego seleccionar una carpeta.
+*** Puedes pasar el cursor por encima de una carpeta y seleccionar el extremo de la fila para acceder a las subcarpetas y luego seleccionar una carpeta.
 
 
-** Si ha seleccionado el mismo sistema de destino y volumen donde se encontraba la carpeta/archivo de origen, puede seleccionar *Mantener ruta de la carpeta de origen* para restaurar la carpeta o los archivos a la misma carpeta donde existían en la estructura de origen.  Todas las mismas carpetas y subcarpetas deben existir previamente; no se crean carpetas.  Al restaurar archivos a su ubicación original, puede optar por sobrescribir los archivos de origen o crear archivos nuevos.
+** Si seleccionaste el mismo sistema de destino y el mismo volumen que la ubicación de la carpeta o archivo de origen, puedes seleccionar *Mantener la ruta de la carpeta de origen* para restaurar la carpeta o los archivos en la misma carpeta donde existían en la estructura de origen. Todas las carpetas y subcarpetas iguales deben existir ya; no se crean carpetas. Al restaurar los archivos en su ubicación original, puedes elegir sobrescribir los archivos de origen o crear archivos nuevos.
 
 
 . Seleccione *Restaurar* para volver al Panel de Restauración y revisar el progreso de la operación de restauración.

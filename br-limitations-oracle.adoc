@@ -14,10 +14,10 @@ summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar B
 
 
 [role="lead"]
-Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
+Consulta las limitaciones actuales y las acciones no compatibles con las cargas de trabajo de Oracle Database en NetApp Backup and Recovery.
 
-La siguiente acción no se admite en la versión preliminar de las cargas de trabajo de Oracle Database en NetApp Backup and Recovery:
+Las siguientes acciones no son compatibles con las cargas de trabajo de Oracle Database en la versión preliminar de NetApp Backup and Recovery:
 
 * En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
-* Copia de seguridad sin conexión
+* Copias de seguridad sin conexión
 

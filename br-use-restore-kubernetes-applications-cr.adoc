@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications-cr.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. 
 ---
-= Restaura aplicaciones de Kubernetes con NetApp Backup and Recovery usando un recurso personalizado
+= Restaura aplicaciones de Kubernetes con recursos personalizados
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya p
 
 
 [role="lead"]
-Puedes usar recursos personalizados para restaurar tus aplicaciones desde una instantánea o copia de seguridad. Restaurar desde una instantánea existente será más rápido al restaurar la aplicación en el mismo clúster.
+Utiliza recursos personalizados para restaurar tus aplicaciones a partir de una instantánea o un backup. Restaurar desde una instantánea existente suele ser más rápido cuando restauras la aplicación en el mismo clúster.
 
 [NOTE]
 ====
 * Cuando restauras una aplicación, todos los ganchos de ejecución configurados para la aplicación se restauran junto con la app. Si hay un gancho de ejecución posterior a la restauración, se ejecuta automáticamente como parte de la operación de restauración.
 * La restauración desde una copia de seguridad a un espacio de nombres diferente o al espacio de nombres original es compatible para los volúmenes qtree. Sin embargo, restaurar desde una instantánea a un espacio de nombres diferente o al espacio de nombres original no es compatible para los volúmenes qtree.
-* Puedes usar la configuración avanzada para personalizar las operaciones de restauración. Para saber más, consulta link:br-use-kubernetes-advanced-restore-settings.html["Configuración avanzada de restauración para Kubernetes en NetApp Backup and Recovery"].
+* Puedes usar la configuración avanzada para personalizar las operaciones de restauración. Para obtener más información, consulta link:br-use-kubernetes-advanced-restore-settings.html["Configuración avanzada de restauración para Kubernetes en NetApp Backup and Recovery"].
 
 
 ====
@@ -34,7 +34,7 @@ Cuando restauras una copia de seguridad en un espacio de nombres diferente usand
 [NOTE]
 ====
 * Restaurar una copia de seguridad en un espacio de nombres diferente con recursos existentes no alterará ningún recurso que comparta nombres con los de la copia de seguridad. Para restaurar todos los recursos de la copia de seguridad, elimina y vuelve a crear el espacio de nombres de destino o restaura la copia de seguridad en un nuevo espacio de nombres.
-* Cuando uses un CR para restaurar en un nuevo espacio de nombres, debes crear manualmente el espacio de nombres de destino antes de aplicar el CR. NetApp Backup and Recovery crea automáticamente espacios de nombres solo cuando usas la CLI.
+* Cuando utilices un CR para restaurar en un nuevo espacio de nombres, debes crear manualmente el espacio de nombres de destino antes de aplicar el CR. NetApp Backup and Recovery crea automáticamente espacios de nombres solo cuando usas la CLI.
 
 
 ====
@@ -307,7 +307,7 @@ kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appA
 ----
 +
 
-NOTE: Si BackupRestore CR no está disponible, puedes usar el comando mencionado en el paso 2 para ver el contenido de la copia de seguridad.
+NOTE: Si el BackupRestore CR no está disponible, puedes usar el comando del paso 2 para ver el contenido del backup.
 
 ** *spec.namespaceMapping*: la asignación del espacio de nombres de origen de la operación de restauración al espacio de nombres de destino. Reemplaza `my-source-namespace` y `my-destination-namespace` con información de tu entorno.
 +

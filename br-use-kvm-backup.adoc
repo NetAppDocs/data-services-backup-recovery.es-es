@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kvm-backup.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Proteja sus cargas de trabajo KVM con el respaldo y la recuperación de NetApp . 
+summary: Proteja sus cargas de trabajo KVM con NetApp Backup and Recovery. 
 ---
 = Realice copias de seguridad de las cargas de trabajo de KVM con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,12 +14,12 @@ summary: Proteja sus cargas de trabajo KVM con el respaldo y la recuperación de
 
 
 [role="lead"]
-Realice copias de seguridad de los grupos de protección KVM desde los sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID para garantizar que sus datos estén protegidos.  Cuando se realiza una copia de seguridad de un grupo de protección, la NetApp Console realiza una copia de seguridad de las máquinas virtuales y los grupos de almacenamiento contenidos en el grupo de protección. Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
+Realiza copias de seguridad de los grupos de protección KVM desde sistemas ONTAP locales a Amazon Web Services, Azure NetApp Files o StorageGRID. Cuando realizas una copia de seguridad de un grupo de protección, NetApp Backup and Recovery realiza una copia de seguridad de las máquinas virtuales y los grupos de almacenamiento de ese grupo y almacena la copia de seguridad en un almacén de objetos de tu cuenta de nube pública o privada.
 
 
-NOTE: Para realizar copias de seguridad de los grupos de protección según una programación, cree políticas que rijan las operaciones de copia de seguridad y restauración.  Verlink:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+NOTE: Para ejecutar copias de seguridad programadas, crea políticas que regulen las operaciones de backup y restauración. Consulta link:br-use-policies-kvm-create.html["Crear políticas de protección de KVM"] para obtener instrucciones.
 
-* Crea grupos de protección para gestionar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Consulta link:br-use-kvm-protection-groups.html["Gestiona grupos de protección KVM en NetApp Backup and Recovery"] para más información.
+* Crea grupos de protección para gestionar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Consulta link:br-use-kvm-protection-groups.html["Gestiona grupos de protección KVM en NetApp Backup and Recovery"] para obtener más información.
 
 
 
@@ -27,7 +27,7 @@ NOTE: Para realizar copias de seguridad de los grupos de protección según una 
 [[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Realice copias de seguridad de los grupos de protección ahora con una copia de seguridad a pedido
 
-Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si está a punto de realizar cambios en su sistema y desea asegurarse de tener una copia de seguridad antes de comenzar.
+Realiza una copia de seguridad bajo demanda de inmediato si vas a realizar cambios y quieres disponer primero de una copia de seguridad actualizada.
 
 *Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
@@ -35,9 +35,9 @@ Puede ejecutar una copia de seguridad a pedido de inmediato.  Esto es útil si e
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En el mosaico KVM, seleccione *Descubrir y administrar*.
 . Seleccione *Inventario*.
-. Seleccione una carga de trabajo para ver los detalles de protección.
+. Selecciona una carga de trabajo para ver los detalles de la protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
-. Seleccione la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
+. Selecciona la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
 . Seleccione el grupo de protección que desea respaldar.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 +

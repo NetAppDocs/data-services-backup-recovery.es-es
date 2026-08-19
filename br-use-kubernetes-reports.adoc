@@ -12,7 +12,7 @@ summary: Crea informes de protección para cargas de trabajo de Kubernetes para 
 
 
 [role="lead"]
-En NetApp Backup and Recovery, crea informes de protección para cargas de trabajo de Kubernetes para ver el estado y los detalles de la protección, incluidos los recuentos de copias de seguridad correctas y fallidas, los tipos de copia de seguridad, la información sobre el estado del clúster y más.
+Crea informes de protección de Kubernetes en NetApp Backup and Recovery para supervisar el estado de las copias de seguridad, los tipos de copia de seguridad y el estado del clúster.
 
 *Rol requerido de NetApp Console*: Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -21,10 +21,10 @@ En NetApp Backup and Recovery, crea informes de protección para cargas de traba
 [[create-a-protection-report]]
 == Crear un informe de protección
 
-Crea un informe de protección para ver el estado de protección de tus clústeres.
+Crea un informe de protección para consultar el estado de protección de tus clústeres.
 
 .Pasos
-. En el menú NetApp Backup and Recovery , seleccione la opción *Informes*.
+. En el menú NetApp Backup and Recovery, selecciona *Reports*.
 . Seleccione *Crear informe*.
 . Introduzca los detalles del alcance del informe:
 +
@@ -34,13 +34,13 @@ Crea un informe de protección para ver el estado de protección de tus clúster
 
 
 . Introduce el intervalo del informe: elige si quieres que el informe incluya datos del último día, de los últimos 7 días, de los últimos 30 días, del último trimestre o del último año.
-. Introduce los detalles de configuración del informe: elige si quieres ejecutar el informe solo una vez o programar una generación de informes recurrente. Para los informes programados, elige la frecuencia de recurrencia y selecciona una fecha de inicio.
+. Introduce los datos de configuración del informe: elige si deseas ejecutar el informe una sola vez o de forma periódica. Para los informes programados, elige la frecuencia de repetición y selecciona una fecha de inicio.
 +
-.. Introduce los detalles de entrega por correo electrónico: (para informes programados solamente) Si quieres que el informe se entregue por correo electrónico, introduce una o varias direcciones de correo electrónico que deban recibir el informe programado.
+.. Introduce los datos de envío por correo electrónico: solo para los informes programados, introduce una o varias direcciones de correo electrónico para recibir el informe.
 
 
 +
-Configure las notificaciones por correo electrónico en la página Configuración. Para obtener detalles sobre cómo configurar las notificaciones por correo electrónico, consultelink:br-start-configure.html["Configurar ajustes"] .
+Configura las notificaciones por correo electrónico en la página *Configuración*. Para obtener más información sobre cómo configurar las notificaciones por correo electrónico, consulta link:br-start-configure.html["Configurar ajustes"].
 
 . Seleccione *Crear*.
 
@@ -53,7 +53,7 @@ Configure las notificaciones por correo electrónico en la página Configuració
 Descarga un informe de protección generado como archivo JSON o documento PDF para que puedas verlo y compartirlo.
 
 .Pasos
-. En el menú NetApp Backup and Recovery , seleccione la opción *Informes*.
+. En el menú NetApp Backup and Recovery, selecciona *Reports*.
 . En la página *Informes*, selecciona el menú *Informes* para ver la lista de informes de protección generados.
 . Para el informe que quieres descargar, selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Download*.
 +
@@ -68,10 +68,10 @@ Descarga un informe de protección generado como archivo JSON o documento PDF pa
 [[view-a-protection-report]]
 == Ver un informe de protección
 
-Visualiza rápidamente los detalles interactivos de un informe de protección dentro de NetApp Backup and Recovery. Puedes ver información resumida del trabajo, el estado de la protección de datos, detalles de la configuración y mucho más.
+Consulta los detalles interactivos de un informe de protección dentro de NetApp Backup and Recovery. Puedes ver información resumida de los trabajos, el estado de la protección de datos, los detalles de la configuración y mucho más.
 
 .Pasos
-. En el menú NetApp Backup and Recovery , seleccione la opción *Informes*.
+. En el menú NetApp Backup and Recovery, selecciona *Reports*.
 . En la página *Informes*, selecciona el menú *Informes* para ver la lista de informes de protección generados.
 . Para el informe que quieres ver, selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Ver informe*.
 +
@@ -87,7 +87,7 @@ Aparecen los detalles del informe.
 Elimina un informe de protección cuando ya no lo necesites.
 
 .Pasos
-. En el menú NetApp Backup and Recovery , seleccione la opción *Informes*.
+. En el menú NetApp Backup and Recovery, selecciona *Reports*.
 . En la página *Informes*, selecciona el menú *Informes* para ver la lista de informes de protección generados.
 . Para el informe que quieres eliminar, selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Delete*.
 . Confirma la acción seleccionando *Suprimir*.

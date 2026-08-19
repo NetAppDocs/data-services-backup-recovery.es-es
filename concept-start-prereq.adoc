@@ -148,7 +148,7 @@ Consulta https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-
 [[requirements-for-backups-to-object-storage]]
 == Requisitos de las copias de seguridad en el almacenamiento de objetos
 
-Para utilizar el almacenamiento de objetos como destinos de backup, necesitas una cuenta con AWS S3, Google Cloud Storage, Microsoft Azure Blob, StorageGRID u ONTAP y los permisos de acceso adecuados configurados.
+Para utilizar el almacenamiento de objetos como destinos de backup, necesitas una cuenta en AWS S3, Google Cloud Storage, Azure Blob storage, StorageGRID u ONTAP y tener configurados los permisos de acceso adecuados.
 
 
 
@@ -187,7 +187,7 @@ Microsoft Windows Para obtener la información más reciente sobre las versiones
 
 
 | Versiones de Microsoft SQL Server  a| 
-Las versiones 2012 y posteriores son compatibles con VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK) NFS.
+Las versiones 2012 y posteriores son compatibles con VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK) en NFS.
 
 
 
@@ -266,7 +266,7 @@ Necesita requisitos específicos para descubrir y proteger sus cargas de trabajo
 | VMware vCenter vSphere versiones | 7.0U1 y superiores 
 
 
-| VMware Tools | VMWare Tools es necesario cuando se utiliza la función de restauración de archivos y carpetas y las copias de seguridad coherentes con VM. Para asegurarte de que la versión de VMware Tools coincide con tu versión de ESXi Server, consulta la  https://packages.vmware.com/tools/versions["Información de asignación de versiones de VMware"]. 
+| VMware Tools | Se requiere VMware Tools para utilizar la función de restauración de archivos y carpetas y las copias de seguridad consistentes con la máquina virtual. Para asegurarte de que la versión de VMware Tools coincide con tu versión de ESXi Server, consulta https://packages.vmware.com/tools/versions["Información de asignación de versiones de VMware"]. 
 
 
 | Tipos de dirección IP | IPv4, IPv6 
@@ -332,7 +332,7 @@ NOTE: Para garantizar que las restauraciones de la carga de trabajo de KVM se co
 Para habilitar la protección de las máquinas virtuales KVM administradas por usuarios sin privilegios de administrador, siga los siguientes pasos:
 
 . Monta el volumen como tipo NFS3 para evitar el uso de `nobody` usuario y grupo.
-. Utilice el siguiente comando para agregar un usuario sin privilegios de administrador al `qemu` grupo preservando sus grupos existentes:
+. Utiliza el siguiente comando para añadir un usuario que no sea usuario raíz al grupo  `qemu` mientras conserva sus grupos existentes:
 +
 [source, shell]
 ----
@@ -388,8 +388,8 @@ NOTE: Se requiere ONTAP 9.19.1 o una versión posterior para admitir más de 6 b
 
 
 | Almacenamiento de objetos (destinos de backup)  a| 
-* Almacenamiento de objetos de Azure
-* Amazon AWS
+* Almacenamiento de blobs de Azure
+* AWS S3
 * StorageGRID en NetApp
 * ONTAP S3
 

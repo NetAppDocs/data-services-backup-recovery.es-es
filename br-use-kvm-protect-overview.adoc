@@ -4,7 +4,7 @@ permalink: br-use-kvm-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Puede proteger máquinas virtuales KVM desde sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando así que sus datos estén protegidos. 
 ---
-= Descubre cómo proteger las cargas de trabajo KVM con NetApp Backup and Recovery
+= Flujo de trabajo de protección KVM con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Puede proteger máquinas virtuales KVM desde sistemas ONTAP locales has
 
 
 [role="lead"]
-Proteja sus máquinas virtuales KVM administradas y grupos de almacenamiento con NetApp Backup and Recovery. NetApp Backup and Recovery ofrece operaciones de backup y restauración rápidas, eficientes en términos de espacio, consistentes ante fallos y compatibles con máquinas virtuales. Sus hosts KVM y máquinas virtuales deben estar administrados por una plataforma de administración como Apache CloudStack antes de poder protegerlos mediante Copia de seguridad y recuperación.
+Protege tus máquinas virtuales KVM gestionadas y los grupos de almacenamiento con NetApp Backup and Recovery. El servicio ofrece operaciones de backup y restauración rápidas, con gestión eficiente del espacio, coherencia tras fallos y coherencia de las máquinas virtuales.
 
-Puede realizar copias de seguridad de cargas de trabajo de KVM en Amazon Web Services S3, Azure NetApp Files o StorageGRID y restaurar cargas de trabajo de KVM en un host KVM local.
+Tus hosts KVM y máquinas virtuales deben estar gestionados por una plataforma como Apache CloudStack antes de que puedas protegerlos con NetApp Backup and Recovery.
 
 Utilice NetApp Backup and Recovery para implementar una estrategia de protección 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:
 
 * Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
-* El uso de diferentes tipos de medios le ayudará a recuperarse si uno de ellos falla.
+* El uso de diferentes tipos de soportes te ayuda a recuperarte si uno de ellos falla.
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
-Puede utilizar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de KVM:
+Puedes usar NetApp Backup and Recovery para realizar las siguientes tareas para cargas de trabajo KVM:
 
 * link:br-start-discover-kvm.html["Descubra las cargas de trabajo KVM"]
 * link:br-use-kvm-protection-groups.html["Crear y administrar grupos de protección para cargas de trabajo KVM"]

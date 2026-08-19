@@ -4,7 +4,7 @@ permalink: br-limitations-vmware.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vcenter 
 summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar Backup and Recovery en tu entorno. 
 ---
-= Limitaciones conocidas de NetApp Backup and Recovery para cargas de trabajo de VMware
+= Limitaciones conocidas para las cargas de trabajo de VMware en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: Revisa estas limitaciones de NetApp Backup and Recovery antes de usar B
 
 
 [role="lead"]
-Aquí se enumeran las plataformas, dispositivos o funciones que no funcionan o no funcionan bien con esta versión.  Lea estas limitaciones cuidadosamente.
+Consulta estas limitaciones antes de usar NetApp Backup and Recovery para cargas de trabajo de VMware.
 
-Las siguientes acciones no son compatibles en las cargas de trabajo de VMware en NetApp Backup and Recovery:
+NetApp Backup and Recovery no admite las siguientes acciones para las cargas de trabajo de VMware:
 
 * En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
 * Compatibilidad con vVol
