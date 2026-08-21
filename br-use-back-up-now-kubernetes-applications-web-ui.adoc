@@ -16,8 +16,9 @@ summary: Crea manualmente copias de seguridad bajo demanda de aplicaciones de Ku
 [role="lead"]
 Utiliza la interfaz de usuario web para realizar una copia de seguridad bajo demanda de una aplicación de Kubernetes.
 
-.Rol de NetApp Console requerido
-Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol de NetApp Console requerido*
+
+Superadministrador de NetApp Backup and Recovery o administrador de backup de NetApp Backup and Recovery. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 

@@ -380,7 +380,7 @@ Cuando habilita NetApp Backup and Recovery para un sistema, se realiza un respal
 Puede elegir una combinación de copias de seguridad por hora, diarias, semanales, mensuales y anuales de todos los volúmenes.  Para realizar copias de seguridad de objetos, también puede seleccionar una de las políticas definidas por el sistema que proporcionan copias de seguridad y retención durante 3 meses, 1 año y 7 años.  Las políticas de protección de respaldo que haya creado en el clúster mediante ONTAP System Manager o la CLI de ONTAP también aparecerán como selecciones.  Esto incluye políticas creadas utilizando etiquetas SnapMirror personalizadas.
 
 
-NOTE: La política de instantáneas aplicada al volumen debe tener una de las etiquetas que está utilizando en su política de replicación y en su política de copia de seguridad de objetos. Si no se encuentran etiquetas coincidentes, no se crearán archivos de respaldo. Por ejemplo, si desea crear volúmenes replicados y archivos de copia de seguridad "semanales", debe utilizar una política de instantáneas que cree instantáneas "semanales".
+NOTE: La política de snapshot aplicada al volumen debe tener una de las etiquetas que estás usando en tu política de replicación y en tu política de backup a objeto. Si no se encuentran etiquetas coincidentes, no se crearán archivos de backup. Por ejemplo, si quieres crear volúmenes replicados y archivos de backup "semanales", debes usar una política de snapshot que cree snapshots "semanales".
 
 Una vez que se alcanza el número máximo de copias de seguridad para una categoría o intervalo, se eliminan las copias de seguridad más antiguas para que siempre tenga las copias de seguridad más actuales (y así las copias de seguridad obsoletas no sigan ocupando espacio).
 

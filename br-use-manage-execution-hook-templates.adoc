@@ -25,8 +25,9 @@ NetApp Backup and Recovery congela y descongela sistemas de archivos para aplica
 
 
 ====
-.Rol de NetApp Console requerido
-Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol de NetApp Console requerido*
+
+Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 

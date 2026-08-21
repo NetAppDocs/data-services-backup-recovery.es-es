@@ -351,7 +351,7 @@ La página de Introducción del asistente muestra las opciones de protección, i
 [[select-the-volumes-that-you-want-to-back-up]]
 === Seleccione los volúmenes que desea respaldar
 
-Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
+Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación y política de copia de seguridad a objeto.
 
 Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar la copia de seguridad de un sistema.  Vea cómolink:prev-ontap-backup-manage.html["Activar la copia de seguridad para volúmenes adicionales en el sistema"] (FlexVol o FlexGroup) después de haber configurado la copia de seguridad para los volúmenes iniciales.
 
@@ -363,7 +363,7 @@ Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede
 
 ====
 .Pasos
-Tenga en cuenta que si los volúmenes que elija ya tienen políticas de instantáneas o de replicación aplicadas, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.
+Ten en cuenta que si los volúmenes que elijas ya tienen aplicadas políticas de snapshot o de replicación, las políticas que selecciones después sobrescribirán esas políticas existentes.
 
 . En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.
 +
@@ -512,7 +512,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 .Pasos
 . En la página Revisar, revise sus selecciones.
-. Opcionalmente, marque la casilla para *Sincronizar automáticamente las etiquetas de la política de instantáneas con las etiquetas de la política de replicación y copia de seguridad*.  Esto crea instantáneas con una etiqueta que coincide con las etiquetas de las políticas de replicación y copia de seguridad.
+. Si lo deseas, marca la casilla para *sincronizar automáticamente las etiquetas de la política de snapshot con las etiquetas de las políticas de replicación y backup*. Esto crea snapshots con una etiqueta que coincide con las etiquetas de las políticas de replicación y backup.
 . Seleccione *Activar copia de seguridad*.
 
 

@@ -16,7 +16,7 @@ summary: Clona tus cargas de trabajo de Oracle Database con NetApp Backup and Re
 [role="lead"]
 Utiliza NetApp Backup and Recovery para crear clones modificables de cargas de trabajo de Oracle Database a partir de sistemas ONTAP locales en almacenamiento principal o secundario. También puedes programar actualizaciones de los clones para adaptarlas a tus necesidades.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol de NetApp Console requerido* rol de superadministrador de Backup and Recovery o rol de administrador de clones de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
@@ -31,6 +31,15 @@ Crea un clon inmediatamente a partir de una instantánea existente. Usa este mé
 . Selecciona *Clonar*.
 . Seleccione *Crear nuevo clon*.
 . En la sección *Fuente de la base de datos*, elige el host y la base de datos de origen de las listas.
++
+.. Si la base de datos de origen es una base de datos contenedora (CDB), en la sección *Tipo de clon* selecciona una de las siguientes:
++
+*** *Clonación completa de la base de datos*: Clona toda la base de datos del contenedor, incluidos todos los PDB.
+*** *Clon de PDB*: Clona una PDB específica del backup de la base de datos del contenedor en una base de datos del contenedor de destino ya existente.
+
+
+
+
 . En la sección *Database target*, elige el host y la base de datos de destino de las listas. El host y la base de datos de destino pueden ser diferentes del origen.
 . Seleccione *Siguiente*.
 . En la sección *Clonar desde* de la página *Seleccionar punto de restauración*, selecciona *Instantáneas existentes*.
@@ -41,8 +50,9 @@ La página *Seleccionar ubicación de la instantánea* aparece si la instantáne
 . Elige la ubicación de la instantánea que quieres usar y selecciona *Siguiente*.
 . En la página *Opciones avanzadas*, haz lo siguiente:
 +
-.. Si has guardado previamente un archivo de especificaciones, puedes cargarlo para personalizar la configuración de la base de datos clonada. También puedes descargar el archivo de especificaciones predeterminado para la instantánea de la base de datos.
-.. En la sección *Ámbito de recuperación*, elige cómo limitar lo que se restaura para crear el clon e introduce la información necesaria para la opción que elijas. Elegir *Ninguno* restaura todos los datos.
+.. Opcionalmente, si vas a clonar una base de datos multitenant completa, en *Configuración de clonación completa de la base de datos*, selecciona una o varias PDB para excluir de la clonación (PDB$SEED siempre queda excluida). Esta sección no aparece cuando clonas una base de datos de un solo tenant.
+.. Si ya has guardado un archivo de especificaciones, puedes activar la opción *Personalizar parámetros de la base de datos de destino* para cargarlo y personalizar la configuración de la base de datos clonada. También puedes descargar el archivo de especificaciones predeterminado para la instantánea de la base de datos.
+.. En la sección *Ámbito de recuperación*, selecciona una opción para recuperar el clon utilizando los registros de archivo e introduce los datos necesarios. Elegir *Ninguna* omite la recuperación (el clon se crea a partir de la instantánea sin aplicar los cambios de los registros de archivo). *Ninguna* no está disponible para los clones de PDB.
 .. En la sección *Prescripts and postscripts*, activa una o ambas opciones *Prescript* y *Postscript* para ejecutar un script antes de que comience la operación de clonación o después de que termine. Para cada opción, ingresa la ruta completa del script y cualquier argumento necesario.
 
 
@@ -55,6 +65,9 @@ La página *Seleccionar ubicación de la instantánea* aparece si la instantáne
 == Programa un clon de una base de datos Oracle
 
 Crea un clon instantáneo y programa actualizaciones periódicas para mantenerlo al día con el estado más reciente de la base de datos.
+
+
+NOTE: La creación de una instantánea y un clon instantáneos con una programación de actualización solo se aplica a los clones completos de la base de datos. No está disponible para un clon de PDB.
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.

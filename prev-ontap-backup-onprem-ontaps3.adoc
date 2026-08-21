@@ -286,7 +286,7 @@ Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede
 
 ====
 .Pasos
-Tenga en cuenta que si los volúmenes que elija ya tienen políticas de instantáneas o de replicación aplicadas, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.
+Ten en cuenta que si los volúmenes que elijas ya tienen aplicadas políticas de snapshot o de replicación, las políticas que selecciones después sobrescribirán esas políticas existentes.
 
 . En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.
 +
@@ -329,10 +329,10 @@ Para obtener detalles sobre estas arquitecturas, consultelink:prev-ontap-protect
 
 
 
-. *Instantánea local*: elija una política de instantáneas existente o cree una nueva.
+. *Instantánea local*: Elige una política de snapshot ya existente o crea una nueva.
 +
 
-TIP: Si desea crear una política personalizada antes de activar la instantánea, puede usar el Administrador del sistema o la CLI de ONTAP `snapmirror policy create` dominio.  Referirse a .
+TIP: Si deseas crear una política personalizada antes de activar la instantánea, puedes utilizar System Manager o el comando de la CLI de ONTAP `snapmirror policy create`. Consulta.
 
 +
 
@@ -396,7 +396,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 
 
 +
-** *Exportar instantáneas existentes al almacenamiento de objetos como archivos de copia de seguridad*: Si existen instantáneas locales para volúmenes en este sistema que coincidan con la etiqueta de programación de copias de seguridad que acaba de seleccionar (por ejemplo, diaria, semanal, etc.), se mostrará este mensaje adicional. Marque esta casilla para que todas las instantáneas históricas se copien en el almacenamiento de objetos como archivos de respaldo para garantizar la protección más completa para sus volúmenes.
+** *Exportar instantáneas existentes al almacenamiento de objetos como archivos de backup*: Si hay alguna instantánea local de los volúmenes de este sistema que coincida con la etiqueta de la programación de backup que acabas de seleccionar (por ejemplo, diaria, semanal, etc.), aparecerá este mensaje adicional. Marca esta casilla para que todas las instantáneas históricas se copien al almacenamiento de objetos como archivos de backup y así asegurar la protección más completa para tus volúmenes.
 
 
 . Seleccione *Siguiente*.
@@ -411,7 +411,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 .Pasos
 . En la página Revisar, revise sus selecciones.
-. Opcionalmente, marque la casilla para *Sincronizar automáticamente las etiquetas de la política de instantáneas con las etiquetas de la política de replicación y copia de seguridad*.  Esto crea instantáneas con una etiqueta que coincide con las etiquetas de las políticas de replicación y copia de seguridad.  Si las políticas no coinciden, no se crearán copias de seguridad.
+. Si lo deseas, marca la casilla para *sincronizar automáticamente las etiquetas de la política de snapshot con las etiquetas de las políticas de replicación y backup*. Esto crea snapshots con una etiqueta que coincide con las etiquetas de las políticas de replicación y backup. Si las políticas no coinciden, no se crearán backups.
 . Seleccione *Activar copia de seguridad*.
 
 

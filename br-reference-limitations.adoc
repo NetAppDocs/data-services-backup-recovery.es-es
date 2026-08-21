@@ -65,7 +65,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 * Al realizar copias de seguridad de volúmenes de protección de datos (DP):
 +
 ** Las relaciones con las etiquetas SnapMirror `app_consistent` y `all_source_snapshot` no se respaldarán en la nube.
-** Si creas copias locales de Snapshots en el volumen de destino de SnapMirror (independientemente de las etiquetas de SnapMirror que uses), estos Snapshots no se moverán a la nube como backups. Debes crear una Snapshot policy con las etiquetas que quieras en el volumen de origen DP para que NetApp Backup and Recovery pueda hacerles backup.
+** Si creas copias locales de instantáneas en el volumen de destino de SnapMirror (independientemente de las etiquetas de SnapMirror utilizadas), estas instantáneas no se moverán a la nube como backups. Debes crear una política de instantáneas con las etiquetas deseadas en el volumen DP de origen para que NetApp Backup and Recovery pueda hacer backup de ellas.
 
 
 * FlexGroup las copias de seguridad de volúmenes no se pueden trasladar al almacenamiento de archivo.
@@ -73,7 +73,7 @@ Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs
 * La copia de seguridad del volumen SVM-DR se admite con las siguientes restricciones:
 +
 ** Las copias de seguridad solo se admiten desde el servidor secundario de ONTAP .
-** La política de instantáneas aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery, incluidas las diarias, semanales, mensuales, etc. La política predeterminada "sm_created" (usada para *Duplicar todas las instantáneas*) no se reconoce y el volumen DP no se mostrará en la lista de volúmenes que se pueden respaldar.
+** La política de snapshot aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery, incluyendo diaria, semanal, mensual, etc. La política predeterminada "sm_created" (usada para *Mirror All Snapshots*) no es reconocida y el volumen DP no aparecerá en la lista de volúmenes que se pueden respaldar.
 ** SVM-DR y la copia de seguridad y recuperación de volúmenes funcionan de forma totalmente independiente cuando la copia de seguridad se realiza desde el origen o desde el destino. La única restricción es que SVM-DR no replica la relación de nube SnapMirror. En el escenario de recuperación ante desastres, cuando la máquina virtual de almacenamiento pasa a estar en línea en la ubicación secundaria, debes actualizar manualmente la relación de nube SnapMirror.
 
 

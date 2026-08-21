@@ -28,7 +28,7 @@ Realiza copias de seguridad de las máquinas virtuales de Hyper-V de los sistema
 
 Utiliza una copia de seguridad bajo demanda para proteger tus datos antes de realizar cambios en el sistema.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de copias de seguridad de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery o administrador de backup de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.

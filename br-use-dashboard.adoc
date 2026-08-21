@@ -16,7 +16,7 @@ summary: Monitorear el estado de sus cargas de trabajo le garantiza estar al tan
 [role="lead"]
 Supervisa el estado de tus cargas de trabajo para identificar problemas de protección y responder a las alertas. Consulta el estado de los backups y las restauraciones, y revisa los resúmenes de sistema, protección, trabajos y restauración en el panel de control de NetApp Backup and Recovery.
 
-*Rol requerido de NetApp Console*: Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o Backup and Recovery viewer. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Funciones y privilegios de backup y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o rol de Backup and Recovery backup viewer. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Más información sobre link:reference-roles.html["Funciones y privilegios de backup y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.

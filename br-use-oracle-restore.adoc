@@ -121,29 +121,37 @@ Se muestran las instantáneas coincidentes.
 ====
 .Restaurar a la ubicación original
 --
+[NOTE]
+====
+Si restauras PDB o espacios de tabla PDB a un momento específico o a un SCN:
+
+* Selecciona solo un PDB. La recuperación a un momento específico no es compatible con restaurar varios PDB.
+* No se puede seleccionar el PDB $SEED para recuperación a un momento específico.
+* La restauración del archivo de control no se puede combinar con la recuperación a un momento específico de PDB o espacios de tabla.
+* Asegúrate de que el backup de datos y los backups de registros necesarios estén catalogados.
+
+
+====
 . *Configuración de destino*:
+. Selecciona lo que quieres restaurar:
 +
-** Elija restaurar la base de datos completa o solo los espacios de tabla de la base de datos.
-** *Archivos de control*: Opcionalmente, habilite esta opción para restaurar también los archivos de control de la base de datos.
+** Selecciona *Todos los archivos de datos* para restaurar toda la base de datos o la base de datos contenedora (CDB).
+** Selecciona *Bases de datos conectables (PDBs)* para restaurar una o varias PDBs desde una CDB sin afectar a las demás PDBs del contenedor. Luego selecciona las PDBs de la lista.
+** Selecciona *Espacios de tabla de base de datos conectables (PDB)* (que aparecen como *Espacios de tabla* en una base de datos que no sea CDB) para restaurar espacios de tabla PDB específicos. Luego, selecciona la PDB y los espacios de tabla.
 
 
-. *Opciones de pre-restauración*:
+. Si lo deseas, activa la opción *archivos de control* para restaurar también los archivos de control de la base de datos. Esta opción no está disponible para la recuperación a un momento específico o por SCN de PDB o espacios de tabla de PDB.
+. Si lo deseas, activa la opción *Cambiar el estado de la base de datos si es necesario para la restauración y la recuperación* para permitir que NetApp Backup and Recovery gestione el estado de la base de datos según el tipo de recuperación.
+. Si lo deseas, activa la opción *Force in place restore* para utilizar un método de restauración más rápido para bases de datos SAN/ASM, omitiendo la comprobación de validación de archivos externos. La base de datos y el grupo de discos ASM se restauran al punto de creación del backup.
+. Especifica la ubicación de los archivos de registro del archivo externo si vas a restaurar PDB o espacios de tabla de PDB a un momento específico o a un SCN. Introduce la ubicación donde RMAN crea la instancia auxiliar para realizar la recuperación. Introduce una ruta del sistema de archivos que comience con "/" o un grupo de discos ASM que comience con "+". Usa los botones "más" y "menos" junto al campo de entrada de texto para añadir o eliminar ubicaciones.
+. Si lo deseas, activa la opción *Abrir la base de datos o la base de datos contenedora en modo READ-WRITE tras la recuperación* para abrir las bases de datos en modo READ-WRITE después de restaurarlas. Esto pone en línea los tablespaces restaurados.
+. *Prescripts y postscripts*:
 +
-** Opcionalmente, habilite esta opción e ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
-** Elige un valor de tiempo de espera para el script. Si el script no se ejecuta dentro de ese plazo, la restauración se lleva a cabo de todos modos.
-
-
-. *Opciones posteriores a la restauración*:
-+
+** *Prescript*: Si lo deseas, activa esta opción e introduce la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que requiera dicho script.
 ** *Posdata*: Opcionalmente, habilite esta opción e ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
-** *Abrir la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación*: Una vez finalizada la operación de restauración, NetApp Backup and Recovery activa el modo lectura/escritura para la base de datos.
 
 
-. Sección de *Notificación*:
-+
-** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración e indique qué tipo de notificaciones desea recibir.
-
-
+. Elige un valor de tiempo de espera para el script. Si el script no se ejecuta dentro de este plazo, la restauración se llevará a cabo de todos modos.
 . Seleccione *Restaurar*.
 
 

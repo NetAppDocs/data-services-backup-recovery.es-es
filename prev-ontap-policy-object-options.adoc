@@ -29,7 +29,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 NetApp Backup and Recovery le permite crear múltiples políticas de respaldo con programaciones únicas para cada sistema (clúster).  Puede asignar diferentes políticas de respaldo a volúmenes que tengan diferentes objetivos de punto de recuperación (RPO).
 
-Cada política de respaldo proporciona una sección para _Etiquetas y retención_ que puede aplicar a sus archivos de respaldo.  Tenga en cuenta que la política de instantáneas aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery o no se crearán archivos de respaldo.
+Cada política de backup incluye una sección de _Etiquetas y retención_ que puedes aplicar a tus archivos de backup. Ten en cuenta que la política de snapshot aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery o no se crearán archivos de backup.
 
 El programa consta de dos partes: la etiqueta y el valor de retención:
 

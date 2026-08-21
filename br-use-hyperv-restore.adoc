@@ -57,7 +57,7 @@ Desde la página «Restaurar», puedes restaurar un recurso aunque no recuerdes 
 
 Restaura las cargas de trabajo de Hyper-V mediante el menú «Restaurar». Puedes buscar una instantánea por nombre o utilizando filtros.
 
-*Rol de consola requerido* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de NetApp Backup and Recovery o administrador de restauración de NetApp Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.

@@ -18,6 +18,7 @@ Consulta las limitaciones actuales y las acciones no compatibles con las cargas 
 
 Las siguientes acciones no son compatibles con las cargas de trabajo de Oracle Database en la versión preliminar de NetApp Backup and Recovery:
 
+* Después de realizar una recuperación incompleta restaurando una base de datos a un momento específico o a un SCN específico, si más adelante necesitas restaurarla a un punto anterior a esa recuperación, también debes seleccionar *archivos de control* en la configuración del destino de la restauración. Sin restaurar el archivo de control, la base de datos no se puede restaurar a un punto anterior a la recuperación incompleta anterior.
 * En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
 * Copias de seguridad sin conexión
 

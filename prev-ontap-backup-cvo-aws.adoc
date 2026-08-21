@@ -285,7 +285,7 @@ La página de introducción del asistente muestra las opciones de protección, i
 [[select-the-volumes-that-you-want-to-back-up]]
 === Seleccione los volúmenes que desea respaldar
 
-Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación, política de copia de seguridad a objeto.
+Seleccione los volúmenes que desea proteger.  Un volumen protegido es aquel que tiene una o más de las siguientes opciones: política de instantáneas, política de replicación y política de copia de seguridad a objeto.
 
 Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar la copia de seguridad de un sistema.  Vea cómolink:prev-ontap-backup-manage.html["Activar la copia de seguridad para volúmenes adicionales en el sistema"] (FlexVol o FlexGroup) después de haber configurado la copia de seguridad para los volúmenes iniciales.
 
@@ -432,7 +432,7 @@ Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es nece
 
 .Pasos
 . En la página Revisar, revise sus selecciones.
-. Opcionalmente, marque la casilla para *Reparar automáticamente las etiquetas no coincidentes en la instantánea local, la replicación y la copia de seguridad*. Esto crea instantáneas con una etiqueta que coincide con las etiquetas de las políticas de instantáneas, replicación y copia de seguridad.
+. Si lo deseas, marca la casilla *Corregir automáticamente las etiquetas que no coincidan en la instantánea local, la replicación y el backup*. Esto crea instantáneas con una etiqueta que coincide con las etiquetas de las políticas de instantánea, replicación y backup.
 . Seleccione *Activar copia de seguridad*.
 
 

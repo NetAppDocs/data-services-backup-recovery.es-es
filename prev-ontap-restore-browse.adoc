@@ -153,7 +153,7 @@ Para restaurar un volumen, necesita el nombre del sistema de origen, la máquina
 . Desde la sección _Explorar y restaurar_, seleccione *Restaurar volumen*.
 . En la página _Seleccionar origen_, navegue hasta el archivo de respaldo del volumen que desea restaurar.  Seleccione el *sistema*, el *volumen* y el archivo de *copia de seguridad* que tenga la marca de fecha y hora desde el que desea restaurar.
 +
-La columna *Ubicación* muestra si el archivo de copia de seguridad (instantánea) es *Local* (una instantánea en el sistema de origen), *Secundario* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de copia de seguridad en almacenamiento de objetos). Seleccione el archivo que desea restaurar.
+La columna *Ubicación* indica si el archivo de backup (instantánea) es *Local* (una instantánea en el sistema de origen), *Secundario* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de backup en un almacenamiento de objetos). Elige el archivo que quieres restaurar.
 
 . Seleccione *Siguiente*.
 +

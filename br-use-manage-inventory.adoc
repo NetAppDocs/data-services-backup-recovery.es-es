@@ -49,7 +49,7 @@ Puedes hacer lo siguiente para gestionar tu inventario:
 
 Gestiona la información de los hosts para asegurarte de que los hosts correctos estén protegidos. Consulta, edita y elimina la información de los hosts según sea necesario.
 
-*Rol requerido de NetApp Console*: Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin o Backup and Recovery clone admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin o Backup and Recovery clone admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 * Configura el directorio de registros. Para más información, consulta link:br-start-setup.html["Configurar los ajustes de NetApp Backup and Recovery"].
 * Suspender horarios
@@ -69,7 +69,7 @@ TIP: Para gestionar un host, busca el estado «Sin gestionar» en la columna «H
 
 Después de administrar los hosts en NetApp Backup and Recovery, SnapCenter ya no administra los recursos en esos hosts.
 
-*Rol requerido de NetApp Console*: Storage viewer o Backup and Recovery super admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery o administrador de backup de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . Desde el menú, seleccione *Inventario*.
@@ -145,7 +145,7 @@ Gestiona la información de la instancia para proteger los recursos, asociar o e
 * Realizar una copia de seguridad ahora
 
 
-*Rol de NetApp Console requerido:* Storage viewer, Backup and Recovery super admin, rol de Backup and Recovery backup admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también necesitarás el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol de NetApp Console requerido* rol de superadministrador de Backup and Recovery o rol de administrador de backup de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de administrador de Cloud Volumes ONTAP. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
@@ -255,7 +255,7 @@ Puede administrar la información de la base de datos de las siguientes maneras:
 
 Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
 
-*Rol de NetApp Console requerido:* Storage viewer, Backup and Recovery super admin, rol de Backup and Recovery backup admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también necesitarás el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol de NetApp Console requerido* rol de superadministrador de Backup and Recovery o rol de administrador de backup de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de administrador de Cloud Volumes ONTAP. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
@@ -275,7 +275,7 @@ Para obtener más información sobre cómo crear una política, consulta link:br
 
 Restaura una base de datos cuando necesites recuperar datos.
 
-*Rol de NetApp Console requerido:* Storage viewer, Backup and Recovery super admin, rol de Backup and Recovery backup admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también necesitarás el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console* Rol de superadministrador de Backup and Recovery o rol de administrador de restauración de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
@@ -295,7 +295,7 @@ Para obtener información sobre cómo restaurar cargas de trabajo, consulta link
 
 Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
 
-*Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery o administrador de backup de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
@@ -315,7 +315,7 @@ Para obtener más información sobre cómo crear una política, consulta link:br
 
 Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para proteger sus datos de inmediato.
 
-*Rol de NetApp Console requerido* Visor de almacenamiento, superadministrador de respaldo y recuperación, rol de administrador de respaldo de respaldo y recuperación. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery o administrador de backup de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
