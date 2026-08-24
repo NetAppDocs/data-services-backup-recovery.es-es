@@ -53,6 +53,19 @@ En función de tus necesidades, puedes restaurar una base de datos Oracle a un m
 
 *Rol requerido de NetApp Console*: superadministrador de NetApp Backup and Recovery o administrador de restauración de NetApp Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
+[NOTE]
+====
+Si restauras PDB o espacios de tabla a un momento específico o a un SCN:
+
+* Selecciona solo un PDB. La recuperación a un momento específico no es compatible con restaurar varios PDB.
+* `PDB$SEED` No se puede seleccionar para recuperación a un momento específico.
+* La restauración de archivos de control no se puede combinar con la recuperación a un momento específico de los PDB o de los espacios de tabla de los PDB.
+* Asegúrate de que el backup de datos y los backups de registros necesarios estén catalogados.
+* Los espacios de tabla  `SYSTEM`,  `SYSAUX` y  `UNDO` no se pueden seleccionar.
+* Comprueba que el backup de datos y los backups de registros necesarios estén catalogados.
+
+
+====
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
@@ -72,8 +85,15 @@ Aparecerá una lista de instantáneas que coinciden con sus criterios de búsque
 .. Seleccione *Siguiente*.
 .. Elija una fecha del menú desplegable y seleccione *Buscar*.
 +
-Se muestra una lista de instantáneas coincidentes en la fecha especificada.
+Se muestra la instantánea más cercana a la fecha y hora especificadas.
 
+.. Si lo deseas, selecciona *Ver copias de seguridad de los registros* para ver las copias de seguridad de los registros correspondientes.
++
+... Comprueba que los backups de los registros estén montados.
+
+
+.. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
+.. Seleccione *Siguiente*.
 
 
 --
@@ -83,8 +103,15 @@ Se muestra una lista de instantáneas coincidentes en la fecha especificada.
 .. Seleccione *Siguiente*.
 .. Ingrese el SCN que se utilizará como punto de restauración y seleccione *Buscar*.
 +
-Se muestra una lista de instantáneas coincidentes para el SCN especificado.
+Se muestra la instantánea más cercana para el SCN especificado.
 
+.. Si lo deseas, selecciona *Ver copias de seguridad de los registros* para ver las copias de seguridad de los registros correspondientes.
++
+... Comprueba que los backups de los registros estén montados.
+
+
+.. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
+.. Seleccione *Siguiente*.
 
 
 --
@@ -93,66 +120,71 @@ Se muestra una lista de instantáneas coincidentes para el SCN especificado.
 .. Seleccione *Restaurar a la última copia de seguridad*.
 .. Seleccione *Siguiente*.
 +
-Se muestran las últimas copias de seguridad completas y de registros.
+Se muestra la última instantánea. La operación de restauración recupera el último estado válido usando todos los backups de registro disponibles.
 
+.. Si lo deseas, selecciona *Ver copias de seguridad de los registros* para ver las copias de seguridad de los registros correspondientes.
++
+... Comprueba que los backups de los registros estén montados.
+
+
+.. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
+.. Seleccione *Siguiente*.
 
 
 --
 .Restaurar desde instantáneas sin recuperación
 --
 .. Seleccione *Restaurar desde instantáneas sin recuperación*.
++
+Al seleccionar esta opción, la base de datos se restaurará a partir de instantáneas, pero se omitirá la recuperación (no se aplicarán los backups de registros).
+
 .. Seleccione *Siguiente*.
 +
-Se muestran las instantáneas coincidentes.
+Se muestran las instantáneas disponibles.
 
+.. Selecciona una instantánea de la lista y selecciona *Siguiente*.
+.. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
+.. Seleccione *Siguiente*.
 
 
 --
 ====
-. Seleccione una ubicación de origen de la instantánea.
-. Seleccione *Siguiente* para continuar.
 . Elija el destino de restauración y la configuración:
-
-
-[discrete]
-===== Selección de destino
-
++
 [role="tabbed-block"]
 ====
 .Restaurar a la ubicación original
 --
-[NOTE]
-====
-Si restauras PDB o espacios de tabla PDB a un momento específico o a un SCN:
-
-* Selecciona solo un PDB. La recuperación a un momento específico no es compatible con restaurar varios PDB.
-* No se puede seleccionar el PDB $SEED para recuperación a un momento específico.
-* La restauración del archivo de control no se puede combinar con la recuperación a un momento específico de PDB o espacios de tabla.
-* Asegúrate de que el backup de datos y los backups de registros necesarios estén catalogados.
-
-
-====
-. *Configuración de destino*:
-. Selecciona lo que quieres restaurar:
+.. En la sección *Configuración de destino*, haz lo siguiente:
 +
-** Selecciona *Todos los archivos de datos* para restaurar toda la base de datos o la base de datos contenedora (CDB).
-** Selecciona *Bases de datos conectables (PDBs)* para restaurar una o varias PDBs desde una CDB sin afectar a las demás PDBs del contenedor. Luego selecciona las PDBs de la lista.
-** Selecciona *Espacios de tabla de base de datos conectables (PDB)* (que aparecen como *Espacios de tabla* en una base de datos que no sea CDB) para restaurar espacios de tabla PDB específicos. Luego, selecciona la PDB y los espacios de tabla.
-
-
-. Si lo deseas, activa la opción *archivos de control* para restaurar también los archivos de control de la base de datos. Esta opción no está disponible para la recuperación a un momento específico o por SCN de PDB o espacios de tabla de PDB.
-. Si lo deseas, activa la opción *Cambiar el estado de la base de datos si es necesario para la restauración y la recuperación* para permitir que NetApp Backup and Recovery gestione el estado de la base de datos según el tipo de recuperación.
-. Si lo deseas, activa la opción *Force in place restore* para utilizar un método de restauración más rápido para bases de datos SAN/ASM, omitiendo la comprobación de validación de archivos externos. La base de datos y el grupo de discos ASM se restauran al punto de creación del backup.
-. Especifica la ubicación de los archivos de registro del archivo externo si vas a restaurar PDB o espacios de tabla de PDB a un momento específico o a un SCN. Introduce la ubicación donde RMAN crea la instancia auxiliar para realizar la recuperación. Introduce una ruta del sistema de archivos que comience con "/" o un grupo de discos ASM que comience con "+". Usa los botones "más" y "menos" junto al campo de entrada de texto para añadir o eliminar ubicaciones.
-. Si lo deseas, activa la opción *Abrir la base de datos o la base de datos contenedora en modo READ-WRITE tras la recuperación* para abrir las bases de datos en modo READ-WRITE después de restaurarlas. Esto pone en línea los tablespaces restaurados.
-. *Prescripts y postscripts*:
+... En el caso de las bases de datos RAC, selecciona el nodo RAC en el que se va a ejecutar la restauración. Esta opción solo aparece para las bases de datos RAC.
+... Selecciona lo que quieres restaurar:
 +
-** *Prescript*: Si lo deseas, activa esta opción e introduce la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que requiera dicho script.
-** *Posdata*: Opcionalmente, habilite esta opción e ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
+**** Selecciona *Todos los archivos de datos* para restaurar toda la base de datos o la base de datos contenedora (CDB).
+**** Selecciona *Bases de datos conectables (PDBs)* para restaurar una o varias PDBs desde una CDB sin afectar a las demás PDBs del contenedor. Luego selecciona las PDBs de la lista.
+**** Selecciona *Espacios de tabla de base de datos conectables (PDB)* (que aparecen como *Espacios de tabla* en una base de datos que no sea CDB) para restaurar espacios de tabla PDB específicos. Luego, selecciona la PDB y los espacios de tabla.
 
 
-. Elige un valor de tiempo de espera para el script. Si el script no se ejecuta dentro de este plazo, la restauración se llevará a cabo de todos modos.
-. Seleccione *Restaurar*.
+... Si lo deseas, activa la opción *Archivos de control* para restaurar también los archivos de control de la base de datos. Esta opción no se puede seleccionar para la recuperación a un momento específico o por SCN de PDB o espacios de tabla de PDB.
+... Si lo deseas, activa la opción *Cambiar el estado de la base de datos si es necesario para la restauración y la recuperación* para permitir que NetApp Backup and Recovery gestione el estado de la base de datos según el tipo de recuperación.
+... Si lo deseas, activa la opción *Restaurar sin movimiento* para realizar una restauración sin movimiento cuando se hayan añadido nuevos archivos de datos después del backup, o cuando se hayan añadido, eliminado o vuelto a crear LUN en un grupo de discos LVM. Esto anula la comprobación de archivos externos; la recuperación de bases de datos continúa usando la opción de restauración que seleccionaste.
+... Especifica las ubicaciones de los archivos de registro de archivo externo en el campo *Ubicaciones de los archivos de registro de archivo externo* si, al restaurar PDB o espacios de tabla a un momento específico o a un SCN, los archivos de registro de archivo externo no se encuentran en la ubicación configurada. Ingresa una ruta del sistema de archivos que comience con `/` o un grupo de discos ASM que comience con `+`. Usa los botones "más" y "menos" junto al campo de entrada de texto para agregar o quitar ubicaciones. Este campo no aparece cuando restauras desde snapshots sin recuperación.
+... Si lo deseas, activa la opción *Abrir la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación* y selecciona una subopción que se ajuste al ámbito de la restauración (estas opciones no aparecen cuando se restaura a partir de instantáneas sin recuperación):
++
+**** *Todos los archivos de datos*: Abre la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación.
+**** *PDB o espacios de tabla PDB*: Abre las bases de datos conectables en modo lectura/escritura tras la recuperación.
+**** *Espacios de tabla que no pertenecen al CDB*: Pon los espacios de tabla en línea después de la recuperación.
+
+
+
+
+.. En la sección *Prescripts y postscripts*, haz lo siguiente:
++
+... *Prescript*: Si lo deseas, activa esta opción e introduce la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que requiera dicho script.
+... *Posdata*: Opcionalmente, habilite esta opción e ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
+... Elige un valor de tiempo de espera para el script. Si el script no se ejecuta dentro de este plazo, la restauración se llevará a cabo de todos modos.
+
+
 
 
 --
@@ -162,3 +194,5 @@ No está disponible para cargas de trabajo de Oracle Database en esta versión p
 
 --
 ====
+. Seleccione *Restaurar*.
+
