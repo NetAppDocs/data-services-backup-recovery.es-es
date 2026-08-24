@@ -136,7 +136,7 @@ Cuando restaura un volumen desde un archivo de respaldo, NetApp Backup and Recov
 
 NOTE: Cuando restauras un volumen habilitado para SnapLock, el volumen restaurado conserva la protección SnapLock solo si el almacenamiento de destino está habilitado para WORM. Si restauras en un destino que no está habilitado para WORM, se elimina el estado SnapLock del volumen restaurado.
 
-Al restaurar una copia de seguridad en la nube en un sistema Cloud Volumes ONTAP que utiliza ONTAP 9.13.0 o superior, o en un sistema ONTAP local que ejecuta ONTAP 9.14.1, tendrá la opción de realizar una operación de _restauración rápida_. La restauración rápida es ideal para situaciones de recuperación ante desastres donde necesita proporcionar acceso a un volumen lo antes posible. Una restauración rápida restaura los metadatos del archivo de respaldo a un volumen en lugar de restaurar el archivo de respaldo completo.  No se recomienda la restauración rápida para aplicaciones sensibles al rendimiento o a la latencia, y no es compatible con copias de seguridad en almacenamiento archivado.
+Al restaurar una copia de seguridad en la nube en un sistema Cloud Volumes ONTAP con ONTAP 9.13.0 o superior o en un sistema ONTAP local que ejecute ONTAP 9.14.1, tendrás la opción de realizar una operación de _restauración rápida_. La restauración rápida es ideal para situaciones de recuperación ante desastres en las que necesitas proporcionar acceso a un volumen lo antes posible. Una restauración rápida restaura los metadatos del archivo de copia de seguridad en un volumen en lugar de restaurar el archivo de copia de seguridad completo. La restauración rápida no se recomienda para aplicaciones sensibles a la latencia ni para el rendimiento, y no es compatible con copias de seguridad en almacenamiento archivado.
 
 
 NOTE: La restauración rápida es compatible con volúmenes FlexGroup solo si el sistema de origen desde el que se creó el backup en la nube ejecutaba ONTAP 9.12.1 o una versión posterior. Es compatible con volúmenes SnapLock solo si el sistema de origen ejecutaba ONTAP 9.11.0 o una versión posterior.
@@ -185,7 +185,11 @@ link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información so
 ** *Restauración rápida*: Los volúmenes y datos restaurados estarán disponibles de inmediato. No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
 
 
-. Seleccione *Restaurar* y regresará al Panel de restauración para que pueda revisar el progreso de la operación de restauración.
+. Si lo deseas, activa la opción *Dar prioridad a esta restauración frente a la cola de tareas existente* para darle mayor prioridad a esta operación de restauración. Cuando está activada, otras tareas en ejecución pueden pausarse o retrasarse para permitir que esta restauración continúe.
+. Seleccione *Restaurar*.
++
+Vuelves al panel de control de restauración para que puedas revisar el progreso de la operación de restauración.
+
 
 
 .Resultado

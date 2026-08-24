@@ -16,7 +16,7 @@ summary: Con NetApp Backup and Recovery, supervise las instantáneas locales, la
 [role="lead"]
 Supervisa las tareas de instantáneas, replicación, copias de seguridad y restauración. Configura las notificaciones por correo electrónico y utiliza la línea de tiempo de la consola para analizar la actividad.
 
-NetApp Backup and Recovery conserva la información de los trabajos durante 15 días, luego la elimina y la retira del Monitor de trabajos.
+NetApp Backup and Recovery conserva la información de los trabajos durante 90 días, luego la elimina y la retira del Monitor de trabajos.
 
 *Rol requerido de NetApp Console*: superadministrador de Backup and Recovery, administrador de backup de Backup and Recovery, administrador de restauración de Backup and Recovery, administrador de clonado de Backup and Recovery o rol de visualizador de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Más información sobre link:reference-roles.html["Funciones y privilegios de backup y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
