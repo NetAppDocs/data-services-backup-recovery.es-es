@@ -460,7 +460,7 @@ Asegúrese de que su instancia de Hyper-V cumpla con los requisitos específicos
 
 |===
 .Requisitos de hardware para el host Hyper-V
-* Se admiten hosts independientes y agrupados en FCI
+* Se admiten hosts independientes y configuraciones de clústeres de conmutación por error
 * 1 GB de RAM como mínimo para el complemento Hyper-V de NetApp en el host Hyper-V
 * 5 GB de espacio mínimo de instalación y registro para el complemento en el host Hyper-V
 +

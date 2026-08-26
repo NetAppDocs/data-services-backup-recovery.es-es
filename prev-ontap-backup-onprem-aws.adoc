@@ -44,6 +44,9 @@ El siguiente diagrama muestra el método de *conexión privada* y las conexiones
 image:diagram_cloud_backup_onprem_aws_private.png["Un diagrama que muestra cómo NetApp Backup and Recovery se comunica a través de una conexión privada con los volúmenes del clúster y el almacenamiento AWS S3 donde se encuentran los archivos de respaldo."]
 
 
+NOTE: Si utilizas un punto de conexión VPC privado para las transferencias de datos de backup o restauración, este tiene prioridad sobre cualquier conexión de proxy configurada.
+
+
 
 [[prepare-your-console-agent]]
 == Prepare su agente de consola

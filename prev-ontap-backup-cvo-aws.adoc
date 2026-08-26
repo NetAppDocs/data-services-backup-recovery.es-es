@@ -34,6 +34,9 @@ image:diagram_cloud_backup_cvo_aws.png["Un diagrama que muestra cómo NetApp Bac
 
 El punto final de la puerta de enlace de VPC ya debe existir en su VPC. https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["Obtenga más información sobre los puntos finales de la puerta de enlace"^] .
 
+
+NOTE: Si utilizas un punto de conexión VPC privado para las transferencias de datos de backup o restauración, este tiene prioridad sobre cualquier conexión de proxy configurada.
+
 Versiones de ONTAP compatibles:: Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 Información necesaria para utilizar claves administradas por el cliente para el cifrado de datos:: Puede elegir sus propias claves administradas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado predeterminadas de Amazon S3.  En este caso necesitarás tener las claves de cifrado administradas ya configuradas. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Vea cómo utilizar sus propias llaves"^] .
 
