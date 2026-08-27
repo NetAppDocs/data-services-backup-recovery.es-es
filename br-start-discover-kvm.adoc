@@ -25,6 +25,9 @@ Descubre los hosts y las máquinas virtuales KVM en NetApp Backup and Recovery p
 
 Agregue la plataforma de administración y la información del host KVM y deje que NetApp Backup and Recovery descubra las cargas de trabajo.
 
+
+NOTE: Después de añadir un sistema de almacenamiento a NetApp Console, espera unos minutos antes de descubrir recursos. Descubrir recursos inmediatamente después de añadir un sistema de almacenamiento puede hacer que la detección falle.
+
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
 . En *Cargas de trabajo*, seleccione el mosaico *KVM*.
