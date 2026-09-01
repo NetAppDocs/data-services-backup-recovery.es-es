@@ -48,7 +48,8 @@ Restaurar los archivos o carpetas seleccionados a una ubicación específica.
 
 Revisa todos los requisitos antes de restaurar archivos o carpetas desde un VMDK.
 
-* VMware Tools debe estar instalado y en funcionamiento.
+* El puerto 443 (HTTPS) en el servidor VMware ESXi debe estar abierto para la comunicación bidireccional.
+* VMware Tools debe estar instalado en el sistema operativo invitado y en ejecución.
 +
 NetApp Backup and Recovery utiliza información de VMware Tools para establecer una conexión con el sistema operativo invitado de VMware.
 
