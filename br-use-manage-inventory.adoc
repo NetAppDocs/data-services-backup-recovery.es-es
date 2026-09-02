@@ -133,6 +133,45 @@ Puede eliminar la información del host para detener los cargos por servicio.
 
 
 
+[[manage-availability-group-information]]
+== Gestiona la información del grupo de disponibilidad
+
+Gestiona la información del grupo de disponibilidad para proteger los recursos, editar la configuración de protección y ejecutar copias de seguridad:
+
+* Proteger instancias
+* Editar la configuración de protección
+* Realizar una copia de seguridad ahora
+
+
+*Rol de NetApp Console requerido* rol de superadministrador de Backup and Recovery o rol de administrador de backup de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de administrador de Cloud Volumes ONTAP. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+
+
+[[protect-availability-groups]]
+=== Protege los grupos de disponibilidad
+
+Asigna una política a un grupo de disponibilidad para regular la programación y la retención de la protección de recursos.
+
+.Pasos
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Selecciona la pestaña *Grupos de disponibilidad*.
+. Selecciona el grupo de disponibilidad.
+. Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Proteger*.
+. Seleccione una política o cree una nueva.
++
+Para obtener más información sobre cómo crear una política, consulta link:br-use-policies-create.html["Crear una política"].
+
+. Proporciona los scripts que se deben ejecutar antes y después de la copia de seguridad.
++
+** *Pre-script*: Introduce el nombre y la ubicación del archivo de script que se ejecutará automáticamente antes de que comience la acción de protección. Usa esto para realizar tareas o configuraciones adicionales antes del flujo de trabajo de protección.
+** *Posdata*: Introduce el nombre y la ubicación del archivo de script que se ejecutará automáticamente una vez finalizada la acción de protección. Usa esto para realizar tareas o configuraciones adicionales después del flujo de trabajo de protección.
+
+
+
+
+
+
 [[manage-instance-information]]
 == Gestiona la información de la instancia
 
@@ -265,6 +304,12 @@ Puede cambiar la política, crear una nueva política, establecer un cronograma 
 . Seleccione las *Acciones*image:icon-action.png["Icono de acciones"] icono y seleccione *Proteger*.
 +
 Para obtener más información sobre cómo crear una política, consulta link:br-use-policies-create.html["Crear una política"].
+
+. Proporciona los scripts que se deben ejecutar antes y después de la copia de seguridad.
++
+** *Pre-script*: Introduce el nombre y la ubicación del archivo de script que se ejecutará automáticamente antes de que comience la acción de protección. Usa esto para realizar tareas o configuraciones adicionales antes del flujo de trabajo de protección.
+** *Posdata*: Introduce el nombre y la ubicación del archivo de script que se ejecutará automáticamente una vez finalizada la acción de protección. Usa esto para realizar tareas o configuraciones adicionales después del flujo de trabajo de protección.
+
 
 
 

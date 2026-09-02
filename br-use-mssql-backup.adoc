@@ -101,7 +101,7 @@ Ejecute una copia de seguridad a pedido antes de realizar cambios en su sistema 
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
 . Seleccione una carga de trabajo para ver los detalles de protección.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
-. Selecciona la pestaña *Grupos de protección*, *Instancias* o *Bases de datos*.
+. Selecciona la pestaña *Grupos de protección*, *Grupos de disponibilidad*, *Instancias* o *Bases de datos*.
 . Seleccione la instancia o base de datos que desea respaldar.
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
 . Selecciona la política que quieres aplicar a la copia de seguridad.
