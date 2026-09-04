@@ -5980,4 +5980,5 @@
   <block id="f4c9691991fd542b1f48cc8fcbdef656" category="list-text">Selecciona la pestaña *Grupos de disponibilidad*.</block>
   <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">Selecciona el grupo de disponibilidad.</block>
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">Selecciona la pestaña *Grupos de protección*, *Grupos de disponibilidad*, *Instancias* o *Bases de datos*.</block>
+  <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">Restaurar un volumen o un archivo desde el almacenamiento de archivo puede tomar tiempo adicional. El trabajo permanece *In progress* en el Job Monitor mientras Backup and Recovery vuelve a intentar la restauración según la prioridad seleccionada. Supervisa la restauración en el *Job Monitor*; se completa cuando el trabajo alcanza un estado final, como *Completed* o *Failed*, después de todos los intentos de reintento. No inicies otra restauración a menos que el trabajo falle definitivamente.</block>
 </blocks>

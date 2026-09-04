@@ -81,9 +81,16 @@ Cada método tiene una tarifa de recuperación por GB y una tarifa por solicitud
 | *Archivo de Glaciar Deep S3* |  | 12 horas | 48 horas 
 |===
 * *Tiempo de restauración*: el tiempo para restaurar los datos del archivo de respaldo en el almacenamiento estándar.  Esta vez no es diferente a la operación de restauración típica directamente desde el almacenamiento estándar, cuando no se utiliza un nivel de archivo.
-
-
++
 Para obtener más información sobre las opciones de recuperación de Amazon S3 Glacier y S3 Glacier Deep Archive, consulte https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["Preguntas frecuentes de Amazon sobre estas clases de almacenamiento"^] .
+
+
 
 --
 
+
+[NOTE]
+====
+Restaurar un volumen o un archivo desde el almacenamiento de archivo puede tomar tiempo adicional. El trabajo permanece *In progress* en el Job Monitor mientras Backup and Recovery vuelve a intentar la restauración según la prioridad seleccionada. Supervisa la restauración en el *Job Monitor*; se completa cuando el trabajo alcanza un estado final, como *Completed* o *Failed*, después de todos los intentos de reintento. No inicies otra restauración a menos que el trabajo falle definitivamente.
+
+====

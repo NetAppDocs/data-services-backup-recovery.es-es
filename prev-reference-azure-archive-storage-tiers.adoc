@@ -61,9 +61,16 @@ NOTE: No se admite la prioridad alta al restaurar datos desde Azure a los sistem
 
 
 * *Tiempo de restauración*: el tiempo para restaurar los datos del archivo de respaldo en el almacenamiento Cool.  Esta vez no es diferente a la operación de restauración típica directamente desde el almacenamiento Cool, cuando no se utiliza un nivel de archivo.
-
-
++
 Para obtener más información sobre las opciones de recuperación de Azure Archive, consulte https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["Preguntas frecuentes sobre Azure"^] .
+
+
 
 --
 
+
+[NOTE]
+====
+Restaurar un volumen o un archivo desde el almacenamiento de archivo puede tomar tiempo adicional. El trabajo permanece *In progress* en el Job Monitor mientras Backup and Recovery vuelve a intentar la restauración según la prioridad seleccionada. Supervisa la restauración en el *Job Monitor*; se completa cuando el trabajo alcanza un estado final, como *Completed* o *Failed*, después de todos los intentos de reintento. No inicies otra restauración a menos que el trabajo falle definitivamente.
+
+====
