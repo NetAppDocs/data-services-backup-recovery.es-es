@@ -1,0 +1,34 @@
+= Mejoras generales de NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+[[general-netapp-backup-and-recovery-enhancements]]
+=== Mejoras generales de NetApp Backup and Recovery
+
+En esta versión, las cargas de trabajo de KVM, Hyper-V y VMware incorporan la siguiente mejora:
+
+*Selección de credenciales durante la detección de hosts de máquinas virtuales*: Al registrar un host KVM, Hyper-V o VMware, ahora puedes utilizar las credenciales que ya hayas añadido a Backup and Recovery.
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de Hyper-V
+
+En esta versión, las cargas de trabajo de Hyper-V incorporan la siguiente mejora:
+
+*Protección de discos distribuidos para máquinas virtuales*: En las configuraciones CIFS, NetApp Backup and Recovery ahora permite proteger todos los discos conectados a cada máquina virtual de un grupo de protección. Esto incluye tanto los archivos distribuidos en varios volúmenes ONTAP o sistemas de almacenamiento ONTAP (discos distribuidos) como los archivos que se encuentran en una única ubicación.
+
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Aprende a proteger las cargas de trabajo de Hyper-V con NetApp Backup and Recovery"].
+
+
+
+[[ontap-volumes-workloads-enhancement]]
+=== Mejora del rendimiento de las cargas de trabajo de los volúmenes ONTAP
+
+En esta versión, las cargas de trabajo de ONTAP Volumes incorporan la siguiente mejora en fase de prueba:
+
+*Informe diario de transferencia de datos de copia de seguridad*: NetApp Backup and Recovery for Volumes incluye ahora un informe diario de transferencia de datos de copia de seguridad en la pestaña "Informes", lo que te permite conocer la actividad diaria de transferencia de datos de copia de seguridad y replicación en todo tu entorno. Puedes generar el informe para toda la cuenta o para sistemas de almacenamiento seleccionados, filtrarlo por intervalo de fechas y tipo de protección, y descargar los resultados en formato CSV.
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descubre la protección de volúmenes de ONTAP con NetApp Backup and Recovery"].

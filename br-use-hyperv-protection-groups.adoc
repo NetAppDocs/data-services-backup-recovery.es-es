@@ -46,8 +46,17 @@ Agrupa en un grupo de protección las cargas de trabajo que quieres proteger jun
 . Introduce un nombre para el grupo de protección.
 . Seleccione las máquinas virtuales que desea incluir en el grupo de protección.
 . Seleccione *Siguiente*.
-. Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
+. Selecciona un comportamiento para los discos de extensión. Actualmente, *Incluir siempre todos los discos de extensión* es compatible.
++
+
+NOTE: En las configuraciones CIFS, Backup and Recovery protege automáticamente todos los discos conectados a cada máquina virtual del grupo de protección. Esto incluye archivos distribuidos en varios volúmenes ONTAP o sistemas de almacenamiento ONTAP (discos distribuidos) y archivos limitados a una sola ubicación (discos no distribuidos). En las configuraciones SAN, todos los discos no distribuidos se incluirán en el grupo de protección.
+
 . Seleccione *Siguiente*.
+. Selecciona la política de protección que quieres aplicar al grupo de protección.
++
+Si lo deseas, puedes seleccionar *Crear nueva política* para crear una nueva política de protección. Cuando seleccionas una política, aparecen los detalles de la política.
+
+. Cuando termines, selecciona *Siguiente*.
 . Revise la configuración.
 . Seleccione *Crear* para crear el grupo de protección.
 

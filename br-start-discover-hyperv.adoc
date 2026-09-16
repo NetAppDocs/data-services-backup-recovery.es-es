@@ -33,22 +33,24 @@ NOTE: Cuando agrega hosts Hyper-V y descubre recursos, NetApp Backup and Recover
 
 .Pasos
 . En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.
-+
-Si es la primera vez que inicias sesión en NetApp Backup and Recovery y ya tienes un sistema en la Console pero aún no has descubierto recursos, aparecerá la página de inicio "Bienvenido a la nueva NetApp Backup and Recovery" con una opción para *Descubrir recursos*.
-
 . Seleccione *Descubrir recursos*.
 . Introduzca la siguiente información:
 +
 .. *Tipo de carga de trabajo*: seleccione *Hyper-V*.
-.. Si aún no ha almacenado las credenciales para este host de Hyper-V, seleccione *Agregar credenciales*.
+.. *Configuración de Hyper-V*: Haz lo siguiente:
 +
-... Seleccione el agente de consola que se utilizará con este host.
-... Introduzca un nombre para esta credencial.
-... Introduzca el nombre de usuario y la contraseña de la cuenta.
-... Seleccione *Listo*.
+... Si aún no ha almacenado las credenciales para este host de Hyper-V, seleccione *Agregar credenciales*.
++
+**** Seleccione el agente de consola que se utilizará con este host.
+**** Introduzca un nombre para esta credencial.
+**** Introduzca el nombre de usuario y la contraseña de la cuenta.
+**** Seleccione *Listo*.
 
 
-.. *Registro de host*: Añade un nuevo host de Hyper-V introduciendo el FQDN o la dirección IP del host, las credenciales, el agente de la consola y el número de puerto. Si el agente de la consola no puede resolver el FQDN, utiliza la dirección IP en su lugar. Para clústeres de conmutación por error, introduce la dirección IP de gestión del clúster.
+... Añade un nuevo host de Hyper-V introduciendo el FQDN o la dirección IP del host y seleccionando un agente de la Console y credenciales. Si el FQDN no puede ser resuelto por el agente de la Console, utiliza la dirección IP en su lugar. Para clústeres de conmutación por error, introduce la dirección IP de gestión del clúster.
+
+
+.. *Configuración avanzada*: Si lo deseas, introduce una ruta de instalación para el NetApp Hyper-V plug-in.
 
 
 . Seleccione *Descubrir*.

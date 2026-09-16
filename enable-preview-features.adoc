@@ -35,6 +35,9 @@ Puedes activar las siguientes funciones de vista previa para NetApp Backup and R
 
 
 | `"prioritize-restore": true` | Hace que la opción *Priorizar la restauración sobre la cola de trabajos existente* se pueda seleccionar durante el flujo de trabajo de restauración en la interfaz web de NetApp Backup and Recovery. Cuando seleccionas esta opción durante el flujo de trabajo de restauración, las operaciones de restauración tienen prioridad sobre otros trabajos en cola, así que se ejecutan incluso cuando la cola está ocupada. 
+
+
+| `"data-transfer-report": true` | Activa el informe diario de transferencia de datos de copia de seguridad en la pestaña Informes de NetApp Backup and Recovery for Volumes. El informe proporciona información diaria sobre la actividad de transferencia de datos de copia de seguridad y replicación en todo tu entorno. 
 |===
 
 
