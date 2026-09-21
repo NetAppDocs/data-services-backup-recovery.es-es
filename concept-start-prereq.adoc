@@ -416,6 +416,7 @@ NOTE: NetApp recomienda encarecidamente asignar una dirección IP estática al a
 ** Asegúrate de que el puerto TCP 443 no esté filtrado en la dirección de salida entre el clúster de Kubernetes, el Trident Protect Connector y el Trident Protect proxy.
 
 
+* Para restaurar archivos y carpetas desde aplicaciones basadas en máquinas virtuales, es necesario disponer de SSH. Comprueba que el servicio SSH esté activado en los hosts de destino que ejecutan Linux y que haya un servidor OpenSSH instalado y activado en los hosts de destino que ejecutan Windows.
 
 
 

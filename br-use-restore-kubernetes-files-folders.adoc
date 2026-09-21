@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-files-folders.html 
+keywords: backing up, restoring, back up, backup, file, folder, files and folders, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery te permite restaurar y descargar archivos y carpetas que se respaldaron desde una aplicación basada en máquina virtual. 
+---
+= Restaura o descarga archivos y carpetas de aplicaciones basadas en máquinas virtuales usando NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaura o descarga archivos y carpetas de los que se haya realizado una copia de seguridad desde una aplicación de Kubernetes basada en máquinas virtuales. Para restaurar o descargar archivos y carpetas, necesitas al menos un punto de recuperación, y la máquina virtual debe tener una partición con un sistema de archivos compatible. Actualmente, solo puedes restaurar y descargar desde la instantánea local.
+
+Entre los sistemas operativos invitados y sus versiones compatibles se incluyen:
+
+* *Windows*: Windows Server 2022, Windows 10, Windows 11
+* *Linux*: Ubuntu 22.04, Red Hat Enterprise Linux 9, Fedora 39, CentOS Stream 9, openSUSE Leap 15.6
+
+
+Los sistemas de archivos compatibles son:
+
+* BTRFS
+* exFAT
+* ext4
+* NTFS
+* XFS
+
+
+*Rol de NetApp Console requerido*
+
+Backup and Recovery super admin o Backup and Recovery restore admin. link:reference-roles.html["Obtenga información sobre los roles de acceso de NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+
+
+[[restore-vm-files-and-folders-from-a-vm-based-application]]
+== Restaura archivos y carpetas de máquinas virtuales desde una aplicación basada en máquinas virtuales
+
+Restaura archivos y carpetas basados en máquina virtual desde un punto de recuperación cuando necesites recuperar archivos o carpetas específicos en una aplicación basada en máquina virtual sin restaurar toda la aplicación. Los archivos existentes se sobrescriben por defecto.
+
+.Antes de empezar
+Antes de restaurar archivos y carpetas desde una aplicación basada en una máquina virtual, comprueba que la máquina virtual de destino cumpla los siguientes requisitos:
+
+* La máquina virtual de destino está en funcionamiento y tiene una dirección IP.
+* El usuario puede escribir en el destino de la restauración.
+* SSH está habilitado y utiliza autenticación mediante contraseña (no se admite el inicio de sesión solo con clave). Comprueba que el servicio SSH esté habilitado en los hosts de destino Linux y que un servidor OpenSSH esté instalado y habilitado en los hosts de destino Windows.
+
+
+.Pasos
+. En el menú NetApp Backup and Recovery, selecciona *Restaurar*.
+. Elige una aplicación de Kubernetes de la lista y selecciona *Ver y restaurar* para esa aplicación.
++
+Aparece la lista de puntos de restauración.
+
+. Selecciona el icono *Acciones* image:icon-action.png["Icono de acciones"] de un punto de restauración y abre el menú *Restaurar archivos y carpetas*.
+. Selecciona la ubicación de origen desde la que deseas restaurar (por el momento, solo se admite instantánea).
+. Selecciona una máquina virtual del punto de recuperación para explorar sus archivos y carpetas.
+. Seleccione *Siguiente*.
++
+Aparece el explorador de archivos.
+
+. Explora la lista de archivos y carpetas y selecciona archivos y carpetas para restaurar.
++
+Abre una partición para explorar sus archivos y carpetas. Cuando seleccionas un archivo o una carpeta para restaurarlos marcando su casilla de comprobación, se añaden a la lista "seleccionados" que aparece a la derecha.
+
+. Cuando termines, selecciona *Siguiente*.
+. Selecciona el modo de transferencia *Transfer to VM*.
+. Selecciona los ajustes de destino:
++
+** *Restaurar a la máquina virtual original*: Activa esta opción para restaurar en la máquina virtual original.
++
+*** *Restaurar en la misma ruta que en la copia de seguridad*: activa esta opción para restaurar en la misma ruta utilizada en la copia de seguridad.
+*** *Ruta alternativa*: Para restaurar en una ruta diferente, activa esta opción e introduce la ruta que prefieras.
+
+
+** *Restaurar en una máquina virtual alternativa*: activa esta opción para restaurar en una máquina virtual diferente del clúster. Selecciona una máquina virtual de la lista e introduce una ruta de destino para los archivos o carpetas restaurados.
+
+
+. En la sección *Credenciales de la máquina virtual invitada*, selecciona las credenciales de la máquina virtual invitada.
++
+Si aún no has añadido credenciales para esta máquina virtual invitada, selecciona *Add credential* para añadir una nueva credencial para la máquina virtual invitada. Después de añadir una credencial de la máquina virtual invitada, la nueva credencial aparece en la lista de credenciales y puedes seleccionarla. Estas credenciales son exclusivas de las máquinas virtuales invitadas y pueden ser reutilizadas por cualquier clúster que use el mismo agente de la Console.
+
+. Seleccione *Siguiente*.
+. Revisa y confirma la configuración de restauración del archivo o carpeta.
+. Seleccione *Restaurar*.
+
+
+
+
+[[download-kubernetes-vm-files-and-folders]]
+== Descargar archivos y carpetas de Kubernetes VM
+
+Descarga archivos y carpetas desde un punto de recuperación cuando no quieres restaurar los archivos y carpetas en una aplicación basada en VM, sino que prefieres guardarlos en tu ordenador local. Los archivos y carpetas descargados se guardan como un único archivo .tar. Descargar archivos y carpetas no requiere credenciales para una VM invitada.
+
+.Pasos
+. En el menú NetApp Backup and Recovery, selecciona *Restaurar*.
+. Elige una aplicación de Kubernetes de la lista y selecciona *Ver y restaurar* para esa aplicación.
++
+Aparece la lista de puntos de restauración.
+
+. Selecciona el icono *Acciones* image:icon-action.png["Icono de acciones"] de un punto de restauración y abre el menú *Restaurar archivos y carpetas*.
+. Selecciona la ubicación de origen desde la que deseas realizar la descarga (solo se admite instantánea por el momento).
+. Selecciona una máquina virtual del punto de recuperación para explorar sus archivos y carpetas.
+. Seleccione *Siguiente*.
++
+Aparece el explorador de archivos.
+
+. Explora la lista de archivos y carpetas, y selecciona archivos y carpetas para descargar.
++
+Abre una partición para explorar sus archivos y carpetas. Cuando seleccionas un archivo o una carpeta para descargarlo marcando su casilla de comprobación, se añade a la lista "seleccionados" situada a la derecha.
+
+. Cuando termines, selecciona *Siguiente*.
+. Selecciona el modo de transferencia *Download file*.
+. Seleccione *Siguiente*.
+. Revisa y confirma la configuración de descarga de archivos o carpetas.
+. Seleccione *Restaurar*.
++
+Tu navegador web se encarga de la descarga; guarda el archivo .tar en tu máquina local.
+
+

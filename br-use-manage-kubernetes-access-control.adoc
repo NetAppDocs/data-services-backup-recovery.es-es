@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-access-control.html 
+keywords: backup, back up, restore, recovery, kubernetes, k8s, access control, rbac, iam, folder, project 
+summary: Gestiona el acceso a los recursos de Kubernetes en NetApp Backup and Recovery usando las carpetas, los proyectos y los roles de NetApp Console. 
+---
+= Gestiona el acceso a los recursos de Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gestiona el acceso a los recursos de Kubernetes en NetApp Backup and Recovery a nivel de clúster o de recurso. Gestionas el acceso a los recursos del clúster asociando los clústeres con carpetas o proyectos durante el descubrimiento en NetApp Console y asignando a los usuarios los roles adecuados. Gestiona el acceso a los recursos a nivel de espacio de nombres registrando un espacio de nombres como recurso de IAM asociado a un proyecto o carpeta.
+
+Para obtener información sobre cómo asociar un clúster a una carpeta o un proyecto de IAM, consulta link:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"].
+
+El acceso a los recursos de Kubernetes a nivel de espacio de nombres de Backup and Recovery se controla mediante la carpeta o el proyecto que asocies al espacio de nombres cuando lo registres para el control de acceso. Después de que el espacio de nombres esté asociado a una carpeta o proyecto, los usuarios que tengan los roles adecuados de NetApp Console y Backup and Recovery para ese ámbito pueden acceder al espacio de nombres y a sus recursos protegidos.
+
+
+
+[[backup-and-recovery-roles-and-what-they-allow-with-kubernetes-workloads]]
+== Funciones de Backup and Recovery y lo que permiten con las cargas de trabajo de Kubernetes
+
+En el caso de un clúster o un espacio de nombres de Kubernetes asociado a una carpeta o un proyecto, el rol específico de Backup and Recovery que tenga un usuario en esa carpeta o proyecto determina lo que puede hacer. Para obtener más información sobre los roles de Backup and Recovery, consulta https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funciones de copia de seguridad y recuperación en NetApp Console"^].
+
+
+NOTE: El rol de administrador Clone de NetApp Backup and Recovery no se utiliza con cargas de trabajo de Kubernetes.
+
+[cols="1,2,2"]
+|===
+| Función | Ámbito de acceso a la vista | Acciones permitidas 
+
+
+| Superadministrador de Backup and Recovery | Vista completa de los clústeres, los espacios de nombres y las aplicaciones en el ámbito | Ver, crear aplicación, proteger (crear/eliminar protección) y restaurar 
+
+
+| Visor de Backup and Recovery | Vista solo para los clústeres y espacios de nombres en el ámbito | Solo lectura. No puedes crear, proteger ni restaurar. 
+
+
+| Copia de seguridad y recuperación Backup Admin | Vista completa de los clústeres, los espacios de nombres y las aplicaciones en el ámbito | Ver, crear aplicación y proteger (crear/eliminar protección). No se puede restaurar. 
+
+
+| Administrador de restauración de Backup and Recovery | Vista completa de los clústeres, los espacios de nombres y las aplicaciones en el ámbito | Solo visualización y restauración. No puedes crear aplicaciones ni políticas de protección. 
+|===
+
+
+[[associate-a-kubernetes-namespace-with-a-folder-or-project]]
+== Asocia un espacio de nombres de Kubernetes con una carpeta o un proyecto
+
+Asocia un espacio de nombres con una carpeta o un proyecto para que el control de acceso se aplique a ese ámbito.
+
+*Rol requerido de NetApp Console*: superadministrador de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+.Pasos
+. Desde el menú de la NetApp Console , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. En *Cargas de trabajo*, selecciona el mosaico *Kubernetes*.
+. En el inventario, selecciona el menú *Namespaces*.
+. Selecciona uno o varios espacios de nombres que quieras registrar para el control de acceso y activa la casilla de comprobación de cada uno.
+. Selecciona *Registrarse para control de acceso*.
+. Si lo deseas, selecciona una carpeta o un proyecto para determinar dónde se aplica el control de acceso a este espacio de nombres. Si no seleccionas una carpeta o un proyecto, el recurso IAM del espacio de nombres se registra, pero no se añade a una carpeta o a un proyecto:
++
+** *Carpeta*: Selecciona esta opción para controlar el acceso de los usuarios a los recursos del espacio de nombres a nivel de carpeta y selecciona una carpeta de la lista.
++
+
+NOTE: Si un clúster o un espacio de nombres de Kubernetes está asociado a una carpeta, los usuarios también necesitan el rol *Backup and Recovery viewer* para el proyecto seleccionado en el selector de proyectos situado en la esquina superior derecha. Este acceso a nivel de proyecto permite a los usuarios abrir la página de inicio de Backup and Recovery. Los roles asignados a nivel de carpeta (por ejemplo, Backup and Recovery backup admin) determinan qué pueden hacer los usuarios tras acceder a la página de cargas de trabajo, pero no conceden por sí mismos el acceso a dicha página.
+
+** *Proyecto*: selecciona esta opción para controlar el acceso de los usuarios a los recursos del espacio de nombres a nivel de proyecto y selecciona un proyecto de la lista.
++
+https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html#netapp-console-organizational-components["Más información"^] sobre los componentes organizativos en NetApp Console.
+
+
+
+. Selecciona *Register*.
+
+
+
+
+[[related-information]]
+== Información relacionada
+
+* link:br-start-discover-kubernetes.html["Descubra las cargas de trabajo de Kubernetes"]
+* link:br-rbac-setup.html["Configura el control de acceso basado en roles en NetApp Backup and Recovery"]
+* link:reference-roles.html["NetApp roles y privilegios de Backup and Recovery"]
+
