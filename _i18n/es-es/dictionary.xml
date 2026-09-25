@@ -4747,7 +4747,6 @@
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Compatibilidad con la eliminación de varias copias de seguridad*: Ahora puedes eliminar varias copias de seguridad a la vez.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Compatibilidad en versión preliminar con recursos aislados físicamente*: Si ejecutas NetApp Backup and Recovery en una implementación local de NetApp Console, puedes descubrir, proteger y restaurar recursos de Kubernetes aislados físicamente. Esta función está en versión preliminar para este lanzamiento.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">En esta versión, las cargas de trabajo de ONTAP Volumes incorporan las siguientes mejoras:</block>
-  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Dar prioridad a las tareas de restauración frente a las de copia de seguridad*: Ahora puedes dar prioridad a las tareas de restauración frente a las de copia de seguridad al restaurar máquinas virtuales o archivos.</block>
   <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*Detectar sistemas y volúmenes ONTAP sin activar Backup and Recovery*: Ahora puedes detectar sistemas y volúmenes sin activar Backup and Recovery.</block>
   <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.</block>
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">Limitación de la versión preliminar de Backup and Recovery para la implementación local de NetApp Console</block>
@@ -6106,4 +6105,5 @@
   <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">Mejora general de NetApp Backup and Recovery</block>
   <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*Selección de credenciales durante la detección de hosts de máquinas virtuales*: Cuando detectas un host KVM, Hyper-V o VMware, ahora puedes usar las credenciales que ya agregaste a Backup and Recovery.</block>
   <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Mejora de las cargas de trabajo de Hyper-V</block>
+  <block id="8dbaebd91b282de2115c0933e53cc8b1" category="list-text">*Dar prioridad a los trabajos de restauración frente a los trabajos de copia de seguridad*: ahora puedes dar prioridad a los trabajos de restauración frente a los trabajos de copia de seguridad al restaurar volúmenes, archivos o carpetas.</block>
 </blocks>

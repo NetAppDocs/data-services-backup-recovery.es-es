@@ -43,7 +43,7 @@ Para obtener detalles sobre cómo proteger las cargas de trabajo de Kubernetes, 
 
 En esta versión, las cargas de trabajo de ONTAP Volumes incorporan las siguientes mejoras:
 
-* *Dar prioridad a las tareas de restauración frente a las de copia de seguridad*: Ahora puedes dar prioridad a las tareas de restauración frente a las de copia de seguridad al restaurar máquinas virtuales o archivos.
+* *Dar prioridad a los trabajos de restauración frente a los trabajos de copia de seguridad*: ahora puedes dar prioridad a los trabajos de restauración frente a los trabajos de copia de seguridad al restaurar volúmenes, archivos o carpetas.
 * *Detectar sistemas y volúmenes ONTAP sin activar Backup and Recovery*: Ahora puedes detectar sistemas y volúmenes sin activar Backup and Recovery.
 
 
