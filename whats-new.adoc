@@ -18,10 +18,50 @@ Conoce las nuevas funciones, mejoras y correcciones en NetApp Backup and Recover
 
 
 
+[[28-september-2026]]
+== 28 de septiembre de 2026
+
+Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
+
+
+
+[[general-netapp-backup-and-recovery-enhancement]]
+=== Mejora general de NetApp Backup and Recovery
+
+En esta versión, las cargas de trabajo de KVM, Hyper-V y VMware incorporan la siguiente mejora:
+
+*Compatibilidad con el control de acceso basado en roles (RBAC) de Console*: las cargas de trabajo de Hyper-V, KVM y VMware ahora admiten el framework Console de NetApp para RBAC, lo que te permite gestionar el acceso a hosts individuales de Hyper-V, KVM o VMware.
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["Más información sobre el uso de RBAC en NetApp Backup and Recovery"].
+
+
+
+[[vmware-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de VMware
+
+En esta versión, VMware workloads introduce la siguiente mejora:
+
+*Soporte para Flex Unified de Google Cloud NetApp Volumes*: NetApp Backup and Recovery para cargas de trabajo de VMware ahora admite el nivel de servicio Flex Unified para Google Cloud NetApp Volumes. Flex Unified solo se admite en el modo ONTAP.
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de VMware, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Protege las cargas de trabajo de VMware con NetApp Backup and Recovery"].
+
+
+
 [[21-september-2026]]
 == 21 de septiembre de 2026
 
 Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
+
+
+
+[[ontap-volumes-workloads-enhancement]]
+=== Mejora del rendimiento de las cargas de trabajo de los volúmenes ONTAP
+
+En esta versión, las cargas de trabajo de ONTAP Volumes incorporan la siguiente mejora en fase de prueba:
+
+*Compatibilidad mejorada para dark sites*: NetApp Backup and Recovery para dark sites ahora ofrece las mismas capacidades de protección de datos de ONTAP Volumes que NetApp Backup and Recovery. Esta mejora incluye servicios actualizados de copia de seguridad, restauración y gestión de trabajos, así como una nueva base de datos de metadatos. Durante una actualización, los datos existentes de la base de datos se conservan y se migran automáticamente. Después de la actualización, revisa los registros de auditoría para verificar que la migración se completó correctamente. NetApp Backup and Recovery para dark sites solo admite cargas de trabajo de ONTAP Volumes.
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descubre la protección de volúmenes de ONTAP con NetApp Backup and Recovery"].
 
 
 
@@ -31,7 +71,7 @@ Esta versión de NetApp Backup and Recovery incluye las siguientes actualizacion
 En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
 
 * *Trident Protect 26.09*: Esta versión incluye Trident Protect 26.09.
-* *Control de acceso basado en roles con granularidad a nivel de clúster y de espacio de nombres*: durante la detección de clústeres de Kubernetes, puedes controlar el acceso a los recursos seleccionando un proyecto o una carpeta para asociarlos al nuevo clúster. También puedes registrar espacios de nombres específicos para el control de acceso. Esto permite un control de acceso más granular, tanto a nivel de clúster como de espacio de nombres.
+* *Control de acceso basado en roles (RBAC) con granularidad a nivel de clúster y de espacio de nombres*: durante la detección de clústeres de Kubernetes, puedes controlar el acceso a los recursos seleccionando un proyecto o una carpeta para asociarlos con el nuevo clúster. También puedes registrar espacios de nombres específicos para el control de acceso. Esto permite un control de acceso más granular tanto a nivel de clúster como de espacio de nombres.
 * *Restaurar archivos y carpetas*: Ahora puedes restaurar o descargar archivos y carpetas concretos a partir de las copias de seguridad de aplicaciones basadas en máquinas virtuales de Kubernetes.
 
 

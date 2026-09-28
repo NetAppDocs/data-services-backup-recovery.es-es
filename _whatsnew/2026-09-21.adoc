@@ -1,6 +1,17 @@
-= Mejoras en cargas de trabajo de Kubernetes
+= Mejora del rendimiento de las cargas de trabajo de los volúmenes ONTAP
 :allow-uri-read: 
 
+
+
+
+[[ontap-volumes-workloads-enhancement]]
+=== Mejora del rendimiento de las cargas de trabajo de los volúmenes ONTAP
+
+En esta versión, las cargas de trabajo de ONTAP Volumes incorporan la siguiente mejora en fase de prueba:
+
+*Compatibilidad mejorada para dark sites*: NetApp Backup and Recovery para dark sites ahora ofrece las mismas capacidades de protección de datos de ONTAP Volumes que NetApp Backup and Recovery. Esta mejora incluye servicios actualizados de copia de seguridad, restauración y gestión de trabajos, así como una nueva base de datos de metadatos. Durante una actualización, los datos existentes de la base de datos se conservan y se migran automáticamente. Después de la actualización, revisa los registros de auditoría para verificar que la migración se completó correctamente. NetApp Backup and Recovery para dark sites solo admite cargas de trabajo de ONTAP Volumes.
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descubre la protección de volúmenes de ONTAP con NetApp Backup and Recovery"].
 
 
 
@@ -10,7 +21,7 @@
 En esta versión, las cargas de trabajo de Kubernetes introducen las siguientes mejoras:
 
 * *Trident Protect 26.09*: Esta versión incluye Trident Protect 26.09.
-* *Control de acceso basado en roles con granularidad a nivel de clúster y de espacio de nombres*: durante la detección de clústeres de Kubernetes, puedes controlar el acceso a los recursos seleccionando un proyecto o una carpeta para asociarlos al nuevo clúster. También puedes registrar espacios de nombres específicos para el control de acceso. Esto permite un control de acceso más granular, tanto a nivel de clúster como de espacio de nombres.
+* *Control de acceso basado en roles (RBAC) con granularidad a nivel de clúster y de espacio de nombres*: durante la detección de clústeres de Kubernetes, puedes controlar el acceso a los recursos seleccionando un proyecto o una carpeta para asociarlos con el nuevo clúster. También puedes registrar espacios de nombres específicos para el control de acceso. Esto permite un control de acceso más granular tanto a nivel de clúster como de espacio de nombres.
 * *Restaurar archivos y carpetas*: Ahora puedes restaurar o descargar archivos y carpetas concretos a partir de las copias de seguridad de aplicaciones basadas en máquinas virtuales de Kubernetes.
 
 
