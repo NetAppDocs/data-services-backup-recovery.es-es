@@ -54,12 +54,16 @@ Esta versión de NetApp Backup and Recovery incluye las siguientes actualizacion
 
 
 
-[[ontap-volumes-workloads-enhancement]]
-=== Mejora del rendimiento de las cargas de trabajo de los volúmenes ONTAP
+[[ontap-volumes-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de ONTAP Volumes
 
-En esta versión, las cargas de trabajo de ONTAP Volumes incorporan la siguiente mejora en fase de prueba:
+En esta versión, las cargas de trabajo de ONTAP Volumes incorporan las siguientes mejoras en fase de vista previa:
 
-*Compatibilidad mejorada para dark sites*: NetApp Backup and Recovery para dark sites ahora ofrece las mismas capacidades de protección de datos de ONTAP Volumes que NetApp Backup and Recovery. Esta mejora incluye servicios actualizados de copia de seguridad, restauración y gestión de trabajos, así como una nueva base de datos de metadatos. Durante una actualización, los datos existentes de la base de datos se conservan y se migran automáticamente. Después de la actualización, revisa los registros de auditoría para verificar que la migración se completó correctamente. NetApp Backup and Recovery para dark sites solo admite cargas de trabajo de ONTAP Volumes.
+* *Compatibilidad mejorada para dark sites*: NetApp Backup and Recovery para dark sites ahora ofrece las mismas capacidades de protección de datos de ONTAP Volumes que NetApp Backup and Recovery. Esta mejora incluye servicios actualizados de copia de seguridad, restauración y gestión de trabajos, así como una nueva base de datos de metadatos. Durante una actualización, los datos existentes de la base de datos se conservan y se migran automáticamente. Después de la actualización, revisa los registros de auditoría para verificar que la migración se completó correctamente. NetApp Backup and Recovery para dark sites solo admite cargas de trabajo de ONTAP Volumes.
+* *Cancelar trabajos de restauración de volúmenes*: ahora puedes cancelar trabajos de restauración de ONTAP Volumes en curso desde la página de supervisión de trabajos, lo que facilita la gestión de los trabajos de larga duración o de los que se ejecutan con lentitud.
+* *Mejora en los informes del estado de indexación de volúmenes*: El panel de control de ONTAP Volumes ahora informa del estado de indexación con más precisión al introducir el estado  `Not Applicable` para los volúmenes y las copias de Snapshot que no son aptos para la indexación. El estado  `Not Indexed` ahora se reserva para los volúmenes que están esperando a ser indexados, y los detalles del volumen ahora muestran el estado de indexación por Snapshot con un texto al pasar el cursor que explica por qué un volumen o una copia de Snapshot no se indexará.
+* *Compatibilidad con AFX de NetApp*: ahora puedes proteger volúmenes alojados en clústeres AFX de NetApp de 2 y 4 nodos.
+
 
 Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descubre la protección de volúmenes de ONTAP con NetApp Backup and Recovery"].
 
