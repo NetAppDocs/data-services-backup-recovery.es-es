@@ -38,6 +38,9 @@ Puedes activar las siguientes funciones de vista previa para NetApp Backup and R
 
 
 | `"data-transfer-report": true` | Activa el informe diario de transferencia de datos de copia de seguridad en la pestaña Informes de NetApp Backup and Recovery for Volumes. El informe proporciona información diaria sobre la actividad de transferencia de datos de copia de seguridad y replicación en todo tu entorno. 
+
+
+| `"use-azure-msi-cvo": true` | Habilita la opción de utilizar la autenticación mediante identidades gestionadas de Microsoft Entra ID para el almacenamiento de objetos de Azure en lugar de utilizar una clave de acceso a la cuenta de almacenamiento. Compatible con Cloud Volumes ONTAP en sistemas de Azure que ejecuten ONTAP 9.16.1 o una versión posterior. Para obtener más información, consulta link:prev-ontap-backup-cvo-azure.html["Haz una copia de seguridad de Cloud Volumes ONTAP en Azure Blob storage"]. 
 |===
 
 

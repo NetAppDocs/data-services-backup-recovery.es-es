@@ -154,3 +154,22 @@ Puede habilitar o deshabilitar los análisis de ransomware a nivel de proveedor 
 . Establezca la frecuencia en días o semanas con la que se debe ejecutar el análisis.
 . Seleccione *Aplicar*.
 
+
+
+
+[[switch-an-azure-object-store-configuration-to-microsoft-entra-id-authentication]]
+== Cambiar la configuración de un almacén de objetos de Azure para que use la autenticación de Microsoft Entra ID
+
+Puedes cambiar a la autenticación mediante Microsoft Entra ID para el almacenamiento de objetos de Azure al editar la configuración de un bucket de Azure ya existente si no deseas utilizar la clave de acceso de la cuenta de almacenamiento para la autenticación en Azure. Esta opción es compatible con los sistemas Cloud Volumes ONTAP en Azure que ejecuten ONTAP 9.16.1 o una versión posterior.
+
+.Antes de empezar
+Asegúrate de que tu entorno cumpla con los link:prev-ontap-backup-cvo-azure.html#anchor-entraid["requisitos"^] para usar Entra ID.
+
+.Pasos
+. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
+. En la _página de Backup Settings_, selecciona image:icon-actions-horizontal.gif["Icono más"] para el sistema y selecciona *Configurar opciones avanzadas > Provider settings*.
+. En la parte superior de la página resultante, seleccione el depósito cuya configuración necesita cambiar.
+. Expande la sección *Método de autenticación*.
+. Selecciona *Entra ID (managed identity)*.
+. Seleccione *Aplicar*.
+
