@@ -40,14 +40,17 @@ Puedes activar las siguientes funciones de vista previa para NetApp Backup and R
 | `"data-transfer-report": true` | Activa el informe diario de transferencia de datos de copia de seguridad en la pestaña Informes de NetApp Backup and Recovery for Volumes. El informe proporciona información diaria sobre la actividad de transferencia de datos de copia de seguridad y replicación en todo tu entorno. 
 
 
-| `"use-azure-msi-cvo": true` | Habilita la opción de utilizar la autenticación mediante identidades gestionadas de Microsoft Entra ID para el almacenamiento de objetos de Azure en lugar de utilizar una clave de acceso a la cuenta de almacenamiento. Compatible con Cloud Volumes ONTAP en sistemas de Azure que ejecuten ONTAP 9.16.1 o una versión posterior. Para obtener más información, consulta link:prev-ontap-backup-cvo-azure.html["Haz una copia de seguridad de Cloud Volumes ONTAP en Azure Blob storage"]. 
+| `"use-azure-msi-cvo": true` | Habilita la opción de usar la autenticación de identidad administrada de Microsoft Entra ID para el almacenamiento de objetos de Azure en lugar de usar una clave de acceso de la cuenta de almacenamiento. Compatible con Cloud Volumes ONTAP en sistemas de Azure que ejecutan ONTAP 9.16.1 o una versión posterior (el agente de la consola también debe residir en Azure). Para obtener más información, consulta link:prev-ontap-backup-cvo-azure.html#anchor-entraid["Requisitos para usar la autenticación de Microsoft Entra ID con los almacenes de objetos de Azure"]. 
 |===
 
 
 [[enable-preview-features]]
 == Activar funciones de vista previa
 
-Habilita las opciones del indicador de funciones de vista previa para usar funcionalidades que aún no están disponibles de forma general. Usa las funciones de vista previa con precaución en entornos de producción.
+Activa las feature flags de vista previa para usar funcionalidades que aún no están disponibles de forma general. Usa las funciones de vista previa con precaución en entornos de producción.
+
+
+NOTE: Estos ejemplos suponen que usas Docker; si usas Podman, ejecuta los comandos equivalentes de Podman.
 
 .Pasos
 . Utiliza SSH para iniciar sesión en el agente de la Console.
@@ -131,8 +134,11 @@ NOTE: Para desactivar una función de vista previa, sigue los mismos pasos pero 
 Desactiva la indexación para volúmenes específicos o para todos los volúmenes que pertenezcan a una o más storage VMs usando las siguientes flags de opción:
 
 * `svms-not-to-index`: una lista separada por comas de las máquinas virtuales de almacenamiento cuyos volúmenes no deben indexarse
-* `volumes-not-to-index`: una lista separada por comas de los volúmenes individuales que no deben ser indexados
+* `volumes-not-to-index`: una lista, separada por comas, de los identificadores individuales de los volúmenes que no deben indexarse
 
+
+
+NOTE: Estos ejemplos suponen que usas Docker; si usas Podman, ejecuta los comandos equivalentes de Podman.
 
 .Pasos
 . Utiliza SSH para iniciar sesión en el agente de la Console.
@@ -176,14 +182,14 @@ El punto de montaje difiere entre los despliegues en nube y privados. Este ejemp
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Crea un archivo llamado `production-customer.json` y personaliza los nombres de la máquina virtual de almacenamiento y del volumen para que coincidan con tu entorno:
+. Crea un archivo llamado `production-customer.json` y personaliza los nombres de las máquinas virtuales de almacenamiento y los ID de volumen para que coincidan con tu entorno:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
-    "volumes-not-to-index": "volume_1,volume_2,volume_3"
+    "svms-not-to-index": "storage_vm_name_1,storage_vm_name_2,storage_vm_name_3",
+    "volumes-not-to-index": "volume_ID_1,volume_ID_2,volume_ID_3"
   }
 }
 ----

@@ -64,6 +64,7 @@ Puedes habilitar la autenticación de Microsoft Entra ID para el almacenamiento 
 
 NOTE: Puedes utilizar diferentes métodos de autenticación para distintas configuraciones de almacén de objetos dentro del mismo sistema Cloud Volumes ONTAP, pero una vez que hayas cambiado la configuración de un almacén de objetos para que utilice Microsoft Entra ID, no podrás volver a configurarla para que utilice la clave de la cuenta de almacenamiento.
 
+* Tanto el sistema Cloud Volumes ONTAP como el agente de Console deben estar alojados en Azure.
 * Comprueba que el indicador de función "use-azure-msi-cvo" esté habilitado en el sistema Cloud Volumes ONTAP. Para obtener más información, consulta link:enable-preview-features.html["Activar funciones de vista previa"].
 * Solo se admite la opción de estrategia de copia de seguridad Bring Your Own Bucket. Comprueba que la cuenta de almacenamiento de Azure ya exista y que contenga un contenedor con el mismo nombre que la cuenta.
 * En la configuración de IAM de la cuenta de almacenamiento de Azure, comprueba que el rol `Storage Blob Data Contributor` esté asignado tanto a Azure Agent como al sistema Cloud Volumes ONTAP. Si utilizas la opción de política `Object lock`, habilita también el control de versiones en la cuenta de almacenamiento y asigna el rol `Storage Blob Data Owner` tanto a Azure Agent como al sistema Cloud Volumes ONTAP.

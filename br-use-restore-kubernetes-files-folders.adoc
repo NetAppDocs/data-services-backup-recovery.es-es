@@ -113,6 +113,10 @@ Aparece el explorador de archivos.
 +
 Abre una partición para explorar sus archivos y carpetas. Cuando seleccionas un archivo o una carpeta para descargarlo marcando su casilla de comprobación, se añade a la lista "seleccionados" situada a la derecha.
 
++
+
+NOTE: El tamaño total combinado de los archivos y carpetas seleccionados no puede superar los 5 MB.
+
 . Cuando termines, selecciona *Siguiente*.
 . Selecciona el modo de transferencia *Download file*.
 . Seleccione *Siguiente*.
