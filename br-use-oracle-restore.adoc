@@ -42,7 +42,24 @@ Al restaurar cargas de trabajo de Oracle Database, ocurre lo siguiente:
 * Cuando restaura una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el almacenamiento de origen o en un sistema ONTAP local y recuperar la base de datos desde allí.
 
 
-Desde la página Restaurar (también conocida como Buscar y restaurar), puede restaurar una base de datos, incluso si no recuerda el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buen estado por última vez.  Puede buscar en la base de datos utilizando filtros.
+
+
+[[view-information-about-available-oracle-database-restore-points]]
+== Ver información sobre los puntos de restauración disponibles de Oracle Database
+
+Consulta los puntos de restauración disponibles, incluido el número SCN y la encarnación de la base de datos asociada.
+
+
+NOTE: Oracle Database crea una nueva encarnación de la base de datos cada vez que abres una base de datos con la opción  `RESETLOGS`. NetApp Backup and Recovery enumera las encarnaciones pertinentes de la base de datos cuando revisas los puntos de restauración y cuando restauras a un SCN específico.
+
+.Pasos
+. En el menú Backup and Recovery, selecciona *Inventario*.
+. Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
+. Selecciona *View* para la carga de trabajo de Oracle Database.
+. Seleccione la pestaña *Bases de datos*.
+. Selecciona el icono *Actions* image:icon-action.png["Icono de acciones"] de una base de datos cuyos puntos de restauración quieras ver y selecciona *View protection details*.
+. Revisa los puntos de restauración disponibles, así como el número SCN y la encarnación de la base de datos asociados a cada uno de ellos.
+
 
 
 
@@ -60,9 +77,7 @@ Si restauras PDB o espacios de tabla a un momento específico o a un SCN:
 * Selecciona solo un PDB. La recuperación a un momento específico no es compatible con restaurar varios PDB.
 * `PDB$SEED` No se puede seleccionar para recuperación a un momento específico.
 * La restauración de archivos de control no se puede combinar con la recuperación a un momento específico de los PDB o de los espacios de tabla de los PDB.
-* Asegúrate de que el backup de datos y los backups de registros necesarios estén catalogados.
 * Los espacios de tabla  `SYSTEM`,  `SYSAUX` y  `UNDO` no se pueden seleccionar.
-* Comprueba que el backup de datos y los backups de registros necesarios estén catalogados.
 
 
 ====
@@ -87,11 +102,6 @@ Aparecerá una lista de instantáneas que coinciden con sus criterios de búsque
 +
 Se muestra la instantánea más cercana a la fecha y hora especificadas.
 
-.. Si lo deseas, selecciona *Ver copias de seguridad de los registros* para ver las copias de seguridad de los registros correspondientes.
-+
-... Comprueba que los backups de los registros estén montados.
-
-
 .. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
 .. Seleccione *Siguiente*.
 
@@ -99,17 +109,14 @@ Se muestra la instantánea más cercana a la fecha y hora especificadas.
 --
 .Restaurar a un número de cambio de sistema específico (SCN)
 --
+.. Si quieres, consulta <<Ver información sobre los puntos de restauración disponibles de Oracle Database>> para ver los SCN disponibles y las encarnaciones de base de datos asociadas.
 .. Seleccione *Restaurar a un número de cambio de sistema específico (SCN)*.
 .. Seleccione *Siguiente*.
 .. Ingrese el SCN que se utilizará como punto de restauración y seleccione *Buscar*.
 +
-Se muestra la instantánea más cercana para el SCN especificado.
+Se muestra la instantánea que mejor se ajusta al SCN especificado. Si varias encarnaciones de la base de datos coinciden con el SCN, se muestran todas las encarnaciones coincidentes.
 
-.. Si lo deseas, selecciona *Ver copias de seguridad de los registros* para ver las copias de seguridad de los registros correspondientes.
-+
-... Comprueba que los backups de los registros estén montados.
-
-
+.. Si hay varias encarnaciones de la base de datos que coinciden con la búsqueda, selecciona la instantánea con la encarnación correcta.
 .. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
 .. Seleccione *Siguiente*.
 
@@ -121,11 +128,6 @@ Se muestra la instantánea más cercana para el SCN especificado.
 .. Seleccione *Siguiente*.
 +
 Se muestra la última instantánea. La operación de restauración recupera el último estado válido usando todos los backups de registro disponibles.
-
-.. Si lo deseas, selecciona *Ver copias de seguridad de los registros* para ver las copias de seguridad de los registros correspondientes.
-+
-... Comprueba que los backups de los registros estén montados.
-
 
 .. Si la instantánea está almacenada en más de una ubicación, selecciona una ubicación de origen para usar y añade o revisa los detalles de la ubicación.
 .. Seleccione *Siguiente*.
@@ -168,7 +170,7 @@ Se muestran las instantáneas disponibles.
 ... Si lo deseas, activa la opción *Archivos de control* para restaurar también los archivos de control de la base de datos. Esta opción no se puede seleccionar para la recuperación a un momento específico o por SCN de PDB o espacios de tabla de PDB.
 ... Si lo deseas, activa la opción *Cambiar el estado de la base de datos si es necesario para la restauración y la recuperación* para permitir que NetApp Backup and Recovery gestione el estado de la base de datos según el tipo de recuperación.
 ... Si lo deseas, activa la opción *Restaurar sin movimiento* para realizar una restauración sin movimiento cuando se hayan añadido nuevos archivos de datos después del backup, o cuando se hayan añadido, eliminado o vuelto a crear LUN en un grupo de discos LVM. Esto anula la comprobación de archivos externos; la recuperación de bases de datos continúa usando la opción de restauración que seleccionaste.
-... Especifica las ubicaciones de los archivos de registro de archivo externo en el campo *Ubicaciones de los archivos de registro de archivo externo* si, al restaurar PDB o espacios de tabla a un momento específico o a un SCN, los archivos de registro de archivo externo no se encuentran en la ubicación configurada. Ingresa una ruta del sistema de archivos que comience con `/` o un grupo de discos ASM que comience con `+`. Usa los botones "más" y "menos" junto al campo de entrada de texto para agregar o quitar ubicaciones. Este campo no aparece cuando restauras desde snapshots sin recuperación.
+... Especifica las ubicaciones de los archivos de registro de archivo externos en el campo *Specify external archive log files locations* si, al restaurar PDBs o espacios de tabla a un momento específico o a un SCN, los archivos de registro de archivo no están en la ubicación configurada. Introduce una ruta del sistema de archivos que empiece por `/` o un grupo de discos ASM que empiece por `+`. Usa los botones «más» y «menos» junto al campo de entrada de texto para añadir o eliminar ubicaciones. Este campo no aparece cuando restauras desde snapshots sin recuperación.
 ... Si lo deseas, activa la opción *Abrir la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación* y selecciona una subopción que se ajuste al ámbito de la restauración (estas opciones no aparecen cuando se restaura a partir de instantáneas sin recuperación):
 +
 **** *Todos los archivos de datos*: Abre la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación.

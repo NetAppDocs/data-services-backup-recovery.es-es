@@ -49,7 +49,7 @@ Agrupa en un grupo de protección las cargas de trabajo que quieres proteger jun
 . Selecciona un comportamiento para los discos de extensión. Actualmente, *Incluir siempre todos los discos de extensión* es compatible.
 +
 
-NOTE: En las configuraciones CIFS, Backup and Recovery protege automáticamente todos los discos conectados a cada máquina virtual del grupo de protección. Esto incluye archivos distribuidos en varios volúmenes ONTAP o sistemas de almacenamiento ONTAP (discos distribuidos) y archivos limitados a una sola ubicación (discos no distribuidos). En las configuraciones SAN, todos los discos no distribuidos se incluirán en el grupo de protección.
+NOTE: En las configuraciones CIFS y SAN, Backup and Recovery protege automáticamente todos los discos conectados a cada VM del grupo de protección. Esto incluye tanto los archivos distribuidos en varios volúmenes ONTAP o sistemas de almacenamiento ONTAP (discos distribuidos) como los archivos que se encuentran en una única ubicación (discos no distribuidos).
 
 . Seleccione *Siguiente*.
 . Selecciona la política de protección que quieres aplicar al grupo de protección.
