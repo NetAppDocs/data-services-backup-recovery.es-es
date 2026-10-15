@@ -60,7 +60,10 @@ De forma predeterminada, la página Supervisión de trabajos muestra trabajos de
 . Para ordenar los resultados de forma diferente, seleccione cada encabezado de columna para ordenar por Estado, Hora de inicio, Nombre del recurso y más.
 . Si está buscando trabajos específicos, seleccione el área *Búsqueda avanzada y filtrado* para abrir el panel de búsqueda.
 +
-Utiliza este panel para realizar una búsqueda de texto libre de cualquier recurso; por ejemplo, "volumen 1" o "aplicación 3". También puedes filtrar la lista de trabajos según las opciones de los menús desplegables.
+Utiliza este panel para realizar una búsqueda de texto libre de cualquier recurso; por ejemplo, «volumen 1» o «aplicación 3». También puedes filtrar la lista de trabajos según las opciones de los menús desplegables. Asimismo, puedes realizar una búsqueda por periodo de tiempo.
+
++
+Al buscar un intervalo de tiempo, selecciona *Intervalo personalizado* para elegir una fecha de inicio y una fecha de finalización de un calendario.
 
 +
 La mayoría de los filtros se explican por sí solos. El filtro de "Carga de trabajo" le permite ver trabajos en las siguientes categorías:
