@@ -263,6 +263,18 @@ NOTE: No se admite la protección de bases de datos almacenadas en discos pass-t
 |===
 
 
+[[required-permissions-for-microsoft-sql-server-host-discovery]]
+=== Permisos necesarios para la detección de hosts de Microsoft SQL Server
+
+Cuando descubres un host de SQL Server, NetApp Backup and Recovery instala el NetApp SnapCenter Plug-in for Microsoft SQL Server en el host. También puedes optar por instalar el plug-in manualmente. Si eliges la instalación automática, las credenciales del host que proporciones durante el descubrimiento deben tener las siguientes pertenencias y permisos para que Backup and Recovery pueda instalar el plug-in:
+
+* Pertenencia al rol fijo de nivel de servidor de la instancia de Microsoft SQL Server `sysadmin`
+* Pertenencia al grupo local Administrator de Windows
+* Permiso para iniciar sesión en el host
+
+
+
+
 [[requirements-for-protecting-vmware-workloads]]
 == Requisitos para proteger las cargas de trabajo de VMware
 
@@ -411,6 +423,33 @@ NOTE: Se requiere ONTAP 9.19.1 o una versión posterior para admitir más de 6 b
 
 
 |===
+
+
+[[required-permissions-for-oracle-database-host-discovery]]
+=== Permisos necesarios para la detección de hosts de Oracle Database
+
+Cuando detectas un host de Oracle Database, NetApp Backup and Recovery instala el plug-in de Oracle Database de NetApp en el host mediante SSH con contraseña. También puedes optar por instalar el plug-in manualmente. Necesitas permisos específicos para instalar el plug-in.
+
+
+
+==== Requisitos si usas la instalación automática de complementos
+
+Las credenciales del host que proporciones durante la detección deben tener los siguientes permisos para que Backup and Recovery pueda instalar el plug-in de Oracle Database de NetApp:
+
+* Permisos de root o acceso mediante sudo para un usuario que no sea root. Para conceder acceso mediante sudo durante la detección de hosts, selecciona credenciales que no sean de root en la sección *Registro de hosts*; a continuación, selecciona *Configurar sudoers* y sigue las instrucciones. Las credenciales de root no requieren este paso.
+* Permiso de ejecución para la JVM de Java.
+
+
+
+
+==== Requisitos para instalar el complemento manualmente
+
+Si instalas el complemento manualmente, la cuenta utilizada para la instalación debe tener los siguientes permisos:
+
+* Permisos de root o capacidad de usar sudo para un usuario que no sea root.
+* Permiso de ejecución para la JVM de Java.
+
+
 
 
 [[requirements-for-protecting-kubernetes-applications]]

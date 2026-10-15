@@ -372,10 +372,19 @@ Si inicia sesión en Backup and Recovery por primera vez y tiene un sistema en l
 
 TIP: Si vas a introducir información de vCenter, introduce los datos tanto para la configuración de vCenter como para el registro del host. Si has añadido o introducido aquí información de vCenter, también necesitas añadir la información del complemento en Configuración avanzada a continuación.
 
-.. *Registro de host*: seleccione *Agregar credenciales* e ingrese información sobre los hosts que contienen las cargas de trabajo que desea descubrir.
+.. *Registro del host*: Introduce la siguiente información:
++
+*** El FQDN o la dirección IP del host
+*** El agente de consola que utiliza el host para comunicarse con Backup and Recovery
+*** Las credenciales almacenadas para el host
++
+Si aún no has añadido las credenciales de este host a NetApp Backup and Recovery, selecciona *Add credentials* e introduce la información de credenciales para el host.
+
 +
 
 TIP: Si está agregando un servidor independiente y no un servidor vCenter, ingrese solo la información del host.
+
+
 
 
 
@@ -391,13 +400,13 @@ TIP: Este proceso puede tardar unos minutos.
 
 ==== Configura las opciones avanzadas durante la detección e instala el complemento
 
-Con la opción de configuración avanzada, puedes instalar manualmente el agente del complemento en todos los servidores que se estén registrando. Esto te permite importar todas las cargas de trabajo de SnapCenter en NetApp Backup and Recovery para que puedas gestionar las copias de seguridad y las restauraciones allí. NetApp Backup and Recovery muestra los pasos necesarios para instalar el complemento.
+Con Configuración avanzada, puedes instalar manualmente el complemento de NetApp SnapCenter para Microsoft SQL Server en todos los servidores que se van a registrar. Esto te permite importar todas las cargas de trabajo de SnapCenter a NetApp Backup and Recovery para que puedas gestionar allí las copias de seguridad y las restauraciones. NetApp Backup and Recovery muestra los pasos necesarios para instalar el complemento.
 
 .Pasos
 . Desde la página «Descubrir recursos», accede a «Configuración avanzada» seleccionando la flecha hacia abajo situada a la derecha.
 . En la página Descubrir recursos de carga de trabajo, ingrese la siguiente información.
 +
-** *Introduce el número de puerto del complemento*: introduce el número de puerto que utiliza el complemento.
+** *Puerto del complemento*: introduce el número de puerto que utiliza el complemento.
 ** *Ruta de instalación*: Introduce la ruta en la que se instalará el complemento.
 
 
