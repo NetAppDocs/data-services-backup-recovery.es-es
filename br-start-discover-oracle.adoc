@@ -290,13 +290,35 @@ TIP: Añadir recursos puede tardar varios minutos. Para ver el progreso, selecci
 
 
 .Resultado
-La carga de trabajo de Oracle Database aparece en la lista de cargas de trabajo en la página de Inventario.
+El host de Oracle Database aparece en la lista de cargas de trabajo de la página Inventario.
+
+
+
+[[view-oracle-database-inventory]]
+== Ver el inventario de la base de datos Oracle
+
+Consulta los detalles de los recursos de Oracle Database que has detectado en el inventario de Backup and Recovery.
+
+.Pasos
+. En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.
+. En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
+. Para ver los hosts de Oracle Database detectados, selecciona la pestaña *Hosts*.
++
+Puedes usar esta vista para ver detalles como el nombre de host de cada host, cuántas bases de datos aloja cada host, el modelo de implementación (por ejemplo, cluster, Oracle Data Guard o standalone) y otra información.
+
+. Para ver los grupos de protección creados para proteger recursos de Oracle Database, selecciona la pestaña *Grupos de protección*.
+. Para ver las bases de datos alojadas en cada host de Oracle Database, selecciona la pestaña *Bases de datos*.
++
+Esta vista muestra información detallada, incluido si cada base de datos es una instancia única o forma parte de un clúster o de una configuración de alta disponibilidad.
+
+
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continuar al panel de control de NetApp Backup and Recovery
 
+.Pasos
 . En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.
 . Selecciona un mosaico de carga de trabajo (por ejemplo, Oracle Database).
 . Desde el menú Copia de seguridad y recuperación, seleccione *Panel de control*.

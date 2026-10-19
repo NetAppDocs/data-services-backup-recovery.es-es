@@ -42,7 +42,7 @@ Agrupa los recursos de Oracle Database que quieras proteger juntos en un grupo d
 . Proporcione un nombre para el grupo de protección.
 . Selecciona las bases de datos que quieras incluir en el grupo de protección.
 . Seleccione *Siguiente*.
-. Seleccione la *Política de respaldo* que desea aplicar al grupo de protección.
+. Selecciona la *política de backup* que desees aplicar al grupo de protección. Si vas a incluir una base de datos que forma parte de una configuración de Oracle Data Guard, elige una política de backup que tenga activada la opción Data Guard.
 +
 Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 

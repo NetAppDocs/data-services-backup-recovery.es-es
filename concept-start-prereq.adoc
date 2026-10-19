@@ -437,22 +437,18 @@ Cuando detectas un host de Oracle Database, NetApp Backup and Recovery instala e
 
 
 
-==== Requisitos si usas la instalación automática de complementos
+==== Requisitos para la instalación del complemento
 
 Las credenciales del host que proporciones durante la detección deben tener los siguientes permisos para que Backup and Recovery pueda instalar el plug-in de Oracle Database de NetApp:
 
-* Permisos de root o acceso mediante sudo para un usuario que no sea root. Para conceder acceso mediante sudo durante la detección de hosts, selecciona credenciales que no sean de root en la sección *Registro de hosts*; a continuación, selecciona *Configurar sudoers* y sigue las instrucciones. Las credenciales de root no requieren este paso.
+* La posibilidad de iniciar sesión en el host mediante SSH.
+* Permisos de root o acceso mediante sudo para un usuario que no sea root.
++
+** Para conceder acceso a sudo durante la detección de hosts, selecciona credenciales que no sean de root en la sección *Registro de hosts*, luego selecciona *Configurar sudoers* y sigue las instrucciones. Las credenciales de root no requieren este paso. Este paso no es necesario para la instalación manual.
+
+
 * Permiso de ejecución para la JVM de Java.
-
-
-
-
-==== Requisitos para instalar el complemento manualmente
-
-Si instalas el complemento manualmente, la cuenta utilizada para la instalación debe tener los siguientes permisos:
-
-* Permisos de root o capacidad de usar sudo para un usuario que no sea root.
-* Permiso de ejecución para la JVM de Java.
+* `SYSDBA` el usuario de la base de datos Oracle necesita privilegios.
 
 
 

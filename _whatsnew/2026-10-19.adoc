@@ -1,0 +1,14 @@
+= Mejora de las cargas de trabajo de Oracle Database
+:allow-uri-read: 
+
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Mejora de las cargas de trabajo de Oracle Database
+
+En esta versión, Oracle Database workloads introduce la siguiente mejora:
+
+*Compatibilidad con Oracle Data Guard*: NetApp Backup and Recovery ahora permite utilizar grupos de protección para proteger las bases de datos primarias y de reserva que utilizan Oracle Data Guard para garantizar la alta disponibilidad.
+
+Para obtener detalles sobre cómo proteger las cargas de trabajo de Oracle Database, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Oracle Database con NetApp Backup and Recovery"].
