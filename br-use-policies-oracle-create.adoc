@@ -14,9 +14,6 @@ summary: En NetApp Backup and Recovery, cree sus propias políticas que rijan la
 [role="lead"]
 Utiliza NetApp Backup and Recovery para crear políticas de backup de Oracle Database que controlan la frecuencia de backup, la programación y la retención.
 
-
-NOTE: Algunas de estas opciones y secciones de configuración no están disponibles para todas las cargas de trabajo.
-
 Si importa recursos desde SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
 
 Puedes lograr los siguientes objetivos relacionados con las políticas:

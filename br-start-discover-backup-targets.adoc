@@ -21,7 +21,7 @@ Descubre o añade manualmente destinos de backup externos, como AWS S3, Azure Bl
 [[discover-a-backup-target]]
 == Descubra un destino de respaldo
 
-Configura tus destinos de backup (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) antes de usar NetApp Backup and Recovery.
+Configura tus destinos de copia de backup (Amazon Web Services (AWS) S3, ONTAP S3, almacén de objetos compatible con S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) antes de usar NetApp Backup and Recovery.
 
 Puede descubrir estos objetivos automáticamente o agregarlos manualmente.
 
@@ -33,7 +33,7 @@ Debe descubrir al menos una carga de trabajo antes de poder agregar un destino d
 .Pasos
 . En el menú NetApp Backup and Recovery, selecciona *Backup targets*.
 . Seleccione *Descubrir destino de copia de seguridad*.
-. Selecciona uno de los tipos de destino de backup disponibles: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* o *GCP*.
+. Selecciona uno de los tipos de destino de backup disponibles: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3*, *S3-compatible* o *GCP*.
 . Seleccione *Siguiente*.
 . (Solo para destinos de backup de AWS y Azure) En la sección *Elegir ubicación de credenciales*, elige la ubicación donde residen las credenciales y luego elige cómo asociar las credenciales.
 . Seleccione *Siguiente*.
@@ -72,9 +72,19 @@ Debe descubrir al menos una carga de trabajo antes de poder agregar un destino d
 *** *Clave secreta*: Ingrese la clave secreta de ONTAP S3.
 
 
+** Para los dispositivos compatibles con S3:
++
+*** *Nombre de la credencial*: introduce el nombre de la credencial compatible con S3.
+*** *Nombre de dominio completo (FQDN) del nodo de puerta de enlace*: introduce un nombre de dominio completo (FQDN) para el nodo de puerta de enlace compatible con S3.
+*** *Puerto*: introduce el número de puerto para la compatibilidad con S3.
+*** *Clave de acceso*: introduce la clave de acceso compatible con S3.
+*** *Clave secreta*: introduce la clave secreta compatible con S3.
+
+
 ** Para GCP:
 +
 *** *Nombre de la credencial*: Ingresa el nombre de la credencial de Google Cloud.
+*** *Proyecto de GCP*: introduce el nombre de tu proyecto de Google Cloud.
 *** *Clave de acceso*: Introduce la clave de acceso de Google Cloud.
 *** *Clave secreta*: Ingresa la clave secreta de Google Cloud.
 
@@ -116,33 +126,35 @@ Agrega manualmente un bucket a un destino de backup externo en lugar de dejar qu
 +
 *** *Suscripción*: selecciona el nombre de la suscripción de Azure.
 *** *Grupo de recursos*: seleccione el nombre del grupo de recursos de Azure.
-*** *Detalles de la instancia*:
+*** *Detalles de la instancia*: añade la siguiente información:
 +
 **** *Nombre de la cuenta de almacenamiento*: Introduce el nombre de la cuenta de Azure Blob Storage.
 **** *Región de Azure*: Introduce la región de Azure para la cuenta de almacenamiento.
-**** *Tipo de rendimiento*: Selecciona el tipo de rendimiento, estándar o premium, para la cuenta de Azure Blob Storage, indicando el nivel de rendimiento requerido.
-**** *Cifrado*: selecciona el tipo de cifrado para la cuenta de Azure Blob Storage. Las opciones son claves gestionadas por Microsoft o claves gestionadas por el cliente. Si seleccionas claves gestionadas por el cliente, debes indicar el nombre del almacén de claves y el nombre de la clave.
+**** *Bloqueo de objetos*: selecciona esta opción para activar el bloqueo de objetos en el depósito. El bloqueo de objetos impide que los objetos se eliminen o se sobrescriban durante un periodo de retención especificado, lo que proporciona una capa adicional de protección de datos. Solo puedes activar esta opción al crear un depósito y no es posible desactivarla posteriormente.
 
 
+*** *Cifrado*: selecciona el tipo de cifrado para la cuenta de Azure Blob Storage. Puedes elegir claves gestionadas por Microsoft o claves gestionadas por el cliente. Si seleccionas claves gestionadas por el cliente, debes proporcionar tanto la clave de cifrado como el ID de cifrado.
 
 
 ** Para StorageGRID:
 +
-*** *Destino de copia de seguridad*: selecciona el nombre del destino de copia de seguridad de StorageGRID.
-*** *Nombre del depósito*: Ingrese el nombre del depósito StorageGRID .
-*** *Región*: Ingrese la región StorageGRID para el depósito.
-*** *Habilitar control de versiones*: seleccione esta opción para habilitar el control de versiones para el depósito StorageGRID .  El control de versiones le permite mantener múltiples versiones de objetos en el depósito, lo que puede resultar útil para fines de copia de seguridad y recuperación.
-*** *Bloqueo de objetos*: seleccione esta opción para habilitar el bloqueo de objetos para el depósito StorageGRID .  El bloqueo de objetos evita que se eliminen o sobrescriban objetos durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.
-*** *Capacidad*: Ingrese la capacidad para el depósito StorageGRID .  Esta es la cantidad máxima de datos que se pueden almacenar en el depósito.
+*** *Credentials name*: selecciona las credenciales que quieras usar para autenticarte con el destino de backup de este bucket.
+*** *Nombre del bucket*: introduce el nombre del nuevo bucket de StorageGRID.
+*** *Bloqueo de objetos*: selecciona esta opción para habilitar el bloqueo de objetos en el bucket. El bloqueo de objetos impide que los objetos se eliminen o se sobrescriban durante un período de retención especificado, lo que proporciona una capa adicional de protección de datos. Solo puedes habilitar esta opción al crear un bucket y no puedes desactivarla más adelante.
 
 
 ** Para ONTAP S3:
 +
-*** *Destino de copia de seguridad*: selecciona el nombre del destino de copia de seguridad ONTAP S3.
+*** *Credentials name*: selecciona las credenciales que quieras usar para autenticarte con el destino de backup de este bucket.
 *** *Nombre del depósito*: Introduce el nombre del bucket S3 de ONTAP.
-*** *Capacidad*: Ingrese la capacidad para el depósito ONTAP S3.  Esta es la cantidad máxima de datos que se pueden almacenar en el depósito.
-*** *Habilitar control de versiones*: seleccione esta opción para habilitar el control de versiones para el bucket ONTAP S3.  El control de versiones le permite mantener múltiples versiones de objetos en el depósito, lo que puede resultar útil para fines de copia de seguridad y recuperación.
-*** *Bloqueo de objetos*: seleccione esta opción para habilitar el bloqueo de objetos para el depósito ONTAP S3.  El bloqueo de objetos evita que se eliminen o sobrescriban objetos durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.
+*** *Bloqueo de objetos*: selecciona esta opción para habilitar el bloqueo de objetos en el bucket. El bloqueo de objetos impide que los objetos se eliminen o se sobrescriban durante un período de retención especificado, lo que proporciona una capa adicional de protección de datos. Solo puedes habilitar esta opción al crear un bucket y no puedes desactivarla más adelante.
+
+
+** Para los dispositivos compatibles con S3:
++
+*** *Credentials name*: selecciona las credenciales que quieras usar para autenticarte con el destino de backup de este bucket.
+*** *Bucket name*: introduce el nombre del nuevo bucket compatible con S3.
+*** *Bloqueo de objetos*: selecciona esta opción para habilitar el bloqueo de objetos en el bucket. El bloqueo de objetos impide que los objetos se eliminen o se sobrescriban durante un período de retención especificado, lo que proporciona una capa adicional de protección de datos. Solo puedes habilitar esta opción al crear un bucket y no puedes desactivarla más adelante.
 
 
 ** Para GCP:
@@ -150,7 +162,6 @@ Agrega manualmente un bucket a un destino de backup externo en lugar de dejar qu
 *** *Nombre del bucket*: Ingresa el nombre del bucket de Google Cloud.
 *** *Proyecto GCP*: Selecciona el nombre del proyecto de Google Cloud.
 *** *Región del bucket*: Selecciona una región para el bucket de Google Cloud.
-*** *Bloqueo de objetos*: selecciona esta opción para habilitar los periodos de retención para los objetos en este bucket. Mientras un periodo de retención esté en vigor, los objetos no pueden modificarse ni eliminarse y son inmutables hasta que el periodo expire. Si habilitas esta opción para un bucket, no se puede desactivar.
 
 
 

@@ -115,6 +115,8 @@ sidebar:
           url: "/prev-ontap-restore-search.html"
         - title: Restaurar datos de ONTAP usando Browse and Restore
           url: "/prev-ontap-restore-browse.html"
+        - title: Restaurar datos de ONTAP mediante la CLI de ONTAP
+          url: "/prev-ontap-restore-cli.html"
     - title: Proteger las cargas de trabajo de Microsoft SQL Server
       entries:
       - title: Flujo de trabajo de protección de Microsoft SQL Server en NetApp Backup

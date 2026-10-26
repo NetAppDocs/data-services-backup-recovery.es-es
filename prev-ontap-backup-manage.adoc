@@ -295,7 +295,7 @@ CAUTION: Si planea eliminar un sistema o clúster que tiene copias de seguridad,
 [[delete-all-backup-files-for-a-system]]
 === Eliminar todos los archivos de respaldo de un sistema
 
-Eliminar todas las copias de seguridad del almacenamiento de objetos de un sistema no deshabilita las futuras copias de seguridad de los volúmenes en este sistema.  Si desea dejar de crear copias de seguridad de todos los volúmenes de un sistema, puede desactivar las copias de seguridad<<Desactivar NetApp Backup and Recovery para un sistema,como se describe aquí>> .
+Eliminar todas las copias de seguridad de un sistema almacenadas en el almacenamiento de objetos no desactiva las futuras copias de seguridad de los volúmenes de este sistema. Si quieres dejar de crear copias de seguridad de todos los volúmenes de un sistema, puedes pausar las copias de seguridad <<Pausa todos los backups de un sistema,como se describe aquí>>.
 
 Tenga en cuenta que esta acción no afecta a las instantáneas ni a los volúmenes replicados; este tipo de archivos de copia de seguridad no se eliminan.
 
@@ -386,41 +386,47 @@ NOTE: No puedes eliminar archivos de copia de seguridad de volúmenes individual
 
 
 
-[[deactivate-netapp-backup-and-recovery-for-a-system]]
-== Desactivar NetApp Backup and Recovery para un sistema
+[[pause-all-backups-for-a-system]]
+== Pausa todos los backups de un sistema
 
-La desactivación de NetApp Backup and Recovery para un sistema pausa las copias de seguridad y las restauraciones para todos sus volúmenes sin eliminar las copias de seguridad existentes. Esto te permite pausar toda la actividad de copia de seguridad y restauración durante un período de tiempo sin dar de baja el servicio de copia de seguridad de este sistema.
+Pausar todas las copias de seguridad de un sistema para pausar la actividad de copia de seguridad de todos los volúmenes del sistema sin eliminar las copias de seguridad existentes. Pausar las copias de seguridad no da de baja el servicio de copia de seguridad de este sistema.
 
 Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de almacenamiento de objetos por la capacidad que utilizan sus copias de seguridad a menos que<<Eliminar copias de seguridad,eliminar las copias de seguridad>> .
 
 .Pasos
 . Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema en el que desea deshabilitar las copias de seguridad y seleccione *Desactivar copia de seguridad*.
-. En el cuadro de diálogo de confirmación, seleccione *Desactivar*.
+. En la _página Configuración de copias de seguridad_, selecciona image:icon-actions-horizontal.gif["Icono de acciones"] para el sistema del que quieras pausar las copias de seguridad y selecciona *Pausar todas las copias de seguridad*.
+. En el cuadro de diálogo de confirmación, selecciona *Pause*.
 
-
-
-NOTE: Aparece un botón *Activar copia de seguridad* para ese sistema mientras la copia de seguridad está deshabilitada.  Puede seleccionar este botón cuando desee volver a habilitar la funcionalidad de copia de seguridad para ese sistema.
 
 
 
 [[unregister-netapp-backup-and-recovery-for-a-system]]
 == Anular el registro de NetApp Backup and Recovery para un sistema
 
-Puede cancelar el registro de NetApp Backup and Recovery para un sistema si ya no desea utilizar la funcionalidad de respaldo y desea dejar de pagar por los respaldos en ese sistema.  Normalmente, esta función se utiliza cuando planeas eliminar un sistema y deseas cancelar el servicio de respaldo.
+Al anular el registro de NetApp Backup and Recovery para un sistema, se detienen las futuras copias de seguridad de un sistema de almacenamiento y se elimina de NetApp Backup and Recovery. Durante el proceso, puedes elegir si quieres conservar o eliminar las copias de seguridad existentes.
 
-También puede utilizar esta función si desea cambiar el almacén de objetos de destino donde se almacenan las copias de seguridad de su clúster.  Después de cancelar el registro de NetApp Backup and Recovery para el sistema, puede habilitar NetApp Backup and Recovery para ese clúster usando la nueva información del proveedor de nube.
+.Acerca de esta tarea
+* Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de almacenamiento de objetos por la capacidad que utilizan sus copias de seguridad a menos que<<Eliminar copias de seguridad,eliminar las copias de seguridad>> .
+* Para restaurar backups existentes, consulta link:prev-ontap-restore-cli.html["Restaurar datos de ONTAP mediante la CLI de ONTAP"^].
 
-Antes de poder cancelar el registro de NetApp Backup and Recovery, debe realizar los siguientes pasos, en este orden:
-
-* Desactivar NetApp Backup and Recovery para el sistema
-* Eliminar todas las copias de seguridad de ese sistema
-
-
-La opción de cancelar el registro no estará disponible hasta que se completen estas dos acciones.
 
 .Pasos
-. Desde la pestaña *Volúmenes*, seleccione *Configuración de copia de seguridad*.
-. Desde la página _Configuración de copia de seguridad_, seleccioneimage:icon-actions-horizontal.gif["Icono de acciones"] para el sistema en el que desea anular el registro del servicio de respaldo y seleccione *Anular registro*.
-. En el cuadro de diálogo de confirmación, seleccione *Cancelar registro*.
+. Ve a *Protección > Backup and Recovery*.
+. Selecciona el mosaico *Volumes*.
+. Selecciona *Configuración de backup*.
+. En la página Backup Settings, selecciona image:icon-actions-horizontal.gif["Icono de acciones"] para el sistema y selecciona *Unregister backups*.
+. Selecciona una de las siguientes opciones:
++
+** *Desactivar copias de seguridad*: detiene las futuras copias de seguridad, elimina las relaciones de copia de seguridad del almacén de objetos y conserva las copias de seguridad existentes en el almacén de objetos. Después de anular el registro del sistema, solo podrás restaurar esas copias de seguridad mediante la CLI de ONTAP.
+** *Desactivar y eliminar backups*: detiene los futuros backups, elimina las relaciones de backup del almacén de objetos y elimina los backups existentes. Opcionalmente, selecciona *Ignorar errores al desactivar/eliminar backups* si quieres que la operación continúe aunque falle algún paso.
 
+
+. En *Introduce el nombre del sistema para confirmar*, escribe el nombre del sistema.
+. En *Confirm protection report backup*, confirma que has guardado todos los informes que necesitas.
+. Selecciona *Confirmar y anular el registro*.
+. Supervisa la operación en Job Monitor hasta que finalice.
+
+
+
+NOTE: Al dar de baja el sistema no se modifican los volúmenes del sistema, la configuración de instantáneas ni las relaciones de replicación en ONTAP.
