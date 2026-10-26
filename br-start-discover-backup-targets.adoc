@@ -130,7 +130,7 @@ Agrega manualmente un bucket a un destino de backup externo en lugar de dejar qu
 +
 **** *Nombre de la cuenta de almacenamiento*: Introduce el nombre de la cuenta de Azure Blob Storage.
 **** *Región de Azure*: Introduce la región de Azure para la cuenta de almacenamiento.
-**** *Bloqueo de objetos*: selecciona esta opción para activar el bloqueo de objetos en el depósito. El bloqueo de objetos impide que los objetos se eliminen o se sobrescriban durante un periodo de retención especificado, lo que proporciona una capa adicional de protección de datos. Solo puedes activar esta opción al crear un depósito y no es posible desactivarla posteriormente.
+**** *Bloqueo de objetos*: selecciona esta opción para activar el bloqueo de objetos en el depósito. El bloqueo de objetos impide que los objetos se eliminen o se sobrescriban durante un período de retención especificado, lo que proporciona una capa adicional de protección de datos. Solo puedes habilitar esta opción al crear un bucket y no puedes desactivarla más adelante.
 
 
 *** *Cifrado*: selecciona el tipo de cifrado para la cuenta de Azure Blob Storage. Puedes elegir claves gestionadas por Microsoft o claves gestionadas por el cliente. Si seleccionas claves gestionadas por el cliente, debes proporcionar tanto la clave de cifrado como el ID de cifrado.
