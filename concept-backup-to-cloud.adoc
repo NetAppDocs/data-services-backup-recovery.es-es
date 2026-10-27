@@ -118,7 +118,7 @@ Hay dos tipos de costos asociados con el uso de la función de respaldo a objeto
 * Cargos por servicio
 
 
-No se cobra ninguna tarifa por crear instantáneas o volúmenes replicados, aparte del espacio en disco necesario para almacenar las instantáneas y los volúmenes replicados.
+Para todas las cargas de trabajo, no se cobra por crear instantáneas locales ni por replicarlas en el almacenamiento secundario de ONTAP, aparte del espacio en disco necesario para almacenar las instantáneas y los datos replicados. Solo se cobra por la protección en el almacenamiento de objetos.
 
 *Cargos por recursos*
 
@@ -141,11 +141,7 @@ Debido a que NetApp Backup and Recovery preserva las eficiencias de almacenamien
 
 *Cargos por servicio*
 
-Para las cargas de trabajo de volumen de ONTAP , solo se le cobrará por los volúmenes protegidos por el almacenamiento de objetos. Los cargos se basan en la capacidad lógica utilizada de los volúmenes ONTAP de origen antes de que se apliquen las eficiencias, también conocidas como Terabytes Front-End (FETB).
-
-Para cargas de trabajo de Kubernetes, se te cobrará según el tamaño combinado de todos los volúmenes persistentes.
-
-Para todas las demás cargas de trabajo, se le cobrará por los recursos protegidos en al menos un destino de almacenamiento de objetos o secundario. Los cargos se calculan utilizando el tamaño lógico de la carga de trabajo de origen. Para las bases de datos, esto significa el tamaño de la base de datos; para las máquinas virtuales, el tamaño de la máquina virtual.
+Para todas las cargas de trabajo, solo pagas por los recursos protegidos en el almacenamiento de objetos. Los cargos se basan en la capacidad utilizada lógica de la carga de trabajo de origen antes de aplicar las eficiencias (lo que se conoce como Front-End Terabytes (FETB) para las cargas de trabajo de ONTAP Volumes). En el caso de las bases de datos, esto significa el tamaño de la base de datos; en el de las VM, el tamaño de la VM. Para las cargas de trabajo de Kubernetes, los cargos se basan en el tamaño combinado de los volúmenes persistentes de esas aplicaciones.
 
 Hay tres formas de pagar por Backup and Recovery:
 
@@ -161,12 +157,12 @@ Hay tres formas de pagar por Backup and Recovery:
 
 NetApp Backup and Recovery ofrece una prueba gratuita que le permite usarlo sin una clave de licencia durante un tiempo limitado.
 
-Una licencia de Backup solo es necesaria para las operaciones de copia de seguridad y restauración que impliquen almacenamiento de objetos.  La creación de instantáneas y volúmenes replicados no requiere licencia.
+Para todas las cargas de trabajo, solo se requiere una licencia de copia de seguridad para las operaciones de copia de seguridad y restauración que implican almacenamiento de objetos. La creación de instantáneas locales y la replicación al almacenamiento secundario ONTAP no requieren licencia.
 
 Puedes elegir entre tres opciones de licencia:
 
 * *Traiga su propia licencia (BYOL)*: Compre una licencia basada en plazos (1, 2 o 3 años) y en capacidad (en incrementos de 1 TiB) de NetApp.  Introduzca el número de serie proporcionado en la NetApp Console para activarlo.  La licencia cubre todos los sistemas fuente de su organización.  La renovación es obligatoria cuando se alcanza el plazo o el límite de capacidad.
-* *Pago por uso (PAYGO)*: Suscríbase a través del mercado de su proveedor de nube y pague por GiB de datos respaldados, con facturación mensual.  No se requiere pago por adelantado.  Al registrarte por primera vez, tienes disponible una prueba gratuita de 30 días. Para obtener más información, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["Utilice una suscripción de pago por uso de NetApp Backup and Recovery."] .
+* *Pago por uso (PAYGO)*: suscríbete a través del marketplace de tu proveedor de nube y paga por cada GiB de datos respaldados, con facturación por hora. No tienes que pagar nada por adelantado. Tienes disponible una prueba gratuita de 30 días cuando te registras por primera vez. Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["Utilice una suscripción de pago por uso de NetApp Backup and Recovery."].
 * *Contrato anual*: Disponible a través de los marketplaces de AWS y Azure por 1, 2 o 3 años.  Hay dos contratos anuales disponibles:
 +
 ** *Copia de seguridad en la nube*: Realiza copias de seguridad de los Cloud Volumes ONTAP y de los datos de ONTAP locales.
