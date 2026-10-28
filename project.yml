@@ -36,6 +36,8 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: NetApp requisitos de copia de seguridad y recuperación
       url: "/concept-start-prereq.html"
+    - title: Destinos compatibles para backup y restauración
+      url: "/br-start-sources-destinations.html"
     - title: Configura las licencias
       url: "/br-start-licensing.html"
     - title: Configurar certificados de seguridad
@@ -59,7 +61,8 @@ sidebar:
       url: "/br-use-dashboard.html"
     - title: Proteger las cargas de trabajo de volumen de ONTAP
       entries:
-      - title: Aprende sobre NetApp Backup and Recovery para volúmenes de ONTAP
+      - title: Descripción general de las cargas de trabajo de los volúmenes de Protect
+          ONTAP
         url: "/prev-ontap-protect-overview.html"
       - title: Habilita NetApp Backup and Recovery para proteger volúmenes
         url: "/br-start-enable.html"

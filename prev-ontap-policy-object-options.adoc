@@ -31,6 +31,9 @@ NetApp Backup and Recovery le permite crear múltiples políticas de respaldo co
 
 Cada política de backup incluye una sección de _Etiquetas y retención_ que puedes aplicar a tus archivos de backup. Ten en cuenta que la política de snapshot aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery o no se crearán archivos de backup.
 
+
+NOTE: La política de snapshots aplicada al volumen debe tener una de las etiquetas que estás utilizando en tu política de replicación y en tu política de backup en almacén de objetos. Si no encuentras etiquetas coincidentes, no se crearán archivos de backup. Por ejemplo, si quieres crear volúmenes replicados y archivos de backup "weekly", debes usar una política de snapshots que cree snapshots "weekly".
+
 El programa consta de dos partes: la etiqueta y el valor de retención:
 
 * La *etiqueta* define con qué frecuencia se crea (o actualiza) un archivo de respaldo desde el volumen.  Puede seleccionar entre los siguientes tipos de etiquetas:
@@ -51,6 +54,9 @@ Por ejemplo, supongamos que crea una política de respaldo que crea 7 copias de 
 
 
 Las copias de seguridad anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos.  Este comportamiento predeterminado se puede cambiar en la página de Configuración avanzada del sistema.
+
+
+TIP: El periodo de retención de las copias de seguridad de los volúmenes de protección de datos (DP) es el mismo que el definido en la relación de origen SnapMirror. Puedes modificarlo mediante la API.
 
 
 
@@ -150,6 +156,8 @@ Los escaneos ocurren en estas situaciones:
 * Los análisis de ransomware se pueden iniciar cuando se selecciona la copia de seguridad para el proceso de restauración.
 * Los escaneos se pueden realizar a pedido en cualquier momento.
 
+
+Los análisis programados de ransomware están activados de forma predeterminada y se ejecutan cada 7 días únicamente en la instantánea más reciente. Puedes modificar la frecuencia de los análisis o desactivar los análisis programados en la página Configuración avanzada.
 
 ¿Cómo funciona el proceso de recuperación?
 

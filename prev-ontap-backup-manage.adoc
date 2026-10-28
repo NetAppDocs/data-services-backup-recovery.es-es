@@ -412,6 +412,7 @@ IMPORTANT: Antes de dar de baja un sistema, descarga un informe completo de "Pro
 .Acerca de esta tarea
 * Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de almacenamiento de objetos por la capacidad que utilizan sus copias de seguridad a menos que<<Eliminar copias de seguridad,eliminar las copias de seguridad>> .
 * Para restaurar backups existentes, consulta link:prev-ontap-restore-cli.html["Restaurar datos de ONTAP mediante la CLI de ONTAP"^].
+* No puedes cambiar el almacén de objetos de destino de un sistema después de habilitar los backups. Para usar un almacén de objetos diferente, anula el registro de NetApp Backup and Recovery para el sistema y, a continuación, vuelve a habilitarlo con la nueva información del proveedor de nube.
 
 
 .Pasos

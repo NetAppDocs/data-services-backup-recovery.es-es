@@ -25,6 +25,7 @@ Repasaremos las siguientes opciones:
 * ¿Qué arquitectura de respaldo utilizará: una copia de seguridad en cascada o en abanico de sus volúmenes?
 * ¿Utilizarás las políticas de respaldo predeterminadas o necesitarás crear políticas personalizadas?
 * ¿Quieres que el servicio cree los depósitos en la nube para ti o quieres crear tus propios contenedores de almacenamiento de objetos antes de comenzar?
+* ¿Alguno de tus volúmenes está en agregados de FabricPool y cómo podrían sus políticas de organización en niveles afectar a tus copias de seguridad?
 * ¿Qué modo de implementación del agente de consola estás utilizando (modo estándar, restringido o privado)?
 
 
@@ -229,6 +230,25 @@ Si planea mover archivos de respaldo antiguos al almacenamiento de archivo, o si
 ** Para Azure, debe crear la clase de almacenamiento con soporte de inmutabilidad a nivel de versión.
 
 
+
+
+
+
+[[are-any-of-your-volumes-on-fabricpool-aggregates]]
+== ¿Alguno de tus volúmenes está en agregados de FabricPool
+
+Hay ciertas cosas que debe tener en cuenta cuando el volumen que está respaldando reside en un agregado de FabricPool y tiene una política de niveles asignada distinta a `none` :
+
+* La primera copia de seguridad de un volumen en niveles de FabricPool requiere leer todos los datos locales y en niveles (desde el almacén de objetos).  Una operación de respaldo no "recalienta" los datos fríos almacenados en el almacenamiento de objetos.
++
+Esta operación podría ocasionar un aumento único en el costo de lectura de los datos de su proveedor de nube.
+
++
+** Las copias de seguridad posteriores son incrementales y no tienen este efecto.
+** Si la política de organización en niveles se asigna al volumen cuando se crea inicialmente, no verás este problema.
+
+
+* Ten en cuenta el impacto de las copias de seguridad antes de asignar la política de almacenamiento por niveles `all` a los volúmenes. Como los datos se organizan en niveles de inmediato, NetApp Backup and Recovery lee los datos del nivel en la nube en lugar de hacerlo del nivel local. Como las operaciones de copia de seguridad simultáneas comparten el enlace de red con el almacén de objetos en la nube, podría producirse una degradación del rendimiento si los recursos de red se saturan. En este caso, puede que quieras configurar de forma proactiva varias interfaces de red (LIF) para reducir este tipo de saturación de red.
 
 
 
