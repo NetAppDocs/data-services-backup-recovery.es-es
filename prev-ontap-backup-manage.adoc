@@ -406,6 +406,9 @@ Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de alma
 
 Al anular el registro de NetApp Backup and Recovery para un sistema, se detienen las futuras copias de seguridad de un sistema de almacenamiento y se elimina de NetApp Backup and Recovery. Durante el proceso, puedes elegir si quieres conservar o eliminar las copias de seguridad existentes.
 
+
+IMPORTANT: Antes de dar de baja un sistema, descarga un informe completo de "Protection overview". El informe muestra tus copias de seguridad existentes y sus UUIDs. Si conservas las copias de seguridad, necesitarás estos UUIDs para restaurarlas.
+
 .Acerca de esta tarea
 * Tenga en cuenta que su proveedor de nube le seguirá cobrando los costos de almacenamiento de objetos por la capacidad que utilizan sus copias de seguridad a menos que<<Eliminar copias de seguridad,eliminar las copias de seguridad>> .
 * Para restaurar backups existentes, consulta link:prev-ontap-restore-cli.html["Restaurar datos de ONTAP mediante la CLI de ONTAP"^].

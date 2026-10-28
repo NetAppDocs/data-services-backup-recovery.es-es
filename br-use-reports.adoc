@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-use-reports.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: En NetApp Backup and Recovery, cree informes para ver el estado de sus copias de seguridad, incluida la cantidad de copias de seguridad realizadas, la cantidad de copias de seguridad realizadas correctamente y la cantidad de copias de seguridad fallidas.  También puede ver los detalles de cada copia de seguridad, incluido el tipo de copia de seguridad, el sistema de almacenamiento utilizado para la copia de seguridad y la hora de la copia de seguridad. 
+keywords: reports, protection report, protection overview, usage and charges, status summary, audit report, kubernetes overview, schedule report, download report, delete report, backup status, workloads 
+summary: En NetApp Backup and Recovery, crea informes para tu carga de trabajo y revisa el estado de protección, el estado de los trabajos, el uso y los detalles de auditoría. 
 ---
-= Crea informes de protección de Microsoft SQL Server en NetApp Backup and Recovery
+= Crear y gestionar informes en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,29 +12,137 @@ summary: En NetApp Backup and Recovery, cree informes para ver el estado de sus 
 
 
 [role="lead"]
-Crea informes para las cargas de trabajo de Microsoft SQL Server en NetApp Backup and Recovery para revisar el estado y los detalles de los backups, incluyendo el número de backups exitosos y fallidos, los tipos de backup, los sistemas de almacenamiento y las marcas de tiempo.
+Crea informes en NetApp Backup and Recovery para confirmar que tus cargas de trabajo están protegidas y para encontrar las copias de seguridad que necesitan atención. Los informes muestran recuentos de copias de seguridad correctas y fallidas, tipos de copia de seguridad, sistemas de almacenamiento, estado del clúster y marcas de tiempo. Ejecuta un informe una vez o según una programación y, a continuación, visualiza, descarga o elimina los informes generados.
+
+*Rol requerido de NetApp Console* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin o Backup and Recovery clone admin. Si proteges datos almacenados en un clúster de Cloud Volumes ONTAP, también necesitas el rol Cloud Volumes ONTAP Admin. Más información sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
-[[create-a-protection-report]]
-== Crear un informe de protección
+[[report-types-you-can-create]]
+== Tipos de informes que puedes crear
 
-*Rol requerido de NetApp Console*: Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+Elige el tipo de informe que responda a tu pregunta, por ejemplo, si las cargas de trabajo están protegidas, por qué se te cobra o qué tareas han fallado.
+
+[cols="1,3"]
+|===
+| Tipo de informe | Descripción 
+
+
+| Resumen de protección | Una visión general completa de tu estado de protección, que incluye resúmenes de inventario y restauración. 
+
+
+| Uso y tarifas | Detalles de uso y facturación de cada carga de trabajo o recurso. 
+
+
+| Resumen del estado | El estado de todas las tareas programadas y bajo demanda, con detalles de cada una de ellas. 
+
+
+| Informe de auditoría | Un registro de auditoría de todas las acciones y eventos realizados en el sistema. 
+
+
+| Descripción general de Kubernetes | Estado de la protección y las copias de seguridad de tus clústeres, aplicaciones y espacios de nombres de Kubernetes. 
+|===
+
+
+[[create-a-report]]
+== Crear un informe
+
+Crea un informe para revisar el estado de protección de tu cuenta, de agentes concretos, de hosts concretos o de cargas de trabajo concretas. Puedes ejecutar el informe una sola vez o de forma periódica.
+
+.Pasos
+. En el menú NetApp Backup and Recovery, selecciona *Informes* y luego selecciona *Ir a nuevos informes* si aparece la página *Informes de protección*.
+. Selecciona *Add report*.
+. En *Seleccionar tipo de informe*, elige un tipo de informe y selecciona *Continuar*.
+. En *Nombre del informe*, introduce un nombre único para el informe.
++
+El nombre debe tener entre 3 y 100 caracteres, solo puede incluir letras, números, espacios, guiones bajos (_) y guiones (-), y debe empezar por una letra.
+
+. En *Ámbito*, selecciona el nivel en el que el informe recopila datos:
++
+** *Por cuenta*: incluye todo lo que hay en la cuenta. No es necesario introducir nada más.
+** *Por agente*: en *Agente*, selecciona uno o varios agentes de Console. El informe incluye únicamente los recursos gestionados por los agentes seleccionados.
+** *Por host*: en *Seleccionar host*, elige uno o varios hosts y selecciona *Aceptar*. Utiliza esta opción para cargas de trabajo que se ejecutan en hosts, como Microsoft SQL Server y Oracle Database.
+** *Por carga de trabajo*: en *Cargas de trabajo*, selecciona uno o varios tipos de carga de trabajo.
++
+
+NOTE: La lista *Por carga de trabajo* no incluye ONTAP Volumes. Para crear un informe para ONTAP Volumes, utiliza el ámbito *Por cuenta* o *Por agente*.
+
+
+
+. En *Frecuencia*, elige con qué frecuencia se ejecutará el informe:
++
+** *Una sola vez*: ejecuta el informe una vez. Esta es la opción predeterminada.
+** *Según lo programado*: ejecuta el informe varias veces. En *Ejecutar cada*, elige una frecuencia. Los informes programados aparecen en la pestaña *Informes programados*.
+
+
+. En *Opciones de envío del informe*, activa, si lo deseas, la opción *Enviar por correo electrónico los resultados del informe cuando se ejecute*.
++
+Esta opción está desactivada de forma predeterminada. De forma predeterminada, los informes se envían a todos los usuarios de la organización. Para enviar informes a destinatarios específicos, configura las notificaciones por correo electrónico en la página *Settings*, en *Notifications*. Para obtener más información sobre cómo configurar las notificaciones por correo electrónico, consulta link:br-start-configure.html["Configurar ajustes"].
+
+. En *Retención*, en *Conservar durante*, elige cuánto tiempo quieres conservar el informe antes de que se elimine. El valor predeterminado es 30 días.
+. Seleccione *Agregar*.
++
+El informe aparece en la parte superior de la lista *Informes generados*. Cuando el informe esté listo, aparecerá un mensaje de éxito y podrás descargarlo o eliminarlo.
+
+
+
+La lista *Informes generados* muestra el nombre, el tipo, el intervalo, la hora de generación y el usuario de cada informe. La columna *Ámbito* resume lo que abarca el informe, por ejemplo «1 cuenta» o «1 agente». Selecciona *Ver* en la columna *Ámbito* para abrir el informe. El intervalo muestra N/A en el caso de los informes de una sola vez.
+
+
+
+[[download-a-report-as-json-pdf-excel-or-csv]]
+== Descargar un informe en formato JSON, PDF, Excel o CSV
+
+Descarga un informe generado para consultarlo sin conexión o compartirlo con otras personas que no tengan acceso a la NetApp Console.
 
 .Pasos
 . En el menú NetApp Backup and Recovery, selecciona *Reports*.
-. Seleccione *Crear informe*.
-. Introduzca los detalles del alcance del informe:
+. En la pestaña *Informes generados*, busca el informe que quieras descargar.
+. En la fila del informe, selecciona *Descargar* y luego elige un formato:
 +
-** *Nombre del informe*: Ingrese un nombre único para el informe.
-** *Tipo de informe*: elija si desea un informe por cuenta o por carga de trabajo (Microsoft SQL Server).
-** *Seleccionar host*: si seleccionó por carga de trabajo, seleccione el host para el cual desea generar el informe.
-** *Seleccionar contenidos*: elija si desea que el informe incluya un resumen de todas las copias de seguridad o detalles de cada copia de seguridad.  (Si eligió "Por cuenta")
-
-
-. Introduce el intervalo del informe: elige si quieres que el informe incluya datos del último día, de los últimos 7 días, de los últimos 30 días, del último trimestre o del último año.
-. Introduce los datos de envío del informe: si quieres que el informe se envíe por correo electrónico, selecciona *Enviar informe por correo electrónico*. Introduce la dirección de correo electrónico a la que quieres que se envíe el informe.
+** *Descargar JSON*
+** *Descargar PDF*
+** *Descargar Excel*
+** *Descargar CSV*
 +
-Configura las notificaciones por correo electrónico en la página de configuración. Para obtener más información sobre cómo configurar las notificaciones por correo electrónico, consulta link:br-start-configure.html["Configurar ajustes"].
+También puedes usar el menú *Descargar* en la página del informe.
 
++
+Los informes extensos pueden tardar más tiempo en prepararse.
+
+
+
+
+
+
+
+[[view-report-details]]
+== Ver los detalles del informe
+
+Consulta los detalles de un informe generado en NetApp Backup and Recovery, incluyendo un resumen, los recuentos de inventario y las tablas detalladas.
+
+.Pasos
+. En el menú NetApp Backup and Recovery, selecciona *Reports*.
+. En la pestaña *Informes generados*, selecciona el nombre del informe que deseas consultar.
+. Despliega *Inventario* para ver las cifras de sistemas, SVM, volúmenes, hosts, instancias y buckets.
+. Desplázate hacia abajo para revisar las tablas del informe. Las tablas que aparecen dependen del tipo de informe.
+. (Opcional) Para elegir qué columnas se muestran en una tabla, selecciona el icono de columnas situado en el extremo derecho de la fila de encabezado de la tabla, marca o desmarca las columnas que desees y, a continuación, selecciona *Aplicar*.
++
+La columna *Nombre del recurso* siempre permanece visible. Selecciona *Restablecer valores predeterminados* para volver a las columnas predeterminadas.
+
+. Para volver a la lista de informes, selecciona *Informes* en la parte superior de la página.
+
+
+
+
+[[delete-a-report]]
+== Eliminar un informe
+
+Elimina un informe generado para borrarlo de la lista *Informes generados*. Los informes también se eliminan automáticamente cuando finaliza su periodo de conservación.
+
+.Pasos
+. En el menú NetApp Backup and Recovery, selecciona *Reports*.
+. En la pestaña *Informes generados*, busca el informe que deseas eliminar.
+. En la fila del informe, selecciona el icono de eliminación.
+. Confirma la acción seleccionando *Suprimir*.
 

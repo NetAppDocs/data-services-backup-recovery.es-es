@@ -18,44 +18,87 @@ Utiliza esta referencia para ver qué acciones de NetApp Backup and Recovery reg
 
 Para cada acción auditada, NetApp Console registra el nombre del servicio, el agente, el recurso, el usuario y el estado de la acción.
 
-.Acciones auditadas de copia de seguridad y recuperación
+[cols="1,3"]
+|===
+| Categoría | Acciones 
+
+
+| Restauración y recuperación  a| 
+* Restaurar archivos desde una instantánea
 * Restaurar volumen o archivos a partir de una copia de seguridad
 * Revertir volumen a instantánea
 * Inicia la exploración de archivos
-* Restaurar archivos desde una instantánea
-* Registrar credenciales de nube
-* Actualizar las credenciales de la nube
-* Eliminar credenciales de la nube
-* Crear bucket de almacenamiento de objetos
-* Modificar el bucket de almacenamiento de objetos
-* Validar la migración de copias de seguridad
-* Migra copias de seguridad entre sistemas ONTAP
-* Inicializar la protección de origen
-* Clústeres de iguales para la protección
-* Inicializar la protección del objetivo
-* Iniciar la replicación de volúmenes
-* Crear sistema Cyber Vault
-* Eliminar el sistema Cyber Vault
-* Habilita el acceso a Cyber Vault
-* Desactivar el acceso a Cyber Vault
-* Crear instantánea ad hoc
-* Descubre volúmenes y relaciones
-* Actualizar la configuración de la aplicación
-* Habilita la protección panorámica para los volúmenes
-* Modificar la protección panorámica de los volúmenes
-* Modificar el almacenamiento de objetos para el sistema
+
+
+
+
+| Operaciones de copia de seguridad y de instantáneas  a| 
 * Crear copias de seguridad ad hoc en la nube
+* Crear instantánea ad hoc
+* Eliminar la política de snapshots de Azure NetApp Files
+* Activar la copia de seguridad en un volumen
+* Actualizar los metadatos de copia de seguridad del volumen (programado)
+
+
+
+
+| Protección y replicación  a| 
 * Inicializar la protección para el sistema
+* Inicializar la protección de origen
+* Inicializar la protección del objetivo
+* Clústeres de iguales para la protección
+* Iniciar la replicación de volúmenes
+
+
+
+
+| Protección panorámica  a| 
+* Activa la protección panorámica en un sistema
 * Habilita la protección panorámica para los volúmenes
 * Modificar la protección panorámica de los volúmenes
-* Actualizar los metadatos de copia de seguridad del volumen (programado)
-* Activar la copia de seguridad en un volumen
-* Modificar la protección panorámica de los volúmenes
-* Eliminar la política de instantáneas de ANF
-* Activa la protección panorámica en un sistema
 * Modificar la protección panorámica de un sistema
 
 
+
+
+| Migración de copias de seguridad  a| 
+* Migra copias de seguridad entre sistemas ONTAP
+* Validar la migración de copias de seguridad
+
+
+
+
+| Gestión de Cyber Vault  a| 
+* Crear sistema Cyber Vault
+* Eliminar el sistema Cyber Vault
+* Desactivar el acceso a Cyber Vault
+* Habilita el acceso a Cyber Vault
+
+
+
+
+| Gestión del almacenamiento de objetos  a| 
+* Crear bucket de almacenamiento de objetos
+* Modificar el bucket de almacenamiento de objetos
+* Modificar el almacenamiento de objetos para el sistema
+
+
+
+
+| Gestión de credenciales en la nube  a| 
+* Eliminar credenciales de la nube
+* Registrar credenciales de nube
+* Actualizar las credenciales de la nube
+
+
+
+
+| Detección y configuración  a| 
+* Descubre volúmenes y relaciones
+* Actualizar la configuración de la aplicación
+
+
+|===
 
 
 [[more-information]]

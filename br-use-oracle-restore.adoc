@@ -25,9 +25,10 @@ Puede restaurar bases de datos desde diferentes ubicaciones de inicio:
 
 
 .Restaurar a estos puntos
-Puede restaurar datos a la ubicación original; la restauración a una ubicación alternativa no está disponible en esta versión preliminar privada.
+Puedes restaurar una base de datos en su ubicación original o restaurarla como una nueva base de datos en un host registrado diferente (ubicación alternativa).
 
 * Restaurar a la ubicación original
+* Restaurar en una ubicación alternativa (un host registrado diferente)
 
 
 
@@ -39,6 +40,7 @@ Al restaurar cargas de trabajo de Oracle Database, ocurre lo siguiente:
 
 * Cuando restaura una base de datos desde una instantánea local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos de la copia de seguridad.
 * Al restaurar desde un almacenamiento replicado, puede restaurarlo a la ubicación original.
+* Al restaurar en una ubicación alternativa, NetApp Backup and Recovery restaura la copia de seguridad seleccionada de la base de datos de origen como una nueva base de datos en un host registrado diferente. Debes especificar el host de destino y un nombre para la nueva base de datos. Si no proporcionas un archivo de especificaciones de restauración, Backup and Recovery calcula automáticamente las ubicaciones de los archivos de datos, los archivos de control y los archivos de registro de recuperación en el host de destino.
 * Cuando restaura una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el almacenamiento de origen o en un sistema ONTAP local y recuperar la base de datos desde allí.
 
 
@@ -69,6 +71,25 @@ NOTE: Oracle Database crea una nueva encarnación de la base de datos cada vez q
 En función de tus necesidades, puedes restaurar una base de datos Oracle a un momento específico, a un número de cambio del sistema (SCN) específico o al último estado válido. También puedes restaurar la base de datos a partir de instantáneas y omitir el proceso de recuperación automático, por ejemplo, si quieres realizar la recuperación manualmente. Puedes buscar la base de datos usando su nombre o con filtros específicos.
 
 *Rol requerido de NetApp Console*: superadministrador de NetApp Backup and Recovery o administrador de restauración de NetApp Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+[[alternate-location-support]]
+.Antes de empezar
+Cuando realices una restauración en una ubicación alternativa, ten en cuenta los siguientes casos de restauración compatibles y no compatibles:
+
+*Escenarios de restauración en ubicaciones alternativas compatibles*
+
+* Restaurar una sola base de datos Oracle completa en un solo host de destino
+* Recuperación a un momento específico, a un SCN específico o a la última copia de seguridad
+* Uso de directorios externos de registros de archivo cuando los registros de archivo necesarios para el punto de recuperación seleccionado no están incluidos en la copia de seguridad
+
+
+*Casos de restauración en ubicaciones alternativas no compatibles*
+
+* Restauración exclusiva de espacios de tabla, incluida la restauración de espacios de tabla dentro de una PDB
+* Restauración solo de PDB en una base de datos contenedora (CDB) diferente
+* Restaurar desde almacenamiento secundario
+* Restaurar desde el almacenamiento de objetos
+
 
 [NOTE]
 ====
@@ -169,8 +190,8 @@ Se muestran las instantáneas disponibles.
 
 ... Si lo deseas, activa la opción *Archivos de control* para restaurar también los archivos de control de la base de datos. Esta opción no se puede seleccionar para la recuperación a un momento específico o por SCN de PDB o espacios de tabla de PDB.
 ... Si lo deseas, activa la opción *Cambiar el estado de la base de datos si es necesario para la restauración y la recuperación* para permitir que NetApp Backup and Recovery gestione el estado de la base de datos según el tipo de recuperación.
-... Si lo deseas, activa la opción *Restaurar sin movimiento* para realizar una restauración sin movimiento cuando se hayan añadido nuevos archivos de datos después del backup, o cuando se hayan añadido, eliminado o vuelto a crear LUN en un grupo de discos LVM. Esto anula la comprobación de archivos externos; la recuperación de bases de datos continúa usando la opción de restauración que seleccionaste.
-... Especifica las ubicaciones de los archivos de registro de archivo externos en el campo *Specify external archive log files locations* si, al restaurar PDBs o espacios de tabla a un momento específico o a un SCN, los archivos de registro de archivo no están en la ubicación configurada. Introduce una ruta del sistema de archivos que empiece por `/` o un grupo de discos ASM que empiece por `+`. Usa los botones «más» y «menos» junto al campo de entrada de texto para añadir o eliminar ubicaciones. Este campo no aparece cuando restauras desde snapshots sin recuperación.
+... Si lo deseas, activa la opción *Force in place restore* para restaurar sin movimiento cuando se hayan añadido nuevos archivos de datos después de la copia de seguridad, o cuando se hayan añadido, eliminado o vuelto a crear LUN en un grupo de discos LVM. Esto anula la comprobación de archivos externos; la recuperación de bases de datos continúa usando la opción de restauración que hayas seleccionado.
+... Especifica las ubicaciones de los archivos de registro de archivo externos en el campo *Especificar ubicaciones de los archivos de registro de archivo externos* si vas a restaurar una base de datos a un momento específico o a un SCN, y los archivos de registro de archivo no están en la ubicación configurada. Introduce una ruta del sistema de archivos que empiece por `/` o un grupo de discos ASM que empiece por `+`. Usa los botones «más» y «menos» junto al campo de entrada de texto para añadir o quitar ubicaciones. Este campo no aparece cuando restauras desde snapshots sin recuperación.
 ... Si lo deseas, activa la opción *Abrir la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación* y selecciona una subopción que se ajuste al ámbito de la restauración (estas opciones no aparecen cuando se restaura a partir de instantáneas sin recuperación):
 +
 **** *Todos los archivos de datos*: Abre la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación.
@@ -192,9 +213,27 @@ Se muestran las instantáneas disponibles.
 --
 .Restaurar a una ubicación alternativa
 --
-No está disponible para cargas de trabajo de Oracle Database en esta versión preliminar.
+Restaura una base de datos como una nueva base de datos en un host registrado diferente. Revisa la <<alternate-location-support,escenarios compatibles y no compatibles>> antes de empezar.
+
+.. En la sección *Configuración de destino*, introduce la siguiente información:
++
+... *Host de destino*: selecciona el host registrado en el que quieres crear la nueva base de datos.
+... *Base de datos de destino*: introduce un nombre para la base de datos de destino. Por defecto, el nombre comienza con el nombre de la base de datos de origen y puedes modificarlo.
+... *Personalizar los parámetros de la base de datos de destino*: activa esta opción para cargar un archivo de especificaciones de restauración personalizado con el fin de personalizar los parámetros de la base de datos de destino.
+... *Archivo de especificaciones de restauración*: si has activado la opción *Personalizar parámetros de la base de datos de destino*, proporciona un archivo de especificaciones de restauración para controlar dónde se colocan los archivos restaurados en el host de destino. Puedes descargar un archivo de especificaciones de restauración predeterminado y personalizarlo para cambiar los detalles de la base de datos de destino, como la autenticación y las ubicaciones de los registros.
++
+Si no proporcionas un archivo de especificaciones de restauración, Backup and Recovery calcula automáticamente las ubicaciones de los archivos de datos, los archivos de control y los archivos de registro de recuperación.
+
+... Especifica las ubicaciones de los archivos de registro de archivo externos en el campo *Especificar ubicaciones de los archivos de registro de archivo externos* si vas a restaurar una base de datos a un momento específico o a un SCN, y los archivos de registro de archivo no están en la ubicación configurada. Introduce una ruta del sistema de archivos que empiece por `/` o un grupo de discos ASM que empiece por `+`. Usa los botones «más» y «menos» junto al campo de entrada de texto para añadir o quitar ubicaciones. Este campo no aparece cuando restauras desde snapshots sin recuperación.
+... Si lo deseas, activa la opción *Abrir la base de datos o la base de datos contenedora en modo lectura/escritura tras la recuperación* y selecciona una subopción que se ajuste al ámbito de la restauración (estas opciones no aparecen cuando se restaura a partir de instantáneas sin recuperación):
+
+
+
 
 --
 ====
 . Seleccione *Restaurar*.
++
+Una vez finalizada la operación de restauración, comprueba la página *Inventario* para confirmar que la nueva base de datos aparece en la lista. Si la base de datos no aparece en la lista, actualiza el host de destino.
+
 

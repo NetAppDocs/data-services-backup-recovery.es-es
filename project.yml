@@ -140,8 +140,6 @@ sidebar:
         url: "/br-use-manage-inventory.html"
       - title: Administrar instantáneas de Microsoft SQL Server
         url: "/br-use-manage-snapshots.html"
-      - title: Crear informes de Microsoft SQL Server
-        url: "/br-use-reports.html"
     - title: Proteger las cargas de trabajo de VMware
       entries:
       - title: Flujo de trabajo de protección de VMware
@@ -266,8 +264,8 @@ sidebar:
       - title: Administrar plantillas de gancho de ejecución para cargas de trabajo
           de Kubernetes
         url: "/br-use-manage-execution-hook-templates.html"
-      - title: Crear y gestionar informes de protección
-        url: "/br-use-kubernetes-reports.html"
+    - title: Crear y gestionar informes
+      url: "/br-use-reports.html"
     - title: Monitorear trabajos
       url: "/br-use-monitor-tasks.html"
     - title: Reiniciar NetApp Backup and Recovery
