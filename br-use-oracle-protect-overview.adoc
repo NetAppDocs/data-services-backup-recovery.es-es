@@ -23,6 +23,18 @@ Utilice NetApp Backup and Recovery para implementar una estrategia de protecció
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
+
+
+[[oracle-data-guard-support]]
+== Compatibilidad con Oracle Data Guard
+
+NetApp Backup and Recovery puede proteger las configuraciones de Oracle Data Guard que tienen una base de datos primaria de una sola instancia y una base de datos en espera física en estado montado.
+
+
+
+[[supported-tasks]]
+== Tareas compatibles
+
 Puedes usar NetApp Backup and Recovery para realizar las siguientes tareas relacionadas con las cargas de trabajo de Oracle Database:
 
 * link:br-start-discover-oracle.html["Descubre las cargas de trabajo de Oracle Database"]

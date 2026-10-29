@@ -41,8 +41,11 @@ Agrupa los recursos de Oracle Database que quieras proteger juntos en un grupo d
 . Seleccione *Crear grupo de protección*.
 . Proporcione un nombre para el grupo de protección.
 . Selecciona las bases de datos que quieras incluir en el grupo de protección.
++
+Las bases de datos en modo de espera no aparecen en la lista de forma predeterminada. Para mostrarlas, selecciona *Mostrar bases de datos en modo de espera de Data Guard*. Si seleccionas una base de datos que forma parte de una configuración de Oracle Data Guard, NetApp Backup and Recovery también añade la otra base de datos de la misma configuración. Esto solo ocurre si dicha base de datos se detecta, puede protegerse y no forma parte de otro grupo de protección.
+
 . Seleccione *Siguiente*.
-. Selecciona la *política de backup* que desees aplicar al grupo de protección. Si vas a incluir una base de datos que forma parte de una configuración de Oracle Data Guard, elige una política de backup que tenga activada la opción Data Guard.
+. Selecciona la *Backup policy* que quieres aplicar al grupo de protección. Si el grupo incluye bases de datos de Oracle Data Guard, usa *Data Guard settings* en la política para elegir de qué bases de datos se hace backup. Consulta link:br-use-policies-oracle-create.html["Crear y gestionar políticas de backup de Oracle Database"].
 +
 Si desea crear una política, seleccione *Crear nueva política* y siga las instrucciones para crear una política.  Verlink:br-use-policies-create.html["Crear políticas"] Para más información.
 
@@ -50,6 +53,9 @@ Si desea crear una política, seleccione *Crear nueva política* y siga las inst
 . Revise la configuración.
 . Seleccione *Crear* para crear el grupo de protección.
 
+
+
+NOTE: Si añades el host de reserva después de crear el grupo de protección, edita el grupo de protección y guárdalo. NetApp Backup and Recovery añade el host de reserva automáticamente. Desde el host de reserva, añade al grupo únicamente bases de datos de reserva. Si hay otra base de datos en ese host que requiera un tipo de copia de seguridad diferente, la copia de seguridad fallará para ese host.
 
 
 

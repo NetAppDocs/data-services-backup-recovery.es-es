@@ -137,7 +137,16 @@ NOTE: Los campos que aparecen varían según el proveedor y la arquitectura sele
 [%collapsible]
 ====
 ** *Configuración del catálogo RMAN*: Activa la opción *Catalog backup with Oracle Recovery Manager (RMAN)* para catalogar automáticamente los metadatos para las operaciones de backup y recuperación de Oracle Database. Los metadatos se almacenan según la configuración de *Configure RMAN catalog* que elijas para la base de datos (por defecto, en el archivo de control de destino). Consulta link:br-start-configure-oracle-database.html["Configurar una base de datos Oracle"] para cambiar esta configuración para una base de datos.
-** *Configuración de Data Guard*: selecciona si quieres habilitar la configuración de Data Guard en la política y elige si quieres hacer backup del primario, del secundario o del primario y el secundario al proteger bases de datos en una implementación de Oracle Data Guard. Puedes proteger bases de datos en una implementación de Oracle Data Guard mediante un grupo de protección.
+** *Configuración de Data Guard*: selecciona *Habilitar configuración de Data Guard* para elegir de qué bases de datos de Oracle Data Guard deseas realizar una copia de seguridad:
++
+*** *Hacer copia de seguridad tanto del principal como del en espera* (predeterminado)
+*** *Copia de seguridad solo en el principal*
+*** *Copia de seguridad solo en modo de espera*
++
+Si no activas *Data Guard settings*, se hace una copia de seguridad tanto de la base de datos principal como de la base de datos en espera. Después de asignar la política a los recursos, no podrás desactivar *Data Guard settings*.
+
+
+
 ** *Verificación de copias de seguridad*: Selecciona si quieres activar la verificación de copias de seguridad y si la quieres inmediatamente o más tarde. Esta función garantiza que las copias de seguridad sean válidas y puedan restaurarse correctamente. Te recomendamos que actives esta opción para asegurar la integridad de tus copias de seguridad. Por defecto, la verificación de copias de seguridad se ejecuta desde el almacenamiento secundario si el almacenamiento secundario está configurado. Si el almacenamiento secundario no está configurado, la verificación de copias de seguridad se ejecuta desde el almacenamiento primario.
 +
 Además, configure las siguientes opciones:

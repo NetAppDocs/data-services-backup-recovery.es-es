@@ -71,3 +71,6 @@ Realiza una copia de seguridad bajo demanda antes de realizar cambios en el sist
 . Seleccione el nivel de programación.
 . Seleccione *Hacer copia de seguridad*.
 
+
+
+NOTE: Para las bases de datos de Oracle Data Guard, NetApp Backup and Recovery comprueba el rol actual de cada base de datos cuando se inicia una copia de seguridad y sigue la *configuración de Data Guard* de la política. Después de una conmutación de sitios o una conmutación por error, la siguiente copia de seguridad utiliza los nuevos roles.

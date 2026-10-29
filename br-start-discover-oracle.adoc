@@ -293,6 +293,9 @@ TIP: Añadir recursos puede tardar varios minutos. Para ver el progreso, selecci
 El host de Oracle Database aparece en la lista de cargas de trabajo de la página Inventario.
 
 
+NOTE: Si tus bases de datos están configuradas con Oracle Data Guard, añade el host principal y el host en espera como hosts independientes.
+
+
 
 [[view-oracle-database-inventory]]
 == Ver el inventario de la base de datos Oracle
@@ -304,12 +307,18 @@ Consulta los detalles de los recursos de Oracle Database que has detectado en el
 . En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
 . Para ver los hosts de Oracle Database detectados, selecciona la pestaña *Hosts*.
 +
-Puedes usar esta vista para ver detalles como el nombre de host de cada host, cuántas bases de datos aloja cada host, el modelo de implementación (por ejemplo, cluster, Oracle Data Guard o standalone) y otra información.
+Puedes usar esta vista para ver detalles como el nombre de host de cada host, cuántas bases de datos aloja cada host, el modelo de implementación (por ejemplo, clúster, Data Guard o independiente) y otra información.
 
 . Para ver los grupos de protección creados para proteger recursos de Oracle Database, selecciona la pestaña *Grupos de protección*.
 . Para ver las bases de datos alojadas en cada host de Oracle Database, selecciona la pestaña *Bases de datos*.
 +
 Esta vista muestra información detallada, incluido si cada base de datos es una instancia única o forma parte de un clúster o de una configuración de alta disponibilidad.
+
++
+Las bases de datos de Oracle Data Guard se etiquetan como *Data Guard Primary* o *Data Guard Standby*. Las bases de datos Standby están ocultas de forma predeterminada. Para mostrarlas, selecciona *Data Guard Standby* en el filtro *Type*. El nombre de cada base de datos de Oracle Data Guard aparece como el Oracle SID seguido del nombre de la base de datos entre corchetes, por ejemplo, `ORCLSTBY (ORCL)`.
+
++
+Tras una conmutación de sitios o una conmutación por error, selecciona la pestaña *Hosts* y, a continuación, selecciona *Refresh* para los hosts afectados a fin de actualizar las funciones que se muestran.
 
 
 

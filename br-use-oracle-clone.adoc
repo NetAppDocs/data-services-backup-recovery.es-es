@@ -25,6 +25,9 @@ Utiliza NetApp Backup and Recovery para crear clones modificables de cargas de t
 
 Crea un clon inmediatamente a partir de una instantánea existente. Usa este método para crear un clon único que no se actualiza continuamente a partir de una instantánea.
 
+
+NOTE: En las configuraciones de Oracle Data Guard, puedes clonar una base de datos primaria protegida o una base de datos física en espera protegida. El clon es una base de datos independiente y no forma parte de la configuración de Oracle Data Guard. Si clonas una base de datos en espera, la nueva base de datos aparece como *Data Guard Standby* hasta que actualices el host. Después de actualizar el host, aparece como una base de datos normal.
+
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . En *Cargas de trabajo*, seleccione el mosaico *Oracle*.
@@ -68,6 +71,9 @@ Crea un clon instantáneo y programa actualizaciones periódicas para mantenerlo
 
 
 NOTE: La creación de una instantánea y un clon instantáneos con una programación de actualización solo se aplica a los clones completos de la base de datos. No está disponible para un clon de PDB.
+
+
+NOTE: En las configuraciones de Oracle Data Guard, puedes clonar una base de datos primaria protegida o una base de datos física en espera protegida. El clon es una base de datos independiente y no forma parte de la configuración de Oracle Data Guard. Si clonas una base de datos en espera, la nueva base de datos aparece como *Data Guard Standby* hasta que actualices el host. Después de actualizar el host, aparece como una base de datos normal.
 
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.

@@ -102,6 +102,17 @@ Si restauras PDB o espacios de tabla a un momento específico o a un SCN:
 
 
 ====
+*Notas importantes sobre la restauración de bases de datos de Oracle Data Guard*
+
+* Antes de restaurar, asegúrate de que el rol de la base de datos esté actualizado. Si se produjo una conmutación de sitios o una conmutación por error, selecciona la pestaña *Hosts* y primero selecciona *Refresh* para el host. Las opciones de restauración disponibles dependen del rol que tenga ahora la base de datos.
+* Si la base de datos está actualmente en standby, no puedes restaurarla en la ubicación original, independientemente de la función que tuviera cuando se realizó la copia de seguridad. Restáurala en una ubicación alternativa.
+* Si la base de datos está actualmente en espera, no puedes restaurar una instantánea que solo exista en almacenamiento secundario o en almacenamiento de objetos.
+* Puedes restaurar una copia de seguridad realizada mientras la base de datos estaba en espera en la ubicación original una vez que la base de datos pase a ser la principal.
+
+
+
+CAUTION: Restaurar una base de datos primaria no cambia la base de datos en espera. Cuando abres la base de datos primaria con `RESETLOGS` después de una restauración a un momento específico o por SCN, se inicia una nueva encarnación de la base de datos. Si la base de datos en espera ya aplicó el redo más allá de ese punto, la aplicación de redo en la base de datos en espera se detiene con un error y la base de datos en espera permanece en su estado anterior. Para reanudar la protección, vuelve a establecer la base de datos en espera después de la restauración con las herramientas de Oracle.
+
 .Pasos
 . Desde el menú de la NetApp Console , seleccione *Protección > Copia de seguridad y recuperación*.
 . Desde el menú de NetApp Backup and Recovery , seleccione *Restaurar*.
