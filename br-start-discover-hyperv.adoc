@@ -4,7 +4,7 @@ permalink: br-start-discover-hyperv.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
 summary: NetApp Backup and Recovery debe descubrir las máquinas virtuales Hyper-V antes de poder protegerlas. 
 ---
-= Descubra las cargas de trabajo de Hyper-V en NetApp Backup and Recovery
+= Descubre y gestiona las cargas de trabajo de Hyper-V en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -62,6 +62,24 @@ TIP: Este proceso puede tardar unos minutos.
 
 .Resultado
 Una vez que NetApp Backup and Recovery descubre recursos, la página Inventario muestra la carga de trabajo de Hyper-V en la lista de cargas de trabajo.
+
+
+
+[[refresh-a-hyper-v-host]]
+== Actualizar un host de Hyper-V
+
+Actualiza un host de Hyper-V para actualizar la lista de máquinas virtuales en el host y mapear el almacenamiento conectado. Puede que quieras hacerlo después de una conmutación de sitios o una conmutación de retorno de MetroCluster, o si has añadido o eliminado recientemente máquinas virtuales del host.
+
+
+IMPORTANT: Si un host de Hyper-V está protegido por una configuración de NetApp MetroCluster, actualiza el host después de cada conmutación de sitios o reversión de MetroCluster, y antes de la siguiente copia de seguridad o instantánea programada o manual. Cualquier copia de seguridad o instantánea que se ejecute para el host antes de que se actualice fallará. Si no actualizas el host manualmente, Backup and Recovery lo actualizará automáticamente en un plazo de 12 horas.
+
+.Pasos
+. En el menú de la NetApp Console, selecciona *Protección* > *Backup and Recovery*.
+. Selecciona el mosaico de la carga de trabajo de Hyper-V.
+. En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
+. Selecciona el enlace *View* correspondiente al tipo de carga de trabajo de Hyper-V.
+. Elige un host de Hyper-V para actualizarlo y selecciona el icono de Acciones image:../media/icon-action.png["Opción de acciones"] > *Actualizar*.
+
 
 
 

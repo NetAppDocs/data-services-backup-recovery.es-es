@@ -18,6 +18,26 @@ Conoce las nuevas funciones, mejoras y correcciones en NetApp Backup and Recover
 
 
 
+[[09-november-2026]]
+== 09 noviembre 2026
+
+Esta versión de NetApp Backup and Recovery incluye las siguientes actualizaciones.
+
+
+
+[[hyper-v-workloads-enhancement]]
+=== Mejora de las cargas de trabajo de Hyper-V
+
+En esta versión, NetApp Backup and Recovery presenta la siguiente mejora para las cargas de trabajo de Hyper-V:
+
+*Mejoras de compatibilidad con NetApp MetroCluster*: NetApp Backup and Recovery ahora permite proteger hosts de Hyper-V en una configuración de NetApp MetroCluster antes y después de las operaciones de conmutación de sitios o de switchback.
+
+Para obtener más información sobre cómo proteger los hosts de Hyper-V en una configuración de NetApp MetroCluster, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-discover-hyperv.html["Descubre y gestiona las cargas de trabajo de Hyper-V"^].
+
+Para más detalles sobre la protección de cargas de trabajo Hyper-V, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Aprende a proteger las cargas de trabajo de Hyper-V con NetApp Backup and Recovery"^].
+
+
+
 [[26-october-2026]]
 == 26 de octubre de 2026
 

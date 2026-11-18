@@ -28,6 +28,9 @@ Realiza copias de seguridad de las máquinas virtuales de Hyper-V de los sistema
 
 Utiliza una copia de seguridad bajo demanda para proteger tus datos antes de realizar cambios en el sistema.
 
+
+IMPORTANT: Si un host de Hyper-V está protegido por una configuración de NetApp MetroCluster, actualiza el host después de cada conmutación de sitios o conmutación de retorno de MetroCluster, y antes de la siguiente copia de seguridad o instantánea programada o manual. Para obtener instrucciones, consulta link:br-start-discover-hyperv.html#refresh-a-hyper-v-host["Actualizar un host de Hyper-V"].
+
 *Rol requerido de NetApp Console*: superadministrador de Backup and Recovery o administrador de backup de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
