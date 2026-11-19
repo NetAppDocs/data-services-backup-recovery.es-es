@@ -18,7 +18,7 @@ NOTE: Las plantillas que crees aquí solo se pueden usar cuando proteges cargas 
 . Expande la sección *Plantilla de gancho de ejecución*.
 . Seleccione *Crear plantilla de gancho de ejecución*.
 . Introduzca un nombre para el gancho de ejecución.
-. Opcionalmente, elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecuta una vez finalizada la operación.
+. Si lo deseas, elige un tipo de hook. Por ejemplo, un hook posterior a la restauración se ejecuta una vez finalizada la operación de restauración.
 . En el cuadro de texto *Script*, ingrese el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución.  Opcionalmente, puede seleccionar *Cargar script* para cargar un archivo de script en su lugar.
 . Seleccione *Crear*.
 +

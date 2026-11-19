@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-restore.html 
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo de Oracle Database con NetApp Backup and Recovery. 
+summary: Restaura las cargas de trabajo de Oracle Database desde instantáneas locales, backups replicados o almacén de objetos al host original o a uno alternativo con NetApp Backup and Recovery. 
 ---
 = Restaura cargas de trabajo de bases de datos Oracle con NetApp Backup and Recovery
 :hardbreaks:
@@ -36,7 +36,7 @@ Puedes restaurar una base de datos en su ubicación original o restaurarla como 
 [[how-oracle-database-restore-works]]
 == Cómo funciona la restauración de Oracle Database
 
-Al restaurar cargas de trabajo de Oracle Database, ocurre lo siguiente:
+La restauración de Oracle Database funciona de la siguiente manera:
 
 * Cuando restaura una base de datos desde una instantánea local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos de la copia de seguridad.
 * Al restaurar desde un almacenamiento replicado, puede restaurarlo a la ubicación original.

@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Trident Protect proporciona capacidades de congelación y descongelación del sistema de archivos para las máquinas virtuales KubeVirt durante las operaciones de protección de datos para garantizar la consistencia de los datos. El método de configuración y el comportamiento predeterminado para las operaciones de congelación de máquinas virtuales varía entre las versiones de Trident Protect, y las versiones más recientes ofrecen una configuración simplificada mediante parámetros del Helm chart.
+Trident Protect ofrece capacidades de congelación y descongelación del sistema de archivos para máquinas virtuales KubeVirt durante las operaciones de protección de datos para garantizar la coherencia de los datos. El método de configuración y el comportamiento predeterminado de las operaciones de congelación de máquinas virtuales varían según las versiones de Trident Protect, y las versiones más recientes ofrecen una configuración simplificada mediante parámetros de Helm chart.
 
 
 NOTE: Durante las operaciones de restauración, cualquier `VirtualMachineSnapshots` creado para una máquina virtual (VM) no se restaura.

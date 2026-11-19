@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-azure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Haz backup de los volúmenes de Cloud Volumes ONTAP en Azure Blob storage con NetApp Backup and Recovery, comprueba los requisitos, habilita el servicio y activa los backups en los volúmenes. 
 ---
-= Haz una copia de seguridad de Cloud Volumes ONTAP en Azure Blob storage con NetApp Backup and Recovery
+= Realiza una copia de seguridad de Cloud Volumes ONTAP en Azure Blob Storage con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,9 +24,9 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 [[verify-support-for-your-configuration]]
 == Verificar la compatibilidad con su configuración
 
-Lea los siguientes requisitos para asegurarse de tener una configuración compatible antes de comenzar a realizar copias de seguridad de volúmenes en Azure Blob Storage.
+Asegúrate de que tu configuración sea compatible antes de empezar a realizar copias de seguridad de volúmenes en Azure Blob Storage.
 
-La siguiente imagen muestra cada componente y las conexiones que debes preparar entre ellos.
+La imagen muestra cada componente y las conexiones que debes realizar entre ellos.
 
 Opcionalmente, también puede conectarse a un sistema ONTAP secundario para volúmenes replicados utilizando la conexión pública o privada.
 
@@ -168,7 +168,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 [[requirements-for-using-customer-managed-keys-for-data-encryption]]
 === Requisitos para usar claves gestionadas por el cliente para el cifrado de datos
 
-Puede utilizar sus propias claves administradas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado administradas por Microsoft predeterminadas.  En este caso, necesitará tener la suscripción de Azure, el nombre de Key Vault y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo utilizar sus propias llaves"^] .
+Puedes usar tus propias claves gestionadas por el cliente para el cifrado de datos en el asistente de activación, en lugar de usar las claves de cifrado predeterminadas gestionadas por Microsoft. En este caso, necesitas la suscripción de Azure, el nombre de Key Vault y la Key. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo utilizar sus propias llaves"^].
 
 NetApp Backup and Recovery admite las _políticas de acceso de Azure_, el modelo de permisos de _control de acceso basado en roles de Azure_ (Azure RBAC) y el _modelo de seguridad de hardware administrado_ (HSM) (consulte https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["¿Qué es Azure Key Vault Managed HSM?"] ).
 
@@ -195,7 +195,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 * Si el clúster está local, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
+Dado que puedes replicar en Cloud Volumes ONTAP o en sistemas locales, consulta los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^].
 
 
 
@@ -404,7 +404,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 **** Cree su propio grupo de recursos que administre el contenedor de Blobs o seleccione el tipo de grupo de recursos y el grupo.
 +
 
-TIP: Si desea proteger sus archivos de respaldo para que no se modifiquen ni eliminen, asegúrese de que la cuenta de almacenamiento se haya creado con el almacenamiento inmutable habilitado utilizando un período de retención de 30 días.
+TIP: Si quieres proteger tus archivos de backup para que no se modifiquen ni se eliminen, confirma que la cuenta de almacenamiento se creó con el almacenamiento inmutable habilitado y con un período de retención de 30 días.
 
 
 
@@ -453,7 +453,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 [[review-your-selections]]
 === Revise sus selecciones
 
-Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
+Revisa tus selecciones y realiza los ajustes necesarios.
 
 .Pasos
 . En la página Revisar, revise sus selecciones.
@@ -479,7 +479,7 @@ También puede supervisar el estado de los trabajos de copia de seguridad y rest
 [[show-the-api-commands]]
 === Mostrar los comandos API
 
-Quizá te interese mostrar y, si lo deseas, copiar los comandos de la API usados en el asistente Activate Backup and Recovery. Quizá te interese hacerlo para automatizar la activación del backup en sistemas futuros.
+Muestra y, si lo deseas, copia los comandos de la API utilizados en el asistente Activate Backup and Recovery para automatizar la activación del backup en sistemas futuros.
 
 .Pasos
 . En el asistente «Activar Backup and Recovery», selecciona *Ver solicitud de API*.

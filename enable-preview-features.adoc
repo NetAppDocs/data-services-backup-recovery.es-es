@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: enable-preview-features.html 
 keywords: preview features, preview, Backup and Recovery, configuration, NetApp Backup and Recovery 
-summary: Habilita la vista previa y las funciones ocultas para NetApp Backup and Recovery. 
+summary: Activa la vista previa y las funciones ocultas, y desactiva la indexación de volúmenes en NetApp Backup and Recovery editando los archivos de configuración en el agente de NetApp Console. 
 ---
 = Activar la vista previa y las funciones ocultas para NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Habilita la vista previa y las funciones ocultas para NetApp Backup and
 
 
 [role="lead"]
-Sigue estos pasos para habilitar las funciones en vista previa y ocultas de NetApp Backup and Recovery. Utiliza las funciones en vista previa con precaución en entornos de producción.
+Activa las funciones de vista previa y las funciones ocultas de NetApp Backup and Recovery, incluidas aquellas que aún no están disponibles de forma generalizada. Utiliza las funciones de vista previa con precaución en entornos de producción.
 
 *Rol requerido de NetApp Console*: superadministrador de Backup and Recovery. Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 

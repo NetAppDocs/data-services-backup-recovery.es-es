@@ -79,7 +79,7 @@ NOTE: La lista *Por carga de trabajo* no incluye ONTAP Volumes. Para crear un in
 +
 Esta opción está desactivada de forma predeterminada. De forma predeterminada, los informes se envían a todos los usuarios de la organización. Para enviar informes a destinatarios específicos, configura las notificaciones por correo electrónico en la página *Settings*, en *Notifications*. Para obtener más información sobre cómo configurar las notificaciones por correo electrónico, consulta link:br-start-configure.html["Configurar ajustes"].
 
-. En *Retención*, en *Conservar durante*, elige cuánto tiempo quieres conservar el informe antes de que se elimine. El valor predeterminado es 30 días.
+. En *Retención*, en *Conservar durante*, elige durante cuánto tiempo quieres conservar el informe antes de que se elimine. El valor predeterminado es de 30 días.
 . Seleccione *Agregar*.
 +
 El informe aparece en la parte superior de la lista *Informes generados*. Cuando el informe esté listo, aparecerá un mensaje de éxito y podrás descargarlo o eliminarlo.

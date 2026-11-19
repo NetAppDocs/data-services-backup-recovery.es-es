@@ -55,7 +55,7 @@ Elimina una aplicación que ya no necesites. NetApp Backup and Recovery detiene 
 . Activa la opción *Eliminar instantáneas y copias de seguridad* para borrar todas las instantáneas y copias de seguridad de la aplicación.
 +
 
-CAUTION: Ya no podrás restaurar la aplicación utilizando estas instantáneas y copias de seguridad.
+CAUTION: Ya no es posible restaurar la aplicación a partir de estas instantáneas y copias de seguridad.
 
 . Confirme la acción y seleccione *Eliminar*.
 

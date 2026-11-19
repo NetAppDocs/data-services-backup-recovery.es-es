@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: Las capacidades de NetApp Backup and Recovery que están disponibles a través de la interfaz de usuario web también están disponibles a través de las API RESTful. 
+summary: Utiliza las API REST de NetApp Backup and Recovery para automatizar las tareas de backup y restauración, obtener los tokens y los ID necesarios, y supervisar los trabajos. 
 ---
 = Automatiza la copia de seguridad y la recuperación de NetApp con las API de REST
 :hardbreaks:
@@ -117,10 +117,10 @@ Recupera el ID del agente de la respuesta analizando *occm.[0].[agent].[agentId]
 [[example-using-the-apis]]
 == Ejemplo de uso de las API
 
-El siguiente ejemplo muestra una llamada a la API que activa NetApp Backup and Recovery en un sistema con una nueva política. La política tiene etiquetas diarias, horarias y semanales, y archiva después de 180 días en la región East US 2 de Azure. Esta solicitud habilita el backup en el sistema, pero no realiza backup de ningún volumen.
+La llamada a la API de ejemplo activa NetApp Backup and Recovery en un sistema con una nueva política. La política incluye etiquetas diarias, horarias y semanales, y archiva los datos tras 180 días en la región de Azure East US 2. Esta solicitud habilita el backup en el sistema, pero no realiza backup de ningún volumen.
 
 .Solicitud de API
-Verá que usamos el ID de cuenta de la NetApp Console `account-DpTFcxN3` , ID del agente de la consola `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` , y token de usuario `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` en este comando.
+En el ejemplo se usan el ID de cuenta de NetApp Console `account-DpTFcxN3`, el ID de agente de Console `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` y el token de usuario `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g`.
 
 [source, shell]
 ----

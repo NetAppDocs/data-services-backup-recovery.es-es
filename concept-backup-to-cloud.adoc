@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery es un servicio de datos que proporciona protección de datos eficiente, segura y rentable para todas sus cargas de trabajo de ONTAP , incluidos volúmenes, bases de datos, máquinas virtuales y cargas de trabajo de Kubernetes. 
+summary: Descubre cómo NetApp Backup and Recovery protege las cargas de trabajo de ONTAP, incluidos volúmenes, bases de datos, máquinas virtuales y aplicaciones de Kubernetes, con objetivos compatibles, licencias y costes. 
 ---
 = Obtenga más información sobre NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery es un servicio de datos que proporciona prot
 
 
 [role="lead"]
-Utiliza esta descripción general para conocer cómo NetApp Backup and Recovery protege tus cargas de trabajo de ONTAP, qué cargas de trabajo y destinos de backup admite, y cómo funcionan las licencias y los costes.
+NetApp Backup and Recovery protege tus cargas de trabajo de ONTAP con instantáneas locales, replicación y copias de seguridad en almacén de objetos. Descubre qué cargas de trabajo y destinos de copia de seguridad admite y cómo funcionan las licencias y los costes.
 
 Una carga de trabajo es una agrupación lógica de recursos dentro de un sistema que se gestiona como una sola unidad para protección, gobernanza, detección y recuperación. En Backup and Recovery, una carga de trabajo es la unidad que proteges. Su significado depende del origen de los datos: para Kubernetes una carga de trabajo es una aplicación, para entornos VM es una máquina virtual y para entornos de bases de datos es una base de datos.
 
@@ -74,7 +74,7 @@ Utilice NetApp Backup and Recovery para lograr los siguientes objetivos:
 ** Realizar copias de seguridad y restaurar bases de datos y registros
 ** Utilice grupos de protección para administrar tareas de copia de seguridad
 ** Crear políticas para administrar copias de seguridad de bases de datos y registros
-** Protección de una base de datos con una arquitectura de copia de seguridad 3-2-1
+** Protege una base de datos con una arquitectura de copias de seguridad 3-2-1
 ** Configurar la retención de copias de seguridad
 ** Montar y desmontar copias de seguridad de ARCHIVELOG
 ** Consulta link:br-use-oracle-protect-overview.html["Protege las cargas de trabajo de Oracle Database"].
@@ -217,7 +217,7 @@ NetApp Backup and Recovery protege los siguientes tipos de cargas de trabajo:
 
 Cuando habilita NetApp Backup and Recovery, el servicio realiza una copia de seguridad completa de sus datos.  Después de la copia de seguridad inicial, todas las copias de seguridad adicionales son incrementales.  Esto mantiene el tráfico de red al mínimo.
 
-La siguiente imagen muestra la relación entre los componentes.
+La imagen muestra la relación entre los componentes.
 
 image:diagram-br-321-aff-a.png["Un diagrama que muestra cómo NetApp Backup and Recovery utiliza una estrategia de protección 3-2-1"]
 
@@ -229,7 +229,7 @@ NOTE: También se admite el paso del almacenamiento primario al almacenamiento d
 [[where-backups-reside-in-object-store-locations]]
 === Dónde residen las copias de seguridad en las ubicaciones del almacén de objetos
 
-Las copias de seguridad se almacenan en un almacén de objetos que la NetApp Console crea en su cuenta en la nube.  Hay un almacén de objetos por clúster o sistema, y ​​la consola nombra el almacén de objetos de la siguiente manera: `netapp-backup-clusteruuid` .  Asegúrese de no eliminar este almacén de objetos.
+Las copias de backup se almacenan en un almacén de objetos que NetApp Console crea en tu cuenta de cloud. Hay un almacén de objetos por clúster o sistema, y NetApp Console le asigna el nombre siguiente: `netapp-backup-clusteruuid`. No elimines este almacén de objetos.
 
 * En AWS, la NetApp Console permite https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Función de acceso público bloqueado de Amazon S3"^] en el cubo S3.
 * En Azure, NetApp Console utiliza un grupo de recursos nuevo o existente con una cuenta de almacenamiento para el contenedor de blobs. La consola https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["bloquea el acceso público a sus datos de blobs"] de forma predeterminada.

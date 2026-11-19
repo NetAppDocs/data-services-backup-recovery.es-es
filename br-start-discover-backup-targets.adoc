@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-backup-targets.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, 
-summary: 'Complete unos pocos pasos para descubrir destinos de respaldo externos en NetApp Backup and Recovery.  Estos objetivos podrían incluir Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage y StorageGRID.' 
+summary: Descubre destinos de backup externos, añade buckets y cambia las credenciales en NetApp Backup and Recovery. 
 ---
 = Descubra los destinos de respaldo externos en NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ Descubre o añade manualmente destinos de backup externos, como AWS S3, Azure Bl
 [[discover-a-backup-target]]
 == Descubra un destino de respaldo
 
-Configura tus destinos de copia de backup (Amazon Web Services (AWS) S3, ONTAP S3, almacén de objetos compatible con S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) antes de usar NetApp Backup and Recovery.
+Configura tus destinos de backup (Amazon Web Services (AWS) S3, ONTAP S3, almacenamiento de objetos compatible con S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) antes de usar NetApp Backup and Recovery.
 
 Puede descubrir estos objetivos automáticamente o agregarlos manualmente.
 
@@ -108,7 +108,7 @@ Agrega manualmente un bucket a un destino de backup externo en lugar de dejar qu
 +
 ** Para AWS:
 +
-*** *Nombre del depósito*: Ingrese el nombre del depósito S3. El prefijo "netapp-backup" es un prefijo obligatorio y se agrega automáticamente al nombre que proporcione.
+*** *Nombre del bucket*: introduce el nombre del bucket de S3. El prefijo obligatorio "netapp-backup" se añade automáticamente al nombre que introduzcas.
 *** *Cuenta de AWS*: Ingrese el nombre de la cuenta de AWS.
 *** *Región del depósito*: Ingrese la región de AWS para el depósito.
 *** *Habilitar bloqueo de objetos S3*: seleccione esta opción para habilitar el bloqueo de objetos S3 para el depósito.  S3 Object Lock evita que los objetos se eliminen o sobrescriban durante un período de retención específico, lo que proporciona una capa adicional de protección de datos.  Puedes habilitar esto solo cuando estás creando un depósito y no podrás desactivarlo más tarde.

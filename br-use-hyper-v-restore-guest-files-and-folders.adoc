@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
-summary: Puedes restaurar uno o más archivos o carpetas desde una instantánea de una VM de Hyper-V a una VM invitada de Windows. 
+summary: Restaura archivos y carpetas desde una instantánea de VM de Hyper-V a la VM invitada de Windows original montando un disco virtual desde la instantánea. 
 ---
 = Restaura archivos y carpetas de máquinas virtuales Hyper-V con NetApp Backup and Recovery
 :hardbreaks:
@@ -31,7 +31,7 @@ Cuando abres una sesión de restauración de archivos y carpetas montando un dis
 
 El rendimiento de la restauración depende tanto del tamaño como del número de archivos o carpetas que se restauran. Para un tamaño de conjunto de datos determinado, restaurar un gran número de archivos pequeños suele llevar más tiempo que restaurar un pequeño número de archivos grandes.
 
-Ten en cuenta lo siguiente al restaurar archivos y carpetas:
+Ten en cuenta estos puntos a la hora de restaurar archivos y carpetas:
 
 [NOTE]
 ====
@@ -92,7 +92,7 @@ Los archivos y carpetas que has seleccionado para restaurar aparecen en el área
 +
 Si existen archivos con el mismo nombre, puedes optar por sobrescribirlos u omitirlos.
 
-. En la sección *Opciones posteriores a la restauración*, puedes, si lo deseas, desconectar la sesión de invitado una vez finalizada la restauración activando la opción *Desconectar la sesión de invitado una vez finalizada la restauración*. Esto desconecta el disco virtual y desmonta el almacén de datos. Esto significa que tendrás que volver a conectar la sesión de invitado antes de realizar cualquier operación adicional de restauración de archivos y carpetas.
+. En la sección *Opciones posteriores a la restauración*, puedes, si lo deseas, desconectar la sesión de invitado una vez finalizada la restauración activando la opción *Desconectar la sesión de invitado una vez finalizada la restauración*. Esto desconecta el disco virtual y desmonta el datastore. A continuación, debes volver a conectar la sesión de invitado antes de realizar cualquier operación adicional de restauración de archivos y carpetas.
 . Seleccione *Restaurar*.
 +
 Puede ver el progreso de la restauración en la página Supervisión de trabajos.

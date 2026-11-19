@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-oracle-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: En NetApp Backup and Recovery, cree sus propias políticas que rijan la frecuencia de las copias de seguridad, el momento en que se realizan y la cantidad de archivos de copia de seguridad que se conservan. 
+summary: Crea políticas de backup de Oracle Database en NetApp Backup and Recovery que controlen la frecuencia, la programación y la retención de los backups. 
 ---
 = Crea y gestiona las políticas de backup de Oracle Database en NetApp Backup and Recovery
 :hardbreaks:
@@ -129,7 +129,7 @@ NOTE: Los campos que aparecen varían según el proveedor y la arquitectura sele
 ** *Copias de retención*: Ingrese la cantidad de instantáneas que desea conservar.
 ** *Ejecutar en*: elija la programación de transferencia de ONTAP para realizar una copia de seguridad de los datos en el almacenamiento de objetos.
 ** *Ordene sus copias de seguridad por niveles, desde el almacén de objetos hasta el almacenamiento de archivo*: si elige organizar las copias de seguridad por niveles en el almacenamiento de archivo (por ejemplo, AWS Glacier), seleccione la opción de nivel y la cantidad de días que desea archivar.
-** *Habilitar análisis de integridad*: Selecciona si deseas habilitar los análisis de integridad (bloqueo de instantáneas) en el almacenamiento de objetos. Esto garantiza que los backups sean válidos y se puedan restaurar. La frecuencia del análisis de integridad está establecida en siete días de forma predeterminada. Para proteger tus backups de modificaciones o eliminaciones, selecciona la opción *Análisis de integridad*. El análisis solo se realiza en la instantánea más reciente. Puedes activar o desactivar los análisis de integridad en la instantánea más reciente.
+** *Habilitar análisis de integridad*: selecciona si quieres habilitar los análisis de integridad (bloqueo de instantáneas) en el almacenamiento de objetos. Esto confirma que las copias de seguridad son válidas y se pueden restaurar. La frecuencia de los análisis de integridad está establecida en siete días de forma predeterminada. Para proteger tus copias de seguridad de modificaciones o eliminaciones, selecciona la opción *Análisis de integridad*. El análisis se realiza únicamente en la instantánea más reciente. Puedes activar o desactivar los análisis de integridad en la instantánea más reciente.
 
 
 . Si lo deseas, configura los parámetros avanzados de la política.
@@ -147,7 +147,7 @@ Si no activas *Data Guard settings*, se hace una copia de seguridad tanto de la 
 
 
 
-** *Verificación de copias de seguridad*: Selecciona si quieres activar la verificación de copias de seguridad y si la quieres inmediatamente o más tarde. Esta función garantiza que las copias de seguridad sean válidas y puedan restaurarse correctamente. Te recomendamos que actives esta opción para asegurar la integridad de tus copias de seguridad. Por defecto, la verificación de copias de seguridad se ejecuta desde el almacenamiento secundario si el almacenamiento secundario está configurado. Si el almacenamiento secundario no está configurado, la verificación de copias de seguridad se ejecuta desde el almacenamiento primario.
+** *Verificación de copias de seguridad*: selecciona si quieres habilitar la verificación de copias de seguridad y si quieres que se realice de inmediato o más adelante. Esta función confirma que las copias de seguridad son válidas y que se pueden restaurar correctamente. Te recomendamos que habilites esta opción para garantizar la integridad de tus copias de seguridad. De forma predeterminada, la verificación de copias de seguridad se ejecuta desde el almacenamiento secundario si está configurado. Si el almacenamiento secundario no está configurado, la verificación de copias de seguridad se ejecuta desde el almacenamiento primario.
 +
 Además, configure las siguientes opciones:
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-start-prereq-snapcenter-import.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery, snapcenter, import, migration, migrate 
-summary: Comience a utilizar NetApp Backup and Recovery verificando la preparación de su entorno operativo, el agente de consola y la cuenta de consola.  Para utilizar NetApp Backup and Recovery, necesitará estos requisitos previos. 
+summary: Prepárate para importar recursos de Microsoft SQL Server de SnapCenter a NetApp Backup and Recovery añadiendo sistemas, comprobando los requisitos del host y desactivando las restricciones remotas de UAC. 
 ---
 = Requisitos previos de importación de SnapCenter para NetApp Backup and Recovery
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: Comience a utilizar NetApp Backup and Recovery verificando la preparaci
 
 
 [role="lead"]
-Antes de importar recursos desde el SnapCenter Plug-in for Microsoft SQL Server en NetApp Backup and Recovery, asegúrate de que tu entorno cumple estos requisitos adicionales.
+Prepárate para importar recursos desde el SnapCenter Plug-in for Microsoft SQL Server a NetApp Backup and Recovery añadiendo tus sistemas a NetApp Console, comprobando los requisitos del host y desactivando las restricciones remotas de Control de cuentas de usuario.
 
 
 
 [[create-systems-in-netapp-console-first]]
 == Primero cree sistemas en la NetApp Console
 
-Si va a importar recursos desde SnapCenter, primero debe agregar todo el almacenamiento del clúster local de SnapCenter a la página *Sistemas* de la consola antes de importar desde SnapCenter.  Esto garantiza que los recursos del host se puedan descubrir e importar correctamente.
+Antes de importar recursos desde SnapCenter, añade todo el almacenamiento del clúster de SnapCenter local a la página *Systems* de NetApp Console para que pueda detectar e importar correctamente los recursos del host.
 
 
 
@@ -132,7 +132,7 @@ CAUTION: Ejecutar comandos de PowerShell con privilegios elevados puede afectar 
 .. Haga clic derecho en esa opción y seleccione *Ejecutar como administrador*.
 
 
-. Asegúrese de que PowerShell esté instalado en su sistema.  Después de la instalación, debería aparecer en el menú *Inicio*.
+. Comprueba que PowerShell esté instalado en tu sistema. Después de la instalación, debería aparecer en el menú *Inicio*.
 +
 
 TIP: PowerShell está incluido de forma predeterminada en Windows 7 y versiones posteriores.

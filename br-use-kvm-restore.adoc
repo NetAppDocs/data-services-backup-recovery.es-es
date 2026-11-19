@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kvm-restore.html 
 keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja sus cargas de trabajo KVM con NetApp Backup and Recovery. 
+summary: Restaura máquinas virtuales KVM en la ubicación original o en una ubicación alternativa desde snapshots locales, almacenamiento secundario o almacén de objetos con NetApp Backup and Recovery. 
 ---
 = Restaurar máquinas virtuales KVM con NetApp Backup and Recovery
 :hardbreaks:
@@ -42,7 +42,7 @@ TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acc
 [[how-restoring-virtual-machines-works]]
 == Cómo funciona la restauración de máquinas virtuales
 
-Al restaurar máquinas virtuales, se aplica lo siguiente:
+El comportamiento de la restauración depende de la fuente:
 
 * Cuando restaura una carga de trabajo desde un archivo de respaldo local, NetApp Backup and Recovery crea un _nuevo_ recurso utilizando los datos del respaldo.
 * Al restaurar desde una máquina virtual replicada, puede restaurarla en el sistema original o en un sistema ONTAP local.
@@ -66,7 +66,7 @@ Restaura máquinas virtuales KVM mediante el menú «Restaurar». Puedes buscar 
 . En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *KVM*.
 . Introduce el nombre de la máquina virtual que quieres restaurar o filtra por el host de la máquina virtual o el pool de almacenamiento donde se encuentra la máquina virtual.
 +
-Aparecerá una lista de instantáneas que coinciden con sus criterios de búsqueda.
+Aparece una lista de instantáneas que coincide con tus criterios de búsqueda.
 
 . Selecciona *Restaurar* para la instantánea que quieres restaurar.
 +
@@ -93,14 +93,14 @@ Aparece una lista de posibles puntos de restauración.
 .Restaurar a una ubicación alternativa
 --
 .. Seleccione el panel *Ubicación alternativa*.
-.. En la sección *CloudStack*: introduce la siguiente información:
+.. En la sección *configuración de CloudStack*, introduce la siguiente información:
 +
 *** *Zona*: Elige una zona de destino CloudStack de la lista.
 *** *Pod*: Elige un pod de destino dentro de la zona seleccionada de la lista.
 *** *Cluster*: Elige de la lista un clúster de destino dentro del pod seleccionado.
 *** *Host*: Elige un host de destino en el clúster de la lista.
 *** *Pool de almacenamiento*: Elige un pool de almacenamiento de destino de la lista (el volumen de destino debe estar ubicado aquí).
-*** *Red*: Selecciona la red a la que se conectará la máquina virtual restaurada.
+*** *Red*: elige la red a la que quieres conectar la máquina virtual restaurada.
 *** *Nombre de la máquina virtual*: Ingresa un nombre para la máquina virtual que se va a restaurar.
 *** *Nombre para mostrar*: Ingresa el nombre que debe mostrarse para esta VM en Backup and Recovery.
 *** *Ruta del pool de almacenamiento*: Ingresa la ruta del pool de almacenamiento donde se almacenarán los volúmenes VM.
@@ -108,7 +108,7 @@ Aparece una lista de posibles puntos de restauración.
 
 .. Elige una oferta de servicio que defina tu nivel preferido de asignación de recursos de la lista *Seleccionar oferta de servicio*.
 .. Activa la opción *Forced* para importar la VM restaurada aunque ya existan una o varias direcciones MAC de NIC de la VM. Si ya existe una dirección MAC, se genera una nueva dirección MAC para esa NIC.
-.. En la sección *Opciones tras la restauración*, ten en cuenta las siguientes opciones:
+.. En la sección *Opciones tras la restauración*, configura estas opciones:
 +
 *** *Reiniciar máquina virtual*: Activa esta opción para arrancar la nueva máquina virtual después de restaurarla.
 

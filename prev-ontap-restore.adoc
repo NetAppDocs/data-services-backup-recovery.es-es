@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Puedes usar Buscar y Restaurar para recuperar volúmenes, carpetas o archivos de los archivos de copia de seguridad de ONTAP. 
+summary: Compara Browse and Restore con Search and Restore, y elige cómo restaurar volúmenes, carpetas o archivos de ONTAP a partir de snapshots, volúmenes replicados o archivos de backup. 
 ---
 = Opciones de restauración de datos de ONTAP en NetApp Backup and Recovery
 :hardbreaks:
@@ -26,7 +26,7 @@ NOTE: Cuando restauras un volumen habilitado para SnapLock, el volumen restaurad
 
 Necesitas una licencia válida de NetApp Backup and Recovery para restaurar datos en un sistema de producción.
 
-Para resumir, estos son los flujos válidos que puede utilizar para restaurar datos de volumen en un sistema ONTAP :
+Estos flujos son válidos para restaurar datos de volumen en un sistema ONTAP:
 
 * Archivo de respaldo -> volumen restaurado
 * Volumen replicado -> volumen restaurado
@@ -58,7 +58,7 @@ El Panel de restauración proporciona dos formas diferentes de restaurar datos d
 
 En términos generales, _Explorar y restaurar_ suele ser más adecuado cuando necesitas restaurar un volumen, una carpeta o un archivo concreto de la última semana o del último mes y conoces el nombre y la ubicación del archivo y la fecha en la que estaba en buen estado por última vez. _Search & Restore_ suele ser más adecuado cuando necesitas restaurar un volumen, una carpeta o un archivo, pero no recuerdas el nombre exacto, el volumen en el que se encuentra ni la fecha en la que estaba en buen estado por última vez.
 
-Esta tabla proporciona una comparación de las características de los dos métodos.
+La tabla compara las características de ambos métodos.
 
 [cols="50,50"]
 |===
@@ -73,7 +73,7 @@ Esta tabla proporciona una comparación de las características de los dos méto
 
 | Se admite la restauración rápida. | No se admite la restauración rápida. 
 |===
-Esta tabla proporciona una lista de operaciones de restauración válidas según la ubicación donde residen sus archivos de respaldo.
+La tabla muestra las operaciones de restauración válidas para cada ubicación en la que se encuentran tus archivos de copia de seguridad.
 
 [cols="14h,14,14,14,14,14,14"]
 |===
@@ -91,7 +91,7 @@ Esta tabla proporciona una lista de operaciones de restauración válidas según
 
 | Archivo de respaldo | Sí | Sí | Sí | Sí | Sí | Sí 
 |===
-Antes de utilizar cualquiera de los métodos de restauración, configure su entorno para que cumpla con los requisitos de recursos.  Consulte las siguientes secciones para obtener más detalles.
+Antes de utilizar cualquiera de los dos métodos de restauración, configura tu entorno para que cumpla con los requisitos de recursos.
 
 Consulte los requisitos y los pasos de restauración para el tipo de operación de restauración que desea utilizar:
 

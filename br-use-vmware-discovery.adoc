@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-discovery.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Descubre los almacenes de datos y las máquinas virtuales de VMware en los sistemas ONTAP, importa recursos de SnapCenter Plug-in for VMware vSphere y gestiónalos en NetApp Backup and Recovery. 
 ---
 = Descubra las cargas de trabajo de VMware con NetApp Backup and Recovery
 :hardbreaks:
@@ -25,7 +25,7 @@ Antes de poder proteger los almacenes de datos y las máquinas virtuales de VMwa
 
 Durante el proceso de detección, NetApp Backup and Recovery analiza las cargas de trabajo de VMware dentro de su organización y evalúa e importa las políticas de protección, instantáneas y opciones de copia de seguridad y restauración existentes.
 
-Si utilizas el complemento local de SnapCenter para VMware vSphere, puedes importar almacenes de datos y máquinas virtuales de VMware a NetApp Backup and Recovery.
+Si utilizas el SnapCenter Plug-in for VMware vSphere local, puedes importar almacenes de datos y máquinas virtuales de VMware a NetApp Backup and Recovery.
 
 
 NOTE: Después de añadir un sistema de almacenamiento a NetApp Console, espera unos minutos antes de descubrir recursos. Descubrir recursos inmediatamente después de añadir un sistema de almacenamiento puede hacer que la detección falle.
@@ -49,7 +49,7 @@ El descubrimiento se produce de las siguientes maneras:
 * Si ya tienes SnapCenter o el SnapCenter Plug-in for VMware vSphere, importa los recursos de SnapCenter en NetApp Backup and Recovery usando la interfaz de usuario de NetApp Backup and Recovery.
 +
 
-NOTE: Si ya tienes el SnapCenter Plug-in, asegúrate de que has cumplido los requisitos previos antes de importar desde SnapCenter. Por ejemplo, primero debes crear sistemas en NetApp Console para todo el almacenamiento de clúster local de SnapCenter antes de importar desde SnapCenter. Consulta link:concept-start-prereq-snapcenter-import.html["Requisitos previos para importar recursos desde SnapCenter"]. Para importar datos directamente desde un host de SnapCenter, consulta link:br-start-configure.html#import-and-manage-snapcenter-host-resources["Importar y administrar recursos del host de SnapCenter"].
+NOTE: Si ya tienes SnapCenter Plug-in, confirma que has cumplido los requisitos previos antes de importar desde SnapCenter. Por ejemplo, primero debes crear sistemas en NetApp Console para todo el almacenamiento de clústeres de SnapCenter local antes de importar desde SnapCenter. Consulta link:concept-start-prereq-snapcenter-import.html["Requisitos previos para importar recursos desde SnapCenter"]. Para importar datos directamente desde un host de SnapCenter, consulta link:br-start-configure.html#import-and-manage-snapcenter-host-resources["Importar y administrar recursos del host de SnapCenter"].
 
 * Si aún no tiene el complemento SnapCenter , aún puede descubrir cargas de trabajo dentro de sus sistemas agregando un vCenter manualmente y realizando el descubrimiento.
 

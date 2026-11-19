@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. 
+summary: Restaura aplicaciones de Kubernetes protegidas por una política en NetApp Backup and Recovery, usando todos los recursos o un subconjunto seleccionado, en los espacios de nombres originales o nuevos. 
 ---
 = Restaura aplicaciones de Kubernetes mediante la interfaz de usuario web de NetApp Backup and Recovery
 :hardbreaks:
@@ -45,7 +45,7 @@ Aparece una lista de recursos y sus detalles. Puedes ver los recursos por espaci
 Puedes restaurar aplicaciones basadas en espacios de nombres o en máquinas virtuales desde un punto de recuperación, ya sea restaurando todos los recursos o seleccionando un subconjunto de recursos para restaurar.
 
 .Antes de empezar
-Si vas a restaurar una aplicación que se respaldó usando Trident Protect, asegúrate de que Trident Protect esté instalado tanto en el clúster de origen como en el clúster de destino.
+Si vas a restaurar una aplicación de la que hiciste una copia de seguridad con Trident Protect, comprueba que Trident Protect esté instalado tanto en el clúster de origen como en el de destino.
 
 *Rol de NetApp Console requerido*
 
@@ -159,7 +159,7 @@ Aparece la página _Configuración del destino_.
 
 NOTE: Si necesitas crear un AppVault en un clúster de Kubernetes para facilitar la restauración de una copia de seguridad o instantánea creada usando Trident Protect, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Usa los objetos de Trident Protect AppVault para gestionar buckets"].
 
-. Opcionalmente, expande la sección *Restore scripts* y habilita la opción *Postscript* para elegir una plantilla de hook de ejecución que se ejecutará después de que la operación de restauración haya terminado. Si lo necesitas, introduce cualquier argumento que el script necesite y añade selectores de etiquetas para filtrar recursos según las etiquetas de los recursos.
+. Si lo deseas, despliega la sección *Scripts de restauración* y activa la opción *Postscript* para elegir una plantilla de hook de ejecución que se ejecute una vez finalizada la operación de restauración. Si es necesario, introduce los argumentos que necesite el script y añade selectores de etiquetas para filtrar los recursos según sus etiquetas.
 . Opcionalmente, amplía la sección *Transformaciones de recursos* para añadir, eliminar o modificar atributos de recursos durante el proceso de restauración. Luego, haz lo siguiente:
 +
 

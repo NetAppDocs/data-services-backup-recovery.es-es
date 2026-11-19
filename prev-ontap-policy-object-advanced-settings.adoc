@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-advanced-settings.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Modifica la configuración de backup en almacén de objetos a nivel de clúster en NetApp Backup and Recovery, incluido el ancho de banda, la exportación de instantáneas históricas, la eliminación anual de instantáneas y los análisis de ransomware. 
 ---
 = Gestiona la configuración avanzada de backup a objeto en NetApp Backup and Recovery
 :hardbreaks:
@@ -131,8 +131,8 @@ Puede habilitar o deshabilitar los análisis de ransomware para un clúster.
 . En la página resultante, expanda la sección *Análisis de ransomware*.
 . Habilitar o deshabilitar *Análisis de ransomware*.
 . Seleccione *Análisis de ransomware programado*.
-. Opcionalmente, cambie el escaneo predeterminado de cada semana a días o semanas.
-. Establezca la frecuencia en días o semanas con la que se debe ejecutar el análisis.
+. Si lo deseas, puedes cambiar el análisis semanal predeterminado a días o semanas.
+. Establece la frecuencia, en días o semanas, con la que se ejecuta el análisis.
 . Seleccione *Aplicar*.
 
 
@@ -150,8 +150,8 @@ Puede habilitar o deshabilitar los análisis de ransomware a nivel de proveedor 
 . Expande la sección *Análisis de ransomware*.
 . Habilitar o deshabilitar *Análisis de ransomware*.
 . Seleccione *Análisis de ransomware programado*.
-. Opcionalmente, cambie el escaneo predeterminado de cada semana a días o semanas.
-. Establezca la frecuencia en días o semanas con la que se debe ejecutar el análisis.
+. Si lo deseas, puedes cambiar el análisis semanal predeterminado a días o semanas.
+. Establece la frecuencia, en días o semanas, con la que se ejecuta el análisis.
 . Seleccione *Aplicar*.
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore.html 
 keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Restaura máquinas virtuales de VMware desde instantáneas locales, almacenamiento secundario o copias de seguridad en almacén de objetos en la ubicación original o en otra ubicación. 
 ---
 = Restaure cargas de trabajo de VMware con NetApp Backup and Recovery
 :hardbreaks:
@@ -27,7 +27,7 @@ Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
 .Restaurar a estos puntos
 Puede restaurar datos en estos puntos:
 
-* *Restaurar a la ubicación original*: la máquina virtual se restaura en la ubicación original, en la misma implementación de vCenter, host ESXi y almacén de datos. Se sobrescriben la VM y todos sus datos.
+* *Restaurar en la ubicación original*: la restauración devuelve la máquina virtual a la misma implementación de vCenter, al mismo host ESXi y al mismo almacén de datos, y sobrescribe la máquina virtual y todos sus datos.
 * *Restaurar a una ubicación alternativa*: puede elegir un vCenter, un host ESXi o un almacén de datos diferente como destino de restauración para la máquina virtual. Esto es útil para administrar diferentes copias de la misma VM en diferentes ubicaciones y estados.
 
 
@@ -42,7 +42,7 @@ TIP: Es posible que tenga que pagar tarifas adicionales a su proveedor de nube p
 [[how-vmware-workload-restore-works]]
 == Cómo funciona la restauración de cargas de trabajo de VMware
 
-Al restaurar cargas de trabajo, ocurre lo siguiente:
+El comportamiento de la restauración depende de la fuente de restauración:
 
 * Cuando restaura una carga de trabajo desde una instantánea local o una copia de seguridad remota, NetApp Backup and Recovery sobrescribe la máquina virtual original si restaura a la ubicación original y crea un _nuevo_ recurso si restaura a una ubicación alternativa.
 * Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo en el sistema ONTAP local original o en un sistema ONTAP local diferente.
@@ -66,9 +66,9 @@ Utiliza la opción Restaurar para restaurar cargas de trabajo de VMware. Puedes 
 . En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *VMware*.
 . Ingrese el nombre del recurso que desea restaurar o filtre por el vCenter, centro de datos o almacén de datos donde se encuentra el recurso que desea restaurar.
 +
-Aparecerá una lista de máquinas virtuales que coinciden con sus criterios de búsqueda.
+Aparece una lista de máquinas virtuales que coinciden con tus criterios de búsqueda.
 
-. Busque la VM que desea restaurar en la lista y seleccione el botón del menú de opciones para esa VM.
+. Busca en la lista la máquina virtual que quieres restaurar y selecciona el botón del menú de opciones de esa máquina virtual.
 . En el menú resultante, seleccione *Restaurar máquina virtual*.
 +
 Aparece una lista de instantáneas (puntos de restauración) creadas en esa máquina virtual. De forma predeterminada, se muestran las últimas instantáneas correspondientes al período de tiempo que seleccione en el menú desplegable *Período de tiempo*.
@@ -76,7 +76,7 @@ Aparece una lista de instantáneas (puntos de restauración) creadas en esa máq
 +
 Para cada instantánea, los íconos iluminados en la columna *Ubicación* indican las ubicaciones de almacenamiento donde la instantánea está disponible (almacenamiento primario, secundario o de objetos).
 
-. Habilite el botón de opción para la instantánea que desea restaurar.
+. Selecciona el botón de opción correspondiente a la instantánea que quieras restaurar.
 . Seleccione *Siguiente*.
 +
 Aparecen las opciones de ubicación de la instantánea.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-vmware-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: En NetApp Backup and Recovery, cree sus propias políticas que rijan la frecuencia de las copias de seguridad, el momento en que se realizan y la cantidad de archivos de copia de seguridad que se conservan. 
+summary: Crea y elimina políticas de backup de VMware en NetApp Backup and Recovery para controlar la frecuencia de las copias de seguridad, la programación, la retención, la replicación y la configuración del almacenamiento de objetos. 
 ---
 = Crea y gestiona políticas de backup de VMware en NetApp Backup and Recovery
 :hardbreaks:
@@ -16,7 +16,7 @@ Utiliza NetApp Backup and Recovery para crear políticas de backup de VMware que
 
 Si importa recursos desde SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
 
-Puedes lograr los siguientes objetivos relacionados con las políticas:
+Puedes realizar estas tareas de política:
 
 * Crear una política de instantáneas locales
 * Crear una política para la replicación al almacenamiento secundario

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-snapshots.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Puede administrar las instantáneas de Microsoft SQL Server eliminándolas de NetApp Backup and Recovery. 
+summary: Elimina las instantáneas locales de Microsoft SQL Server del inventario en NetApp Backup and Recovery. 
 ---
 = Administre instantáneas de Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:

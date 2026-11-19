@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-dashboard.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
-summary: Monitorear el estado de sus cargas de trabajo le garantiza estar al tanto de los problemas con la protección de las cargas de trabajo y poder tomar medidas para resolverlos.  Vea el estado de sus copias de seguridad y restauraciones y responda a cualquier alerta que aparezca en el Panel de control de NetApp Backup and Recovery .  Puede revisar el resumen de protección, el resumen de restauración, el resumen del sistema y más. 
+summary: Supervisa el estado de tus cargas de trabajo, revisa el estado del backup y la restauración, y responde a las alertas en el Dashboard de NetApp Backup and Recovery. 
 ---
-= Ver el estado de la protección en el panel de control de Backup and Recovery
+= Ver el estado de la protección en el panel de NetApp Backup and Recovery de NetApp
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

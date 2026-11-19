@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-hyper-v-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: En NetApp Backup and Recovery, cree sus propias políticas que rijan la frecuencia de las copias de seguridad, el momento en que se realizan y la cantidad de archivos de copia de seguridad que se conservan. 
+summary: Crea políticas de backup de Hyper-V en NetApp Backup and Recovery que controlen la frecuencia, la programación y la retención de las copias de seguridad, y edita o elimina políticas. 
 ---
 = Crea y gestiona políticas de backup de Hyper-V en NetApp Backup and Recovery
 :hardbreaks:
@@ -16,7 +16,7 @@ Utiliza NetApp Backup and Recovery para crear políticas de backup de Hyper-V qu
 
 Si importa recursos desde SnapCenter, es posible que encuentre algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery"] .
 
-Puedes lograr los siguientes objetivos relacionados con las políticas:
+Puedes realizar estas tareas de política:
 
 * Crear una política de instantáneas locales
 * Crear una política para la replicación al almacenamiento secundario
@@ -62,7 +62,7 @@ Puede crear políticas que rijan sus instantáneas locales, replicaciones en alm
 Si estás protegiendo datos almacenados en un clúster de Cloud Volumes ONTAP, también se requiere el rol de Cloud Volumes ONTAP Admin. Conoce más sobre link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Antes de empezar
-Si planea replicar en un almacenamiento secundario y desea usar el bloqueo de instantáneas en instantáneas locales o en un almacenamiento secundario ONTAP remoto, primero debe inicializar el reloj de cumplimiento de ONTAP en el nivel del clúster.  Este es un requisito para habilitar el bloqueo de instantáneas en la política.
+Si tienes previsto replicar en un almacenamiento secundario y quieres usar el bloqueo de instantáneas en instantáneas locales o en un almacenamiento secundario ONTAP remoto, primero necesitas inicializar el reloj de conformidad de ONTAP a nivel de clúster. Esto es un requisito para habilitar el bloqueo de instantáneas en la política.
 
 Para obtener instrucciones sobre cómo hacer esto, consulte https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["Inicializar el reloj de cumplimiento en ONTAP"^] .
 

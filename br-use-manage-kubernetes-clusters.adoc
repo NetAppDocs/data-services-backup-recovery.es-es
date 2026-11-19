@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-clusters.html 
 keywords: discover, backup and recovery, snapcenter, kubernetes, k8s, clusters, applications, inventory 
-summary: NetApp Backup and Recovery le permite descubrir y administrar sus clústeres de Kubernetes para que pueda proteger los recursos alojados en los clústeres. 
+summary: Descubre y gestiona clústeres de Kubernetes, edita los detalles de los clústeres, actualiza Trident Protect y vuelve a conectar o migra clústeres para proteger los recursos alojados. 
 ---
 = Gestiona clústeres de Kubernetes en NetApp Backup and Recovery
 :hardbreaks:
@@ -24,7 +24,7 @@ NOTE: Para descubrir clústeres de Kubernetes, consultelink:br-start-discover.ht
 [[edit-kubernetes-cluster-information]]
 == Editar la información del clúster de Kubernetes
 
-Puede editar un clúster si necesita cambiar su nombre.
+Edita un clúster para cambiar su nombre.
 
 *Rol de NetApp Console requerido*
 
@@ -83,7 +83,7 @@ Superadministrador de copias de seguridad y recuperación. link:reference-roles.
 [[reconnect-a-kubernetes-cluster-to-a-console-agent]]
 == Vuelve a conectar un clúster de Kubernetes a un agente de Console
 
-Si cambia la dirección IP de tu agente de Console (por ejemplo, tras un reinicio), tu clúster de Kubernetes pierde la conexión con el agente y tienes que volver a conectarte.
+Si cambia la dirección IP de tu agente de NetApp Console (por ejemplo, tras un reinicio), tu clúster de Kubernetes pierde la conexión con el agente y tendrás que volver a conectarte.
 
 *Rol de NetApp Console requerido*
 
@@ -119,7 +119,7 @@ Superadministrador de copias de seguridad y recuperación. link:reference-roles.
 . En NetApp Backup and Recovery, seleccione *Inventario* > *Clústeres*.
 . Selecciona un clúster de Kubernetes desconectado y selecciona el icono de acción image:../media/icon-action.png["Opción de acciones"] > *Modificar clúster* > *Gestionar agente*.
 . En la lista, selecciona un nuevo agente de Console.
-. Revisa la información del agente para asegurarte de que el nuevo agente de Console pueda acceder a los sistemas, los destinos de copia de seguridad y los destinos secundarios que usan las aplicaciones protegidas en este clúster.
+. Revisa la información del agente para confirmar que el nuevo agente de NetApp Console pueda acceder a los sistemas, los destinos de copia de seguridad y los destinos secundarios que usan las aplicaciones protegidas en este clúster.
 . Copia las instrucciones de la línea de comandos de cada sección y ejecuta los comandos en el clúster.
 +
 Esto recrea los secretos de Kubernetes, redirige Trident Protect al nuevo agente de la consola y vuelve a cargar la configuración. Después de que termines de ejecutar los comandos, el clúster está usando el nuevo agente de la consola.

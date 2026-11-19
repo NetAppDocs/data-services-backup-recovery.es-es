@@ -16,7 +16,7 @@ summary: Gestiona tus hosts, instancias y bases de datos de Microsoft SQL Server
 [role="lead"]
 Visualiza y gestiona los hosts, las instancias y las bases de datos de Microsoft SQL Server, y cambia o elimina su configuración de protección.
 
-Puedes hacer lo siguiente para gestionar tu inventario:
+Gestiona tu inventario con estas acciones:
 
 * Administrar la información del host
 +
@@ -278,7 +278,7 @@ Para obtener más información sobre cómo crear una copia de seguridad ad hoc, 
 [[manage-database-information]]
 == Administrar la información de la base de datos
 
-Puede administrar la información de la base de datos de las siguientes maneras:
+Gestiona la información de la base de datos con estas acciones:
 
 * Proteger bases de datos
 * Restaurar bases de datos

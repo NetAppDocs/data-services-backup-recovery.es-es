@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-s3-compatible.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, S3, compatible, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Comprueba las configuraciones compatibles y haz backup de los datos de los volúmenes desde sistemas ONTAP locales a un almacén de objetos compatible con S3 con NetApp Backup and Recovery. 
 ---
-= Haz una copia de seguridad de los datos de ONTAP locales en un almacenamiento compatible con S3 con NetApp Backup and Recovery
+= Haz backup de los datos de ONTAP en un almacenamiento compatible con S3 con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Utiliza esta página para comprobar que tu configuración es compatible y para configurar copias de seguridad desde tus sistemas ONTAP locales principales a un almacenamiento de objetos compatible con S3 en NetApp Backup and Recovery.
+Comprueba que tu configuración sea compatible y, a continuación, configura las copias de seguridad desde tus sistemas ONTAP locales principales hacia un almacén de objetos compatible con S3 en NetApp Backup and Recovery.
 
 
 
 [[verify-support-for-your-configuration]]
 == Verificar la compatibilidad con su configuración
 
-Lee los siguientes requisitos para asegurarte de que tienes una configuración compatible antes de empezar a hacer copias de seguridad de volúmenes en un almacenamiento compatible con S3.
+Asegúrate de que tu configuración sea compatible antes de empezar a realizar copias de seguridad de volúmenes en un almacenamiento compatible con S3.
 
 Versiones de ONTAP compatibles:: Se requiere una versión mínima de ONTAP 9.17.1.
 
@@ -92,7 +92,7 @@ Cuando haces una copia de seguridad de los datos en un almacenamiento compatible
 [[prepare-console-agent-networking-requirements]]
 === Preparar los requisitos de red del agente de consola
 
-Asegúrese de que la red donde está instalado el agente de consola permita las siguientes conexiones:
+Comprueba que la red en la que está instalado el agente de NetApp Console permita las siguientes conexiones:
 
 * Una conexión HTTPS a través del puerto 443 al servidor compatible con S3
 * Una conexión HTTPS a través del puerto 443 a su LIF de administración del clúster ONTAP de origen
@@ -170,7 +170,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 [[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Verificar los requisitos de red de ONTAP para realizar copias de seguridad de datos en el almacenamiento de objetos
 
-Debe asegurarse de que se cumplan los siguientes requisitos en el sistema que se conecta al almacenamiento de objetos.
+Comprueba que el sistema que se conecta al almacenamiento de objetos cumpla los siguientes requisitos.
 
 [NOTE]
 ====
@@ -266,7 +266,7 @@ Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede
 
 ====
 .Pasos
-Ten en cuenta que si los volúmenes que elijas ya tienen aplicadas políticas de snapshot o de replicación, las políticas que selecciones después sobrescribirán esas políticas existentes.
+Si los volúmenes que elijas ya tienen aplicadas políticas de snapshot o de replicación, las políticas que selecciones posteriormente sustituirán estas políticas existentes.
 
 . En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.
 +
@@ -384,7 +384,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 [[review-your-selections]]
 === Revise sus selecciones
 
-Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
+Revisa tus selecciones y haz ajustes, si es necesario.
 
 .Pasos
 . En la página Revisar, revise sus selecciones.

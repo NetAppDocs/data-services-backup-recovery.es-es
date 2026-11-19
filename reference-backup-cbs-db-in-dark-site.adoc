@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'En modo privado (sin acceso a internet), NetApp Backup and Recovery almacena sus datos de configuración en el mismo bucket StorageGRID u ONTAP S3 que usas para tus copias de seguridad. Si el sistema host del agente de la consola falla, puedes implementar un nuevo agente de la consola y restaurar estos datos.' 
+summary: Implementa un nuevo agente de NetApp Console y restaura los datos de configuración de NetApp Backup and Recovery a partir de un bucket de StorageGRID o ONTAP S3 tras un fallo del agente de NetApp Console en modo privado. 
 ---
 = Restaurar datos de configuración de NetApp Backup and Recovery en un sitio oscuro
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: 'En modo privado (sin acceso a internet), NetApp Backup and Recovery al
 [role="lead"]
 En modo _privado_ (sin acceso a Internet), NetApp Backup and Recovery almacena sus datos de configuración en el mismo bucket de StorageGRID u ONTAP S3 utilizado para tus copias de seguridad. Si el sistema host del agente de la consola falla, puedes implementar un nuevo agente de la consola y restaurar estos datos.
 
-También puedes seguir estos pasos para sustituir el agente de la consola y restaurar los datos de configuración que se almacenaban en él al utilizar Backup and Recovery en _modo estándar_ en las instalaciones, cuando no intervienen cuentas en la nube (por ejemplo, al utilizar NetApp StorageGRID como destino de la copia de seguridad).
+También puedes seguir estos pasos para sustituir el agente de Console y restaurar los datos de configuración almacenados en él cuando uses Backup and Recovery en _standard mode_ en tus instalaciones, sin que intervengan cuentas en la nube (por ejemplo, cuando uses NetApp StorageGRID como destino de backup).
 
 
 NOTE: Este procedimiento se aplica únicamente a los datos de volumen de ONTAP .
@@ -26,7 +26,7 @@ Cuando utiliza NetApp Backup and Recovery en un entorno SaaS con el agente de co
 Hay dos tipos de datos que se respaldan:
 
 * Base de datos de NetApp Backup and Recovery : contiene una lista de todos los volúmenes, archivos de respaldo, políticas de respaldo e información de configuración.
-* Archivos de catálogo indexados: contienen índices detallados que se utilizan para la funcionalidad de búsqueda y restauración que hace que sus búsquedas sean muy rápidas y eficientes cuando busca datos de volumen que desea restaurar.
+* Archivos de catálogo indexados - contienen índices detallados que la funcionalidad Search & Restore utiliza para encontrar rápidamente los datos del volumen que quieres restaurar.
 
 
 Se realiza una copia de seguridad de estos datos una vez al día a medianoche y se conserva un máximo de 7 copias de cada archivo. Si el agente de la consola administra varios sistemas ONTAP locales, los archivos de NetApp Backup and Recovery se almacenan en el depósito del sistema que se activó primero.
@@ -46,12 +46,12 @@ Necesitará realizar las siguientes tareas para que su sistema NetApp Backup and
 * Instalar un nuevo agente de consola
 * Restaurar la base de datos de NetApp Backup and Recovery
 * Restaurar los archivos del catálogo indexado
-* Redescubre todos tus sistemas ONTAP locales y sistemas StorageGRID en la interfaz de usuario de la NetApp Console
+* Vuelve a detectar todos tus sistemas ONTAP locales y sistemas StorageGRID en la interfaz de usuario de NetApp Console
 
 
 Después de comprobar que su sistema funciona, cree nuevos archivos de respaldo.
 
-.Lo que necesitarás
+.Antes de empezar
 Necesitará acceder a las copias de seguridad de bases de datos e índices más recientes desde el depósito StorageGRID o ONTAP S3 donde se almacenan sus archivos de copia de seguridad:
 
 * Archivo de base de datos MySQL de NetApp Backup and Recovery
@@ -124,7 +124,7 @@ mysql -u root -p cloud_backup
 mysql> show tables;
 mysql> select * from volume;
 ----
-. Asegúrese de que los volúmenes que se muestran sean los mismos que existían en su entorno original.
+. Comprueba que los volúmenes que se muestran sean los mismos que los que existían en tu entorno original.
 
 
 

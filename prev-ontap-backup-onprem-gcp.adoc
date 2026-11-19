@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Realiza una copia de seguridad de los datos de volúmenes ONTAP on-premises en Google Cloud Storage con NetApp Backup and Recovery, lo que incluye preparar el agente de NetApp Console, los clústeres de ONTAP y los permisos del bucket. 
 ---
-= Realice una copia de seguridad de los datos locales de ONTAP en Google Cloud Storage con NetApp Backup and Recovery
+= Realiza copias de seguridad de los datos de ONTAP locales en Google Cloud con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-En NetApp Backup and Recovery, puedes hacer copias de seguridad de los datos de los volúmenes de tus sistemas ONTAP locales en un sistema de almacenamiento secundario y en Google Cloud Storage. Usa esta página para preparar tu entorno y activar las copias de seguridad.
+Haz backup de los datos de volumen de tus sistemas ONTAP locales en Google Cloud Storage y en un sistema de almacenamiento secundario mediante NetApp Backup and Recovery. Prepara tu entorno y, a continuación, activa los backups.
 
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
@@ -33,7 +33,7 @@ Elija cuál de los dos métodos de conexión utilizará al configurar copias de 
 * *Conexión privada*: utilice una VPN o Google Cloud Interconnect y enrute el tráfico a través de una interfaz de acceso privado de Google que utiliza una dirección IP privada.
 
 
-Opcionalmente, también puede conectarse a un sistema ONTAP secundario para volúmenes replicados utilizando la conexión pública o privada.
+También puedes usar la conexión pública o privada para conectarte a un sistema ONTAP secundario para volúmenes replicados.
 
 El siguiente diagrama muestra el método de *conexión pública* y las conexiones que debe preparar entre los componentes. El agente de consola debe implementarse en la VPC de Google Cloud Platform.
 
@@ -57,7 +57,7 @@ El agente de consola es el software principal para la funcionalidad de la NetApp
 
 Si ya tienes un agente de consola implementado en tu VPC de Google Cloud Platform, entonces estás listo.
 
-De lo contrario, deberá crear un agente de consola en esa ubicación para realizar una copia de seguridad de los datos de ONTAP en Google Cloud Storage.  No puedes usar un agente de consola que esté implementado en otro proveedor de nube o en instalaciones locales.
+Si no dispones de uno, crea un agente de NetApp Console en esa ubicación para hacer copias de seguridad de los datos de ONTAP en Google Cloud Storage. No puedes usar un agente de NetApp Console que esté implementado en otro proveedor de nube ni en un entorno local.
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Instalar un agente de consola en GCP"^]
@@ -92,7 +92,7 @@ Para utilizar la funcionalidad "Buscar y restaurar" de NetApp Backup and Recover
 
 .Pasos
 . En el https://console.cloud.google.com["Consola de Google Cloud"^] , vaya a la página *Roles*.
-. Utilizando la lista desplegable en la parte superior de la página, seleccione el proyecto u organización que contiene el rol que desea editar.
+. En la lista desplegable situada en la parte superior de la página, selecciona el proyecto o la organización que contiene el rol que deseas editar.
 . Seleccione un rol personalizado.
 . Seleccione *Editar rol* para actualizar los permisos del rol.
 . Seleccione *Agregar permisos* para agregar los siguientes permisos nuevos al rol.
@@ -192,19 +192,19 @@ Se necesitan los siguientes requisitos de red del clúster ONTAP :
 
 * El clúster ONTAP inicia una conexión HTTPS a través del puerto 443 desde el LIF entre clústeres a Google Cloud Storage para operaciones de respaldo y restauración.
 +
-ONTAP lee y escribe datos hacia y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, simplemente responde.
+ONTAP lee y escribe datos desde y hacia el almacenamiento de objetos. El almacenamiento de objetos nunca inicia una conexión. Solo responde.
 
 * ONTAP requiere una conexión entrante desde el agente de la consola al LIF de administración del clúster.  El agente de la consola puede residir en una VPC de Google Cloud Platform.
 * Se requiere un LIF entre clústeres en cada nodo de ONTAP que aloje los volúmenes que desea respaldar.  El LIF debe estar asociado con el _IPspace_ que ONTAP debe usar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información sobre IPspaces"^] .
 +
 Cuando configura NetApp Backup and Recovery, se le solicita el espacio IP que desea utilizar. Debes elegir el espacio IP con el que está asociado cada LIF. Ese podría ser el espacio IP "predeterminado" o un espacio IP personalizado que usted creó.
 
-* Los LIF entre clústeres de los nodos pueden acceder al almacén de objetos.
+* Las interfaces LIF entre clústeres de los nodos pueden acceder al almacén de objetos.
 * Se han configurado servidores DNS para la máquina virtual de almacenamiento donde se encuentran los volúmenes.  Vea cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configurar servicios DNS para la SVM"^] .
 +
 Si está utilizando Private Google Access o Private Service Connect, asegúrese de que sus servidores DNS estén configurados para apuntar `storage.googleapis.com` a la dirección IP interna (privada) correcta.
 
-* Ten en cuenta que si estás usando un IPspace diferente al Default, puede que necesites crear una ruta estática para acceder al almacén de objetos.
+* Si utilizas un IPspace distinto de Default, es posible que tengas que crear una ruta estática para acceder al almacenamiento de objetos.
 * Actualice las reglas de firewall, si es necesario, para permitir conexiones de NetApp Backup and Recovery desde ONTAP al almacenamiento de objetos a través del puerto 443, y tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS a través del puerto 53 (TCP/UDP).
 
 
@@ -222,7 +222,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 * Si el clúster está local, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
+Dado que puedes replicar en Cloud Volumes ONTAP o en sistemas locales, consulta los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^].
 
 
 
@@ -329,8 +329,8 @@ cloudkms.keyRings.setIamPolicy
 Consideraciones sobre CMEK:
 
 * Se admiten claves generadas por software y HSM (respaldadas por hardware).
-* Se admiten claves Cloud KMS recién creadas o importadas.
-* Solo se admiten claves regionales, no claves globales.
+* Se admiten tanto las claves de Cloud KMS recién creadas como las importadas.
+* Solo se admiten claves regionales. No se admiten claves globales.
 * Actualmente, solo se admite el propósito de "Cifrado/descifrado simétrico".
 * NetApp Backup and Recovery asigna el rol de IAM "CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)" al agente de servicio asociado con la cuenta de almacenamiento.
 

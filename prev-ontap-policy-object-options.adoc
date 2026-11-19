@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-options.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Configura las opciones de la política de backup en almacén de objetos en NetApp Backup and Recovery, incluidas las programaciones, la retención, DataLock, la protección contra ransomware y el almacenamiento de archivado. 
 ---
 = Opciones de política de copia de seguridad a objeto en NetApp Backup and Recovery
 :hardbreaks:
@@ -29,12 +29,12 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 
 NetApp Backup and Recovery le permite crear múltiples políticas de respaldo con programaciones únicas para cada sistema (clúster).  Puede asignar diferentes políticas de respaldo a volúmenes que tengan diferentes objetivos de punto de recuperación (RPO).
 
-Cada política de backup incluye una sección de _Etiquetas y retención_ que puedes aplicar a tus archivos de backup. Ten en cuenta que la política de snapshot aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery o no se crearán archivos de backup.
+Cada política de backup proporciona una sección de _Labels & Retention_ que puedes aplicar a tus archivos de backup. La política de snapshot aplicada al volumen debe ser una de las políticas reconocidas por NetApp Backup and Recovery. De lo contrario, el servicio no crea archivos de backup.
 
 
 NOTE: La política de snapshots aplicada al volumen debe tener una de las etiquetas que estás utilizando en tu política de replicación y en tu política de backup en almacén de objetos. Si no encuentras etiquetas coincidentes, no se crearán archivos de backup. Por ejemplo, si quieres crear volúmenes replicados y archivos de backup "weekly", debes usar una política de snapshots que cree snapshots "weekly".
 
-El programa consta de dos partes: la etiqueta y el valor de retención:
+La programación consta de dos partes: la etiqueta y el valor de retención:
 
 * La *etiqueta* define con qué frecuencia se crea (o actualiza) un archivo de respaldo desde el volumen.  Puede seleccionar entre los siguientes tipos de etiquetas:
 +
@@ -43,17 +43,17 @@ El programa consta de dos partes: la etiqueta y el valor de retención:
 ** Si ha creado políticas de protección de respaldo personalizadas en el clúster mediante ONTAP System Manager o la CLI de ONTAP , puede seleccionar una de esas políticas.
 
 
-* El valor *retención* define cuántos archivos de respaldo se conservan para cada etiqueta (período de tiempo).  Una vez que se alcanza el número máximo de copias de seguridad en una categoría o intervalo, se eliminan las copias de seguridad más antiguas para que siempre tenga las copias de seguridad más actuales.  Esto también le ahorra costos de almacenamiento porque las copias de seguridad obsoletas no continúan ocupando espacio en la nube.
+* El valor de *retención* define cuántos archivos de copia de seguridad de cada etiqueta (intervalo de tiempo) se conservan. Una vez alcanzado el número máximo de copias de seguridad en una categoría o intervalo, las copias más antiguas se eliminan para que siempre tengas las copias más recientes. Esto también te permite ahorrar en costos de almacenamiento, ya que las copias de seguridad obsoletas no siguen ocupando espacio en la nube.
 
 
-Por ejemplo, supongamos que crea una política de respaldo que crea 7 copias de seguridad *semanales* y 12 *mensuales*:
+Por ejemplo, si creas una política de backup que crea 7 backups *semanales* y 12 *mensuales*:
 
 * Cada semana y cada mes se crea un archivo de respaldo para el volumen
 * En la octava semana, se elimina la primera copia de seguridad semanal y se agrega la nueva copia de seguridad semanal de la octava semana (manteniendo un máximo de 7 copias de seguridad semanales)
 * En el mes 13, se elimina la primera copia de seguridad mensual y se agrega la nueva copia de seguridad mensual del mes 13 (manteniendo un máximo de 12 copias de seguridad mensuales)
 
 
-Las copias de seguridad anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos.  Este comportamiento predeterminado se puede cambiar en la página de Configuración avanzada del sistema.
+Las copias de seguridad anuales se eliminan automáticamente del sistema de origen después de transferirse al almacén de objetos. Puedes cambiar este comportamiento predeterminado en la página Configuración avanzada del sistema.
 
 
 TIP: El periodo de retención de las copias de seguridad de los volúmenes de protección de datos (DP) es el mismo que el definido en la relación de origen SnapMirror. Puedes modificarlo mediante la API.
@@ -72,7 +72,7 @@ Esta función no proporciona protección para los volúmenes de origen; solo par
 [CAUTION]
 ====
 * Si planea utilizar DataLock y protección contra ransomware, puede habilitarlo al crear su primera política de respaldo y activar NetApp Backup and Recovery para ese clúster.  Posteriormente puede habilitar o deshabilitar el escaneo de ransomware mediante la Configuración avanzada de NetApp Backup and Recovery .
-* Cuando la consola escanea un archivo de respaldo en busca de ransomware al restaurar datos de volumen, incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
+* Cuando NetApp Console analiza un archivo de copia de seguridad en busca de ransomware durante una restauración de datos de volumen, incurres en costes adicionales de salida de datos de tu proveedor de servicios en la nube para acceder al contenido del archivo de copia de seguridad.
 
 
 ====
@@ -83,11 +83,11 @@ Esta función no proporciona protección para los volúmenes de origen; solo par
 
 Con esta función, puede bloquear las instantáneas en la nube replicadas a través de SnapMirror en la nube y también habilitar la función para detectar un ataque de ransomware y recuperar una copia consistente de la instantánea en el almacén de objetos. Esta función es compatible con AWS, Azure, Google Cloud Platform y StorageGRID.
 
-DataLock protege sus archivos de respaldo para que no se modifiquen ni eliminen durante un período de tiempo determinado, también llamado _almacenamiento inmutable_.  Esta funcionalidad utiliza tecnología del proveedor de almacenamiento de objetos para el "bloqueo de objetos".
+DataLock protege tus archivos de copia de seguridad para que no se modifiquen ni se eliminen durante un periodo de tiempo determinado, lo que también se conoce como _almacenamiento inmutable_. Esta funcionalidad utiliza la tecnología del proveedor de almacenamiento de objetos para el "bloqueo de objetos".
 
 Los proveedores de nube utilizan una fecha de retención hasta (RUD), que se calcula en función del período de retención de instantáneas.  El período de retención de instantáneas se calcula en función de la etiqueta y el recuento de retención definidos en la política de respaldo.
 
-El período mínimo de retención de instantáneas es de 30 días.  Veamos algunos ejemplos de cómo funciona esto:
+El período mínimo de retención de instantáneas es de 30 días. Por ejemplo:
 
 * Si elige la etiqueta *Diario* con un recuento de retención de 20, el período de retención de instantáneas será de 20 días, que por defecto es el mínimo de 30 días.
 * Si elige la etiqueta *Semanal* con recuento de retención 4, el período de retención de instantáneas es de 28 días, que es el mínimo predeterminado de 30 días.
@@ -102,11 +102,11 @@ El período mínimo de retención de instantáneas es de 30 días.  Veamos algun
 
 La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas.  La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.
 
-* Buffer es el Buffer para el Tiempo de Transferencia (3 días) + Buffer para Optimización de Costos (28 días), lo que suma un total de 31 días.
+* El búfer es el búfer para el tiempo de transferencia (3 días) más el búfer para la optimización de costes (28 días), lo que da un total de 31 días.
 * La fecha mínima de retención hasta es de 30 días + 31 días de margen = 61 días.
 
 
-A continuación se muestran algunos ejemplos:
+Ejemplos:
 
 * Si crea un programa de copia de seguridad mensual con 12 retenciones, sus copias de seguridad se bloquean durante 12 meses (más 31 días) antes de eliminarse (reemplazarse por el próximo archivo de copia de seguridad).
 * Si crea una política de respaldo que crea 30 copias de seguridad diarias, 7 semanales y 12 mensuales, hay tres períodos de retención bloqueados:
@@ -116,13 +116,13 @@ A continuación se muestran algunos ejemplos:
 ** Las copias de seguridad "12 mensuales" se conservan durante 12 meses (más 31 días).
 
 
-* Si crea una programación de copias de seguridad por hora con 24 retenciones, podría pensar que las copias de seguridad están bloqueadas durante 24 horas.  Sin embargo, dado que esto es menos que el mínimo de 30 días, cada copia de seguridad se bloqueará y se conservará durante 61 días (30 días más 31 días de margen).
+* Si creas una programación de backup por hora con 24 retenciones, podrías pensar que los backups permanecen bloqueados durante 24 horas. Sin embargo, como eso es inferior al mínimo de 30 días, cada backup permanecerá bloqueado y se conservará durante 61 días (30 días más 31 días de margen).
 
 
 
 CAUTION: Las copias de seguridad antiguas se eliminan una vez que expira el período de retención de DataLock, no después del período de retención de la política de copia de seguridad.
 
-La configuración de retención de DataLock anula la configuración de retención de políticas de su política de respaldo.  Esto podría afectar sus costos de almacenamiento ya que sus archivos de respaldo se guardarán en el almacén de objetos durante un período de tiempo más largo.
+La configuración de retención de DataLock anula la configuración de retención de tu política de backup. Esto podría afectar a tus costes de almacenamiento, ya que los archivos de backup se guardan en el almacén de objetos durante un período de tiempo más largo.
 
 
 
@@ -148,7 +148,7 @@ Referirse alink:prev-ontap-policy-object-advanced-settings.html["Cómo actualiza
 [[what-is-ransomware-protection]]
 === ¿Qué es la protección contra ransomware?
 
-La protección contra ransomware escanea sus archivos de respaldo para buscar evidencia de un ataque de ransomware. La detección de ataques de ransomware se realiza mediante una comparación de suma de comprobación. Si se identifica un posible ransomware en un nuevo archivo de respaldo en comparación con el archivo de respaldo anterior, ese archivo de respaldo más nuevo se reemplaza por el archivo de respaldo más reciente que no muestra ningún signo de un ataque de ransomware. (El archivo que fue identificado como víctima de un ataque de ransomware se elimina 1 día después de haber sido reemplazado).
+La protección contra ransomware analiza tus archivos de backup para buscar indicios de un ataque de ransomware. La protección contra ransomware detecta ataques comparando las sumas de comprobación. Si se identifica un posible ransomware en un archivo de backup nuevo frente al archivo de backup anterior, ese archivo de backup más reciente se sustituye por el archivo de backup más reciente que no muestra ningún indicio de un ataque de ransomware. (El archivo que se identificó con un ataque de ransomware se elimina 1 día después de sustituirse).
 
 Los escaneos ocurren en estas situaciones:
 
@@ -163,7 +163,7 @@ Los análisis programados de ransomware están activados de forma predeterminada
 
 Cuando se detecta un ataque de ransomware, el servicio utiliza la API REST del verificador de integridad del agente Active Data Console para iniciar el proceso de recuperación.  La versión más antigua de los objetos de datos es la fuente de la verdad y se convierte en la versión actual como parte del proceso de recuperación.
 
-Veamos cómo funciona esto:
+La recuperación funciona de la siguiente manera:
 
 * En caso de un ataque de ransomware, el servicio intenta sobrescribir o eliminar el objeto en el depósito.
 * Debido a que el almacenamiento en la nube cuenta con control de versiones, crea automáticamente una nueva versión del objeto de respaldo.  Si se elimina un objeto con el control de versiones activado, se marca como eliminado pero aún se puede recuperar.  Si se sobrescribe un objeto, se almacenan y marcan las versiones anteriores.
@@ -342,9 +342,9 @@ Además, puede obtener estimaciones del costo asociado con DataLock visitando el
 [[archival-storage-options]]
 == Opciones de almacenamiento de archivos
 
-Al utilizar AWS, Azure o Google Cloud Storage, puedes trasladar los archivos de backup más antiguos a una clase de almacenamiento de archivo o a un nivel de almacenamiento más económico después de cierto número de días. También puedes elegir enviar tus archivos de backup al almacenamiento de archivo inmediatamente, sin que se guarden primero en el almacenamiento estándar en la nube. Solo tienes que introducir *0* en el campo «Archivar tras días» para enviar tu archivo de backup directamente al almacenamiento de archivo. Esto puede ser especialmente útil para usuarios que rara vez necesitan acceder a los datos de los backups en la nube o para quienes están reemplazando una solución de backup en cinta.
+Al utilizar AWS, Azure o Google Cloud Storage, puedes trasladar los archivos de backup más antiguos a una clase de almacenamiento de archivo o a un nivel de almacenamiento más económico después de cierto número de días. También puedes optar por enviar tus archivos de copia de seguridad directamente al almacenamiento de archivo sin que se guarden primero en el almacenamiento estándar en la nube. Introduce *0* como "Archive After Days" para enviar tu archivo de copia de seguridad directamente al almacenamiento de archivo. Esto puede ser especialmente útil para usuarios que rara vez necesitan acceder a los datos de los backups en la nube o para quienes están reemplazando una solución de backup en cinta.
 
-No se puede acceder a los datos en niveles de archivo inmediatamente cuando se los necesita y requerirán un mayor costo de recuperación, por lo que deberá considerar con qué frecuencia necesitará restaurar datos de los archivos de respaldo antes de decidir archivar sus archivos de respaldo.
+No se puede acceder de forma inmediata a los datos almacenados en los niveles de archivado cuando se necesitan, y su recuperación conlleva un coste mayor, por lo que deberás tener en cuenta con qué frecuencia podrías necesitar restaurar datos de los archivos de backup antes de decidir archivarlos.
 
 [NOTE]
 ====
@@ -376,11 +376,11 @@ Si su clúster usa ONTAP 9.10.1 o una versión superior, puede organizar en nive
 
 * En GCP, las copias de seguridad están asociadas con la clase de almacenamiento _Estándar_.
 +
-Si su clúster local usa ONTAP 9.12.1 o superior, puede optar por organizar en niveles las copias de seguridad más antiguas en el almacenamiento _Archivo_ en la interfaz de usuario de NetApp Backup and Recovery después de una cierta cantidad de días para optimizar aún más los costos. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"].
+Si tu clúster local utiliza ONTAP 9.12.1 o una versión posterior, puedes optar por trasladar las copias de seguridad más antiguas al almacenamiento _Archive_ en la interfaz de usuario de NetApp Backup and Recovery tras un determinado número de días para optimizar aún más los costes. link:prev-reference-gcp-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de Google"].
 
 * En StorageGRID, las copias de seguridad están asociadas con la clase de almacenamiento _Standard_.
 +
-Si su clúster local usa ONTAP 9.12.1 o superior, y su sistema StorageGRID usa 11.4 o superior, puede archivar archivos de respaldo más antiguos en un almacenamiento de archivo en la nube pública.
+Si tu clúster local usa ONTAP 9.12.1 o una versión posterior, y tu sistema StorageGRID usa la versión 11.4 o una posterior, puedes archivar los archivos de backup más antiguos en un almacenamiento de archivado en la nube pública.
 
 +
 ** Para AWS, puede organizar las copias de seguridad en niveles de almacenamiento AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Obtenga más información sobre el almacenamiento de archivos de AWS"^].

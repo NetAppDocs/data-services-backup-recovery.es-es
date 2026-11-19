@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Haz una copia de seguridad de los volúmenes de Cloud Volumes ONTAP en Google Cloud Storage con NetApp Backup and Recovery, incluida la preparación del agente de NetApp Console, los permisos y las claves de cifrado. 
 ---
-= Haz una copia de seguridad de Cloud Volumes ONTAP en Google Cloud Storage con NetApp Backup and Recovery
+= Realiza una copia de seguridad de Cloud Volumes ONTAP en Google Cloud con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Reco
 [[verify-support-for-your-configuration]]
 == Verificar la compatibilidad con su configuración
 
-Lea los siguientes requisitos para asegurarse de tener una configuración compatible antes de comenzar a realizar copias de seguridad de volúmenes en Google Cloud Storage.
+Comprueba que dispones de una configuración compatible antes de empezar a realizar copias de seguridad de volúmenes en Google Cloud Storage.
 
 La siguiente imagen muestra cada componente y las conexiones que debes preparar entre ellos.
 
@@ -34,7 +34,7 @@ image:diagram_cloud_backup_cvo_google.png["Un diagrama que muestra cómo NetApp 
 
 Versiones de ONTAP compatibles:: Mínimo de ONTAP 9.8; se recomienda ONTAP 9.8P13 y posterior.
 Regiones de GCP compatibles:: NetApp Backup and Recovery es compatible en todas las regiones de GCP.
-Cuenta de servicio de GCP:: Debe tener una cuenta de servicio en su proyecto de Google Cloud que tenga el rol personalizado. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^] .
+Cuenta de servicio de GCP:: Necesitas una cuenta de servicio en tu proyecto de Google Cloud que tenga el rol personalizado. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^].
 
 
 
@@ -146,7 +146,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 * Si el clúster está local, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
+Dado que puedes replicar en Cloud Volumes ONTAP o en sistemas locales, consulta los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^].
 
 
 
@@ -305,7 +305,7 @@ Consideraciones sobre CMEK:
 
 * Se admiten claves generadas por software y HSM (respaldadas por hardware).
 * Se admiten claves Cloud KMS recién creadas o importadas.
-* Solo se admiten claves regionales, no claves globales.
+* Solo se admiten claves regionales. No se admiten claves globales.
 * Actualmente, solo se admite el propósito de "Cifrado/descifrado simétrico".
 * NetApp Backup and Recovery asigna el rol de IAM "CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)" al agente de servicio asociado con la cuenta de almacenamiento.
 
@@ -369,7 +369,7 @@ Puede elegir proteger los volúmenes FlexVol o FlexGroup ; sin embargo, no puede
 
 ====
 .Pasos
-Ten en cuenta que si los volúmenes que elijas ya tienen aplicadas políticas de snapshot o de replicación, las políticas que selecciones después sobrescribirán esas políticas existentes.
+Si los volúmenes que elijas ya tienen aplicadas políticas de snapshot o de replicación, las políticas que selecciones posteriormente sustituirán estas políticas existentes.
 
 . En la página Seleccionar volúmenes, seleccione el volumen o los volúmenes que desea proteger.
 +

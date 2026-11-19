@@ -16,7 +16,7 @@ summary: Clona los datos de la aplicación Microsoft SQL Server para desarrollo,
 [role="lead"]
 Crea, actualiza, divide y elimina clones de Microsoft SQL Server para desarrollo, pruebas o protección.
 
-Elija entre los siguientes tipos de clones:
+Elige uno de estos tipos de clon:
 
 * *Instantánea y clonación*: puede crear un clon de sus cargas de trabajo de Microsoft SQL Server a partir de una instantánea, que es una copia en un punto en el tiempo de los datos de origen que se crea a partir de una copia de seguridad. El clon se almacena en un almacén de objetos en su cuenta de nube pública o privada. Puede utilizar el clon para restaurar sus cargas de trabajo en caso de pérdida o corrupción de datos.
 * *Clonar desde una instantánea existente*: puede elegir una instantánea existente de una lista de instantáneas que están disponibles para la carga de trabajo.  Esta opción es útil si desea crear un clon a partir de un punto específico en el tiempo.  Clonar al almacenamiento primario o secundario.
@@ -83,7 +83,7 @@ Opcionalmente, seleccione *Sufijo* de la lista desplegable del nombre de destino
 . Complete la sección *Opciones avanzadas*.
 . Si eliges *Instant snapshot and clone*, completa las siguientes opciones:
 +
-** *Programación de actualización y caducidad del clon*: introduce la fecha en la que debe comenzar la actualización del clon. La programación de actualización define cuándo comienza la actualización del clon.
+** *Programación de actualización y caducidad del clon*: introduce la fecha en la que comenzará la actualización del clon. La programación de actualización define cuándo comienza la actualización del clon.
 +
 *** *Eliminar el clon si caduca la programación*: selecciona esta opción para eliminar el clon cuando caduque la programación.
 *** *Actualizar el clon cada*: Selecciona la frecuencia de actualización. Puedes elegir actualizar el clon cada hora, cada día, cada semana, cada mes o cada trimestre. Esta opción mantiene el clon sincronizado con la carga de trabajo de origen.
@@ -114,7 +114,7 @@ Tiene la opción de cambiar el nombre de la base de datos, utilizar la última i
 . Complete la sección *Configuración avanzada*:
 +
 ** *Alcance de recuperación*: elija si desea recuperar todas las copias de seguridad de registros o las copias de seguridad de registros hasta un punto específico en el tiempo.  Esta opción es útil si desea recuperar el clon a un punto específico en el tiempo.
-** *Programación de actualización y caducidad del clon*: introduce la fecha en la que debe comenzar la actualización del clon. La programación de actualización define cuándo comienza la actualización del clon.
+** *Programación de actualización y caducidad del clon*: introduce la fecha en la que comenzará la actualización del clon. La programación de actualización define cuándo comienza la actualización del clon.
 +
 *** *Eliminar el clon si caduca la programación*: selecciona esta opción para eliminar el clon cuando caduque la programación.
 *** *Actualizar el clon cada*: Selecciona la frecuencia de actualización. Puedes elegir actualizar el clon cada hora, cada día, cada semana, cada mes o cada trimestre. Esta opción mantiene el clon sincronizado con la carga de trabajo de origen.
@@ -178,7 +178,7 @@ Elimina los clones de tus cargas de trabajo de Microsoft SQL Server para liberar
 . Seleccione el icono Accionesimage:../media/icon-action.png["Opción de acciones"] > *Eliminar clon*.
 . En el cuadro de diálogo de confirmación de la eliminación del clon, revisa los detalles de la eliminación.
 +
-.. Para eliminar los recursos clonados de SnapCenter incluso si los clones o su almacenamiento no son accesibles, seleccione *Forzar eliminación*.
+.. Para eliminar los recursos clonados de SnapCenter, incluso si no se puede acceder a los clones ni a su almacenamiento, selecciona *Forzar eliminación*.
 .. Seleccione *Eliminar*.
 
 

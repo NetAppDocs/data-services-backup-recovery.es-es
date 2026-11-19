@@ -18,7 +18,7 @@ Haz backup de las bases de datos de Microsoft SQL Server desde sistemas ONTAP lo
 
 NetApp Backup and Recovery utiliza NetApp SnapMirror para sincronizar copias de seguridad creando instantáneas y transfiriéndolas a las ubicaciones de copia de seguridad.
 
-Utiliza los siguientes flujos de trabajo para proteger tus datos:
+Utiliza estos flujos de trabajo para proteger tus datos:
 
 * link:concept-start-prereq-snapcenter-import.html["Configurar elementos adicionales si se importa desde SnapCenter"]
 * link:br-start-discover.html["Descubra las cargas de trabajo de Microsoft SQL Server y, opcionalmente, importe recursos de SnapCenter"]

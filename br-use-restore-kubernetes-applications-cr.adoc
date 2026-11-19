@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-applications-cr.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery le permite restaurar aplicaciones que haya protegido con una política de protección. 
+summary: Restaura aplicaciones de Kubernetes a partir de instantáneas o copias de seguridad utilizando recursos personalizados, incluidas restauraciones en un espacio de nombres diferente, en el espacio de nombres original o en un clúster diferente. 
 ---
-= Restaura aplicaciones de Kubernetes con recursos personalizados
+= Restaurar aplicaciones de Kubernetes con recursos personalizados en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -39,7 +39,7 @@ Cuando restauras una copia de seguridad en un espacio de nombres diferente usand
 
 ====
 .Antes de empezar
-Asegúrate de que la caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración s3 de larga duración. Si el token caduca durante la operación de restauración, la operación puede fallar.
+Comprueba que el tiempo de caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración de S3 de larga duración. Si el token caduca durante la operación de restauración, esta puede fallar.
 
 * Consulta https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentación de la API de AWS"^] para más información sobre cómo comprobar la expiración del token de sesión actual.
 * Consulta https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentación de AWS IAM"^] para más información sobre las credenciales con los recursos de AWS.
@@ -137,7 +137,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 Puedes restaurar una copia de seguridad en el espacio de nombres original en cualquier momento.
 
 .Antes de empezar
-Asegúrate de que la caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración s3 de larga duración. Si el token caduca durante la operación de restauración, la operación puede fallar.
+Comprueba que el tiempo de caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración de S3 de larga duración. Si el token caduca durante la operación de restauración, esta puede fallar.
 
 * Consulta https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentación de la API de AWS"^] para más información sobre cómo comprobar la expiración del token de sesión actual.
 * Consulta https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentación de AWS IAM"^] para más información sobre las credenciales con los recursos de AWS.
@@ -243,7 +243,7 @@ Puedes restaurar una copia de seguridad en un clúster diferente si hay algún p
 
 ====
 .Antes de empezar
-Asegúrate de que se cumplen los siguientes requisitos previos:
+Comprueba que cumples estos requisitos previos:
 
 * El clúster de destino tiene Trident Protect instalado.
 * El clúster de destino tiene acceso a la ruta del bucket de la misma AppVault que el clúster de origen, donde se almacena la copia de seguridad.
@@ -341,7 +341,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 [[restore-a-snapshot-to-a-different-namespace]]
 == Restaura una instantánea en un espacio de nombres diferente
 
-Puedes restaurar datos de una instantánea usando un archivo de recurso personalizado (CR) ya sea en un espacio de nombres diferente o en el espacio de nombres de origen original. Cuando restauras una instantánea en un espacio de nombres diferente usando un CR de SnapshotRestore, Backup and Recovery restaura la aplicación en un nuevo espacio de nombres y crea un CR de aplicación para la aplicación restaurada. Para proteger la aplicación restaurada, crea copias de seguridad o instantáneas bajo demanda, o establece una programación de protección.
+Puedes restaurar datos desde una instantánea utilizando un archivo de recurso personalizado (CR) en un espacio de nombres diferente o en el espacio de nombres de origen original. Cuando restauras una instantánea en un espacio de nombres diferente mediante un CR de SnapshotRestore, Backup and Recovery restaura la aplicación en un nuevo espacio de nombres y crea un CR de aplicación para la aplicación restaurada. Para proteger la aplicación restaurada, crea copias de seguridad o instantáneas bajo demanda, o establece una programación de protección.
 
 [NOTE]
 ====
@@ -351,7 +351,7 @@ Puedes restaurar datos de una instantánea usando un archivo de recurso personal
 
 ====
 .Antes de empezar
-Asegúrate de que la caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración s3 de larga duración. Si el token caduca durante la operación de restauración, la operación puede fallar.
+Comprueba que el tiempo de caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración de S3 de larga duración. Si el token caduca durante la operación de restauración, esta puede fallar.
 
 * Consulta https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentación de la API de AWS"^] para más información sobre cómo comprobar la expiración del token de sesión actual.
 * Consulta https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentación de AWS IAM"^] para más información sobre las credenciales con los recursos de AWS.
@@ -449,7 +449,7 @@ Puedes restaurar una instantánea al espacio de nombres original en cualquier mo
 NOTE: Actualmente no se admite la restauración sin movimiento (restaurar al espacio de nombres y clúster originales) de aplicaciones basadas en máquinas virtuales a partir de instantáneas locales.
 
 .Antes de empezar
-Asegúrate de que la caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración s3 de larga duración. Si el token caduca durante la operación de restauración, la operación puede fallar.
+Comprueba que el tiempo de caducidad del token de sesión de AWS sea suficiente para cualquier operación de restauración de S3 de larga duración. Si el token caduca durante la operación de restauración, esta puede fallar.
 
 * Consulta https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentación de la API de AWS"^] para más información sobre cómo comprobar la expiración del token de sesión actual.
 * Consulta https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentación de AWS IAM"^] para más información sobre las credenciales con los recursos de AWS.

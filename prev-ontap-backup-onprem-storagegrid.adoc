@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-storagegrid.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Complete algunos pasos en NetApp Backup and Recovery para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP principales locales a un sistema de almacenamiento secundario y al almacenamiento de objetos en sus sistemas NetApp StorageGRID . 
+summary: Haz copias de seguridad de los datos de los volúmenes desde sistemas ONTAP locales a un sistema de almacenamiento secundario y al almacén de objetos de StorageGRID preparando tu entorno y activando las copias de seguridad. 
 ---
 = Realice copias de seguridad de los datos locales de ONTAP en StorageGRID con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Complete algunos pasos en NetApp Backup and Recovery para comenzar a re
 
 
 [role="lead"]
-En NetApp Backup and Recovery, puedes hacer copias de seguridad de los datos de los volúmenes de tus sistemas ONTAP locales principales en un sistema de almacenamiento secundario y en el almacén de objetos StorageGRID. Usa esta página para preparar tu entorno y activar las copias de seguridad.
+Usa NetApp Backup and Recovery para hacer backup de los datos de volúmenes desde tus sistemas ONTAP locales principales a un sistema de almacenamiento secundario y al almacenamiento de objetos de StorageGRID. Prepara tu entorno y, a continuación, activa los backups para proteger tus volúmenes.
 
 
 NOTE: Los "sistemas ONTAP locales" incluyen los sistemas FAS, AFF y ONTAP Select .
@@ -151,12 +151,12 @@ Se necesitan los siguientes requisitos de red del clúster ONTAP :
 
 * El clúster ONTAP inicia una conexión HTTPS a través de un puerto especificado por el usuario desde el LIF entre clústeres al nodo de puerta de enlace de StorageGRID para operaciones de respaldo y restauración.  El puerto se puede configurar durante la configuración de la copia de seguridad.
 +
-ONTAP lee y escribe datos hacia y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, simplemente responde.
+ONTAP lee y escribe datos desde y hacia el almacenamiento de objetos. El almacenamiento de objetos nunca inicia una conexión. Solo responde.
 
 * ONTAP requiere una conexión entrante desde el agente de la consola al LIF de administración del clúster.  El agente de la consola debe residir en sus instalaciones.
 * Se requiere un LIF entre clústeres en cada nodo de ONTAP que aloje los volúmenes que desea respaldar.  El LIF debe estar asociado con el _IPspace_ que ONTAP debe usar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información sobre IPspaces"^] .
 +
-Cuando configura NetApp Backup and Recovery, se le solicita el espacio IP que desea utilizar. Debes elegir el espacio IP con el que está asociado cada LIF. Ese podría ser el espacio IP "predeterminado" o un espacio IP personalizado que usted creó.
+Cuando configures NetApp Backup and Recovery, se te pedirá el IPspace que quieres usar. Elige el IPspace con el que está asociada cada LIF. Puede ser el IPspace "Default" o un IPspace personalizado que hayas creado.
 
 * Los LIF entre clústeres de los nodos pueden acceder al almacén de objetos (no es necesario cuando el agente de consola está instalado en un sitio "oscuro").
 * Se han configurado servidores DNS para la máquina virtual de almacenamiento donde se encuentran los volúmenes.  Vea cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configurar servicios DNS para la SVM"^] .
@@ -178,7 +178,7 @@ Si planea crear volúmenes replicados en un sistema ONTAP secundario mediante Ne
 * Si el clúster está local, debe tener una conexión desde su red corporativa a su red virtual en el proveedor de la nube. Normalmente se trata de una conexión VPN.
 * Los clústeres ONTAP deben cumplir requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Dado que puede replicar en Cloud Volumes ONTAP o en sistemas locales, revise los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^] .
+Dado que puedes replicar en Cloud Volumes ONTAP o en sistemas locales, consulta los requisitos de emparejamiento para los sistemas ONTAP locales. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Consulte los requisitos previos para el peering de clústeres en la documentación de ONTAP"^].
 
 
 
@@ -235,7 +235,7 @@ Control de versiones de objetos:: No debe habilitar manualmente el control de ve
 [[prepare-to-archive-older-backup-files-to-public-cloud-storage]]
 === Prepárese para archivar archivos de respaldo antiguos en un almacenamiento en la nube pública
 
-Agrupar los archivos de respaldo más antiguos en un almacenamiento de archivo le permite ahorrar dinero al utilizar una clase de almacenamiento menos costosa para respaldos que quizás no necesite.  StorageGRID es una solución local (nube privada) que no proporciona almacenamiento de archivo, pero puede mover archivos de respaldo más antiguos al almacenamiento de archivo en la nube pública.  Cuando se usa de esta manera, los datos almacenados en la nube o restaurados desde el almacenamiento en la nube van entre StorageGRID y el almacenamiento en la nube; la consola no participa en esta transferencia de datos.
+Mover por niveles los archivos de backup más antiguos al almacenamiento de archivado te ayuda a ahorrar dinero al usar una clase de almacenamiento menos costosa para backups que quizá no necesites. StorageGRID es una solución local (nube privada) que no proporciona almacenamiento de archivado, pero puedes mover los archivos de backup más antiguos al almacenamiento de archivado de la nube pública. Con esta configuración, los datos que mueves por niveles al almacenamiento en la nube, o que restauras desde el almacenamiento en la nube, se transfieren entre StorageGRID y el almacenamiento en la nube. NetApp Console no interviene en esta transferencia de datos.
 
 El soporte actual le permite archivar copias de seguridad en el almacenamiento de AWS _S3 Glacier_/_S3 Glacier Deep Archive_ o _Azure Archive_.
 

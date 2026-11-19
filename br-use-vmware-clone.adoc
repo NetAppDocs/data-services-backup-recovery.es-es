@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-clone.html 
 keywords: clone, clone application data, NetApp backup and recovery, VMware 
-summary: Clona tus cargas de trabajo de máquinas virtuales VMware con NetApp Backup and Recovery. 
+summary: Crea, divide y elimina clones modificables de máquinas virtuales de VMware a partir de snapshots primarias o secundarias con NetApp Backup and Recovery. 
 ---
 = Clona cargas de trabajo VMware usando NetApp Backup and Recovery
 :hardbreaks:
@@ -61,7 +61,7 @@ La opción *Seleccionar ubicación de la instantánea* aparece si la instantáne
 [[split-a-clone]]
 == Dividir un clon
 
-Puedes dividir un clon de una VMware VM para separarlo de su volumen primario. Una vez dividido, el clon se convierte en un volumen independiente que ya no depende del volumen primario.
+Puedes dividir un clon de una máquina virtual de VMware para separarlo de su volumen primario. Tras la división, el clon se convierte en un volumen independiente que ya no depende del volumen primario.
 
 Tras la división, los datastores asociados a la máquina virtual clonada se convierten en un nuevo datastore independiente. La propia máquina virtual clonada se conserva.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Con NetApp Backup and Recovery, supervise las instantáneas locales, las replicaciones y los trabajos de respaldo que inicie. 
+summary: Supervisa los trabajos de instantáneas, replicación, copia de seguridad y restauración, revisa las alertas en el Centro de notificaciones, investiga la actividad en Console Timeline y cancela los trabajos en curso. 
 ---
 = Supervisar trabajos en NetApp Backup and Recovery
 :hardbreaks:
@@ -271,7 +271,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 [[cancel-an-ongoing-job]]
 == Cancelar un trabajo en curso
 
-Algunas cargas de trabajo de Backup and Recovery permiten cancelar un trabajo en curso si tarda demasiado en completarse y no ha fallado.
+Algunas cargas de trabajo de copia de seguridad y recuperación permiten cancelar un trabajo en curso si tarda demasiado en completarse y no ha fallado.
 
 
 NOTE: Para cancelar un trabajo de restauración de ONTAP Volumes, consulta <<Cancelar un trabajo de restauración de ONTAP Volumes>>.
@@ -289,7 +289,7 @@ NOTE: Para cancelar un trabajo de restauración de ONTAP Volumes, consulta <<Can
 [[cancel-an-ontap-volumes-restore-job]]
 == Cancelar un trabajo de restauración de ONTAP Volumes
 
-Cancela una tarea de restauración de volúmenes de ONTAP si tarda demasiado en completarse y no ha fallado.
+Cancelar una tarea de restauración de volúmenes de ONTAP si tarda demasiado en completarse y no ha fallado.
 
 Cuando cancelas una restauración de volumen, se revierte toda la operación de restauración para que no se restaure ninguna parte del volumen.
 

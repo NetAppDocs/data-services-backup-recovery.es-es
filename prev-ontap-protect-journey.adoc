@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-journey.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery. 
+summary: Planifica cómo proteger los volúmenes de ONTAP con NetApp Backup and Recovery eligiendo las funciones de protección, la arquitectura de backup, las políticas, el almacén de objetos y el modo de implementación del agente de NetApp Console. 
 ---
 = Planifica la protección de volúmenes de ONTAP en NetApp Backup and Recovery
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: Protege tus cargas de trabajo VMware con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Utiliza esta página para planificar cómo protegerás tus volúmenes ONTAP con NetApp Backup and Recovery. Revisa los métodos de protección, arquitecturas, políticas, opciones de almacén de objetos y modos de implementación del agente de la Console antes de habilitar el backup y la recuperación.
+Planifica cómo proteger tus volúmenes ONTAP con NetApp Backup and Recovery. Revisa los métodos de protección, las arquitecturas, las políticas, las opciones de almacén de objetos y los modos de implementación del agente de NetApp Console antes de habilitar el backup y la recuperación.
 
 
 NOTE: Para cambiar hacia y desde las cargas de trabajo de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de NetApp Backup and Recovery"] .
 
-Repasaremos las siguientes opciones:
+Responde a estas preguntas para planificar tu protección:
 
-* ¿Qué funciones de protección utilizará: instantáneas, volúmenes replicados o copias de seguridad en la nube?
+* Qué funciones de protección vas a utilizar: instantáneas, volúmenes replicados o copias de seguridad en la nube
 * ¿Qué arquitectura de respaldo utilizará: una copia de seguridad en cascada o en abanico de sus volúmenes?
 * ¿Utilizarás las políticas de respaldo predeterminadas o necesitarás crear políticas personalizadas?
 * ¿Quieres que el servicio cree los depósitos en la nube para ti o quieres crear tus propios contenedores de almacenamiento de objetos antes de comenzar?
@@ -34,7 +34,7 @@ Repasaremos las siguientes opciones:
 [[which-protection-features-will-you-use]]
 == ¿Qué funciones de protección utilizarás?
 
-Antes de seleccionar las funciones que vas a utilizar, aquí tienes una breve explicación de para qué sirve cada una y qué tipo de protección ofrece.
+Revisa qué hace cada función y qué tipo de protección ofrece antes de seleccionar las funciones que vas a utilizar.
 
 [cols="20,70"]
 |===
@@ -53,9 +53,9 @@ Las instantáneas son la base de todos los métodos de backup y son necesarias p
 
 image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de copia de seguridad en el sistema de origen como instantáneas, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de copia de seguridad en el almacenamiento de objetos."]
 
-Puede optar por crear volúmenes replicados en otro sistema de almacenamiento ONTAP y realizar copias de seguridad de los archivos en la nube.  O puede elegir simplemente crear volúmenes replicados o archivos de respaldo: es su elección.
+Puedes crear volúmenes replicados en otro sistema de almacenamiento ONTAP, realizar copias de seguridad de archivos en la nube o ambas cosas.
 
-Para resumir, estos son los flujos de protección válidos que puede crear para los volúmenes en su sistema ONTAP :
+Estos son los flujos de protección válidos que puedes crear para los volúmenes de tu sistema ONTAP:
 
 * Volumen de origen -> Instantánea -> Volumen replicado -> Archivo de copia de seguridad
 * Volumen de origen -> Instantánea -> Archivo de copia de seguridad
@@ -67,9 +67,9 @@ NOTE: La creación inicial de un volumen replicado o un archivo de respaldo incl
 
 *Comparación de los diferentes métodos de backup*
 
-La siguiente tabla muestra una comparación generalizada de los tres métodos de copia de seguridad.  Si bien el espacio de almacenamiento de objetos suele ser menos costoso que su almacenamiento en disco local, si cree que puede restaurar datos de la nube con frecuencia, las tarifas de salida de los proveedores de la nube pueden reducir parte de sus ahorros.  Necesitará identificar con qué frecuencia necesita restaurar datos de los archivos de respaldo en la nube.
+Esta tabla compara los tres métodos de backup. El almacenamiento de objetos suele ser más económico que el almacenamiento en disco local. Sin embargo, si restauras datos desde la nube con frecuencia, las tarifas de salida de los proveedores de nube pueden reducir tu ahorro. Determina con qué frecuencia necesitas restaurar datos desde los archivos de backup almacenados en la nube.
 
-Además de estos criterios, el almacenamiento en la nube ofrece opciones de seguridad adicionales si usas la función *DataLock y protección contra ransomware*, y también permite ahorrar más al elegir clases de almacenamiento de archivo para los archivos de backup más antiguos. link:prev-ontap-policy-object-options.html["Obtenga más información sobre la protección contra DataLock y Ransomware y la configuración de almacenamiento de archivos."].
+Además de estos criterios, el almacenamiento en la nube ofrece opciones de seguridad adicionales si utilizas la función *DataLock y protección contra ransomware*, así como un mayor ahorro de costes al seleccionar clases de almacenamiento de archivo para los archivos de backup más antiguos. link:prev-ontap-policy-object-options.html["Obtenga más información sobre la protección contra DataLock y Ransomware y la configuración de almacenamiento de archivos."].
 
 [cols="18,18,22,18,22"]
 |===
@@ -101,14 +101,14 @@ image:diagram-321-cascade-detailed.png["Diagrama que muestra cómo se utiliza un
 
 *Comparación de las diferentes opciones de arquitectura*
 
-Esta tabla proporciona una comparación de las arquitecturas en cascada y en abanico.
+Esta tabla compara las arquitecturas fan-out y en cascada.
 
 [cols="50,50"]
 |===
 | Abanico | Cascada 
 
 
-| El impacto en el rendimiento del sistema fuente es mínimo debido al envío de instantáneas a dos sistemas distintos. | Menor impacto en el rendimiento del sistema de almacenamiento de origen, ya que la instantánea se envía solo una vez. 
+| Pequeño impacto en el rendimiento del sistema de origen porque envía instantáneas a dos sistemas distintos | Menor impacto en el rendimiento del sistema de almacenamiento de origen, ya que la instantánea se envía solo una vez. 
 
 
 | Más fácil de configurar porque todas las políticas, redes y configuraciones de ONTAP se realizan en el sistema de origen | Requiere que también se realicen algunas configuraciones de red y ONTAP desde el sistema secundario. 
@@ -120,9 +120,9 @@ Esta tabla proporciona una comparación de las arquitecturas en cascada y en aba
 
 Puedes utilizar las políticas predeterminadas que ofrece NetApp para crear tus copias de seguridad, o puedes crear políticas personalizadas. Cuando usas el asistente de activación para habilitar el servicio de NetApp Backup and Recovery para tus volúmenes, puedes seleccionar entre las políticas predeterminadas y cualquier otra política que ya exista en el sistema (Cloud Volumes ONTAP o sistema ONTAP local). Si quieres usar una política diferente a las políticas existentes, puedes crear la política antes de empezar o mientras usas el asistente de activación.
 
-* La política de instantáneas predeterminada crea instantáneas horarias, diarias y semanales, conservando 6 instantáneas horarias, 2 diarias y 2 semanales.
-* La política de replicación predeterminada replica instantáneas diarias y semanales, conservando 7 instantáneas diarias y 52 semanales.
-* La política de copia de seguridad predeterminada replica instantáneas diarias y semanales, conservando 7 instantáneas diarias y 52 semanales.
+* La política de instantáneas predeterminada crea instantáneas cada hora, cada día y cada semana, y conserva seis instantáneas por hora, dos diarias y dos semanales.
+* La política de replicación predeterminada replica instantáneas diarias y semanales, y conserva siete instantáneas diarias y 52 semanales.
+* La política de backup predeterminada replica instantáneas diarias y semanales, conservando siete instantáneas diarias y 52 semanales.
 
 
 Si crea políticas personalizadas para replicación o copia de seguridad, las etiquetas de las políticas (por ejemplo, "diaria" o "semanal") deben coincidir con las etiquetas que existen en sus políticas de instantáneas o volúmenes replicados y no se crearán archivos de copia de seguridad.
@@ -137,7 +137,7 @@ Además de utilizar NetApp Backup and Recovery para crear políticas personaliza
 
 *Nota:* Al utilizar el Administrador del sistema, seleccione *Asincrónico* como el tipo de política para las políticas de replicación, y seleccione *Asincrónico* y *Copia de seguridad en la nube* para las políticas de copia de seguridad en objetos.
 
-A continuación se muestran algunos ejemplos de comandos CLI de ONTAP que pueden resultar útiles si está creando políticas personalizadas.  Tenga en cuenta que debe utilizar el vserver _admin_ (VM de almacenamiento) como `<vserver_name>` en estos comandos.
+Estos ejemplos de comandos de la CLI de ONTAP pueden ayudarte a crear políticas personalizadas. Debes usar la _admin_ vserver (storage VM) como `<vserver_name>` en estos comandos.
 
 [cols="30,70"]
 |===
@@ -189,7 +189,7 @@ Estas diferencias se muestran en la tabla.
 
 | *Cascada* | Primario | Secundario | Secundario 
 |===
-Por lo tanto, si tienes previsto crear políticas personalizadas al utilizar la arquitectura en cascada, deberás crear las políticas de replicación y de backup a objeto en el sistema secundario donde se crearán los volúmenes replicados. Si tienes previsto crear políticas personalizadas al utilizar la arquitectura en abanico, deberás crear las políticas de replicación en el sistema secundario donde se crearán los volúmenes replicados y las políticas de backup a objeto en el sistema primario.
+Si creas políticas personalizadas para la arquitectura en cascada, crea las políticas de replicación y las políticas de backup en objetos en el sistema secundario donde se crean los volúmenes replicados. Si utilizas la arquitectura en abanico, crea las políticas de replicación en el sistema secundario donde se crean los volúmenes replicados y las políticas de backup en objetos en el sistema primario.
 
 Si está utilizando las políticas predeterminadas que existen en todos los sistemas ONTAP , entonces está todo listo.
 

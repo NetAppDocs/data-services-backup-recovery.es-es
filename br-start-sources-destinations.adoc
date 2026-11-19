@@ -159,7 +159,7 @@ NOTE: Wasabi es el único proveedor de almacenamiento de objetos compatible con 
 
 | Almacenamiento de objetos compatible con S3 (solo volúmenes ONTAP) | Sistema ONTAP local | Sistema ONTAP local 
 |===
-Ten en cuenta las siguientes consideraciones relativas a la restauración:
+Estas restricciones se aplican a las restauraciones:
 
 * Las restauraciones desde Cloud Volumes ONTAP (replicación) solo se pueden realizar en Cloud Volumes ONTAP. Sin embargo, Cloud Volumes ONTAP en AWS también admite restaurar en Amazon FSx for NetApp ONTAP.
 * Las restauraciones desde ONTAP local (replicación) solo se pueden hacer en ONTAP local.

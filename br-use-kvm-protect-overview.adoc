@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kvm-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Puede proteger máquinas virtuales KVM desde sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando así que sus datos estén protegidos. 
+summary: Protege las máquinas virtuales KVM de sistemas ONTAP locales en Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID con NetApp Backup and Recovery. 
 ---
 = Flujo de trabajo de protección KVM con NetApp Backup and Recovery
 :hardbreaks:
@@ -18,7 +18,7 @@ Protege tus máquinas virtuales KVM gestionadas y los grupos de almacenamiento c
 
 Tus hosts KVM y máquinas virtuales deben estar gestionados por una plataforma como Apache CloudStack antes de que puedas protegerlos con NetApp Backup and Recovery.
 
-Utilice NetApp Backup and Recovery para implementar una estrategia de protección 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:
+Utiliza NetApp Backup and Recovery para implementar una estrategia de protección 3-2-1, en la que tienes tres copias de tus datos de origen en dos sistemas de almacenamiento diferentes junto con una copia en la nube. Las ventajas del enfoque 3-2-1 incluyen:
 
 * Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
 * El uso de diferentes tipos de soportes te ayuda a recuperarte si uno de ellos falla.

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-oracle-mount-unmount.html 
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Protege tus cargas de trabajo de Oracle Database con NetApp Backup and Recovery. 
+summary: Montar, desmontar y catalogar los puntos de recuperación de Oracle Database para ver el historial de cambios de la base de datos y conservar los metadatos de backup en el catálogo de recuperación de RMAN. 
 ---
-= Montar, desmontar y catalogar puntos de recuperación de bases de datos Oracle con NetApp Backup and Recovery
+= Gestiona los puntos de recuperación de bases de datos Oracle con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

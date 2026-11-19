@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-overview.html
 keywords: ontap volumes, protect volumes, back up volumes, restore volumes, snapshots, replication, backup to object storage, 3-2-1, FlexVol, FlexGroup, SnapLock, DataLock, ransomware protection, NetApp Backup and Recovery 
 summary: Utiliza NetApp Backup and Recovery para proteger volúmenes de ONTAP con instantáneas, volúmenes replicados y copias de seguridad en almacenamiento de objetos, y restaurar volúmenes, carpetas o archivos desde cualquier copia. 
 ---
-= Protege las cargas de trabajo de los volúmenes ONTAP con NetApp Backup and Recovery
+= Descubre la protección de volúmenes de ONTAP con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -28,7 +28,7 @@ image:diagram-321-overview-unified.png["Un diagrama que muestra cómo los archiv
 El enfoque 3-2-1 ofrece las siguientes ventajas:
 
 * Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
-* El uso de diferentes tipos de medios le ayudará a recuperarse si uno de ellos falla.
+* Contar con diferentes tipos de soportes te ayuda a recuperarte si falla uno de ellos.
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 
@@ -55,7 +55,7 @@ Cada tipo de copia se encuentra en una ubicación diferente:
 
 
 
-CAUTION: No gestiones ni modifiques los archivos de copia de seguridad directamente desde tus sistemas de almacenamiento ni desde el entorno de tu proveedor de nube. Si lo haces, puedes dañar los archivos y generar una configuración no compatible.
+CAUTION: No gestiones ni modifiques los archivos de copia de seguridad directamente desde tus sistemas de almacenamiento ni desde el entorno de tu proveedor de servicios en la nube. Si lo haces, podrías dañar los archivos y dar lugar a una configuración no compatible.
 
 Para planificar qué copias y qué arquitectura utilizar, consulta link:prev-ontap-protect-journey.html["Planifica la protección de volúmenes de ONTAP"].
 
@@ -69,7 +69,7 @@ Para planificar qué copias y qué arquitectura utilizar, consulta link:prev-ont
 * Replique datos entre sistemas de almacenamiento ONTAP para respaldar la copia de seguridad y la recuperación ante desastres.
 * Replica varios volúmenes FlexVol a la vez en un sistema secundario.
 * Utiliza el cifrado nativo de ONTAP en tránsito con una clave precompartida (PSK) entre los dos sistemas.
-* Confía en la replicación con reparación automática en caso de que falle una transferencia.
+* Confía en la replicación con reparación automática si falla una transferencia.
 * Restaurar un volumen replicado en el sistema de origen o en otro sistema.
 
 
@@ -104,7 +104,7 @@ Consulta link:prev-ontap-restore.html["Restaurar cargas de trabajo de volúmenes
 
 NetApp Backup and Recovery admite los siguientes tipos de volúmenes:
 
-* Volúmenes de lectura y escritura FlexVol
+* FlexVol volúmenes de lectura/escritura
 * Volúmenes FlexGroup (requiere ONTAP 9.12.1 o posterior)
 * Volúmenes SnapLock Enterprise (requiere ONTAP 9.11.1 o posterior)
 * SnapLock Compliance para volúmenes locales (requiere ONTAP 9.14 o posterior)

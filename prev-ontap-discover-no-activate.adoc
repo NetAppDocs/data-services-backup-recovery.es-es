@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-discover-no-activate.html 
 keywords: activate, backup and recovery, volumes, back up, discover 
-summary: Descubre sistemas y volúmenes sin activar NetApp Backup and Recovery. 
+summary: Descubre los sistemas y volúmenes ONTAP sin activar NetApp Backup and Recovery, para que puedas revisar los volúmenes antes de protegerlos. 
 ---
 = Descubre sistemas y volúmenes de ONTAP sin activar NetApp Backup and Recovery
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kubernetes-advanced-restore-settings.html 
 keywords: cr, custom resource, restore, data, backup, advanced, settings 
-summary: Puedes personalizar las operaciones de restauración de CR usando anotaciones, configuraciones de espacio de nombres y opciones de almacenamiento. 
+summary: Personaliza las operaciones de restauración de CR de Kubernetes mediante anotaciones, configuraciones de espacio de nombres y opciones de almacenamiento. 
 ---
 = Configuración avanzada de restauración para Kubernetes en NetApp Backup and Recovery
 :hardbreaks:
@@ -41,7 +41,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
   --reuse-values
 ----
 
-NOTE: Durante la restauración o conmutación por error, las anotaciones y etiquetas de espacios de nombres especificadas en `restoreSkipNamespaceAnnotations` y `restoreSkipNamespaceLabels` se excluyen de la operación de restauración o conmutación por error. Asegúrate de que estos ajustes se configuren durante la instalación inicial de Helm. Para obtener más información, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configura los ajustes adicionales del helm chart de Trident Protect"].
+NOTE: Durante la restauración o la conmutación por error, las anotaciones y etiquetas de los espacios de nombres especificadas en `restoreSkipNamespaceAnnotations` y `restoreSkipNamespaceLabels` quedan excluidas de la operación de restauración o conmutación por error. Configura estos ajustes durante la instalación inicial de Helm. Para obtener más información, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configura los ajustes adicionales del helm chart de Trident Protect"].
 
 Si utilizaste Helm con el indicador `--create-namespace` para instalar la aplicación de origen, Trident Protect copia la etiqueta del nombre al espacio de nombres de destino. Si el valor de la etiqueta coincide con el nombre del espacio de nombres de origen, se reemplaza por el nombre del espacio de nombres de destino; si no, se deja igual.
 
@@ -88,7 +88,7 @@ La siguiente tabla ilustra el estado de los espacios de nombres de origen y dest
 
 ==== Después de la operación de restauración
 
-La siguiente tabla ilustra el estado del espacio de nombres de destino de ejemplo después de la operación de restauración o conmutación por error. Se han añadido algunas claves, se han sobrescrito otras y la etiqueta `name` se ha actualizado para que coincida con el espacio de nombres de destino:
+La siguiente tabla muestra el estado del espacio de nombres de destino de ejemplo tras la operación de restauración o conmutación por error. La operación añadió algunas claves, sobrescribió otras y actualizó la `name` etiqueta para que coincidiera con el espacio de nombres de destino:
 
 [cols="1,2a,2a"]
 |===
@@ -113,7 +113,7 @@ La siguiente tabla ilustra el estado del espacio de nombres de destino de ejempl
 [[supported-fields]]
 == Campos compatibles
 
-Esta sección describe los campos adicionales para las operaciones de restauración.
+Las operaciones de restauración admiten estos campos adicionales.
 
 
 
@@ -137,7 +137,7 @@ storageClassMapping:
 [[supported-annotations]]
 == Anotaciones compatibles
 
-En esta sección se enumeran las anotaciones compatibles para configurar diversos comportamientos del sistema. Si no estableces explícitamente una anotación, el sistema usa el valor predeterminado.
+Utiliza estas anotaciones para configurar el comportamiento del sistema. Si no configuras ninguna anotación, el sistema utiliza el valor predeterminado.
 
 [cols="1,1,3,1"]
 |===

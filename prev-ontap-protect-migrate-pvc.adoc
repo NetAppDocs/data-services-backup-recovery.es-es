@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-migrate-pvc.html 
 keywords: migrate, pvc, nfs, storage, performance, persistence 
-summary: Aumenta el rendimiento del índice del catálogo en entornos de implementación local de NetApp Console. 
+summary: Migra el almacenamiento del índice del catálogo de Search and Restore a ONTAP NFS para mejorar el rendimiento en los entornos de implementación local de NetApp Console. 
 ---
 = Migra el almacenamiento del catálogo de Search and Restore a ONTAP NFS
 :hardbreaks:
@@ -58,7 +58,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 . Copia los datos del pod del coordinador en ejecución en el montaje ONTAP, sin directorio intermedio. El coordinador debe seguir en ejecución.
 +
 
-NOTE: Copia el contenido en la raíz del volumen, no en un subdirectorio. El volumen ONTAP es el nuevo `/opt/netapp/cbs/catalog/shared` directorio. Los datos deben ubicarse en la raíz del volumen para que la app los encuentre en las mismas rutas (por ejemplo, /opt/netapp/cbs/catalog/shared/cbs/<DATASET_NAME>/...). El formato del comando tar en los siguientes comandos transfiere el contenido del directorio (incluidos los archivos ocultos) a la raíz del montaje, evitando una carpeta anidada `shared`.
+NOTE: Copia el contenido en la raíz del volumen, no en un subdirectorio. El volumen ONTAP es el nuevo `/opt/netapp/cbs/catalog/shared` directorio. Los datos deben estar en la raíz del volumen para que la aplicación los encuentre en las mismas rutas (por ejemplo, /opt/netapp/cbs/catalog/shared/cbs/<DATASET_NAME>/...). El formato del comando tar en los siguientes comandos transmite el contenido del directorio (incluidos los archivos ocultos) a la raíz del montaje, lo que evita una carpeta `shared` anidada.
 
 . Monta la exportación NFS de ONTAP en un punto de montaje local en una implementación local de NetApp Console. Utiliza el mismo servidor/ruta que usarás más adelante en pv.yaml:
 +
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. Aplica los objetos YAML asignando primero el PV y luego el PVC (el PV debe existir para que el selector de etiqueta del PVC pueda vincularse a él). Luego, verifica que la reclamación del PVC esté vinculada:
+. Aplica primero el PV y, a continuación, el PVC (el PV debe existir para que el selector de etiqueta del PVC pueda vincularse a él). A continuación, comprueba que la reclamación del PVC esté vinculada:
 +
 [source, shell]
 ----

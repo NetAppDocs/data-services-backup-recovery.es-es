@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-reference-azure-archive-storage-tiers.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: NetApp Backup and Recovery admite un nivel de acceso de archivo de Azure y la mayoría de las regiones. 
+summary: Consulta el nivel de acceso al archivo de Azure que admite NetApp Backup and Recovery, así como los costes de restauración y los tiempos de recuperación de las copias de seguridad archivadas. 
 ---
 = Niveles de acceso a archivos de Azure compatibles con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery admite un nivel de acceso de archivo de Azur
 
 
 [role="lead"]
-Utiliza esta información para entender el nivel de archivo de Azure que es compatible con NetApp Backup and Recovery. También puedes revisar los costes de restauración y los tiempos de recuperación de las copias de seguridad archivadas.
+NetApp Backup and Recovery es compatible con el nivel de acceso Azure Archive para clasificar por niveles las copias de seguridad más antiguas y reducir así los costes de almacenamiento. Las copias de seguridad archivadas cuestan más y tardan más en restaurarse, así que revisa los costes de restauración y los tiempos de recuperación antes de clasificar tus copias de seguridad por niveles.
 
 
 
@@ -23,9 +23,9 @@ Utiliza esta información para entender el nivel de archivo de Azure que es comp
 
 Cuando se crean los archivos de backup por primera vez, se almacenan en el nivel de acceso _Cool_. Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero a los que se puede acceder de forma inmediata cuando sea necesario.
 
-Si sus clústeres de origen ejecutan ONTAP 9.10.1 o una versión posterior, puede optar por organizar las copias de seguridad en niveles desde el almacenamiento _Cool_ al almacenamiento _Azure Archive_ después de una cierta cantidad de días (normalmente más de 30 días) para optimizar aún más los costos.  No se puede acceder a los datos de este nivel inmediatamente cuando se los necesita y requerirán un mayor costo de recuperación, por lo que debe considerar con qué frecuencia podría necesitar restaurar datos de estos archivos de respaldo archivados.  Consulte la sección en esta página sobre cómo restaurar datos desde el almacenamiento de archivo.
+Si tus clústeres de origen ejecutan ONTAP 9.10.1 o una versión posterior, puedes optar por organizar las copias de seguridad en niveles, pasando del almacenamiento _Cool_ a _Azure Archive_ tras un determinado número de días (normalmente más de 30 días), para optimizar aún más los costes. No se puede acceder de forma inmediata a los datos de este nivel cuando los necesites, y su recuperación conlleva un coste mayor, por lo que debes tener en cuenta con qué frecuencia podrías necesitar restaurar datos de estos archivos de copia de seguridad archivados. Consulta la sección de esta página sobre la restauración de datos desde el almacenamiento de archivado.
 
-Tenga en cuenta que cuando configura NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el contenedor en su cuenta de Azure.
+Al configurar NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no configures ninguna regla de ciclo de vida al configurar el contenedor en tu cuenta de Azure.
 
 https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Obtenga información sobre los niveles de acceso de Azure Blob"^].
 
@@ -34,7 +34,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Obte
 [[restore-data-from-archival-storage]]
 == Restaurar datos desde el almacenamiento de archivo
 
-Si bien almacenar archivos de respaldo más antiguos en un almacenamiento de archivo es mucho menos costoso que el almacenamiento esporádico, acceder a los datos de un archivo de respaldo en Azure Archive para operaciones de restauración llevará más tiempo y costará más dinero.
+Aunque almacenar los archivos de copia de seguridad más antiguos en almacenamiento de archivado es mucho menos caro que el almacenamiento Cool, acceder a los datos de un archivo de copia de seguridad en Azure Archive para las operaciones de restauración lleva más tiempo y cuesta más.
 
 ¿Cuánto cuesta restaurar datos desde Azure Archive?:: Hay dos prioridades de restauración que puede elegir al recuperar datos de Azure Archive:
 +
@@ -51,7 +51,7 @@ Cada método tiene una tarifa de recuperación por GB y una tarifa por solicitud
 
 NOTE: No se admite la prioridad alta al restaurar datos desde Azure a los sistemas StorageGRID.
 
-¿Cuánto tiempo tomará restaurar mis datos archivados en Azure Archive?:: Hay 2 partes que componen el tiempo de restauración:
+¿Cuánto tiempo tomará restaurar mis datos archivados en Azure Archive?:: Hay dos partes que componen el tiempo de restauración:
 +
 --
 * *Tiempo de recuperación*: el tiempo necesario para recuperar el archivo de copia de seguridad archivado de Azure Archive y colocarlo en el almacenamiento esporádico.  A esto a veces se le llama el tiempo de “rehidratación”.  El tiempo de recuperación es diferente según la prioridad de restauración que elija:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-policy-differences-snapcenter.html 
 keywords: backup policy, backup policies, snapcenter, migration 
-summary: Existen algunas diferencias entre las políticas utilizadas en NetApp Backup and Recovery y las utilizadas en SnapCenter. 
+summary: Compara los niveles de programación, la retención y las etiquetas de las políticas de SnapCenter y NetApp Backup and Recovery para entender cómo cambian los recursos y las políticas importados. 
 ---
 = Diferencias de políticas entre SnapCenter y NetApp Backup and Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Existen algunas diferencias entre las políticas utilizadas en NetApp B
 
 
 [role="lead"]
-Utiliza esta referencia para entender las diferencias de políticas entre SnapCenter y NetApp Backup and Recovery que pueden afectar a los recursos y políticas importados.
+SnapCenter y NetApp Backup and Recovery gestionan las programaciones de las políticas, la retención y las etiquetas de forma diferente, lo que puede afectar a los recursos y las políticas importados.
 
 
 
@@ -69,9 +69,9 @@ NetApp Backup and Recovery ajusta las programaciones de SnapCenter de la siguien
 
 Las políticas por hora de SnapCenter con intervalos de repetición superiores a una hora se convierten en una política diaria en NetApp Backup and Recovery.
 
-Cualquier política horaria con intervalos de repetición que no sean un factor de 24 (por ejemplo, 5, 7, etc.) omitirá algunas instantáneas en un día.
+Cualquier política por horas con un intervalo de repetición que no sea un factor de 24, por ejemplo 5 o 7, omite algunas instantáneas en un día.
 
-*Ejemplo*: Si tienes una política horaria en SnapCenter con un intervalo de repetición cada 5 horas a partir de la 1:00 AM, NetApp Backup and Recovery (después de la migración) establecerá la programación como diaria con intervalos de 5 horas a la 1:00 AM, 6:00 AM, 11:00 AM, 4:00 PM y 9:00 PM. Se omitirán algunas horas: después de las 9:00 PM debería ser a las 2:00 AM para repetir cada 5 horas, pero siempre será a la 1:00 AM.
+*Ejemplo*: si tienes una política por horas de SnapCenter con un intervalo de repetición cada 5 horas a partir de la 1:00 de la madrugada, NetApp Backup and Recovery (tras la migración) configurará la programación como diaria con intervalos de 5 horas a la 1:00 de la madrugada, a las 6:00 de la mañana, a las 11:00 de la mañana, a las 4:00 de la tarde y a las 9:00 de la noche. Se omiten algunas horas. Después de las 9:00 de la noche, la siguiente instantánea debería realizarse a las 2:00 de la madrugada para repetirse cada 5 horas, pero siempre se realiza a la 1:00 de la madrugada.
 
 
 

@@ -9,7 +9,7 @@
 
 Utiliza la anotación `protect.trident.netapp.io/data-mover-timeout-sec` para establecer un tiempo de espera por operación (en segundos) del data mover durante el backup y la restauración. Especifica cuánto tiempo espera un data mover a que una operación avance antes de que se agote el tiempo de espera. Esto es útil para detectar y manejar transferencias atascadas (por ejemplo, cuando los problemas de red impiden el progreso de la restauración de datos de volumen).
 
-Puedes usar esta anotación en tu archivo YAML como se muestra a continuación:
+El siguiente ejemplo muestra cómo utilizar esta anotación en tu archivo YAML:
 
 [source, yaml]
 ----
@@ -32,4 +32,4 @@ spec:
 En este ejemplo, la anotación falla la  `BackupRestore` operación si no se produce ningún progreso en 2 segundos en la operación de restauración.
 
 
-NOTE: Si el valor de la anotación es menor o igual a 0, la operación fallará inmediatamente.
+NOTE: Si el valor de la anotación es menor o igual que 0, la operación falla inmediatamente.

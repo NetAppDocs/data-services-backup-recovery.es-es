@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-back-up-now-kubernetes-applications-cr.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: 'Utiliza recursos personalizados (CR) para crear instantáneas y copias de seguridad bajo demanda de una aplicación de Kubernetes, estableciendo una línea de base o protegiendo los cambios más recientes en tus datos.' 
+summary: Crea snapshots bajo demanda, backups en el almacén de objetos y backups de distribución 3-2-1 de una aplicación de Kubernetes con recursos personalizados, y consulta las anotaciones de backup compatibles. 
 ---
-= Haz copias de seguridad de aplicaciones de Kubernetes ahora usando recursos personalizados en NetApp Backup and Recovery
+= Haz backup de aplicaciones de Kubernetes con recursos personalizados en NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -27,7 +27,7 @@ Cree manualmente una copia de seguridad de una aplicación de Kubernetes para es
 NOTE: Los recursos con ámbito de clúster se incluyen en un backup, snapshot o clon si se hace referencia a ellos explícitamente en la definición de la aplicación o si tienen referencias a cualquiera de los espacios de nombres de la aplicación.
 
 .Antes de empezar
-Asegúrate de que la caducidad del token de sesión de AWS sea suficiente para cualquier operación de backup s3 de larga duración. Si el token caduca durante la operación de backup, la operación puede fallar.
+Comprueba que el tiempo de caducidad del token de sesión de AWS sea suficiente para cualquier operación de copia de seguridad de S3 de larga duración. Si el token caduca durante la operación de copia de seguridad, esta puede fallar.
 
 * Consulta https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentación de la API de AWS"^] para más información sobre cómo comprobar la expiración del token de sesión actual.
 * Consulta https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentación de AWS IAM"^] para más información sobre las credenciales con los recursos de AWS.
@@ -209,14 +209,14 @@ kubectl apply -f 3-2-1-fanout-backup-cr.yaml
 [[supported-backup-annotations]]
 == Anotaciones de backup compatibles
 
-La siguiente tabla describe las anotaciones que puedes usar al crear un backup CR.
+Puedes usar estas anotaciones al crear un CR de backup.
 
 [cols="2,1,3,1"]
 |===
 | Anotación | Tipo | Descripción | Valor predeterminado 
 
 
-| protect.trident.netapp.io/backup-completo | cadena | Especifica si una copia de seguridad debe ser no incremental. Establece en  `true` para crear una copia de seguridad no incremental. Es buena práctica hacer un backup completo periódicamente y luego hacer backups incrementales entre los backups completos para minimizar el riesgo asociado con las restauraciones. | "false" 
+| protect.trident.netapp.io/backup-completo | cadena | Especifica si un backup debe ser no incremental. Configúralo en `true` para crear un backup no incremental. Como práctica recomendada, realiza un backup completo periódicamente y backups incrementales entre backups completos para minimizar el riesgo asociado a las restauraciones. | "false" 
 
 
 | protect.trident.netapp.io/snapshot-completion-timeout | cadena | El tiempo máximo permitido para que se complete toda la operación de instantánea. | "60m" 

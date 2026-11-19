@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-protect-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: NetApp Backup and Recovery le permite administrar la información del host de su carga de trabajo, la información de la base de datos y la información de las instancias.  Puede ver, editar y eliminar configuraciones de protección para su inventario. 
+summary: Añade aplicaciones de Kubernetes basadas en espacios de nombres o en máquinas virtuales a NetApp Backup and Recovery para protegerlas mediante la interfaz de usuario web o archivos de recursos personalizados. 
 ---
 = Agrega y protege aplicaciones de Kubernetes en NetApp Backup and Recovery
 :hardbreaks:
@@ -39,7 +39,7 @@ Antes de poder agregar y proteger una aplicación de Kubernetes, debelink:br-sta
 --
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.
-. En la parte superior derecha de la página, asegúrate de que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.
+. En la parte superior derecha de la página, comprueba que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.
 . Selecciona *Ver* en la línea de la carga de trabajo para ver los recursos de Kubernetes.
 . Seleccione la pestaña *Aplicaciones*.
 . Seleccione *Crear aplicación*.
@@ -78,7 +78,7 @@ La aplicación se crea y aparece en la lista de aplicaciones de la pestaña *App
 --
 .Pasos
 . En NetApp Backup and Recovery, seleccione *Inventario*.
-. En la parte superior derecha de la página, asegúrate de que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.
+. En la parte superior derecha de la página, comprueba que *Kubernetes* esté seleccionado en la lista de cargas de trabajo.
 . Selecciona *Ver* en la línea de la carga de trabajo para ver los recursos de Kubernetes.
 . Seleccione la pestaña *Aplicaciones*.
 . Seleccione *Crear aplicación*.

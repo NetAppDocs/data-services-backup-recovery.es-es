@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-protection-groups.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
-summary: Cree y administre grupos de protección para cargas de trabajo de VMware en NetApp Backup and Recovery. 
+summary: Crea y gestiona grupos de protección para cargas de trabajo de VMware, incluidos los grupos basados en etiquetas, para hacer copias de seguridad y restaurar máquinas virtuales y almacenes de datos juntos en NetApp Backup and Recovery. 
 ---
 = Gestiona grupos de protección de VMware en NetApp Backup and Recovery
 :hardbreaks:
@@ -54,8 +54,8 @@ Crea un grupo de protección para organizar los recursos que quieras respaldar y
 *Rol requerido de NetApp Console*: superadministrador de Backup and Recovery o administrador de backup de Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Antes de empezar
-* Asegúrate de que tu entorno está usando versiones compatibles de VMware vSphere.
-* Al crear un grupo de protección basado en etiquetas, asegúrate de que las máquinas virtuales y los almacenes de datos que quieres proteger ya están asociados a una o varias etiquetas vSphere en vCenter.
+* Comprueba que tu entorno utilice versiones compatibles de VMware vSphere.
+* Al crear un grupo de protección basado en etiquetas, comprueba que las máquinas virtuales y los almacenes de datos que deseas proteger ya estén asociados a una o varias etiquetas de vSphere en vCenter.
 * En el caso de las cargas de trabajo de VMware, el tiempo de backup se basa en la zona horaria del host de gestión. Consulta link:br-use-policies-vmware-create.html["Crea y gestiona políticas de backup de VMware en NetApp Backup and Recovery"] para más información.
 
 
@@ -77,9 +77,9 @@ Puedes filtrar los recursos disponibles en la lista seleccionando un vCenter o d
 . Cuando termines, selecciona *Siguiente*.
 . Elige cómo el grupo de protección gestiona las máquinas virtuales cuyos discos virtuales abarcan varios almacenes de datos:
 +
-** *Excluye siempre todos los almacenes de datos de expansión*: El grupo de protección solo incluirá los almacenes de datos que se le añadan directamente, junto con el volumen primario de cualquier máquina virtual que se añada directamente al grupo de protección.
-** *Incluir siempre todos los almacenes de datos abarcados*: El grupo de protección incluirá todos los almacenes de datos abarcados por las máquinas virtuales incluidas.
-** *Selecciona manualmente los almacenes de datos de expansión que se incluirán*: si eliges esta opción, necesitas seleccionar manualmente qué almacenes de datos de expansión incluir en el grupo de protección de la lista que aparece. Esta selección es estática; debes actualizar la lista de almacenes de datos de expansión cada vez que se agreguen nuevas máquinas virtuales al grupo.
+** *Excluir siempre todos los almacenes de datos que abarcan varios servidores*: el grupo de protección incluye únicamente los almacenes de datos que se le añaden directamente, junto con el almacén de datos principal de cualquier máquina virtual añadida directamente al grupo de protección.
+** *Incluir siempre todos los almacenes de datos abarcados*: el grupo de protección incluye todos los almacenes de datos abarcados por las máquinas virtuales incluidas.
+** *Selecciona manualmente los almacenes de datos de extensión que se incluirán*: si seleccionas esta opción, elige manualmente en la lista que aparece los almacenes de datos de extensión que quieres incluir en el grupo de protección. Esta selección es estática, así que actualiza la lista de almacenes de datos de extensión cada vez que agregues nuevas máquinas virtuales al grupo.
 
 
 . Seleccione *Siguiente*.
@@ -117,7 +117,7 @@ El estado de protección cambia a "En mantenimiento" cuando se suspende un grupo
 
 Al reanudar un grupo de protección suspendido, se reinician las copias de seguridad programadas para el grupo de protección.
 
-El estado de protección cambia de "En mantenimiento" cuando se suspende un grupo de protección a "Protegido" cuando se reanuda. Puede reanudar la programación de copia de seguridad en cualquier momento.
+El estado de protección cambia de «En mantenimiento» a «Protegido» cuando reanudas un grupo de protección. Puedes reanudar la programación de copias de seguridad en cualquier momento.
 
 .Pasos
 . En el menú de NetApp Backup and Recovery , seleccione *Inventario*.
@@ -160,7 +160,7 @@ El asistente para editar grupos de protección te guía a través de la configur
 Las copias de seguridad programadas usan la zona horaria del servidor vCenter que se registra cuando se crea la programación del grupo de protección. Si cambias la zona horaria del servidor vCenter, los grupos de protección existentes siguen funcionando en su zona horaria original (normalmente UTC) hasta que actualices sus programaciones.
 
 
-NOTE: Las programaciones solo se vuelven a crear cuando modificas el nombre del grupo de protección, añades o eliminas una máquina virtual, cambias la política asignada o actualizas los scripts previos o posteriores. Guardar sin hacer ningún cambio no actualizará las programaciones. Esta actualización de la programación es una acción única por grupo de protección y no inicia un backup inmediato.
+NOTE: Las programaciones solo se vuelven a crear cuando se modifica el nombre del grupo de protección, se añade o se elimina una máquina virtual, se cambia la política asignada o se actualizan los scripts previos y posteriores. Guardar sin realizar ningún cambio no actualiza las programaciones. Esta actualización de la programación es una acción que solo se realiza una vez por grupo de protección y no inicia una copia de seguridad inmediata.
 
 .Pasos
 . Actualiza el servidor vCenter para que se recupere su zona horaria actual.

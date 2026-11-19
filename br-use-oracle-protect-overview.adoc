@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Puede proteger máquinas virtuales de Oracle desde sistemas ONTAP locales hasta Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando así que sus datos estén protegidos. 
+summary: Protege las cargas de trabajo y los registros de Oracle Database mediante copias de seguridad coherentes con la base de datos en AWS S3, StorageGRID, Azure Blob u ONTAP S3, y restáuralas en un host Oracle local. 
 ---
 = Protege las cargas de trabajo de Oracle Database con NetApp Backup and Recovery
 :hardbreaks:
@@ -16,10 +16,10 @@ summary: Puede proteger máquinas virtuales de Oracle desde sistemas ONTAP local
 [role="lead"]
 Utiliza NetApp Backup and Recovery para proteger las cargas de trabajo y los registros de Oracle Database con backups y restauraciones rápidas, con gestión eficiente del espacio, coherentes con los fallos y consistentes con las aplicaciones. Puedes hacer backups de las cargas de trabajo en AWS S3, StorageGRID, Azure Blob u ONTAP S3 y restaurar los backups en un host de Oracle local.
 
-Utilice NetApp Backup and Recovery para implementar una estrategia de protección 3-2-1, donde tendrá 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes junto con 1 copia en la nube. Los beneficios del enfoque 3-2-1 incluyen:
+Utiliza NetApp Backup and Recovery para implementar una estrategia de protección 3-2-1, en la que tienes tres copias de tus datos de origen en dos sistemas de almacenamiento diferentes junto con una copia en la nube. Las ventajas del enfoque 3-2-1 incluyen:
 
 * Múltiples copias de datos protegen contra amenazas cibernéticas internas y externas.
-* El uso de diferentes tipos de medios le ayudará a recuperarse si uno de ellos falla.
+* Contar con diferentes tipos de soportes te ayuda a recuperarte si falla uno de ellos.
 * Puede restaurar rápidamente desde la copia local y utilizar las copias externas si la copia local se ve comprometida.
 
 

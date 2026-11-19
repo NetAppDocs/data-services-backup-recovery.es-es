@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-reference-gcp-archive-storage-tiers.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: NetApp Backup and Recovery admite una clase de almacenamiento de archivo de Google y la mayoría de las regiones. 
+summary: Consulta el nivel Archive de Google Cloud Storage que admite NetApp Backup and Recovery y conoce los costes de restauración y los tiempos de recuperación de las copias de seguridad archivadas. 
 ---
 = Niveles de almacenamiento de archivos de Google compatibles con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery admite una clase de almacenamiento de archiv
 
 
 [role="lead"]
-Utiliza esta información para entender el nivel de archivo de Google Cloud Storage que NetApp Backup and Recovery admite. También puedes revisar los costes de restauración y los tiempos de recuperación de los backups archivados.
+NetApp Backup and Recovery es compatible con el nivel Archive de Google Cloud Storage para backups más antiguos. Infórmate sobre los costes de restauración y los tiempos de recuperación de los backups en este nivel.
 
 
 
@@ -23,9 +23,9 @@ Utiliza esta información para entender el nivel de archivo de Google Cloud Stor
 
 Cuando se crean los archivos de backup por primera vez, se almacenan en _Standard_ storage. Este nivel está optimizado para almacenar datos a los que se accede con poca frecuencia, pero sigue permitiendo un acceso inmediato.
 
-Los datos de este nivel requerirán un coste de recuperación más alto, por lo que debes tener en cuenta la frecuencia con la que necesitarás restaurar datos a partir de estos archivos de backup archivados. Consulta la sección de esta página sobre la restauración de datos desde el almacenamiento de archivo.  
+Si tu clúster on-premises utiliza ONTAP 9.12.1 o posterior, puedes transferir backups más antiguos al almacenamiento de _Archive_ en la interfaz de usuario de NetApp Backup and Recovery tras un determinado número de días (normalmente más de 30 días) para optimizar aún más los costes. Los datos de este nivel tienen un mayor coste de recuperación, así que ten en cuenta con qué frecuencia podrías necesitar restaurar datos a partir de estos archivos de backup archivados. Consulta la sección de esta página sobre cómo restaurar datos desde el almacenamiento de archivado.
 
-Tenga en cuenta que cuando configura NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el depósito en su cuenta de Google.
+Cuando configures NetApp Backup and Recovery con este tipo de regla de ciclo de vida, no configures ninguna regla de ciclo de vida al configurar el bucket en tu cuenta de Google.
 
 https://cloud.google.com/storage/docs/storage-classes["Obtenga más información sobre las clases de almacenamiento de Google"^].
 
@@ -34,14 +34,14 @@ https://cloud.google.com/storage/docs/storage-classes["Obtenga más información
 [[restore-data-from-archival-storage]]
 == Restaurar datos desde el almacenamiento de archivo
 
-Si bien almacenar archivos de respaldo antiguos en el almacenamiento de archivo es mucho menos costoso que el almacenamiento estándar, acceder a los datos de un archivo de respaldo en el almacenamiento de archivo para operaciones de restauración tomará un poco más de tiempo y costará más dinero.
+Almacenar archivos de backup antiguos en el almacenamiento Archive es mucho menos caro que en el almacenamiento Standard. Sin embargo, restaurar datos desde un archivo de backup en el almacenamiento Archive tarda un poco más y cuesta más.
 
 ¿Cuánto cuesta restaurar datos de Google Archive?:: Para conocer los precios detallados de Google Cloud Storage por región, visite https://cloud.google.com/storage/pricing["Página de precios de Google Cloud Storage"^] .
-¿Cuánto tiempo tardará en restaurarse mis objetos archivados en Google Archive?:: Hay 2 partes que componen el tiempo total de restauración:
+¿Cuánto tiempo tardará en restaurarse mis objetos archivados en Google Archive?:: El tiempo total de restauración consta de dos partes:
 +
 --
 * *Tiempo de recuperación*: el tiempo necesario para recuperar el archivo de respaldo del archivo y colocarlo en el almacenamiento estándar.  A esto a veces se le llama el tiempo de “rehidratación”.  A diferencia de las soluciones de almacenamiento más "frías" que ofrecen otros proveedores de nube, sus datos son accesibles en cuestión de milisegundos.
-* *Tiempo de restauración*: el tiempo para restaurar los datos del archivo de respaldo en el almacenamiento estándar.  Esta vez no es diferente a la operación de restauración típica directamente desde el almacenamiento estándar, cuando no se utiliza un nivel de archivo.
+* *Tiempo de restauración*: el tiempo que se tarda en restaurar los datos desde el archivo de copia de seguridad en el almacenamiento Standard. Este tiempo es el mismo que el de una restauración típica directamente desde el almacenamiento Standard cuando no utilizas un nivel de archivado.
 
 
 --
