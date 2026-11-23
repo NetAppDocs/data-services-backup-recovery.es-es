@@ -465,6 +465,10 @@ NOTE: Se requiere ONTAP 9.19.1 o una versión posterior para admitir más de sei
 NOTE: NetApp recomienda encarecidamente asignar una dirección IP estática al agente de Console que uses para las cargas de trabajo de Kubernetes para evitar problemas si cambia la dirección IP del agente.
 
 * Un sistema ONTAP primario (los sistemas ASA r2 no son compatibles)
++
+** Amazon FSx for NetApp ONTAP es compatible como almacenamiento primario o secundario con la arquitectura de backup de disco a disco. El clúster de Kubernetes debe ser un clúster autogestionado que se ejecute en AWS.
+
+
 * NetApp Trident 25.06 a 26.06
 * NetApp Trident Protect 26.08 o posterior (instalado en el clúster Kubernetes durante el descubrimiento)
 * Un clúster Kubernetes: las distribuciones y versiones de Kubernetes compatibles incluyen las compatibles con https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect"].

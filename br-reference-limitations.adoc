@@ -14,7 +14,7 @@ summary: Revisa las limitaciones conocidas de NetApp Backup and Recovery con vol
 
 
 [role="lead"]
-Consulta estas limitaciones antes de usar NetApp Backup and Recovery para volúmenes ONTAP.
+Antes de usar NetApp Backup and Recovery para volúmenes ONTAP, revisa las limitaciones conocidas que afectan a las operaciones de backup, replicación y restauración.
 
 * NetApp Backup and Recovery puede realizar una copia de seguridad de Cloud Volumes ONTAP en un almacén de objetos en las regiones de AWS China (incluidas Beijing y Ningxia); sin embargo, es posible que primero deba modificar manualmente las políticas de identidad y acceso.
 +
@@ -23,7 +23,7 @@ Para obtener detalles sobre cómo crear un agente de consola en AWS, consulte ht
 +
 Para obtener más detalles, consulte la publicación del blog. https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog de funciones de NetApp Backup and Recovery , mayo de 2023"^] .
 
-* NetApp Backup and Recovery no es compatible con las regiones de Microsoft Azure China.
+* NetApp Backup and Recovery puede realizar copias de seguridad de los sistemas Cloud Volumes ONTAP y ONTAP locales en el almacenamiento de blobs de Azure en las regiones de Microsoft Azure China (21Vianet) solo cuando el agente de NetApp Console se implementa en una región de Azure China. Un agente de NetApp Console en una región comercial de Azure, en Azure Government o en tus instalaciones no puede realizar copias de seguridad en Azure China. El agente de NetApp Console también debe ejecutarse en modo estándar, no en modo restringido.
 +
 Para obtener detalles sobre cómo crear un agente de consola en Azure, consulte https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-azure-bluexp.html["Instalación de un agente de consola en Azure"^] .
 
@@ -41,7 +41,7 @@ Los volúmenes FlexVol no tienen esa limitación: puedes seleccionar todos los v
 
 * La siguiente funcionalidad es compatible con https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , pero no cuando se utiliza la función de replicación de NetApp Backup and Recovery:
 +
-** No se admite una configuración en cascada donde la replicación se produce del volumen A al volumen B y del volumen B al volumen C. La compatibilidad incluye la replicación del volumen A al volumen B.
+** No se admiten las configuraciones en cascada, en las que la replicación va del volumen A al volumen B y del volumen B al volumen C. Se admite la replicación del volumen A al volumen B.
 ** No hay soporte para replicar datos hacia y desde FSx para sistemas ONTAP .
 ** No hay soporte para crear una replicación única de un volumen.
 
@@ -56,7 +56,7 @@ Los volúmenes FlexVol no tienen esa limitación: puedes seleccionar todos los v
 == Limitaciones de copia de seguridad a objeto para volúmenes ONTAP
 
 * En la versión preliminar de Backup and Recovery para la implementación local de NetApp Console, las copias de seguridad en almacenamiento de objetos solo son compatibles con destinos ONTAP S3 y StorageGRID. El archivado de copias de seguridad no es compatible en esta versión preliminar.
-* Al realizar copias de seguridad de datos, NetApp Backup and Recovery no mantendrá NetApp Volume Encryption (NVE).  Esto significa que los datos cifrados en el volumen NVE se descifrarán mientras se transfieren al destino y no se mantendrá el cifrado.
+* Al realizar una copia de seguridad de los datos, NetApp Backup and Recovery no mantiene NetApp Volume Encryption (NVE). Los datos cifrados en el volumen NVE se descifran durante la transferencia al destino, por lo que el cifrado no se mantiene.
 +
 Para obtener una explicación sobre estos tipos de cifrado, consultehttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Descripción general de la configuración de NetApp Volume Encryption"^] .
 

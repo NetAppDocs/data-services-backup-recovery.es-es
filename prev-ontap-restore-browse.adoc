@@ -151,9 +151,9 @@ Para restaurar un volumen, necesita el nombre del sistema de origen, la máquina
 . Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
 . Selecciona la pestaña *Restaurar* para mostrar el panel de control de restauración.
 . Desde la sección _Explorar y restaurar_, seleccione *Restaurar volumen*.
-. En la página _Seleccionar origen_, navegue hasta el archivo de respaldo del volumen que desea restaurar.  Seleccione el *sistema*, el *volumen* y el archivo de *copia de seguridad* que tenga la marca de fecha y hora desde el que desea restaurar.
+. En la página _Seleccionar origen_, busca el archivo de copia de seguridad del volumen que quieres restaurar. Selecciona el *sistema*, el *volumen* y la *instantánea* que tenga la marca de fecha y hora desde la que quieres restaurar. Cuando hagas una selección, pasarás automáticamente al siguiente subpaso del asistente.
 +
-La columna *Ubicación* indica si el archivo de backup (instantánea) es *Local* (una instantánea en el sistema de origen), *Secundario* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de backup en un almacenamiento de objetos). Elige el archivo que quieres restaurar.
+La columna *Ubicación* indica si la instantánea es *Local* (una instantánea en el sistema de origen), *Secundaria* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de backup en un almacenamiento de objetos). Selecciona el archivo que deseas restaurar.
 
 . Seleccione *Siguiente*.
 +
@@ -241,8 +241,8 @@ image:diagram_browse_restore_file.png["Un diagrama que muestra el flujo para rea
 . Desde el menú Consola, seleccione *Protección > Copia de seguridad y recuperación*.
 . Selecciona la pestaña *Restaurar* para mostrar el panel de control de restauración.
 . Desde la sección _Explorar y restaurar_, seleccione *Restaurar archivos o carpeta*.
-. En la página _Seleccionar origen_, navegue hasta el archivo de respaldo del volumen que contiene la carpeta o los archivos que desea restaurar.  Seleccione el *sistema*, el *volumen* y la *copia de seguridad* que tenga la marca de fecha y hora desde donde desea restaurar los archivos.
-. Seleccione *Siguiente* y se mostrará la lista de carpetas y archivos de la copia de seguridad del volumen.
+. En la página _Seleccionar origen_, busca el archivo de copia de seguridad del volumen que contiene la carpeta o los archivos que quieres restaurar. Selecciona el *sistema*, el *volumen* y la *instantánea* que tenga la marca de fecha y hora desde la que quieres restaurar los archivos. Cuando hagas una selección, pasarás automáticamente al siguiente subpaso del asistente de restauración.
+. Después de seleccionar una instantánea, selecciona *Siguiente* y se mostrará la lista de carpetas y archivos del backup del volumen.
 +
 Si está restaurando carpetas o archivos desde un archivo de respaldo que reside en un nivel de almacenamiento de archivo, puede seleccionar la Prioridad de restauración.
 

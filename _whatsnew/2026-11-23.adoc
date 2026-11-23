@@ -1,0 +1,37 @@
+= Mejoras en cargas de trabajo de Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Mejoras en cargas de trabajo de Kubernetes
+
+En esta versión, NetApp Backup and Recovery presenta las siguientes mejoras para las cargas de trabajo de Kubernetes:
+
+* *Compatibilidad de Amazon FSx for NetApp ONTAP con la arquitectura de backup de disco a disco*: ahora puedes crear políticas de protección de Kubernetes que usen la arquitectura de backup de disco a disco con Amazon FSx for NetApp ONTAP como almacenamiento primario y otro sistema de archivos FSx for NetApp ONTAP como almacenamiento secundario, en la misma región de AWS o en otra región de AWS. También puedes usar Cloud Volumes ONTAP como almacenamiento primario y FSx for NetApp ONTAP como almacenamiento secundario.
+* *Solución al problema de restauración de qtree*: anteriormente, la restauración de volúmenes de ontap-nas-economy restauraba los directorios qtree con un propietario y permisos incorrectos. Este problema se resolvió en esta versión.
+
+
+Para obtener más información sobre cómo crear políticas de protección de Kubernetes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-kubernetes-create.html["Crea y gestiona políticas de backup de Kubernetes en NetApp Backup and Recovery"^].
+
+Para obtener más información sobre cómo proteger las cargas de trabajo de Kubernetes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Descubre cómo proteger las cargas de trabajo de Kubernetes con NetApp Backup and Recovery"^].
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== Mejoras en las cargas de trabajo de ONTAP Volumes
+
+En esta versión, NetApp Backup and Recovery presenta las siguientes mejoras para las cargas de trabajo de ONTAP Volumes:
+
+* *Mejoras en la interfaz de restauración*: el asistente de restauración para volúmenes ONTAP presenta un diseño renovado y una navegación mejorada:
++
+** *Tablas de selección mejoradas*: las tablas de selección muestran más filas y columnas a la vez. Las pantallas de restauración cuentan con un espaciado optimizado y una ruta de navegación para que puedas ver en qué punto del flujo de trabajo te encuentras.
+** *Navegación paso a paso*: se ha mejorado el funcionamiento de los botones *Siguiente* y *Continuar* para que no puedas avanzar por accidente al siguiente paso principal. El botón *Anterior* te lleva a la última pantalla que has completado y conserva tus selecciones anteriores, por lo que no necesitas volver a empezar el paso.
+** *Más detalles al seleccionar un volumen de origen*: la lista de volúmenes muestra ahora el tipo de volumen, el estilo de volumen, el tipo de SnapLock, la protección existente y el estado de la protección. La columna Protección existente es más ancha, por lo que puedes ver todos los indicadores de protección (instantánea, replicación y backup).
+
+
+* *Compatibilidad con la protección de volúmenes alojados en las regiones de Azure China*: ahora puedes realizar copias de seguridad de volúmenes ONTAP en Azure Blob storage en Azure China (21Vianet). Esta compatibilidad se aplica tanto a Cloud Volumes ONTAP como a los sistemas ONTAP on-premises. Las regiones de Commercial Azure y Azure Government no cambian.
+
+
+Para obtener más información sobre la protección de las cargas de trabajo de ONTAP Volumes, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Descubre la protección de volúmenes de ONTAP con NetApp Backup and Recovery"^].

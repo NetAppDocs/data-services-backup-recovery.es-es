@@ -258,7 +258,7 @@ Esta operación podría ocasionar un aumento único en el costo de lectura de lo
 
 Si ya utilizas la Consola para gestionar tu almacenamiento, ya tienes instalado un agente de la Consola. Si tienes previsto utilizar el mismo agente de la Consola con NetApp Backup and Recovery, ya lo tienes todo listo. Si necesitas utilizar un agente de la Consola diferente, instálalo antes de comenzar con la implementación de la copia de seguridad y la recuperación.
 
-La NetApp Console ofrece múltiples modos de implementación que le permiten usar la consola de una manera que satisfaga sus requisitos comerciales y de seguridad.  El _modo estándar_ aprovecha la capa SaaS de la consola para proporcionar una funcionalidad completa, mientras que el _modo restringido_ y el _modo privado_ están disponibles para organizaciones que tienen restricciones de conectividad.
+NetApp Console ofrece varios modos de implementación que te permiten usar NetApp Console de una forma que cumple tus requisitos empresariales y de seguridad. El _modo estándar_ usa la capa SaaS de NetApp Console para ofrecer todas las funcionalidades, mientras que el _modo restringido_ y el _modo privado_ están disponibles para organizaciones con restricciones de conectividad.
 
 https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de la NetApp Console"^].
 
@@ -280,6 +280,8 @@ Para obtener una lista de ubicaciones válidas del agente de consola, consulte u
 * link:prev-ontap-backup-onprem-storagegrid.html["Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID"]
 * link:prev-ontap-backup-onprem-ontaps3.html["Realizar copias de seguridad de ONTAP local en ONTAP S3"]
 
+
+Para realizar un backup en Azure Blob storage en Azure China (21Vianet), implementa el agente de NetApp Console en una región de Azure China en modo estándar. Para obtener más información, consulta los procedimientos de backup de Azure indicados anteriormente.
 
 
 

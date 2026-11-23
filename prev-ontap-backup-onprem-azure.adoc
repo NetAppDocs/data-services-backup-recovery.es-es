@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-onprem-azure.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Prepara tu entorno y activa los backups de los volúmenes ONTAP on-premises en Azure Blob Storage con NetApp Backup and Recovery. 
 ---
-= Realiza una copia de seguridad de los datos de ONTAP locales en Azure Blob Storage con NetApp Backup and Recovery
+= Realiza una copia de seguridad de los datos de ONTAP locales en Azure Blob con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -59,6 +59,8 @@ Si ya tiene un agente de consola implementado en su red virtual de Azure o en su
 
 De lo contrario, deberá crear un agente de consola en una de esas ubicaciones para realizar una copia de seguridad de los datos de ONTAP en el almacenamiento de blobs de Azure.  No puedes usar un agente de consola que esté implementado en otro proveedor de nube.
 
+Para realizar copias de seguridad en Azure Blob storage en Azure China (21Vianet), debes implementar el agente de NetApp Console en una región de Azure China en modo estándar. Un agente de NetApp Console que hayas instalado en tus instalaciones, en una región comercial de Azure o en Azure Government no puede realizar copias de seguridad en Azure China.
+
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Instalar un agente de consola en Azure"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Instale un agente de consola en sus instalaciones"^]
@@ -78,7 +80,7 @@ Asegúrese de que el agente de consola tenga las conexiones de red necesarias.
 .Pasos
 . Asegúrese de que la red donde está instalado el agente de consola permita las siguientes conexiones:
 +
-** Una conexión HTTPS a través del puerto 443 a NetApp Backup and Recovery y a su almacenamiento de objetos Blob(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["ver la lista de puntos finales"^] )
+** Una conexión HTTPS a través del puerto 443 a NetApp Backup and Recovery y a tu almacenamiento de objetos Blob (https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["ver la lista de puntos finales"^]). Para Azure China, el agente de NetApp Console también debe poder acceder a `*.chinacloudapi.cn`, incluidos `login.chinacloudapi.cn` y `management.chinacloudapi.cn`.
 ** Una conexión HTTPS a través del puerto 443 a su LIF de administración de clúster ONTAP
 ** Para que NetApp Backup and Recovery Search & Restore funcione, el puerto 1433 debe estar abierto para la comunicación entre el agente de NetApp Console y los servicios SQL de Azure Synapse.
 ** Se requieren reglas de grupo de seguridad entrante adicionales para las implementaciones de Azure y Azure Government. Ver https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["Reglas para el agente de consola en Azure"^] Para más detalles.
@@ -182,7 +184,9 @@ Necesitará verificar los requisitos de licencia tanto para Azure como para la c
 
 *Regiones compatibles*
 
-Puede crear copias de seguridad desde sistemas locales a Azure Blob en todas las regiones, incluidas las regiones de Azure Government.  Usted especifica la región donde se almacenarán las copias de seguridad cuando configura el servicio.
+Puedes crear copias de seguridad desde sistemas locales en Azure Blob en todas las regiones comerciales de Azure y en todas las regiones de Azure Government. Tú especificas la región en la que se almacenarán las copias de seguridad al configurar el servicio.
+
+También puedes crear copias de seguridad en Azure Blob en las regiones de Azure China (21Vianet) (China East, China East 2, China East 3, China North, China North 2 y China North 3) cuando el agente de Console se implementa en una región de Azure China. El agente de Console usa automáticamente los endpoints de Azure China según su región, y la cuenta de almacenamiento de backup se crea en la región del agente de Console.
 
 
 
@@ -243,9 +247,9 @@ Debe configurar los siguientes requisitos en el sistema que se conecta al almace
 
 Se necesitan los siguientes requisitos de red del clúster ONTAP :
 
-* El clúster ONTAP inicia una conexión HTTPS a través del puerto 443 desde el LIF entre clústeres al almacenamiento de blobs de Azure para operaciones de copia de seguridad y restauración.
+* El clúster ONTAP inicia una conexión HTTPS a través del puerto 443 desde la LIF entre clústeres hasta Azure Blob storage para operaciones de backup y restauración. Para Azure China, la LIF entre clústeres necesita acceso saliente por el puerto 443 a `<storage_account>.blob.core.chinacloudapi.cn`. Si la LIF no tiene una ruta de salida, los backups fallan durante la verificación del almacén de objetos con un error de tiempo de espera de conexión.
 +
-ONTAP lee y escribe datos hacia y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, simplemente responde.
+ONTAP lee y escribe datos en el almacenamiento de objetos y desde él. El almacenamiento de objetos nunca inicia conexiones. Solo responde.
 
 * ONTAP requiere una conexión entrante desde el agente de la consola al LIF de administración del clúster.  El agente de consola puede residir en una red virtual de Azure.
 * Se requiere un LIF entre clústeres en cada nodo de ONTAP que aloje los volúmenes que desea respaldar.  El LIF debe estar asociado con el _IPspace_ que ONTAP debe usar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información sobre IPspaces"^] .
@@ -508,7 +512,7 @@ Para crear una política, seleccione *Crear nueva política* y haga lo siguiente
 [[review-your-selections]]
 === Revise sus selecciones
 
-Esta es la oportunidad de revisar sus selecciones y realizar ajustes, si es necesario.
+Revisa tus selecciones y realiza los ajustes necesarios.
 
 .Pasos
 . En la página Revisar, revise sus selecciones.
